@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,83 +17,101 @@
 
 body{
     background:#0a0a0a;
-    color:#f5f5f5;
+    color:white;
     font-family:'Inter', sans-serif;
 }
 
-/* NAV */
+/* NAVIGATION */
 nav{
-    position:fixed;
+    position:absolute;
     width:100%;
-    padding:25px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background:rgba(10,10,10,0.6);
-    backdrop-filter:blur(12px);
+    padding:25px 8%;
+    z-index:10;
 }
 
-nav h1{
-    font-family:'Playfair Display', serif;
-    letter-spacing:3px;
-    font-size:1.4rem;
+nav video{
+    height:70px;
 }
 
 nav a{
-    color:#aaa;
-    text-decoration:none;
     margin-left:30px;
+    text-decoration:none;
+    color:white;
     font-size:0.9rem;
     transition:0.3s;
 }
 
 nav a:hover{
-    color:white;
+    color:#c200ff;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero{
+    position:relative;
+    width:100%;
     height:100vh;
+    overflow:hidden;
+}
+
+.hero video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    height:100%;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
     padding:0 8%;
-    background:linear-gradient(135deg,#0a0a0a 60%,#1a001f 100%);
 }
 
-.hero h2{
+.hero-content h1{
     font-family:'Playfair Display', serif;
-    font-size:3.8rem;
+    font-size:3.5rem;
     line-height:1.2;
-    opacity:0;
-    animation:fadeIn 1.5s ease forwards;
 }
 
-.hero p{
-    margin-top:25px;
-    color:#bbb;
+.hero-content p{
+    margin-top:20px;
     max-width:600px;
-    margin-left:auto;
-    margin-right:auto;
+    color:#ccc;
     font-weight:300;
-    opacity:0;
-    animation:fadeIn 2s ease forwards;
 }
 
-.button{
-    margin-top:40px;
+.hero-content button{
+    margin-top:35px;
     padding:14px 38px;
     background:transparent;
-    border:1px solid #444;
+    border:1px solid white;
     color:white;
-    letter-spacing:2px;
-    font-size:0.8rem;
     cursor:pointer;
     transition:0.4s;
+    letter-spacing:2px;
+    font-size:0.8rem;
 }
 
-.button:hover{
+.hero-content button:hover{
     border-color:#c200ff;
     color:#c200ff;
 }
@@ -103,46 +122,17 @@ nav a:hover{
     text-align:center;
 }
 
-.section h3{
+.section h2{
     font-family:'Playfair Display', serif;
-    font-size:2.2rem;
+    font-size:2.5rem;
     margin-bottom:20px;
 }
 
 .section p{
-    max-width:750px;
+    max-width:700px;
     margin:auto;
-    color:#999;
+    color:#aaa;
     line-height:1.8;
-}
-
-/* GRID */
-.grid{
-    margin-top:70px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:40px;
-}
-
-.card{
-    background:#111;
-    padding:50px 30px;
-    border:1px solid #1e1e1e;
-    transition:0.4s;
-}
-
-.card:hover{
-    border-color:#c200ff;
-    transform:translateY(-8px);
-}
-
-.card h4{
-    margin-bottom:15px;
-}
-
-.card p{
-    color:#777;
-    font-size:0.9rem;
 }
 
 /* FOOTER */
@@ -154,77 +144,54 @@ footer{
     font-size:0.8rem;
 }
 
-/* ANIMATION */
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
-}
 </style>
 </head>
 
 <body>
 
-<nav style="display:flex; flex-direction:column; align-items:center; padding:0;">
+<!-- NAVIGATION -->
+<nav>
+    <video autoplay muted loop playsinline>
+        <source src="logo.mp4" type="video/mp4">
+    </video>
 
-    <!-- Banner Video -->
-    <video autoplay muted loop playsinline 
-           style="width:100%; height:auto; display:block;">
+    <div>
+        <a href="#">Collection</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+</nav>
+
+<!-- HERO BANNER -->
+<section class="hero">
+
+    <video autoplay muted loop playsinline>
         <source src="logo_landscape.mp4" type="video/mp4">
     </video>
 
-    <!-- Navigation Links -->
-    <div style="margin-top:20px;">
-        <a href="#" style="margin:0 20px; text-decoration:none; color:#aaa;">Collection</a>
-        <a href="#" style="margin:0 20px; text-decoration:none; color:#aaa;">About</a>
-        <a href="#" style="margin:0 20px; text-decoration:none; color:#aaa;">Contact</a>
-    </div>
+    <div class="overlay"></div>
 
-</nav>
-
-<section class="hero">
-    <div>
-        <h2>Engineered Precision.<br>Elevated Identity.</h2>
+    <div class="hero-content">
+        <h1>Engineered Precision.<br>Elevated Identity.</h1>
         <p>
-            A modern luxury sportswear brand designed for movement,
-            confidence, and presence.
+            SpotFut blends performance innovation with modern luxury aesthetics.
+            Designed for movement, confidence, and presence.
         </p>
-        <button class="button">EXPLORE COLLECTION</button>
+        <button>EXPLORE COLLECTION</button>
     </div>
+
 </section>
 
+<!-- ABOUT SECTION -->
 <section class="section">
-    <h3>Signature Pieces</h3>
+    <h2>The SpotFut Philosophy</h2>
     <p>
-        Crafted with premium materials and minimalist design philosophy.
-        Built for athletes and creators who demand more.
-    </p>
-
-    <div class="grid">
-        <div class="card">
-            <h4>Women's Performance Set</h4>
-            <p>Structured fit with refined comfort.</p>
-        </div>
-
-        <div class="card">
-            <h4>Elite Football Kit</h4>
-            <p>Lightweight construction. Maximum control.</p>
-        </div>
-
-        <div class="card">
-            <h4>Urban Hoodie</h4>
-            <p>Minimal silhouette. Premium feel.</p>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <h3>The SpotFut Philosophy</h3>
-    <p>
-        SpotFut represents modern athletic luxury — where performance
-        engineering meets refined aesthetics.
+        Built for athletes, creators, and leaders. Every piece reflects
+        premium craftsmanship, minimalist design, and contemporary sport culture.
     </p>
 </section>
 
+<!-- FOOTER -->
 <footer>
     © 2026 SpotFut. All Rights Reserved.
 </footer>
