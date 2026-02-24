@@ -1,7 +1,83 @@
+<style>
+
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins', sans-serif;
+}
+
+/* Navigation */
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s ease;
+}
+nav a:hover{
+    opacity:0.7;
+}
+
+/* Grid */
+.jacket-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:40px;
+}
+
+/* Card */
+.jacket-card{
+    background:#111;
+    padding:20px;
+    border:1px solid #1e1e1e;
+    transition:all 0.4s ease;
+    overflow:hidden;
+}
+
+.jacket-card:hover{
+    border-color:#444;
+    transform:translateY(-8px);
+}
+
+/* Image Zoom */
+.jacket-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    margin-bottom:20px;
+    transition:transform 0.6s ease;
+}
+
+.jacket-card:hover img{
+    transform:scale(1.08);
+}
+
+/* Edition Styles */
+.edition{
+    font-weight:600;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+/* Custom Colors */
+.black{ color:#e5e5e5; }
+.green{ color:#3aa76d; }
+.blue{ color:#4169e1; }
+.latte{ color:#d6c6a5; }
+.solar{ color:#f4c430; }
+.sky{ color:#87ceeb; }
+
+.jacket-card p{
+    color:#aaa;
+    line-height:1.6;
+}
+
+</style>
+
 <body>
 
 <nav style="padding:25px 8%;">
-    <a href="index.html" style="color:white; text-decoration:none;">← Back to Home</a>
+    <a href="index.html">← Back to Home</a>
 </nav>
 
 <section style="padding:80px 8%; text-align:center;">
@@ -16,58 +92,66 @@
 
 <section style="padding:40px 8%;">
 
-    <div style="
-        display:grid;
-        grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-        gap:40px;
-    ">
+    <div class="jacket-grid">
 
         <!-- Jacket 1 -->
-        <div style="background:#111; padding:20px; border:1px solid #1e1e1e;">
-            <img src="varsity-KW.jpg" 
-                 style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-            <h3 style="color:#777;">Black Edition</h3>
-            <p style="color:#777;">Premium wool blend with leather sleeves.</p>
+        <div class="jacket-card">
+            <img src="varsity-KW.jpg">
+            <h3 class="edition black">Black Edition</h3>
+            <p>
+                The signature essential. Deep matte black body with sharp contrast sleeves,
+                engineered for a bold, commanding presence.
+            </p>
         </div>
 
         <!-- Jacket 2 -->
-        <div style="background:#111; padding:20px; border:1px solid #1e1e1e;">
-            <img src="varsity-GW.jpg" 
-                 style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-             <h3 style="color:#777;">Green Edition</h3>
-            <p style="color:#777;">Modern silhouette with classic detailing.</p>
+        <div class="jacket-card">
+            <img src="varsity-GW.jpg">
+            <h3 class="edition green">Green Edition</h3>
+            <p>
+                Heritage varsity tones redefined. A rich athletic green balanced
+                with structured tailoring for everyday dominance.
+            </p>
         </div>
 
         <!-- Jacket 3 -->
-        <div style="background:#111; padding:20px; border:1px solid #1e1e1e;">
-            <img src="varsity-RBW.jpg" 
-                 style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-             <h3 style="color:#777;">Royal Blue Edition</h3>
-            <p style="color:#777;">Modern silhouette with classic detailing.</p>
+        <div class="jacket-card">
+            <img src="varsity-RBW.jpg">
+            <h3 class="edition blue">Royal Blue Edition</h3>
+            <p>
+                Vibrant yet refined. A royal statement piece crafted to stand out
+                while maintaining a timeless athletic silhouette.
+            </p>
         </div>
 
         <!-- Jacket 4 -->
-        <div style="background:#111; padding:20px; border:1px solid #1e1e1e;">
-            <img src="varsity-CK.jpg" 
-                 style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-             <h3 style="color:#777;">Latte Edition</h3>
-            <p style="color:#777;">Minimal structure. Elevated identity.</p>
+        <div class="jacket-card">
+            <img src="varsity-CK.jpg">
+            <h3 class="edition latte">Latte Edition</h3>
+            <p>
+                Elevated neutrals. Soft cream tones meet precision structure,
+                delivering understated luxury with modern attitude.
+            </p>
         </div>
 
         <!-- Jacket 5 -->
-        <div style="background:#111; padding:20px; border:1px solid #1e1e1e;">
-            <img src="varsity-YK.jpg" 
-                 style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-             <h3 style="color:#777;">Solar Edition</h3>
-            <p style="color:#777;">Minimal structure. Elevated identity.</p>
+        <div class="jacket-card">
+            <img src="varsity-YK.jpg">
+            <h3 class="edition solar">Solar Edition</h3>
+            <p>
+                Energetic and unapologetic. A bold yellow accent designed
+                for leaders who move with confidence and impact.
+            </p>
         </div>
 
         <!-- Jacket 6 -->
-        <div style="background:#111; padding:20px; border:1px solid #1e1e1e;">
-            <img src="varsity-SBK.jpg" 
-                 style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-             <h3 style="color:#777;">Sky Edition</h3>
-            <p style="color:#777;">Minimal structure. Elevated identity.</p>
+        <div class="jacket-card">
+            <img src="varsity-SBK.jpg">
+            <h3 class="edition sky">Sky Edition</h3>
+            <p>
+                Clean. Fresh. Elevated. A sky-toned varsity built for effortless
+                styling and contemporary street presence.
+            </p>
         </div>
 
     </div>
