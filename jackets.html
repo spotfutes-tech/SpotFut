@@ -92,7 +92,87 @@ nav a:hover{
     transform:scale(1.1);
 }
 
+    /* Slider */
+.image-slider{
+    position:relative;
+    width:100%;
+    height:350px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.image-slider img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+}
+
+.image-slider img.active{
+    display:block;
+}
+
+/* Arrows */
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.5);
+    color:white;
+    border:none;
+    font-size:22px;
+    padding:8px 14px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.slider-btn:hover{
+    background:black;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
 </style>
+
+
+
+
+<script>
+const sliders = document.querySelectorAll(".image-slider");
+
+sliders.forEach(slider => {
+    const images = slider.querySelectorAll("img");
+    const next = slider.querySelector(".next");
+    const prev = slider.querySelector(".prev");
+    let index = 0;
+
+    function showImage(i){
+        images.forEach(img => img.classList.remove("active"));
+        images[i].classList.add("active");
+    }
+
+    next.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        showImage(index);
+    });
+
+    prev.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        showImage(index);
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
 
 <body>
 
@@ -116,7 +196,16 @@ nav a:hover{
 
         <!-- Jacket 1 -->
 <div class="jacket-card">
-    <img src="varsity-KW.jpg">
+
+    <div class="image-slider">
+        <img src="varsity-KW.jpg" class="active">
+        <img src="black-detail-1.jpg">
+        <img src="black-detail-2.jpg">
+        <img src="black-detail-3.jpg">
+
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+    </div>
 
     <h3 class="edition black">Black Edition</h3>
     <p>
@@ -124,14 +213,8 @@ nav a:hover{
         engineered for a bold, commanding presence.
     </p>
 
-    <!-- Fabric Detail Images -->
-    <div class="detail-row">
-        <img src="varsity-KW-detail-1.jpg">
-        <img src="varsity-KW-detail-2.jpg">
-        <img src="varsity-KW-detail-3.jpg">
-        <img src="varsity-KW-detail-4.jpg">
-    </div>
 </div>
+        
         <!-- Jacket 2 -->
         <div class="jacket-card">
             <img src="varsity-GW.jpg">
