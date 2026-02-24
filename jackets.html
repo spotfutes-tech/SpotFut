@@ -1,62 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Varsity Bomber Jackets | SpotFut</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-<style>
-body{
-    margin:0;
-    background:#0a0a0a;
-    color:white;
-    font-family:'Inter', sans-serif;
-}
-
-nav{
-    padding:25px 8%;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-size:0.9rem;
-}
-
-.section{
-    padding:120px 8%;
-    text-align:center;
-}
-
-h1{
-    font-family:'Playfair Display', serif;
-    font-size:3rem;
-}
-
-p{
-    color:#aaa;
-    max-width:700px;
-    margin:20px auto;
-    line-height:1.8;
-}
-</style>
-</head>
-
 <body>
 
-<nav>
-    <a href="index.html">← Back to Home</a>
+<nav style="padding:25px 8%;">
+    <a href="index.html" style="color:white; text-decoration:none;">← Back to Home</a>
 </nav>
 
-<section class="section">
-    <h1>Varsity Bomber Jackets</h1>
-    <p>
+<section style="padding:80px 8%; text-align:center;">
+    <h1 style="font-family:'Playfair Display', serif; font-size:3rem;">
+        Varsity Bomber Jackets
+    </h1>
+    <p style="color:#aaa; max-width:700px; margin:20px auto; line-height:1.8;">
         Modern athletic heritage. Premium structure.
         Timeless design crafted for confidence and presence.
     </p>
 </section>
 
+<section style="padding:40px 8%;">
+
+    <div style="
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+        gap:40px;
+    ">
+
+        <!-- Jacket 1 -->
+        <div style="background:#111; padding:20px; border:1px solid #1e1e1e;">
+            <img src="varsity-black.jpg" 
+                 style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+            <h3>Black Edition</h3>
+            <p style="color:#777;">Premium wool blend with leather sleeves.</p>
+        </div>
+
+        <!-- Jacket 2 -->
+        <div style="background:#111; padding:20px; border:1px solid #1e1e1e;">
+            <img src="varsity-brown.jpg" 
+                 style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+            <h3>Brown Edition</h3>
+            <p style="color:#777;">Modern silhouette with classic detailing.</p>
+        </div>
+
+        <!-- Jacket 3 -->
+        <div style="background:#111; padding:20px; border:1px solid #1e1e1e;">
+            <img src="varsity-grey.jpg" 
+                 style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+            <h3>Grey Edition</h3>
+            <p style="color:#777;">Minimal structure. Elevated identity.</p>
+        </div>
+
+    </div>
+
+</section>
+
 </body>
-</html>
