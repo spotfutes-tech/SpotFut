@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varsity Bomber Jackets | SpotFut</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 
 body{
@@ -12,10 +21,12 @@ nav a{
     color:white;
     text-decoration:none;
     font-weight:500;
-    transition:0.3s ease;
 }
-nav a:hover{
-    opacity:0.7;
+
+/* Page Title */
+h1{
+    font-family:'Playfair Display', serif;
+    font-size:3rem;
 }
 
 /* Grid */
@@ -30,7 +41,7 @@ nav a:hover{
     background:#111;
     padding:20px;
     border:1px solid #1e1e1e;
-    transition:all 0.4s ease;
+    transition:0.4s ease;
     overflow:hidden;
 }
 
@@ -39,60 +50,8 @@ nav a:hover{
     transform:translateY(-8px);
 }
 
-/* Image Zoom */
-.jacket-card img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-    margin-bottom:20px;
-    transition:transform 0.6s ease;
-}
+/* ---------- SLIDER ---------- */
 
-.jacket-card:hover img{
-    transform:scale(1.08);
-}
-
-/* Edition Styles */
-.edition{
-    font-weight:600;
-    letter-spacing:1px;
-    margin-bottom:10px;
-}
-
-/* Custom Colors */
-.black{ color:#e5e5e5; }
-.green{ color:#3aa76d; }
-.blue{ color:#4169e1; }
-.latte{ color:#d6c6a5; }
-.solar{ color:#f4c430; }
-.sky{ color:#87ceeb; }
-
-.jacket-card p{
-    color:#aaa;
-    line-height:1.6;
-}
-
-/* Detail Images Row */
-.detail-row{
-    display:flex;
-    gap:10px;
-    margin-top:15px;
-}
-
-.detail-row img{
-    width:100%;
-    height:90px;
-    object-fit:cover;
-    flex:1;
-    cursor:pointer;
-    transition:0.4s ease;
-}
-
-.detail-row img:hover{
-    transform:scale(1.1);
-}
-
-    /* Slider */
 .image-slider{
     position:relative;
     width:100%;
@@ -106,6 +65,7 @@ nav a:hover{
     height:100%;
     object-fit:cover;
     display:none;
+    transition:0.4s ease;
 }
 
 .image-slider img.active{
@@ -133,46 +93,27 @@ nav a:hover{
 .prev{ left:10px; }
 .next{ right:10px; }
 
+/* Edition Colors */
+.edition{
+    font-weight:600;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.black{ color:#e5e5e5; }
+.green{ color:#3aa76d; }
+.blue{ color:#4169e1; }
+.latte{ color:#d6c6a5; }
+.solar{ color:#f4c430; }
+.sky{ color:#87ceeb; }
+
+.jacket-card p{
+    color:#aaa;
+    line-height:1.6;
+}
+
 </style>
-
-
-
-
-<script>
-const sliders = document.querySelectorAll(".image-slider");
-
-sliders.forEach(slider => {
-    const images = slider.querySelectorAll("img");
-    const next = slider.querySelector(".next");
-    const prev = slider.querySelector(".prev");
-    let index = 0;
-
-    function showImage(i){
-        images.forEach(img => img.classList.remove("active"));
-        images[i].classList.add("active");
-    }
-
-    next.addEventListener("click", () => {
-        index = (index + 1) % images.length;
-        showImage(index);
-    });
-
-    prev.addEventListener("click", () => {
-        index = (index - 1 + images.length) % images.length;
-        showImage(index);
-    });
-});
-</script>
-
-
-
-
-
-
-
-
-
-
+</head>
 
 <body>
 
@@ -181,7 +122,7 @@ sliders.forEach(slider => {
 </nav>
 
 <section style="padding:80px 8%; text-align:center;">
-    <h1 style="font-family:'Playfair Display', serif; font-size:3rem;">
+    <h1>
         Varsity Bomber Jackets
     </h1>
     <p style="color:#aaa; max-width:700px; margin:20px auto; line-height:1.8;">
@@ -194,80 +135,96 @@ sliders.forEach(slider => {
 
     <div class="jacket-grid">
 
-        <!-- Jacket 1 -->
-<div class="jacket-card">
+        <!-- Jacket 1 (WITH SLIDER) -->
+        <div class="jacket-card">
 
-    <div class="image-slider">
-        <img src="varsity-KW.jpg" class="active">
-        <img src="varsity-KW-detail-1.jpg">
-        <img src="varsity-KW-detail-2.jpg">
-        <img src="varsity-KW-detail-3.jpg">
-        <img src="varsity-KW-detail-4.jpg">
+            <div class="image-slider">
+                <img src="varsity-KW.jpg" class="active">
+                <img src="varsity-KW-detail-1.jpg">
+                <img src="varsity-KW-detail-2.jpg">
+                <img src="varsity-KW-detail-3.jpg">
+                <img src="varsity-KW-detail-4.jpg">
 
-        <button class="slider-btn prev">&#10094;</button>
-        <button class="slider-btn next">&#10095;</button>
-    </div>
+                <button class="slider-btn prev">&#10094;</button>
+                <button class="slider-btn next">&#10095;</button>
+            </div>
 
-    <h3 class="edition black">Black Edition</h3>
-    <p>
-        The signature essential. Deep matte black body with sharp contrast sleeves,
-        engineered for a bold, commanding presence.
-    </p>
+            <h3 class="edition black">Black Edition</h3>
+            <p>
+                The signature essential. Deep matte black body with sharp contrast sleeves,
+                engineered for a bold, commanding presence.
+            </p>
 
-</div>
-        
+        </div>
+
         <!-- Jacket 2 -->
         <div class="jacket-card">
-            <img src="varsity-GW.jpg">
+            <img src="varsity-GW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
             <h3 class="edition green">Green Edition</h3>
-            <p>
-                Heritage varsity tones redefined. A rich athletic green balanced
-                with structured tailoring for everyday dominance.
-            </p>
+            <p>Heritage varsity tones redefined with structured tailoring.</p>
         </div>
 
         <!-- Jacket 3 -->
         <div class="jacket-card">
-            <img src="varsity-RBW.jpg">
+            <img src="varsity-RBW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
             <h3 class="edition blue">Royal Blue Edition</h3>
-            <p>
-                Vibrant yet refined. A royal statement piece crafted to stand out
-                while maintaining a timeless athletic silhouette.
-            </p>
+            <p>A royal statement piece with timeless athletic silhouette.</p>
         </div>
 
         <!-- Jacket 4 -->
         <div class="jacket-card">
-            <img src="varsity-CK.jpg">
+            <img src="varsity-CK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
             <h3 class="edition latte">Latte Edition</h3>
-            <p>
-                Elevated neutrals. Soft cream tones meet precision structure,
-                delivering understated luxury with modern attitude.
-            </p>
+            <p>Understated luxury with refined neutral tones.</p>
         </div>
 
         <!-- Jacket 5 -->
         <div class="jacket-card">
-            <img src="varsity-YK.jpg">
+            <img src="varsity-YK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
             <h3 class="edition solar">Solar Edition</h3>
-            <p>
-                Energetic and unapologetic. A bold yellow accent designed
-                for leaders who move with confidence and impact.
-            </p>
+            <p>Bold yellow accent for confident expression.</p>
         </div>
 
         <!-- Jacket 6 -->
         <div class="jacket-card">
-            <img src="varsity-SBK.jpg">
+            <img src="varsity-SBK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
             <h3 class="edition sky">Sky Edition</h3>
-            <p>
-                Clean. Fresh. Elevated. A sky-toned varsity built for effortless
-                styling and contemporary street presence.
-            </p>
+            <p>Fresh sky tone designed for modern street presence.</p>
         </div>
 
     </div>
 
 </section>
 
+<!-- SCRIPT MUST BE AT BOTTOM -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slider = document.querySelector(".image-slider");
+
+    const images = slider.querySelectorAll("img");
+    const nextBtn = slider.querySelector(".next");
+    const prevBtn = slider.querySelector(".prev");
+
+    let index = 0;
+
+    function showImage(i){
+        images.forEach(img => img.classList.remove("active"));
+        images[i].classList.add("active");
+    }
+
+    nextBtn.addEventListener("click", function () {
+        index = (index + 1) % images.length;
+        showImage(index);
+    });
+
+    prevBtn.addEventListener("click", function () {
+        index = (index - 1 + images.length) % images.length;
+        showImage(index);
+    });
+
+});
+</script>
+
 </body>
+</html>
