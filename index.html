@@ -3,149 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SpotFut | Luxury Performance Wear</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<title>SpotFut</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background-color: #0a0a0a;
-    color: #f5f5f5;
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+body{
+    background:#0a0a0a;
+    color:#f5f5f5;
+    font-family:'Inter', sans-serif;
 }
 
-nav {
-    position: fixed;
-    width: 100%;
-    padding: 20px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(10,10,10,0.6);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+/* NAV */
+nav{
+    position:fixed;
+    width:100%;
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(10,10,10,0.6);
+    backdrop-filter:blur(12px);
 }
 
-nav h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+nav h1{
+    font-family:'Playfair Display', serif;
+    letter-spacing:3px;
+    font-size:1.4rem;
 }
 
-nav a {
-    text-decoration: none;
-    color: #aaa;
-    margin-left: 25px;
-    font-size: 0.9rem;
-    transition: 0.3s;
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    margin-left:30px;
+    font-size:0.9rem;
+    transition:0.3s;
 }
 
-nav a:hover {
-    color: white;
+nav a:hover{
+    color:white;
 }
 
-.hero {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 10%;
-    background: linear-gradient(135deg, #0a0a0a 60%, #1a001f 100%);
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 8%;
+    background:linear-gradient(135deg,#0a0a0a 60%,#1a001f 100%);
 }
 
-.hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    line-height: 1.2;
+.hero h2{
+    font-family:'Playfair Display', serif;
+    font-size:3.8rem;
+    line-height:1.2;
+    opacity:0;
+    animation:fadeIn 1.5s ease forwards;
 }
 
-.hero p {
-    margin-top: 20px;
-    color: #bbb;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+.hero p{
+    margin-top:25px;
+    color:#bbb;
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+    font-weight:300;
+    opacity:0;
+    animation:fadeIn 2s ease forwards;
 }
 
-.button {
-    margin-top: 35px;
-    padding: 14px 36px;
-    background: transparent;
-    border: 1px solid #666;
-    color: white;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: 0.4s;
+.button{
+    margin-top:40px;
+    padding:14px 38px;
+    background:transparent;
+    border:1px solid #444;
+    color:white;
+    letter-spacing:2px;
+    font-size:0.8rem;
+    cursor:pointer;
+    transition:0.4s;
 }
 
-.button:hover {
-    border-color: #c200ff;
-    color: #c200ff;
+.button:hover{
+    border-color:#c200ff;
+    color:#c200ff;
 }
 
-.section {
-    padding: 120px 10%;
-    text-align: center;
+/* SECTION */
+.section{
+    padding:120px 8%;
+    text-align:center;
 }
 
-.section h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    margin-bottom: 20px;
+.section h3{
+    font-family:'Playfair Display', serif;
+    font-size:2.2rem;
+    margin-bottom:20px;
 }
 
-.section p {
-    max-width: 700px;
-    margin: auto;
-    color: #aaa;
-    line-height: 1.8;
+.section p{
+    max-width:750px;
+    margin:auto;
+    color:#999;
+    line-height:1.8;
 }
 
-.grid {
-    margin-top: 60px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+/* GRID */
+.grid{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:40px;
 }
 
-.card {
-    background: #111;
-    padding: 40px;
-    border: 1px solid #1f1f1f;
-    transition: 0.4s;
+.card{
+    background:#111;
+    padding:50px 30px;
+    border:1px solid #1e1e1e;
+    transition:0.4s;
 }
 
-.card:hover {
-    border-color: #c200ff;
-    transform: translateY(-5px);
+.card:hover{
+    border-color:#c200ff;
+    transform:translateY(-8px);
 }
 
-.card h4 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+.card h4{
+    margin-bottom:15px;
 }
 
-.card p {
-    color: #777;
-    font-size: 0.9rem;
+.card p{
+    color:#777;
+    font-size:0.9rem;
 }
 
-footer {
-    padding: 40px 10%;
-    text-align: center;
-    border-top: 1px solid #1a1a1a;
-    color: #666;
-    font-size: 0.8rem;
+/* FOOTER */
+footer{
+    padding:40px;
+    text-align:center;
+    border-top:1px solid #1a1a1a;
+    color:#666;
+    font-size:0.8rem;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
 }
 </style>
 </head>
@@ -153,7 +165,7 @@ footer {
 <body>
 
 <nav>
-    <h1>SPOTFUT</h1>
+    <img src="logo.jpeg" alt="SpotFut Logo" style="height:45px; filter: brightness(1.1);">
     <div>
         <a href="#">Collection</a>
         <a href="#">About</a>
@@ -163,50 +175,50 @@ footer {
 
 <section class="hero">
     <div>
-        <h2>Engineered Precision.<br>Elevated Presence.</h2>
+        <h2>Engineered Precision.<br>Elevated Identity.</h2>
         <p>
-            SpotFut redefines modern athletic luxury — 
-            merging performance engineering with refined urban aesthetics.
+            A modern luxury sportswear brand designed for movement,
+            confidence, and presence.
         </p>
-        <button class="button">DISCOVER COLLECTION</button>
+        <button class="button">EXPLORE COLLECTION</button>
     </div>
 </section>
 
 <section class="section">
-    <h3>Signature Collection</h3>
+    <h3>Signature Pieces</h3>
     <p>
-        Designed for movement. Crafted for distinction. 
-        Each piece embodies precision tailoring, premium fabric, and effortless confidence.
+        Crafted with premium materials and minimalist design philosophy.
+        Built for athletes and creators who demand more.
     </p>
 
     <div class="grid">
         <div class="card">
             <h4>Women's Performance Set</h4>
-            <p>Streamlined silhouette. Sculpted comfort.</p>
+            <p>Structured fit with refined comfort.</p>
         </div>
 
         <div class="card">
             <h4>Elite Football Kit</h4>
-            <p>Lightweight. Breathable. Commanding presence.</p>
+            <p>Lightweight construction. Maximum control.</p>
         </div>
 
         <div class="card">
-            <h4>Urban Performance Hoodie</h4>
-            <p>Minimal structure. Maximum impact.</p>
+            <h4>Urban Hoodie</h4>
+            <p>Minimal silhouette. Premium feel.</p>
         </div>
     </div>
 </section>
 
 <section class="section">
-    <h3>The Philosophy</h3>
+    <h3>The SpotFut Philosophy</h3>
     <p>
-        SpotFut is not just sportswear — it is identity. 
-        Built for athletes, creators, and leaders who move with intent.
+        SpotFut represents modern athletic luxury — where performance
+        engineering meets refined aesthetics.
     </p>
 </section>
 
 <footer>
-    © 2026 SpotFut. All rights reserved.
+    © 2026 SpotFut. All Rights Reserved.
 </footer>
 
 </body>
