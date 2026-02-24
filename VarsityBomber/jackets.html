@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varsity Bomber Jackets | SpotFut</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins', sans-serif;
+}
+
+/* Navigation */
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* Page Title */
+h1{
+    font-family:'Playfair Display', serif;
+    font-size:3rem;
+}
+
+/* Grid */
+.jacket-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:40px;
+}
+
+/* Card */
+.jacket-card{
+    background:#111;
+    padding:20px;
+    border:1px solid #1e1e1e;
+    transition:0.4s ease;
+    overflow:hidden;
+}
+
+.jacket-card:hover{
+    border-color:#444;
+    transform:translateY(-8px);
+}
+
+/* ---------- SLIDER ---------- */
+
+.image-slider{
+    position:relative;
+    width:100%;
+    height:350px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.image-slider img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+    transition:0.4s ease;
+}
+
+.image-slider img.active{
+    display:block;
+}
+
+/* Arrows */
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.5);
+    color:white;
+    border:none;
+    font-size:22px;
+    padding:8px 14px;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.slider-btn:hover{
+    background:black;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+/* Edition Colors */
+.edition{
+    font-weight:600;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.black{ color:#e5e5e5; }
+.green{ color:#3aa76d; }
+.blue{ color:#4169e1; }
+.latte{ color:#d6c6a5; }
+.solar{ color:#f4c430; }
+.sky{ color:#87ceeb; }
+
+.jacket-card p{
+    color:#aaa;
+    line-height:1.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav style="padding:25px 8%;">
+    <a href="index.html">← Back to Home</a>
+</nav>
+
+<section style="padding:80px 8%; text-align:center;">
+    <h1>
+        Varsity Bomber Jackets
+    </h1>
+    <p style="color:#aaa; max-width:700px; margin:20px auto; line-height:1.8;">
+        Modern athletic heritage. Premium structure.
+        Timeless design crafted for confidence and presence.
+    </p>
+</section>
+
+<section style="padding:40px 8%;">
+
+    <div class="jacket-grid">
+
+        <!-- Jacket 1 (WITH SLIDER) -->
+        <div class="jacket-card">
+
+            <div class="image-slider">
+                <img src="varsity-KW.jpg" class="active">
+                <img src="varsity-KW-detail-1.jpg">
+                <img src="varsity-KW-detail-2.jpg">
+                <img src="varsity-KW-detail-3.jpg">
+                <img src="varsity-KW-detail-4.jpg">
+
+                <button class="slider-btn prev">&#10094;</button>
+                <button class="slider-btn next">&#10095;</button>
+            </div>
+
+            <h3 class="edition black">Black Edition</h3>
+            <p>
+                The signature essential. Deep matte black body with sharp contrast sleeves,
+                engineered for a bold, commanding presence.
+            </p>
+
+        </div>
+
+        <!-- Jacket 2 -->
+        <div class="jacket-card">
+            <img src="varsity-GW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+            <h3 class="edition green">Green Edition</h3>
+            <p>Heritage varsity tones redefined with structured tailoring.</p>
+        </div>
+
+        <!-- Jacket 3 -->
+        <div class="jacket-card">
+            <img src="varsity-RBW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+            <h3 class="edition blue">Royal Blue Edition</h3>
+            <p>A royal statement piece with timeless athletic silhouette.</p>
+        </div>
+
+        <!-- Jacket 4 -->
+        <div class="jacket-card">
+            <img src="varsity-CK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+            <h3 class="edition latte">Latte Edition</h3>
+            <p>Understated luxury with refined neutral tones.</p>
+        </div>
+
+        <!-- Jacket 5 -->
+        <div class="jacket-card">
+            <img src="varsity-YK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+            <h3 class="edition solar">Solar Edition</h3>
+            <p>Bold yellow accent for confident expression.</p>
+        </div>
+
+        <!-- Jacket 6 -->
+        <div class="jacket-card">
+            <img src="varsity-SBK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+            <h3 class="edition sky">Sky Edition</h3>
+            <p>Fresh sky tone designed for modern street presence.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SCRIPT MUST BE AT BOTTOM -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slider = document.querySelector(".image-slider");
+
+    const images = slider.querySelectorAll("img");
+    const nextBtn = slider.querySelector(".next");
+    const prevBtn = slider.querySelector(".prev");
+
+    let index = 0;
+
+    function showImage(i){
+        images.forEach(img => img.classList.remove("active"));
+        images[i].classList.add("active");
+    }
+
+    nextBtn.addEventListener("click", function () {
+        index = (index + 1) % images.length;
+        showImage(index);
+    });
+
+    prevBtn.addEventListener("click", function () {
+        index = (index - 1 + images.length) % images.length;
+        showImage(index);
+    });
+
+});
+</script>
+
+</body>
+</html>
 
