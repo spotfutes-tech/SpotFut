@@ -1,6 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart | SpotFut</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins', sans-serif;
+    padding:60px 8%;
+}
+
+h1{
+    font-family:'Playfair Display', serif;
+    margin-bottom:40px;
+}
+
+a{
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    margin-bottom:30px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #222;
+    padding:20px 0;
+}
+
+.remove-btn{
+    background:none;
+    border:1px solid #444;
+    color:white;
+    padding:6px 12px;
+    cursor:pointer;
+}
+
+.total{
+    margin-top:40px;
+    font-size:1.2rem;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html">← Back to Home</a>
+
+<h1>Your Cart</h1>
+
+<div id="cart-items"></div>
+
+<h3 id="cart-total" class="total"></h3>
+
 <script>
 
-/* PRODUCT DATABASE (SAME AS JACKETS PAGE) */
+/* PRODUCT DATABASE */
 const PRODUCTS = {
   "varsity-black": { name: "Varsity Black Edition", price: 59 },
   "varsity-green": { name: "Varsity Green Edition", price: 59 },
@@ -20,23 +85,26 @@ function loadCart(){
 
   if(cart.length === 0){
     container.innerHTML = "<p>Your cart is empty.</p>";
+    document.getElementById("cart-total").innerText = "";
     return;
   }
 
   cart.forEach((item, index)=>{
 
     let product = PRODUCTS[item.id];
+
+    if(!product) return;
+
     total += product.price;
 
     container.innerHTML += `
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; border-bottom:1px solid #222; padding-bottom:15px;">
+      <div class="cart-item">
         <div>
           <strong>${product.name}</strong><br>
           Size: ${item.size}<br>
           €${product.price}
         </div>
-        <button onclick="removeItem(${index})"
-          style="background:none; border:1px solid #444; color:white; padding:6px 12px; cursor:pointer;">
+        <button class="remove-btn" onclick="removeItem(${index})">
           Remove
         </button>
       </div>
@@ -56,3 +124,6 @@ function removeItem(index){
 loadCart();
 
 </script>
+
+</body>
+</html>
