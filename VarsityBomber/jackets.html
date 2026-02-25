@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 body{
     margin:0;
     background:#0b0b0b;
@@ -65,14 +64,12 @@ h1{
     height:100%;
     object-fit:cover;
     display:none;
-    transition:0.4s ease;
 }
 
 .image-slider img.active{
     display:block;
 }
 
-/* Arrows */
 .slider-btn{
     position:absolute;
     top:50%;
@@ -83,11 +80,6 @@ h1{
     font-size:22px;
     padding:8px 14px;
     cursor:pointer;
-    transition:0.3s ease;
-}
-
-.slider-btn:hover{
-    background:black;
 }
 
 .prev{ left:10px; }
@@ -112,6 +104,68 @@ h1{
     line-height:1.6;
 }
 
+/* --- ADD TO CART --- */
+
+.add-section{
+    margin-top:20px;
+}
+
+.add-btn{
+    width:100%;
+    padding:12px;
+    background:transparent;
+    border:1px solid #c200ff;
+    color:#c200ff;
+    cursor:pointer;
+    transition:0.3s ease;
+    font-weight:500;
+}
+
+.add-btn:hover{
+    background:#c200ff;
+    color:black;
+}
+
+.size-dropdown{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+}
+
+.size-dropdown.open{
+    max-height:200px;
+    margin-top:15px;
+}
+
+.size-dropdown p{
+    font-size:14px;
+    margin-bottom:10px;
+    color:#aaa;
+}
+
+.sizes{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.sizes span{
+    padding:8px 14px;
+    border:1px solid #333;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sizes span:hover{
+    border-color:#c200ff;
+    color:#c200ff;
+}
+
+.sizes span.active{
+    background:#c200ff;
+    color:black;
+    border-color:#c200ff;
+}
 </style>
 </head>
 
@@ -122,9 +176,7 @@ h1{
 </nav>
 
 <section style="padding:80px 8%; text-align:center;">
-    <h1>
-        Varsity Bomber Jackets
-    </h1>
+    <h1>Varsity Bomber Jackets</h1>
     <p style="color:#aaa; max-width:700px; margin:20px auto; line-height:1.8;">
         Modern athletic heritage. Premium structure.
         Timeless design crafted for confidence and presence.
@@ -133,79 +185,122 @@ h1{
 
 <section style="padding:40px 8%;">
 
-    <div class="jacket-grid">
+<div class="jacket-grid">
 
-        <!-- Jacket 1 (WITH SLIDER) -->
-        <div class="jacket-card">
+<!-- JACKET TEMPLATE REPEATED -->
 
-            <div class="image-slider">
-                <img src="varsity-KW.jpg" class="active">
-                <img src="varsity-KW-detail-1.jpg">
-                <img src="varsity-KW-detail-2.jpg">
-                <img src="varsity-KW-detail-3.jpg">
-                <img src="varsity-KW-detail-4.jpg">
-
-                <button class="slider-btn prev">&#10094;</button>
-                <button class="slider-btn next">&#10095;</button>
-            </div>
-
-            <h3 class="edition black">Black Edition</h3>
-            <p>
-                The signature essential. Deep matte black body with sharp contrast sleeves,
-                engineered for a bold, commanding presence.
-            </p>
-
-        </div>
-
-        <!-- Jacket 2 -->
-        <div class="jacket-card">
-            <img src="varsity-GW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-            <h3 class="edition green">Green Edition</h3>
-            <p>Heritage varsity tones redefined with structured tailoring.</p>
-        </div>
-
-        <!-- Jacket 3 -->
-        <div class="jacket-card">
-            <img src="varsity-RBW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-            <h3 class="edition blue">Royal Blue Edition</h3>
-            <p>A royal statement piece with timeless athletic silhouette.</p>
-        </div>
-
-        <!-- Jacket 4 -->
-        <div class="jacket-card">
-            <img src="varsity-CK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-            <h3 class="edition latte">Latte Edition</h3>
-            <p>Understated luxury with refined neutral tones.</p>
-        </div>
-
-        <!-- Jacket 5 -->
-        <div class="jacket-card">
-            <img src="varsity-YK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-            <h3 class="edition solar">Solar Edition</h3>
-            <p>Bold yellow accent for confident expression.</p>
-        </div>
-
-        <!-- Jacket 6 -->
-        <div class="jacket-card">
-            <img src="varsity-SBK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-            <h3 class="edition sky">Sky Edition</h3>
-            <p>Fresh sky tone designed for modern street presence.</p>
-        </div>
-
+<div class="jacket-card">
+    <div class="image-slider">
+        <img src="varsity-KW.jpg" class="active">
+        <img src="varsity-KW-detail-1.jpg">
+        <img src="varsity-KW-detail-2.jpg">
+        <img src="varsity-KW-detail-3.jpg">
+        <img src="varsity-KW-detail-4.jpg">
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
     </div>
+    <h3 class="edition black">Black Edition</h3>
+    <p>The signature essential. Deep matte black body with sharp contrast sleeves.</p>
 
+    <div class="add-section">
+        <button class="add-btn">ADD TO CART</button>
+        <div class="size-dropdown">
+            <p>Select Size</p>
+            <div class="sizes">
+                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Copy same structure for other jackets -->
+
+<div class="jacket-card">
+    <img src="varsity-GW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+    <h3 class="edition green">Green Edition</h3>
+    <p>Heritage varsity tones redefined.</p>
+    <div class="add-section">
+        <button class="add-btn">ADD TO CART</button>
+        <div class="size-dropdown">
+            <p>Select Size</p>
+            <div class="sizes">
+                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jacket-card">
+    <img src="varsity-RBW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+    <h3 class="edition blue">Royal Blue Edition</h3>
+    <p>A royal statement piece.</p>
+    <div class="add-section">
+        <button class="add-btn">ADD TO CART</button>
+        <div class="size-dropdown">
+            <p>Select Size</p>
+            <div class="sizes">
+                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jacket-card">
+    <img src="varsity-CK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+    <h3 class="edition latte">Latte Edition</h3>
+    <p>Understated luxury with neutral tones.</p>
+    <div class="add-section">
+        <button class="add-btn">ADD TO CART</button>
+        <div class="size-dropdown">
+            <p>Select Size</p>
+            <div class="sizes">
+                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jacket-card">
+    <img src="varsity-YK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+    <h3 class="edition solar">Solar Edition</h3>
+    <p>Bold yellow accent for confident expression.</p>
+    <div class="add-section">
+        <button class="add-btn">ADD TO CART</button>
+        <div class="size-dropdown">
+            <p>Select Size</p>
+            <div class="sizes">
+                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jacket-card">
+    <img src="varsity-SBK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+    <h3 class="edition sky">Sky Edition</h3>
+    <p>Fresh sky tone designed for modern street presence.</p>
+    <div class="add-section">
+        <button class="add-btn">ADD TO CART</button>
+        <div class="size-dropdown">
+            <p>Select Size</p>
+            <div class="sizes">
+                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
 </section>
 
-<!-- SCRIPT MUST BE AT BOTTOM -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-    const slider = document.querySelector(".image-slider");
-
+/* MULTI SLIDER */
+document.querySelectorAll(".image-slider").forEach(slider => {
     const images = slider.querySelectorAll("img");
     const nextBtn = slider.querySelector(".next");
     const prevBtn = slider.querySelector(".prev");
-
     let index = 0;
 
     function showImage(i){
@@ -213,19 +308,40 @@ document.addEventListener("DOMContentLoaded", function () {
         images[i].classList.add("active");
     }
 
-    nextBtn.addEventListener("click", function () {
+    nextBtn.addEventListener("click", () => {
         index = (index + 1) % images.length;
         showImage(index);
     });
 
-    prevBtn.addEventListener("click", function () {
+    prevBtn.addEventListener("click", () => {
         index = (index - 1 + images.length) % images.length;
         showImage(index);
     });
+});
+
+/* SIZE DROPDOWN */
+document.querySelectorAll(".add-btn").forEach(button => {
+    button.addEventListener("click", function(){
+        const dropdown = this.nextElementSibling;
+
+        document.querySelectorAll(".size-dropdown").forEach(d => {
+            if(d !== dropdown) d.classList.remove("open");
+        });
+
+        dropdown.classList.toggle("open");
+    });
+});
+
+document.querySelectorAll(".sizes span").forEach(size => {
+    size.addEventListener("click", function(){
+        const siblings = this.parentElement.querySelectorAll("span");
+        siblings.forEach(s => s.classList.remove("active"));
+        this.classList.add("active");
+    });
+});
 
 });
 </script>
 
 </body>
 </html>
-
