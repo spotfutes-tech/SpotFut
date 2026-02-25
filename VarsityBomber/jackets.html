@@ -15,45 +15,59 @@ body{
     font-family:'Poppins', sans-serif;
 }
 
-/* NAV */
-nav{
-    padding:25px 8%;
+/* HEADER */
+header{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:25px 8%;
+    border-bottom:1px solid #1e1e1e;
+    background:#0b0b0b;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
+.logo{
+    font-weight:600;
+    letter-spacing:2px;
+    cursor:pointer;
+}
+
+.cart{
+    cursor:pointer;
+}
+
+#cart-count{
+    background:white;
+    color:black;
+    padding:3px 8px;
+    border-radius:50%;
+    font-size:12px;
+    margin-left:6px;
+}
+
+/* Navigation */
 nav a{
     color:white;
     text-decoration:none;
     font-weight:500;
 }
 
-.cart-icon{
-    cursor:pointer;
-}
-
-#cart-count{
-    background:#c200ff;
-    padding:2px 8px;
-    border-radius:20px;
-    font-size:12px;
-}
-
-/* TITLE */
+/* Title */
 h1{
     font-family:'Playfair Display', serif;
     font-size:3rem;
 }
 
-/* GRID */
+/* Grid */
 .jacket-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
     gap:40px;
 }
 
-/* CARD */
+/* Card */
 .jacket-card{
     background:#111;
     padding:20px;
@@ -66,7 +80,15 @@ h1{
     transform:translateY(-8px);
 }
 
-/* SLIDER */
+/* Images */
+.jacket-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+
+/* Slider */
 .image-slider{
     position:relative;
     width:100%;
@@ -76,9 +98,6 @@ h1{
 }
 
 .image-slider img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
     display:none;
 }
 
@@ -90,280 +109,206 @@ h1{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    background:rgba(0,0,0,0.5);
+    background:rgba(0,0,0,0.6);
     color:white;
     border:none;
-    font-size:22px;
-    padding:8px 14px;
+    font-size:20px;
+    padding:6px 12px;
     cursor:pointer;
 }
 
 .prev{ left:10px; }
 .next{ right:10px; }
 
-/* EDITION COLORS */
-.edition{
-    font-weight:600;
-    margin-bottom:10px;
-}
-
-.black{ color:#e5e5e5; }
-.green{ color:#3aa76d; }
-.blue{ color:#4169e1; }
-.latte{ color:#d6c6a5; }
-.solar{ color:#f4c430; }
-.sky{ color:#87ceeb; }
-
-.jacket-card p{
-    color:#aaa;
-}
-
-/* ADD BUTTON */
-.add-section{
-    margin-top:20px;
+select{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    background:#000;
+    color:white;
+    border:1px solid #333;
 }
 
 .add-btn{
     width:100%;
     padding:12px;
-    background:transparent;
-    border:1px solid #c200ff;
-    color:#c200ff;
+    margin-top:12px;
+    background:white;
+    color:black;
+    border:none;
     cursor:pointer;
-    transition:0.3s;
+    font-weight:600;
 }
 
 .add-btn:hover{
-    background:#c200ff;
-    color:black;
+    opacity:0.8;
 }
 
-/* SIZE DROPDOWN */
-.size-dropdown{
-    max-height:0;
-    overflow:hidden;
-    transition:max-height 0.4s ease;
-}
-
-.size-dropdown.open{
-    max-height:200px;
-    margin-top:15px;
-}
-
-.sizes{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-.sizes span{
-    padding:8px 14px;
-    border:1px solid #333;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.sizes span:hover{
-    border-color:#c200ff;
-    color:#c200ff;
-}
-
-.sizes span.active{
-    background:#c200ff;
-    color:black;
-    border-color:#c200ff;
-}
-
-/* CART DRAWER */
-.cart-drawer{
-    position:fixed;
-    top:0;
-    right:-400px;
-    width:350px;
-    height:100%;
-    background:#111;
-    border-left:1px solid #333;
-    transition:0.4s ease;
-    padding:20px;
-    z-index:1000;
-}
-
-.cart-drawer.open{
-    right:0;
-}
-
-.cart-header{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:20px;
-}
-
-.cart-items{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
-.cart-item{
-    border-bottom:1px solid #222;
-    padding-bottom:10px;
-    font-size:14px;
-}
 </style>
 </head>
 
 <body>
 
-<nav>
+<header>
+    <div class="logo" onclick="goHome()">SPOTFUT</div>
+    <div class="cart" onclick="goToCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</header>
+
+<nav style="padding:25px 8%;">
     <a href="../index.html">← Back to Home</a>
-    <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
 </nav>
 
 <section style="padding:80px 8%; text-align:center;">
     <h1>Varsity Bomber Jackets</h1>
+    <p style="color:#aaa; max-width:700px; margin:20px auto;">
+        Modern athletic heritage. Premium structure.
+        Timeless design crafted for confidence and presence.
+    </p>
 </section>
 
 <section style="padding:40px 8%;">
-
 <div class="jacket-grid">
 
-<!-- JACKET TEMPLATE -->
-<div class="jacket-card" data-name="Black Edition">
-    <div class="image-slider">
-        <img src="varsity-KW.jpg" class="active">
-        <img src="varsity-KW-detail-1.jpg">
-        <button class="slider-btn prev">&#10094;</button>
-        <button class="slider-btn next">&#10095;</button>
-    </div>
-    <h3 class="edition black">Black Edition</h3>
-    <p>Deep matte black body with sharp contrast sleeves.</p>
-    <div class="add-section">
-        <button class="add-btn">ADD TO CART</button>
-        <div class="size-dropdown">
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-        </div>
-    </div>
+<!-- BLACK EDITION (Slider) -->
+<div class="jacket-card">
+<div class="image-slider">
+<img src="varsity-KW.jpg" class="active">
+<img src="varsity-KW-detail-1.jpg">
+<img src="varsity-KW-detail-2.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
 </div>
 
-<div class="jacket-card" data-name="Green Edition">
-    <img src="varsity-GW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-    <h3 class="edition green">Green Edition</h3>
-    <p>Heritage varsity tones redefined.</p>
-    <div class="add-section">
-        <button class="add-btn">ADD TO CART</button>
-        <div class="size-dropdown">
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-        </div>
-    </div>
+<h3>Black Edition</h3>
+<p>Deep matte black body engineered for bold presence.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('Varsity Black Edition', 129, 'varsity-KW.jpg', this)">
+Add to Cart
+</button>
+</div>
+
+<!-- GREEN -->
+<div class="jacket-card">
+<img src="varsity-GW.jpg">
+<h3>Green Edition</h3>
+<p>Heritage varsity tones redefined.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('Varsity Green Edition', 129, 'varsity-GW.jpg', this)">
+Add to Cart
+</button>
+</div>
+
+<!-- ROYAL BLUE -->
+<div class="jacket-card">
+<img src="varsity-RBW.jpg">
+<h3>Royal Blue Edition</h3>
+<p>A royal statement silhouette.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('Varsity Royal Blue Edition', 129, 'varsity-RBW.jpg', this)">
+Add to Cart
+</button>
 </div>
 
 </div>
 </section>
 
-<!-- CART DRAWER -->
-<div class="cart-drawer" id="cart-drawer">
-    <div class="cart-header">
-        <h3>Your Cart</h3>
-        <span id="close-cart" style="cursor:pointer;">✕</span>
-    </div>
-    <div class="cart-items" id="cart-items"></div>
-</div>
-
 <script>
-document.addEventListener("DOMContentLoaded", function () {
 
-let cart = [];
-
-/* SLIDERS */
-document.querySelectorAll(".image-slider").forEach(slider => {
-    const images = slider.querySelectorAll("img");
-    const nextBtn = slider.querySelector(".next");
-    const prevBtn = slider.querySelector(".prev");
-    let index = 0;
-
-    function showImage(i){
-        images.forEach(img => img.classList.remove("active"));
-        images[i].classList.add("active");
-    }
-
-    if(nextBtn){
-        nextBtn.addEventListener("click", () => {
-            index = (index + 1) % images.length;
-            showImage(index);
-        });
-
-        prevBtn.addEventListener("click", () => {
-            index = (index - 1 + images.length) % images.length;
-            showImage(index);
-        });
-    }
-});
-
-/* SIZE DROPDOWN */
-document.querySelectorAll(".add-btn").forEach(button => {
-    button.addEventListener("click", function(){
-        const dropdown = this.nextElementSibling;
-        document.querySelectorAll(".size-dropdown").forEach(d => {
-            if(d !== dropdown) d.classList.remove("open");
-        });
-        dropdown.classList.toggle("open");
-    });
-});
-
-/* ADD TO CART */
-document.querySelectorAll(".sizes span").forEach(size => {
-    size.addEventListener("click", function(){
-
-        const card = this.closest(".jacket-card");
-        const name = card.dataset.name;
-        const selectedSize = this.textContent;
-
-        const existing = cart.find(item => item.name === name && item.size === selectedSize);
-
-        if(existing){
-            existing.quantity += 1;
-        } else {
-            cart.push({ name, size:selectedSize, quantity:1 });
-        }
-
-        updateCartUI();
-        document.getElementById("cart-drawer").classList.add("open");
-    });
-});
-
-function updateCartUI(){
-    const cartItems = document.getElementById("cart-items");
-    const cartCount = document.getElementById("cart-count");
-    cartItems.innerHTML = "";
-    let total = 0;
-
-    cart.forEach(item => {
-        total += item.quantity;
-        cartItems.innerHTML += `
-            <div class="cart-item">
-                <strong>${item.name}</strong><br>
-                Size: ${item.size}<br>
-                Qty: ${item.quantity}
-            </div>
-        `;
-    });
-
-    cartCount.textContent = total;
+/* CART COUNT */
+function updateCartCount(){
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+document.getElementById("cart-count").innerText = cart.length;
 }
 
-document.getElementById("close-cart").addEventListener("click", function(){
-    document.getElementById("cart-drawer").classList.remove("open");
+/* ADD TO CART */
+function addToCart(name, price, image, btn){
+
+let card = btn.closest(".jacket-card");
+let size = card.querySelector(".size").value;
+
+if(!size){
+alert("Please select a size");
+return;
+}
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+cart.push({
+name:name,
+price:price,
+size:size,
+image:image
 });
 
-document.querySelector(".cart-icon").addEventListener("click", function(){
-    document.getElementById("cart-drawer").classList.add("open");
+localStorage.setItem("cart", JSON.stringify(cart));
+updateCartCount();
+
+alert("Added to cart");
+}
+
+/* NAVIGATION */
+function goHome(){
+window.location.href="../index.html";
+}
+
+function goToCart(){
+window.location.href="../index.html#cart";
+}
+
+/* SLIDER */
+document.querySelectorAll(".image-slider").forEach(slider=>{
+let images = slider.querySelectorAll("img");
+let next = slider.querySelector(".next");
+let prev = slider.querySelector(".prev");
+let index = 0;
+
+function show(i){
+images.forEach(img=>img.classList.remove("active"));
+images[i].classList.add("active");
+}
+
+next.addEventListener("click", ()=>{
+index=(index+1)%images.length;
+show(index);
 });
 
+prev.addEventListener("click", ()=>{
+index=(index-1+images.length)%images.length;
+show(index);
 });
+});
+
+updateCartCount();
+
 </script>
 
 </body>
