@@ -69,6 +69,11 @@ a{
     opacity:0.8;
 }
 
+<!-- 🔥 CLEAR CART BUTTON (Temporary) -->
+<button onclick="clearCart()" 
+style="margin-top:20px; padding:10px 16px; background:red; color:white; border:none; cursor:pointer;">
+Clear Cart
+    
 </style>
 </head>
 
@@ -89,6 +94,11 @@ a{
 
 <script>
 
+function clearCart(){
+    localStorage.removeItem("cart");
+    location.reload();
+}
+    
 /* PRODUCT DATABASE */
 const PRODUCTS = {
   "varsity-black": { name: "Varsity Black Edition", price: 59 },
