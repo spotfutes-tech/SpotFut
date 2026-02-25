@@ -69,11 +69,16 @@ a{
     opacity:0.8;
 }
 
-<!-- 🔥 CLEAR CART BUTTON (Temporary) -->
-<button onclick="clearCart()" 
-style="margin-top:20px; padding:10px 16px; background:red; color:white; border:none; cursor:pointer;">
-Clear Cart
-    
+/* Clear Cart Button */
+.clear-btn{
+    margin-top:20px;
+    padding:10px 16px;
+    background:red;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
 </style>
 </head>
 
@@ -87,18 +92,16 @@ Clear Cart
 
 <h3 id="cart-total" class="total"></h3>
 
-<!-- CHECKOUT BUTTON -->
 <button class="checkout-btn" onclick="goToCheckout()">
     Proceed to Checkout
 </button>
 
+<button class="clear-btn" onclick="clearCart()">
+    Clear Cart
+</button>
+
 <script>
 
-function clearCart(){
-    localStorage.removeItem("cart");
-    location.reload();
-}
-    
 /* PRODUCT DATABASE */
 const PRODUCTS = {
   "varsity-black": { name: "Varsity Black Edition", price: 59 },
@@ -154,7 +157,11 @@ function removeItem(index){
   loadCart();
 }
 
-/* Checkout (placeholder for now) */
+function clearCart(){
+  localStorage.removeItem("cart");
+  loadCart();
+}
+
 function goToCheckout(){
     alert("Checkout system will be connected soon.");
 }
