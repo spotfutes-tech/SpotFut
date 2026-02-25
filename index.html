@@ -9,6 +9,7 @@
 
 <style>
 
+/* RESET */
 *{
     margin:0;
     padding:0;
@@ -46,6 +47,22 @@ nav a{
 
 nav a:hover{
     color:#c200ff;
+}
+
+/* CART ICON */
+.cart-icon{
+    margin-left:30px;
+    cursor:pointer;
+    position:relative;
+}
+
+#cart-count{
+    background:white;
+    color:black;
+    font-size:12px;
+    padding:3px 7px;
+    border-radius:50%;
+    margin-left:5px;
 }
 
 /* HERO */
@@ -99,23 +116,6 @@ nav a:hover{
     font-weight:300;
 }
 
-.hero-content button{
-    margin-top:35px;
-    padding:14px 38px;
-    background:transparent;
-    border:1px solid white;
-    color:white;
-    cursor:pointer;
-    transition:0.4s;
-    letter-spacing:2px;
-    font-size:0.8rem;
-}
-
-.hero-content button:hover{
-    border-color:#c200ff;
-    color:#c200ff;
-}
-
 /* SECTIONS */
 .section{
     padding:120px 8%;
@@ -135,7 +135,7 @@ nav a:hover{
     line-height:1.8;
 }
 
-/* COLLECTION GRID */
+/* GRID */
 .grid{
     margin-top:70px;
     display:grid;
@@ -165,6 +165,28 @@ nav a:hover{
     font-size:0.9rem;
 }
 
+/* CART SECTION */
+#cart-section{
+    background:#111;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    border-bottom:1px solid #222;
+    padding-bottom:15px;
+}
+
+.remove-btn{
+    background:none;
+    border:1px solid #444;
+    color:white;
+    padding:6px 12px;
+    cursor:pointer;
+}
+
 /* FOOTER */
 footer{
     padding:40px;
@@ -181,15 +203,24 @@ footer{
 
 <!-- NAV -->
 <nav>
+
     <video autoplay muted loop playsinline>
         <source src="logo.mp4" type="video/mp4">
     </video>
 
-    <div>
+    <div style="display:flex; align-items:center;">
+
         <a href="#">Collection</a>
         <a href="#">About</a>
         <a href="contact.html">Contact</a>
+
+        <!-- CART ICON -->
+        <div class="cart-icon" onclick="scrollToCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+
     </div>
+
 </nav>
 
 <!-- HERO -->
@@ -205,9 +236,7 @@ footer{
         <h1>Engineered Precision.<br>Elevated Identity.</h1>
         <p>
             SpotFut blends performance innovation with modern luxury aesthetics.
-            Designed for movement, confidence, and presence.
         </p>
-        <button>EXPLORE COLLECTION</button>
     </div>
 
 </section>
@@ -216,36 +245,27 @@ footer{
 <section class="section">
 
     <h2>Signature Collection</h2>
-    <p>
-        Crafted with premium materials and minimalist design philosophy.
-        Built for athletes and creators who demand excellence.
-    </p>
 
     <div class="grid">
 
-        <!--<div class="card">
-            <h3>Women's Performance Set</h3>
-            <p>Streamlined silhouette. Sculpted comfort.</p>
-        </div> -->
         <a href="elitefootballkit.html" style="text-decoration:none; color:inherit;">
         <div class="card">
             <h3>Elite Football Kit</h3>
             <p>Lightweight. Breathable. Commanding presence.</p>
         </div>
         </a>
-            
 
         <a href="urbanhoodies.html" style="text-decoration:none; color:inherit;">
         <div class="card">
             <h3>Urban Hoodie</h3>
-            <p>Minimal structure. Premium Design. Maximum impact. </p>
+            <p>Minimal structure. Premium design.</p>
         </div>
         </a>
 
         <a href="VarsityBomber/jackets.html" style="text-decoration:none; color:inherit;">
         <div class="card">
-        <h3>Varsity Bomber Jackets</h3>
-        <p>Modern athletic heritage. Premium structure. Timeless design.</p>
+            <h3>Varsity Bomber Jackets</h3>
+            <p>Modern athletic heritage.</p>
         </div>
         </a>
 
@@ -253,55 +273,90 @@ footer{
 
 </section>
 
-<!-- SPOTFUT PHILOSOPHY -->
+<!-- CART SECTION -->
+<section id="cart-section" class="section" style="display:none;">
+
+    <h2>Your Cart</h2>
+
+    <div id="cart-items"></div>
+
+    <h3 id="cart-total" style="margin-top:30px;"></h3>
+
+</section>
+
+<!-- PHILOSOPHY -->
 <section class="section">
 
     <h2>The SpotFut Philosophy</h2>
+
     <p>
-        SpotFut represents modern athletic luxury — where performance engineering
-        meets refined aesthetics. Every piece is designed to move with you,
-        elevate your presence, and define confidence through simplicity.
+        SpotFut represents modern athletic luxury — where performance meets refined aesthetics.
     </p>
 
 </section>
 
 <!-- FOOTER -->
-
-<footer style="padding:60px 8%; text-align:center; border-top:1px solid #1a1a1a;">
-
-    <h3 style="
-        font-family:'Playfair Display', serif;
-        margin-bottom:25px;
-        color:#e5e5e5;
-        letter-spacing:1px;
-    ">
-        Connect With Us
-    </h3>
-
-    <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
-
-        <a href="https://www.instagram.com/spotfutwearseu/" target="_blank"
-           style="color:white; text-decoration:none; font-size:0.9rem; transition:0.3s;">
-           Instagram
-        </a>
-
-        <a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank"
-           style="color:white; text-decoration:none; font-size:0.9rem; transition:0.3s;">
-           Facebook
-        </a>
-
-        <a href="https://www.tiktok.com/@spotfutwearseu?_r=1&_t=ZN-94CTi4d32iE" target="_blank"
-           style="color:white; text-decoration:none; font-size:0.9rem; transition:0.3s;">
-           TikTok
-        </a>
-
-    </div>
-
-    <p style="margin-top:30px; color:#666; font-size:0.8rem;">
-        © 2026 SpotFut. All Rights Reserved.
-    </p>
-
+<footer>
+    © 2026 SpotFut. All Rights Reserved.
 </footer>
+
+<script>
+
+/* CART FUNCTIONS */
+
+function updateCartCount(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").innerText = cart.length;
+}
+
+function displayCart(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let container = document.getElementById("cart-items");
+    let total = 0;
+
+    container.innerHTML = "";
+
+    if(cart.length === 0){
+        container.innerHTML = "<p style='color:#777;'>Your cart is empty.</p>";
+        document.getElementById("cart-total").innerText = "";
+        return;
+    }
+
+    cart.forEach((item, index)=>{
+        total += item.price;
+
+        container.innerHTML += `
+        <div class="cart-item">
+            <div>
+                <strong>${item.name}</strong><br>
+                Size: ${item.size}<br>
+                €${item.price}
+            </div>
+            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        </div>
+        `;
+    });
+
+    document.getElementById("cart-total").innerText = "Total: €" + total;
+}
+
+function removeItem(index){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index,1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+    updateCartCount();
+}
+
+function scrollToCart(){
+    document.getElementById("cart-section").style.display="block";
+    document.getElementById("cart-section").scrollIntoView({behavior:"smooth"});
+    displayCart();
+}
+
+updateCartCount();
+
+</script>
 
 </body>
 </html>
