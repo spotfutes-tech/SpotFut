@@ -15,33 +15,50 @@ body{
     font-family:'Poppins', sans-serif;
 }
 
-/* Navigation */
+/* NAV */
+nav{
+    padding:25px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
 nav a{
     color:white;
     text-decoration:none;
     font-weight:500;
 }
 
-/* Page Title */
+.cart-icon{
+    cursor:pointer;
+}
+
+#cart-count{
+    background:#c200ff;
+    padding:2px 8px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* TITLE */
 h1{
     font-family:'Playfair Display', serif;
     font-size:3rem;
 }
 
-/* Grid */
+/* GRID */
 .jacket-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
     gap:40px;
 }
 
-/* Card */
+/* CARD */
 .jacket-card{
     background:#111;
     padding:20px;
     border:1px solid #1e1e1e;
     transition:0.4s ease;
-    overflow:hidden;
 }
 
 .jacket-card:hover{
@@ -49,8 +66,7 @@ h1{
     transform:translateY(-8px);
 }
 
-/* ---------- SLIDER ---------- */
-
+/* SLIDER */
 .image-slider{
     position:relative;
     width:100%;
@@ -85,10 +101,9 @@ h1{
 .prev{ left:10px; }
 .next{ right:10px; }
 
-/* Edition Colors */
+/* EDITION COLORS */
 .edition{
     font-weight:600;
-    letter-spacing:1px;
     margin-bottom:10px;
 }
 
@@ -101,11 +116,9 @@ h1{
 
 .jacket-card p{
     color:#aaa;
-    line-height:1.6;
 }
 
-/* --- ADD TO CART --- */
-
+/* ADD BUTTON */
 .add-section{
     margin-top:20px;
 }
@@ -117,8 +130,7 @@ h1{
     border:1px solid #c200ff;
     color:#c200ff;
     cursor:pointer;
-    transition:0.3s ease;
-    font-weight:500;
+    transition:0.3s;
 }
 
 .add-btn:hover{
@@ -126,6 +138,7 @@ h1{
     color:black;
 }
 
+/* SIZE DROPDOWN */
 .size-dropdown{
     max-height:0;
     overflow:hidden;
@@ -135,12 +148,6 @@ h1{
 .size-dropdown.open{
     max-height:200px;
     margin-top:15px;
-}
-
-.size-dropdown p{
-    font-size:14px;
-    margin-bottom:10px;
-    color:#aaa;
 }
 
 .sizes{
@@ -166,46 +173,73 @@ h1{
     color:black;
     border-color:#c200ff;
 }
+
+/* CART DRAWER */
+.cart-drawer{
+    position:fixed;
+    top:0;
+    right:-400px;
+    width:350px;
+    height:100%;
+    background:#111;
+    border-left:1px solid #333;
+    transition:0.4s ease;
+    padding:20px;
+    z-index:1000;
+}
+
+.cart-drawer.open{
+    right:0;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.cart-items{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.cart-item{
+    border-bottom:1px solid #222;
+    padding-bottom:10px;
+    font-size:14px;
+}
 </style>
 </head>
 
 <body>
 
-<nav style="padding:25px 8%;">
+<nav>
     <a href="../index.html">← Back to Home</a>
+    <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
 </nav>
 
 <section style="padding:80px 8%; text-align:center;">
     <h1>Varsity Bomber Jackets</h1>
-    <p style="color:#aaa; max-width:700px; margin:20px auto; line-height:1.8;">
-        Modern athletic heritage. Premium structure.
-        Timeless design crafted for confidence and presence.
-    </p>
 </section>
 
 <section style="padding:40px 8%;">
 
 <div class="jacket-grid">
 
-<!-- JACKET TEMPLATE REPEATED -->
-
-<div class="jacket-card">
+<!-- JACKET TEMPLATE -->
+<div class="jacket-card" data-name="Black Edition">
     <div class="image-slider">
         <img src="varsity-KW.jpg" class="active">
         <img src="varsity-KW-detail-1.jpg">
-        <img src="varsity-KW-detail-2.jpg">
-        <img src="varsity-KW-detail-3.jpg">
-        <img src="varsity-KW-detail-4.jpg">
         <button class="slider-btn prev">&#10094;</button>
         <button class="slider-btn next">&#10095;</button>
     </div>
     <h3 class="edition black">Black Edition</h3>
-    <p>The signature essential. Deep matte black body with sharp contrast sleeves.</p>
-
+    <p>Deep matte black body with sharp contrast sleeves.</p>
     <div class="add-section">
         <button class="add-btn">ADD TO CART</button>
         <div class="size-dropdown">
-            <p>Select Size</p>
             <div class="sizes">
                 <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
             </div>
@@ -213,76 +247,13 @@ h1{
     </div>
 </div>
 
-<!-- Copy same structure for other jackets -->
-
-<div class="jacket-card">
+<div class="jacket-card" data-name="Green Edition">
     <img src="varsity-GW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
     <h3 class="edition green">Green Edition</h3>
     <p>Heritage varsity tones redefined.</p>
     <div class="add-section">
         <button class="add-btn">ADD TO CART</button>
         <div class="size-dropdown">
-            <p>Select Size</p>
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="jacket-card">
-    <img src="varsity-RBW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-    <h3 class="edition blue">Royal Blue Edition</h3>
-    <p>A royal statement piece.</p>
-    <div class="add-section">
-        <button class="add-btn">ADD TO CART</button>
-        <div class="size-dropdown">
-            <p>Select Size</p>
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="jacket-card">
-    <img src="varsity-CK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-    <h3 class="edition latte">Latte Edition</h3>
-    <p>Understated luxury with neutral tones.</p>
-    <div class="add-section">
-        <button class="add-btn">ADD TO CART</button>
-        <div class="size-dropdown">
-            <p>Select Size</p>
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="jacket-card">
-    <img src="varsity-YK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-    <h3 class="edition solar">Solar Edition</h3>
-    <p>Bold yellow accent for confident expression.</p>
-    <div class="add-section">
-        <button class="add-btn">ADD TO CART</button>
-        <div class="size-dropdown">
-            <p>Select Size</p>
-            <div class="sizes">
-                <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="jacket-card">
-    <img src="varsity-SBK.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
-    <h3 class="edition sky">Sky Edition</h3>
-    <p>Fresh sky tone designed for modern street presence.</p>
-    <div class="add-section">
-        <button class="add-btn">ADD TO CART</button>
-        <div class="size-dropdown">
-            <p>Select Size</p>
             <div class="sizes">
                 <span>XS</span><span>S</span><span>M</span><span>L</span><span>XL</span>
             </div>
@@ -293,10 +264,21 @@ h1{
 </div>
 </section>
 
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+        <h3>Your Cart</h3>
+        <span id="close-cart" style="cursor:pointer;">✕</span>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+</div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-/* MULTI SLIDER */
+let cart = [];
+
+/* SLIDERS */
 document.querySelectorAll(".image-slider").forEach(slider => {
     const images = slider.querySelectorAll("img");
     const nextBtn = slider.querySelector(".next");
@@ -308,36 +290,77 @@ document.querySelectorAll(".image-slider").forEach(slider => {
         images[i].classList.add("active");
     }
 
-    nextBtn.addEventListener("click", () => {
-        index = (index + 1) % images.length;
-        showImage(index);
-    });
+    if(nextBtn){
+        nextBtn.addEventListener("click", () => {
+            index = (index + 1) % images.length;
+            showImage(index);
+        });
 
-    prevBtn.addEventListener("click", () => {
-        index = (index - 1 + images.length) % images.length;
-        showImage(index);
-    });
+        prevBtn.addEventListener("click", () => {
+            index = (index - 1 + images.length) % images.length;
+            showImage(index);
+        });
+    }
 });
 
 /* SIZE DROPDOWN */
 document.querySelectorAll(".add-btn").forEach(button => {
     button.addEventListener("click", function(){
         const dropdown = this.nextElementSibling;
-
         document.querySelectorAll(".size-dropdown").forEach(d => {
             if(d !== dropdown) d.classList.remove("open");
         });
-
         dropdown.classList.toggle("open");
     });
 });
 
+/* ADD TO CART */
 document.querySelectorAll(".sizes span").forEach(size => {
     size.addEventListener("click", function(){
-        const siblings = this.parentElement.querySelectorAll("span");
-        siblings.forEach(s => s.classList.remove("active"));
-        this.classList.add("active");
+
+        const card = this.closest(".jacket-card");
+        const name = card.dataset.name;
+        const selectedSize = this.textContent;
+
+        const existing = cart.find(item => item.name === name && item.size === selectedSize);
+
+        if(existing){
+            existing.quantity += 1;
+        } else {
+            cart.push({ name, size:selectedSize, quantity:1 });
+        }
+
+        updateCartUI();
+        document.getElementById("cart-drawer").classList.add("open");
     });
+});
+
+function updateCartUI(){
+    const cartItems = document.getElementById("cart-items");
+    const cartCount = document.getElementById("cart-count");
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+        total += item.quantity;
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <strong>${item.name}</strong><br>
+                Size: ${item.size}<br>
+                Qty: ${item.quantity}
+            </div>
+        `;
+    });
+
+    cartCount.textContent = total;
+}
+
+document.getElementById("close-cart").addEventListener("click", function(){
+    document.getElementById("cart-drawer").classList.remove("open");
+});
+
+document.querySelector(".cart-icon").addEventListener("click", function(){
+    document.getElementById("cart-drawer").classList.add("open");
 });
 
 });
