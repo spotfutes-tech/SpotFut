@@ -175,10 +175,12 @@ select{
 </select>
 
 <button class="add-btn"
-onclick="addToCart('Varsity Black Edition',59,'varsity-KW.jpg',this)">
+onclick="addToCart('varsity-black','varsity-KW.jpg',this)">
 Add to Cart
 </button>
 </div>
+
+
 
 <!-- 2 GREEN -->
 <div class="jacket-card">
@@ -195,7 +197,7 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('Varsity Green Edition',59,'varsity-GW.jpg',this)">
+onclick="addToCart('varsity-green','varsity-GW.jpg',this)"
 Add to Cart
 </button>
 </div>
@@ -215,7 +217,7 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('Varsity Royal Blue Edition',59,'varsity-RBW.jpg',this)">
+onclick="addToCart('varsity-blue','varsity-RBW.jpg',this)"
 Add to Cart
 </button>
 </div>
@@ -235,7 +237,7 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('Varsity Latte Edition',59,'varsity-CK.jpg',this)">
+onclick="addToCart('varsity-latte','varsity-CK.jpg',this)"
 Add to Cart
 </button>
 </div>
@@ -255,7 +257,7 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('Varsity Solar Edition',59,'varsity-YK.jpg',this)">
+onclick="addToCart('varsity-solar','varsity-YK.jpg',this)"
 Add to Cart
 </button>
 </div>
@@ -275,7 +277,7 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('Varsity Sky Edition',59,'varsity-SBK.jpg',this)">
+onclick="addToCart('varsity-sky','varsity-SBK.jpg',this)"
 Add to Cart
 </button>
 </div>
@@ -284,62 +286,83 @@ Add to Cart
 
 <script>
 
+/* -----------------------
+   PRODUCT PRICE DATABASE
+------------------------*/
+const PRODUCTS = {
+  "varsity-black": { name: "Varsity Black Edition", price: 59 },
+  "varsity-green": { name: "Varsity Green Edition", price: 59 },
+  "varsity-blue": { name: "Varsity Royal Blue Edition", price: 59 },
+  "varsity-latte": { name: "Varsity Latte Edition", price: 59 },
+  "varsity-solar": { name: "Varsity Solar Edition", price: 59 },
+  "varsity-sky": { name: "Varsity Sky Edition", price: 59 }
+};
+
 /* CART COUNT */
 function updateCartCount(){
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-document.getElementById("cart-count").innerText = cart.length;
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").innerText = cart.length;
 }
 
 /* ADD TO CART */
-function addToCart(name,price,image,btn){
+function addToCart(productId, image, btn){
 
-let card = btn.closest(".jacket-card");
-let size = card.querySelector(".size").value;
+  let card = btn.closest(".jacket-card");
+  let size = card.querySelector(".size").value;
 
-if(!size){
-alert("Please select a size");
-return;
+  if(!size){
+    alert("Please select a size");
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+    id: productId,
+    size: size,
+    image: image
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+
+  alert("Added to cart");
 }
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-cart.push({name,price,size,image});
-
-localStorage.setItem("cart",JSON.stringify(cart));
-updateCartCount();
-alert("Added to cart");
-}
-
-/* NAV */
+/* NAVIGATION */
 function goHome(){
-window.location.href="../index.html";
+  window.location.href="../index.html";
 }
 
 function goToCart(){
-window.location.href="../cart.html";
+  window.location.href="../cart.html";
 }
 
 /* SLIDER */
 document.querySelectorAll(".image-slider").forEach(slider=>{
-let images = slider.querySelectorAll("img");
-let next = slider.querySelector(".next");
-let prev = slider.querySelector(".prev");
-let index = 0;
+  let images = slider.querySelectorAll("img");
+  let next = slider.querySelector(".next");
+  let prev = slider.querySelector(".prev");
+  let index = 0;
 
-function show(i){
-images.forEach(img=>img.classList.remove("active"));
-images[i].classList.add("active");
-}
+  function show(i){
+    images.forEach(img=>img.classList.remove("active"));
+    images[i].classList.add("active");
+  }
 
-next.addEventListener("click",()=>{
-index=(index+1)%images.length;
-show(index);
-});
+  if(next){
+    next.addEventListener("click",()=>{
+      index=(index+1)%images.length;
+      show(index);
+    });
+  }
 
-prev.addEventListener("click",()=>{
-index=(index-1+images.length)%images.length;
-show(index);
-});
+  if(prev){
+    prev.addEventListener("click",()=>{
+      index=(index-1+images.length)%images.length;
+      show(index);
+    });
+  }
 });
 
 updateCartCount();
