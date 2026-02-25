@@ -53,6 +53,7 @@ header{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
     gap:40px;
+    padding:40px 8%;
 }
 
 .jacket-card{
@@ -65,6 +66,14 @@ header{
 .jacket-card:hover{
     border-color:#444;
     transform:translateY(-8px);
+}
+
+/* IMAGES */
+.jacket-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    margin-bottom:20px;
 }
 
 /* SLIDER */
@@ -102,6 +111,7 @@ header{
 .prev{ left:10px; }
 .next{ right:10px; }
 
+/* SIZE */
 select{
     width:100%;
     padding:10px;
@@ -139,33 +149,21 @@ select{
     </div>
 </header>
 
-<nav style="padding:25px 8%;">
-    <a href="../index.html" style="color:white; text-decoration:none;">← Back to Home</a>
-</nav>
+<section class="jacket-grid">
 
-<section style="padding:80px 8%; text-align:center;">
-    <h1 style="font-family:'Playfair Display', serif; font-size:3rem;">
-        Varsity Bomber Jackets
-    </h1>
-</section>
-
-<section style="padding:40px 8%;">
-<div class="jacket-grid">
-
-<!-- BLACK -->
+<!-- 1 BLACK (WITH SLIDER) -->
 <div class="jacket-card">
-
 <div class="image-slider">
 <img src="varsity-KW.jpg" class="active">
 <img src="varsity-KW-detail-1.jpg">
 <img src="varsity-KW-detail-2.jpg">
+<img src="varsity-KW-detail-3.jpg">
 <button class="slider-btn prev">&#10094;</button>
 <button class="slider-btn next">&#10095;</button>
 </div>
 
 <h3>Black Edition</h3>
-<p>The signature essential. Deep matte black body with sharp contrast sleeves,
-                engineered for a bold, commanding presence.</p>
+<p>Deep matte black with premium structure.</p>
 
 <select class="size">
 <option value="">Select Size</option>
@@ -176,17 +174,16 @@ select{
 </select>
 
 <button class="add-btn"
-onclick="addToCart('Varsity Black Edition', 129, 'varsity-KW.jpg', this)">
+onclick="addToCart('Varsity Black Edition',129,'varsity-KW.jpg',this)">
 Add to Cart
 </button>
-
 </div>
 
-<!-- GREEN -->
+<!-- 2 GREEN -->
 <div class="jacket-card">
-<img src="varsity-GW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
+<img src="varsity-GW.jpg">
 <h3>Green Edition</h3>
-<p>Heritage varsity tones redefined with structured tailoring.</p>
+<p>Heritage varsity tones redefined.</p>
 
 <select class="size">
 <option value="">Select Size</option>
@@ -197,24 +194,103 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('Varsity Green Edition', 129, 'varsity-GW.jpg', this)">
+onclick="addToCart('Varsity Green Edition',129,'varsity-GW.jpg',this)">
 Add to Cart
 </button>
 </div>
 
+<!-- 3 ROYAL BLUE -->
+<div class="jacket-card">
+<img src="varsity-RBW.jpg">
+<h3>Royal Blue Edition</h3>
+<p>Bold athletic statement piece.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('Varsity Royal Blue Edition',129,'varsity-RBW.jpg',this)">
+Add to Cart
+</button>
 </div>
+
+<!-- 4 LATTE -->
+<div class="jacket-card">
+<img src="varsity-CK.jpg">
+<h3>Latte Edition</h3>
+<p>Refined neutral luxury.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('Varsity Latte Edition',129,'varsity-CK.jpg',this)">
+Add to Cart
+</button>
+</div>
+
+<!-- 5 SOLAR -->
+<div class="jacket-card">
+<img src="varsity-YK.jpg">
+<h3>Solar Edition</h3>
+<p>Energetic bold yellow design.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('Varsity Solar Edition',129,'varsity-YK.jpg',this)">
+Add to Cart
+</button>
+</div>
+
+<!-- 6 SKY -->
+<div class="jacket-card">
+<img src="varsity-SBK.jpg">
+<h3>Sky Edition</h3>
+<p>Fresh modern street presence.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('Varsity Sky Edition',129,'varsity-SBK.jpg',this)">
+Add to Cart
+</button>
+</div>
+
 </section>
 
 <script>
 
 /* CART COUNT */
 function updateCartCount(){
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    document.getElementById("cart-count").innerText = cart.length;
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+document.getElementById("cart-count").innerText = cart.length;
 }
 
 /* ADD TO CART */
-function addToCart(name, price, image, btn){
+function addToCart(name,price,image,btn){
 
 let card = btn.closest(".jacket-card");
 let size = card.querySelector(".size").value;
@@ -226,20 +302,14 @@ return;
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-cart.push({
-name:name,
-price:price,
-size:size,
-image:image
-});
+cart.push({name,price,size,image});
 
-localStorage.setItem("cart", JSON.stringify(cart));
+localStorage.setItem("cart",JSON.stringify(cart));
 updateCartCount();
-
 alert("Added to cart");
 }
 
-/* NAVIGATION */
+/* NAV */
 function goHome(){
 window.location.href="../index.html";
 }
@@ -260,12 +330,12 @@ images.forEach(img=>img.classList.remove("active"));
 images[i].classList.add("active");
 }
 
-next.addEventListener("click", ()=>{
+next.addEventListener("click",()=>{
 index=(index+1)%images.length;
 show(index);
 });
 
-prev.addEventListener("click", ()=>{
+prev.addEventListener("click",()=>{
 index=(index-1+images.length)%images.length;
 show(index);
 });
