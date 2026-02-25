@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart | SpotFut</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins', sans-serif;
+    padding:60px 8%;
+}
+
+h1{
+    font-family:'Playfair Display', serif;
+    margin-bottom:40px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid #222;
+    padding:20px 0;
+}
+
+.remove-btn{
+    background:none;
+    border:1px solid #444;
+    color:white;
+    padding:6px 12px;
+    cursor:pointer;
+}
+
+.total{
+    margin-top:40px;
+    font-size:1.2rem;
+}
+
+.checkout{
+    margin-top:30px;
+    padding:14px 30px;
+    background:white;
+    color:black;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+}
+
+a{
+    color:#aaa;
+    text-decoration:none;
+    display:inline-block;
+    margin-bottom:30px;
+}
+
+</style>
+</head>
+
+<body>
+
+<a href="index.html">← Back to Home</a>
+
+<h1>Your Cart</h1>
+
+<div id="cart-items"></div>
+
+<div class="total" id="cart-total"></div>
+
+<button class="checkout">Proceed to Checkout</button>
+
+<script>
+
+function loadCart(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let container = document.getElementById("cart-items");
+    let total = 0;
+
+    container.innerHTML = "";
+
+    if(cart.length === 0){
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        return;
+    }
+
+    cart.forEach((item, index)=>{
+        total += item.price;
+
+        container.innerHTML += `
+        <div class="cart-item">
+            <div>
+                <strong>${item.name}</strong><br>
+                Size: ${item.size}<br>
+                €${item.price}
+            </div>
+            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        </div>
+        `;
+    });
+
+    document.getElementById("cart-total").innerText = "Total: €" + total;
+}
+
+function removeItem(index){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.splice(index,1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
+}
+
+loadCart();
+
+</script>
+
+</body>
+</html>
