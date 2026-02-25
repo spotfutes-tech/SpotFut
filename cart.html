@@ -96,9 +96,7 @@ a{
     Proceed to Checkout
 </button>
 
-<button class="clear-btn" onclick="clearCart()">
-    Clear Cart
-</button>
+
 
 <script>
 
@@ -157,10 +155,7 @@ function removeItem(index){
   loadCart();
 }
 
-function clearCart(){
-  localStorage.removeItem("cart");
-  loadCart();
-}
+
 
 function goToCheckout(){
     alert("Checkout system will be connected soon.");
