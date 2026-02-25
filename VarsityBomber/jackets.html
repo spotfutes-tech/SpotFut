@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body{
     margin:0;
     background:#0b0b0b;
@@ -22,9 +23,9 @@ header{
     align-items:center;
     padding:25px 8%;
     border-bottom:1px solid #1e1e1e;
-    background:#0b0b0b;
     position:sticky;
     top:0;
+    background:#0b0b0b;
     z-index:1000;
 }
 
@@ -47,32 +48,18 @@ header{
     margin-left:6px;
 }
 
-/* Navigation */
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-}
-
-/* Title */
-h1{
-    font-family:'Playfair Display', serif;
-    font-size:3rem;
-}
-
-/* Grid */
+/* GRID */
 .jacket-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
     gap:40px;
 }
 
-/* Card */
 .jacket-card{
     background:#111;
     padding:20px;
     border:1px solid #1e1e1e;
-    transition:0.4s ease;
+    transition:0.4s;
 }
 
 .jacket-card:hover{
@@ -80,15 +67,7 @@ h1{
     transform:translateY(-8px);
 }
 
-/* Images */
-.jacket-card img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-    margin-bottom:20px;
-}
-
-/* Slider */
+/* SLIDER */
 .image-slider{
     position:relative;
     width:100%;
@@ -98,6 +77,9 @@ h1{
 }
 
 .image-slider img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
     display:none;
 }
 
@@ -151,28 +133,28 @@ select{
 
 <header>
     <div class="logo" onclick="goHome()">SPOTFUT</div>
+
     <div class="cart" onclick="goToCart()">
         🛒 <span id="cart-count">0</span>
     </div>
 </header>
 
 <nav style="padding:25px 8%;">
-    <a href="../index.html">← Back to Home</a>
+    <a href="../index.html" style="color:white; text-decoration:none;">← Back to Home</a>
 </nav>
 
 <section style="padding:80px 8%; text-align:center;">
-    <h1>Varsity Bomber Jackets</h1>
-    <p style="color:#aaa; max-width:700px; margin:20px auto;">
-        Modern athletic heritage. Premium structure.
-        Timeless design crafted for confidence and presence.
-    </p>
+    <h1 style="font-family:'Playfair Display', serif; font-size:3rem;">
+        Varsity Bomber Jackets
+    </h1>
 </section>
 
 <section style="padding:40px 8%;">
 <div class="jacket-grid">
 
-<!-- BLACK EDITION (Slider) -->
+<!-- BLACK -->
 <div class="jacket-card">
+
 <div class="image-slider">
 <img src="varsity-KW.jpg" class="active">
 <img src="varsity-KW-detail-1.jpg">
@@ -182,7 +164,8 @@ select{
 </div>
 
 <h3>Black Edition</h3>
-<p>Deep matte black body engineered for bold presence.</p>
+<p>The signature essential. Deep matte black body with sharp contrast sleeves,
+                engineered for a bold, commanding presence.</p>
 
 <select class="size">
 <option value="">Select Size</option>
@@ -196,13 +179,14 @@ select{
 onclick="addToCart('Varsity Black Edition', 129, 'varsity-KW.jpg', this)">
 Add to Cart
 </button>
+
 </div>
 
 <!-- GREEN -->
 <div class="jacket-card">
-<img src="varsity-GW.jpg">
+<img src="varsity-GW.jpg" style="width:100%; height:350px; object-fit:cover; margin-bottom:20px;">
 <h3>Green Edition</h3>
-<p>Heritage varsity tones redefined.</p>
+<p>Heritage varsity tones redefined with structured tailoring.</p>
 
 <select class="size">
 <option value="">Select Size</option>
@@ -218,26 +202,6 @@ Add to Cart
 </button>
 </div>
 
-<!-- ROYAL BLUE -->
-<div class="jacket-card">
-<img src="varsity-RBW.jpg">
-<h3>Royal Blue Edition</h3>
-<p>A royal statement silhouette.</p>
-
-<select class="size">
-<option value="">Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
-
-<button class="add-btn"
-onclick="addToCart('Varsity Royal Blue Edition', 129, 'varsity-RBW.jpg', this)">
-Add to Cart
-</button>
-</div>
-
 </div>
 </section>
 
@@ -245,8 +209,8 @@ Add to Cart
 
 /* CART COUNT */
 function updateCartCount(){
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-document.getElementById("cart-count").innerText = cart.length;
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cart-count").innerText = cart.length;
 }
 
 /* ADD TO CART */
@@ -281,7 +245,7 @@ window.location.href="../index.html";
 }
 
 function goToCart(){
-window.location.href="../index.html#cart";
+window.location.href="../cart.html";
 }
 
 /* SLIDER */
