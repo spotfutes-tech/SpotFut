@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Football Kit | SpotFut</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins', sans-serif;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 8%;
+    border-bottom:1px solid #1e1e1e;
+    position:sticky;
+    top:0;
+    background:#0b0b0b;
+    z-index:1000;
+}
+
+.logo{
+    font-weight:600;
+    letter-spacing:2px;
+    cursor:pointer;
+}
+
+.cart{
+    cursor:pointer;
+}
+
+#cart-count{
+    background:white;
+    color:black;
+    padding:3px 8px;
+    border-radius:50%;
+    font-size:12px;
+    margin-left:6px;
+}
+
+/* GRID */
+.kit-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:40px;
+    padding:40px 8%;
+}
+
+.kit-card{
+    background:#111;
+    padding:20px;
+    border:1px solid #1e1e1e;
+    transition:0.4s;
+}
+
+.kit-card:hover{
+    border-color:#444;
+    transform:translateY(-8px);
+}
+
+/* IMAGES */
+.kit-card img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    margin-bottom:20px;
+}
+
+/* SLIDER */
+.image-slider{
+    position:relative;
+    width:100%;
+    height:350px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.image-slider img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:none;
+}
+
+.image-slider img.active{
+    display:block;
+}
+
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.6);
+    color:white;
+    border:none;
+    font-size:20px;
+    padding:6px 12px;
+    cursor:pointer;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+/* SIZE */
+select{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    background:#000;
+    color:white;
+    border:1px solid #333;
+}
+
+.add-btn{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+    background:white;
+    color:black;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.add-btn:hover{
+    opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo" onclick="goHome()">SPOTFUT</div>
+
+    <div class="cart" onclick="goToCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</header>
+
+<section class="kit-grid">
+
+<!-- 1 BLACK (WITH SLIDER) -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="varsity-KW.jpg" class="active">
+<img src="varsity-KW-detail-1.jpg">
+<img src="varsity-KW-detail-2.jpg">
+<img src="varsity-KW-detail-3.jpg">
+<img src="varsity-KW-detail-4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+
+<h3>Black Edition</h3>
+<p>Deep matte black with premium structure.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('varsity-black','varsity-KW.jpg',this)">
+Add to Cart
+</button>
+</div>
+
+
+
+<!-- 2 GREEN -->
+<div class="kit-card">
+<img src="varsity-GW.jpg">
+<h3>Green Edition</h3>
+<p>Heritage varsity tones redefined.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('varsity-green','varsity-GW.jpg',this)">
+Add to Cart
+</button>
+</div>
+
+<!-- 3 ROYAL BLUE -->
+<div class="kit-card">
+<img src="varsity-RBW.jpg">
+<h3>Royal Blue Edition</h3>
+<p>Bold athletic statement piece.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('varsity-blue','varsity-RBW.jpg',this)">
+Add to Cart
+</button>
+</div>
+
+<!-- 4 LATTE -->
+<div class="kit-card">
+<img src="varsity-CK.jpg">
+<h3>Latte Edition</h3>
+<p>Refined neutral luxury.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('varsity-latte','varsity-CK.jpg',this)">
+Add to Cart
+</button>
+</div>
+
+<!-- 5 SOLAR -->
+<div class="kit-card">
+<img src="varsity-YK.jpg">
+<h3>Solar Edition</h3>
+<p>Energetic bold yellow design.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('varsity-solar','varsity-YK.jpg',this)">
+Add to Cart
+</button>
+</div>
+
+<!-- 6 SKY -->
+<div class="kit-card">
+<img src="varsity-SBK.jpg">
+<h3>Sky Edition</h3>
+<p>Fresh modern street presence.</p>
+
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+
+<button class="add-btn"
+onclick="addToCart('varsity-sky','varsity-SBK.jpg',this)">
+Add to Cart
+</button>
+</div>
+
+</section>
+
+<script>
+
+/* -----------------------
+   PRODUCT PRICE DATABASE
+------------------------*/
+const PRODUCTS = {
+  "varsity-black": { name: "Varsity Black Edition", price: 59 },
+  "varsity-green": { name: "Varsity Green Edition", price: 59 },
+  "varsity-blue": { name: "Varsity Royal Blue Edition", price: 59 },
+  "varsity-latte": { name: "Varsity Latte Edition", price: 59 },
+  "varsity-solar": { name: "Varsity Solar Edition", price: 59 },
+  "varsity-sky": { name: "Varsity Sky Edition", price: 59 }
+};
+
+/* CART COUNT */
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").innerText = cart.length;
+}
+
+/* ADD TO CART */
+function addToCart(productId, image, btn){
+
+  let card = btn.closest(".kit-card");
+  let size = card.querySelector(".size").value;
+
+  if(!size){
+    alert("Please select a size");
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+    id: productId,
+    size: size,
+    image: image
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+
+  alert("Added to cart");
+}
+
+/* NAVIGATION */
+function goHome(){
+  window.location.href="../index.html";
+}
+
+function goToCart(){
+  window.location.href="../cart.html";
+}
+
+/* SLIDER */
+document.querySelectorAll(".image-slider").forEach(slider=>{
+  let images = slider.querySelectorAll("img");
+  let next = slider.querySelector(".next");
+  let prev = slider.querySelector(".prev");
+  let index = 0;
+
+  function show(i){
+    images.forEach(img=>img.classList.remove("active"));
+    images[i].classList.add("active");
+  }
+
+  if(next){
+    next.addEventListener("click",()=>{
+      index=(index+1)%images.length;
+      show(index);
+    });
+  }
+
+  if(prev){
+    prev.addEventListener("click",()=>{
+      index=(index-1+images.length)%images.length;
+      show(index);
+    });
+  }
+});
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>
