@@ -71,9 +71,9 @@ header{
 /* IMAGES */
 .kit-card img{
     width:100%;
-    height:380px;
-    object-fit:contain;
-    background:#0b0b0b;
+    aspect-ratio: 3 / 4;   /* keeps vertical uniform shape */
+    object-fit: contain;   /* prevents cropping */
+    background:#0b0b0b;    /* fills empty space nicely */
     display:block;
     margin-bottom:20px;
 }
@@ -296,9 +296,9 @@ Add to Cart
 <!-- 6 Crimson Bolt -->
 <div class="kit-card">
 <div class="image-slider">
-<img src="SF-SJM-S008_1.jng" class="active">
-<img src="SF-SJM-S008_2.jng">
-<img src="SF-SJM-S008_3.jng">
+<img src="SF-SJM-S008_1.jpg" class="active">
+<img src="SF-SJM-S008_2.jpg">
+<img src="SF-SJM-S008_3.jpg">
 <img src="SF-SJM-S008_4.jpg">
 <button class="slider-btn prev">&#10094;</button>
 <button class="slider-btn next">&#10095;</button>
