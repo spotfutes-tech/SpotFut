@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 body{
     margin:0;
     background:#0b0b0b;
@@ -68,19 +67,11 @@ header{
     transform:translateY(-8px);
 }
 
-/* IMAGES */
-.jacket-card img{
-    width:100%;
-    height:350px;
-    object-fit:cover;
-    margin-bottom:20px;
-}
-
-/* SLIDER */
+/* IMAGE SLIDER */
 .image-slider{
     position:relative;
     width:100%;
-    height:350px;
+    aspect-ratio: 3 / 4;
     overflow:hidden;
     margin-bottom:20px;
 }
@@ -88,7 +79,8 @@ header{
 .image-slider img{
     width:100%;
     height:100%;
-    object-fit:cover;
+    object-fit:contain;
+    background:#0b0b0b;
     display:none;
 }
 
@@ -135,7 +127,6 @@ select{
 .add-btn:hover{
     opacity:0.8;
 }
-
 </style>
 </head>
 
@@ -143,7 +134,6 @@ select{
 
 <header>
     <div class="logo" onclick="goHome()">SPOTFUT</div>
-
     <div class="cart" onclick="goToCart()">
         🛒 <span id="cart-count">0</span>
     </div>
@@ -151,7 +141,7 @@ select{
 
 <section class="jacket-grid">
 
-<!-- 1 BLACK (WITH SLIDER) -->
+<!-- 1 BLACK -->
 <div class="jacket-card">
 <div class="image-slider">
 <img src="varsity-KW.jpg" class="active">
@@ -175,16 +165,19 @@ select{
 </select>
 
 <button class="add-btn"
-onclick="addToCart('varsity-black','varsity-KW.jpg',this)">
+onclick="addToCart('varsity-black', this)">
 Add to Cart
 </button>
 </div>
 
-
-
 <!-- 2 GREEN -->
 <div class="jacket-card">
-<img src="varsity-GW.jpg">
+<div class="image-slider">
+<img src="varsity-GW.jpg" class="active">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+
 <h3>Green Edition</h3>
 <p>Heritage varsity tones redefined.</p>
 
@@ -197,14 +190,19 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('varsity-green','varsity-GW.jpg',this)">
+onclick="addToCart('varsity-green', this)">
 Add to Cart
 </button>
 </div>
 
 <!-- 3 ROYAL BLUE -->
 <div class="jacket-card">
-<img src="varsity-RBW.jpg">
+<div class="image-slider">
+<img src="varsity-RBW.jpg" class="active">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+
 <h3>Royal Blue Edition</h3>
 <p>Bold athletic statement piece.</p>
 
@@ -217,14 +215,19 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('varsity-blue','varsity-RBW.jpg',this)">
+onclick="addToCart('varsity-blue', this)">
 Add to Cart
 </button>
 </div>
 
 <!-- 4 LATTE -->
 <div class="jacket-card">
-<img src="varsity-CK.jpg">
+<div class="image-slider">
+<img src="varsity-CK.jpg" class="active">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+
 <h3>Latte Edition</h3>
 <p>Refined neutral luxury.</p>
 
@@ -237,14 +240,19 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('varsity-latte','varsity-CK.jpg',this)">
+onclick="addToCart('varsity-latte', this)">
 Add to Cart
 </button>
 </div>
 
 <!-- 5 SOLAR -->
 <div class="jacket-card">
-<img src="varsity-YK.jpg">
+<div class="image-slider">
+<img src="varsity-YK.jpg" class="active">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+
 <h3>Solar Edition</h3>
 <p>Energetic bold yellow design.</p>
 
@@ -257,14 +265,19 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('varsity-solar','varsity-YK.jpg',this)">
+onclick="addToCart('varsity-solar', this)">
 Add to Cart
 </button>
 </div>
 
 <!-- 6 SKY -->
 <div class="jacket-card">
-<img src="varsity-SBK.jpg">
+<div class="image-slider">
+<img src="varsity-SBK.jpg" class="active">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+
 <h3>Sky Edition</h3>
 <p>Fresh modern street presence.</p>
 
@@ -277,26 +290,17 @@ Add to Cart
 </select>
 
 <button class="add-btn"
-onclick="addToCart('varsity-sky','varsity-SBK.jpg',this)">
+onclick="addToCart('varsity-sky', this)">
 Add to Cart
 </button>
 </div>
 
 </section>
 
-<script>
+<!-- LOAD CENTRAL PRODUCT DATABASE -->
+<script src="products.js"></script>
 
-/* -----------------------
-   PRODUCT PRICE DATABASE
-------------------------*/
-const PRODUCTS = {
-  "varsity-black": { name: "Varsity Black Edition", price: 59 },
-  "varsity-green": { name: "Varsity Green Edition", price: 59 },
-  "varsity-blue": { name: "Varsity Royal Blue Edition", price: 59 },
-  "varsity-latte": { name: "Varsity Latte Edition", price: 59 },
-  "varsity-solar": { name: "Varsity Solar Edition", price: 59 },
-  "varsity-sky": { name: "Varsity Sky Edition", price: 59 }
-};
+<script>
 
 /* CART COUNT */
 function updateCartCount(){
@@ -305,7 +309,7 @@ function updateCartCount(){
 }
 
 /* ADD TO CART */
-function addToCart(productId, image, btn){
+function addToCart(productId, btn){
 
   let card = btn.closest(".jacket-card");
   let size = card.querySelector(".size").value;
@@ -314,6 +318,8 @@ function addToCart(productId, image, btn){
     alert("Please select a size");
     return;
   }
+
+  let image = card.querySelector(".image-slider img").src;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
