@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
 body{
     margin:0;
     background:#0b0b0b;
@@ -68,22 +67,11 @@ header{
     transform:translateY(-8px);
 }
 
-/* IMAGES */
-.kit-card img{
-    width:100%;
-    aspect-ratio: 3 / 4;   /* keeps vertical uniform shape */
-    object-fit: contain;   /* prevents cropping */
-    background:#0b0b0b;    /* fills empty space nicely */
-    display:block;
-    margin-bottom:20px;
-}
-
-/* SLIDER */
-/* SLIDER */
+/* IMAGE SLIDER */
 .image-slider{
     position:relative;
     width:100%;
-    aspect-ratio: 3 / 4;   /* keeps vertical proportion */
+    aspect-ratio: 3 / 4;
     overflow:hidden;
     margin-bottom:20px;
 }
@@ -91,7 +79,7 @@ header{
 .image-slider img{
     width:100%;
     height:100%;
-    object-fit:contain;   /* NO cropping */
+    object-fit:contain;
     background:#0b0b0b;
     display:none;
 }
@@ -115,7 +103,6 @@ header{
 .prev{ left:10px; }
 .next{ right:10px; }
 
-/* SIZE */
 select{
     width:100%;
     padding:10px;
@@ -139,7 +126,6 @@ select{
 .add-btn:hover{
     opacity:0.8;
 }
-
 </style>
 </head>
 
@@ -147,7 +133,6 @@ select{
 
 <header>
     <div class="logo" onclick="goHome()">SPOTFUT</div>
-
     <div class="cart" onclick="goToCart()">
         🛒 <span id="cart-count">0</span>
     </div>
@@ -155,7 +140,7 @@ select{
 
 <section class="kit-grid">
 
-<!-- 1 Elite Pro Fusion (WITH SLIDER) -->
+<!-- 1 -->
 <div class="kit-card">
 <div class="image-slider">
 <img src="SF-SJM-S001_1.png" class="active">
@@ -165,10 +150,8 @@ select{
 <button class="slider-btn prev">&#10094;</button>
 <button class="slider-btn next">&#10095;</button>
 </div>
-
 <h3>Elite Pro Fusion Edition</h3>
 <p>Bold diagonal accents with a professional finish.</p>
-
 <select class="size">
 <option value="">Select Size</option>
 <option>S</option>
@@ -176,16 +159,10 @@ select{
 <option>L</option>
 <option>XL</option>
 </select>
-
-<button class="add-btn"
-onclick="addToCart('varsity-black','varsity-KW.jpg',this)">
-Add to Cart
-</button>
+<button class="add-btn" onclick="addToCart('SF-SJM-S001', this)">Add to Cart</button>
 </div>
 
-
-
-<!-- 2 Hexa puls -->
+<!-- 2 -->
 <div class="kit-card">
 <div class="image-slider">
 <img src="SF-SJM-S004_1.jpg" class="active">
@@ -196,10 +173,8 @@ Add to Cart
 <button class="slider-btn prev">&#10094;</button>
 <button class="slider-btn next">&#10095;</button>
 </div>
-    
 <h3>Hexa Pulse Edition</h3>
 <p>Striking yellow-blue kit featuring a sophisticated honeycomb geometric gradient.</p>
-
 <select class="size">
 <option value="">Select Size</option>
 <option>S</option>
@@ -207,14 +182,10 @@ Add to Cart
 <option>L</option>
 <option>XL</option>
 </select>
-
-<button class="add-btn"
-onclick="addToCart('varsity-green','varsity-GW.jpg',this)">
-Add to Cart
-</button>
+<button class="add-btn" onclick="addToCart('SF-SJM-S004', this)">Add to Cart</button>
 </div>
 
-<!-- 3 Urban Strike Gradient -->
+<!-- 3 -->
 <div class="kit-card">
 <div class="image-slider">
 <img src="SF-SJM-S003_1.jpg" class="active">
@@ -226,7 +197,6 @@ Add to Cart
 </div>
 <h3>Urban Strike Gradient Edition</h3>
 <p>Bold on-field presence with a professional aesthetic.</p>
-
 <select class="size">
 <option value="">Select Size</option>
 <option>S</option>
@@ -234,14 +204,10 @@ Add to Cart
 <option>L</option>
 <option>XL</option>
 </select>
-
-<button class="add-btn"
-onclick="addToCart('varsity-blue','varsity-RBW.jpg',this)">
-Add to Cart
-</button>
+<button class="add-btn" onclick="addToCart('SF-SJM-S003', this)">Add to Cart</button>
 </div>
 
-<!-- 4 Aurum Pro -->
+<!-- 4 -->
 <div class="kit-card">
 <div class="image-slider">
 <img src="SF-SJM-S005_1.png" class="active">
@@ -253,7 +219,6 @@ Add to Cart
 </div>
 <h3>Aurum Pro Edition</h3>
 <p>Elevate your game with timeless luxury.</p>
-
 <select class="size">
 <option value="">Select Size</option>
 <option>S</option>
@@ -261,14 +226,10 @@ Add to Cart
 <option>L</option>
 <option>XL</option>
 </select>
-
-<button class="add-btn"
-onclick="addToCart('varsity-latte','varsity-CK.jpg',this)">
-Add to Cart
-</button>
+<button class="add-btn" onclick="addToCart('SF-SJM-S005', this)">Add to Cart</button>
 </div>
 
-<!-- 5 Aqua Storm -->
+<!-- 5 -->
 <div class="kit-card">
 <div class="image-slider">
 <img src="SF-SJM-S007_1.png" class="active">
@@ -280,7 +241,6 @@ Add to Cart
 </div>
 <h3>Aqua Storm Edition</h3>
 <p>Unleash controlled chaos on the pitch with Aqua Storm.</p>
-
 <select class="size">
 <option value="">Select Size</option>
 <option>S</option>
@@ -288,14 +248,10 @@ Add to Cart
 <option>L</option>
 <option>XL</option>
 </select>
-
-<button class="add-btn"
-onclick="addToCart('varsity-solar','varsity-YK.jpg',this)">
-Add to Cart
-</button>
+<button class="add-btn" onclick="addToCart('SF-SJM-S007', this)">Add to Cart</button>
 </div>
 
-<!-- 6 Crimson Bolt -->
+<!-- 6 -->
 <div class="kit-card">
 <div class="image-slider">
 <img src="SF-SJM-S008_1.jpg" class="active">
@@ -307,7 +263,6 @@ Add to Cart
 </div>
 <h3>Crimson Bolt Edition</h3>
 <p>Aggressive aesthetics with elite performance.</p>
-
 <select class="size">
 <option value="">Select Size</option>
 <option>S</option>
@@ -315,28 +270,15 @@ Add to Cart
 <option>L</option>
 <option>XL</option>
 </select>
-
-<button class="add-btn"
-onclick="addToCart('varsity-sky','varsity-SBK.jpg',this)">
-Add to Cart
-</button>
+<button class="add-btn" onclick="addToCart('SF-SJM-S008', this)">Add to Cart</button>
 </div>
 
 </section>
 
-<script>
+<!-- LOAD PRODUCT DATABASE -->
+<script src="products.js"></script>
 
-/* -----------------------
-   PRODUCT PRICE DATABASE
-------------------------*/
-const PRODUCTS = {
-  "SF-SJM-S001": { name: "Elite Pro Fusion Edition", price: 11 },
-  "SF-SJM-S004": { name: "Hexa Pulse Edition", price: 11 },
-  "SF-SJM-S003": { name: "Urban Strike Gradient Edition", price: 11 },
-  "SF-SJM-S005": { name: "Aurum Pro Edition", price: 11 },
-  "SF-SJM-S007": { name: "Aqua Storm Edition", price: 11 },
-  "SF-SJM-S008": { name: "Crimson Bolt Edition", price: 11 }
-};
+<script>
 
 /* CART COUNT */
 function updateCartCount(){
@@ -345,7 +287,7 @@ function updateCartCount(){
 }
 
 /* ADD TO CART */
-function addToCart(productId, image, btn){
+function addToCart(productId, btn){
 
   let card = btn.closest(".kit-card");
   let size = card.querySelector(".size").value;
@@ -354,6 +296,8 @@ function addToCart(productId, image, btn){
     alert("Please select a size");
     return;
   }
+
+  let image = card.querySelector(".image-slider img").src;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -390,19 +334,15 @@ document.querySelectorAll(".image-slider").forEach(slider=>{
     images[i].classList.add("active");
   }
 
-  if(next){
-    next.addEventListener("click",()=>{
-      index=(index+1)%images.length;
-      show(index);
-    });
-  }
+  next.addEventListener("click",()=>{
+    index=(index+1)%images.length;
+    show(index);
+  });
 
-  if(prev){
-    prev.addEventListener("click",()=>{
-      index=(index-1+images.length)%images.length;
-      show(index);
-    });
-  }
+  prev.addEventListener("click",()=>{
+    index=(index-1+images.length)%images.length;
+    show(index);
+  });
 });
 
 updateCartCount();
