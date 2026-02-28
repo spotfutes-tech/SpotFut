@@ -38,12 +38,17 @@ a{
     padding:20px 0;
 }
 
-.remove-btn{
+/* Buttons */
+.cart-controls button{
     background:none;
     border:1px solid #444;
     color:white;
-    padding:6px 12px;
+    padding:5px 10px;
     cursor:pointer;
+}
+
+.remove-btn{
+    margin-left:10px;
 }
 
 /* Total */
@@ -86,90 +91,13 @@ a{
     Proceed to Checkout
 </button>
 
-<!-- IMPORTANT: Load product database FIRST -->
+<!-- Load Products -->
 <script src="products.js"></script>
 
 <script>
 
-function loadCart(){
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let container = document.getElementById("cart-items");
-  let total = 0;
-
-  container.innerHTML = "";
-
-  if(cart.length === 0){
-    container.innerHTML = "<p>Your cart is empty.</p>";
-    document.getElementById("cart-total").innerText = "";
-    return;
-  }
-
-  cart.forEach((item, index)=>{
-
-    let product = PRODUCTS[item.id];
-    if(!product) return;
-
-    let quantity = item.quantity || 1;
-
-    total += product.price * quantity;
-
-    container.innerHTML += `
-      <div class="cart-item">
-        <div>
-          <strong>${product.name}</strong><br>
-          Size: ${item.size}<br>
-          €${product.price}
-        </div>
-
-        <div style="display:flex; align-items:center; gap:10px;">
-            <button onclick="changeQuantity(${index}, -1)">−</button>
-            <span>${quantity}</span>
-            <button onclick="changeQuantity(${index}, 1)">+</button>
-            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
-        </div>
-      </div>
-    `;
-  });
-
-  document.getElementById("cart-total").innerText = "Total: €" + total;
-}
-
-function changeQuantity(index, change){
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  if(!cart[index]) return;
-
-  cart[index].quantity = (cart[index].quantity || 1) + change;
-
-  if(cart[index].quantity < 1){
-    cart.splice(index,1);
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
-}
-
-function removeItem(index){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.splice(index,1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
-}
-
-function goToCheckout(){
-    alert("Checkout system will be connected soon.");
-}
-
-loadCart();
-
-</script>
-
 document.addEventListener("DOMContentLoaded", function(){
-
     loadCart();
-
 });
 
 /* Load Cart */
@@ -195,30 +123,50 @@ function loadCart(){
     cart.forEach((item, index)=>{
 
         let product = PRODUCTS[item.id];
+        if(!product) return;
 
-        if(!product){
-            console.warn("Product not found:", item.id);
-            return;
-        }
+        let quantity = item.quantity || 1;
 
-        total += product.price;
+        total += product.price * quantity;
 
         container.innerHTML += `
             <div class="cart-item">
                 <div>
                     <strong>${product.name}</strong><br>
                     Size: ${item.size}<br>
+                    Qty: ${quantity}<br>
                     €${product.price}
                 </div>
-                <button class="remove-btn" onclick="removeItem(${index})">
-                    Remove
-                </button>
+
+                <div class="cart-controls">
+                    <button onclick="changeQuantity(${index}, -1)">−</button>
+                    <button onclick="changeQuantity(${index}, 1)">+</button>
+                    <button class="remove-btn" onclick="removeItem(${index})">
+                        Remove
+                    </button>
+                </div>
             </div>
         `;
     });
 
     document.getElementById("cart-total").innerText = "Total: €" + total;
+}
 
+/* Change Quantity */
+function changeQuantity(index, change){
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if(!cart[index]) return;
+
+    cart[index].quantity = (cart[index].quantity || 1) + change;
+
+    if(cart[index].quantity < 1){
+        cart.splice(index,1);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCart();
 }
 
 /* Remove Item */
@@ -231,7 +179,6 @@ function removeItem(index){
     localStorage.setItem("cart", JSON.stringify(cart));
 
     loadCart();
-
 }
 
 /* Checkout Placeholder */
