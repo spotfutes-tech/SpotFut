@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body{
     margin:0;
     background:#0b0b0b;
@@ -67,6 +68,7 @@ a{
 .checkout-btn:hover{
     opacity:0.8;
 }
+
 </style>
 </head>
 
@@ -84,61 +86,83 @@ a{
     Proceed to Checkout
 </button>
 
-<!-- LOAD CENTRAL PRODUCT DATABASE -->
+<!-- IMPORTANT: Load product database FIRST -->
 <script src="products.js"></script>
 
 <script>
 
+document.addEventListener("DOMContentLoaded", function(){
+
+    loadCart();
+
+});
+
+/* Load Cart */
 function loadCart(){
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let container = document.getElementById("cart-items");
-  let total = 0;
+    if(typeof PRODUCTS === "undefined"){
+        console.error("PRODUCTS not loaded. Check products.js path.");
+        return;
+    }
 
-  container.innerHTML = "";
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let container = document.getElementById("cart-items");
+    let total = 0;
 
-  if(cart.length === 0){
-    container.innerHTML = "<p>Your cart is empty.</p>";
-    document.getElementById("cart-total").innerText = "";
-    return;
-  }
+    container.innerHTML = "";
 
-  cart.forEach((item, index)=>{
+    if(cart.length === 0){
+        container.innerHTML = "<p>Your cart is empty.</p>";
+        document.getElementById("cart-total").innerText = "";
+        return;
+    }
 
-    let product = PRODUCTS[item.id];
-    if(!product) return;
+    cart.forEach((item, index)=>{
 
-    total += product.price;
+        let product = PRODUCTS[item.id];
 
-    container.innerHTML += `
-      <div class="cart-item">
-        <div>
-          <strong>${product.name}</strong><br>
-          Size: ${item.size}<br>
-          €${product.price}
-        </div>
-        <button class="remove-btn" onclick="removeItem(${index})">
-          Remove
-        </button>
-      </div>
-    `;
-  });
+        if(!product){
+            console.warn("Product not found:", item.id);
+            return;
+        }
 
-  document.getElementById("cart-total").innerText = "Total: €" + total;
+        total += product.price;
+
+        container.innerHTML += `
+            <div class="cart-item">
+                <div>
+                    <strong>${product.name}</strong><br>
+                    Size: ${item.size}<br>
+                    €${product.price}
+                </div>
+                <button class="remove-btn" onclick="removeItem(${index})">
+                    Remove
+                </button>
+            </div>
+        `;
+    });
+
+    document.getElementById("cart-total").innerText = "Total: €" + total;
+
 }
 
+/* Remove Item */
 function removeItem(index){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.splice(index,1);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  loadCart();
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.splice(index,1);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    loadCart();
+
 }
 
+/* Checkout Placeholder */
 function goToCheckout(){
     alert("Checkout system will be connected soon.");
 }
-
-loadCart();
 
 </script>
 
