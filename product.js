@@ -8,8 +8,6 @@ const PRODUCTS = {
   "varsity-solar": { name: "Varsity Solar Edition", price: 59 },
   "varsity-sky": { name: "Varsity Sky Edition", price: 59 },
 
-  /* Standard Kits */
-  "KIT-001": { name: "Black Phantom", price: 39 },
 
   /* Signature Elite Kits */
   "SF-SJM-S001": { name: "Elite Pro Fusion Edition", price: 11 },
