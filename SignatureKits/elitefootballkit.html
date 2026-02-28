@@ -302,10 +302,10 @@ function addToCart(productId, btn){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   cart.push({
-    id: productId,
-    size: size,
-    image: image
-  });
+  id: productId,
+  size: size,
+  quantity: 1
+});
 
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
