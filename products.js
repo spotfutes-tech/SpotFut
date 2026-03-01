@@ -17,17 +17,17 @@ const PRODUCTS = {
   "SF-SJM-S007": { name: "Aqua Storm Edition", price: 11 },
   "SF-SJM-S008": { name: "Crimson Bolt Edition", price: 11 } */
 
-  "SF-SJF-S001": { name: "Blush Strike Edition", price: 11 },
-  "SF-SJF-S002": { name: "Phantom Fade Edition", price: 11 },
-  "SF-SJF-S004": { name: "Storm Fit Edition", price: 11 },
+  "SF-SJF-S001": { name: "Soccer Blush Strike Edition", price: 11 },
+  "SF-SJF-S002": { name: "Soccer Phantom Fade Edition", price: 11 },
+  "SF-SJF-S004": { name: "Soccer Storm Fit Edition", price: 11 },
 
-  "SF-SJK-S001": { name: "Junior Strike Pro Edition", price: 11 },
-  "SF-SJK-S003": { name: "Junior Fire Start Edition", price: 11 },
-  "SF-SJK-S004": { name: "Junior Velocity Flame Edition", price: 11 },
+  "SF-SJK-S001": { name: "Soccer Junior Strike Pro Edition", price: 11 },
+  "SF-SJK-S003": { name: "Soccer Junior Fire Start Edition", price: 11 },
+  "SF-SJK-S004": { name: "Soccer Junior Velocity Flame Edition", price: 11 },
 
- "SF-SJK-S101": { name: "Junior Spark Edge Edition", price: 11 },
-  "SF-SJK-S102": { name: "Junior Nexus Rush Edition", price: 11 },
-  "SF-SJK-S103": { name: "Junior Tide Bolt Edition", price: 11 },
+ "SF-SJK-S101": { name: "Soccer Junior Spark Edge Edition", price: 11 },
+  "SF-SJK-S102": { name: "Soccer Junior Nexus Rush Edition", price: 11 },
+  "SF-SJK-S103": { name: "Soccer Junior Tide Bolt Edition", price: 11 },
 
 
 
