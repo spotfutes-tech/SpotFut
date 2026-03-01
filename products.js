@@ -13,9 +13,9 @@ const PRODUCTS = {
   "SF-SJM-S001": { name: "Elite Pro Fusion Edition", price: 11 },
   "SF-SJM-S004": { name: "Hexa Pulse Edition", price: 11 },
   "SF-SJM-S003": { name: "Urban Strike Gradient Edition", price: 11 },
-  "SF-SJM-S005": { name: "Aurum Pro Edition", price: 11 },
+  /* "SF-SJM-S005": { name: "Aurum Pro Edition", price: 11 },
   "SF-SJM-S007": { name: "Aqua Storm Edition", price: 11 },
-  "SF-SJM-S008": { name: "Crimson Bolt Edition", price: 11 }
+  "SF-SJM-S008": { name: "Crimson Bolt Edition", price: 11 } */
 
   "SF-SJF-S001": { name: "Blush Strike Edition", price: 11 },
   "SF-SJF-S002": { name: "Phantom Fade Edition", price: 11 },
