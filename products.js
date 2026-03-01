@@ -10,9 +10,9 @@ const PRODUCTS = {
 
 
   /* Signature Elite Kits */
-  "SF-SJM-S001": { name: "Elite Pro Fusion Edition", price: 11 },
-  "SF-SJM-S004": { name: "Hexa Pulse Edition", price: 11 },
-  "SF-SJM-S003": { name: "Urban Strike Gradient Edition", price: 11 },
+  "SF-SJM-S001": { name: "Soccer Elite Pro Fusion Edition", price: 11 },
+  "SF-SJM-S004": { name: "Soccer Hexa Pulse Edition", price: 11 },
+  "SF-SJM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 11 },
   /* "SF-SJM-S005": { name: "Aurum Pro Edition", price: 11 },
   "SF-SJM-S007": { name: "Aqua Storm Edition", price: 11 },
   "SF-SJM-S008": { name: "Crimson Bolt Edition", price: 11 } */
