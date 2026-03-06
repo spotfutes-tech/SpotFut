@@ -29,14 +29,42 @@ a{
     margin-bottom:30px;
 }
 
-/* Cart Item Layout */
+/* CART ITEM */
 .cart-item{
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     border-bottom:1px solid #222;
     padding:20px 0;
     gap:20px;
+}
+
+/* LEFT SIDE */
+.cart-left{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+/* PRODUCT IMAGE */
+.cart-img{
+    width:70px;
+    height:90px;
+    object-fit:contain;
+    background:#111;
+    border:1px solid #222;
+}
+
+/* PRODUCT INFO */
+.cart-info{
+    line-height:1.6;
+}
+
+/* RIGHT SIDE */
+.cart-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
 /* Quantity Stepper */
@@ -44,8 +72,8 @@ a{
     display:flex;
     align-items:center;
     border:1px solid #333;
-    padding:5px 10px;
-    gap:12px;
+    padding:6px 12px;
+    gap:14px;
 }
 
 .qty-box button{
@@ -81,7 +109,6 @@ a{
     border:none;
     font-weight:600;
     cursor:pointer;
-    transition:0.3s ease;
 }
 
 .checkout-btn:hover{
@@ -102,12 +129,12 @@ a{
 <h3 id="cart-total" class="total"></h3>
 
 <button class="checkout-btn" onclick="goToCheckout()">
-    Proceed to Checkout
+Proceed to Checkout
 </button>
 
-<!-- Load Products Database -->
-<script src="products.js?v=2"></script>
-    
+<!-- PRODUCTS DATABASE -->
+<script src="products.js"></script>
+
 <script>
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -144,18 +171,24 @@ function loadCart(){
         total += product.price * quantity;
 
         container.innerHTML += `
-          <div class="cart-item">
+        <div class="cart-item">
 
-            <!-- LEFT SIDE -->
-            <div>
-              <strong>${product.name}</strong><br>
-              Size: ${item.size}<br>
-              Quantity: ${quantity}<br>
-              €${product.price}
+            <!-- LEFT -->
+            <div class="cart-left">
+
+                <img src="${item.image}" class="cart-img">
+
+                <div class="cart-info">
+                    <strong>${product.name}</strong><br>
+                    Size: ${item.size}<br>
+                    Quantity: ${quantity}<br>
+                    €${product.price}
+                </div>
+
             </div>
 
-            <!-- RIGHT SIDE -->
-            <div style="display:flex; align-items:center; gap:12px;">
+            <!-- RIGHT -->
+            <div class="cart-right">
 
                 <div class="qty-box">
                     <button onclick="changeQuantity(${index}, -1)">−</button>
@@ -169,7 +202,7 @@ function loadCart(){
 
             </div>
 
-          </div>
+        </div>
         `;
     });
 
