@@ -15,7 +15,7 @@ const PRODUCTS = {
 
  "SF-UHF-S001": { name: "Urban Wave Women Edition", price: 29 },
  "SF-UHF-S002": { name: "Chevron wave Women Edition", price: 29 },
- "SF-UHF-S004": { name: "Tie-Dye Women Edition", price: 29 },
+ "SF-UHF-S005": { name: "Tie-Dye Women Edition", price: 29 },
 
  "SF-UHK-S001": { name: "Neo Strike Boys Edition", price: 29 },
  "SF-UHK-S003": { name: "Tech Vibe Boys Edition", price: 29 },
