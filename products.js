@@ -11,7 +11,7 @@ const PRODUCTS = {
   /* Urban Hoodie */
  "SF-UHM-S001": { name: "Elite Play Men Edition", price: 29 },
  "SF-UHM-S002": { name: "Momentum Slash Men Edition", price: 29 },
-"SF-UHM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 29 },
+"SF-UHM-S003": { name: "Sol Bear Drop Men Edition", price: 29 },
 
  "SF-UHF-S001": { name: "Urban Wave Women Edition", price: 29 },
  "SF-UHF-S002": { name: "Chevron wave Women Edition", price: 29 },
