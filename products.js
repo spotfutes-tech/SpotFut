@@ -8,7 +8,12 @@ const PRODUCTS = {
   "varsity-solar": { name: "Varsity Solar Edition", price: 59 },
   "varsity-sky": { name: "Varsity Sky Edition", price: 59 },
 
+  /* Urban Hoodie */
+  "SF-UHM-S001": { name: "Elite Play Men Edition", price: 11 },
+  "SF-UHM-S002": { name: "Soccer Hexa Pulse Edition", price: 11 },
+  "SF-UHM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 11 },
 
+  
   /* Signature Elite Kits */
   "SF-SJM-S001": { name: "Soccer Elite Pro Fusion Edition", price: 11 },
   "SF-SJM-S004": { name: "Soccer Hexa Pulse Edition", price: 11 },
