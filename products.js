@@ -10,12 +10,12 @@ const PRODUCTS = {
 
   /* Urban Hoodie */
  "SF-UHM-S001": { name: "Elite Play Men Edition", price: 29 },
- "SF-UHM-S004": { name: "Soccer Hexa Pulse Edition", price: 29 },
+ "SF-UHM-S002": { name: "Momentum Slash Men Edition", price: 29 },
 "SF-UHM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 29 },
 
- "SF-UHF-S001": { name: "Blush Strike Edition", price: 29 },
- "SF-UHF-S003": { name: "Phantom Fade Edition", price: 29 },
- "SF-UHF-S004": { name: "Storm Fit Edition", price: 29 },
+ "SF-UHF-S001": { name: "Urban Wave Women Edition", price: 29 },
+ "SF-UHF-S002": { name: "Chevron wave Women Edition", price: 29 },
+ "SF-UHF-S004": { name: "Tie-Dye Women Edition", price: 29 },
 
  "SF-UHK-S001": { name: "Neo Strike Boys Edition", price: 29 },
  "SF-UHK-S003": { name: "Tech Vibe Boys Edition", price: 29 },
