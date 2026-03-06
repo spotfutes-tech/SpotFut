@@ -9,9 +9,21 @@ const PRODUCTS = {
   "varsity-sky": { name: "Varsity Sky Edition", price: 59 },
 
   /* Urban Hoodie */
-  "SF-UHM-S001": { name: "Elite Play Men Edition", price: 11 },
-  "SF-UHM-S002": { name: "Soccer Hexa Pulse Edition", price: 11 },
-  "SF-UHM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 11 },
+ "SF-UHM-S001": { name: "Elite Play Men Edition", price: 29 },
+ "SF-UHM-S004": { name: "Soccer Hexa Pulse Edition", price: 29 },
+"SF-UHM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 29 },
+
+ "SF-UHF-S001": { name: "Blush Strike Edition", price: 29 },
+ "SF-UHF-S003": { name: "Phantom Fade Edition", price: 29 },
+ "SF-UHF-S004": { name: "Storm Fit Edition", price: 29 },
+
+ "SF-UHK-S001": { name: "Neo Strike Boys Edition", price: 29 },
+ "SF-UHK-S003": { name: "Tech Vibe Boys Edition", price: 29 },
+ "SF-UHK-S011": { name: "Orbital Hex Boys Edition", price: 29 },
+
+ "SF-UHK-S101": { name: "NYC Checkerboard Girls Edition", price: 29 },
+ "SF-UHK-S102": { name: "Super Nova Girls Edition", price: 29 },
+ "SF-UHK-S104": { name: "Zen Valley Girls Edition", price: 29 },
 
   
   /* Signature Elite Kits */
