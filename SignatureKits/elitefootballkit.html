@@ -502,14 +502,15 @@ function addToCart(productId, btn){
     return;
   }
 
-  let image = card.querySelector(".image-slider img").src;
+  let image = card.querySelector(".image-slider img.active").src;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   cart.push({
   id: productId,
   size: size,
-  quantity: 1
+  quantity: 1,
+  image: image
 });
 
   localStorage.setItem("cart", JSON.stringify(cart));
