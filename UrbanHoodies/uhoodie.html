@@ -1,1 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urban Hoodies | SpotFut</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins', sans-serif;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 8%;
+    border-bottom:1px solid #1e1e1e;
+    position:sticky;
+    top:0;
+    background:#0b0b0b;
+    z-index:1000;
+}
+
+.logo{
+    font-weight:600;
+    letter-spacing:2px;
+    cursor:pointer;
+}
+
+.cart{
+    cursor:pointer;
+}
+
+#cart-count{
+    background:white;
+    color:black;
+    padding:3px 8px;
+    border-radius:50%;
+    font-size:12px;
+    margin-left:6px;
+}
+
+/* GRID */
+.kit-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:40px;
+    padding:40px 8%;
+}
+
+.kit-card{
+    background:#111;
+    padding:20px;
+    border:1px solid #1e1e1e;
+    transition:0.4s;
+}
+
+.kit-card:hover{
+    border-color:#444;
+    transform:translateY(-8px);
+}
+
+/* IMAGE SLIDER */
+.image-slider{
+    position:relative;
+    width:100%;
+    aspect-ratio: 3 / 4;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.image-slider img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background:#0b0b0b;
+    display:none;
+}
+
+.image-slider img.active{
+    display:block;
+}
+
+.slider-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.6);
+    color:white;
+    border:none;
+    font-size:20px;
+    padding:6px 12px;
+    cursor:pointer;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+select{
+    width:100%;
+    padding:10px;
+    margin-top:15px;
+    background:#000;
+    color:white;
+    border:1px solid #333;
+}
+
+.add-btn{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+    background:white;
+    color:black;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.add-btn:hover{
+    opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo" onclick="goHome()">SPOTFUT</div>
+    <div class="cart" onclick="goToCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</header>
+
+<section class="kit-grid">
+
+<!-- 1 -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJM-S001_1.png" class="active">
+<img src="SF-SJM-S001_2.png">
+<img src="SF-SJM-S001_3.png">
+<img src="SF-SJM-S001_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Elite Pro Fusion Edition</h3>
+<p>Bold diagonal accents with a professional finish.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJM-S001', this)">Add to Cart</button>
+</div>
+
+<!-- 2 -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJM-S004_1.jpg" class="active">
+<img src="SF-SJM-S004_2.jpg">
+<img src="SF-SJM-S004_3.jpg">
+<img src="SF-SJM-S004_4.jpg">
+<img src="SF-SJM-S004_5.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Hexa Pulse Edition</h3>
+<p>Striking yellow-blue kit featuring a sophisticated honeycomb geometric gradient.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJM-S004', this)">Add to Cart</button>
+</div>
+
+<!-- 3 -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJM-S003_1.jpg" class="active">
+<img src="SF-SJM-S003_2.jpg">
+<img src="SF-SJM-S003_3.jpg">
+<img src="SF-SJM-S003_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Urban Strike Gradient Edition</h3>
+<p>Bold on-field presence with a professional aesthetic.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJM-S003', this)">Add to Cart</button>
+</div>
+
+
+<!-- 4 -->
+    <!--
+<div class="kit-card">
+<div class="image-slider"> 
+<img src="SF-SJM-S005_1.png" class="active">
+<img src="SF-SJM-S005_2.png">
+<img src="SF-SJM-S005_3.png">
+<img src="SF-SJM-S005_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Aurum Pro Edition</h3>
+<p>Elevate your game with timeless luxury.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJM-S005', this)">Add to Cart</button>
+</div>
+
+
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJM-S007_1.png" class="active">
+<img src="SF-SJM-S007_2.png">
+<img src="SF-SJM-S007_3.png">
+<img src="SF-SJM-S007_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Aqua Storm Edition</h3>
+<p>Unleash controlled chaos on the pitch with Aqua Storm.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJM-S007', this)">Add to Cart</button>
+</div>
+
+ 
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJM-S008_1.jpg" class="active">
+<img src="SF-SJM-S008_2.jpg">
+<img src="SF-SJM-S008_3.jpg">
+<img src="SF-SJM-S008_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Crimson Bolt Edition</h3>
+<p>Aggressive aesthetics with elite performance.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJM-S008', this)">Add to Cart</button>
+</div>
+    -->
+
+<!-- Female Editions  -->
+<!-- 7  -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJF-S001_1.png" class="active">
+<img src="SF-SJF-S001_2.png">
+<img src="SF-SJF-S001_3.png">
+<img src="SF-SJF-S001_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Blush Strike Edition</h3>
+<p>Explosive energy wrapped in fearless femininity.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJF-S001', this)">Add to Cart</button>
+</div>
+
+<!-- 8 -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJF-S002_1.jpg" class="active">
+<img src="SF-SJF-S002_2.jpg">
+<img src="SF-SJF-S002_3.jpg">
+<img src="SF-SJF-S002_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Phantom Fade Edition</h3>
+<p>Control the field. Command the match.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJF-S002', this)">Add to Cart</button>
+</div>
+
+<!-- 9 -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJF-S004_1.jpg" class="active">
+<img src="SF-SJF-S004_2.jpg">
+<img src="SF-SJF-S004_3.jpg">
+<img src="SF-SJF-S004_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Storm Fit Edition</h3>
+<p>Gear built for speed, power, and impact.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJF-S004', this)">Add to Cart</button>
+</div>
+    
+<!-- Kids Editions  -->
+<!-- 10  -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJK-S001_1.png" class="active">
+<img src="SF-SJK-S001_2.png">
+<img src="SF-SJK-S001_3.png">
+<img src="SF-SJK-S001_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Junior Strike Pro Edition</h3>
+<p>Built for future champions.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>4-7 Y</option>
+<option>8-10 Y</option>
+<option>11-13 Y</option>
+<option>13-15 Y</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJK-S001', this)">Add to Cart</button>
+</div>
+<!-- 11  -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJK-S003_1.jpg" class="active">
+<img src="SF-SJK-S003_2.jpg">
+<img src="SF-SJK-S003_3.jpg">
+<img src="SF-SJK-S003_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Junior Fire Start Edition</h3>
+<p>Play bold from the first whistle.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>4-7 Y</option>
+<option>8-10 Y</option>
+<option>11-13 Y</option>
+<option>13-15 Y</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJK-S003', this)">Add to Cart</button>
+</div>
+
+<!-- 12  -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJK-S004_1.jpg" class="active">
+<img src="SF-SJK-S004_2.jpg">
+<img src="SF-SJK-S004_3.jpg">
+<img src="SF-SJK-S004_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Junior Velocity Flame Edition</h3>
+<p>Ignited with speed, power, and unstoppable energy.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>4-7 Y</option>
+<option>8-10 Y</option>
+<option>11-13 Y</option>
+<option>13-15 Y</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJK-S004', this)">Add to Cart</button>
+</div>
+
+<!-- 13  -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJK-S101_1.jpg" class="active">
+<img src="SF-SJK-S101_2.jpg">
+<img src="SF-SJK-S101_3.jpg">
+<img src="SF-SJK-S101_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Junior Spark Edge Edition</h3>
+<p>Ignited with speed, power, and unstoppable energy.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>4-7 Y</option>
+<option>8-10 Y</option>
+<option>11-13 Y</option>
+<option>13-15 Y</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJK-S101', this)">Add to Cart</button>
+</div>
+
+<!-- 14  -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJK-S102_1.jpg" class="active">
+<img src="SF-SJK-S102_2.jpg">
+<img src="SF-SJK-S102_3.jpg">
+<img src="SF-SJK-S102_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Junior Nexus Rush Edition</h3>
+<p>Seize precision and thrill in every match.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>4-7 Y</option>
+<option>8-10 Y</option>
+<option>11-13 Y</option>
+<option>13-15 Y</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJK-S102', this)">Add to Cart</button>
+</div>
+
+
+<!-- 15  -->
+<div class="kit-card">
+<div class="image-slider">
+<img src="SF-SJK-S103_1.jpg" class="active">
+<img src="SF-SJK-S103_2.jpg">
+<img src="SF-SJK-S103_3.jpg">
+<img src="SF-SJK-S103_4.jpg">
+<button class="slider-btn prev">&#10094;</button>
+<button class="slider-btn next">&#10095;</button>
+</div>
+<h3>Junior Tide Bolt Edition</h3>
+<p>Make waves on the pitch — dive into high-energy wave kit.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>4-7 Y</option>
+<option>8-10 Y</option>
+<option>11-13 Y</option>
+<option>13-15 Y</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SJK-S103', this)">Add to Cart</button>
+</div>
+
+    
+
+</section>
+
+<!-- LOAD PRODUCT DATABASE -->
+<script src="../products.js"></script>
+
+<script>
+
+/* CART COUNT */
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").innerText = cart.length;
+}
+
+/* ADD TO CART */
+function addToCart(productId, btn){
+
+  let card = btn.closest(".kit-card");
+  let size = card.querySelector(".size").value;
+
+  if(!size){
+    alert("Please select a size");
+    return;
+  }
+
+  let image = card.querySelector(".image-slider img").src;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+  id: productId,
+  size: size,
+  quantity: 1
+});
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+
+  alert("Added to cart");
+}
+
+/* NAVIGATION */
+function goHome(){
+  window.location.href="../index.html";
+}
+
+function goToCart(){
+  window.location.href="../cart.html";
+}
+
+/* SLIDER */
+document.querySelectorAll(".image-slider").forEach(slider=>{
+  let images = slider.querySelectorAll("img");
+  let next = slider.querySelector(".next");
+  let prev = slider.querySelector(".prev");
+  let index = 0;
+
+  function show(i){
+    images.forEach(img=>img.classList.remove("active"));
+    images[i].classList.add("active");
+  }
+
+  next.addEventListener("click",()=>{
+    index=(index+1)%images.length;
+    show(index);
+  });
+
+  prev.addEventListener("click",()=>{
+    index=(index-1+images.length)%images.length;
+    show(index);
+  });
+});
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>
