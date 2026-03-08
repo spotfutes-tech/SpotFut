@@ -20,6 +20,7 @@ body{
 background:#0a0a0a;
 color:white;
 font-family:'Inter', sans-serif;
+scroll-behavior:smooth;
 }
 
 /* NAV */
@@ -116,8 +117,7 @@ color:#ccc;
 font-weight:300;
 }
 
-/* COLLECTION SECTION */
-
+/* SIGNATURE COLLECTION */
 .collections{
 padding:120px 8%;
 text-align:center;
@@ -172,7 +172,6 @@ opacity:0.9;
 }
 
 /* PHILOSOPHY */
-
 .section{
 padding:120px 8%;
 text-align:center;
@@ -192,7 +191,6 @@ line-height:1.8;
 }
 
 /* FOOTER */
-
 footer{
 padding:60px 8%;
 text-align:center;
@@ -200,21 +198,16 @@ border-top:1px solid #1a1a1a;
 }
 
 /* MOBILE */
-
 @media(max-width:900px){
-
 .collection-grid{
 grid-template-columns:1fr;
 }
-
 .collection-card img{
 height:320px;
 }
-
 .hero-content h1{
 font-size:2.5rem;
 }
-
 }
 
 </style>
@@ -231,8 +224,9 @@ font-size:2.5rem;
 
 <div style="display:flex; align-items:center;">
 
-<a href="#collections">Shop</a>
-<a href="#">About</a>
+<a href="#collections">Signature</a>
+<a href="#shop">Shop</a>
+<a href="#about">About</a>
 <a href="contact.html">Contact</a>
 
 <div class="cart-icon" onclick="goToCart()">
@@ -265,7 +259,7 @@ Designed for movement, confidence, and presence.
 
 </section>
 
-<!-- COLLECTIONS -->
+<!-- SIGNATURE COLLECTION -->
 <section id="collections" class="collections">
 
 <h2>Signature Collections</h2>
@@ -275,7 +269,7 @@ Designed for movement, confidence, and presence.
 <a href="SignatureKits/elitefootballkit.html" class="collection-card">
 <img src="SignatureKits/SF-SJF-S002_1.jpg">
 <div class="collection-info">
-<h3>Ellite Kits</h3>
+<h3>Elite Kits</h3>
 <span>Shop →</span>
 </div>
 </a>
@@ -300,8 +294,19 @@ Designed for movement, confidence, and presence.
 
 </section>
 
+<!-- SHOP SECTION (placeholder for future expansion) -->
+<section id="shop" class="section">
+
+<h2>Shop All Collections</h2>
+<p>
+Explore men, women, and kids performance wear.
+New drops coming soon.
+</p>
+
+</section>
+
 <!-- PHILOSOPHY -->
-<section class="section">
+<section id="about" class="section">
 
 <h2>The SpotFut Philosophy</h2>
 
@@ -322,11 +327,9 @@ Follow SPOTFUT
 
 <div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;">
 
-<a href="https://www.instagram.com/spotfutwearseu/" target="_blank" style="color:white;text-decoration:none;">Instagram</a>
-
-<a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank" style="color:white;text-decoration:none;">Facebook</a>
-
-<a href="https://www.tiktok.com/@spotfutwearseu" target="_blank" style="color:white;text-decoration:none;">TikTok</a>
+<a href="https://www.instagram.com/spotfutwearseu/" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank">Facebook</a>
+<a href="https://www.tiktok.com/@spotfutwearseu" target="_blank">TikTok</a>
 
 </div>
 
@@ -342,11 +345,9 @@ Follow SPOTFUT
 function updateCartCount(){
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let total = 0;
-
 cart.forEach(item=>{
 total += item.quantity || 1;
 });
-
 document.getElementById("cart-count").innerText = total;
 }
 
