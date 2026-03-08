@@ -20,7 +20,6 @@ body{
 background:#0a0a0a;
 color:white;
 font-family:'Inter', sans-serif;
-scroll-behavior:smooth;
 }
 
 /* NAV */
@@ -38,8 +37,13 @@ nav video{
 height:70px;
 }
 
+.nav-links{
+display:flex;
+align-items:center;
+gap:30px;
+}
+
 nav a{
-margin-left:30px;
 text-decoration:none;
 color:white;
 font-size:0.9rem;
@@ -50,9 +54,49 @@ nav a:hover{
 color:#c200ff;
 }
 
+/* DROPDOWN */
+.dropdown{
+position:relative;
+}
+
+.dropbtn{
+cursor:pointer;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+top:35px;
+background:#111;
+min-width:220px;
+border:1px solid #222;
+flex-direction:column;
+z-index:999;
+}
+
+.dropdown-content a{
+padding:12px 18px;
+display:flex;
+justify-content:space-between;
+color:white;
+font-size:0.9rem;
+}
+
+.dropdown-content a:hover{
+background:#1a1a1a;
+}
+
+.dropdown-content span{
+font-size:0.7rem;
+color:#888;
+}
+
+.dropdown:hover .dropdown-content{
+display:flex;
+}
+
 /* CART */
 .cart-icon{
-margin-left:30px;
 cursor:pointer;
 position:relative;
 }
@@ -117,7 +161,7 @@ color:#ccc;
 font-weight:300;
 }
 
-/* SIGNATURE COLLECTION */
+/* SIGNATURE SECTION */
 .collections{
 padding:120px 8%;
 text-align:center;
@@ -131,8 +175,8 @@ margin-bottom:60px;
 
 .collection-grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
 }
 
 .collection-card{
@@ -161,14 +205,7 @@ text-align:left;
 }
 
 .collection-info h3{
-margin:0;
-font-size:24px;
 font-family:'Playfair Display', serif;
-}
-
-.collection-info span{
-font-size:14px;
-opacity:0.9;
 }
 
 /* PHILOSOPHY */
@@ -199,15 +236,15 @@ border-top:1px solid #1a1a1a;
 
 /* MOBILE */
 @media(max-width:900px){
+
 .collection-grid{
 grid-template-columns:1fr;
 }
-.collection-card img{
-height:320px;
-}
+
 .hero-content h1{
 font-size:2.5rem;
 }
+
 }
 
 </style>
@@ -222,11 +259,21 @@ font-size:2.5rem;
 <source src="logo.mp4" type="video/mp4">
 </video>
 
-<div style="display:flex; align-items:center;">
+<div class="nav-links">
 
 <a href="#collections">Signature</a>
-<a href="#shop">Shop</a>
-<a href="#about">About</a>
+
+<div class="dropdown">
+<span class="dropbtn">Shop ▾</span>
+<div class="dropdown-content">
+<a href="men.html">Men <span>Coming Soon</span></a>
+<a href="women.html">Women <span>Coming Soon</span></a>
+<a href="junior.html">Kids <span>Coming Soon</span></a>
+<a href="sports_ass.html">Sports Accessories <span>Coming Soon</span></a>
+</div>
+</div>
+
+<a href="#philosophy">About</a>
 <a href="contact.html">Contact</a>
 
 <div class="cart-icon" onclick="goToCart()">
@@ -262,7 +309,7 @@ Designed for movement, confidence, and presence.
 <!-- SIGNATURE COLLECTION -->
 <section id="collections" class="collections">
 
-<h2>Signature Collections</h2>
+<h2>Signature Collection</h2>
 
 <div class="collection-grid">
 
@@ -294,19 +341,8 @@ Designed for movement, confidence, and presence.
 
 </section>
 
-<!-- SHOP SECTION (placeholder for future expansion) -->
-<section id="shop" class="section">
-
-<h2>Shop All Collections</h2>
-<p>
-Explore men, women, and kids performance wear.
-New drops coming soon.
-</p>
-
-</section>
-
 <!-- PHILOSOPHY -->
-<section id="about" class="section">
+<section id="philosophy" class="section">
 
 <h2>The SpotFut Philosophy</h2>
 
@@ -321,17 +357,9 @@ elevate your presence, and define confidence through simplicity.
 <!-- FOOTER -->
 <footer>
 
-<h3 style="font-family:'Playfair Display', serif;margin-bottom:25px;color:#e5e5e5;">
+<h3 style="font-family:'Playfair Display', serif;margin-bottom:25px;">
 Follow SPOTFUT
 </h3>
-
-<div style="display:flex;justify-content:center;gap:30px;flex-wrap:wrap;">
-
-<a href="https://www.instagram.com/spotfutwearseu/" target="_blank">Instagram</a>
-<a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank">Facebook</a>
-<a href="https://www.tiktok.com/@spotfutwearseu" target="_blank">TikTok</a>
-
-</div>
 
 <p style="margin-top:30px;color:#666;font-size:0.8rem;">
 © 2026 SpotFut. All Rights Reserved.
@@ -341,17 +369,17 @@ Follow SPOTFUT
 
 <script>
 
-/* CART COUNT */
 function updateCartCount(){
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let total = 0;
+
 cart.forEach(item=>{
 total += item.quantity || 1;
 });
+
 document.getElementById("cart-count").innerText = total;
 }
 
-/* GO TO CART */
 function goToCart(){
 window.location.href = "cart.html";
 }
