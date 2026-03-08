@@ -224,8 +224,12 @@ opacity:0;
 transform:translateY(20px);
 transition:all .5s ease;
 
-text-shadow:0 4px 12px rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(6px);
+padding:10px 14px;
+border-radius:6px;
 
+text-shadow:0 4px 12px rgba(0,0,0,0.9);
 }
 
 .collection-card:hover .collection-info{
@@ -235,6 +239,11 @@ transform:translateY(0);
 
 .collection-info h3{
 font-family:'Playfair Display', serif;
+}
+
+.collection-info span{
+color:#ddd;
+font-size:0.9rem;
 }
 
 /* PHILOSOPHY */
