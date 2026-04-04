@@ -73,6 +73,25 @@ label{
     text-align:center;
     margin-top:80px;
 }
+
+.home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #9b59b6, #e91e63);
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+    opacity: 0.95;
+}
 </style>
 </head>
 
@@ -85,6 +104,7 @@ label{
 <!-- Hidden Settings for FormSubmit -->
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
+<input type="hidden" name="_cc" value="farhan.spotfut.es@gmail.com"> <!-- Added CC copy -->
 
 <!-- Order ID -->
 <input type="hidden" name="order_id" id="orderId">
@@ -173,7 +193,6 @@ function generateOrderID(){
 /* Load Order Summary */
 document.addEventListener("DOMContentLoaded", function(){
 
-    // Generate Order ID
     let orderID = generateOrderID();
     document.getElementById("orderId").value = orderID;
 
