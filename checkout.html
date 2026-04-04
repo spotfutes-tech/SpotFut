@@ -67,7 +67,7 @@ label{
     border:none;
     font-weight:600;
     cursor:pointer;
-    transition: 0.3s;
+    transition:0.3s;
 }
 
 .btn:hover{
@@ -87,13 +87,13 @@ label{
     background:#c200ff;
     color:white;
     text-decoration:none;
+    font-weight:600;
     border-radius:6px;
     transition:0.3s;
 }
 
 .home-btn:hover{
-    background:#fff;
-    color:#c200ff;
+    background:#9b00b8;
 }
 </style>
 </head>
@@ -169,12 +169,11 @@ Our team will contact you within 12–24 hours to confirm and arrange payment.
 
 <!-- Products Data -->
 <script src="products.js"></script>
+
 <!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
-
-/* Initialize EmailJS */
 emailjs.init("I0GRXn92TC2QBie6R"); // Your public key
 
 /* Generate Unique Order ID */
@@ -191,7 +190,7 @@ function generateOrderID(){
 document.addEventListener("DOMContentLoaded", function(){
 
     let orderID = generateOrderID();
-    window.orderID = orderID; // store globally
+    document.orderID = orderID;
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let container = document.getElementById("order-items");
@@ -211,16 +210,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
         container.innerHTML += `
         <p>
-        ${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price * qty}
+        ${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price}
         </p>
         `;
 
-        orderItemsText += `${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price * qty}\n`;
+        orderItemsText += `${product.name} (Size: ${item.size}, Qty: ${qty}) - €${product.price * qty}\n`;
     });
 
+    document.totalCost = total;
+    document.orderItemsText = orderItemsText;
     document.getElementById("order-total").innerText = "Total: €" + total;
-    window.orderItemsText = orderItemsText;
-    window.orderTotal = total;
 });
 
 /* Payment Info Display */
@@ -232,43 +231,47 @@ function showPaymentInfo(el){
     if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
 }
 
-/* Handle Form Submission with EmailJS */
+/* Handle Form Submission via EmailJS */
 document.getElementById("orderForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    if(cart.length === 0){
-        alert("Your cart is empty!");
-        return;
-    }
+    let formData = {
+        customer_name: document.querySelector('input[name="customer_name"]').value,
+        customer_email: document.querySelector('input[name="customer_email"]').value,
+        whatsapp: document.querySelector('input[name="whatsapp"]').value,
+        address: document.querySelector('textarea[name="address"]').value,
+        payment_method: document.querySelector('input[name="payment_method"]:checked').value,
+        order_id: document.orderID,
+        order_items: document.orderItemsText,
+        shipping_cost: "0",
+        tax_cost: "0",
+        total_cost: document.totalCost
+    };
 
-    let customer_name = document.querySelector('input[name="customer_name"]').value;
-    let customer_email = document.querySelector('input[name="customer_email"]').value;
-    let whatsapp = document.querySelector('input[name="whatsapp"]').value;
-    let address = document.querySelector('textarea[name="address"]').value;
-    let payment_method = document.querySelector('input[name="payment_method"]:checked').value;
+    // Send to admin
+    emailjs.send("service_2apt1jw","template_jztk8he", formData)
+    .then(function(response){
+        console.log("Admin Email Sent", response.status, response.text);
+    }, function(error){
+        console.error("Admin Email Failed", error);
+    });
 
-    emailjs.send("service_2apt1jw","template_jztk8he", {
-        customer_name: customer_name,
-        customer_email: customer_email,
-        whatsapp: whatsapp,
-        address: address,
-        payment_method: payment_method,
-        order_id: window.orderID,
-        order_items: window.orderItemsText,
-        cost: { shipping: "0", tax: "0", total: window.orderTotal }
-    }).then(function(response){
+    // Send to customer
+    emailjs.send("service_2apt1jw","template_jztk8he", {...formData, customer_email: formData.customer_email})
+    .then(function(response){
+        console.log("Customer Email Sent", response.status, response.text);
+
+        // Clear cart & show success message
         localStorage.removeItem("cart");
         document.getElementById("orderForm").style.display = "none";
         document.getElementById("successMessage").style.display = "block";
-        document.getElementById("order-id-display").innerText = "Your Order ID: " + window.orderID;
+        document.getElementById("order-id-display").innerText =
+            "Your Order ID: " + document.orderID;
     }, function(error){
         alert("Oops! Something went wrong. Please try again.");
-        console.log(error);
+        console.error("Customer Email Failed", error);
     });
-
 });
-
 </script>
 
 </body>
