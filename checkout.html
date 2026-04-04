@@ -46,10 +46,54 @@ label{
     opacity:0.8;
 }
 
-.payment-option{
-    margin-top:10px;
+/* Fancy Payment Cards */
+.payment-options-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
 }
 
+.payment-option-card {
+    flex: 1 1 200px;
+    background: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: center;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.payment-option-card:hover {
+    border-color: #e91e63;
+    background: #1a1a1a;
+}
+
+.payment-option-card input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.payment-option-card.selected {
+    border-color: #e91e63;
+    background: linear-gradient(90deg, #9b59b6, #e91e63);
+    color: white;
+}
+
+.payment-option-card img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Payment Info Box */
 .payment-box{
     margin-top:15px;
     padding:12px;
@@ -59,6 +103,7 @@ label{
     opacity:0.85;
 }
 
+/* Order Summary */
 .order-summary{
     margin-top:30px;
     border-top:1px solid #222;
@@ -85,14 +130,14 @@ label{
 
 <body>
 
-<!-- Back to Home link like cart.html -->
+<!-- Back to Home -->
 <a href="index.html">← Back to Home</a>
 
 <h1>Checkout</h1>
 
 <form id="orderForm" action="https://formsubmit.co/farhan.spotfut.es@gmail.com" method="POST">
 
-<!-- Hidden Settings for FormSubmit -->
+<!-- Hidden Settings -->
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_cc" value="farhan.spotfut.es@gmail.com">
@@ -100,10 +145,9 @@ label{
 <!-- Order ID -->
 <input type="hidden" name="order_id" id="orderId">
 
-<!-- Customer Information -->
+<!-- Customer Info -->
 <div class="section">
     <h3>Customer Information</h3>
-
     <label>Full Name</label>
     <input type="text" name="name" required>
 
@@ -120,23 +164,31 @@ label{
 <!-- Payment Method -->
 <div class="section">
     <h3>Payment Method</h3>
+    <div class="payment-options-container">
+        <label class="payment-option-card">
+            <input type="radio" name="payment" value="Cash on Delivery" onclick="showPaymentInfo(this)" required>
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/cash-in-hand.png"/>
+            Cash on Delivery
+        </label>
 
-    <div class="payment-option">
-        <input type="radio" name="payment" value="Cash on Delivery" onclick="showPaymentInfo(this)" required> Cash on Delivery
+        <label class="payment-option-card">
+            <input type="radio" name="payment" value="Bank Transfer" onclick="showPaymentInfo(this)">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/bank-building.png"/>
+            Bank Transfer
+        </label>
+
+        <label class="payment-option-card">
+            <input type="radio" name="payment" value="Bizum" onclick="showPaymentInfo(this)">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/mobile-payment.png"/>
+            Bizum
+        </label>
+
+        <label class="payment-option-card">
+            <input type="radio" name="payment" value="JazzCash/Easypaisa" onclick="showPaymentInfo(this)">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/wallet-app.png"/>
+            JazzCash / Easypaisa
+        </label>
     </div>
-
-    <div class="payment-option">
-        <input type="radio" name="payment" value="Bank Transfer" onclick="showPaymentInfo(this)"> Bank Transfer
-    </div>
-
-    <div class="payment-option">
-        <input type="radio" name="payment" value="Bizum" onclick="showPaymentInfo(this)"> Bizum (Spain)
-    </div>
-
-    <div class="payment-option">
-        <input type="radio" name="payment" value="JazzCash/Easypaisa" onclick="showPaymentInfo(this)"> JazzCash / Easypaisa (Pakistan)
-    </div>
-
     <div id="payment-info" class="payment-box"></div>
 </div>
 
@@ -147,15 +199,12 @@ label{
     <p id="order-total"></p>
 </div>
 
-<!-- Hidden Order Details -->
 <input type="hidden" name="order_details" id="orderDetails">
 
 <button type="submit" class="btn">Place Order</button>
-
 <p style="margin-top:10px; font-size:0.85rem; opacity:0.7;">
 Our team will contact you within 12–24 hours to confirm and arrange payment.
 </p>
-
 </form>
 
 <div id="successMessage" class="success" style="display:none;">
@@ -163,7 +212,6 @@ Our team will contact you within 12–24 hours to confirm and arrange payment.
     <p id="order-id-display"></p>
     <p>Thank you for your order 💜</p>
     <p>We will contact you shortly via WhatsApp or Email.</p>
-    <!-- Changed to same style as cart.html -->
     <a href="index.html">← Back to Home</a>
 </div>
 
@@ -171,8 +219,7 @@ Our team will contact you within 12–24 hours to confirm and arrange payment.
 <script src="products.js"></script>
 
 <script>
-
-/* Generate Unique Order ID */
+/* Generate Order ID */
 function generateOrderID(){
     let now = new Date();
     let datePart = now.getFullYear().toString() +
@@ -184,7 +231,6 @@ function generateOrderID(){
 
 /* Load Order Summary */
 document.addEventListener("DOMContentLoaded", function(){
-
     let orderID = generateOrderID();
     document.getElementById("orderId").value = orderID;
 
@@ -213,13 +259,12 @@ document.addEventListener("DOMContentLoaded", function(){
         detailsText += `${product.name} (Size: ${item.size}, Qty: ${qty}) - €${product.price * qty}\n`;
     });
 
-    let orderDetailsText = `Order ID: ${orderID}\n\nItems:\n${detailsText}\nTotal: €${total}\n\nYour order was successful! Our team will contact you shortly for payment.`;
-
-    document.getElementById("orderDetails").value = orderDetailsText;
+    document.getElementById("orderDetails").value =
+        `Order ID: ${orderID}\n\nItems:\n${detailsText}\nTotal: €${total}\n\nYour order was successful! Our team will contact you shortly for payment.`;
     document.getElementById("order-total").innerText = "Total: €" + total;
 });
 
-/* Payment Info Display */
+/* Show Payment Info */
 function showPaymentInfo(el){
     let box = document.getElementById("payment-info");
     if(el.value === "Cash on Delivery") box.innerHTML = "Pay in cash when your order is delivered.";
@@ -228,41 +273,41 @@ function showPaymentInfo(el){
     if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
 }
 
-/* Handle Form Submission via Fetch (AJAX) */
+/* Highlight Selected Card */
+const paymentCards = document.querySelectorAll('.payment-option-card');
+paymentCards.forEach(card => {
+    card.addEventListener('click', () => {
+        paymentCards.forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        card.querySelector('input').checked = true;
+    });
+});
+
+/* Form Submission */
 document.getElementById("orderForm").addEventListener("submit", function(e){
     e.preventDefault();
-
     let form = e.target;
     let formData = new FormData(form);
     let orderID = document.getElementById("orderId").value;
 
-    // Dynamic subject including Order ID
     formData.set("_subject", "NewOrder_" + orderID);
-
-    // Customer email for autoresponse
     formData.set("_replyto", document.querySelector('input[name="email"]').value);
-
-    // Auto-response message for customer
     formData.set("_autoresponse", "Thank you for your order! Your SpotFut order " + orderID + " has been received. Our team will contact you shortly for payment.");
 
     fetch(form.action, {
         method: "POST",
         body: formData,
-        headers: {
-            'Accept': 'application/json'
-        }
+        headers: { 'Accept': 'application/json' }
     }).then(response => {
         localStorage.removeItem("cart");
         form.style.display = "none";
         document.getElementById("successMessage").style.display = "block";
-        document.getElementById("order-id-display").innerText =
-            "Your Order ID: " + orderID;
+        document.getElementById("order-id-display").innerText = "Your Order ID: " + orderID;
     }).catch(error => {
         alert("Oops! Something went wrong. Please try again.");
         console.error(error);
     });
 });
-
 </script>
 
 </body>
