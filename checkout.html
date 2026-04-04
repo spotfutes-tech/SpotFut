@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
 body{
     margin:0;
     background:#0b0b0b;
@@ -21,97 +22,69 @@ h1{
     margin-bottom:30px;
 }
 
-a{
+/* BACK LINK (same as cart) */
+.back-link{
     color:white;
     text-decoration:none;
     display:inline-block;
     margin-bottom:30px;
 }
 
-.section{
-    margin-bottom:30px;
+/* FORM */
+form{
+    max-width:600px;
 }
 
-input, textarea{
+input, textarea, select{
     width:100%;
-    padding:12px;
-    margin-top:10px;
+    padding:14px;
+    margin-bottom:15px;
     background:#111;
     border:1px solid #333;
     color:white;
 }
 
-label{
-    font-size:0.9rem;
-    opacity:0.8;
+textarea{
+    resize:none;
 }
 
-/* Fancy Payment Cards */
-.payment-options-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 10px;
+/* PAYMENT OPTIONS */
+.payment-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin:25px 0;
 }
 
-.payment-option-card {
-    flex: 1 1 200px;
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 15px 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    text-align: center;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.payment-option-card:hover {
-    border-color: #e91e63;
-    background: #1a1a1a;
-}
-
-.payment-option-card input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.payment-option-card.selected {
-    border-color: #e91e63;
-    background: linear-gradient(90deg, #9b59b6, #e91e63);
-    color: white;
-}
-
-.payment-option-card img {
-    width: 24px;
-    height: 24px;
-}
-
-/* Payment Info Box */
-.payment-box{
-    margin-top:15px;
-    padding:12px;
-    background:#111;
+.payment-card{
     border:1px solid #333;
-    font-size:0.9rem;
-    opacity:0.85;
+    padding:18px;
+    cursor:pointer;
+    transition:0.3s;
+    text-align:center;
 }
 
-/* Order Summary */
-.order-summary{
-    margin-top:30px;
-    border-top:1px solid #222;
-    padding-top:20px;
+.payment-card:hover{
+    border-color:white;
 }
 
-.btn{
-    margin-top:30px;
+.payment-card.active{
+    border:2px solid white;
+    background:#111;
+}
+
+.payment-title{
+    font-weight:600;
+    margin-bottom:6px;
+}
+
+.payment-desc{
+    font-size:0.85rem;
+    opacity:0.7;
+}
+
+/* BUTTON */
+button{
     width:100%;
     padding:16px;
     background:white;
@@ -121,192 +94,130 @@ label{
     cursor:pointer;
 }
 
-.success{
-    text-align:center;
-    margin-top:80px;
+button:hover{
+    opacity:0.8;
 }
+
+/* NOTE */
+.note{
+    margin-top:10px;
+    font-size:0.85rem;
+    opacity:0.7;
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- Back to Home -->
-<a href="index.html">← Back to Home</a>
+<a href="index.html" class="back-link">← Back to Home</a>
 
 <h1>Checkout</h1>
 
-<form id="orderForm" action="https://formsubmit.co/farhan.spotfut.es@gmail.com" method="POST">
+<form id="checkout-form">
 
-<!-- Hidden Settings -->
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_cc" value="farhan.spotfut.es@gmail.com">
+<input type="text" id="name" placeholder="Full Name" required>
+<input type="email" id="email" placeholder="Email Address" required>
+<input type="text" id="phone" placeholder="WhatsApp Number" required>
+<textarea id="address" placeholder="Shipping Address" required></textarea>
 
-<!-- Order ID -->
-<input type="hidden" name="order_id" id="orderId">
+<h3>Select Payment Method</h3>
 
-<!-- Customer Info -->
-<div class="section">
-    <h3>Customer Information</h3>
-    <label>Full Name</label>
-    <input type="text" name="name" required>
+<div class="payment-options">
 
-    <label>Email</label>
-    <input type="email" name="email" required>
-
-    <label>WhatsApp Number</label>
-    <input type="text" name="whatsapp" required>
-
-    <label>Address</label>
-    <textarea name="address" required></textarea>
-</div>
-
-<!-- Payment Method -->
-<div class="section">
-    <h3>Payment Method</h3>
-    <div class="payment-options-container">
-        <label class="payment-option-card">
-            <input type="radio" name="payment" value="Cash on Delivery" onclick="showPaymentInfo(this)" required>
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/cash-in-hand.png"/>
-            Cash on Delivery
-        </label>
-
-        <label class="payment-option-card">
-            <input type="radio" name="payment" value="Bank Transfer" onclick="showPaymentInfo(this)">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/bank-building.png"/>
-            Bank Transfer
-        </label>
-
-        <label class="payment-option-card">
-            <input type="radio" name="payment" value="Bizum" onclick="showPaymentInfo(this)">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/mobile-payment.png"/>
-            Bizum
-        </label>
-
-        <label class="payment-option-card">
-            <input type="radio" name="payment" value="JazzCash/Easypaisa" onclick="showPaymentInfo(this)">
-            <img src="https://img.icons8.com/ios-filled/50/ffffff/wallet-app.png"/>
-            JazzCash / Easypaisa
-        </label>
+    <div class="payment-card" onclick="selectPayment('whatsapp', this)">
+        <div class="payment-title">WhatsApp Payment</div>
+        <div class="payment-desc">Confirm & pay via chat</div>
     </div>
-    <div id="payment-info" class="payment-box"></div>
+
+    <div class="payment-card" onclick="selectPayment('bank', this)">
+        <div class="payment-title">Bank Transfer</div>
+        <div class="payment-desc">Manual secure transfer</div>
+    </div>
+
+    <div class="payment-card" onclick="selectPayment('stripe', this)">
+        <div class="payment-title">Card Payment</div>
+        <div class="payment-desc">Visa / Mastercard (soon)</div>
+    </div>
+
+    <div class="payment-card" onclick="selectPayment('cash', this)">
+        <div class="payment-title">Cash on Delivery</div>
+        <div class="payment-desc">Pay when received</div>
+    </div>
+
 </div>
 
-<!-- Order Summary -->
-<div class="order-summary">
-    <h3>Your Order</h3>
-    <div id="order-items"></div>
-    <p id="order-total"></p>
-</div>
+<input type="hidden" id="payment-method" required>
 
-<input type="hidden" name="order_details" id="orderDetails">
+<button type="submit">Place Order</button>
 
-<button type="submit" class="btn">Place Order</button>
-<p style="margin-top:10px; font-size:0.85rem; opacity:0.7;">
-Our team will contact you within 12–24 hours to confirm and arrange payment.
+<p class="note">
+We will confirm your order via WhatsApp or Email within minutes.
 </p>
+
 </form>
 
-<div id="successMessage" class="success" style="display:none;">
-    <h2>✅ Order Received</h2>
-    <p id="order-id-display"></p>
-    <p>Thank you for your order 💜</p>
-    <p>We will contact you shortly via WhatsApp or Email.</p>
-    <a href="index.html">← Back to Home</a>
-</div>
-
-<!-- Products Data -->
-<script src="products.js"></script>
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
 <script>
-/* Generate Order ID */
-function generateOrderID(){
-    let now = new Date();
-    let datePart = now.getFullYear().toString() +
-                   String(now.getMonth()+1).padStart(2,'0') +
-                   String(now.getDate()).padStart(2,'0');
-    let randomPart = Math.floor(1000 + Math.random() * 9000);
-    return "SF-" + datePart + "-" + randomPart;
+(function(){
+    emailjs.init("YOUR_PUBLIC_KEY"); // replace
+})();
+
+/* PAYMENT SELECT */
+function selectPayment(method, el){
+
+    document.getElementById("payment-method").value = method;
+
+    document.querySelectorAll(".payment-card").forEach(card=>{
+        card.classList.remove("active");
+    });
+
+    el.classList.add("active");
 }
 
-/* Load Order Summary */
-document.addEventListener("DOMContentLoaded", function(){
-    let orderID = generateOrderID();
-    document.getElementById("orderId").value = orderID;
+/* FORM SUBMIT */
+document.getElementById("checkout-form").addEventListener("submit", function(e){
+    e.preventDefault();
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let container = document.getElementById("order-items");
-    let total = 0;
-    let detailsText = "";
 
     if(cart.length === 0){
-        container.innerHTML = "No items.";
+        alert("Cart is empty");
         return;
     }
 
-    cart.forEach(item => {
-        let product = PRODUCTS[item.id];
-        let qty = item.quantity || 1;
+    let payment = document.getElementById("payment-method").value;
 
-        total += product.price * qty;
+    if(!payment){
+        alert("Please select a payment method");
+        return;
+    }
 
-        container.innerHTML += `
-        <p>
-        ${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price}
-        </p>
-        `;
+    let orderDetails = cart.map(item=>{
+        return `${item.name} (Size: ${item.size}) x${item.quantity}`;
+    }).join(", ");
 
-        detailsText += `${product.name} (Size: ${item.size}, Qty: ${qty}) - €${product.price * qty}\n`;
-    });
+    let params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        address: document.getElementById("address").value,
+        payment: payment,
+        order: orderDetails
+    };
 
-    document.getElementById("orderDetails").value =
-        `Order ID: ${orderID}\n\nItems:\n${detailsText}\nTotal: €${total}\n\nYour order was successful! Our team will contact you shortly for payment.`;
-    document.getElementById("order-total").innerText = "Total: €" + total;
-});
-
-/* Show Payment Info */
-function showPaymentInfo(el){
-    let box = document.getElementById("payment-info");
-    if(el.value === "Cash on Delivery") box.innerHTML = "Pay in cash when your order is delivered.";
-    if(el.value === "Bank Transfer") box.innerHTML = "Our team will send bank details after order confirmation.";
-    if(el.value === "Bizum") box.innerHTML = "You will receive a Bizum number after order confirmation.";
-    if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
-}
-
-/* Highlight Selected Card */
-const paymentCards = document.querySelectorAll('.payment-option-card');
-paymentCards.forEach(card => {
-    card.addEventListener('click', () => {
-        paymentCards.forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-        card.querySelector('input').checked = true;
-    });
-});
-
-/* Form Submission */
-document.getElementById("orderForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    let form = e.target;
-    let formData = new FormData(form);
-    let orderID = document.getElementById("orderId").value;
-
-    formData.set("_subject", "NewOrder_" + orderID);
-    formData.set("_replyto", document.querySelector('input[name="email"]').value);
-    formData.set("_autoresponse", "Thank you for your order! Your SpotFut order " + orderID + " has been received. Our team will contact you shortly for payment.");
-
-    fetch(form.action, {
-        method: "POST",
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-    }).then(response => {
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", params)
+    .then(function(){
+        alert("Order placed successfully!");
         localStorage.removeItem("cart");
-        form.style.display = "none";
-        document.getElementById("successMessage").style.display = "block";
-        document.getElementById("order-id-display").innerText = "Your Order ID: " + orderID;
-    }).catch(error => {
-        alert("Oops! Something went wrong. Please try again.");
-        console.error(error);
+        window.location.href = "index.html";
+    }, function(error){
+        alert("Error sending order. Check EmailJS.");
+        console.log(error);
     });
+
 });
 </script>
 
