@@ -87,14 +87,13 @@ label{
     background:#c200ff;
     color:white;
     text-decoration:none;
-    font-weight:600;
-    border-radius:8px;
+    border-radius:6px;
     transition:0.3s;
 }
 
 .home-btn:hover{
-    background:#ff00ff;
-    color:white;
+    background:#fff;
+    color:#c200ff;
 }
 </style>
 </head>
@@ -105,18 +104,15 @@ label{
 
 <form id="orderForm">
 
-<!-- Order ID -->
-<input type="hidden" name="order_id" id="orderId">
-
 <!-- Customer Information -->
 <div class="section">
     <h3>Customer Information</h3>
 
     <label>Full Name</label>
-    <input type="text" name="name" required>
+    <input type="text" name="customer_name" required>
 
     <label>Email</label>
-    <input type="email" name="email" required>
+    <input type="email" name="customer_email" required>
 
     <label>WhatsApp Number</label>
     <input type="text" name="whatsapp" required>
@@ -130,19 +126,19 @@ label{
     <h3>Payment Method</h3>
 
     <div class="payment-option">
-        <input type="radio" name="payment" value="Cash on Delivery" onclick="showPaymentInfo(this)" required> Cash on Delivery
+        <input type="radio" name="payment_method" value="Cash on Delivery" onclick="showPaymentInfo(this)" required> Cash on Delivery
     </div>
 
     <div class="payment-option">
-        <input type="radio" name="payment" value="Bank Transfer" onclick="showPaymentInfo(this)"> Bank Transfer
+        <input type="radio" name="payment_method" value="Bank Transfer" onclick="showPaymentInfo(this)"> Bank Transfer
     </div>
 
     <div class="payment-option">
-        <input type="radio" name="payment" value="Bizum" onclick="showPaymentInfo(this)"> Bizum (Spain)
+        <input type="radio" name="payment_method" value="Bizum" onclick="showPaymentInfo(this)"> Bizum (Spain)
     </div>
 
     <div class="payment-option">
-        <input type="radio" name="payment" value="JazzCash/Easypaisa" onclick="showPaymentInfo(this)"> JazzCash / Easypaisa (Pakistan)
+        <input type="radio" name="payment_method" value="JazzCash/Easypaisa" onclick="showPaymentInfo(this)"> JazzCash / Easypaisa (Pakistan)
     </div>
 
     <div id="payment-info" class="payment-box"></div>
@@ -173,11 +169,13 @@ Our team will contact you within 12–24 hours to confirm and arrange payment.
 
 <!-- Products Data -->
 <script src="products.js"></script>
-<!-- EmailJS Library -->
+<!-- EmailJS -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
-emailjs.init("I0GRXn92TC2QBie6R"); // Your Public Key
+
+/* Initialize EmailJS */
+emailjs.init("I0GRXn92TC2QBie6R"); // Your public key
 
 /* Generate Unique Order ID */
 function generateOrderID(){
@@ -191,12 +189,14 @@ function generateOrderID(){
 
 /* Load Order Summary */
 document.addEventListener("DOMContentLoaded", function(){
+
     let orderID = generateOrderID();
-    document.getElementById("orderId").value = orderID;
+    window.orderID = orderID; // store globally
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let container = document.getElementById("order-items");
     let total = 0;
+    let orderItemsText = "";
 
     if(cart.length === 0){
         container.innerHTML = "No items.";
@@ -211,12 +211,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
         container.innerHTML += `
         <p>
-        ${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price}
+        ${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price * qty}
         </p>
         `;
+
+        orderItemsText += `${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price * qty}\n`;
     });
 
     document.getElementById("order-total").innerText = "Total: €" + total;
+    window.orderItemsText = orderItemsText;
+    window.orderTotal = total;
 });
 
 /* Payment Info Display */
@@ -228,65 +232,43 @@ function showPaymentInfo(el){
     if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
 }
 
-/* Handle Form Submission via EmailJS */
+/* Handle Form Submission with EmailJS */
 document.getElementById("orderForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    let form = e.target;
-    let orderID = document.getElementById("orderId").value;
-    let customer_name = form.querySelector('input[name="name"]').value;
-    let customer_email = form.querySelector('input[name="email"]').value;
-    let whatsapp = form.querySelector('input[name="whatsapp"]').value;
-    let address = form.querySelector('textarea[name="address"]').value;
-    let payment_method = form.querySelector('input[name="payment"]:checked')?.value || '';
-
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let orders = [];
-    let total = 0;
+    if(cart.length === 0){
+        alert("Your cart is empty!");
+        return;
+    }
 
-    cart.forEach(item => {
-        let product = PRODUCTS[item.id];
-        let qty = item.quantity || 1;
-        total += product.price * qty;
+    let customer_name = document.querySelector('input[name="customer_name"]').value;
+    let customer_email = document.querySelector('input[name="customer_email"]').value;
+    let whatsapp = document.querySelector('input[name="whatsapp"]').value;
+    let address = document.querySelector('textarea[name="address"]').value;
+    let payment_method = document.querySelector('input[name="payment_method"]:checked').value;
 
-        orders.push({
-            name: product.name,
-            size: item.size,
-            units: qty,
-            price: product.price * qty,
-            image_url: item.image
-        });
+    emailjs.send("service_2apt1jw","template_jztk8he", {
+        customer_name: customer_name,
+        customer_email: customer_email,
+        whatsapp: whatsapp,
+        address: address,
+        payment_method: payment_method,
+        order_id: window.orderID,
+        order_items: window.orderItemsText,
+        cost: { shipping: "0", tax: "0", total: window.orderTotal }
+    }).then(function(response){
+        localStorage.removeItem("cart");
+        document.getElementById("orderForm").style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+        document.getElementById("order-id-display").innerText = "Your Order ID: " + window.orderID;
+    }, function(error){
+        alert("Oops! Something went wrong. Please try again.");
+        console.log(error);
     });
 
-    let shipping = 0;
-    let tax = 0;
-
-    let templateParams = {
-        customer_name,
-        customer_email,
-        whatsapp,
-        address,
-        payment_method,
-        order_id: orderID,
-        orders,
-        cost: {
-            shipping,
-            tax,
-            total
-        }
-    };
-
-    emailjs.send("service_2apt1jw", "template_jztk8he", templateParams, "I0GRXn92TC2QBie6R")
-        .then(() => {
-            localStorage.removeItem("cart");
-            form.style.display = "none";
-            document.getElementById("successMessage").style.display = "block";
-            document.getElementById("order-id-display").innerText = "Your Order ID: " + orderID;
-        }, (error) => {
-            alert("Oops! Something went wrong. Please try again.");
-            console.error(error);
-        });
 });
+
 </script>
 
 </body>
