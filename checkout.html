@@ -84,11 +84,17 @@ label{
 
 <form id="orderForm" action="https://formsubmit.co/farhan.spotfut.es@gmail.com" method="POST">
 
-<!-- hidden settings -->
-<input type="hidden" name="_subject" value="New SpotFut Order">
+<!-- Hidden Settings for FormSubmit -->
+<input type="hidden" name="_subject" value="SpotFut Order Confirmation">
 <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="Thank you for your order! Our team will contact you shortly for payment.">
+<input type="hidden" name="_replyto" id="replyTo">
 
-<!-- CUSTOMER INFO -->
+<!-- Order ID -->
+<input type="hidden" name="order_id" id="orderId">
+
+<!-- Customer Information -->
 <div class="section">
     <h3>Customer Information</h3>
 
@@ -105,7 +111,7 @@ label{
     <textarea name="address" required></textarea>
 </div>
 
-<!-- PAYMENT -->
+<!-- Payment Method -->
 <div class="section">
     <h3>Payment Method</h3>
 
@@ -128,14 +134,14 @@ label{
     <div id="payment-info" class="payment-box"></div>
 </div>
 
-<!-- ORDER SUMMARY -->
+<!-- Order Summary -->
 <div class="order-summary">
     <h3>Your Order</h3>
     <div id="order-items"></div>
     <p id="order-total"></p>
 </div>
 
-<!-- hidden order data -->
+<!-- Hidden Order Details -->
 <input type="hidden" name="order_details" id="orderDetails">
 
 <button type="submit" class="btn">Place Order</button>
@@ -148,17 +154,32 @@ Our team will contact you within 12–24 hours to confirm and arrange payment.
 
 <div id="successMessage" class="success" style="display:none;">
     <h2>✅ Order Received</h2>
+    <p id="order-id-display"></p>
     <p>Thank you for your order 💜</p>
     <p>We will contact you shortly via WhatsApp or Email.</p>
 </div>
 
-<!-- PRODUCTS -->
+<!-- Products Data -->
 <script src="products.js"></script>
 
 <script>
 
-/* LOAD ORDER */
+/* Generate Unique Order ID */
+function generateOrderID(){
+    let now = new Date();
+    let datePart = now.getFullYear().toString() +
+                   String(now.getMonth()+1).padStart(2,'0') +
+                   String(now.getDate()).padStart(2,'0');
+    let randomPart = Math.floor(1000 + Math.random() * 9000);
+    return "SF-" + datePart + "-" + randomPart;
+}
+
+/* Load Order Summary */
 document.addEventListener("DOMContentLoaded", function(){
+
+    // Generate Order ID
+    let orderID = generateOrderID();
+    document.getElementById("orderId").value = orderID;
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let container = document.getElementById("order-items");
@@ -171,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     cart.forEach(item => {
-
         let product = PRODUCTS[item.id];
         let qty = item.quantity || 1;
 
@@ -186,41 +206,37 @@ document.addEventListener("DOMContentLoaded", function(){
         detailsText += `${product.name} (Size: ${item.size}, Qty: ${qty}) - €${product.price * qty}\n`;
     });
 
-    document.getElementById("order-total").innerText = "Total: €" + total;
-    document.getElementById("orderDetails").value = detailsText + "Total: €" + total;
+    let orderDetailsText = `Order ID: ${orderID}\n\nItems:\n${detailsText}\nTotal: €${total}\n\nYour order was successful! Our team will contact you shortly for payment.`;
 
+    document.getElementById("orderDetails").value = orderDetailsText;
+
+    // Set customer email for automatic email
+    document.getElementById("replyTo").value = document.querySelector('input[name="email"]').value;
+
+    document.getElementById("order-total").innerText = "Total: €" + total;
 });
 
-/* PAYMENT INFO */
+/* Payment Info Display */
 function showPaymentInfo(el){
-
     let box = document.getElementById("payment-info");
-
-    if(el.value === "Cash on Delivery"){
-        box.innerHTML = "Pay in cash when your order is delivered.";
-    }
-
-    if(el.value === "Bank Transfer"){
-        box.innerHTML = "Our team will send bank details after order confirmation.";
-    }
-
-    if(el.value === "Bizum"){
-        box.innerHTML = "You will receive a Bizum number after order confirmation.";
-    }
-
-    if(el.value === "JazzCash/Easypaisa"){
-        box.innerHTML = "You will receive mobile wallet details after order confirmation.";
-    }
+    if(el.value === "Cash on Delivery") box.innerHTML = "Pay in cash when your order is delivered.";
+    if(el.value === "Bank Transfer") box.innerHTML = "Our team will send bank details after order confirmation.";
+    if(el.value === "Bizum") box.innerHTML = "You will receive a Bizum number after order confirmation.";
+    if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
 }
 
-/* SUCCESS UI */
+/* Handle Form Submission */
 document.getElementById("orderForm").addEventListener("submit", function(){
+
+    let orderID = document.getElementById("orderId").value;
 
     localStorage.removeItem("cart");
 
     setTimeout(()=>{
         document.getElementById("orderForm").style.display = "none";
         document.getElementById("successMessage").style.display = "block";
+        document.getElementById("order-id-display").innerText =
+            "Your Order ID: " + orderID;
     }, 500);
 
 });
