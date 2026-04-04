@@ -74,23 +74,22 @@ label{
     margin-top:80px;
 }
 
-.home-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    background: linear-gradient(90deg, #9b59b6, #e91e63);
-    color: white;
-    font-weight: 600;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+.home-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 24px;
+    border:2px solid #c200ff;
+    border-radius:8px;
+    background:transparent;
+    color:#c200ff;
+    font-weight:600;
+    text-decoration:none;
+    transition:0.3s;
 }
 
-.home-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-    opacity: 0.95;
+.home-btn:hover{
+    background:#c200ff;
+    color:black;
 }
 </style>
 </head>
@@ -109,10 +108,10 @@ label{
     <h3>Customer Information</h3>
 
     <label>Full Name</label>
-    <input type="text" name="name" required>
+    <input type="text" name="customer_name" required>
 
     <label>Email</label>
-    <input type="email" name="email" required>
+    <input type="email" name="customer_email" required>
 
     <label>WhatsApp Number</label>
     <input type="text" name="whatsapp" required>
@@ -126,19 +125,19 @@ label{
     <h3>Payment Method</h3>
 
     <div class="payment-option">
-        <input type="radio" name="payment" value="Cash on Delivery" onclick="showPaymentInfo(this)" required> Cash on Delivery
+        <input type="radio" name="payment_method" value="Cash on Delivery" onclick="showPaymentInfo(this)" required> Cash on Delivery
     </div>
 
     <div class="payment-option">
-        <input type="radio" name="payment" value="Bank Transfer" onclick="showPaymentInfo(this)"> Bank Transfer
+        <input type="radio" name="payment_method" value="Bank Transfer" onclick="showPaymentInfo(this)"> Bank Transfer
     </div>
 
     <div class="payment-option">
-        <input type="radio" name="payment" value="Bizum" onclick="showPaymentInfo(this)"> Bizum (Spain)
+        <input type="radio" name="payment_method" value="Bizum" onclick="showPaymentInfo(this)"> Bizum (Spain)
     </div>
 
     <div class="payment-option">
-        <input type="radio" name="payment" value="JazzCash/Easypaisa" onclick="showPaymentInfo(this)"> JazzCash / Easypaisa (Pakistan)
+        <input type="radio" name="payment_method" value="JazzCash/Easypaisa" onclick="showPaymentInfo(this)"> JazzCash / Easypaisa (Pakistan)
     </div>
 
     <div id="payment-info" class="payment-box"></div>
@@ -150,9 +149,6 @@ label{
     <div id="order-items"></div>
     <p id="order-total"></p>
 </div>
-
-<!-- Hidden Order Details -->
-<input type="hidden" name="order_details" id="orderDetails">
 
 <button type="submit" class="btn">Place Order</button>
 
@@ -172,94 +168,109 @@ Our team will contact you within 12–24 hours to confirm and arrange payment.
 
 <!-- Products Data -->
 <script src="products.js"></script>
-
 <!-- EmailJS Library -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+/* Initialize EmailJS */
+emailjs.init("I0GRXn92TC2QBie6R"); // Your Public Key
 
-    // Initialize EmailJS using your public key from contact.html
-    emailjs.init("I0GRXn92TC2QBie6R"); 
+/* Generate Unique Order ID */
+function generateOrderID(){
+    let now = new Date();
+    let datePart = now.getFullYear().toString() +
+                   String(now.getMonth()+1).padStart(2,'0') +
+                   String(now.getDate()).padStart(2,'0');
+    let randomPart = Math.floor(1000 + Math.random() * 9000);
+    return "SF-" + datePart + "-" + randomPart;
+}
 
-    /* Generate Unique Order ID */
-    function generateOrderID(){
-        let now = new Date();
-        let datePart = now.getFullYear().toString() +
-                       String(now.getMonth()+1).padStart(2,'0') +
-                       String(now.getDate()).padStart(2,'0');
-        let randomPart = Math.floor(1000 + Math.random() * 9000);
-        return "SF-" + datePart + "-" + randomPart;
-    }
+/* Load Order Summary */
+document.addEventListener("DOMContentLoaded", function(){
 
-    // Load order summary
+    // Generate Order ID
     let orderID = generateOrderID();
     document.getElementById("orderId").value = orderID;
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let container = document.getElementById("order-items");
     let total = 0;
-    let detailsText = "";
 
     if(cart.length === 0){
         container.innerHTML = "No items.";
         return;
     }
 
+    container.innerHTML = "";
     cart.forEach(item => {
         let product = PRODUCTS[item.id];
         let qty = item.quantity || 1;
         total += product.price * qty;
 
         container.innerHTML += `<p>${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price}</p>`;
-
-        detailsText += `${product.name} (Size: ${item.size}, Qty: ${qty}) - €${product.price * qty}\n`;
     });
 
-    document.getElementById("orderDetails").value = detailsText;
     document.getElementById("order-total").innerText = "Total: €" + total;
+});
 
-    // Payment Info Display
-    window.showPaymentInfo = function(el){
-        let box = document.getElementById("payment-info");
-        if(el.value === "Cash on Delivery") box.innerHTML = "Pay in cash when your order is delivered.";
-        if(el.value === "Bank Transfer") box.innerHTML = "Our team will send bank details after order confirmation.";
-        if(el.value === "Bizum") box.innerHTML = "You will receive a Bizum number after order confirmation.";
-        if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
-    }
+/* Payment Info Display */
+function showPaymentInfo(el){
+    let box = document.getElementById("payment-info");
+    if(el.value === "Cash on Delivery") box.innerHTML = "Pay in cash when your order is delivered.";
+    if(el.value === "Bank Transfer") box.innerHTML = "Our team will send bank details after order confirmation.";
+    if(el.value === "Bizum") box.innerHTML = "You will receive a Bizum number after order confirmation.";
+    if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
+}
 
-    // Handle form submission via EmailJS
-    document.getElementById("orderForm").addEventListener("submit", function(e){
-        e.preventDefault();
+/* Handle Form Submission with EmailJS */
+document.getElementById("orderForm").addEventListener("submit", function(e){
+    e.preventDefault();
 
-        let form = e.target;
+    let form = e.target;
+    let orderID = document.getElementById("orderId").value;
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = 0;
 
-        let templateParams = {
-            order_id: orderID,
-            customer_name: form.name.value,
-            customer_email: form.email.value,
-            whatsapp: form.whatsapp.value,
-            address: form.address.value,
-            payment_method: form.payment.value,
-            order_items: detailsText,
-            order_total: "Total: €" + total
+    // Build orders array for EmailJS template
+    let ordersArray = cart.map(item => {
+        let product = PRODUCTS[item.id];
+        let qty = item.quantity || 1;
+        total += product.price * qty;
+        return {
+            name: product.name,
+            size: item.size,
+            units: qty,
+            price: (product.price * qty).toFixed(2),
+            image_url: item.image
         };
-
-        // Send order email using your service/template IDs from contact.html
-        emailjs.send("service_2apt1jw","template_ssc6g0f", templateParams)
-        .then(() => {
-            localStorage.removeItem("cart");
-            form.style.display = "none";
-            document.getElementById("successMessage").style.display = "block";
-            document.getElementById("order-id-display").innerText = "Your Order ID: " + orderID;
-        })
-        .catch(err => {
-            alert("Oops! Something went wrong. Please try again.");
-            console.error(err);
-        });
-
     });
 
+    let templateParams = {
+        order_id: orderID,
+        customer_name: form.customer_name.value,
+        customer_email: form.customer_email.value,
+        whatsapp: form.whatsapp.value,
+        address: form.address.value,
+        payment_method: form.payment_method.value,
+        orders: ordersArray,
+        cost: {
+            shipping: "0.00",
+            tax: "0.00",
+            total: total.toFixed(2)
+        },
+        reply_to: form.customer_email.value
+    };
+
+    emailjs.send("service_2apt1jw", "template_order", templateParams)
+    .then(function() {
+        localStorage.removeItem("cart");
+        form.style.display = "none";
+        document.getElementById("successMessage").style.display = "block";
+        document.getElementById("order-id-display").innerText = "Your Order ID: " + orderID;
+    }, function(error) {
+        alert("Oops! Something went wrong. Please try again.");
+        console.error(error);
+    });
 });
 </script>
 
