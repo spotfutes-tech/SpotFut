@@ -172,7 +172,6 @@ Our team will contact you within 12–24 hours to confirm and arrange payment.
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script>
-/* Initialize EmailJS */
 emailjs.init("I0GRXn92TC2QBie6R"); // Your Public Key
 
 /* Generate Unique Order ID */
@@ -187,8 +186,6 @@ function generateOrderID(){
 
 /* Load Order Summary */
 document.addEventListener("DOMContentLoaded", function(){
-
-    // Generate Order ID
     let orderID = generateOrderID();
     document.getElementById("orderId").value = orderID;
 
@@ -231,7 +228,6 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let total = 0;
 
-    // Build orders array for EmailJS template
     let ordersArray = cart.map(item => {
         let product = PRODUCTS[item.id];
         let qty = item.quantity || 1;
@@ -261,7 +257,8 @@ document.getElementById("orderForm").addEventListener("submit", function(e){
         reply_to: form.customer_email.value
     };
 
-    emailjs.send("service_2apt1jw", "template_order", templateParams)
+    // ✅ Correct Template ID applied here
+    emailjs.send("service_2apt1jw", "template_jztk8he", templateParams)
     .then(function() {
         localStorage.removeItem("cart");
         form.style.display = "none";
