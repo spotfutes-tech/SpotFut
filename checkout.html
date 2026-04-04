@@ -21,6 +21,13 @@ h1{
     margin-bottom:30px;
 }
 
+a{
+    color:white;
+    text-decoration:none;
+    display:inline-block;
+    margin-bottom:30px;
+}
+
 .section{
     margin-bottom:30px;
 }
@@ -73,32 +80,13 @@ label{
     text-align:center;
     margin-top:80px;
 }
-
-.home-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    background: linear-gradient(90deg, #9b59b6, #e91e63);
-    color: white;
-    font-weight: 600;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.home-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
-    opacity: 0.95;
-}
 </style>
 </head>
 
 <body>
 
+<!-- Back to Home link like cart.html -->
 <a href="index.html">← Back to Home</a>
-
 
 <h1>Checkout</h1>
 
@@ -107,7 +95,7 @@ label{
 <!-- Hidden Settings for FormSubmit -->
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
-<input type="hidden" name="_cc" value="farhan.spotfut.es@gmail.com"> <!-- Added CC copy -->
+<input type="hidden" name="_cc" value="farhan.spotfut.es@gmail.com">
 
 <!-- Order ID -->
 <input type="hidden" name="order_id" id="orderId">
@@ -175,7 +163,8 @@ Our team will contact you within 12–24 hours to confirm and arrange payment.
     <p id="order-id-display"></p>
     <p>Thank you for your order 💜</p>
     <p>We will contact you shortly via WhatsApp or Email.</p>
-    <a href="index.html" class="home-btn">← Back to Home</a>
+    <!-- Changed to same style as cart.html -->
+    <a href="index.html">← Back to Home</a>
 </div>
 
 <!-- Products Data -->
