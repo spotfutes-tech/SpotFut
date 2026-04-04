@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Checkout | SpotFut</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body{
     margin:0;
@@ -13,13 +15,16 @@ body{
     font-family:'Poppins', sans-serif;
     padding:60px 8%;
 }
+
 h1{
     font-family:'Playfair Display', serif;
     margin-bottom:30px;
 }
+
 .section{
     margin-bottom:30px;
 }
+
 input, textarea{
     width:100%;
     padding:12px;
@@ -27,30 +32,32 @@ input, textarea{
     background:#111;
     border:1px solid #333;
     color:white;
-    border-radius:6px;
 }
+
 label{
     font-size:0.9rem;
     opacity:0.8;
-    display:block;
-    margin-top:15px;
 }
+
 .payment-option{
-    margin:12px 0;
+    margin-top:10px;
 }
+
 .payment-box{
     margin-top:15px;
-    padding:15px;
+    padding:12px;
     background:#111;
     border:1px solid #333;
-    border-radius:6px;
     font-size:0.9rem;
+    opacity:0.85;
 }
+
 .order-summary{
     margin-top:30px;
     border-top:1px solid #222;
     padding-top:20px;
 }
+
 .btn{
     margin-top:30px;
     width:100%;
@@ -60,83 +67,104 @@ label{
     border:none;
     font-weight:600;
     cursor:pointer;
-    transition:0.3s;
-    border-radius:6px;
 }
-.btn:hover{
-    background:#c200ff;
-    color:white;
-}
+
 .success{
     text-align:center;
     margin-top:80px;
 }
-.home-btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 24px;
-    background:#c200ff;
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-    border-radius:6px;
-    transition:0.3s;
+
+.home-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #9b59b6, #e91e63);
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-.home-btn:hover{
-    background:white;
-    color:#c200ff;
+
+.home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+    opacity: 0.95;
 }
 </style>
 </head>
+
 <body>
+
 <h1>Checkout</h1>
 
-<form id="orderForm">
-    <!-- Order ID -->
-    <input type="hidden" name="order_id" id="orderId">
+<form id="orderForm" action="https://formsubmit.co/farhan.spotfut.es@gmail.com" method="POST">
 
-    <!-- Customer Information -->
-    <div class="section">
-        <h3>Customer Information</h3>
-        <label>Full Name</label>
-        <input type="text" name="name" required>
-        
-        <label>Email</label>
-        <input type="email" name="email" required>
-        
-        <label>WhatsApp Number</label>
-        <input type="text" name="whatsapp" required>
-        
-        <label>Address</label>
-        <textarea name="address" rows="4" required></textarea>
+<!-- Hidden Settings for FormSubmit -->
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_cc" value="farhan.spotfut.es@gmail.com"> <!-- Added CC copy -->
+
+<!-- Order ID -->
+<input type="hidden" name="order_id" id="orderId">
+
+<!-- Customer Information -->
+<div class="section">
+    <h3>Customer Information</h3>
+
+    <label>Full Name</label>
+    <input type="text" name="name" required>
+
+    <label>Email</label>
+    <input type="email" name="email" required>
+
+    <label>WhatsApp Number</label>
+    <input type="text" name="whatsapp" required>
+
+    <label>Address</label>
+    <textarea name="address" required></textarea>
+</div>
+
+<!-- Payment Method -->
+<div class="section">
+    <h3>Payment Method</h3>
+
+    <div class="payment-option">
+        <input type="radio" name="payment" value="Cash on Delivery" onclick="showPaymentInfo(this)" required> Cash on Delivery
     </div>
 
-    <!-- Payment Method -->
-    <div class="section">
-        <h3>Payment Method</h3>
-        <div class="payment-option">
-            <input type="radio" name="payment" value="Cash on Delivery" onclick="showPaymentInfo(this)" required> Cash on Delivery
-        </div>
-        <div class="payment-option">
-            <input type="radio" name="payment" value="Bank Transfer" onclick="showPaymentInfo(this)"> Bank Transfer
-        </div>
-        <div class="payment-option">
-            <input type="radio" name="payment" value="Bizum" onclick="showPaymentInfo(this)"> Bizum (Spain)
-        </div>
-        <div class="payment-option">
-            <input type="radio" name="payment" value="JazzCash/Easypaisa" onclick="showPaymentInfo(this)"> JazzCash / Easypaisa (Pakistan)
-        </div>
-        <div id="payment-info" class="payment-box"></div>
+    <div class="payment-option">
+        <input type="radio" name="payment" value="Bank Transfer" onclick="showPaymentInfo(this)"> Bank Transfer
     </div>
 
-    <!-- Order Summary -->
-    <div class="order-summary">
-        <h3>Your Order</h3>
-        <div id="order-items"></div>
-        <p id="order-total" style="font-size:1.1rem; font-weight:600; margin-top:15px;"></p>
+    <div class="payment-option">
+        <input type="radio" name="payment" value="Bizum" onclick="showPaymentInfo(this)"> Bizum (Spain)
     </div>
 
-    <button type="submit" class="btn">Place Order</button>
+    <div class="payment-option">
+        <input type="radio" name="payment" value="JazzCash/Easypaisa" onclick="showPaymentInfo(this)"> JazzCash / Easypaisa (Pakistan)
+    </div>
+
+    <div id="payment-info" class="payment-box"></div>
+</div>
+
+<!-- Order Summary -->
+<div class="order-summary">
+    <h3>Your Order</h3>
+    <div id="order-items"></div>
+    <p id="order-total"></p>
+</div>
+
+<!-- Hidden Order Details -->
+<input type="hidden" name="order_details" id="orderDetails">
+
+<button type="submit" class="btn">Place Order</button>
+
+<p style="margin-top:10px; font-size:0.85rem; opacity:0.7;">
+Our team will contact you within 12–24 hours to confirm and arrange payment.
+</p>
+
 </form>
 
 <div id="successMessage" class="success" style="display:none;">
@@ -150,14 +178,7 @@ label{
 <!-- Products Data -->
 <script src="products.js"></script>
 
-<!-- EmailJS v4 -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <script>
-// Initialize EmailJS
-emailjs.init({
-    publicKey: "I0GRXn92TC2QBie6R"
-});
 
 /* Generate Unique Order ID */
 function generateOrderID(){
@@ -171,86 +192,86 @@ function generateOrderID(){
 
 /* Load Order Summary */
 document.addEventListener("DOMContentLoaded", function(){
+
     let orderID = generateOrderID();
     document.getElementById("orderId").value = orderID;
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     let container = document.getElementById("order-items");
     let total = 0;
+    let detailsText = "";
 
     if(cart.length === 0){
-        container.innerHTML = "<p>No items in cart.</p>";
+        container.innerHTML = "No items.";
         return;
     }
 
     cart.forEach(item => {
         let product = PRODUCTS[item.id];
-        if(!product) return;
         let qty = item.quantity || 1;
+
         total += product.price * qty;
 
         container.innerHTML += `
-            <p>${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price * qty}</p>
+        <p>
+        ${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price}
+        </p>
         `;
+
+        detailsText += `${product.name} (Size: ${item.size}, Qty: ${qty}) - €${product.price * qty}\n`;
     });
 
-    document.getElementById("order-total").innerText = `Total: €${total}`;
+    let orderDetailsText = `Order ID: ${orderID}\n\nItems:\n${detailsText}\nTotal: €${total}\n\nYour order was successful! Our team will contact you shortly for payment.`;
+
+    document.getElementById("orderDetails").value = orderDetailsText;
+    document.getElementById("order-total").innerText = "Total: €" + total;
 });
 
-/* Payment Info */
+/* Payment Info Display */
 function showPaymentInfo(el){
     let box = document.getElementById("payment-info");
     if(el.value === "Cash on Delivery") box.innerHTML = "Pay in cash when your order is delivered.";
-    else if(el.value === "Bank Transfer") box.innerHTML = "Our team will send bank details after order confirmation.";
-    else if(el.value === "Bizum") box.innerHTML = "You will receive a Bizum number after order confirmation.";
-    else if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
+    if(el.value === "Bank Transfer") box.innerHTML = "Our team will send bank details after order confirmation.";
+    if(el.value === "Bizum") box.innerHTML = "You will receive a Bizum number after order confirmation.";
+    if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
 }
 
-/* Form Submission */
+/* Handle Form Submission via Fetch (AJAX) */
 document.getElementById("orderForm").addEventListener("submit", function(e){
     e.preventDefault();
 
     let form = e.target;
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let formData = new FormData(form);
     let orderID = document.getElementById("orderId").value;
 
-    let ordersText = cart.map(item => {
-        let p = PRODUCTS[item.id];
-        if(!p) return "";
-        let qty = item.quantity || 1;
-        return `${p.name} | Size: ${item.size} | Qty: ${qty} | €${p.price * qty}`;
-    }).join("\n");
+    // Dynamic subject including Order ID
+    formData.set("_subject", "NewOrder_" + orderID);
 
-    let total = cart.reduce((sum, item) => {
-        let p = PRODUCTS[item.id];
-        return p ? sum + (p.price * (item.quantity || 1)) : sum;
-    }, 0);
+    // Customer email for autoresponse
+    formData.set("_replyto", document.querySelector('input[name="email"]').value);
 
-    let templateParams = {
-        customer_name: form.querySelector('input[name="name"]').value,
-        customer_email: form.querySelector('input[name="email"]').value,
-        whatsapp: form.querySelector('input[name="whatsapp"]').value,
-        address: form.querySelector('textarea[name="address"]').value,
-        payment_method: form.querySelector('input[name="payment"]:checked')?.value || "N/A",
-        order_id: orderID,
-        orders: ordersText,
-        total_amount: total.toFixed(2)
-    };
+    // Auto-response message for customer
+    formData.set("_autoresponse", "Thank you for your order! Your SpotFut order " + orderID + " has been received. Our team will contact you shortly for payment.");
 
-    emailjs.send("service_2apt1jw", "template_jztk8he", templateParams)
-    .then(function(response){
-        console.log("SUCCESS!", response.status, response.text);
-        
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    }).then(response => {
         localStorage.removeItem("cart");
         form.style.display = "none";
         document.getElementById("successMessage").style.display = "block";
-        document.getElementById("order-id-display").innerText = "Your Order ID: " + orderID;
-    })
-    .catch(function(error){
-        console.error("FAILED...", error);
+        document.getElementById("order-id-display").innerText =
+            "Your Order ID: " + orderID;
+    }).catch(error => {
         alert("Oops! Something went wrong. Please try again.");
+        console.error(error);
     });
 });
+
 </script>
+
 </body>
 </html>
