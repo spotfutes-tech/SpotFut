@@ -16,29 +16,43 @@ body{
     padding:60px 8%;
 }
 
+/* ✅ MOBILE OPTIMIZATION */
+@media(max-width:768px){
+    body{
+        padding:25px 18px 100px;
+    }
+}
+
 h1{
     font-family:'Playfair Display', serif;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 a{
     color:white;
     text-decoration:none;
     display:inline-block;
-    margin-bottom:30px;
+    margin-bottom:25px;
+    font-size:14px;
 }
 
 .section{
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 input, textarea{
     width:100%;
-    padding:12px;
+    padding:14px;
     margin-top:10px;
     background:#111;
     border:1px solid #333;
     color:white;
+    font-size:16px; /* prevents zoom */
+    border-radius:6px;
+}
+
+textarea{
+    resize:none;
 }
 
 label{
@@ -46,22 +60,28 @@ label{
     opacity:0.8;
 }
 
-/* Fancy Payment Cards */
+/* ✅ Fancy Payment Cards */
 .payment-options-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
     margin-top: 10px;
 }
 
+/* MOBILE STACK */
+@media(max-width:600px){
+    .payment-options-container{
+        grid-template-columns: 1fr;
+    }
+}
+
 .payment-option-card {
-    flex: 1 1 200px;
     background: #111;
     border: 1px solid #333;
-    border-radius: 10px;
-    padding: 15px 20px;
+    border-radius: 12px;
+    padding: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     position: relative;
     text-align: center;
     font-weight: 600;
@@ -71,15 +91,19 @@ label{
     gap: 10px;
 }
 
+/* HOVER + TOUCH */
 .payment-option-card:hover {
     border-color: #e91e63;
     background: #1a1a1a;
 }
 
+.payment-option-card:active {
+    transform: scale(0.97);
+}
+
 .payment-option-card input {
     position: absolute;
     opacity: 0;
-    cursor: pointer;
 }
 
 .payment-option-card.selected {
@@ -89,11 +113,11 @@ label{
 }
 
 .payment-option-card img {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
 }
 
-/* Payment Info Box */
+/* Payment Info */
 .payment-box{
     margin-top:15px;
     padding:12px;
@@ -101,6 +125,7 @@ label{
     border:1px solid #333;
     font-size:0.9rem;
     opacity:0.85;
+    border-radius:6px;
 }
 
 /* Order Summary */
@@ -110,6 +135,7 @@ label{
     padding-top:20px;
 }
 
+/* BUTTON */
 .btn{
     margin-top:30px;
     width:100%;
@@ -119,6 +145,19 @@ label{
     border:none;
     font-weight:600;
     cursor:pointer;
+    border-radius:8px;
+}
+
+/* ✅ STICKY MOBILE BUTTON */
+@media(max-width:768px){
+    .btn{
+        position:fixed;
+        bottom:15px;
+        left:18px;
+        right:18px;
+        width:auto;
+        z-index:1000;
+    }
 }
 
 .success{
@@ -130,24 +169,21 @@ label{
 
 <body>
 
-<!-- Back to Home -->
 <a href="index.html">← Back to Home</a>
 
 <h1>Checkout</h1>
 
 <form id="orderForm" action="https://formsubmit.co/farhan.spotfut.es@gmail.com" method="POST">
 
-<!-- Hidden Settings -->
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_cc" value="farhan.spotfut.es@gmail.com">
 
-<!-- Order ID -->
 <input type="hidden" name="order_id" id="orderId">
 
-<!-- Customer Info -->
 <div class="section">
     <h3>Customer Information</h3>
+
     <label>Full Name</label>
     <input type="text" name="name" required>
 
@@ -155,16 +191,17 @@ label{
     <input type="email" name="email" required>
 
     <label>WhatsApp Number</label>
-    <input type="text" name="whatsapp" required>
+    <input type="tel" name="whatsapp" required>
 
     <label>Address</label>
     <textarea name="address" required></textarea>
 </div>
 
-<!-- Payment Method -->
 <div class="section">
     <h3>Payment Method</h3>
+
     <div class="payment-options-container">
+
         <label class="payment-option-card">
             <input type="radio" name="payment" value="Cash on Delivery" onclick="showPaymentInfo(this)" required>
             <img src="https://img.icons8.com/ios-filled/50/ffffff/cash-in-hand.png"/>
@@ -188,11 +225,12 @@ label{
             <img src="https://img.icons8.com/ios-filled/50/ffffff/wallet-app.png"/>
             JazzCash / Easypaisa
         </label>
+
     </div>
+
     <div id="payment-info" class="payment-box"></div>
 </div>
 
-<!-- Order Summary -->
 <div class="order-summary">
     <h3>Your Order</h3>
     <div id="order-items"></div>
@@ -202,9 +240,11 @@ label{
 <input type="hidden" name="order_details" id="orderDetails">
 
 <button type="submit" class="btn">Place Order</button>
+
 <p style="margin-top:10px; font-size:0.85rem; opacity:0.7;">
 Our team will contact you within 12–24 hours to confirm and arrange payment.
 </p>
+
 </form>
 
 <div id="successMessage" class="success" style="display:none;">
@@ -215,11 +255,9 @@ Our team will contact you within 12–24 hours to confirm and arrange payment.
     <a href="index.html">← Back to Home</a>
 </div>
 
-<!-- Products Data -->
 <script src="products.js"></script>
 
 <script>
-/* Generate Order ID */
 function generateOrderID(){
     let now = new Date();
     let datePart = now.getFullYear().toString() +
@@ -229,8 +267,8 @@ function generateOrderID(){
     return "SF-" + datePart + "-" + randomPart;
 }
 
-/* Load Order Summary */
 document.addEventListener("DOMContentLoaded", function(){
+
     let orderID = generateOrderID();
     document.getElementById("orderId").value = orderID;
 
@@ -251,20 +289,19 @@ document.addEventListener("DOMContentLoaded", function(){
         total += product.price * qty;
 
         container.innerHTML += `
-        <p>
-        ${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price}
-        </p>
+        <p>${product.name} | Size: ${item.size} | Qty: ${qty} | €${product.price}</p>
         `;
 
         detailsText += `${product.name} (Size: ${item.size}, Qty: ${qty}) - €${product.price * qty}\n`;
     });
 
     document.getElementById("orderDetails").value =
-        `Order ID: ${orderID}\n\nItems:\n${detailsText}\nTotal: €${total}\n\nYour order was successful! Our team will contact you shortly for payment.`;
+        `Order ID: ${orderID}\n\nItems:\n${detailsText}\nTotal: €${total}`;
+
     document.getElementById("order-total").innerText = "Total: €" + total;
 });
 
-/* Show Payment Info */
+/* Payment Info */
 function showPaymentInfo(el){
     let box = document.getElementById("payment-info");
     if(el.value === "Cash on Delivery") box.innerHTML = "Pay in cash when your order is delivered.";
@@ -273,39 +310,38 @@ function showPaymentInfo(el){
     if(el.value === "JazzCash/Easypaisa") box.innerHTML = "You will receive mobile wallet details after order confirmation.";
 }
 
-/* Highlight Selected Card */
-const paymentCards = document.querySelectorAll('.payment-option-card');
-paymentCards.forEach(card => {
+/* Card selection */
+document.querySelectorAll('.payment-option-card').forEach(card => {
     card.addEventListener('click', () => {
-        paymentCards.forEach(c => c.classList.remove('selected'));
+        document.querySelectorAll('.payment-option-card').forEach(c => c.classList.remove('selected'));
         card.classList.add('selected');
         card.querySelector('input').checked = true;
     });
 });
 
-/* Form Submission */
+/* Submit */
 document.getElementById("orderForm").addEventListener("submit", function(e){
     e.preventDefault();
+
     let form = e.target;
     let formData = new FormData(form);
     let orderID = document.getElementById("orderId").value;
 
     formData.set("_subject", "NewOrder_" + orderID);
     formData.set("_replyto", document.querySelector('input[name="email"]').value);
-    formData.set("_autoresponse", "Thank you for your order! Your SpotFut order " + orderID + " has been received. Our team will contact you shortly for payment.");
+    formData.set("_autoresponse", "Thank you! Your SpotFut order " + orderID + " has been received.");
 
     fetch(form.action, {
         method: "POST",
         body: formData,
         headers: { 'Accept': 'application/json' }
-    }).then(response => {
+    }).then(() => {
         localStorage.removeItem("cart");
         form.style.display = "none";
         document.getElementById("successMessage").style.display = "block";
         document.getElementById("order-id-display").innerText = "Your Order ID: " + orderID;
-    }).catch(error => {
-        alert("Oops! Something went wrong. Please try again.");
-        console.error(error);
+    }).catch(() => {
+        alert("Oops! Something went wrong.");
     });
 });
 </script>
