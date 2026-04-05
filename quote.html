@@ -114,6 +114,7 @@ button:hover{
 
 <!-- jsPDF CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 
 </head>
 <body>
@@ -267,26 +268,59 @@ document.getElementById("quoteValidity").innerText = validity.toLocaleDateString
 function downloadPDF(){
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
-    let y = 10;
+    const orderNo = document.getElementById("orderNumber").value;
+    const customer = document.getElementById("previewCustomer").innerText;
+    const currency = currencyEl.value;
+
     doc.setFontSize(16);
-    doc.text("SpotFutWears - Quote",10,y);
-    y+=10;
+    doc.text("SpotFutWears - Quote",14,20);
     doc.setFontSize(12);
-    doc.text(`Order #: ${document.getElementById("orderNumber").value}`,10,y);
-    y+=10;
-    doc.text(`Date: ${document.getElementById("quoteDate").innerText}`,10,y);
-    y+=10;
-    doc.text(`Validity: ${document.getElementById("quoteValidity").innerText}`,10,y);
-    y+=10;
-    doc.text("Customer:",10,y);
-    y+=10;
-    doc.text(document.getElementById("previewCustomer").innerText,10,y);
-    y+=10;
+    doc.text(`Order #: ${orderNo}`,14,28);
+    doc.text(`Date: ${document.getElementById("quoteDate").innerText}`,14,36);
+    doc.text(`Validity: ${document.getElementById("quoteValidity").innerText}`,14,44);
+    doc.text("Customer:",14,52);
+    doc.text(customer,14,60);
+
+    // Prepare table data for AutoTable
+    const tableColumn = ["No.", "Item Name", "Size", "Qty", "Price/unit", "Total Price"];
+    const tableRows = [];
+
     items.forEach((item,i)=>{
-        doc.text(`${i+1}. ${item.name} | Size: ${item.size} | Qty: ${item.qty} | Price/unit: ${item.price} ${currencyEl.value} | Total: ${(item.qty*item.price).toFixed(2)} ${currencyEl.value}`,10,y);
-        y+=7;
+        const rowData = [
+            i+1,
+            item.name,
+            item.size,
+            item.qty,
+            item.price + " " + currency,
+            (item.qty*item.price).toFixed(2) + " " + currency
+        ];
+        tableRows.push(rowData);
     });
-    doc.save("SpotFut_Quote.pdf");
+
+    doc.autoTable({
+        startY: 70,
+        head: [tableColumn],
+        body: tableRows,
+        theme: 'grid',
+        headStyles: {fillColor: [194,0,255], textColor:255},
+        styles: {textColor:255, fillColor:[0,0,0]},
+        alternateRowStyles: {fillColor:[40,40,40]}
+    });
+
+    // Footer with logo
+    const img = new Image();
+    img.src = "logo.jpg";
+    img.onload = function(){
+        const imgProps = doc.getImageProperties(img);
+        const pdfWidth = doc.internal.pageSize.getWidth();
+        const imgWidth = 50;
+        const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+        doc.addImage(img, 'JPEG', pdfWidth/2 - imgWidth/2, doc.lastAutoTable.finalY + 10, imgWidth, imgHeight);
+        doc.save("SpotFut_Quote.pdf");
+    }
+    img.onerror = function(){
+        doc.save("SpotFut_Quote.pdf");
+    }
 }
 </script>
 
