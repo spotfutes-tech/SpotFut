@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpotFut Quote Generator</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins', sans-serif;
+    padding:40px 8%;
+}
+
+h1{
+    font-family:'Playfair Display', serif;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    background:#111;
+    border:1px solid #333;
+    color:white;
+}
+
+.item{
+    border:1px solid #222;
+    padding:15px;
+    margin-top:15px;
+}
+
+button{
+    margin-top:12px;
+    padding:12px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.add-btn{
+    background:#c200ff;
+    color:black;
+}
+
+.action-btn{
+    background:white;
+    color:black;
+    width:100%;
+}
+
+.preview{
+    background:#111;
+    padding:20px;
+    border:1px solid #222;
+    min-height:300px;
+    white-space:pre-line;
+}
+
+/* Presets */
+.presets{
+    margin-top:20px;
+    border:1px solid #222;
+    padding:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>SpotFut Quote Generator</h1>
+
+<div class="container">
+
+<!-- LEFT -->
+<div>
+
+<label>Customer Name</label>
+<input type="text" id="customerName">
+
+<label>Contact</label>
+<input type="text" id="contact">
+
+<label>Currency</label>
+<select id="currency">
+    <option value="€">EUR (€)</option>
+    <option value="₨">PKR (₨)</option>
+</select>
+
+<!-- PRESETS -->
+<div class="presets">
+    <strong>Quick Add Products</strong>
+
+    <select id="presetSelect">
+        <option value="">Select Product</option>
+        <option value="jersey">Football Jersey</option>
+        <option value="tracksuit">Tracksuit</option>
+        <option value="custom">Custom Kit</option>
+    </select>
+
+    <input type="number" id="presetPrice" placeholder="Price">
+
+    <button onclick="addPresetItem()">Add Preset</button>
+</div>
+
+<div id="items"></div>
+
+<button class="add-btn" onclick="addItem()">+ Add Custom Item</button>
+
+<button class="action-btn" onclick="generateQuote()">Generate Quote</button>
+<button class="action-btn" onclick="copyQuote()">Copy</button>
+<button class="action-btn" onclick="downloadPDF()">Download PDF</button>
+
+</div>
+
+<!-- RIGHT -->
+<div>
+    <h3>Preview</h3>
+    <div id="preview" class="preview"></div>
+</div>
+
+</div>
+
+<script>
+
+let items = [];
+
+/* ADD CUSTOM ITEM */
+function addItem(){
+    let index = items.length;
+
+    let div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = `
+        <input placeholder="Product Name" id="name_${index}">
+        <input placeholder="Size" id="size_${index}">
+        <input type="number" placeholder="Qty" id="qty_${index}">
+        <input type="number" placeholder="Price" id="price_${index}">
+    `;
+
+    document.getElementById("items").appendChild(div);
+    items.push(index);
+}
+
+/* PRESET ADD */
+function addPresetItem(){
+    let preset = document.getElementById("presetSelect").value;
+    let price = document.getElementById("presetPrice").value;
+
+    if(!preset || !price){
+        alert("Select preset + price");
+        return;
+    }
+
+    let names = {
+        jersey: "Football Jersey",
+        tracksuit: "Tracksuit",
+        custom: "Custom Kit"
+    };
+
+    let index = items.length;
+
+    let div = document.createElement("div");
+    div.className = "item";
+    div.innerHTML = `
+        <input value="${names[preset]}" id="name_${index}">
+        <input placeholder="Size" id="size_${index}">
+        <input type="number" placeholder="Qty" id="qty_${index}" value="1">
+        <input type="number" id="price_${index}" value="${price}">
+    `;
+
+    document.getElementById("items").appendChild(div);
+    items.push(index);
+}
+
+/* GENERATE */
+function generateQuote(){
+
+    let name = document.getElementById("customerName").value;
+    let contact = document.getElementById("contact").value;
+    let currency = document.getElementById("currency").value;
+
+    let text = `SPOTFUT QUOTE\n----------------------\n`;
+    text += `Customer: ${name}\nContact: ${contact}\n\n`;
+
+    let total = 0;
+
+    items.forEach(i => {
+        let n = document.getElementById(`name_${i}`).value;
+        let s = document.getElementById(`size_${i}`).value;
+        let q = parseInt(document.getElementById(`qty_${i}`).value) || 0;
+        let p = parseFloat(document.getElementById(`price_${i}`).value) || 0;
+
+        let sub = q * p;
+        total += sub;
+
+        text += `${n} | Size: ${s} | Qty: ${q} → ${currency}${sub}\n`;
+    });
+
+    text += `\nTOTAL: ${currency}${total}\n`;
+    text += `\nSpotFut Team will contact you shortly.\n`;
+
+    document.getElementById("preview").innerText = text;
+}
+
+/* COPY */
+function copyQuote(){
+    navigator.clipboard.writeText(document.getElementById("preview").innerText);
+    alert("Copied!");
+}
+
+/* PDF */
+function downloadPDF(){
+
+    const { jsPDF } = window.jspdf;
+    let doc = new jsPDF();
+
+    let currency = document.getElementById("currency").value;
+    let name = document.getElementById("customerName").value;
+    let contact = document.getElementById("contact").value;
+
+    // LOGO (simple text logo instead of image for reliability)
+    doc.setFontSize(20);
+    doc.text("SPOTFUT", 10, 15);
+
+    doc.setFontSize(12);
+    doc.text(`Customer: ${name}`, 10, 30);
+    doc.text(`Contact: ${contact}`, 10, 37);
+
+    let y = 50;
+    let total = 0;
+
+    items.forEach(i => {
+        let n = document.getElementById(`name_${i}`).value;
+        let s = document.getElementById(`size_${i}`).value;
+        let q = parseInt(document.getElementById(`qty_${i}`).value) || 0;
+        let p = parseFloat(document.getElementById(`price_${i}`).value) || 0;
+
+        let sub = q * p;
+        total += sub;
+
+        doc.text(`${n} | ${s} | x${q} → ${currency}${sub}`, 10, y);
+        y += 8;
+    });
+
+    y += 10;
+    doc.setFontSize(14);
+    doc.text(`Total: ${currency}${total}`, 10, y);
+
+    doc.save("SpotFut_Quote.pdf");
+}
+
+</script>
+
+</body>
+</html>
