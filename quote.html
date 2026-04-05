@@ -3,266 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SpotFut Quote Generator</title>
+<title>Quote Generator | SpotFutWears</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
-    margin:0;
-    background:#0b0b0b;
-    color:white;
     font-family:'Poppins', sans-serif;
-    padding:40px 8%;
-}
-
-h1{
-    font-family:'Playfair Display', serif;
+    background:#f4f4f4;
+    margin:0;
+    padding:30px;
 }
 
 .container{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:8px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.section{
+    margin-bottom:20px;
 }
 
 input, select{
     width:100%;
     padding:10px;
     margin-top:8px;
-    background:#111;
-    border:1px solid #333;
-    color:white;
 }
 
-.item{
-    border:1px solid #222;
-    padding:15px;
-    margin-top:15px;
+.row{
+    display:flex;
+    gap:10px;
+}
+
+.row input{
+    flex:1;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th, td{
+    border:1px solid #ccc;
+    padding:8px;
+    text-align:center;
 }
 
 button{
-    margin-top:12px;
-    padding:12px;
-    border:none;
+    margin-top:15px;
+    padding:10px 15px;
     cursor:pointer;
+}
+
+.total{
+    text-align:right;
+    margin-top:15px;
+    font-size:18px;
     font-weight:600;
 }
-
-.add-btn{
-    background:#c200ff;
-    color:black;
-}
-
-.action-btn{
-    background:white;
-    color:black;
-    width:100%;
-}
-
-.preview{
-    background:#111;
-    padding:20px;
-    border:1px solid #222;
-    min-height:300px;
-    white-space:pre-line;
-}
-
-/* Presets */
-.presets{
-    margin-top:20px;
-    border:1px solid #222;
-    padding:15px;
-}
-
 </style>
 </head>
 
 <body>
 
-<h1>SpotFut Quote Generator</h1>
+<div class="container" id="quoteArea">
 
-<div class="container">
+<h1>SpotFutWears</h1>
 
-<!-- LEFT -->
-<div>
+<div class="section">
+    <h3>Customer Details</h3>
+    <input type="text" id="name" placeholder="Customer Name">
+    <input type="text" id="contact" placeholder="Contact Number">
+    <input type="email" id="email" placeholder="Email">
+    <input type="text" id="address" placeholder="Address">
+</div>
 
-<label>Customer Name</label>
-<input type="text" id="customerName">
-
-<label>Contact</label>
-<input type="text" id="contact">
-
-<label>Currency</label>
-<select id="currency">
-    <option value="€">EUR (€)</option>
-    <option value="₨">PKR (₨)</option>
-</select>
-
-<!-- PRESETS -->
-<div class="presets">
-    <strong>Quick Add Products</strong>
-
-    <select id="presetSelect">
-        <option value="">Select Product</option>
-        <option value="jersey">Football Jersey</option>
-        <option value="tracksuit">Tracksuit</option>
-        <option value="custom">Custom Kit</option>
+<div class="section">
+    <h3>Currency</h3>
+    <select id="currency">
+        <option value="€">Euro (€)</option>
+        <option value="PKR">PKR</option>
     </select>
-
-    <input type="number" id="presetPrice" placeholder="Price">
-
-    <button onclick="addPresetItem()">Add Preset</button>
 </div>
 
-<div id="items"></div>
+<div class="section">
+    <h3>Items</h3>
 
-<button class="add-btn" onclick="addItem()">+ Add Custom Item</button>
+    <table id="itemsTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Item Name</th>
+                <th>Size</th>
+                <th>Qty</th>
+                <th>Price / Unit</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
-<button class="action-btn" onclick="generateQuote()">Generate Quote</button>
-<button class="action-btn" onclick="copyQuote()">Copy</button>
-<button class="action-btn" onclick="downloadPDF()">Download PDF</button>
+    <button onclick="addRow()">+ Add Item</button>
+</div>
+
+<div class="total">
+    Total: <span id="grandTotal">0</span>
+</div>
+
+<button onclick="downloadPDF()">Download PDF</button>
 
 </div>
 
-<!-- RIGHT -->
-<div>
-    <h3>Preview</h3>
-    <div id="preview" class="preview"></div>
-</div>
-
-</div>
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
 
-let items = [];
+let table = document.querySelector("#itemsTable tbody");
 
-/* ADD CUSTOM ITEM */
-function addItem(){
-    let index = items.length;
+function addRow(){
+    let rowCount = table.rows.length + 1;
 
-    let div = document.createElement("div");
-    div.className = "item";
-    div.innerHTML = `
-        <input placeholder="Product Name" id="name_${index}">
-        <input placeholder="Size" id="size_${index}">
-        <input type="number" placeholder="Qty" id="qty_${index}">
-        <input type="number" placeholder="Price" id="price_${index}">
+    let row = table.insertRow();
+
+    row.innerHTML = `
+        <td>${rowCount}</td>
+        <td><input type="text"></td>
+        <td><input type="text"></td>
+        <td><input type="number" value="1" onchange="calc()"></td>
+        <td><input type="number" value="0" onchange="calc()"></td>
+        <td class="rowTotal">0</td>
+        <td><button onclick="removeRow(this)">X</button></td>
     `;
-
-    document.getElementById("items").appendChild(div);
-    items.push(index);
 }
 
-/* PRESET ADD */
-function addPresetItem(){
-    let preset = document.getElementById("presetSelect").value;
-    let price = document.getElementById("presetPrice").value;
-
-    if(!preset || !price){
-        alert("Select preset + price");
-        return;
-    }
-
-    let names = {
-        jersey: "Football Jersey",
-        tracksuit: "Tracksuit",
-        custom: "Custom Kit"
-    };
-
-    let index = items.length;
-
-    let div = document.createElement("div");
-    div.className = "item";
-    div.innerHTML = `
-        <input value="${names[preset]}" id="name_${index}">
-        <input placeholder="Size" id="size_${index}">
-        <input type="number" placeholder="Qty" id="qty_${index}" value="1">
-        <input type="number" id="price_${index}" value="${price}">
-    `;
-
-    document.getElementById("items").appendChild(div);
-    items.push(index);
+function removeRow(btn){
+    btn.parentElement.parentElement.remove();
+    calc();
 }
 
-/* GENERATE */
-function generateQuote(){
-
-    let name = document.getElementById("customerName").value;
-    let contact = document.getElementById("contact").value;
+function calc(){
+    let total = 0;
     let currency = document.getElementById("currency").value;
 
-    let text = `SPOTFUT QUOTE\n----------------------\n`;
-    text += `Customer: ${name}\nContact: ${contact}\n\n`;
+    Array.from(table.rows).forEach((row, index) => {
+        row.cells[0].innerText = index + 1;
 
-    let total = 0;
+        let qty = row.cells[3].querySelector("input").value || 0;
+        let price = row.cells[4].querySelector("input").value || 0;
 
-    items.forEach(i => {
-        let n = document.getElementById(`name_${i}`).value;
-        let s = document.getElementById(`size_${i}`).value;
-        let q = parseInt(document.getElementById(`qty_${i}`).value) || 0;
-        let p = parseFloat(document.getElementById(`price_${i}`).value) || 0;
+        let rowTotal = qty * price;
+        row.cells[5].innerText = rowTotal;
 
-        let sub = q * p;
-        total += sub;
-
-        text += `${n} | Size: ${s} | Qty: ${q} → ${currency}${sub}\n`;
+        total += rowTotal;
     });
 
-    text += `\nTOTAL: ${currency}${total}\n`;
-    text += `\nSpotFut Team will contact you shortly.\n`;
-
-    document.getElementById("preview").innerText = text;
+    document.getElementById("grandTotal").innerText = currency + " " + total;
 }
 
-/* COPY */
-function copyQuote(){
-    navigator.clipboard.writeText(document.getElementById("preview").innerText);
-    alert("Copied!");
-}
+document.addEventListener("input", calc);
 
-/* PDF */
 function downloadPDF(){
-
     const { jsPDF } = window.jspdf;
     let doc = new jsPDF();
 
-    let currency = document.getElementById("currency").value;
-    let name = document.getElementById("customerName").value;
-    let contact = document.getElementById("contact").value;
+    let y = 10;
 
-    // LOGO (simple text logo instead of image for reliability)
-    doc.setFontSize(20);
-    doc.text("SPOTFUT", 10, 15);
+    doc.setFontSize(16);
+    doc.text("SpotFutWears", 10, y);
 
-    doc.setFontSize(12);
-    doc.text(`Customer: ${name}`, 10, 30);
-    doc.text(`Contact: ${contact}`, 10, 37);
+    y += 10;
 
-    let y = 50;
-    let total = 0;
+    doc.setFontSize(10);
+    doc.text("Name: " + document.getElementById("name").value, 10, y);
+    y += 6;
+    doc.text("Contact: " + document.getElementById("contact").value, 10, y);
+    y += 6;
+    doc.text("Email: " + document.getElementById("email").value, 10, y);
+    y += 6;
+    doc.text("Address: " + document.getElementById("address").value, 10, y);
 
-    items.forEach(i => {
-        let n = document.getElementById(`name_${i}`).value;
-        let s = document.getElementById(`size_${i}`).value;
-        let q = parseInt(document.getElementById(`qty_${i}`).value) || 0;
-        let p = parseFloat(document.getElementById(`price_${i}`).value) || 0;
+    y += 10;
 
-        let sub = q * p;
-        total += sub;
+    doc.text("Items:", 10, y);
+    y += 6;
 
-        doc.text(`${n} | ${s} | x${q} → ${currency}${sub}`, 10, y);
-        y += 8;
+    Array.from(table.rows).forEach((row, index) => {
+        let name = row.cells[1].querySelector("input").value;
+        let size = row.cells[2].querySelector("input").value;
+        let qty = row.cells[3].querySelector("input").value;
+        let price = row.cells[4].querySelector("input").value;
+        let total = row.cells[5].innerText;
+
+        doc.text(`${index+1}. ${name} | ${size} | Qty: ${qty} | ${price} | Total: ${total}`, 10, y);
+        y += 6;
     });
 
     y += 10;
-    doc.setFontSize(14);
-    doc.text(`Total: ${currency}${total}`, 10, y);
+    doc.text("Total: " + document.getElementById("grandTotal").innerText, 10, y);
 
     doc.save("SpotFut_Quote.pdf");
 }
+
+// Add first row by default
+addRow();
 
 </script>
 
