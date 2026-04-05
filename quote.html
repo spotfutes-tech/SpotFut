@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SpotFutWears Quotation</title>
+<title>SpotFutWears Quote Generator</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background: #0d0d0d;
+    color: #fff;
     margin: 0;
 }
 
@@ -23,24 +24,37 @@ h1 {
     color: #c200ff;
 }
 
-input {
+.section-title {
+    margin-top: 20px;
+    color: #c200ff;
+}
+
+input, select {
     padding: 8px;
     margin: 5px;
-    width: 180px;
+    width: 200px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: white;
 }
 
 button {
     padding: 10px 14px;
-    margin-top: 10px;
+    margin: 8px 5px 0 0;
     background: #c200ff;
     color: white;
     border: none;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #9a00cc;
 }
 
 .preview {
     margin-top: 30px;
-    background: white;
+    background: #111;
     padding: 20px;
     border-radius: 10px;
 }
@@ -48,12 +62,12 @@ button {
 .header {
     display: flex;
     justify-content: space-between;
-    border-bottom: 3px solid #c200ff;
+    border-bottom: 2px solid #c200ff;
     padding-bottom: 10px;
 }
 
-.order input {
-    padding: 5px;
+.orderNo {
+    text-align: right;
 }
 
 table {
@@ -62,32 +76,29 @@ table {
     margin-top: 20px;
 }
 
-table th {
+th {
     background: #c200ff;
-    color: white;
     padding: 10px;
 }
 
-table td {
+td {
     padding: 10px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #333;
 }
 
 .total {
     text-align: right;
-    font-size: 18px;
     margin-top: 15px;
-    font-weight: bold;
+    font-size: 18px;
 }
 
-.logo-bottom {
+.logo {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.logo-bottom img {
+.logo img {
     height: 60px;
-    opacity: 0.9;
 }
 </style>
 </head>
@@ -98,13 +109,25 @@ table td {
 
 <h1>SpotFutWears - Quote Generator</h1>
 
+<!-- CURRENCY -->
+<select id="currency">
+    <option value="€">Euro (€)</option>
+    <option value="PKR">PKR</option>
+</select>
+
 <!-- CUSTOMER INFO -->
-<input id="name" placeholder="Customer Name">
+<h3 class="section-title">Customer Information</h3>
+<input id="name" placeholder="Name">
 <input id="contact" placeholder="Contact">
 <input id="email" placeholder="Email">
 <input id="address" placeholder="Address">
 
-<h3>Add Item</h3>
+<!-- ORDER -->
+<h3 class="section-title">Order Details</h3>
+<input id="orderNo" placeholder="Order Number">
+
+<!-- ITEMS -->
+<h3 class="section-title">Add Items</h3>
 <input id="item" placeholder="Item Name">
 <input id="size" placeholder="Size">
 <input id="qty" type="number" placeholder="Qty">
@@ -112,25 +135,29 @@ table td {
 
 <br>
 <button onclick="addItem()">Add Item</button>
-<button onclick="generatePreview()">Preview</button>
+<button onclick="generatePreview()">Preview Quote</button>
 <button onclick="downloadPDF()">Download PDF</button>
 
 <!-- PREVIEW -->
 <div class="preview" id="preview" style="display:none">
 
     <div class="header">
-        <h2>SpotFutWears</h2>
-        <div class="order">
-            Order No: <input type="text" id="orderNo" placeholder="Enter Order No">
+        <div>
+            <h2>SpotFutWears</h2>
+            <small>Quote Generator</small>
+        </div>
+        <div class="orderNo">
+            <b>Order No:</b> <span id="pOrder"></span>
         </div>
     </div>
 
+    <h3 class="section-title">Customer Information</h3>
     <p><b>Name:</b> <span id="pName"></span></p>
     <p><b>Contact:</b> <span id="pContact"></span></p>
     <p><b>Email:</b> <span id="pEmail"></span></p>
     <p><b>Address:</b> <span id="pAddress"></span></p>
 
-    <table id="itemsTable">
+    <table>
         <thead>
             <tr>
                 <th>#</th>
@@ -141,14 +168,13 @@ table td {
                 <th>Total</th>
             </tr>
         </thead>
-        <tbody></tbody>
+        <tbody id="tableBody"></tbody>
     </table>
 
-    <div class="total" id="grandTotal"></div>
+    <div class="total" id="total"></div>
 
-    <!-- LOGO -->
-    <div class="logo-bottom">
-        <img src="logo.jpg" alt="SpotFut Logo">
+    <div class="logo">
+        <img src="logo.jpg">
     </div>
 
 </div>
@@ -164,9 +190,14 @@ function addItem() {
     let qty = document.getElementById("qty").value;
     let price = document.getElementById("price").value;
 
-    if (!item || !qty || !price) return alert("Fill item details");
+    if (!item || !qty || !price) {
+        alert("Fill all item fields");
+        return;
+    }
 
     items.push({item, size, qty, price});
+
+    alert("Item added ✔");
 
     document.getElementById("item").value = "";
     document.getElementById("size").value = "";
@@ -177,42 +208,48 @@ function addItem() {
 function generatePreview() {
     document.getElementById("preview").style.display = "block";
 
+    let currency = document.getElementById("currency").value;
+
+    document.getElementById("pOrder").innerText = orderNo.value;
     document.getElementById("pName").innerText = name.value;
     document.getElementById("pContact").innerText = contact.value;
     document.getElementById("pEmail").innerText = email.value;
     document.getElementById("pAddress").innerText = address.value;
 
-    let tbody = document.querySelector("#itemsTable tbody");
-    tbody.innerHTML = "";
+    let table = document.getElementById("tableBody");
+    table.innerHTML = "";
 
     let total = 0;
 
     items.forEach((it, i) => {
-        let row = `<tr>
+        let row = `
+        <tr>
             <td>${i+1}</td>
             <td>${it.item}</td>
             <td>${it.size}</td>
             <td>${it.qty}</td>
-            <td>${it.price}</td>
-            <td>${it.qty * it.price}</td>
+            <td>${currency} ${it.price}</td>
+            <td>${currency} ${it.qty * it.price}</td>
         </tr>`;
-        tbody.innerHTML += row;
+        table.innerHTML += row;
 
         total += it.qty * it.price;
     });
 
-    document.getElementById("grandTotal").innerText = "Total: €" + total;
+    document.getElementById("total").innerText = "Total: " + currency + " " + total;
 }
 
 async function downloadPDF() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
+    let currency = document.getElementById("currency").value;
+
     doc.setFontSize(18);
     doc.text("SpotFutWears Quotation", 14, 20);
 
     doc.setFontSize(12);
-    doc.text("Order No: " + document.getElementById("orderNo").value, 14, 30);
+    doc.text("Order No: " + orderNo.value, 14, 30);
 
     doc.text("Name: " + name.value, 14, 40);
     doc.text("Contact: " + contact.value, 14, 48);
@@ -222,9 +259,9 @@ async function downloadPDF() {
     let y = 75;
 
     doc.setFillColor(194,0,255);
-    doc.setTextColor(255,255,255);
     doc.rect(14, y, 180, 8, "F");
 
+    doc.setTextColor(255,255,255);
     doc.text("#", 16, y+6);
     doc.text("Item", 30, y+6);
     doc.text("Size", 80, y+6);
@@ -242,27 +279,22 @@ async function downloadPDF() {
         doc.text(it.item, 30, y);
         doc.text(it.size, 80, y);
         doc.text(String(it.qty), 110, y);
-        doc.text(String(it.price), 130, y);
-        doc.text(String(it.qty * it.price), 160, y);
+        doc.text(currency + " " + it.price, 130, y);
+        doc.text(currency + " " + (it.qty * it.price), 160, y);
 
         total += it.qty * it.price;
         y += 10;
     });
 
-    doc.text("Total: €" + total, 140, y+10);
+    doc.text("Total: " + currency + " " + total, 140, y+10);
 
-    // LOGO at bottom
-    try {
-        const img = new Image();
-        img.src = "logo.jpg";
+    const img = new Image();
+    img.src = "logo.jpg";
 
-        img.onload = function () {
-            doc.addImage(img, "JPEG", 80, y+20, 50, 20);
-            doc.save("quote.pdf");
-        };
-    } catch {
+    img.onload = function () {
+        doc.addImage(img, "JPEG", 80, y+20, 50, 20);
         doc.save("quote.pdf");
-    }
+    };
 }
 </script>
 
