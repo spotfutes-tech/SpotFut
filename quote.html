@@ -280,7 +280,7 @@ function downloadPDF(){
     doc.text(`Order #: ${orderNo}`,14,28);
     doc.text(`Date: ${document.getElementById("quoteDate").innerText}`,14,36);
     doc.text(`Validity: ${document.getElementById("quoteValidity").innerText}`,14,44);
-    doc.text("Customer:",14,52);
+    doc.text("Customer Information:",14,52);
     doc.text(customer,14,60);
 
     const tableColumn = ["No.", "Item Name", "Size", "Qty", "Price/unit", "Total Price"];
