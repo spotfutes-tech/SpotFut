@@ -272,6 +272,8 @@ function downloadPDF(){
     const customer = document.getElementById("previewCustomer").innerText;
     const currency = currencyEl.value;
 
+    let grandTotal = 0;
+
     doc.setFontSize(16);
     doc.text("SpotFutWears - Quote",14,20);
     doc.setFontSize(12);
@@ -281,21 +283,33 @@ function downloadPDF(){
     doc.text("Customer:",14,52);
     doc.text(customer,14,60);
 
-    // Prepare table data for AutoTable
     const tableColumn = ["No.", "Item Name", "Size", "Qty", "Price/unit", "Total Price"];
     const tableRows = [];
 
     items.forEach((item,i)=>{
+        const total = item.qty * item.price;
+        grandTotal += total;
+
         const rowData = [
             i+1,
             item.name,
             item.size,
             item.qty,
             item.price + " " + currency,
-            (item.qty*item.price).toFixed(2) + " " + currency
+            total.toFixed(2) + " " + currency
         ];
         tableRows.push(rowData);
     });
+
+    // 👉 Add Grand Total row
+    tableRows.push([
+        "",
+        "",
+        "",
+        "",
+        "Grand Total",
+        grandTotal.toFixed(2) + " " + currency
+    ]);
 
     doc.autoTable({
         startY: 70,
@@ -304,10 +318,17 @@ function downloadPDF(){
         theme: 'grid',
         headStyles: {fillColor: [194,0,255], textColor:255},
         styles: {textColor:255, fillColor:[0,0,0]},
-        alternateRowStyles: {fillColor:[40,40,40]}
+        alternateRowStyles: {fillColor:[40,40,40]},
+        didParseCell: function(data) {
+            // 👉 Style last row (Grand Total)
+            if (data.row.index === tableRows.length - 1) {
+                data.cell.styles.fillColor = [194,0,255];
+                data.cell.styles.textColor = 255;
+                data.cell.styles.fontStyle = 'bold';
+            }
+        }
     });
 
-    // Footer with logo
     const img = new Image();
     img.src = "logo.jpg";
     img.onload = function(){
