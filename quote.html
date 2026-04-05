@@ -281,7 +281,15 @@ function downloadPDF(){
     doc.text(`Date: ${document.getElementById("quoteDate").innerText}`,14,36);
     doc.text(`Validity: ${document.getElementById("quoteValidity").innerText}`,14,44);
     doc.text("Customer Information:",14,52);
-    doc.text(customer,14,60);
+    const name = document.getElementById("custName").value;
+    const contact = document.getElementById("custContact").value;
+    const email = document.getElementById("custEmail").value;
+    const address = document.getElementById("custAddress").value;
+
+    doc.text(`Name: ${name}`, 14, 60);
+    doc.text(`Contact: ${contact}`, 14, 68);
+    doc.text(`Email: ${email}`, 14, 76);
+    doc.text(`Address: ${address}`, 14, 84);
 
     const tableColumn = ["No.", "Item Name", "Size", "Qty", "Price/unit", "Total Price"];
     const tableRows = [];
@@ -312,7 +320,7 @@ function downloadPDF(){
     ]);
 
     doc.autoTable({
-        startY: 70,
+        startY: 95,
         head: [tableColumn],
         body: tableRows,
         theme: 'grid',
