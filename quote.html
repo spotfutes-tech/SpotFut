@@ -2,103 +2,76 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SpotFutWears Quote Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpotFutWears - Quote Generator</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #0d0d0d;
-    color: #fff;
-    margin: 0;
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:Arial;
+    padding:40px;
 }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+.container{
+    max-width:1000px;
+    margin:auto;
 }
 
-h1 {
-    color: #c200ff;
+h1{
+    color:#c200ff;
 }
 
-.section-title {
-    margin-top: 20px;
-    color: #c200ff;
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    margin-bottom:15px;
+    background:#111;
+    border:1px solid #333;
+    color:white;
 }
 
-input, select {
-    padding: 8px;
-    margin: 5px;
-    width: 200px;
-    background: #1a1a1a;
-    border: 1px solid #333;
-    color: white;
+button{
+    padding:10px 15px;
+    border:none;
+    background:#c200ff;
+    color:black;
+    cursor:pointer;
+    font-weight:bold;
+    margin-right:10px;
 }
 
-button {
-    padding: 10px 14px;
-    margin: 8px 5px 0 0;
-    background: #c200ff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+button:hover{
+    background:white;
 }
 
-button:hover {
-    background: #9a00cc;
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
 }
 
-.preview {
-    margin-top: 30px;
-    background: #111;
-    padding: 20px;
-    border-radius: 10px;
+th, td{
+    border:1px solid #333;
+    padding:10px;
+    text-align:center;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 2px solid #c200ff;
-    padding-bottom: 10px;
+.preview{
+    background:white;
+    color:black;
+    padding:30px;
+    margin-top:40px;
 }
 
-.orderNo {
-    text-align: right;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
-
-th {
-    background: #c200ff;
-    padding: 10px;
-}
-
-td {
-    padding: 10px;
-    border-bottom: 1px solid #333;
-}
-
-.total {
-    text-align: right;
-    margin-top: 15px;
-    font-size: 18px;
-}
-
-.logo {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.logo img {
-    height: 60px;
+.top-bar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 </style>
 </head>
@@ -107,195 +80,201 @@ td {
 
 <div class="container">
 
+<div class="top-bar">
 <h1>SpotFutWears - Quote Generator</h1>
 
-<!-- CURRENCY -->
 <select id="currency">
-    <option value="€">Euro (€)</option>
-    <option value="PKR">PKR</option>
+<option value="€">€ Euro</option>
+<option value="PKR">PKR</option>
 </select>
+</div>
 
-<!-- CUSTOMER INFO -->
-<h3 class="section-title">Customer Information</h3>
-<input id="name" placeholder="Name">
-<input id="contact" placeholder="Contact">
-<input id="email" placeholder="Email">
-<input id="address" placeholder="Address">
+<label>Order Number</label>
+<input type="text" id="orderNo">
 
-<!-- ORDER -->
-<h3 class="section-title">Order Details</h3>
-<input id="orderNo" placeholder="Order Number">
+<h3>Customer Information</h3>
 
-<!-- ITEMS -->
-<h3 class="section-title">Add Items</h3>
-<input id="item" placeholder="Item Name">
-<input id="size" placeholder="Size">
-<input id="qty" type="number" placeholder="Qty">
-<input id="price" type="number" placeholder="Price">
+<label>Name</label>
+<input type="text" id="name">
+
+<label>Contact</label>
+<input type="text" id="contact">
+
+<label>Email</label>
+<input type="text" id="email">
+
+<label>Address</label>
+<input type="text" id="address">
+
+<h3>Add Item</h3>
+
+<input type="text" id="itemName" placeholder="Item Name">
+<input type="text" id="size" placeholder="Size">
+<input type="number" id="qty" placeholder="Quantity">
+<input type="number" id="price" placeholder="Price per unit">
+
+<button onclick="addItem()">Add Item</button>
+
+<table id="itemsTable">
+<tr>
+<th>#</th>
+<th>Name</th>
+<th>Size</th>
+<th>Qty</th>
+<th>Price</th>
+<th>Total</th>
+</tr>
+</table>
 
 <br>
-<button onclick="addItem()">Add Item</button>
 <button onclick="generatePreview()">Preview Quote</button>
 <button onclick="downloadPDF()">Download PDF</button>
 
-<!-- PREVIEW -->
-<div class="preview" id="preview" style="display:none">
+<div id="preview" class="preview" style="display:none;">
 
-    <div class="header">
-        <div>
-            <h2>SpotFutWears</h2>
-            <small>Quote Generator</small>
-        </div>
-        <div class="orderNo">
-            <b>Order No:</b> <span id="pOrder"></span>
-        </div>
-    </div>
+<h2>SpotFutWears</h2>
 
-    <h3 class="section-title">Customer Information</h3>
-    <p><b>Name:</b> <span id="pName"></span></p>
-    <p><b>Contact:</b> <span id="pContact"></span></p>
-    <p><b>Email:</b> <span id="pEmail"></span></p>
-    <p><b>Address:</b> <span id="pAddress"></span></p>
+<div style="display:flex; justify-content:space-between;">
+<div>
+<p><strong>Date:</strong> <span id="date"></span></p>
+<p><strong>Valid Until:</strong> <span id="validDate"></span></p>
+</div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Item</th>
-                <th>Size</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Total</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody"></tbody>
-    </table>
+<div>
+<p><strong>Order #:</strong> <span id="pOrder"></span></p>
+</div>
+</div>
 
-    <div class="total" id="total"></div>
+<hr>
 
-    <div class="logo">
-        <img src="logo.jpg">
-    </div>
+<h3>Customer Information</h3>
+<p><strong>Name:</strong> <span id="pName"></span></p>
+<p><strong>Contact:</strong> <span id="pContact"></span></p>
+<p><strong>Email:</strong> <span id="pEmail"></span></p>
+<p><strong>Address:</strong> <span id="pAddress"></span></p>
+
+<h3>Items</h3>
+
+<table id="previewTable">
+<tr>
+<th>#</th>
+<th>Name</th>
+<th>Size</th>
+<th>Qty</th>
+<th>Price</th>
+<th>Total</th>
+</tr>
+</table>
+
+<h3>Total: <span id="grandTotal"></span></h3>
+
+<div style="text-align:center; margin-top:40px;">
+<img src="logo.jpg" width="120">
+</div>
 
 </div>
 
 </div>
 
 <script>
+
 let items = [];
 
-function addItem() {
-    let item = document.getElementById("item").value;
+function addItem(){
+    let name = document.getElementById("itemName").value;
     let size = document.getElementById("size").value;
     let qty = document.getElementById("qty").value;
     let price = document.getElementById("price").value;
 
-    if (!item || !qty || !price) {
-        alert("Fill all item fields");
-        return;
-    }
+    if(!name || !qty || !price) return alert("Fill all fields");
 
-    items.push({item, size, qty, price});
+    let total = qty * price;
 
-    alert("Item added ✔");
+    items.push({name, size, qty, price, total});
 
-    document.getElementById("item").value = "";
-    document.getElementById("size").value = "";
-    document.getElementById("qty").value = "";
-    document.getElementById("price").value = "";
+    renderTable();
+
+    document.getElementById("itemName").value="";
+    document.getElementById("size").value="";
+    document.getElementById("qty").value="";
+    document.getElementById("price").value="";
 }
 
-function generatePreview() {
-    document.getElementById("preview").style.display = "block";
+function renderTable(){
+    let table = document.getElementById("itemsTable");
 
-    let currency = document.getElementById("currency").value;
+    table.innerHTML = `
+    <tr>
+    <th>#</th><th>Name</th><th>Size</th><th>Qty</th><th>Price</th><th>Total</th>
+    </tr>`;
 
-    document.getElementById("pOrder").innerText = orderNo.value;
-    document.getElementById("pName").innerText = name.value;
-    document.getElementById("pContact").innerText = contact.value;
-    document.getElementById("pEmail").innerText = email.value;
-    document.getElementById("pAddress").innerText = address.value;
-
-    let table = document.getElementById("tableBody");
-    table.innerHTML = "";
-
-    let total = 0;
-
-    items.forEach((it, i) => {
-        let row = `
+    items.forEach((item,i)=>{
+        table.innerHTML += `
         <tr>
-            <td>${i+1}</td>
-            <td>${it.item}</td>
-            <td>${it.size}</td>
-            <td>${it.qty}</td>
-            <td>${currency} ${it.price}</td>
-            <td>${currency} ${it.qty * it.price}</td>
+        <td>${i+1}</td>
+        <td>${item.name}</td>
+        <td>${item.size}</td>
+        <td>${item.qty}</td>
+        <td>${item.price}</td>
+        <td>${item.total}</td>
         </tr>`;
-        table.innerHTML += row;
-
-        total += it.qty * it.price;
     });
-
-    document.getElementById("total").innerText = "Total: " + currency + " " + total;
 }
 
-async function downloadPDF() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
+function generatePreview(){
 
     let currency = document.getElementById("currency").value;
 
-    doc.setFontSize(18);
-    doc.text("SpotFutWears Quotation", 14, 20);
+    document.getElementById("preview").style.display="block";
 
-    doc.setFontSize(12);
-    doc.text("Order No: " + orderNo.value, 14, 30);
+    document.getElementById("pOrder").innerText = document.getElementById("orderNo").value;
+    document.getElementById("pName").innerText = document.getElementById("name").value;
+    document.getElementById("pContact").innerText = document.getElementById("contact").value;
+    document.getElementById("pEmail").innerText = document.getElementById("email").value;
+    document.getElementById("pAddress").innerText = document.getElementById("address").value;
 
-    doc.text("Name: " + name.value, 14, 40);
-    doc.text("Contact: " + contact.value, 14, 48);
-    doc.text("Email: " + email.value, 14, 56);
-    doc.text("Address: " + address.value, 14, 64);
+    // Date
+    let today = new Date();
+    let valid = new Date();
+    valid.setDate(today.getDate() + 7);
 
-    let y = 75;
+    document.getElementById("date").innerText = today.toLocaleDateString();
+    document.getElementById("validDate").innerText = valid.toLocaleDateString();
 
-    doc.setFillColor(194,0,255);
-    doc.rect(14, y, 180, 8, "F");
+    let table = document.getElementById("previewTable");
 
-    doc.setTextColor(255,255,255);
-    doc.text("#", 16, y+6);
-    doc.text("Item", 30, y+6);
-    doc.text("Size", 80, y+6);
-    doc.text("Qty", 110, y+6);
-    doc.text("Price", 130, y+6);
-    doc.text("Total", 160, y+6);
+    table.innerHTML = `
+    <tr>
+    <th>#</th><th>Name</th><th>Size</th><th>Qty</th><th>Price</th><th>Total</th>
+    </tr>`;
 
-    doc.setTextColor(0,0,0);
-    y += 12;
+    let grand = 0;
 
-    let total = 0;
+    items.forEach((item,i)=>{
+        grand += item.total;
 
-    items.forEach((it, i) => {
-        doc.text(String(i+1), 16, y);
-        doc.text(it.item, 30, y);
-        doc.text(it.size, 80, y);
-        doc.text(String(it.qty), 110, y);
-        doc.text(currency + " " + it.price, 130, y);
-        doc.text(currency + " " + (it.qty * it.price), 160, y);
-
-        total += it.qty * it.price;
-        y += 10;
+        table.innerHTML += `
+        <tr>
+        <td>${i+1}</td>
+        <td>${item.name}</td>
+        <td>${item.size}</td>
+        <td>${item.qty}</td>
+        <td>${currency} ${item.price}</td>
+        <td>${currency} ${item.total}</td>
+        </tr>`;
     });
 
-    doc.text("Total: " + currency + " " + total, 140, y+10);
-
-    const img = new Image();
-    img.src = "logo.jpg";
-
-    img.onload = function () {
-        doc.addImage(img, "JPEG", 80, y+20, 50, 20);
-        doc.save("quote.pdf");
-    };
+    document.getElementById("grandTotal").innerText = currency + " " + grand;
 }
+
+function downloadPDF(){
+    generatePreview();
+
+    let element = document.getElementById("preview");
+
+    html2pdf().from(element).save("SpotFut_Quote.pdf");
+}
+
 </script>
 
 </body>
