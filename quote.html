@@ -297,7 +297,104 @@ const validity = new Date();
 validity.setDate(today.getDate()+7);
 document.getElementById("quoteValidity").innerText = validity.toLocaleDateString();
 
-/* PDF FUNCTION (unchanged from your working version) */
+function downloadPDF(){
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const orderNo = document.getElementById("orderNumber").value;
+    const currency = currencyEl.value;
+
+    const name = document.getElementById("custName").value;
+    const contact = document.getElementById("custContact").value;
+    const email = document.getElementById("custEmail").value;
+    const address = document.getElementById("custAddress").value;
+
+    let grandTotal = 0;
+
+    doc.setFontSize(16);
+    doc.text("SpotFutWears - Quote",14,20);
+
+    doc.setFontSize(12);
+    doc.text(`Order #: ${orderNo}`,14,28);
+    doc.text(`Date: ${document.getElementById("quoteDate").innerText}`,14,36);
+    doc.text(`Validity: ${document.getElementById("quoteValidity").innerText}`,14,44);
+
+    doc.text("Customer Information:",14,52);
+    doc.text(`Name: ${name}`, 14, 60);
+    doc.text(`Contact: ${contact}`, 14, 68);
+    doc.text(`Email: ${email}`, 14, 76);
+    doc.text(`Address: ${address}`, 14, 84);
+
+    const tableColumn = ["No.", "Item Name", "Size", "Qty", "Price/unit", "Total Price"];
+    const tableRows = [];
+
+    items.forEach((item,i)=>{
+        const total = item.qty * item.price;
+        grandTotal += total;
+
+        tableRows.push([
+            i+1,
+            item.name,
+            item.size,
+            item.qty,
+            item.price + " " + currency,
+            total.toFixed(2) + " " + currency
+        ]);
+    });
+
+    // Grand Total row
+    tableRows.push([
+        "",
+        "",
+        "",
+        "",
+        "Grand Total",
+        grandTotal.toFixed(2) + " " + currency
+    ]);
+
+    doc.autoTable({
+        startY: 95,
+        head: [tableColumn],
+        body: tableRows,
+        theme: 'grid',
+        headStyles: {fillColor: [194,0,255], textColor:255},
+        styles: {textColor:255, fillColor:[0,0,0]},
+        alternateRowStyles: {fillColor:[40,40,40]},
+        didParseCell: function(data) {
+            if (data.row.index === tableRows.length - 1) {
+                data.cell.styles.fillColor = [194,0,255];
+                data.cell.styles.textColor = 255;
+                data.cell.styles.fontStyle = 'bold';
+            }
+        }
+    });
+
+    const img = new Image();
+    img.src = "logo.jpg";
+
+    img.onload = function(){
+        const imgProps = doc.getImageProperties(img);
+        const pdfWidth = doc.internal.pageSize.getWidth();
+
+        const imgWidth = 50;
+        const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+        doc.addImage(
+            img,
+            'JPEG',
+            pdfWidth/2 - imgWidth/2,
+            doc.lastAutoTable.finalY + 10,
+            imgWidth,
+            imgHeight
+        );
+
+        doc.save("SpotFut_Quote.pdf");
+    }
+
+    img.onerror = function(){
+        doc.save("SpotFut_Quote.pdf");
+    }
+}
 </script>
 
 </body>
