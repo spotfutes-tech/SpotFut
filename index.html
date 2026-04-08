@@ -187,12 +187,12 @@ text-decoration:none;
 color:white;
 }
 
-/* IMAGE + VIDEO SUPPORT */
+/* IMAGE + VIDEO SUPPORT (FIXED) */
 .collection-card img,
 .collection-card video{
 width:100%;
-height:420px;
-object-fit:cover;
+height:auto; /* FIX: prevents cropping */
+object-fit:contain; /* FIX: shows full image */
 transition:transform .6s ease;
 display:block;
 }
@@ -293,7 +293,7 @@ font-size:2.5rem;
     display: inline-block;
     margin-top: 20px;
     padding: 12px 28px;
-    background: linear-gradient(90deg, #9b59b6, #e91e63); /* SpotFut gradient */
+    background: linear-gradient(90deg, #9b59b6, #e91e63);
     color: white;
     font-weight: 600;
     border-radius: 8px;
@@ -301,7 +301,6 @@ font-size:2.5rem;
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-
 
 </style>
 </head>
@@ -371,12 +370,6 @@ Designed for movement, confidence, and presence.
 
 <a href="SignatureKits/elitefootballkit.html" class="collection-card">
 <img src="SignatureKits/SF-SJF-S002_1.jpg">
-<!--
-<video autoplay muted loop playsinline>
-<source src="SignatureKits/elite-preview.mp4" type="video/mp4">
-</video> 
---> 
-  
 <div class="collection-info">
 <h3>Elite Kits</h3>
 <span>Shop →</span>
@@ -471,4 +464,3 @@ updateCartCount();
 
 </body>
 </html>
-```
