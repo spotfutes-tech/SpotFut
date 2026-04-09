@@ -33,13 +33,11 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 8%;
+padding:25px 8%;
 z-index:10;
 
-/* LUXURY GLASS EFFECT */
-background:rgba(10,10,10,0.4);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(255,255,255,0.05);
+/* subtle fade for readability */
+background:linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
 }
 
 nav video{
@@ -52,28 +50,28 @@ align-items:center;
 gap:30px;
 }
 
-/* NAV LINKS UPGRADED */
+/* LUXURY NAV LINKS */
 nav a{
 text-decoration:none;
 color:#eee;
 font-size:0.9rem;
 font-weight:500;
-padding:8px 14px;
-border-radius:6px;
+padding:6px 10px;
 position:relative;
-transition:all 0.35s ease;
+transition:all 0.3s ease;
 letter-spacing:0.5px;
 }
 
+/* underline animation */
 nav a::after{
 content:'';
 position:absolute;
 left:0;
-bottom:-4px;
+bottom:-3px;
 width:0%;
-height:2px;
+height:1.5px;
 background:linear-gradient(90deg,#9b59b6,#e91e63);
-transition:0.4s ease;
+transition:0.35s ease;
 }
 
 nav a:hover::after{
@@ -82,7 +80,7 @@ width:100%;
 
 nav a:hover{
 color:white;
-text-shadow:0 0 8px rgba(194,0,255,0.6);
+text-shadow:0 0 6px rgba(194,0,255,0.5);
 }
 
 /* DROPDOWN */
@@ -90,51 +88,45 @@ text-shadow:0 0 8px rgba(194,0,255,0.6);
 position:relative;
 }
 
-/* DROPDOWN BUTTON UPGRADED */
+/* refined dropdown button */
 .dropbtn{
 cursor:pointer;
-padding:8px 14px;
-border-radius:6px;
-transition:all 0.3s ease;
+padding:6px 10px;
+transition:0.3s;
 color:#eee;
-position:relative;
 }
 
 .dropbtn:hover{
-background:rgba(255,255,255,0.05);
 color:white;
+text-shadow:0 0 6px rgba(194,0,255,0.5);
 }
 
-/* DROPDOWN MENU UPGRADED */
+/* dropdown menu */
 .dropdown-content{
 display:none;
 position:absolute;
-top:45px;
-background:rgba(15,15,15,0.85);
-backdrop-filter:blur(12px);
-min-width:230px;
-border-radius:10px;
-border:1px solid rgba(255,255,255,0.06);
+top:35px;
+background:#111;
+min-width:220px;
+border:1px solid #222;
 flex-direction:column;
-overflow:hidden;
 z-index:999;
-box-shadow:0 15px 40px rgba(0,0,0,0.6);
+border-radius:6px;
+overflow:hidden;
 }
 
 .dropdown-content a{
-padding:14px 18px;
+padding:12px 18px;
 display:flex;
 justify-content:space-between;
-align-items:center;
-color:#ddd;
+color:white;
 font-size:0.9rem;
-transition:all 0.25s ease;
+transition:0.25s;
 }
 
 .dropdown-content a:hover{
-background:rgba(255,255,255,0.05);
-color:white;
-transform:translateX(5px);
+background:#1a1a1a;
+transform:translateX(4px);
 }
 
 .dropdown-content span{
@@ -150,13 +142,10 @@ display:flex;
 .cart-icon{
 cursor:pointer;
 position:relative;
-padding:8px 12px;
-border-radius:6px;
 transition:0.3s;
 }
 
 .cart-icon:hover{
-background:rgba(255,255,255,0.05);
 transform:translateY(-2px);
 }
 
@@ -409,6 +398,8 @@ font-size:2.5rem;
 </head>
 
 <body>
+
+<!-- EVERYTHING BELOW IS 100% YOUR ORIGINAL CODE (UNCHANGED) -->
 
 <!-- NAV -->
 <nav>
