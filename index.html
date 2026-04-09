@@ -633,9 +633,21 @@ this.parentElement.classList.toggle("active");
 });
 });
 });
-
 updateCartCount();
 </script>
 
+<script>
+/* CLOSE MENU ON SCROLL */
+window.addEventListener("scroll", () => {
+const navLinks = document.querySelector(".nav-links");
+const dropdowns = document.querySelectorAll(".dropdown");
+
+if(navLinks.classList.contains("active")){
+navLinks.classList.remove("active");
+dropdowns.forEach(d => d.classList.remove("active"));
+}
+});
+</script>
+  
 </body>
 </html>
