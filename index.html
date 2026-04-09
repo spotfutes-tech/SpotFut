@@ -5,306 +5,79 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SpotFut</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-background:#0a0a0a;
-color:white;
-font-family:'Inter', sans-serif;
-}
-
-/* NAV */
-nav{
-position:absolute;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:25px 8%;
-z-index:10;
-}
-
-nav video{
-height:70px;
-}
-
-.nav-links{
-display:flex;
-align-items:center;
-gap:30px;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-font-size:0.9rem;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#c200ff;
-}
-
-/* DROPDOWN */
-.dropdown{
-position:relative;
-}
-
-.dropbtn{
-cursor:pointer;
-}
-
-.dropdown-content{
-display:none;
-position:absolute;
-top:35px;
-background:#111;
-min-width:220px;
-border:1px solid #222;
-flex-direction:column;
-z-index:999;
-}
-
-.dropdown-content a{
-padding:12px 18px;
-display:flex;
-justify-content:space-between;
-color:white;
-font-size:0.9rem;
-}
-
-.dropdown-content a:hover{
-background:#1a1a1a;
-}
-
-.dropdown-content span{
-font-size:0.7rem;
-color:#888;
-}
-
-.dropdown:hover .dropdown-content{
-display:flex;
-}
-
-/* CART */
-.cart-icon{
-cursor:pointer;
-position:relative;
-}
-
-#cart-count{
-background:white;
-color:black;
-font-size:12px;
-padding:3px 7px;
-border-radius:50%;
-margin-left:5px;
-}
-
-/* HERO */
-.hero{
-position:relative;
-width:100%;
-height:65vh; /* UPDATED */
-min-height:420px; /* NEW */
-overflow:hidden;
-}
-
-.hero video{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.55);
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:0 8%;
-gap:12px; /* NEW */
-}
-
-.hero-content h1{
-font-family:'Playfair Display', serif;
-font-size:3.5rem;
-line-height:1.2;
-}
-
-.hero-content p{
-margin-top:10px; /* slightly reduced */
-max-width:600px;
-color:#ccc;
-font-weight:300;
-}
-
-/* SIGNATURE SECTION */
-.collections{
-padding:60px 8%; /* UPDATED */
-text-align:center;
-}
-
-.collections h2{
-font-family:'Playfair Display', serif;
-font-size:2.5rem;
-margin-bottom:40px; /* UPDATED */
-}
-
-.collection-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-/* COLLECTION CARD */
-.collection-card{
-position:relative;
-overflow:hidden;
-text-decoration:none;
-color:white;
-}
-
-/* IMAGE + VIDEO SUPPORT (FIXED) */
-.collection-card img,
-.collection-card video{
-width:100%;
-height:auto;
-object-fit:contain;
-transition:transform .6s ease;
-display:block;
-}
-
-/* HOVER ZOOM */
-.collection-card:hover img,
-.collection-card:hover video{
-transform:scale(1.08);
-}
-
-/* GRADIENT OVERLAY */
-.collection-card::after{
-content:'';
-position:absolute;
-bottom:0;
-left:0;
-width:100%;
-height:55%;
-background:linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.4), transparent);
-}
-
-/* TEXT ANIMATION */
-.collection-info{
-position:absolute;
-bottom:25px;
-left:25px;
-text-align:left;
-opacity:0;
-transform:translateY(20px);
-transition:all .5s ease;
-
-background:rgba(0,0,0,0.35);
-backdrop-filter:blur(6px);
-padding:10px 14px;
-border-radius:6px;
-
-text-shadow:0 4px 12px rgba(0,0,0,0.9);
-}
-
-.collection-card:hover .collection-info{
-opacity:1;
-transform:translateY(0);
-}
-
-.collection-info h3{
-font-family:'Playfair Display', serif;
-font-size:1.6rem;
-}
-
-.collection-info span{
-color:#ddd;
-font-size:1.05rem;
-font-weight:600;
-letter-spacing:0.5px;
-}
-
-.collection-card:hover span{
-color:#c200ff;
-}
-
-/* PHILOSOPHY */
-.section{
-padding:70px 8%; /* UPDATED */
-text-align:center;
-}
-
-.section h2{
-font-family:'Playfair Display', serif;
-font-size:2.5rem;
-margin-bottom:20px;
-}
-
-.section p{
-max-width:750px;
-margin:auto;
-color:#aaa;
-line-height:1.8;
-}
-
-/* FOOTER */
-footer{
-padding:60px 8%;
-text-align:center;
-border-top:1px solid #1a1a1a;
-}
-
-/* MOBILE */
-@media(max-width:900px){
-
-.collection-grid{
-grid-template-columns:1fr;
-}
-
-.hero-content h1{
-font-size:2.5rem;
-}
-
-}
-
-.home-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    background: linear-gradient(90deg, #9b59b6, #e91e63);
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     color: white;
-    font-weight: 600;
-    border-radius: 8px;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero video {
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* GLASS CARD */
+.glass {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 20px 30px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 15px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
     text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    display: inline-block;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px rgba(255,0,200,0.8),
+                0 0 30px rgba(51,51,255,0.6);
+    transform: translateY(-2px);
+}
+
+/* SECTION */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
 }
 
 </style>
@@ -312,192 +85,48 @@ font-size:2.5rem;
 
 <body>
 
-<!-- NAV -->
-<nav>
-
-<video autoplay muted loop playsinline>
-<source src="logo.mp4" type="video/mp4">
-</video>
-
-<div class="nav-links">
-
-<a href="#collections">Signature</a>
-
-<div class="dropdown">
-<span class="dropbtn">Shop ▾</span>
-<div class="dropdown-content">
-<a href="men.html">Men <span>Coming Soon</span></a>
-<a href="women.html">Women <span>Coming Soon</span></a>
-<a href="junior.html">Kids <span>Coming Soon</span></a>
-<a href="sports_ass.html">Sports Accessories <span>Coming Soon</span></a>
-</div>
-</div>
-
-<a href="#philosophy">About</a>
-<a href="contact.html">Contact</a>
-
-<div class="cart-icon" onclick="goToCart()">
-🛒 <span id="cart-count">0</span>
-</div>
-
-</div>
-
-</nav>
-
 <!-- HERO -->
 <section class="hero">
+    <video autoplay muted loop>
+        <source src="your-video.mp4" type="video/mp4">
+    </video>
 
-<video autoplay muted loop playsinline>
-<source src="banner.mp4" type="video/mp4">
-</video>
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1>Engineered Precision.<br>Elevated Identity.</h1>
-
-<p>
-SpotFut blends performance innovation with modern luxury aesthetics.
-Designed for movement, confidence, and presence.
-</p>
-
-</div>
-
+    <div class="glass">
+        <h1>SPOTFUT</h1>
+        <p>Where Style Meets Football</p>
+        <a href="#shop" class="btn">Shop Now</a>
+    </div>
 </section>
 
 <!-- SIGNATURE COLLECTION -->
-<section id="collections" class="collections">
+<section class="section" id="signature">
+    <h2>Signature Collection</h2>
 
-<h2>Signature Collection</h2>
+    <div class="cards">
+        <div class="glass card">
+            <h3>Bomber Jacket</h3>
+        </div>
+        <div class="glass card">
+            <h3>Tracksuit</h3>
+        </div>
+    </div>
 
-<div class="collection-grid">
-
-<a href="SignatureKits/elitefootballkit.html" class="collection-card">
-<img src="SignatureKits/SF-SJF-S002_1.jpg">
-<div class="collection-info">
-<h3>Elite Kits</h3>
-<span>Shop →</span>
-</div>
-</a>
-
-<a href="UrbanHoodies/uhoodie.html" class="collection-card">
-<img src="UrbanHoodies/SF-UHF-S001_1.png">
-<div class="collection-info">
-<h3>Urban Hoodies</h3>
-<span>Shop →</span>
-</div>
-</a>
-
-<a href="VarsityBomber/jackets.html" class="collection-card">
-<img src="VarsityBomber/varsity-CK-Model.png">
-<div class="collection-info">
-<h3>Varsity Jackets</h3>
-<span>Shop →</span>
-</div>
-</a>
-
-</div>
-
+    <a href="#signature" class="btn">Explore Collection</a>
 </section>
 
-<!-- SHOP BY CATEGORY -->
-<section class="collections">
+<!-- SHOP -->
+<section class="section" id="shop">
+    <h2>Shop by Categories</h2>
 
-<h2>Shop by Category</h2>
-
-<div class="collection-grid">
-
-<a href="men.html" class="collection-card">
-<img src="Images/Men.jpg">
-<div class="collection-info">
-<h3>Men</h3>
-<span>Shop →</span>
-</div>
-</a>
-
-<a href="women.html" class="collection-card">
-<img src="Images/Women.jpg">
-<div class="collection-info">
-<h3>Women</h3>
-<span>Shop →</span>
-</div>
-</a>
-
-<a href="junior.html" class="collection-card">
-<img src="Images/Junior.jpg">
-<div class="collection-info">
-<h3>Kids</h3>
-<span>Shop →</span>
-</div>
-</a>
-
-<a href="sports_ass.html" class="collection-card">
-<img src="Images/Accessories.jpg">
-<div class="collection-info">
-<h3>Accessories</h3>
-<span>Shop →</span>
-</div>
-</a>
-
-</div>
-
+    <div class="cards">
+        <div class="glass card">
+            <h3>Football Kits</h3>
+        </div>
+        <div class="glass card">
+            <h3>Streetwear</h3>
+        </div>
+    </div>
 </section>
-
-<!-- PHILOSOPHY -->
-<section id="philosophy" class="section">
-
-<h2>The SpotFut Philosophy</h2>
-
-<p>
-SpotFut represents modern athletic luxury — where performance engineering
-meets refined aesthetics. Every piece is designed to move with you,
-elevate your presence, and define confidence through simplicity.
-</p>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-
-<h3 style="font-family:'Playfair Display', serif; margin-bottom:25px; color:#e5e5e5; letter-spacing:1px;">
-Follow SPOTFUT
-</h3>
-
-<div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
-
-<a href="https://www.instagram.com/spotfutwearseu/" target="_blank">Instagram</a>
-<a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank">Facebook</a>
-<a href="https://www.tiktok.com/@spotfutwearseu" target="_blank">TikTok</a>
-
-</div>
-
-<p style="margin-top:30px; color:#666; font-size:0.8rem;">
-© 2026 SpotFut. All Rights Reserved.
-</p>
-
-</footer>
-
-<script>
-
-function updateCartCount(){
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-let total = 0;
-
-cart.forEach(item=>{
-total += item.quantity || 1;
-});
-
-document.getElementById("cart-count").innerText = total;
-}
-
-function goToCart(){
-window.location.href = "cart.html";
-}
-
-updateCartCount();
-
-</script>
 
 </body>
 </html>
