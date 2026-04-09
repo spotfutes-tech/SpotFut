@@ -33,8 +33,13 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:25px 8%;
+padding:20px 8%;
 z-index:10;
+
+/* LUXURY GLASS EFFECT */
+background:rgba(10,10,10,0.4);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 nav video{
@@ -47,15 +52,37 @@ align-items:center;
 gap:30px;
 }
 
+/* NAV LINKS UPGRADED */
 nav a{
 text-decoration:none;
-color:white;
+color:#eee;
 font-size:0.9rem;
-transition:0.3s;
+font-weight:500;
+padding:8px 14px;
+border-radius:6px;
+position:relative;
+transition:all 0.35s ease;
+letter-spacing:0.5px;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-4px;
+width:0%;
+height:2px;
+background:linear-gradient(90deg,#9b59b6,#e91e63);
+transition:0.4s ease;
+}
+
+nav a:hover::after{
+width:100%;
 }
 
 nav a:hover{
-color:#c200ff;
+color:white;
+text-shadow:0 0 8px rgba(194,0,255,0.6);
 }
 
 /* DROPDOWN */
@@ -63,31 +90,51 @@ color:#c200ff;
 position:relative;
 }
 
+/* DROPDOWN BUTTON UPGRADED */
 .dropbtn{
 cursor:pointer;
+padding:8px 14px;
+border-radius:6px;
+transition:all 0.3s ease;
+color:#eee;
+position:relative;
 }
 
+.dropbtn:hover{
+background:rgba(255,255,255,0.05);
+color:white;
+}
+
+/* DROPDOWN MENU UPGRADED */
 .dropdown-content{
 display:none;
 position:absolute;
-top:35px;
-background:#111;
-min-width:220px;
-border:1px solid #222;
+top:45px;
+background:rgba(15,15,15,0.85);
+backdrop-filter:blur(12px);
+min-width:230px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.06);
 flex-direction:column;
+overflow:hidden;
 z-index:999;
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
 
 .dropdown-content a{
-padding:12px 18px;
+padding:14px 18px;
 display:flex;
 justify-content:space-between;
-color:white;
+align-items:center;
+color:#ddd;
 font-size:0.9rem;
+transition:all 0.25s ease;
 }
 
 .dropdown-content a:hover{
-background:#1a1a1a;
+background:rgba(255,255,255,0.05);
+color:white;
+transform:translateX(5px);
 }
 
 .dropdown-content span{
@@ -103,6 +150,14 @@ display:flex;
 .cart-icon{
 cursor:pointer;
 position:relative;
+padding:8px 12px;
+border-radius:6px;
+transition:0.3s;
+}
+
+.cart-icon:hover{
+background:rgba(255,255,255,0.05);
+transform:translateY(-2px);
 }
 
 #cart-count{
@@ -191,7 +246,6 @@ position:relative;
 overflow:hidden;
 }
 
-/* GLOW EFFECT */
 .home-btn::before{
 content:'';
 position:absolute;
