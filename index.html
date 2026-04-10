@@ -659,6 +659,11 @@ elevate your presence, and define confidence through simplicity.
 </p>
 </footer>
 
+<!-- =========================
+KEEP YOUR ENTIRE HTML EXACTLY AS IS ABOVE
+ONLY REPLACE YOUR LAST SCRIPT BLOCK WITH THIS
+========================= -->
+
 <script>
 function updateCartCount(){
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -673,38 +678,9 @@ function goToCart(){
 window.location.href = "cart.html";
 }
 
-/* MOBILE MENU */
 function toggleMenu(){
 document.querySelector(".nav-links").classList.toggle("active");
 }
-
-/* DROPDOWN CLICK FIX */
-document.addEventListener("DOMContentLoaded", () => {
-document.querySelectorAll(".dropbtn").forEach(btn=>{
-btn.addEventListener("click", function(e){
-e.stopPropagation();
-this.parentElement.classList.toggle("active");
-});
-});
-});
-updateCartCount();
-</script>
-
-<script>
-/* CLOSE MENU ON SCROLL */
-window.addEventListener("scroll", () => {
-const navLinks = document.querySelector(".nav-links");
-const dropdowns = document.querySelectorAll(".dropdown");
-
-if(navLinks.classList.contains("active")){
-navLinks.classList.remove("active");
-dropdowns.forEach(d => d.classList.remove("active"));
-}
-});
-</script>
-<script>
-
-/* TYPEWRITER + SCROLL TRIGGERS */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -713,8 +689,9 @@ const shopTitle = document.getElementById("shop-title");
 
 let typed = false;
 
-/* TYPEWRITER FUNCTION */
-function typeWriter(element, text, speed = 50){
+/* TYPEWRITER */
+function typeWriter(element, text, speed = 45){
+if(!element) return;
 let i = 0;
 function typing(){
 if(i < text.length){
@@ -726,19 +703,25 @@ setTimeout(typing, speed);
 typing();
 }
 
-/* OBSERVER */
+/* SAFETY: ALWAYS SHOW TITLE ON LOAD (FIX MOBILE ISSUE) */
+setTimeout(() => {
+if(signatureTitle && !typed){
+typeWriter(signatureTitle, "Signature Collection", 45);
+typed = true;
+}
+}, 600);
+
+/* INTERSECTION OBSERVER (MOBILE SAFE) */
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
 
 if(entry.isIntersecting){
 
-/* Signature */
 if(entry.target.id === "signature-title" && !typed){
-typed = true;
 typeWriter(signatureTitle, "Signature Collection", 45);
+typed = true;
 }
 
-/* Shop */
 if(entry.target.id === "shop-title"){
 shopTitle.classList.add("visible");
 }
@@ -746,13 +729,29 @@ shopTitle.classList.add("visible");
 }
 
 });
-}, { threshold: 0.15, rootMargin: "0px 0px -80px 0px" });
+}, {
+threshold: 0.1,
+rootMargin: "0px 0px -15% 0px"
+});
 
-observer.observe(signatureTitle);
-observer.observe(shopTitle);
+/* ATTACH OBSERVER SAFELY */
+if(signatureTitle) observer.observe(signatureTitle);
+if(shopTitle) observer.observe(shopTitle);
 
 });
 
+/* CLOSE MENU ON SCROLL */
+window.addEventListener("scroll", () => {
+const navLinks = document.querySelector(".nav-links");
+const dropdowns = document.querySelectorAll(".dropdown");
+
+if(navLinks && navLinks.classList.contains("active")){
+navLinks.classList.remove("active");
+dropdowns.forEach(d => d.classList.remove("active"));
+}
+});
+
+updateCartCount();
 </script>
 </body>
 </html>
