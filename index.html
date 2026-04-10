@@ -727,28 +727,26 @@ typing();
 }
 
 /* OBSERVER */
-const observer = new IntersectionObserver((entries)=>{
+const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
 
 if(entry.isIntersecting){
 
-/* Signature → Typewriter */
+/* Signature */
 if(entry.target.id === "signature-title" && !typed){
 typed = true;
 typeWriter(signatureTitle, "Signature Collection", 45);
 }
 
-/* Shop → Fade */
+/* Shop */
 if(entry.target.id === "shop-title"){
-setTimeout(()=>{
 shopTitle.classList.add("visible");
-}, 200);
 }
 
 }
 
 });
-}, { threshold: 0.4 });
+}, { threshold: 0.15, rootMargin: "0px 0px -80px 0px" });
 
 observer.observe(signatureTitle);
 observer.observe(shopTitle);
