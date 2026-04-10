@@ -726,6 +726,25 @@ setTimeout(typing, speed);
 typing();
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+
+const signatureTitle = document.getElementById("signature-title");
+const shopTitle = document.getElementById("shop-title");
+
+let typed = false;
+
+function typeWriter(element, text, speed = 45){
+let i = 0;
+function typing(){
+if(i < text.length){
+element.innerHTML += text.charAt(i);
+i++;
+setTimeout(typing, speed);
+}
+}
+typing();
+}
+
 /* OBSERVER */
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
@@ -745,20 +764,25 @@ shopTitle.classList.add("visible");
 
 });
 }, {
-threshold: 0,
-rootMargin: "0px 0px -200px 0px"
+threshold: 0.05,
+rootMargin: "0px 0px -150px 0px"
 });
+
+/* OBSERVE AFTER A SMALL DELAY (IMPORTANT FOR MOBILE) */
+setTimeout(() => {
+observer.observe(signatureTitle);
+observer.observe(shopTitle);
+}, 300);
+
+/* SAFETY FALLBACK (IF MOBILE STILL FAILS) */
 window.addEventListener("load", () => {
 setTimeout(() => {
 if(!typed && signatureTitle){
 typeWriter(signatureTitle, "Signature Collection", 45);
 typed = true;
 }
-}, 800);
+}, 1200);
 });
-
-observer.observe(signatureTitle);
-observer.observe(shopTitle);
 
 });
 
