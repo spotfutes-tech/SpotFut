@@ -11,15 +11,9 @@
 <style>
 
 /* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 background:#0a0a0a;
@@ -48,7 +42,6 @@ left:8%;
 top:50%;
 transform:translateY(-50%);
 display:flex;
-align-items:center;
 gap:14px;
 z-index:1001;
 }
@@ -56,7 +49,7 @@ z-index:1001;
 .social-icons a{
 color:#ccc;
 font-size:0.95rem;
-transition:all 0.3s ease;
+transition:0.3s;
 }
 
 .social-icons a:hover{
@@ -67,7 +60,7 @@ text-shadow:0 0 8px rgba(194,0,255,0.6);
 
 nav video{
 height:70px;
-margin-left:80px; /* prevents overlap with icons */
+margin-left:80px; /* prevents overlap */
 }
 
 .nav-links{
@@ -92,8 +85,7 @@ font-size:0.9rem;
 font-weight:500;
 padding:6px 10px;
 position:relative;
-transition:all 0.3s ease;
-letter-spacing:0.5px;
+transition:0.3s;
 }
 
 nav a::after{
@@ -104,12 +96,10 @@ bottom:-3px;
 width:0%;
 height:1.5px;
 background:linear-gradient(90deg,#9b59b6,#e91e63);
-transition:0.35s ease;
+transition:0.35s;
 }
 
-nav a:hover::after{
-width:100%;
-}
+nav a:hover::after{width:100%;}
 
 nav a:hover{
 color:white;
@@ -117,15 +107,7 @@ text-shadow:0 0 6px rgba(194,0,255,0.5);
 }
 
 /* DROPDOWN */
-.dropdown{
-position:relative;
-}
-
-.dropbtn{
-cursor:pointer;
-padding:6px 10px;
-color:#eee;
-}
+.dropdown{position:relative;}
 
 .dropdown-content{
 display:none;
@@ -135,25 +117,12 @@ background:#111;
 min-width:220px;
 border:1px solid #222;
 flex-direction:column;
-z-index:999;
 border-radius:6px;
-overflow:hidden;
 }
 
-.dropdown-content a{
-padding:12px 18px;
-display:flex;
-justify-content:space-between;
-}
+.dropdown:hover .dropdown-content{display:flex;}
 
-.dropdown:hover .dropdown-content{
-display:flex;
-}
-
-/* CART */
-.cart-icon{
-cursor:pointer;
-}
+.cart-icon{cursor:pointer;}
 
 #cart-count{
 background:white;
@@ -168,6 +137,7 @@ margin-left:5px;
 .hero{
 position:relative;
 height:65vh;
+overflow:hidden;
 }
 
 .hero video{
@@ -201,12 +171,6 @@ font-family:'Playfair Display', serif;
 font-size:3.5rem;
 }
 
-.hero-buttons{
-display:flex;
-gap:15px;
-margin-top:20px;
-}
-
 /* COLLECTIONS */
 .collections{
 padding:60px 8%;
@@ -229,7 +193,7 @@ gap:30px;
 .fade-title{
 opacity:0;
 transform:translateY(20px);
-transition:all 0.8s ease;
+transition:0.8s;
 }
 
 .fade-title.visible{
@@ -250,9 +214,7 @@ nav video{
 margin-left:0;
 }
 
-.menu-toggle{
-display:block;
-}
+.menu-toggle{display:block;}
 
 .nav-links{
 display:none;
@@ -263,9 +225,7 @@ top:100%;
 width:100%;
 }
 
-.nav-links.active{
-display:flex;
-}
+.nav-links.active{display:flex;}
 
 }
 
@@ -291,20 +251,8 @@ display:flex;
 
 <div class="nav-links">
 <a href="#collections">Signature</a>
-
-<div class="dropdown">
-<span class="dropbtn">Shop ▾</span>
-<div class="dropdown-content">
-<a href="#">Men</a>
-<a href="#">Women</a>
-<a href="#">Kids</a>
-</div>
-</div>
-
+<a href="#shop">Shop</a>
 <a href="#philosophy">About</a>
-<a href="#">Contact</a>
-
-<div class="cart-icon">🛒 <span id="cart-count">0</span></div>
 </div>
 
 </nav>
@@ -317,13 +265,19 @@ display:flex;
 <div class="overlay"></div>
 <div class="hero-content">
 <h1>Engineered Precision.<br>Elevated Identity.</h1>
-<div class="hero-buttons"></div>
 </div>
 </section>
 
-<!-- SIGNATURE -->
+<!-- SIGNATURE COLLECTION -->
 <section id="collections" class="collections">
 <h2 id="signature-title"></h2>
+
+<div class="collection-grid">
+<img src="SignatureKits/SF-SJF-S002_1.jpg">
+<img src="UrbanHoodies/SF-UHF-S001_1.png">
+<img src="VarsityBomber/varsity-CK-Model.png">
+</div>
+
 </section>
 
 <!-- SHOP -->
