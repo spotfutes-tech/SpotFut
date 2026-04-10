@@ -398,6 +398,15 @@ z-index:1001;
 font-size:1.8rem;
 cursor:pointer;
 }
+.social-icons{
+top:15px;
+left:15px;
+transform:none;
+}
+
+nav video{
+margin-left:0;
+}
 
 /* hide nav by default on mobile */
 .nav-links{
@@ -467,7 +476,33 @@ transition:all 0.8s ease;
 opacity:1;
 transform:translateY(0);
 }
+/* SOCIAL ICONS SAFE POSITION */
+.social-icons{
+position:absolute;
+left:25px;   /* fixed from % → prevents shifting */
+top:50%;
+transform:translateY(-50%);
+display:flex;
+gap:12px;
+z-index:2000;
+}
 
+.social-icons a{
+color:#ccc;
+font-size:0.95rem;
+transition:0.3s;
+}
+
+.social-icons a:hover{
+color:white;
+transform:translateY(-2px);
+text-shadow:0 0 8px rgba(194,0,255,0.6);
+}
+
+/* push logo slightly right so no overlap */
+nav video{
+margin-left:60px;
+}
 </style>
 </head>
 
@@ -476,8 +511,15 @@ transform:translateY(0);
 <!-- NAV -->
 <nav>
 
-<video autoplay muted loop playsinline>
-<!--<source src="logo.mp4" type="video/mp4">-->
+<!-- SOCIAL ICONS -->
+<div class="social-icons">
+<a href="https://www.instagram.com/spotfutwearseu/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.tiktok.com/@spotfutwearseu" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://wa.me/34643779896" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</div>
+
+<video autoplay muted loop playsinline><!--<source src="logo.mp4" type="video/mp4">-->
 </video>
 
 <!-- HAMBURGER -->
