@@ -6,14 +6,21 @@
 <title>SpotFut</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+
+  
 <style>
 
 /* RESET */
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth;}
+html{
+scroll-behavior:smooth;
+}
 
 body{
 background:#0a0a0a;
@@ -35,33 +42,8 @@ z-index:1000;
 background:linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
 }
 
-/* ✅ SOCIAL ICONS (NON-BREAKING) */
-.social-icons{
-position:absolute;
-left:8%;
-top:50%;
-transform:translateY(-50%);
-display:flex;
-gap:14px;
-z-index:1001;
-}
-
-.social-icons a{
-color:#ccc;
-font-size:0.95rem;
-transition:0.3s;
-}
-
-.social-icons a:hover{
-color:white;
-transform:translateY(-2px);
-text-shadow:0 0 8px rgba(194,0,255,0.6);
-}
-
-/* prevent overlap with logo */
 nav video{
 height:70px;
-margin-left:90px;
 }
 
 .nav-links{
@@ -70,7 +52,7 @@ align-items:center;
 gap:30px;
 }
 
-/* HAMBURGER */
+/* HAMBURGER (NEW) */
 .menu-toggle{
 display:none;
 font-size:1.6rem;
@@ -78,7 +60,7 @@ cursor:pointer;
 color:white;
 }
 
-/* NAV LINKS */
+/* LUXURY NAV LINKS */
 nav a{
 text-decoration:none;
 color:#eee;
@@ -90,6 +72,7 @@ transition:all 0.3s ease;
 letter-spacing:0.5px;
 }
 
+/* underline animation */
 nav a::after{
 content:'';
 position:absolute;
@@ -101,7 +84,9 @@ background:linear-gradient(90deg,#9b59b6,#e91e63);
 transition:0.35s ease;
 }
 
-nav a:hover::after{width:100%;}
+nav a:hover::after{
+width:100%;
+}
 
 nav a:hover{
 color:white;
@@ -109,10 +94,23 @@ text-shadow:0 0 6px rgba(194,0,255,0.5);
 }
 
 /* DROPDOWN */
-.dropdown{position:relative;}
+.dropdown{
+position:relative;
+}
 
-.dropbtn{cursor:pointer;color:#eee;}
+.dropbtn{
+cursor:pointer;
+padding:6px 10px;
+transition:0.3s;
+color:#eee;
+}
 
+.dropbtn:hover{
+color:white;
+text-shadow:0 0 6px rgba(194,0,255,0.5);
+}
+
+/* dropdown menu */
 .dropdown-content{
 display:none;
 position:absolute;
@@ -121,12 +119,44 @@ background:#111;
 min-width:220px;
 border:1px solid #222;
 flex-direction:column;
+z-index:999;
 border-radius:6px;
+overflow:hidden;
 }
 
-.dropdown:hover .dropdown-content{display:flex;}
+.dropdown-content a{
+padding:12px 18px;
+display:flex;
+justify-content:space-between;
+color:white;
+font-size:0.9rem;
+transition:0.25s;
+}
 
-.cart-icon{cursor:pointer;}
+.dropdown-content a:hover{
+background:#1a1a1a;
+transform:translateX(4px);
+}
+
+.dropdown-content span{
+font-size:0.7rem;
+color:#888;
+}
+
+.dropdown:hover .dropdown-content{
+display:flex;
+}
+
+/* CART */
+.cart-icon{
+cursor:pointer;
+position:relative;
+transition:0.3s;
+}
+
+.cart-icon:hover{
+transform:translateY(-2px);
+}
 
 #cart-count{
 background:white;
@@ -157,6 +187,8 @@ object-fit:cover;
 
 .overlay{
 position:absolute;
+top:0;
+left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.55);
@@ -178,6 +210,69 @@ gap:12px;
 .hero-content h1{
 font-family:'Playfair Display', serif;
 font-size:3.5rem;
+line-height:1.2;
+}
+
+.hero-content p{
+margin-top:10px;
+max-width:600px;
+color:#ccc;
+font-weight:300;
+}
+
+/* HERO BUTTONS */
+.hero-buttons{
+display:flex;
+gap:15px;
+margin-top:20px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+/* BUTTONS (UNCHANGED) */
+.home-btn{
+display:inline-block;
+padding:12px 28px;
+background:linear-gradient(90deg, #9b59b6, #e91e63);
+color:white;
+font-weight:600;
+border-radius:8px;
+text-decoration:none;
+transition:all 0.3s ease;
+box-shadow:0 4px 12px rgba(0,0,0,0.35);
+position:relative;
+overflow:hidden;
+}
+
+.home-btn::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+transition:all 0.5s ease;
+}
+
+.home-btn:hover::before{
+left:100%;
+}
+
+.home-btn:hover{
+transform:translateY(-3px) scale(1.02);
+box-shadow:0 8px 25px rgba(194,0,255,0.4);
+}
+
+.secondary-btn{
+background:transparent;
+border:1px solid #aaa;
+}
+
+.secondary-btn:hover{
+background:#c200ff;
+border-color:#c200ff;
+box-shadow:0 8px 25px rgba(194,0,255,0.35);
 }
 
 /* COLLECTIONS */
@@ -198,7 +293,170 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 }
 
-/* FADE */
+/* COLLECTION CARD */
+.collection-card{
+position:relative;
+overflow:hidden;
+text-decoration:none;
+color:white;
+}
+
+.collection-card img,
+.collection-card video{
+width:100%;
+height:auto;
+object-fit:contain;
+transition:transform .6s ease;
+display:block;
+}
+
+.collection-card:hover img,
+.collection-card:hover video{
+transform:scale(1.08);
+}
+
+.collection-card::after{
+content:'';
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:55%;
+background:linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.4), transparent);
+}
+
+.collection-info{
+position:absolute;
+bottom:25px;
+left:25px;
+text-align:left;
+opacity:0;
+transform:translateY(20px);
+transition:all .5s ease;
+
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(6px);
+padding:10px 14px;
+border-radius:6px;
+
+text-shadow:0 4px 12px rgba(0,0,0,0.9);
+}
+
+.collection-card:hover .collection-info{
+opacity:1;
+transform:translateY(0);
+}
+
+.collection-info h3{
+font-family:'Playfair Display', serif;
+font-size:1.6rem;
+}
+
+.collection-info span{
+color:#ddd;
+font-size:1.05rem;
+font-weight:600;
+letter-spacing:0.5px;
+}
+
+.collection-card:hover span{
+color:#c200ff;
+}
+
+/* PHILOSOPHY */
+.section{
+padding:70px 8%;
+text-align:center;
+}
+
+.section h2{
+font-family:'Playfair Display', serif;
+font-size:2.5rem;
+margin-bottom:20px;
+}
+
+.section p{
+max-width:750px;
+margin:auto;
+color:#aaa;
+line-height:1.8;
+}
+
+/* FOOTER */
+footer{
+padding:60px 8%;
+text-align:center;
+border-top:1px solid #1a1a1a;
+}
+
+/* MOBILE FIX ONLY */
+@media(max-width:900px){
+
+.menu-toggle{
+display:block;
+z-index:1001;
+font-size:1.8rem;
+cursor:pointer;
+}
+
+/* hide nav by default on mobile */
+.nav-links{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:#0a0a0a;
+flex-direction:column;
+padding:25px 0;
+gap:20px;
+z-index:1000;
+border-top:1px solid rgba(255,255,255,0.08);
+}
+/* show when active */
+.nav-links.active{
+display:flex;
+}
+
+
+.nav-links a,
+.dropbtn,
+.cart-icon{
+text-align:center;
+width:100%;
+}
+
+/* dropdown fix */
+.dropdown-content{
+position:static;
+display:none;
+border:none;
+background:#111;
+}
+
+.dropdown:hover .dropdown-content{
+display:none;
+}
+
+.dropdown.active .dropdown-content{
+display:flex;
+}
+.dropdown.active .dropdown-content{
+display:flex;
+flex-direction:column;
+}
+
+
+.hero-content h1{
+font-size:2.5rem;
+}
+
+.collection-grid{
+grid-template-columns:1fr;
+}
+
+}
+/* FADE IN EFFECT */
 .fade-title{
 opacity:0;
 transform:translateY(20px);
@@ -210,35 +468,6 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* MOBILE */
-@media(max-width:900px){
-
-.social-icons{
-left:20px;
-top:20px;
-transform:none;
-}
-
-nav video{
-margin-left:0;
-}
-
-.menu-toggle{display:block;}
-
-.nav-links{
-display:none;
-position:absolute;
-top:100%;
-width:100%;
-background:#0a0a0a;
-flex-direction:column;
-padding:25px 0;
-}
-
-.nav-links.active{display:flex;}
-
-}
-
 </style>
 </head>
 
@@ -247,77 +476,195 @@ padding:25px 0;
 <!-- NAV -->
 <nav>
 
-<!-- ✅ SOCIAL ICONS -->
-<div class="social-icons">
-<a href="https://www.instagram.com/spotfutwearseu/" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a href="https://www.tiktok.com/@spotfutwearseu" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://wa.me/34643779896" target="_blank"><i class="fab fa-whatsapp"></i></a>
-</div>
+<video autoplay muted loop playsinline>
+<!--<source src="logo.mp4" type="video/mp4">-->
+</video>
 
-<video autoplay muted loop playsinline></video>
-
+<!-- HAMBURGER -->
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
 <div class="nav-links">
+
 <a href="#collections">Signature</a>
 
 <div class="dropdown">
 <span class="dropbtn">Shop ▾</span>
 <div class="dropdown-content">
-<a href="men.html">Men</a>
-<a href="women.html">Women</a>
-<a href="junior.html">Kids</a>
-<a href="sports_ass.html">Accessories</a>
+<a href="men.html">Men <span>Coming Soon</span></a>
+<a href="women.html">Women <span>Coming Soon</span></a>
+<a href="junior.html">Kids <span>Coming Soon</span></a>
+<a href="sports_ass.html">Sports Accessories <span>Coming Soon</span></a>
 </div>
 </div>
 
 <a href="#philosophy">About</a>
 <a href="contact.html">Contact</a>
 
-<div class="cart-icon">🛒 <span id="cart-count">0</span></div>
+<div class="cart-icon" onclick="goToCart()">
+🛒 <span id="cart-count">0</span>
+</div>
+
 </div>
 
 </nav>
 
-<!-- EVERYTHING ELSE REMAINS SAME -->
+<!-- EVERYTHING ELSE REMAINS EXACTLY THE SAME -->
 
 <!-- HERO -->
 <section class="hero">
+
 <video autoplay muted loop playsinline>
 <source src="banner.mp4" type="video/mp4">
 </video>
+
 <div class="overlay"></div>
+
 <div class="hero-content">
+
 <h1>Engineered Precision.<br>Elevated Identity.</h1>
-<p>SpotFut blends performance innovation with modern luxury aesthetics.</p>
+
+<p>
+SpotFut blends performance innovation with modern luxury aesthetics.
+Designed for movement, confidence, and presence.
+</p>
+
+<div class="hero-buttons">
+<a href="#shop" class="home-btn">Shop Now</a>
+<a href="#collections" class="home-btn secondary-btn">Signature Collection</a>
 </div>
+
+</div>
+
 </section>
 
-<!-- SIGNATURE -->
+<!-- SIGNATURE COLLECTION -->
 <section id="collections" class="collections">
 <h2 id="signature-title"></h2>
-
 <div class="collection-grid">
 <a href="SignatureKits/elitefootballkit.html" class="collection-card">
 <img src="SignatureKits/SF-SJF-S002_1.jpg">
+<div class="collection-info">
+<h3>Elite Kits</h3>
+<span>Shop →</span>
+</div>
 </a>
+
 <a href="UrbanHoodies/uhoodie.html" class="collection-card">
 <img src="UrbanHoodies/SF-UHF-S001_1.png">
+<div class="collection-info">
+<h3>Urban Hoodies</h3>
+<span>Shop →</span>
+</div>
 </a>
+
 <a href="VarsityBomber/jackets.html" class="collection-card">
 <img src="VarsityBomber/varsity-CK-Model.png">
+<div class="collection-info">
+<h3>Varsity Jackets</h3>
+<span>Shop →</span>
+</div>
 </a>
 </div>
-
 </section>
 
 <!-- SHOP -->
 <section id="shop" class="collections">
 <h2 id="shop-title" class="fade-title">Shop by Category</h2>
+<div class="collection-grid">
+<a href="men.html" class="collection-card">
+<img src="Images/Men.jpg">
+<div class="collection-info"><h3>Men</h3><span>Shop →</span></div>
+</a>
+
+<a href="women.html" class="collection-card">
+<img src="Images/Women.jpg">
+<div class="collection-info"><h3>Women</h3><span>Shop →</span></div>
+</a>
+
+<a href="junior.html" class="collection-card">
+<img src="Images/Junior.jpg">
+<div class="collection-info"><h3>Kids</h3><span>Shop →</span></div>
+</a>
+
+<a href="sports_ass.html" class="collection-card">
+<img src="Images/Accessories.jpg">
+<div class="collection-info"><h3>Accessories</h3><span>Shop →</span></div>
+</a>
+</div>
 </section>
 
+<!-- PHILOSOPHY -->
+<section id="philosophy" class="section">
+<h2>The SpotFut Philosophy</h2>
+<p>
+SpotFut represents modern athletic luxury — where performance engineering
+meets refined aesthetics. Every piece is designed to move with you,
+elevate your presence, and define confidence through simplicity.
+</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<h3 style="font-family:'Playfair Display', serif; margin-bottom:25px; color:#e5e5e5;">Follow SPOTFUT</h3>
+
+<div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
+<a href="https://www.instagram.com/spotfutwearseu/" target="_blank">Instagram</a>
+<a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank">Facebook</a>
+<a href="https://www.tiktok.com/@spotfutwearseu" target="_blank">TikTok</a>
+</div>
+
+<p style="margin-top:30px; color:#666; font-size:0.8rem;">
+© 2026 SpotFut. All Rights Reserved.
+</p>
+</footer>
+
 <script>
+function updateCartCount(){
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = 0;
+cart.forEach(item=>{
+total += item.quantity || 1;
+});
+document.getElementById("cart-count").innerText = total;
+}
+
+function goToCart(){
+window.location.href = "cart.html";
+}
+
+/* MOBILE MENU */
+function toggleMenu(){
+document.querySelector(".nav-links").classList.toggle("active");
+}
+
+/* DROPDOWN CLICK FIX */
+document.addEventListener("DOMContentLoaded", () => {
+document.querySelectorAll(".dropbtn").forEach(btn=>{
+btn.addEventListener("click", function(e){
+e.stopPropagation();
+this.parentElement.classList.toggle("active");
+});
+});
+});
+updateCartCount();
+</script>
+
+<script>
+/* CLOSE MENU ON SCROLL */
+window.addEventListener("scroll", () => {
+const navLinks = document.querySelector(".nav-links");
+const dropdowns = document.querySelectorAll(".dropdown");
+
+if(navLinks.classList.contains("active")){
+navLinks.classList.remove("active");
+dropdowns.forEach(d => d.classList.remove("active"));
+}
+});
+</script>
+<script>
+
+/* TYPEWRITER + SCROLL TRIGGERS */
+
 document.addEventListener("DOMContentLoaded", () => {
 
 const signatureTitle = document.getElementById("signature-title");
@@ -325,39 +672,48 @@ const shopTitle = document.getElementById("shop-title");
 
 let typed = false;
 
-function typeWriter(el, text){
-let i=0;
-function t(){
-if(i<text.length){
-el.innerHTML+=text[i++];
-setTimeout(t,45);
+/* TYPEWRITER FUNCTION */
+function typeWriter(element, text, speed = 50){
+let i = 0;
+function typing(){
+if(i < text.length){
+element.innerHTML += text.charAt(i);
+i++;
+setTimeout(typing, speed);
 }
 }
-t();
+typing();
 }
 
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
+/* OBSERVER */
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry => {
+
 if(entry.isIntersecting){
 
-if(entry.target.id==="signature-title" && !typed){
-typed=true;
-typeWriter(signatureTitle,"Signature Collection");
+/* Signature → Typewriter */
+if(entry.target.id === "signature-title" && !typed){
+typed = true;
+typeWriter(signatureTitle, "Signature Collection", 45);
 }
 
-if(entry.target.id==="shop-title"){
-setTimeout(()=>shopTitle.classList.add("visible"),200);
+/* Shop → Fade */
+if(entry.target.id === "shop-title"){
+setTimeout(()=>{
+shopTitle.classList.add("visible");
+}, 200);
 }
 
 }
+
 });
-},{threshold:0.4});
+}, { threshold: 0.4 });
 
 observer.observe(signatureTitle);
 observer.observe(shopTitle);
 
 });
-</script>
 
+</script>
 </body>
 </html>
