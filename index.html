@@ -6,7 +6,7 @@
 <title>SpotFut</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   
 <style>
@@ -392,6 +392,18 @@ border-top:1px solid #1a1a1a;
 /* MOBILE FIX ONLY */
 @media(max-width:900px){
 
+.social-icons{
+position:absolute;
+left:20px;
+top:20px;
+transform:none;
+gap:12px;
+}
+
+.social-icons a{
+font-size:0.9rem;
+}
+
 .menu-toggle{
 display:block;
 z-index:1001;
@@ -467,6 +479,34 @@ transition:all 0.8s ease;
 opacity:1;
 transform:translateY(0);
 }
+/* SOCIAL ICONS */
+nav{
+position:relative;
+}
+
+.social-icons{
+position:absolute;
+left:8%;
+top:50%;
+transform:translateY(-50%);
+display:flex;
+align-items:center;
+gap:14px;
+z-index:1001;
+}
+
+.social-icons a{
+color:#ccc;
+font-size:0.95rem;
+transition:all 0.3s ease;
+}
+
+.social-icons a:hover{
+color:white;
+transform:translateY(-2px);
+text-shadow:0 0 8px rgba(194,0,255,0.6);
+}
+
 
 </style>
 </head>
@@ -475,6 +515,24 @@ transform:translateY(0);
 
 <!-- NAV -->
 <nav>
+
+<nav>
+
+<!-- SOCIAL ICONS -->
+<div class="social-icons">
+<a href="https://www.instagram.com/spotfutwearseu/" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+<a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+<a href="https://www.tiktok.com/@spotfutwearseu" target="_blank">
+<i class="fab fa-tiktok"></i>
+</a>
+<a href="https://wa.me/34643779896" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+</div>
 
 <video autoplay muted loop playsinline>
 <!--<source src="logo.mp4" type="video/mp4">-->
