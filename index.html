@@ -732,13 +732,11 @@ entries.forEach(entry => {
 
 if(entry.isIntersecting){
 
-/* Signature */
 if(entry.target.id === "signature-title" && !typed){
 typed = true;
 typeWriter(signatureTitle, "Signature Collection", 45);
 }
 
-/* Shop */
 if(entry.target.id === "shop-title"){
 shopTitle.classList.add("visible");
 }
@@ -746,7 +744,18 @@ shopTitle.classList.add("visible");
 }
 
 });
-}, { threshold: 0.15, rootMargin: "0px 0px -80px 0px" });
+}, {
+threshold: 0,
+rootMargin: "0px 0px -200px 0px"
+});
+window.addEventListener("load", () => {
+setTimeout(() => {
+if(!typed && signatureTitle){
+typeWriter(signatureTitle, "Signature Collection", 45);
+typed = true;
+}
+}, 800);
+});
 
 observer.observe(signatureTitle);
 observer.observe(shopTitle);
