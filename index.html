@@ -7,6 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
+
+  
 <style>
 
 /* RESET */
@@ -454,6 +456,17 @@ grid-template-columns:1fr;
 }
 
 }
+/* FADE IN EFFECT */
+.fade-title{
+opacity:0;
+transform:translateY(20px);
+transition:all 0.8s ease;
+}
+
+.fade-title.visible{
+opacity:1;
+transform:translateY(0);
+}
 
 </style>
 </head>
@@ -526,7 +539,7 @@ Designed for movement, confidence, and presence.
 
 <!-- SIGNATURE COLLECTION -->
 <section id="collections" class="collections">
-<h2>Signature Collection</h2>
+<h2 id="signature-title"></h2>
 <div class="collection-grid">
 <a href="SignatureKits/elitefootballkit.html" class="collection-card">
 <img src="SignatureKits/SF-SJF-S002_1.jpg">
@@ -556,7 +569,7 @@ Designed for movement, confidence, and presence.
 
 <!-- SHOP -->
 <section id="shop" class="collections">
-<h2>Shop by Category</h2>
+<h2 id="shop-title" class="fade-title">Shop by Category</h2>
 <div class="collection-grid">
 <a href="men.html" class="collection-card">
 <img src="Images/Men.jpg">
@@ -648,6 +661,59 @@ dropdowns.forEach(d => d.classList.remove("active"));
 }
 });
 </script>
-  
+<script>
+
+/* TYPEWRITER + SCROLL TRIGGERS */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+const signatureTitle = document.getElementById("signature-title");
+const shopTitle = document.getElementById("shop-title");
+
+let typed = false;
+
+/* TYPEWRITER FUNCTION */
+function typeWriter(element, text, speed = 50){
+let i = 0;
+function typing(){
+if(i < text.length){
+element.innerHTML += text.charAt(i);
+i++;
+setTimeout(typing, speed);
+}
+}
+typing();
+}
+
+/* OBSERVER */
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+/* Signature → Typewriter */
+if(entry.target.id === "signature-title" && !typed){
+typed = true;
+typeWriter(signatureTitle, "Signature Collection", 45);
+}
+
+/* Shop → Fade */
+if(entry.target.id === "shop-title"){
+setTimeout(()=>{
+shopTitle.classList.add("visible");
+}, 200);
+}
+
+}
+
+});
+}, { threshold: 0.4 });
+
+observer.observe(signatureTitle);
+observer.observe(shopTitle);
+
+});
+
+</script>
 </body>
 </html>
