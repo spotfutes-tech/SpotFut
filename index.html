@@ -726,36 +726,19 @@ setTimeout(typing, speed);
 typing();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-
-const signatureTitle = document.getElementById("signature-title");
-const shopTitle = document.getElementById("shop-title");
-
-let typed = false;
-
-function typeWriter(element, text, speed = 45){
-let i = 0;
-function typing(){
-if(i < text.length){
-element.innerHTML += text.charAt(i);
-i++;
-setTimeout(typing, speed);
-}
-}
-typing();
-}
-
 /* OBSERVER */
 const observer = new IntersectionObserver((entries) => {
 entries.forEach(entry => {
 
 if(entry.isIntersecting){
 
+/* Signature */
 if(entry.target.id === "signature-title" && !typed){
 typed = true;
 typeWriter(signatureTitle, "Signature Collection", 45);
 }
 
+/* Shop */
 if(entry.target.id === "shop-title"){
 shopTitle.classList.add("visible");
 }
@@ -763,26 +746,10 @@ shopTitle.classList.add("visible");
 }
 
 });
-}, {
-threshold: 0.05,
-rootMargin: "0px 0px -150px 0px"
-});
+}, { threshold: 0.15, rootMargin: "0px 0px -80px 0px" });
 
-/* OBSERVE AFTER A SMALL DELAY (IMPORTANT FOR MOBILE) */
-setTimeout(() => {
 observer.observe(signatureTitle);
 observer.observe(shopTitle);
-}, 300);
-
-/* SAFETY FALLBACK (IF MOBILE STILL FAILS) */
-window.addEventListener("load", () => {
-setTimeout(() => {
-if(!typed && signatureTitle){
-typeWriter(signatureTitle, "Signature Collection", 45);
-typed = true;
-}
-}, 1200);
-});
 
 });
 
