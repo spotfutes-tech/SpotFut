@@ -518,9 +518,38 @@ transform:translateY(0) !important;
 }
 
 }
+
+.catalogue-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: white;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(123,47,247,0.35);
+  animation: floatGlow 2.5s infinite ease-in-out;
+  z-index: 9999;
+}
+
+.catalogue-btn:hover {
+  transform: scale(1.08);
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0px); box-shadow: 0 10px 30px rgba(241,7,163,0.25); }
+  50% { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(123,47,247,0.45); }
+  100% { transform: translateY(0px); box-shadow: 0 10px 30px rgba(241,7,163,0.25); }
+}
 </style>
 </head>
-
+  
+<a href="https://online.fliphtml5.com/fnlxf/CAT26-Rcy5/" target="_blank" class="catalogue-btn">
+  ✨ 2026 Catalogue
+</a>
 <body>
 
 <!-- NAV -->
