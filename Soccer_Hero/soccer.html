@@ -199,32 +199,84 @@ body {
   </div>
 </section>
 
+<script src="../products.js"></script>
+
 <script>
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+/* CART COUNT (UNIFIED STYLE) */
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let total = 0;
 
-function addToCart(name, price){
-  cart.push({name, price});
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCart();
-}
-
-function updateCart(){
-  document.getElementById("cart-count").innerText = cart.length;
-
-  let items = "";
   cart.forEach(item=>{
-    items += `<p>${item.name} - €${item.price}</p>`;
+    total += item.quantity || 1;
   });
 
-  document.getElementById("cart-items").innerHTML = items;
+  document.getElementById("cart-count").innerText = total;
 }
 
-function toggleCart(){
-  document.getElementById("cart").classList.toggle("active");
+/* ADD TO CART (MATCH SIGNATURE SYSTEM) */
+function addToCart(productId, btn){
+
+  let card = btn.closest(".kit-card");
+  let size = card.querySelector(".size").value;
+
+  if(!size){
+    alert("Please select a size");
+    return;
+  }
+
+  let image = card.querySelector(".image-slider img.active").src;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+    id: productId,
+    size: size,
+    quantity: 1,
+    image: image
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+
+  alert("Added to cart");
 }
 
-updateCart();
+/* NAVIGATION (FIXED PATHS) */
+function goHome(){
+  window.location.href="../index.html";
+}
+
+function goToCart(){
+  window.location.href="../cart.html";
+}
+
+/* IMAGE SLIDER */
+document.querySelectorAll(".image-slider").forEach(slider=>{
+  let images = slider.querySelectorAll("img");
+  let next = slider.querySelector(".next");
+  let prev = slider.querySelector(".prev");
+  let index = 0;
+
+  function show(i){
+    images.forEach(img=>img.classList.remove("active"));
+    images[i].classList.add("active");
+  }
+
+  next.addEventListener("click",()=>{
+    index = (index + 1) % images.length;
+    show(index);
+  });
+
+  prev.addEventListener("click",()=>{
+    index = (index - 1 + images.length) % images.length;
+    show(index);
+  });
+});
+
+/* INIT */
+updateCartCount();
 
 </script>
 
