@@ -75,32 +75,103 @@ header {
   opacity: 0.8;
 }
 
-/* GRID */
-.kit-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+/* CATEGORY SECTION (UNCHANGED) */
+.categories {
   padding: 50px 8%;
 }
 
+.categories h2 {
+  margin-bottom: 20px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  cursor: pointer;
+  aspect-ratio: 3 / 4;
+  background: #111;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #0a0a0a;
+  transition: 0.5s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+.cat-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+}
+
+.explore-btn {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: black;
+  color: white;
+  padding: 8px 14px;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+/* =======================
+   HOODIE STYLE PRODUCT GRID
+======================= */
+
+.products {
+  padding: 50px 8%;
+}
+
+.section-title {
+  font-size: 20px;
+  margin: 40px 0 20px;
+  border-left: 3px solid white;
+  padding-left: 10px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 40px;
+}
+
 /* CARD */
-.kit-card {
+.product-card {
   background: #111;
   padding: 20px;
   border: 1px solid #1e1e1e;
   transition: 0.4s;
 }
 
-.kit-card:hover {
-  border-color: #444;
+.product-card:hover {
   transform: translateY(-8px);
 }
 
-/* IMAGE SLIDER (HOODIES STYLE) */
+/* SLIDER */
 .image-slider {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3/4;
   overflow: hidden;
   margin-bottom: 15px;
 }
@@ -109,8 +180,8 @@ header {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #0a0a0a;
   display: none;
+  background: #0a0a0a;
 }
 
 .image-slider img.active {
@@ -124,15 +195,14 @@ header {
   background: rgba(0,0,0,0.6);
   color: white;
   border: none;
-  font-size: 18px;
-  padding: 6px 10px;
+  padding: 5px 10px;
   cursor: pointer;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.prev { left: 8px; }
+.next { right: 8px; }
 
-/* SIZE SELECT */
+/* SIZE */
 select {
   width: 100%;
   padding: 10px;
@@ -147,24 +217,22 @@ select {
   width: 100%;
   padding: 12px;
   margin-top: 12px;
-  background: white;
-  color: black;
   border: none;
+  background: linear-gradient(45deg,#6a00ff,#ff00cc);
+  color: white;
   cursor: pointer;
   font-weight: 600;
 }
 
-.add-btn:hover {
-  opacity: 0.85;
-}
-
 /* MOBILE */
 @media(max-width:768px){
-  .hero-content h1 {
-    font-size: 28px;
+  .hero-content h1 { font-size: 28px; }
+
+  .category-grid {
+    grid-template-columns: 1fr;
   }
 
-  .kit-grid {
+  .product-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -179,7 +247,6 @@ select {
   <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
 </header>
 
-<!-- HERO -->
 <section class="soccer-hero">
   <div class="hero-content">
     <h1>FOOTBALL REDEFINED</h1>
@@ -187,84 +254,119 @@ select {
   </div>
 </section>
 
-<!-- PRODUCTS GRID (MEN EXAMPLE - EXTENDABLE) -->
-<section class="kit-grid">
+<!-- CATEGORIES (UNCHANGED) -->
+<section class="categories">
+  <h2>Categories</h2>
 
-<!-- CARD 1 -->
-<div class="kit-card">
-  <div class="image-slider">
-    <img src="SF-SJM-S001_1.png" class="active">
-    <img src="SF-SJM-S001_2.png">
-    <img src="SF-SJM-S001_3.png">
-    <img src="SF-SJM-S001_4.jpg">
-    <button class="slider-btn prev">&#10094;</button>
-    <button class="slider-btn next">&#10095;</button>
+  <div class="category-grid">
+    <div class="category-card">
+      <span class="cat-label">MEN</span>
+      <img src="SF-SJM-B001_1.jpg">
+      <div class="explore-btn" onclick="document.getElementById('men').scrollIntoView()">Explore Men</div>
+    </div>
+
+    <div class="category-card">
+      <span class="cat-label">WOMEN</span>
+      <img src="SF-SJF-S001_1.png">
+      <div class="explore-btn" onclick="document.getElementById('women').scrollIntoView()">Explore Women</div>
+    </div>
+
+    <div class="category-card">
+      <span class="cat-label">JUNIORS</span>
+      <img src="Desert Sand Elite.png">
+      <div class="explore-btn" onclick="document.getElementById('junior').scrollIntoView()">Explore Juniors</div>
+    </div>
   </div>
+</section>
 
-  <h3>Elite Pro Fusion</h3>
-  <p>Bold diagonal performance kit.</p>
+<!-- MEN -->
+<section class="products" id="men">
+  <div class="section-title">MEN COLLECTION</div>
 
-  <select class="size">
-    <option value="">Select Size</option>
-    <option>S</option>
-    <option>M</option>
-    <option>L</option>
-    <option>XL</option>
-  </select>
+  <div class="product-grid">
 
-  <button class="add-btn" onclick="addToCart('SF-SJM-S001', this)">Add to Cart</button>
-</div>
+    <div class="product-card">
+      <div class="image-slider">
+        <img src="SF-SJM-S001_1.png" class="active">
+        <img src="SF-SJM-S001_2.png">
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+      </div>
 
-<!-- CARD 2 -->
-<div class="kit-card">
-  <div class="image-slider">
-    <img src="SF-SJM-S002_1.jpg" class="active">
-    <img src="SF-SJM-S002_2.jpg">
-    <img src="SF-SJM-S002_3.jpg">
-    <img src="SF-SJM-S002_4.jpg">
-    <button class="slider-btn prev">&#10094;</button>
-    <button class="slider-btn next">&#10095;</button>
+      <h3>Elite Pro Fusion</h3>
+
+      <select class="size">
+        <option value="">Select Size</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+
+      <button class="add-btn" onclick="addToCart('SF-SJM-S001', this)">Add to Cart</button>
+    </div>
+
   </div>
+</section>
 
-  <h3>Momentum Slash</h3>
-  <p>Cut through the ordinary.</p>
+<!-- WOMEN -->
+<section class="products" id="women">
+  <div class="section-title">WOMEN COLLECTION</div>
 
-  <select class="size">
-    <option value="">Select Size</option>
-    <option>S</option>
-    <option>M</option>
-    <option>L</option>
-    <option>XL</option>
-  </select>
+  <div class="product-grid">
 
-  <button class="add-btn" onclick="addToCart('SF-SJM-S002', this)">Add to Cart</button>
-</div>
+    <div class="product-card">
+      <div class="image-slider">
+        <img src="SF-SJF-S001_1.png" class="active">
+        <img src="SF-SJF-S001_2.png">
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+      </div>
 
-<!-- CARD 3 -->
-<div class="kit-card">
-  <div class="image-slider">
-    <img src="SF-SJM-S003_1.jpg" class="active">
-    <img src="SF-SJM-S003_2.jpg">
-    <img src="SF-SJM-S003_3.jpg">
-    <img src="SF-SJM-S003_4.jpg">
-    <button class="slider-btn prev">&#10094;</button>
-    <button class="slider-btn next">&#10095;</button>
+      <h3>Blush Strike</h3>
+
+      <select class="size">
+        <option value="">Select Size</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+
+      <button class="add-btn" onclick="addToCart('SF-SJF-S001', this)">Add to Cart</button>
+    </div>
+
   </div>
+</section>
 
-  <h3>Urban Strike</h3>
-  <p>Elite match-ready design.</p>
+<!-- JUNIOR -->
+<section class="products" id="junior">
+  <div class="section-title">JUNIOR COLLECTION</div>
 
-  <select class="size">
-    <option value="">Select Size</option>
-    <option>S</option>
-    <option>M</option>
-    <option>L</option>
-    <option>XL</option>
-  </select>
+  <div class="product-grid">
 
-  <button class="add-btn" onclick="addToCart('SF-SJM-S003', this)">Add to Cart</button>
-</div>
+    <div class="product-card">
+      <div class="image-slider">
+        <img src="SF-SJK-S001_1.jpg" class="active">
+        <img src="SF-SJK-S001_2.jpg">
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+      </div>
 
+      <h3>Strike Pro</h3>
+
+      <select class="size">
+        <option value="">Select Size</option>
+        <option>4-7 Y</option>
+        <option>8-10 Y</option>
+        <option>11-13 Y</option>
+        <option>13-15 Y</option>
+      </select>
+
+      <button class="add-btn" onclick="addToCart('SF-SJK-S001', this)">Add to Cart</button>
+    </div>
+
+  </div>
 </section>
 
 <script>
@@ -272,70 +374,60 @@ select {
 /* CART */
 function updateCartCount(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let total = 0;
-  cart.forEach(i => total += i.quantity || 1);
-  document.getElementById("cart-count").innerText = total;
+  document.getElementById("cart-count").innerText = cart.length;
 }
 
-/* ADD TO CART (IDENTICAL TO HOODIES) */
-function addToCart(productId, btn){
+/* ADD TO CART */
+function addToCart(id, btn){
 
-  let card = btn.closest(".kit-card");
+  let card = btn.closest(".product-card");
   let size = card.querySelector(".size").value;
 
   if(!size){
-    alert("Please select size");
+    alert("Select size");
     return;
   }
 
-  let image = card.querySelector(".image-slider img.active").src;
+  let img = card.querySelector(".image-slider img.active").src;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   cart.push({
-    id: productId,
-    size: size,
-    quantity: 1,
-    image: image
+    id,
+    size,
+    image: img,
+    quantity: 1
   });
 
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
-
-  alert("Added to cart");
 }
 
-/* SLIDER (IDENTICAL HOODIES LOGIC) */
+/* SLIDER */
 document.querySelectorAll(".image-slider").forEach(slider=>{
-  let images = slider.querySelectorAll("img");
+  let imgs = slider.querySelectorAll("img");
   let next = slider.querySelector(".next");
   let prev = slider.querySelector(".prev");
-  let index = 0;
+  let i = 0;
 
-  function show(i){
-    images.forEach(img=>img.classList.remove("active"));
-    images[i].classList.add("active");
+  function show(x){
+    imgs.forEach(img=>img.classList.remove("active"));
+    imgs[x].classList.add("active");
   }
 
   next.addEventListener("click",()=>{
-    index = (index + 1) % images.length;
-    show(index);
+    i = (i+1)%imgs.length;
+    show(i);
   });
 
   prev.addEventListener("click",()=>{
-    index = (index - 1 + images.length) % images.length;
-    show(index);
+    i = (i-1+imgs.length)%imgs.length;
+    show(i);
   });
 });
 
-/* NAV */
-function goHome(){
-  window.location.href="../index.html";
-}
-
-function goToCart(){
-  window.location.href="../cart.html";
-}
+function goHome(){ window.location.href="../index.html"; }
+function goToCart(){ window.location.href="../cart.html"; }
 
 updateCartCount();
 
