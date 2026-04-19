@@ -27,24 +27,48 @@ const PRODUCTS = {
 
   
   /* Signature Elite Kits */
+  /* 1- Male Kits */
   "SF-SJM-S001": { name: "Soccer Elite Pro Fusion Edition", price: 11 },
   "SF-SJM-S004": { name: "Soccer Hexa Pulse Edition", price: 11 },
   "SF-SJM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 11 },
-  /* "SF-SJM-S005": { name: "Aurum Pro Edition", price: 11 },
+  "SF-SJM-S005": { name: "Aurum Pro Edition", price: 11 },
   "SF-SJM-S007": { name: "Aqua Storm Edition", price: 11 },
-  "SF-SJM-S008": { name: "Crimson Bolt Edition", price: 11 } */
+  "SF-SJM-S008": { name: "Crimson Bolt Edition", price: 11 },
+  "SF-SJM-S002": { name: "TBA", price: 11 },
+  "SF-SJM-S004": { name: "TBA", price: 11 },
+  "SF-SJM-S006": { name: "TBA", price: 11 },
+  "SF-SJM-S009": { name: "TBA", price: 11 },
+  "SF-SJM-S010": { name: "TBA", price: 11 },
+  "SF-SJM-S011": { name: "TBA", price: 11 },
 
+  /* 2- Female Kits */
   "SF-SJF-S001": { name: "Soccer Blush Strike Edition", price: 11 },
   "SF-SJF-S002": { name: "Soccer Phantom Fade Edition", price: 11 },
   "SF-SJF-S004": { name: "Soccer Storm Fit Edition", price: 11 },
+  "SF-SJF-S003": { name: "TBA", price: 11 },
+  "SF-SJF-S005": { name: "TBA", price: 11 },
+  "SF-SJF-S006": { name: "TBA", price: 11 },
+  "SF-SJF-S007": { name: "TBA", price: 11 },
+  "SF-SJF-S008": { name: "TBA", price: 11 },
+  "SF-SJF-S009": { name: "TBA", price: 11 },
+  "SF-SJF-S010": { name: "TBA", price: 11 },
 
+  /* 3- Junors Kits */
   "SF-SJK-S001": { name: "Soccer Junior Strike Pro Edition", price: 11 },
   "SF-SJK-S003": { name: "Soccer Junior Fire Start Edition", price: 11 },
   "SF-SJK-S004": { name: "Soccer Junior Velocity Flame Edition", price: 11 },
-
  "SF-SJK-S101": { name: "Soccer Junior Spark Edge Edition", price: 11 },
   "SF-SJK-S102": { name: "Soccer Junior Nexus Rush Edition", price: 11 },
   "SF-SJK-S103": { name: "Soccer Junior Tide Bolt Edition", price: 11 },
+  "SF-SJK-S002": { name: "TBA", price: 11 },
+   "SF-SJK-S005": { name: "TBA", price: 11 },
+   "SF-SJK-S006": { name: "TBA", price: 11 },
+  "SF-SJK-S104": { name: "TBA", price: 11 },
+   "SF-SJK-S105": { name: "TBA", price: 11 },
+   "SF-SJK-S106": { name: "TBA", price: 11 },
+
+  
+  
 
 
 
