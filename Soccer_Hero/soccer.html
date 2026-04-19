@@ -3,208 +3,228 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soccer Collection | SpotFut</title>
+<title>SpotFut Soccer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
 <style>
-body{
-    margin:0;
-    background:#0b0b0b;
-    color:white;
-    font-family:'Poppins', sans-serif;
-}
 
-/* HEADER */
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-    border-bottom:1px solid #1e1e1e;
-    position:sticky;
-    top:0;
-    background:#0b0b0b;
-    z-index:1000;
-}
-
-.logo{
-    font-weight:600;
-    letter-spacing:2px;
-    cursor:pointer;
-}
-
-.cart{
-    cursor:pointer;
-}
-
-#cart-count{
-    background:white;
-    color:black;
-    padding:3px 8px;
-    border-radius:50%;
-    font-size:12px;
-    margin-left:6px;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: white;
 }
 
 /* HERO */
-.hero{
-    text-align:center;
-    padding:80px 20px 40px;
+.soccer-hero {
+  height: 90vh;
+  background: url('../assets/soccer-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero h1{
-    font-size:42px;
-    margin-bottom:10px;
+.hero-content h1 {
+  font-size: 48px;
 }
 
-.hero p{
-    color:#aaa;
-}
-
-/* GRID */
-.kit-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-    gap:40px;
-    padding:40px 8%;
-}
-
-.kit-card{
-    background:#111;
-    padding:20px;
-    border:1px solid #1e1e1e;
-    transition:0.4s;
-}
-
-.kit-card:hover{
-    border-color:#444;
-    transform:translateY(-8px);
-}
-
-.kit-card img{
-    width:100%;
-    margin-bottom:15px;
+.hero-content p {
+  margin: 10px 0 20px;
 }
 
 /* BUTTON */
-.add-btn{
-    width:100%;
-    padding:12px;
-    margin-top:12px;
-    background:white;
-    color:black;
-    border:none;
-    cursor:pointer;
-    font-weight:600;
+.btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 5px;
+  display: inline-block;
+  font-weight: 600;
 }
 
-.add-btn:hover{
-    opacity:0.8;
+.primary {
+  background: linear-gradient(45deg,#6a00ff,#ff00cc);
+  color: white;
 }
+
+/* CATEGORY */
+.categories {
+  padding: 40px 5%;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.category-card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 40px 5%;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: #111;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: #ff00cc;
+  color: white;
+  cursor: pointer;
+}
+
+/* CART */
+.cart-icon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: black;
+  padding: 10px 15px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.cart-panel {
+  position: fixed;
+  right: -100%;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: #111;
+  padding: 20px;
+  transition: 0.4s;
+}
+
+.cart-panel.active {
+  right: 0;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="logo" onclick="goHome()">SPOTFUT</div>
-    <div class="cart" onclick="goToCart()">
-        🛒 <span id="cart-count">0</span>
-    </div>
-</header>
+<!-- CART ICON -->
+<div class="cart-icon" onclick="toggleCart()">
+  Cart (<span id="cart-count">0</span>)
+</div>
+
+<!-- CART PANEL -->
+<div class="cart-panel" id="cart">
+  <h2>Your Cart</h2>
+  <div id="cart-items"></div>
+</div>
 
 <!-- HERO -->
-<section class="hero">
-    <h1>Soccer Collection</h1>
-    <p>Performance. Identity. Precision.</p>
+<section class="soccer-hero">
+  <div class="hero-content">
+    <h1>FOOTBALL REDEFINED</h1>
+    <p>Performance. Identity. SpotFut.</p>
+    <a href="#products" class="btn primary">Shop Now</a>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <h2>Categories</h2>
+  <div class="category-grid">
+    <div class="category-card"><img src="../assets/men.jpg"></div>
+    <div class="category-card"><img src="../assets/women.jpg"></div>
+    <div class="category-card"><img src="../assets/junior.jpg"></div>
+  </div>
 </section>
 
 <!-- PRODUCTS -->
-<section class="kit-grid">
+<section id="products" class="products">
+  <h2>Featured Kits</h2>
 
-<!-- PRODUCT 1 -->
-<div class="kit-card">
-<img src="SF-SOC-001.jpg">
-<h3>Pro Match Kit</h3>
-<p>Built for elite performance.</p>
-<select class="size">
-<option value="">Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
-<button class="add-btn" onclick="addToCart('SF-SOC-001', this)">Add to Cart</button>
-</div>
+  <div class="product-grid">
 
-<!-- PRODUCT 2 -->
-<div class="kit-card">
-<img src="SF-SOC-002.jpg">
-<h3>Training Set</h3>
-<p>Train harder. Move faster.</p>
-<select class="size">
-<option value="">Select Size</option>
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
-<button class="add-btn" onclick="addToCart('SF-SOC-002', this)">Add to Cart</button>
-</div>
+    <div class="product-card">
+      <img src="../assets/kit1.png">
+      <h3>Elite Match Kit</h3>
+      <p>€39</p>
+      <button onclick="addToCart('Elite Match Kit',39)">Add to Cart</button>
+    </div>
 
+    <div class="product-card">
+      <img src="../assets/kit2.png">
+      <h3>Training Jersey</h3>
+      <p>€29</p>
+      <button onclick="addToCart('Training Jersey',29)">Add to Cart</button>
+    </div>
+
+  </div>
 </section>
-
-<!-- LOAD PRODUCT DATABASE -->
-<script src="../products.js"></script>
 
 <script>
 
-/* CART COUNT */
-function updateCartCount(){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("cart-count").innerText = cart.length;
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addToCart(name, price){
+  cart.push({name, price});
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
 }
 
-/* ADD TO CART */
-function addToCart(productId, btn){
+function updateCart(){
+  document.getElementById("cart-count").innerText = cart.length;
 
-  let card = btn.closest(".kit-card");
-  let size = card.querySelector(".size").value;
-
-  if(!size){
-    alert("Please select a size");
-    return;
-  }
-
-  let image = card.querySelector("img").src;
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  cart.push({
-    id: productId,
-    size: size,
-    quantity: 1,
-    image: image
+  let items = "";
+  cart.forEach(item=>{
+    items += `<p>${item.name} - €${item.price}</p>`;
   });
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-
-  alert("Added to cart");
+  document.getElementById("cart-items").innerHTML = items;
 }
 
-/* NAVIGATION */
-function goHome(){
-  window.location.href="../index.html";
+function toggleCart(){
+  document.getElementById("cart").classList.toggle("active");
 }
 
-function goToCart(){
-  window.location.href="../cart.html";
-}
-
-updateCartCount();
+updateCart();
 
 </script>
 
