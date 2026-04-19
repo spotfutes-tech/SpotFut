@@ -36,10 +36,8 @@ header {
   font-size: 14px;
 }
 
-/* CART */
 .cart {
   cursor: pointer;
-  font-weight: 500;
 }
 
 #cart-count {
@@ -76,9 +74,9 @@ header {
   opacity: 0.8;
 }
 
-/* =========================
-CATEGORIES (PREMIUM HOVER)
-========================= */
+/* =======================
+CATEGORIES
+======================= */
 .categories {
   padding: 50px 8%;
 }
@@ -91,63 +89,49 @@ CATEGORIES (PREMIUM HOVER)
 
 .category-card {
   position: relative;
+  border-radius: 12px;
   overflow: hidden;
-  border-radius: 14px;
   cursor: pointer;
 }
 
 .category-card img {
   width: 100%;
-  height: 100%;
   display: block;
-  transition: 0.4s ease;
+  transition: 0.4s;
 }
 
 .category-card:hover img {
   transform: scale(1.05);
 }
 
-/* overlay */
-.category-overlay {
+.category-card h3 {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 15px;
-}
-
-/* title */
-.category-overlay h3 {
+  bottom: 40px;
+  left: 15px;
   margin: 0;
-  font-size: 20px;
 }
 
-/* button */
-.explore-btn {
-  margin-top: 10px;
-  display: inline-block;
-  padding: 8px 14px;
-  font-size: 12px;
+.category-card button {
+  position: absolute;
+  bottom: 12px;
+  left: 15px;
   background: linear-gradient(45deg,#6a00ff,#ff00cc);
+  border: none;
   color: white;
+  padding: 6px 12px;
   border-radius: 20px;
-  text-decoration: none;
-  width: fit-content;
+  cursor: pointer;
   opacity: 0;
-  transform: translateY(10px);
   transition: 0.3s;
 }
 
-.category-card:hover .explore-btn {
+.category-card:hover button {
   opacity: 1;
-  transform: translateY(0);
 }
 
-/* =========================
-SECTIONS (MEN / WOMEN / JUNIOR)
-========================= */
+/* =======================
+SECTION GRID (HOODIE STYLE)
+======================= */
 .section {
   padding: 60px 8%;
 }
@@ -155,57 +139,97 @@ SECTIONS (MEN / WOMEN / JUNIOR)
 .section h2 {
   font-size: 22px;
   margin-bottom: 20px;
-  letter-spacing: 1px;
 }
 
-/* GRID */
-.product-grid {
+.kit-grid {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 40px;
 }
 
 /* CARD */
-.product-card {
+.kit-card {
   background: #111;
-  padding: 15px;
-  border-radius: 14px;
-  text-align: center;
-  transition: 0.3s;
+  padding: 20px;
+  border: 1px solid #1e1e1e;
+  transition: 0.4s;
 }
 
-.product-card:hover {
+.kit-card:hover {
   transform: translateY(-6px);
+  border-color: #444;
 }
 
-.product-card img {
+/* IMAGE SLIDER */
+.image-slider {
+  position: relative;
   width: 100%;
-  border-radius: 10px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin-bottom: 15px;
 }
 
-.product-card button {
-  margin-top: 10px;
-  padding: 10px;
+.image-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  background: #0a0a0a;
+}
+
+.image-slider img.active {
+  display: block;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
   border: none;
-  border-radius: 20px;
+  color: white;
+  font-size: 18px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* SIZE */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: black;
+  color: white;
+  border: 1px solid #333;
+}
+
+/* BUTTON */
+.add-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
   background: linear-gradient(45deg,#6a00ff,#ff00cc);
   color: white;
   cursor: pointer;
-  width: 100%;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-
-  .hero-content h1 {
-    font-size: 28px;
-  }
-
-  .category-grid,
-  .product-grid {
+  .category-grid{
     grid-template-columns: 1fr;
   }
 
+  .kit-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1{
+    font-size: 28px;
+  }
 }
 
 </style>
@@ -228,31 +252,24 @@ SECTIONS (MEN / WOMEN / JUNIOR)
 
 <!-- CATEGORIES -->
 <section class="categories">
-
   <div class="category-grid">
 
-    <div class="category-card" onclick="scrollToSection('men')">
+    <div class="category-card" onclick="scrollTo('men')">
       <img src="SF-SJM-B001_1.jpg">
-      <div class="category-overlay">
-        <h3>Men</h3>
-        <a class="explore-btn">Explore Men →</a>
-      </div>
+      <h3>Men</h3>
+      <button>Explore</button>
     </div>
 
-    <div class="category-card" onclick="scrollToSection('women')">
+    <div class="category-card" onclick="scrollTo('women')">
       <img src="SF-SJF-S001_1.png">
-      <div class="category-overlay">
-        <h3>Women</h3>
-        <a class="explore-btn">Explore Women →</a>
-      </div>
+      <h3>Women</h3>
+      <button>Explore</button>
     </div>
 
-    <div class="category-card" onclick="scrollToSection('junior')">
+    <div class="category-card" onclick="scrollTo('junior')">
       <img src="Desert Sand Elite.png">
-      <div class="category-overlay">
-        <h3>Juniors</h3>
-        <a class="explore-btn">Explore Juniors →</a>
-      </div>
+      <h3>Juniors</h3>
+      <button>Explore</button>
     </div>
 
   </div>
@@ -260,80 +277,71 @@ SECTIONS (MEN / WOMEN / JUNIOR)
 
 <!-- MEN -->
 <section id="men" class="section">
-  <h2>MEN COLLECTION</h2>
-  <div class="product-grid">
+<h2>MEN COLLECTION</h2>
 
-    <div class="product-card">
-      <img src="SF-SJM-S001_1.png">
-      <h3>Elite Fusion</h3>
-      <button onclick="addToCart('MEN-001')">Add to Cart</button>
+<div class="kit-grid">
+
+  <div class="kit-card">
+    <div class="image-slider">
+      <img src="SF-SJM-S001_1.png" class="active">
+      <img src="SF-SJM-S001_2.png">
+      <button class="slider-btn prev">&#10094;</button>
+      <button class="slider-btn next">&#10095;</button>
     </div>
-
-    <div class="product-card">
-      <img src="SF-SJM-S003_1.jpg">
-      <h3>Urban Strike</h3>
-      <button onclick="addToCart('MEN-002')">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="SF-SJM-S004_1.jpg">
-      <h3>Hexa Pulse</h3>
-      <button onclick="addToCart('MEN-003')">Add to Cart</button>
-    </div>
-
+    <h3>Elite Fusion</h3>
+    <select class="size">
+      <option value="">Select Size</option>
+      <option>S</option><option>M</option><option>L</option><option>XL</option>
+    </select>
+    <button class="add-btn" onclick="addToCart('SF-SJM-S001', this)">Add to Cart</button>
   </div>
+
+</div>
 </section>
 
 <!-- WOMEN -->
 <section id="women" class="section">
-  <h2>WOMEN COLLECTION</h2>
-  <div class="product-grid">
+<h2>WOMEN COLLECTION</h2>
+<div class="kit-grid">
 
-    <div class="product-card">
-      <img src="SF-SJF-S001_1.png">
-      <h3>Blush Strike</h3>
-      <button onclick="addToCart('WOM-001')">Add to Cart</button>
+  <div class="kit-card">
+    <div class="image-slider">
+      <img src="SF-SJF-S001_1.png" class="active">
+      <img src="SF-SJF-S001_2.png">
+      <button class="slider-btn prev">&#10094;</button>
+      <button class="slider-btn next">&#10095;</button>
     </div>
-
-    <div class="product-card">
-      <img src="SF-SJF-S002_1.jpg">
-      <h3>Phantom Fade</h3>
-      <button onclick="addToCart('WOM-002')">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="SF-SJF-S004_1.jpg">
-      <h3>Storm Fit</h3>
-      <button onclick="addToCart('WOM-003')">Add to Cart</button>
-    </div>
-
+    <h3>Blush Strike</h3>
+    <select class="size">
+      <option value="">Select Size</option>
+      <option>S</option><option>M</option><option>L</option><option>XL</option>
+    </select>
+    <button class="add-btn" onclick="addToCart('SF-SJF-S001', this)">Add to Cart</button>
   </div>
+
+</div>
 </section>
 
-<!-- JUNIORS -->
+<!-- JUNIOR -->
 <section id="junior" class="section">
-  <h2>JUNIOR COLLECTION</h2>
-  <div class="product-grid">
+<h2>JUNIOR COLLECTION</h2>
+<div class="kit-grid">
 
-    <div class="product-card">
-      <img src="SF-SJK-S001_1.png">
-      <h3>Junior Strike</h3>
-      <button onclick="addToCart('JUN-001')">Add to Cart</button>
+  <div class="kit-card">
+    <div class="image-slider">
+      <img src="SF-SJK-S001_1.png" class="active">
+      <img src="SF-SJK-S001_2.png">
+      <button class="slider-btn prev">&#10094;</button>
+      <button class="slider-btn next">&#10095;</button>
     </div>
-
-    <div class="product-card">
-      <img src="SF-SJK-S003_1.jpg">
-      <h3>Fire Start</h3>
-      <button onclick="addToCart('JUN-002')">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="SF-SJK-S004_1.jpg">
-      <h3>Velocity Flame</h3>
-      <button onclick="addToCart('JUN-003')">Add to Cart</button>
-    </div>
-
+    <h3>Junior Strike</h3>
+    <select class="size">
+      <option>4-7 Y</option><option>8-10 Y</option>
+    </select>
+    <button class="add-btn" onclick="addToCart('SF-SJK-S001', this)">Add to Cart</button>
   </div>
+
+</div>
 </section>
 
 <script>
@@ -341,30 +349,52 @@ SECTIONS (MEN / WOMEN / JUNIOR)
 /* CART */
 function updateCartCount(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let total = 0;
-  cart.forEach(i => total += i.quantity || 1);
-  document.getElementById("cart-count").innerText = total;
+  document.getElementById("cart-count").innerText = cart.length;
 }
 
-function addToCart(id){
+function addToCart(id, btn){
+  let card = btn.closest(".kit-card");
+  let size = card.querySelector(".size").value;
+
+  if(!size){
+    alert("Select size");
+    return;
+  }
+
+  let image = card.querySelector(".image-slider img.active").src;
+
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push({ id, quantity: 1 });
+  cart.push({ id, size, image, quantity:1 });
+
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
 }
 
-/* NAV */
+/* SLIDER */
+document.querySelectorAll(".image-slider").forEach(slider=>{
+  let imgs = slider.querySelectorAll("img");
+  let i = 0;
+
+  function show(x){
+    imgs.forEach(img=>img.classList.remove("active"));
+    imgs[x].classList.add("active");
+  }
+
+  slider.querySelector(".next").onclick = ()=>{ i=(i+1)%imgs.length; show(i); }
+  slider.querySelector(".prev").onclick = ()=>{ i=(i-1+imgs.length)%imgs.length; show(i); }
+});
+
+/* SCROLL */
+function scrollTo(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
 function goHome(){
   window.location.href="../index.html";
 }
 
 function goToCart(){
   window.location.href="../cart.html";
-}
-
-/* SCROLL */
-function scrollToSection(id){
-  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
 }
 
 updateCartCount();
