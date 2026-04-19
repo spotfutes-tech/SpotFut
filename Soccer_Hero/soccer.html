@@ -75,149 +75,98 @@ header {
   opacity: 0.8;
 }
 
-/* =========================
-   CATEGORY SECTION (FIXED)
-========================= */
-
-.categories {
+/* GRID */
+.kit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
   padding: 50px 8%;
 }
 
-.categories h2 {
-  margin-bottom: 20px;
-}
-
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
-}
-
-/* CATEGORY CARD FIX */
-.category-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 14px;
-  cursor: pointer;
-
-  /* IMPORTANT FIX */
-  aspect-ratio: 3 / 4;
+/* CARD */
+.kit-card {
   background: #111;
+  padding: 20px;
+  border: 1px solid #1e1e1e;
+  transition: 0.4s;
 }
 
-/* IMAGE FIX (NO SHRINK / NO CUT FEELING) */
-.category-card img {
+.kit-card:hover {
+  border-color: #444;
+  transform: translateY(-8px);
+}
+
+/* IMAGE SLIDER (HOODIES STYLE) */
+.image-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.image-slider img {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* KEY FIX */
+  object-fit: contain;
   background: #0a0a0a;
-  transition: 0.5s ease;
+  display: none;
 }
 
-.category-card:hover img {
-  transform: scale(1.05);
+.image-slider img.active {
+  display: block;
 }
 
-/* LABEL (MORE PREMIUM + BLACK TEXT FIX) */
-.cat-label {
+.slider-btn {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  background: rgba(255,255,255,0.9);
-  color: #000;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 700;
-  border-radius: 20px;
-  letter-spacing: 1px;
-  z-index: 2;
-}
-
-/* EXPLORE BUTTON */
-.explore-btn {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  background: black;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
   color: white;
-  padding: 8px 14px;
-  font-size: 12px;
-  border-radius: 20px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: 0.3s;
-}
-
-.category-card:hover .explore-btn {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   PRODUCTS SECTION
-========================= */
-
-.products {
-  padding: 50px 8%;
-}
-
-.section-title {
-  font-size: 20px;
-  margin: 40px 0 20px;
-  border-left: 3px solid white;
-  padding-left: 10px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
-}
-
-.product-card {
-  background: #111;
-  padding: 15px;
-  border-radius: 14px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-}
-
-.product-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.product-card button {
-  margin-top: 10px;
-  padding: 10px;
   border: none;
-  border-radius: 20px;
-  background: linear-gradient(45deg,#6a00ff,#ff00cc);
-  color: white;
+  font-size: 18px;
+  padding: 6px 10px;
   cursor: pointer;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* SIZE SELECT */
+select {
   width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #000;
+  color: white;
+  border: 1px solid #333;
+}
+
+/* BUTTON */
+.add-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: white;
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  opacity: 0.85;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-
   .hero-content h1 {
     font-size: 28px;
   }
 
-  .category-grid,
-  .product-grid {
+  .kit-grid {
     grid-template-columns: 1fr;
   }
-
-  .category-card {
-    aspect-ratio: 3 / 4;
-  }
-
 }
 
 </style>
@@ -225,7 +174,6 @@ header {
 
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo" onclick="goHome()">← SPOTFUT</div>
   <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
@@ -239,110 +187,89 @@ header {
   </div>
 </section>
 
-<!-- CATEGORIES -->
-<section class="categories">
-  <h2>Categories</h2>
+<!-- PRODUCTS GRID (MEN EXAMPLE - EXTENDABLE) -->
+<section class="kit-grid">
 
-  <div class="category-grid">
-
-    <div class="category-card">
-      <span class="cat-label">MEN</span>
-      <img src="SF-SJM-B001_1.jpg">
-      <div class="explore-btn" onclick="document.getElementById('men').scrollIntoView()">Explore Men</div>
-    </div>
-
-    <div class="category-card">
-      <span class="cat-label">WOMEN</span>
-      <img src="SF-SJF-S001_1.png">
-      <div class="explore-btn" onclick="document.getElementById('women').scrollIntoView()">Explore Women</div>
-    </div>
-
-    <div class="category-card">
-      <span class="cat-label">JUNIORS</span>
-      <img src="Desert Sand Elite.png">
-      <div class="explore-btn" onclick="document.getElementById('junior').scrollIntoView()">Explore Juniors</div>
-    </div>
-
+<!-- CARD 1 -->
+<div class="kit-card">
+  <div class="image-slider">
+    <img src="SF-SJM-S001_1.png" class="active">
+    <img src="SF-SJM-S001_2.png">
+    <img src="SF-SJM-S001_3.png">
+    <img src="SF-SJM-S001_4.jpg">
+    <button class="slider-btn prev">&#10094;</button>
+    <button class="slider-btn next">&#10095;</button>
   </div>
-</section>
 
-<!-- MEN -->
-<section class="products" id="men">
-  <div class="section-title">MEN COLLECTION</div>
+  <h3>Elite Pro Fusion</h3>
+  <p>Bold diagonal performance kit.</p>
 
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="SF-SJM-S001_1.png">
-      <h3>Elite Pro Fusion</h3>
-      <button onclick="addToCart('SF-SJM-S001')">Add to Cart</button>
-    </div>
+  <select class="size">
+    <option value="">Select Size</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+  </select>
 
-    <div class="product-card">
-      <img src="SF-SJM-S002_1.jpg">
-      <h3>Momentum Slash</h3>
-      <button onclick="addToCart('SF-SJM-S002')">Add to Cart</button>
-    </div>
+  <button class="add-btn" onclick="addToCart('SF-SJM-S001', this)">Add to Cart</button>
+</div>
 
-    <div class="product-card">
-      <img src="SF-SJM-S003_1.jpg">
-      <h3>Urban Strike</h3>
-      <button onclick="addToCart('SF-SJM-S003')">Add to Cart</button>
-    </div>
+<!-- CARD 2 -->
+<div class="kit-card">
+  <div class="image-slider">
+    <img src="SF-SJM-S002_1.jpg" class="active">
+    <img src="SF-SJM-S002_2.jpg">
+    <img src="SF-SJM-S002_3.jpg">
+    <img src="SF-SJM-S002_4.jpg">
+    <button class="slider-btn prev">&#10094;</button>
+    <button class="slider-btn next">&#10095;</button>
   </div>
-</section>
 
-<!-- WOMEN -->
-<section class="products" id="women">
-  <div class="section-title">WOMEN COLLECTION</div>
+  <h3>Momentum Slash</h3>
+  <p>Cut through the ordinary.</p>
 
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="SF-SJF-S001_1.png">
-      <h3>Blush Strike</h3>
-      <button onclick="addToCart('SF-SJF-S001')">Add to Cart</button>
-    </div>
+  <select class="size">
+    <option value="">Select Size</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+  </select>
 
-    <div class="product-card">
-      <img src="SF-SJF-S002_1.jpg">
-      <h3>Phantom Fade</h3>
-      <button onclick="addToCart('SF-SJF-S002')">Add to Cart</button>
-    </div>
+  <button class="add-btn" onclick="addToCart('SF-SJM-S002', this)">Add to Cart</button>
+</div>
 
-    <div class="product-card">
-      <img src="SF-SJF-S004_1.jpg">
-      <h3>Storm Fit</h3>
-      <button onclick="addToCart('SF-SJF-S004')">Add to Cart</button>
-    </div>
+<!-- CARD 3 -->
+<div class="kit-card">
+  <div class="image-slider">
+    <img src="SF-SJM-S003_1.jpg" class="active">
+    <img src="SF-SJM-S003_2.jpg">
+    <img src="SF-SJM-S003_3.jpg">
+    <img src="SF-SJM-S003_4.jpg">
+    <button class="slider-btn prev">&#10094;</button>
+    <button class="slider-btn next">&#10095;</button>
   </div>
-</section>
 
-<!-- JUNIOR -->
-<section class="products" id="junior">
-  <div class="section-title">JUNIOR COLLECTION</div>
+  <h3>Urban Strike</h3>
+  <p>Elite match-ready design.</p>
 
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="SF-SJK-S001_1.jpg">
-      <h3>Strike Pro</h3>
-      <button onclick="addToCart('SF-SJK-S001')">Add to Cart</button>
-    </div>
+  <select class="size">
+    <option value="">Select Size</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+  </select>
 
-    <div class="product-card">
-      <img src="SF-SJK-S003_1.jpg">
-      <h3>Fire Start</h3>
-      <button onclick="addToCart('SF-SJK-S003')">Add to Cart</button>
-    </div>
+  <button class="add-btn" onclick="addToCart('SF-SJM-S003', this)">Add to Cart</button>
+</div>
 
-    <div class="product-card">
-      <img src="SF-SJK-S004_1.jpg">
-      <h3>Velocity Flame</h3>
-      <button onclick="addToCart('SF-SJK-S004')">Add to Cart</button>
-    </div>
-  </div>
 </section>
 
 <script>
 
+/* CART */
 function updateCartCount(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let total = 0;
@@ -350,13 +277,58 @@ function updateCartCount(){
   document.getElementById("cart-count").innerText = total;
 }
 
-function addToCart(id){
+/* ADD TO CART (IDENTICAL TO HOODIES) */
+function addToCart(productId, btn){
+
+  let card = btn.closest(".kit-card");
+  let size = card.querySelector(".size").value;
+
+  if(!size){
+    alert("Please select size");
+    return;
+  }
+
+  let image = card.querySelector(".image-slider img.active").src;
+
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push({ id, quantity: 1 });
+
+  cart.push({
+    id: productId,
+    size: size,
+    quantity: 1,
+    image: image
+  });
+
   localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCount();
+
+  alert("Added to cart");
 }
 
+/* SLIDER (IDENTICAL HOODIES LOGIC) */
+document.querySelectorAll(".image-slider").forEach(slider=>{
+  let images = slider.querySelectorAll("img");
+  let next = slider.querySelector(".next");
+  let prev = slider.querySelector(".prev");
+  let index = 0;
+
+  function show(i){
+    images.forEach(img=>img.classList.remove("active"));
+    images[i].classList.add("active");
+  }
+
+  next.addEventListener("click",()=>{
+    index = (index + 1) % images.length;
+    show(index);
+  });
+
+  prev.addEventListener("click",()=>{
+    index = (index - 1 + images.length) % images.length;
+    show(index);
+  });
+});
+
+/* NAV */
 function goHome(){
   window.location.href="../index.html";
 }
