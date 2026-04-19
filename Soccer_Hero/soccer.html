@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SpotFut Soccer</title>
 
-<link rel="stylesheet" href="../style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -17,42 +16,69 @@ body {
   color: white;
 }
 
-/* HERO */
+/* HEADER (BACK HOME STYLE LIKE HOODIES) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid #1e1e1e;
+  position: sticky;
+  top: 0;
+  background: #0a0a0a;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* CART */
+.cart {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#cart-count {
+  background: white;
+  color: black;
+  padding: 3px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+/* HERO (MORE PREMIUM) */
 .soccer-hero {
-  height: 90vh;
+  height: 75vh;
   background: url('../assets/soccer-bg.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 5%;
+}
+
+.hero-content {
+  max-width: 700px;
 }
 
 .hero-content h1 {
-  font-size: 48px;
+  font-size: 46px;
+  letter-spacing: 2px;
 }
 
 .hero-content p {
-  margin: 10px 0 20px;
-}
-
-/* BUTTON */
-.btn {
-  padding: 12px 24px;
-  border-radius: 30px;
-  text-decoration: none;
-  margin: 5px;
-  display: inline-block;
-  font-weight: 600;
-}
-
-.primary {
-  background: linear-gradient(45deg,#6a00ff,#ff00cc);
-  color: white;
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
 /* CATEGORY */
 .categories {
-  padding: 40px 5%;
+  padding: 50px 8%;
 }
 
 .category-grid {
@@ -63,12 +89,12 @@ body {
 
 .category-card img {
   width: 100%;
-  border-radius: 15px;
+  border-radius: 12px;
 }
 
 /* PRODUCTS */
 .products {
-  padding: 40px 5%;
+  padding: 50px 8%;
 }
 
 .product-grid {
@@ -80,12 +106,18 @@ body {
 .product-card {
   background: #111;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 14px;
   text-align: center;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
 }
 
 .product-card img {
   width: 100%;
+  border-radius: 10px;
 }
 
 .product-card button {
@@ -93,35 +125,10 @@ body {
   padding: 10px;
   border: none;
   border-radius: 20px;
-  background: #ff00cc;
+  background: linear-gradient(45deg,#6a00ff,#ff00cc);
   color: white;
   cursor: pointer;
-}
-
-/* CART */
-.cart-icon {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: black;
-  padding: 10px 15px;
-  border-radius: 30px;
-  cursor: pointer;
-}
-
-.cart-panel {
-  position: fixed;
-  right: -100%;
-  top: 0;
-  width: 300px;
-  height: 100%;
-  background: #111;
-  padding: 20px;
-  transition: 0.4s;
-}
-
-.cart-panel.active {
-  right: 0;
+  width: 100%;
 }
 
 /* MOBILE */
@@ -131,10 +138,7 @@ body {
     font-size: 28px;
   }
 
-  .category-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .category-grid,
   .product-grid {
     grid-template-columns: 1fr;
   }
@@ -146,16 +150,16 @@ body {
 
 <body>
 
-<!-- CART ICON -->
-<div class="cart-icon" onclick="toggleCart()">
-  Cart (<span id="cart-count">0</span>)
-</div>
+<!-- HEADER (FIXED POSITION) -->
+<header>
+  <div class="logo" onclick="goHome()">
+    ← SPOTFUT
+  </div>
 
-<!-- CART PANEL -->
-<div class="cart-panel" id="cart">
-  <h2>Your Cart</h2>
-  <div id="cart-items"></div>
-</div>
+  <div class="cart" onclick="goToCart()">
+    🛒 <span id="cart-count">0</span>
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="soccer-hero">
@@ -176,7 +180,7 @@ body {
 </section>
 
 <!-- PRODUCTS -->
-<section id="products" class="products">
+<section class="products">
   <h2>Featured Kits</h2>
 
   <div class="product-grid">
@@ -185,24 +189,22 @@ body {
       <img src="../assets/kit1.png">
       <h3>Elite Match Kit</h3>
       <p>€39</p>
-      <button onclick="addToCart('Elite Match Kit',39)">Add to Cart</button>
+      <button onclick="addToCart('Elite Match Kit')">Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="../assets/kit2.png">
       <h3>Training Jersey</h3>
       <p>€29</p>
-      <button onclick="addToCart('Training Jersey',29)">Add to Cart</button>
+      <button onclick="addToCart('Training Jersey')">Add to Cart</button>
     </div>
 
   </div>
 </section>
 
-<script src="../products.js"></script>
-
 <script>
 
-/* CART COUNT (UNIFIED STYLE) */
+/* CART */
 function updateCartCount(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let total = 0;
@@ -214,26 +216,14 @@ function updateCartCount(){
   document.getElementById("cart-count").innerText = total;
 }
 
-/* ADD TO CART (MATCH SIGNATURE SYSTEM) */
-function addToCart(productId, btn){
-
-  let card = btn.closest(".kit-card");
-  let size = card.querySelector(".size").value;
-
-  if(!size){
-    alert("Please select a size");
-    return;
-  }
-
-  let image = card.querySelector(".image-slider img.active").src;
+/* SIMPLE ADD TO CART (UNIFIED LIKE OTHER PAGES) */
+function addToCart(productId){
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   cart.push({
     id: productId,
-    size: size,
-    quantity: 1,
-    image: image
+    quantity: 1
   });
 
   localStorage.setItem("cart", JSON.stringify(cart));
@@ -242,7 +232,7 @@ function addToCart(productId, btn){
   alert("Added to cart");
 }
 
-/* NAVIGATION (FIXED PATHS) */
+/* NAVIGATION */
 function goHome(){
   window.location.href="../index.html";
 }
@@ -251,42 +241,10 @@ function goToCart(){
   window.location.href="../cart.html";
 }
 
-/* IMAGE SLIDER */
-document.querySelectorAll(".image-slider").forEach(slider=>{
-  let images = slider.querySelectorAll("img");
-  let next = slider.querySelector(".next");
-  let prev = slider.querySelector(".prev");
-  let index = 0;
-
-  function show(i){
-    images.forEach(img=>img.classList.remove("active"));
-    images[i].classList.add("active");
-  }
-
-  next.addEventListener("click",()=>{
-    index = (index + 1) % images.length;
-    show(index);
-  });
-
-  prev.addEventListener("click",()=>{
-    index = (index - 1 + images.length) % images.length;
-    show(index);
-  });
-});
-
 /* INIT */
 updateCartCount();
 
 </script>
 
 </body>
-<header>
-    <div class="logo" onclick="goHome()" style="cursor:pointer;">
-        ← SPOTFUT
-    </div>
-
-    <div class="cart" onclick="goToCart()">
-        🛒 <span id="cart-count">0</span>
-    </div>
-</header>
 </html>
