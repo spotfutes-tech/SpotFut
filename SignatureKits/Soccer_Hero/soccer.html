@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soccer Collection | SpotFut</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins', sans-serif;
+}
+
+/* HEADER */
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:25px 8%;
+    border-bottom:1px solid #1e1e1e;
+    position:sticky;
+    top:0;
+    background:#0b0b0b;
+    z-index:1000;
+}
+
+.logo{
+    font-weight:600;
+    letter-spacing:2px;
+    cursor:pointer;
+}
+
+.cart{
+    cursor:pointer;
+}
+
+#cart-count{
+    background:white;
+    color:black;
+    padding:3px 8px;
+    border-radius:50%;
+    font-size:12px;
+    margin-left:6px;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:80px 20px 40px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#aaa;
+}
+
+/* GRID */
+.kit-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+    gap:40px;
+    padding:40px 8%;
+}
+
+.kit-card{
+    background:#111;
+    padding:20px;
+    border:1px solid #1e1e1e;
+    transition:0.4s;
+}
+
+.kit-card:hover{
+    border-color:#444;
+    transform:translateY(-8px);
+}
+
+.kit-card img{
+    width:100%;
+    margin-bottom:15px;
+}
+
+/* BUTTON */
+.add-btn{
+    width:100%;
+    padding:12px;
+    margin-top:12px;
+    background:white;
+    color:black;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.add-btn:hover{
+    opacity:0.8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo" onclick="goHome()">SPOTFUT</div>
+    <div class="cart" onclick="goToCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Soccer Collection</h1>
+    <p>Performance. Identity. Precision.</p>
+</section>
+
+<!-- PRODUCTS -->
+<section class="kit-grid">
+
+<!-- PRODUCT 1 -->
+<div class="kit-card">
+<img src="SF-SOC-001.jpg">
+<h3>Pro Match Kit</h3>
+<p>Built for elite performance.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SOC-001', this)">Add to Cart</button>
+</div>
+
+<!-- PRODUCT 2 -->
+<div class="kit-card">
+<img src="SF-SOC-002.jpg">
+<h3>Training Set</h3>
+<p>Train harder. Move faster.</p>
+<select class="size">
+<option value="">Select Size</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+</select>
+<button class="add-btn" onclick="addToCart('SF-SOC-002', this)">Add to Cart</button>
+</div>
+
+</section>
+
+<!-- LOAD PRODUCT DATABASE -->
+<script src="../products.js"></script>
+
+<script>
+
+/* CART COUNT */
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").innerText = cart.length;
+}
+
+/* ADD TO CART */
+function addToCart(productId, btn){
+
+  let card = btn.closest(".kit-card");
+  let size = card.querySelector(".size").value;
+
+  if(!size){
+    alert("Please select a size");
+    return;
+  }
+
+  let image = card.querySelector("img").src;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+    id: productId,
+    size: size,
+    quantity: 1,
+    image: image
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+
+  alert("Added to cart");
+}
+
+/* NAVIGATION */
+function goHome(){
+  window.location.href="../index.html";
+}
+
+function goToCart(){
+  window.location.href="../cart.html";
+}
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>
