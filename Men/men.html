@@ -29,8 +29,16 @@ header {
   z-index: 1000;
 }
 
-.logo { cursor:pointer; font-size:14px; letter-spacing:2px; }
-.cart { cursor:pointer; }
+.logo {
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cart {
+  cursor: pointer;
+}
 
 #cart-count {
   background: white;
@@ -48,111 +56,156 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   position: relative;
 }
 
 .hero::after {
   content:'';
   position:absolute;
-  inset:0;
+  width:100%;
+  height:100%;
   background:rgba(0,0,0,0.6);
 }
 
 .hero-content {
   position: relative;
-  text-align:center;
+  z-index: 2;
 }
 
-.hero-content h1 { font-size:42px; }
-.hero-content p { opacity:0.8; }
-
-/* ACCORDION */
-.accordion {
-  width: 86%;
-  margin: 30px auto;
+.hero-content h1 {
+  font-size: 42px;
 }
 
-.sport {
-  margin-bottom: 14px;
-  border: 1px solid #1e1e1e;
-  border-radius: 12px;
-  overflow: hidden;
+.hero-content p {
+  opacity: 0.8;
 }
 
-/* SPORT HEADER */
-.sport-header {
-  padding: 18px;
-  background: #111;
-  cursor: pointer;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  transition:0.3s;
-}
-
-.sport-header:hover {
-  background:#1a1a1a;
-}
-
-/* ICON */
-.arrow {
-  transition:0.3s;
-}
-
-/* CONTENT */
-.sport-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+/* NAV BAR */
+.nav {
+  display: flex;
+  gap: 18px;
+  padding: 18px 8%;
+  position: sticky;
+  top: 72px;
   background: #0a0a0a;
+  z-index: 999;
+  border-bottom: 1px solid #1e1e1e;
 }
 
-/* SUBCATEGORY */
-.sub-title {
-  padding: 14px 18px;
+.nav-item {
+  position: relative;
+  cursor: pointer;
   font-size: 14px;
   opacity: 0.9;
-  border-left: 3px solid #fff;
-  margin: 10px 18px;
 }
 
-/* GRID */
+.nav-item:hover {
+  color: #c200ff;
+}
+
+/* DROPDOWN */
+.dropdown {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: #111;
+  border: 1px solid #222;
+  min-width: 180px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.dropdown a:hover {
+  background: #1a1a1a;
+  color: #c200ff;
+}
+
+/* MOBILE CLICK SUPPORT */
+.dropdown.active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 30px 8%;
+}
+
+.section-title {
+  font-size: 18px;
+  margin: 40px 0 20px;
+  border-left: 3px solid white;
+  padding-left: 10px;
+}
+
 .product-grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 18px;
-  padding: 0 18px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
 }
 
 /* CARD */
 .product-card {
-  background:#111;
-  padding:14px;
-  border:1px solid #1e1e1e;
+  background: #111;
+  padding: 18px;
+  border: 1px solid #1e1e1e;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
 }
 
 .product-card img {
-  width:100%;
-  aspect-ratio:3/4;
-  object-fit:contain;
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  background: #0a0a0a;
 }
 
+/* SIZE */
 select {
-  width:100%;
-  padding:8px;
-  margin-top:8px;
-  background:black;
-  color:white;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #000;
+  color: white;
+  border: 1px solid #333;
 }
 
+/* BUTTON */
 .add-btn {
-  width:100%;
-  padding:10px;
-  margin-top:8px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
   background: linear-gradient(45deg,#6a00ff,#ff00cc);
-  border:none;
-  color:white;
-  cursor:pointer;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero-content h1 { font-size: 26px; }
+  .nav { flex-wrap: wrap; }
 }
 
 </style>
@@ -165,121 +218,158 @@ select {
   <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>MEN COLLECTION</h1>
-    <p>Built for every sport</p>
+    <p>Performance engineered for modern movement</p>
   </div>
 </section>
 
-<!-- ACCORDION START -->
-<div class="accordion">
+<!-- NAV -->
+<div class="nav">
 
-<!-- FOOTBALL -->
-<div class="sport">
-  <div class="sport-header" onclick="toggle(this)">
-    Football <span class="arrow">⌄</span>
-  </div>
+  <div class="nav-item" onclick="scrollToSection('all')">All</div>
 
-  <div class="sport-content">
-
-    <div class="sub-title">Kits</div>
-    <div class="product-grid">
-      <div class="product-card"> <img src="../Men_Images/fk1.jpg"><h3>Elite Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FK1',this)">Add</button></div>
-      <div class="product-card"> <img src="../Men_Images/fk2.jpg"><h3>Pro Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FK2',this)">Add</button></div>
-      <div class="product-card"> <img src="../Men_Images/fk3.jpg"><h3>Speed Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FK3',this)">Add</button></div>
-    </div>
-
-    <div class="sub-title">Tracksuits</div>
-    <div class="product-grid">
-      <div class="product-card"><img src="../Men_Images/ft1.jpg"><h3>Track Black</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FT1',this)">Add</button></div>
-      <div class="product-card"><img src="../Men_Images/ft2.jpg"><h3>Track Grey</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FT2',this)">Add</button></div>
-      <div class="product-card"><img src="../Men_Images/ft3.jpg"><h3>Track Blue</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FT3',this)">Add</button></div>
-    </div>
-
-  </div>
-</div>
-
-<!-- BASKETBALL -->
-<div class="sport">
-  <div class="sport-header" onclick="toggle(this)">
-    Basketball <span class="arrow">⌄</span>
-  </div>
-
-  <div class="sport-content">
-    <div class="sub-title">Kits</div>
-    <div class="product-grid">
-      <div class="product-card"><img src="../Men_Images/bk1.jpg"><h3>Hoops Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('BK1',this)">Add</button></div>
-      <div class="product-card"><img src="../Men_Images/bk2.jpg"><h3>Dunk Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('BK2',this)">Add</button></div>
-      <div class="product-card"><img src="../Men_Images/bk3.jpg"><h3>Arena Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('BK3',this)">Add</button></div>
+  <div class="nav-item" onclick="toggleDropdown(this)">
+    Football ▾
+    <div class="dropdown">
+      <a href="men_football_kits.html">Kits</a>
+      <a href="men_football_tracksuits.html">Tracksuits</a>
+      <a href="men_football_hoodies.html">Hoodies</a>
+      <a href="men_football_jackets.html">Jackets</a>
     </div>
   </div>
-</div>
 
-<!-- HANDBALL -->
-<div class="sport">
-  <div class="sport-header" onclick="toggle(this)">
-    Handball <span class="arrow">⌄</span>
-  </div>
-
-  <div class="sport-content">
-    <div class="sub-title">Kits</div>
-    <div class="product-grid">
-      <div class="product-card"><img src="../Men_Images/hb1.jpg"><h3>Speed Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('HB1',this)">Add</button></div>
-      <div class="product-card"><img src="../Men_Images/hb2.jpg"><h3>Grip Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('HB2',this)">Add</button></div>
-      <div class="product-card"><img src="../Men_Images/hb3.jpg"><h3>Arena Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('HB3',this)">Add</button></div>
+  <div class="nav-item" onclick="toggleDropdown(this)">
+    Basketball ▾
+    <div class="dropdown">
+      <a href="men_basketball_kits.html">Kits</a>
+      <a href="men_basketball_hoodies.html">Hoodies</a>
+      <a href="men_basketball_shorts.html">Shorts</a>
     </div>
   </div>
-</div>
+
+  <div class="nav-item" onclick="toggleDropdown(this)">
+    Handball ▾
+    <div class="dropdown">
+      <a href="men_handball_kits.html">Kits</a>
+      <a href="men_handball_tracksuits.html">Tracksuits</a>
+      <a href="men_handball_hoodies.html">Hoodies</a>
+      <a href="men_handball_shorts.html">Shorts</a>
+    </div>
+  </div>
+
+  <div class="nav-item" onclick="toggleDropdown(this)">
+    Training ▾
+    <div class="dropdown">
+      <a href="men_training_tops.html">Tops</a>
+      <a href="men_training_shorts.html">Shorts</a>
+      <a href="men_training_tracksuits.html">Tracksuits</a>
+      <a href="men_training_compression.html">Compression</a>
+    </div>
+  </div>
+
+  <div class="nav-item" onclick="toggleDropdown(this)">
+    Lifestyle ▾
+    <div class="dropdown">
+      <a href="men_lifestyle_hoodies.html">Hoodies</a>
+      <a href="men_lifestyle_jackets.html">Jackets</a>
+      <a href="men_lifestyle_joggers.html">Joggers</a>
+      <a href="men_lifestyle_tshirts.html">T-Shirts</a>
+    </div>
+  </div>
 
 </div>
+
+<!-- ALL PRODUCTS -->
+<section class="products" id="all">
+
+  <div class="section-title">All Products</div>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="../Men_Images/p1.jpg">
+      <h3>Elite Pro Kit</h3>
+      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+      <button class="add-btn" onclick="addToCart('P1', this)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/p2.jpg">
+      <h3>Urban Tracksuit</h3>
+      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+      <button class="add-btn" onclick="addToCart('P2', this)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/p3.jpg">
+      <h3>Street Hoodie</h3>
+      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+      <button class="add-btn" onclick="addToCart('P3', this)">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
 
 <script>
 
-function goHome(){ window.location.href="../index.html"; }
-function goToCart(){ window.location.href="../cart.html"; }
+function goHome(){
+  window.location.href="../index.html";
+}
 
-/* ACCORDION (AUTO CLOSE) */
-function toggle(el){
+function goToCart(){
+  window.location.href="../cart.html";
+}
 
-  let all = document.querySelectorAll(".sport-content");
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
 
-  all.forEach(c=>{
-    if(c !== el.nextElementSibling){
-      c.style.maxHeight = null;
-      c.previousElementSibling.querySelector(".arrow").style.transform="rotate(0deg)";
+/* MOBILE DROPDOWN TOGGLE */
+function toggleDropdown(el){
+
+  let all = document.querySelectorAll(".dropdown");
+
+  all.forEach(d => {
+    if(d !== el.querySelector(".dropdown")){
+      d.classList.remove("active");
     }
   });
 
-  let content = el.nextElementSibling;
-
-  if(content.style.maxHeight){
-    content.style.maxHeight = null;
-    el.querySelector(".arrow").style.transform="rotate(0deg)";
-  } else {
-    content.style.maxHeight = content.scrollHeight + "px";
-    el.querySelector(".arrow").style.transform="rotate(180deg)";
-  }
+  let dd = el.querySelector(".dropdown");
+  dd.classList.toggle("active");
 }
 
 /* CART */
-function addToCart(id,btn){
+function addToCart(id, btn){
 
   let card = btn.closest(".product-card");
   let size = card.querySelector("select").value;
 
-  if(!size || size === "Select Size"){
-    alert("Select size");
+  if(size === "Select Size"){
+    alert("Select size first");
     return;
   }
 
+  let img = card.querySelector("img").src;
+
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  cart.push({id,size});
+  cart.push({id, size, image: img, quantity:1});
 
   localStorage.setItem("cart", JSON.stringify(cart));
+
+  updateCartCount();
+}
+
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
   document.getElementById("cart-count").innerText = cart.length;
 }
+
+updateCartCount();
 
 </script>
 
