@@ -5,123 +5,164 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SpotFut | Men</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: white;
 }
 
-body{
-background:#0a0a0a;
-color:white;
-font-family:'Inter', sans-serif;
+/* HEADER (same as soccer style) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid #1e1e1e;
+  position: sticky;
+  top: 0;
+  background: #0a0a0a;
+  z-index: 1000;
 }
 
-/* HERO */
-.hero{
-height:60vh;
-background:url('Images/Men.jpg') center/cover no-repeat;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+.logo {
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
-.hero::after{
-content:'';
-position:absolute;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-top:0;
-left:0;
+.cart {
+  cursor: pointer;
+  font-weight: 500;
 }
 
-.hero-content{
-position:relative;
-z-index:2;
+#cart-count {
+  background: white;
+  color: black;
+  padding: 3px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-left: 6px;
 }
 
-.hero h1{
-font-family:'Playfair Display', serif;
-font-size:3.5rem;
+/* HERO (small like soccer) */
+.hero {
+  height: 15vh;
+  background: url('../Images/Men.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 5%;
+  position: relative;
 }
 
-.hero p{
-color:#ccc;
-margin-top:10px;
+.hero::after {
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  top:0;
+  left:0;
 }
 
-/* FILTER BAR */
-.filters{
-display:flex;
-justify-content:center;
-gap:12px;
-padding:25px 8%;
-flex-wrap:wrap;
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
-.filters button{
-background:transparent;
-border:1px solid #333;
-color:white;
-padding:8px 16px;
-border-radius:20px;
-cursor:pointer;
-transition:0.3s;
+.hero-content h1 {
+  font-size: 42px;
+  letter-spacing: 2px;
 }
 
-.filters button:hover{
-background:#c200ff;
-border-color:#c200ff;
+.hero-content p {
+  margin-top: 10px;
+  opacity: 0.8;
 }
 
-/* PRODUCT GRID */
-.product-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
-padding:40px 8%;
+/* CATEGORY JUMP BAR */
+.categories {
+  padding: 25px 8%;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.product-card{
-text-decoration:none;
-color:white;
-transition:0.3s;
+.cat-btn {
+  padding: 8px 16px;
+  border: 1px solid #333;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: 0.3s;
 }
 
-.product-card img{
-width:100%;
-border-radius:12px;
-transition:0.3s;
+.cat-btn:hover {
+  background: #c200ff;
+  border-color: #c200ff;
 }
 
-.product-card:hover img{
-transform:scale(1.05);
+/* PRODUCT SECTION */
+.products {
+  padding: 30px 8%;
 }
 
-.product-card h3{
-margin-top:10px;
-font-size:1rem;
+.section-title {
+  font-size: 18px;
+  margin: 40px 0 20px;
+  border-left: 3px solid white;
+  padding-left: 10px;
 }
 
-.product-card p{
-color:#aaa;
-margin-top:5px;
+/* GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
 }
 
-/* SECTION TITLE */
-.section-title{
-padding:0 8%;
-font-size:1.8rem;
-margin-top:30px;
-font-family:'Playfair Display', serif;
+/* CARD */
+.product-card {
+  background: #111;
+  padding: 18px;
+  border: 1px solid #1e1e1e;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE */
+.product-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  background: #0a0a0a;
+}
+
+/* BUTTON */
+.add-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: linear-gradient(45deg,#6a00ff,#ff00cc);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero-content h1 { font-size: 26px; }
 }
 
 </style>
@@ -129,81 +170,108 @@ font-family:'Playfair Display', serif;
 
 <body>
 
+<!-- HEADER -->
+<header>
+  <div class="logo" onclick="goHome()">← SPOTFUT</div>
+  <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
+</header>
+
 <!-- HERO -->
 <section class="hero">
-<div class="hero-content">
-<h1>Men Collection</h1>
-<p>Performance engineered for modern movement</p>
-</div>
+  <div class="hero-content">
+    <h1>MEN COLLECTION</h1>
+    <p>Performance engineered for modern movement</p>
+  </div>
 </section>
 
-<!-- FILTERS (UI ONLY FOR NOW) -->
-<div class="filters">
-<button>All</button>
-<button>Hoodies</button>
-<button>Jackets</button>
-<button>Kits</button>
-<button>New Arrivals</button>
+<!-- CATEGORY JUMP -->
+<div class="categories">
+  <button class="cat-btn" onclick="scrollToSection('kits')">Kits</button>
+  <button class="cat-btn" onclick="scrollToSection('tracksuits')">Tracksuits</button>
+  <button class="cat-btn" onclick="scrollToSection('hoodies')">Hoodies</button>
+  <button class="cat-btn" onclick="scrollToSection('jackets')">Jackets</button>
 </div>
 
-<!-- NEW ARRIVALS -->
-<h2 class="section-title">New Arrivals</h2>
-<section class="product-grid">
+<!-- KITS -->
+<section class="products" id="kits">
+  <div class="section-title">Kits</div>
+  <div class="product-grid">
 
-<a href="#" class="product-card">
-<img src="Images/product1.jpg">
-<h3>Urban Hoodie</h3>
-<p>€49.99</p>
-</a>
+    <div class="product-card">
+      <img src="../Men_Images/SF-KIT-01.jpg">
+      <h3>Elite Kit</h3>
+      <button class="add-btn">View</button>
+    </div>
 
-<a href="#" class="product-card">
-<img src="Images/product2.jpg">
-<h3>Performance Jacket</h3>
-<p>€69.99</p>
-</a>
+  </div>
+</section>
 
-<a href="#" class="product-card">
-<img src="Images/product3.jpg">
-<h3>Training Kit</h3>
-<p>€59.99</p>
-</a>
+<!-- TRACKSUITS -->
+<section class="products" id="tracksuits">
+  <div class="section-title">Tracksuits</div>
+  <div class="product-grid">
 
+    <div class="product-card">
+      <img src="../Men_Images/SF-TRK-01.jpg">
+      <h3>Urban Tracksuit</h3>
+      <button class="add-btn">View</button>
+    </div>
+
+  </div>
 </section>
 
 <!-- HOODIES -->
-<h2 class="section-title">Hoodies</h2>
-<section class="product-grid">
+<section class="products" id="hoodies">
+  <div class="section-title">Hoodies</div>
+  <div class="product-grid">
 
-<a href="#" class="product-card">
-<img src="Images/product1.jpg">
-<h3>Black Urban Hoodie</h3>
-<p>€49.99</p>
-</a>
+    <div class="product-card">
+      <img src="../Men_Images/SF-HOD-01.jpg">
+      <h3>Street Hoodie</h3>
+      <button class="add-btn">View</button>
+    </div>
 
-<a href="#" class="product-card">
-<img src="Images/product2.jpg">
-<h3>Grey Street Hoodie</h3>
-<p>€44.99</p>
-</a>
-
+  </div>
 </section>
 
 <!-- JACKETS -->
-<h2 class="section-title">Jackets</h2>
-<section class="product-grid">
+<section class="products" id="jackets">
+  <div class="section-title">Jackets</div>
+  <div class="product-grid">
 
-<a href="#" class="product-card">
-<img src="Images/product2.jpg">
-<h3>Windbreaker Jacket</h3>
-<p>€69.99</p>
-</a>
+    <div class="product-card">
+      <img src="../Men_Images/SF-JKT-01.jpg">
+      <h3>Performance Jacket</h3>
+      <button class="add-btn">View</button>
+    </div>
 
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer style="text-align:center;padding:60px 8%;color:#666;">
-© 2026 SpotFut
-</footer>
+<script>
+
+function goHome(){
+  window.location.href="../index.html";
+}
+
+function goToCart(){
+  window.location.href="../cart.html";
+}
+
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").innerText = cart.length;
+}
+
+updateCartCount();
+
+</script>
 
 </body>
 </html>
