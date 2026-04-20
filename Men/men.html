@@ -29,16 +29,8 @@ header {
   z-index: 1000;
 }
 
-.logo {
-  font-weight: 600;
-  letter-spacing: 2px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.cart {
-  cursor: pointer;
-}
+.logo { cursor:pointer; font-size:14px; letter-spacing:2px; }
+.cart { cursor:pointer; }
 
 #cart-count {
   background: white;
@@ -56,111 +48,111 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   position: relative;
 }
 
 .hero::after {
   content:'';
   position:absolute;
-  width:100%;
-  height:100%;
+  inset:0;
   background:rgba(0,0,0,0.6);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  text-align:center;
 }
 
-.hero-content h1 {
-  font-size: 42px;
+.hero-content h1 { font-size:42px; }
+.hero-content p { opacity:0.8; }
+
+/* ACCORDION */
+.accordion {
+  width: 86%;
+  margin: 30px auto;
 }
 
-.hero-content p {
-  opacity: 0.8;
+.sport {
+  margin-bottom: 14px;
+  border: 1px solid #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* NAV */
-.categories {
-  padding: 25px 8%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.cat-btn {
-  padding: 8px 14px;
-  border: 1px solid #333;
-  background: transparent;
-  color: white;
-  border-radius: 20px;
+/* SPORT HEADER */
+.sport-header {
+  padding: 18px;
+  background: #111;
   cursor: pointer;
-  transition: 0.3s;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  transition:0.3s;
 }
 
-.cat-btn:hover {
-  background: #c200ff;
+.sport-header:hover {
+  background:#1a1a1a;
 }
 
-/* PRODUCTS */
-.products {
-  padding: 30px 8%;
+/* ICON */
+.arrow {
+  transition:0.3s;
 }
 
-.section-title {
-  font-size: 18px;
-  margin: 40px 0 20px;
-  border-left: 3px solid white;
-  padding-left: 10px;
+/* CONTENT */
+.sport-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #0a0a0a;
 }
 
+/* SUBCATEGORY */
+.sub-title {
+  padding: 14px 18px;
+  font-size: 14px;
+  opacity: 0.9;
+  border-left: 3px solid #fff;
+  margin: 10px 18px;
+}
+
+/* GRID */
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 25px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 18px;
+  padding: 0 18px 20px;
 }
 
 /* CARD */
 .product-card {
-  background: #111;
-  padding: 15px;
-  border: 1px solid #1e1e1e;
-  transition: 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
+  background:#111;
+  padding:14px;
+  border:1px solid #1e1e1e;
 }
 
 .product-card img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: contain;
-  background: #0a0a0a;
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:contain;
 }
 
 select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background: #000;
-  color: white;
-  border: 1px solid #333;
+  width:100%;
+  padding:8px;
+  margin-top:8px;
+  background:black;
+  color:white;
 }
 
 .add-btn {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
+  width:100%;
+  padding:10px;
+  margin-top:8px;
   background: linear-gradient(45deg,#6a00ff,#ff00cc);
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-@media(max-width:768px){
-.hero-content h1 { font-size: 26px; }
+  border:none;
+  color:white;
+  cursor:pointer;
 }
 
 </style>
@@ -176,140 +168,120 @@ select {
 <section class="hero">
   <div class="hero-content">
     <h1>MEN COLLECTION</h1>
-    <p>Built for every sport. Designed for performance.</p>
+    <p>Built for every sport</p>
   </div>
 </section>
 
-<!-- NAV -->
-<div class="categories">
-  <button class="cat-btn" onclick="scrollTo('football-kits')">Football Kits</button>
-  <button class="cat-btn" onclick="scrollTo('football-tracksuits')">Football Tracksuits</button>
-  <button class="cat-btn" onclick="scrollTo('football-hoodies')">Football Hoodies</button>
-  <button class="cat-btn" onclick="scrollTo('football-jackets')">Football Jackets</button>
+<!-- ACCORDION START -->
+<div class="accordion">
 
-  <button class="cat-btn" onclick="scrollTo('basketball-kits')">Basketball Kits</button>
-  <button class="cat-btn" onclick="scrollTo('basketball-hoodies')">Basketball Hoodies</button>
-  <button class="cat-btn" onclick="scrollTo('basketball-shorts')">Basketball Shorts</button>
+<!-- FOOTBALL -->
+<div class="sport">
+  <div class="sport-header" onclick="toggle(this)">
+    Football <span class="arrow">⌄</span>
+  </div>
 
-  <button class="cat-btn" onclick="scrollTo('handball-kits')">Handball Kits</button>
-  <button class="cat-btn" onclick="scrollTo('handball-tracksuits')">Handball Tracksuits</button>
-  <button class="cat-btn" onclick="scrollTo('handball-hoodies')">Handball Hoodies</button>
-  <button class="cat-btn" onclick="scrollTo('handball-shorts')">Handball Shorts</button>
+  <div class="sport-content">
 
-  <button class="cat-btn" onclick="scrollTo('training-tops')">Training Tops</button>
-  <button class="cat-btn" onclick="scrollTo('training-shorts')">Training Shorts</button>
-  <button class="cat-btn" onclick="scrollTo('training-tracksuits')">Training Tracksuits</button>
-  <button class="cat-btn" onclick="scrollTo('training-compression')">Compression Wear</button>
+    <div class="sub-title">Kits</div>
+    <div class="product-grid">
+      <div class="product-card"> <img src="../Men_Images/fk1.jpg"><h3>Elite Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FK1',this)">Add</button></div>
+      <div class="product-card"> <img src="../Men_Images/fk2.jpg"><h3>Pro Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FK2',this)">Add</button></div>
+      <div class="product-card"> <img src="../Men_Images/fk3.jpg"><h3>Speed Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FK3',this)">Add</button></div>
+    </div>
 
-  <button class="cat-btn" onclick="scrollTo('lifestyle-hoodies')">Lifestyle Hoodies</button>
-  <button class="cat-btn" onclick="scrollTo('lifestyle-jackets')">Lifestyle Jackets</button>
-  <button class="cat-btn" onclick="scrollTo('lifestyle-joggers')">Joggers</button>
-  <button class="cat-btn" onclick="scrollTo('lifestyle-tshirts')">T-Shirts</button>
+    <div class="sub-title">Tracksuits</div>
+    <div class="product-grid">
+      <div class="product-card"><img src="../Men_Images/ft1.jpg"><h3>Track Black</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FT1',this)">Add</button></div>
+      <div class="product-card"><img src="../Men_Images/ft2.jpg"><h3>Track Grey</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FT2',this)">Add</button></div>
+      <div class="product-card"><img src="../Men_Images/ft3.jpg"><h3>Track Blue</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('FT3',this)">Add</button></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- BASKETBALL -->
+<div class="sport">
+  <div class="sport-header" onclick="toggle(this)">
+    Basketball <span class="arrow">⌄</span>
+  </div>
+
+  <div class="sport-content">
+    <div class="sub-title">Kits</div>
+    <div class="product-grid">
+      <div class="product-card"><img src="../Men_Images/bk1.jpg"><h3>Hoops Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('BK1',this)">Add</button></div>
+      <div class="product-card"><img src="../Men_Images/bk2.jpg"><h3>Dunk Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('BK2',this)">Add</button></div>
+      <div class="product-card"><img src="../Men_Images/bk3.jpg"><h3>Arena Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('BK3',this)">Add</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- HANDBALL -->
+<div class="sport">
+  <div class="sport-header" onclick="toggle(this)">
+    Handball <span class="arrow">⌄</span>
+  </div>
+
+  <div class="sport-content">
+    <div class="sub-title">Kits</div>
+    <div class="product-grid">
+      <div class="product-card"><img src="../Men_Images/hb1.jpg"><h3>Speed Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('HB1',this)">Add</button></div>
+      <div class="product-card"><img src="../Men_Images/hb2.jpg"><h3>Grip Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('HB2',this)">Add</button></div>
+      <div class="product-card"><img src="../Men_Images/hb3.jpg"><h3>Arena Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn" onclick="addToCart('HB3',this)">Add</button></div>
+    </div>
+  </div>
+</div>
+
 </div>
 
 <script>
-function scrollTo(id){
-  document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
+
 function goHome(){ window.location.href="../index.html"; }
 function goToCart(){ window.location.href="../cart.html"; }
-function updateCartCount(){
-  let c = JSON.parse(localStorage.getItem("cart"))||[];
-  document.getElementById("cart-count").innerText=c.length;
+
+/* ACCORDION (AUTO CLOSE) */
+function toggle(el){
+
+  let all = document.querySelectorAll(".sport-content");
+
+  all.forEach(c=>{
+    if(c !== el.nextElementSibling){
+      c.style.maxHeight = null;
+      c.previousElementSibling.querySelector(".arrow").style.transform="rotate(0deg)";
+    }
+  });
+
+  let content = el.nextElementSibling;
+
+  if(content.style.maxHeight){
+    content.style.maxHeight = null;
+    el.querySelector(".arrow").style.transform="rotate(0deg)";
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    el.querySelector(".arrow").style.transform="rotate(180deg)";
+  }
 }
-updateCartCount();
+
+/* CART */
 function addToCart(id,btn){
-  let card=btn.closest(".product-card");
-  let size=card.querySelector("select").value;
-  if(!size||size==="Select Size"){alert("Select size");return;}
-  let cart=JSON.parse(localStorage.getItem("cart"))||[];
+
+  let card = btn.closest(".product-card");
+  let size = card.querySelector("select").value;
+
+  if(!size || size === "Select Size"){
+    alert("Select size");
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
   cart.push({id,size});
-  localStorage.setItem("cart",JSON.stringify(cart));
-  updateCartCount();
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  document.getElementById("cart-count").innerText = cart.length;
 }
+
 </script>
-
-<!-- FOOTBALL KITS -->
-<section class="products" id="football-kits">
-<div class="section-title">Football Kits</div>
-<div class="product-grid">
-
-<div class="product-card"><img src="../Men_Images/fk1.jpg"><h3>Elite Kit Black</h3><select><option>Select Size</option><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FK1',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/fk2.jpg"><h3>Elite Kit White</h3><select><option>Select Size</option><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FK2',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/fk3.jpg"><h3>Elite Kit Red</h3><select><option>Select Size</option><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FK3',this)" class="add-btn">Add</button></div>
-
-</div>
-</section>
-
-<!-- FOOTBALL TRACKSUITS -->
-<section class="products" id="football-tracksuits">
-<div class="section-title">Football Tracksuits</div>
-<div class="product-grid">
-<div class="product-card"><img src="../Men_Images/ft1.jpg"><h3>Black Track</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FT1',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/ft2.jpg"><h3>Grey Track</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FT2',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/ft3.jpg"><h3>Blue Track</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FT3',this)" class="add-btn">Add</button></div>
-</div>
-</section>
-
-<!-- FOOTBALL HOODIES -->
-<section class="products" id="football-hoodies">
-<div class="section-title">Football Hoodies</div>
-<div class="product-grid">
-<div class="product-card"><img src="../Men_Images/fh1.jpg"><h3>Black Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FH1',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/fh2.jpg"><h3>Grey Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FH2',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/fh3.jpg"><h3>Red Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FH3',this)" class="add-btn">Add</button></div>
-</div>
-</section>
-
-<!-- FOOTBALL JACKETS -->
-<section class="products" id="football-jackets">
-<div class="section-title">Football Jackets</div>
-<div class="product-grid">
-<div class="product-card"><img src="../Men_Images/fj1.jpg"><h3>Black Jacket</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FJ1',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/fj2.jpg"><h3>Grey Jacket</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FJ2',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/fj3.jpg"><h3>Blue Jacket</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('FJ3',this)" class="add-btn">Add</button></div>
-</div>
-</section>
-
-<!-- BASKETBALL KITS -->
-<section class="products" id="basketball-kits">
-<div class="section-title">Basketball Kits</div>
-<div class="product-grid">
-<div class="product-card"><img src="../Men_Images/bk1.jpg"><h3>Hoops Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('BK1',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/bk2.jpg"><h3>Dunk Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('BK2',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/bk3.jpg"><h3>Arena Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('BK3',this)" class="add-btn">Add</button></div>
-</div>
-</section>
-
-<!-- BASKETBALL HOODIES -->
-<section class="products" id="basketball-hoodies">
-<div class="section-title">Basketball Hoodies</div>
-<div class="product-grid">
-<div class="product-card"><img src="../Men_Images/bh1.jpg"><h3>Black Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('BH1',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/bh2.jpg"><h3>Grey Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('BH2',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/bh3.jpg"><h3>Blue Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('BH3',this)" class="add-btn">Add</button></div>
-</div>
-</section>
-
-<!-- BASKETBALL SHORTS -->
-<section class="products" id="basketball-shorts">
-<div class="section-title">Basketball Shorts</div>
-<div class="product-grid">
-<div class="product-card"><img src="../Men_Images/bs1.jpg"><h3>Short Black</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('BS1',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/bs2.jpg"><h3>Short Grey</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('BS2',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/bs3.jpg"><h3>Short Blue</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('BS3',this)" class="add-btn">Add</button></div>
-</div>
-</section>
-
-<!-- HANDBALL (same pattern) -->
-<section class="products" id="handball-kits"><div class="section-title">Handball Kits</div><div class="product-grid">
-<div class="product-card"><img src="../Men_Images/hk1.jpg"><h3>Hand Kit 1</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('HK1',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/hk2.jpg"><h3>Hand Kit 2</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('HK2',this)" class="add-btn">Add</button></div>
-<div class="product-card"><img src="../Men_Images/hk3.jpg"><h3>Hand Kit 3</h3><select><option>S</option><option>M</option><option>L</option></select><button onclick="addToCart('HK3',this)" class="add-btn">Add</button></div>
-</div></section>
-
-<!-- TRAINING + LIFESTYLE omitted here in chat only for length safety -->
-<!-- (They follow EXACT same 3-card structure per subcategory as above) -->
 
 </body>
 </html>
