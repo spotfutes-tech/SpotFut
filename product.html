@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpotFut Products</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:Poppins;
+  background:#0a0a0a;
+  color:white;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 8%;
+  border-bottom:1px solid #1e1e1e;
+}
+
+.logo{cursor:pointer}
+.cart{cursor:pointer}
+
+/* HERO */
+.hero{
+  padding:60px 8%;
+  text-align:center;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+  padding:20px 8%;
+}
+
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border:1px solid #1e1e1e;
+}
+
+.card img{
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:contain;
+  background:#000;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  background:linear-gradient(45deg,#6a00ff,#ff00cc);
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+select{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  background:#000;
+  color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo" onclick="goBack()">← BACK</div>
+  <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
+</header>
+
+<div class="hero">
+  <h1 id="title">Products</h1>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<script src="products.js"></script>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const cat = params.get("cat");
+
+const container = document.getElementById("grid");
+const title = document.getElementById("title");
+
+function render(){
+
+  let items = PRODUCTS[cat] || [];
+
+  title.innerText = cat.replace("_"," ").toUpperCase();
+
+  container.innerHTML = items.map(p => `
+    <div class="card">
+      <img src="${p.img}">
+      <h3>${p.name}</h3>
+
+      <select>
+        <option>Select Size</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select>
+
+      <button onclick="add('${p.id}', this)">Add to Cart</button>
+    </div>
+  `).join("");
+
+}
+
+function add(id, btn){
+
+  let card = btn.closest(".card");
+  let size = card.querySelector("select").value;
+
+  if(size === "Select Size"){
+    alert("Select size first");
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({id, size});
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  updateCart();
+
+}
+
+function updateCart(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("count").innerText = cart.length;
+}
+
+function goBack(){
+  window.location.href="men.html";
+}
+
+function goCart(){
+  window.location.href="cart.html";
+}
+
+render();
+updateCart();
+
+</script>
+
+</body>
+</html>
