@@ -81,7 +81,7 @@ header {
   opacity: 0.8;
 }
 
-/* NAV */
+/* NAV BAR */
 .nav {
   display: flex;
   gap: 18px;
@@ -112,19 +112,26 @@ header {
   background: #111;
   border: 1px solid #222;
   min-width: 180px;
+
   opacity: 0;
   transform: translateY(-10px);
   pointer-events: none;
+
   transition: all 0.3s ease;
-  border-radius: 6px;
-  overflow: hidden;
 }
 
-/* desktop hover */
+/* SHOW ON HOVER (DESKTOP) */
 .nav-item:hover .dropdown {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+/* MOBILE TOGGLE */
+.dropdown.active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
 }
 
 .dropdown a {
@@ -138,13 +145,6 @@ header {
 .dropdown a:hover {
   background: #1a1a1a;
   color: #c200ff;
-}
-
-/* mobile + click active */
-.dropdown.active {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  pointer-events: auto !important;
 }
 
 /* PRODUCTS */
@@ -234,7 +234,7 @@ select {
 
   <div class="nav-item" onclick="scrollToSection('all')">All</div>
 
-  <div class="nav-item" onclick="toggleDropdown(this)">
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
     Football ▾
     <div class="dropdown">
       <a href="men_football_kits.html">Kits</a>
@@ -244,7 +244,7 @@ select {
     </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this)">
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
     Basketball ▾
     <div class="dropdown">
       <a href="men_basketball_kits.html">Kits</a>
@@ -253,7 +253,7 @@ select {
     </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this)">
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
     Handball ▾
     <div class="dropdown">
       <a href="men_handball_kits.html">Kits</a>
@@ -263,7 +263,7 @@ select {
     </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this)">
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
     Training ▾
     <div class="dropdown">
       <a href="men_training_tops.html">Tops</a>
@@ -273,7 +273,7 @@ select {
     </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this)">
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
     Lifestyle ▾
     <div class="dropdown">
       <a href="men_lifestyle_hoodies.html">Hoodies</a>
@@ -295,21 +295,27 @@ select {
     <div class="product-card">
       <img src="../Men_Images/p1.jpg">
       <h3>Elite Pro Kit</h3>
-      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
       <button class="add-btn" onclick="addToCart('P1', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="../Men_Images/p2.jpg">
       <h3>Urban Tracksuit</h3>
-      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
       <button class="add-btn" onclick="addToCart('P2', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="../Men_Images/p3.jpg">
       <h3>Street Hoodie</h3>
-      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
       <button class="add-btn" onclick="addToCart('P3', this)">Add to Cart</button>
     </div>
 
@@ -330,21 +336,26 @@ function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-/* CLEAN AUTO-CLOSE DROPDOWN SYSTEM */
-function toggleDropdown(el){
+/* FIXED DROPDOWN SYSTEM */
+function toggleDropdown(el, event){
 
-  let all = document.querySelectorAll(".dropdown");
+  if(event) event.stopPropagation();
 
-  let current = el.querySelector(".dropdown");
-
-  all.forEach(d => {
-    if(d !== current){
+  document.querySelectorAll(".dropdown").forEach(d => {
+    if(d !== el.querySelector(".dropdown")){
       d.classList.remove("active");
     }
   });
 
-  current.classList.toggle("active");
+  el.querySelector(".dropdown").classList.toggle("active");
 }
+
+/* CLOSE ON OUTSIDE CLICK */
+document.addEventListener("click", () => {
+  document.querySelectorAll(".dropdown").forEach(d => {
+    d.classList.remove("active");
+  });
+});
 
 /* CART */
 function addToCart(id, btn){
