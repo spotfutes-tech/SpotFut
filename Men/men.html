@@ -142,7 +142,7 @@ header {
   background: #0a0a0a;
 }
 
-/* SIZE SELECT */
+/* SIZE */
 select {
   width: 100%;
   padding: 10px;
@@ -183,194 +183,189 @@ select {
 <section class="hero">
   <div class="hero-content">
     <h1>MEN COLLECTION</h1>
-    <p>Performance engineered for modern movement</p>
+    <p>Built for every sport. Designed for performance.</p>
   </div>
 </section>
 
 <!-- CATEGORY NAV -->
 <div class="categories">
-  <button class="cat-btn" onclick="scrollToSection('all')">All</button>
-  <button class="cat-btn" onclick="scrollToSection('kits')">Kits</button>
-  <button class="cat-btn" onclick="scrollToSection('tracksuits')">Tracksuits</button>
-  <button class="cat-btn" onclick="scrollToSection('hoodies')">Hoodies</button>
-  <button class="cat-btn" onclick="scrollToSection('jackets')">Jackets</button>
+  <button class="cat-btn" onclick="scrollToSection('football')">Football</button>
+  <button class="cat-btn" onclick="scrollToSection('basketball')">Basketball</button>
+  <button class="cat-btn" onclick="scrollToSection('handball')">Handball</button>
+  <button class="cat-btn" onclick="scrollToSection('training')">Training</button>
+  <button class="cat-btn" onclick="scrollToSection('lifestyle')">Lifestyle</button>
 </div>
 
-<!-- ALL (optional showcase section) -->
-<section class="products" id="all">
-
-  <div class="section-title">Featured</div>
-
+<!-- FOOTBALL -->
+<section class="products" id="football">
+  <div class="section-title">Football</div>
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="../Men_Images/p1.jpg">
-      <h3>Elite Pro Kit</h3>
+      <img src="../Men_Images/football1.jpg">
+      <h3>Elite Football Kit</h3>
       <select>
-        <option>Select Size</option>
-        <option>S</option><option>M</option><option>L</option><option>XL</option>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('FB1', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="../Men_Images/p2.jpg">
-      <h3>Urban Tracksuit</h3>
+      <img src="../Men_Images/football2.jpg">
+      <h3>Strike Pro Kit</h3>
       <select>
-        <option>Select Size</option>
-        <option>S</option><option>M</option><option>L</option><option>XL</option>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('FB2', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="../Men_Images/p3.jpg">
-      <h3>Street Hoodie</h3>
+      <img src="../Men_Images/football3.jpg">
+      <h3>Velocity Kit</h3>
       <select>
-        <option>Select Size</option>
-        <option>S</option><option>M</option><option>L</option><option>XL</option>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('FB3', this)">Add to Cart</button>
     </div>
 
   </div>
 </section>
 
-<!-- KITS -->
-<section class="products" id="kits">
-  <div class="section-title">Kits</div>
+<!-- BASKETBALL -->
+<section class="products" id="basketball">
+  <div class="section-title">Basketball</div>
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="../Men_Images/kit1.jpg">
-      <h3>Elite Kit Black</h3>
+      <img src="../Men_Images/bb1.jpg">
+      <h3>Hoops Kit Black</h3>
       <select>
         <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('BB1', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="../Men_Images/kit2.jpg">
-      <h3>Elite Kit White</h3>
+      <img src="../Men_Images/bb2.jpg">
+      <h3>Street Dunk Kit</h3>
       <select>
         <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('BB2', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="../Men_Images/kit3.jpg">
-      <h3>Elite Kit Red</h3>
+      <img src="../Men_Images/bb3.jpg">
+      <h3>Arena Kit White</h3>
       <select>
         <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('BB3', this)">Add to Cart</button>
     </div>
 
   </div>
 </section>
 
-<!-- TRACKSUITS -->
-<section class="products" id="tracksuits">
-  <div class="section-title">Tracksuits</div>
+<!-- HANDBALL -->
+<section class="products" id="handball">
+  <div class="section-title">Handball</div>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="../Men_Images/hb1.jpg">
+      <h3>Speed Handball Kit</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn" onclick="addToCart('HB1', this)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/hb2.jpg">
+      <h3>Elite Grip Kit</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn" onclick="addToCart('HB2', this)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/hb3.jpg">
+      <h3>Arena Pro Kit</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn" onclick="addToCart('HB3', this)">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section class="products" id="training">
+  <div class="section-title">Training</div>
   <div class="product-grid">
 
     <div class="product-card">
       <img src="../Men_Images/tr1.jpg">
-      <h3>Urban Tracksuit Black</h3>
+      <h3>Training Set Black</h3>
       <select>
         <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('TR1', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="../Men_Images/tr2.jpg">
-      <h3>Urban Tracksuit Grey</h3>
+      <h3>Performance Set Grey</h3>
       <select>
         <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('TR2', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
       <img src="../Men_Images/tr3.jpg">
-      <h3>Urban Tracksuit Blue</h3>
+      <h3>Elite Training Set</h3>
       <select>
         <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('TR3', this)">Add to Cart</button>
     </div>
 
   </div>
 </section>
 
-<!-- HOODIES -->
-<section class="products" id="hoodies">
-  <div class="section-title">Hoodies</div>
+<!-- LIFESTYLE -->
+<section class="products" id="lifestyle">
+  <div class="section-title">Lifestyle</div>
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="../Men_Images/h1.jpg">
-      <h3>Street Hoodie Black</h3>
+      <img src="../Men_Images/ls1.jpg">
+      <h3>Urban Hoodie Black</h3>
       <select>
         <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('LS1', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="../Men_Images/h2.jpg">
-      <h3>Street Hoodie Grey</h3>
+      <img src="../Men_Images/ls2.jpg">
+      <h3>Street Jacket Grey</h3>
       <select>
         <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('LS2', this)">Add to Cart</button>
     </div>
 
     <div class="product-card">
-      <img src="../Men_Images/h3.jpg">
-      <h3>Street Hoodie Purple</h3>
+      <img src="../Men_Images/ls3.jpg">
+      <h3>Casual Hoodie White</h3>
       <select>
         <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
-      <button class="add-btn">Add to Cart</button>
-    </div>
-
-  </div>
-</section>
-
-<!-- JACKETS -->
-<section class="products" id="jackets">
-  <div class="section-title">Jackets</div>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="../Men_Images/j1.jpg">
-      <h3>Wind Jacket Black</h3>
-      <select>
-        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <button class="add-btn">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="../Men_Images/j2.jpg">
-      <h3>Wind Jacket Grey</h3>
-      <select>
-        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <button class="add-btn">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="../Men_Images/j3.jpg">
-      <h3>Wind Jacket Blue</h3>
-      <select>
-        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <button class="add-btn">Add to Cart</button>
+      <button class="add-btn" onclick="addToCart('LS3', this)">Add to Cart</button>
     </div>
 
   </div>
@@ -387,9 +382,33 @@ function goToCart(){
 }
 
 function scrollToSection(id){
-  document.getElementById(id).scrollIntoView({
-    behavior:"smooth"
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* CART SYSTEM */
+function addToCart(id, btn){
+
+  let card = btn.closest(".product-card");
+  let size = card.querySelector("select").value;
+
+  if(!size || size === "Select Size"){
+    alert("Select size first");
+    return;
+  }
+
+  let img = card.querySelector("img").src;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+    id,
+    size,
+    image: img,
+    quantity: 1
   });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
 }
 
 function updateCartCount(){
