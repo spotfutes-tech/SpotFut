@@ -81,82 +81,71 @@ header {
   opacity: 0.8;
 }
 
-/* SPORTS WRAPPER */
-.sport {
-  margin: 25px 8%;
-  border: 1px solid #1f1f1f;
-  border-radius: 14px;
-  overflow: hidden;
-  background: #0c0c0c;
+/* CATEGORY NAV */
+.categories {
+  padding: 25px 8%;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-/* SPORT HEADER */
-.sport-header {
-  padding: 18px;
+.cat-btn {
+  padding: 8px 16px;
+  border: 1px solid #333;
+  background: transparent;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cat-btn:hover {
+  background: #c200ff;
+  border-color: #c200ff;
+}
+
+/* =========================
+   ACCORDION (NEW PREMIUM UX)
+========================= */
+
+.accordion {
+  padding: 10px 8% 40px;
+}
+
+.accordion-item {
+  border: 1px solid #1e1e1e;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  padding: 16px;
+  background: #111;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #111;
-  transition: 0.3s;
+  font-weight: 600;
 }
 
-.sport-header:hover {
+.accordion-header:hover {
   background: #1a1a1a;
 }
 
-.sport-header h2 {
-  margin: 0;
-  font-size: 18px;
-  letter-spacing: 1px;
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #0a0a0a;
 }
 
-/* SPORT CONTENT */
-.sport-content {
-  display: none;
-  padding: 20px;
-}
-
-/* CATEGORY CARDS */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
-  gap: 12px;
-  margin-bottom: 25px;
-}
-
-.category-card {
-  padding: 18px;
-  text-align: center;
-  background: #111;
-  border: 1px solid #1f1f1f;
-  cursor: pointer;
-  transition: 0.3s;
-  border-radius: 12px;
-}
-
-.category-card:hover {
-  transform: translateY(-4px);
-  background: #1a1a1a;
-  border-color: #c200ff;
-}
-
-/* PRODUCTS */
-.products {
-  padding: 10px 0 30px;
-}
-
-.section-title {
-  font-size: 16px;
-  margin: 20px 0 15px;
-  border-left: 3px solid white;
-  padding-left: 10px;
-}
-
+/* INNER GRID */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 30px;
+  gap: 20px;
+  padding: 20px;
 }
 
 /* CARD */
@@ -169,7 +158,6 @@ header {
 
 .product-card:hover {
   transform: translateY(-6px);
-  border-color: #c200ff;
 }
 
 /* IMAGE */
@@ -204,7 +192,6 @@ select {
 /* MOBILE */
 @media(max-width:768px){
 .hero-content h1 { font-size: 26px; }
-.category-grid { grid-template-columns: repeat(2,1fr); }
 }
 
 </style>
@@ -224,93 +211,176 @@ select {
   </div>
 </section>
 
-<!-- ================= FOOTBALL ================= -->
-<div class="sport">
+<!-- CATEGORY NAV -->
+<div class="categories">
+  <button class="cat-btn" onclick="toggleAccordion('football')">Football</button>
+  <button class="cat-btn" onclick="toggleAccordion('basketball')">Basketball</button>
+  <button class="cat-btn" onclick="toggleAccordion('handball')">Handball</button>
+  <button class="cat-btn" onclick="toggleAccordion('training')">Training</button>
+  <button class="cat-btn" onclick="toggleAccordion('lifestyle')">Lifestyle</button>
+</div>
 
-  <div class="sport-header" onclick="toggleSport(this)">
-    <h2>Football</h2>
-    <span>+</span>
+<!-- ACCORDION WRAPPER -->
+<div class="accordion">
+
+<!-- FOOTBALL -->
+<div class="accordion-item" id="football">
+  <div class="accordion-header" onclick="openAccordion('football')">
+    Football <span>+</span>
   </div>
 
-  <div class="sport-content">
+  <div class="accordion-content">
+    <div class="product-grid">
 
-    <div class="category-grid">
-      <div class="category-card" onclick="scrollToSection('football-kits')">Kits</div>
-      <div class="category-card" onclick="scrollToSection('football-tracksuits')">Tracksuits</div>
-      <div class="category-card" onclick="scrollToSection('football-hoodies')">Hoodies</div>
-      <div class="category-card" onclick="scrollToSection('football-jackets')">Jackets</div>
+      <div class="product-card">
+        <img src="../Men_Images/football1.jpg">
+        <h3>Elite Football Kit</h3>
+        <select>
+          <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+        </select>
+        <button class="add-btn" onclick="addToCart('FB1', this)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="../Men_Images/football2.jpg">
+        <h3>Strike Pro Kit</h3>
+        <select>
+          <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+        </select>
+        <button class="add-btn" onclick="addToCart('FB2', this)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="../Men_Images/football3.jpg">
+        <h3>Velocity Kit</h3>
+        <select>
+          <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+        </select>
+        <button class="add-btn" onclick="addToCart('FB3', this)">Add to Cart</button>
+      </div>
+
     </div>
-
   </div>
 </div>
 
-<!-- ================= BASKETBALL ================= -->
-<div class="sport">
-
-  <div class="sport-header" onclick="toggleSport(this)">
-    <h2>Basketball</h2>
-    <span>+</span>
+<!-- BASKETBALL -->
+<div class="accordion-item" id="basketball">
+  <div class="accordion-header" onclick="openAccordion('basketball')">
+    Basketball <span>+</span>
   </div>
 
-  <div class="sport-content">
+  <div class="accordion-content">
+    <div class="product-grid">
 
-    <div class="category-grid">
-      <div class="category-card" onclick="scrollToSection('basketball-kits')">Kits</div>
-      <div class="category-card" onclick="scrollToSection('basketball-hoodies')">Hoodies</div>
-      <div class="category-card" onclick="scrollToSection('basketball-shorts')">Shorts</div>
+      <div class="product-card">
+        <img src="../Men_Images/bb1.jpg">
+        <h3>Hoops Kit Black</h3>
+        <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+        <button class="add-btn" onclick="addToCart('BB1', this)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="../Men_Images/bb2.jpg">
+        <h3>Street Dunk Kit</h3>
+        <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+        <button class="add-btn" onclick="addToCart('BB2', this)">Add to Cart</button>
+      </div>
+
     </div>
-
   </div>
 </div>
 
-<!-- ================= HANDBALL ================= -->
-<div class="sport">
-
-  <div class="sport-header" onclick="toggleSport(this)">
-    <h2>Handball</h2>
-    <span>+</span>
+<!-- HANDBALL -->
+<div class="accordion-item" id="handball">
+  <div class="accordion-header" onclick="openAccordion('handball')">
+    Handball <span>+</span>
   </div>
 
-  <div class="sport-content">
+  <div class="accordion-content">
+    <div class="product-grid">
 
-    <div class="category-grid">
-      <div class="category-card" onclick="scrollToSection('handball-kits')">Kits</div>
-      <div class="category-card" onclick="scrollToSection('handball-tracksuits')">Tracksuits</div>
-      <div class="category-card" onclick="scrollToSection('handball-hoodies')">Hoodies</div>
+      <div class="product-card">
+        <img src="../Men_Images/hb1.jpg">
+        <h3>Speed Kit</h3>
+        <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+        <button class="add-btn" onclick="addToCart('HB1', this)">Add to Cart</button>
+      </div>
+
     </div>
-
   </div>
 </div>
 
-<!-- ================= TRAINING ================= -->
-<div class="sport">
-
-  <div class="sport-header" onclick="toggleSport(this)">
-    <h2>Training</h2>
-    <span>+</span>
+<!-- TRAINING -->
+<div class="accordion-item" id="training">
+  <div class="accordion-header" onclick="openAccordion('training')">
+    Training <span>+</span>
   </div>
 
-  <div class="sport-content">
-    <p style="opacity:0.7">Training wear collections coming soon.</p>
+  <div class="accordion-content">
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="../Men_Images/tr1.jpg">
+        <h3>Training Set Black</h3>
+        <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+        <button class="add-btn" onclick="addToCart('TR1', this)">Add to Cart</button>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<!-- ================= LIFESTYLE ================= -->
-<div class="sport">
-
-  <div class="sport-header" onclick="toggleSport(this)">
-    <h2>Lifestyle</h2>
-    <span>+</span>
+<!-- LIFESTYLE -->
+<div class="accordion-item" id="lifestyle">
+  <div class="accordion-header" onclick="openAccordion('lifestyle')">
+    Lifestyle <span>+</span>
   </div>
 
-  <div class="sport-content">
-    <p style="opacity:0.7">Streetwear drops coming soon.</p>
+  <div class="accordion-content">
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="../Men_Images/ls1.jpg">
+        <h3>Urban Hoodie</h3>
+        <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
+        <button class="add-btn" onclick="addToCart('LS1', this)">Add to Cart</button>
+      </div>
+
+    </div>
   </div>
+</div>
+
 </div>
 
 <script>
 
-/* NAV */
+/* CART */
+function addToCart(id, btn){
+  let card = btn.closest(".product-card");
+  let size = card.querySelector("select").value;
+
+  if(!size || size === "Select Size"){
+    alert("Select size first");
+    return;
+  }
+
+  let img = card.querySelector("img").src;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({ id, size, image: img, quantity: 1 });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").innerText = cart.length;
+}
+
+updateCartCount();
+
 function goHome(){
   window.location.href="../index.html";
 }
@@ -319,44 +389,29 @@ function goToCart(){
   window.location.href="../cart.html";
 }
 
-/* SMOOTH SCROLL */
-function scrollToSection(id){
-  document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
-}
+/* ACCORDION LOGIC (AUTO CLOSE OTHERS + SMOOTH 300ms) */
+function openAccordion(id){
 
-/* ACCORDION (AUTO CLOSE OTHERS) */
-function toggleSport(el){
-
-  let all = document.querySelectorAll(".sport-content");
-  let panels = document.querySelectorAll(".sport-header span");
-
-  let content = el.nextElementSibling;
-  let icon = el.querySelector("span");
-
-  all.forEach(c => {
-    if(c !== content) c.style.display = "none";
+  document.querySelectorAll(".accordion-content").forEach(el=>{
+    if(el.parentElement.id !== id){
+      el.style.maxHeight = null;
+    }
   });
 
-  panels.forEach(i => {
-    if(i !== icon) i.innerText = "+";
-  });
+  let item = document.querySelector("#"+id+" .accordion-content");
 
-  if(content.style.display === "block"){
-    content.style.display = "none";
-    icon.innerText = "+";
+  if(item.style.maxHeight){
+    item.style.maxHeight = null;
   } else {
-    content.style.display = "block";
-    icon.innerText = "−";
+    item.style.maxHeight = item.scrollHeight + "px";
   }
 }
 
-/* CART */
-function updateCartCount(){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("cart-count").innerText = cart.length;
+/* optional nav scroll helper */
+function toggleAccordion(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+  setTimeout(()=>openAccordion(id),300);
 }
-
-updateCartCount();
 
 </script>
 
