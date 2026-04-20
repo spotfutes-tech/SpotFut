@@ -81,48 +81,67 @@ header {
   opacity: 0.8;
 }
 
-/* ACCORDION MENU */
-.menu {
-  padding: 20px 8%;
-}
-
-.accordion {
-  margin-bottom: 10px;
-  border: 1px solid #222;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.accordion-header {
-  padding: 12px 15px;
-  cursor: pointer;
-  background: #111;
+/* NAV */
+.nav-wrap {
   display: flex;
-  justify-content: space-between;
+  gap: 18px;
+  padding: 25px 8%;
+  flex-wrap: wrap;
 }
 
-.accordion-header:hover {
-  background: #1a1a1a;
+.dropdown {
+  position: relative;
 }
 
-.panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  background: #0a0a0a;
-}
-
-.panel a {
-  display: block;
-  padding: 10px 15px;
-  border-top: 1px solid #1e1e1e;
+.dropbtn {
+  padding: 10px 18px;
+  border: 1px solid #333;
+  background: transparent;
   color: white;
-  text-decoration: none;
-  font-size: 13px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.panel a:hover {
+.dropbtn:hover {
+  background: #c200ff;
+  border-color: #c200ff;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 190px;
+
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.dropdown.active .dropdown-content {
+  max-height: 400px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-content div {
+  padding: 12px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.dropdown-content div:hover {
   background: #1a1a1a;
+  color: #c200ff;
 }
 
 /* PRODUCTS */
@@ -143,16 +162,10 @@ header {
   gap: 30px;
 }
 
-/* CARD */
 .product-card {
   background: #111;
   padding: 18px;
   border: 1px solid #1e1e1e;
-  transition: 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
 }
 
 .product-card img {
@@ -181,10 +194,6 @@ select {
   cursor: pointer;
 }
 
-@media(max-width:768px){
-.hero-content h1 { font-size: 26px; }
-}
-
 </style>
 </head>
 
@@ -198,161 +207,134 @@ select {
 <section class="hero">
   <div class="hero-content">
     <h1>MEN COLLECTION</h1>
-    <p>Built for every sport. Designed for performance.</p>
+    <p>Engineered for every sport. Designed for performance.</p>
   </div>
 </section>
 
-<!-- ACCORDION MENU -->
-<div class="menu">
+<!-- ================= NAV ================= -->
+<div class="nav-wrap">
 
   <!-- FOOTBALL -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAcc(this)">Football <span>+</span></div>
-    <div class="panel">
-      <a href="#football-kits">Kits</a>
-      <a href="#football-tracksuits">Tracksuits</a>
-      <a href="#football-hoodies">Hoodies</a>
-      <a href="#football-jackets">Jackets</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDrop(this)">Football</button>
+    <div class="dropdown-content">
+      <div onclick="scrollToSection('football-kits')">Kits</div>
+      <div onclick="scrollToSection('football-tracksuits')">Tracksuits</div>
+      <div onclick="scrollToSection('football-hoodies')">Hoodies</div>
+      <div onclick="scrollToSection('football-jackets')">Jackets</div>
     </div>
   </div>
 
   <!-- BASKETBALL -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAcc(this)">Basketball <span>+</span></div>
-    <div class="panel">
-      <a href="#basketball-kits">Kits</a>
-      <a href="#basketball-hoodies">Hoodies</a>
-      <a href="#basketball-shorts">Shorts</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDrop(this)">Basketball</button>
+    <div class="dropdown-content">
+      <div onclick="scrollToSection('basketball-kits')">Kits</div>
+      <div onclick="scrollToSection('basketball-hoodies')">Hoodies</div>
+      <div onclick="scrollToSection('basketball-shorts')">Shorts</div>
     </div>
   </div>
 
   <!-- HANDBALL -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAcc(this)">Handball <span>+</span></div>
-    <div class="panel">
-      <a href="#handball-kits">Kits</a>
-      <a href="#handball-tracksuits">Tracksuits</a>
-      <a href="#handball-hoodies">Hoodies</a>
-      <a href="#handball-shorts">Shorts</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDrop(this)">Handball</button>
+    <div class="dropdown-content">
+      <div onclick="scrollToSection('handball-kits')">Kits</div>
+      <div onclick="scrollToSection('handball-tracksuits')">Tracksuits</div>
+      <div onclick="scrollToSection('handball-hoodies')">Hoodies</div>
+      <div onclick="scrollToSection('handball-shorts')">Shorts</div>
     </div>
   </div>
 
   <!-- TRAINING -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAcc(this)">Training <span>+</span></div>
-    <div class="panel">
-      <a href="#training-tops">Tops</a>
-      <a href="#training-shorts">Shorts</a>
-      <a href="#training-tracksuits">Tracksuits</a>
-      <a href="#training-compression">Compression Wear</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDrop(this)">Training</button>
+    <div class="dropdown-content">
+      <div onclick="scrollToSection('training-tops')">Tops</div>
+      <div onclick="scrollToSection('training-shorts')">Shorts</div>
+      <div onclick="scrollToSection('training-tracksuits')">Tracksuits</div>
+      <div onclick="scrollToSection('training-compression')">Compression Wear</div>
     </div>
   </div>
 
   <!-- LIFESTYLE -->
-  <div class="accordion">
-    <div class="accordion-header" onclick="toggleAcc(this)">Lifestyle <span>+</span></div>
-    <div class="panel">
-      <a href="#life-hoodies">Hoodies</a>
-      <a href="#life-jackets">Jackets</a>
-      <a href="#life-joggers">Joggers</a>
-      <a href="#life-tees">T-Shirts</a>
+  <div class="dropdown">
+    <button class="dropbtn" onclick="toggleDrop(this)">Lifestyle</button>
+    <div class="dropdown-content">
+      <div onclick="scrollToSection('life-hoodies')">Hoodies</div>
+      <div onclick="scrollToSection('life-jackets')">Jackets</div>
+      <div onclick="scrollToSection('life-joggers')">Joggers</div>
+      <div onclick="scrollToSection('life-tshirts')">T-Shirts</div>
     </div>
   </div>
 
 </div>
 
-<!-- PRODUCTS TEMPLATE (example style repeated 3 each) -->
-
-<!-- FOOTBALL KITS -->
+<!-- ================= FOOTBALL ================= -->
 <section class="products" id="football-kits">
 <div class="section-title">Football Kits</div>
 <div class="product-grid">
-
-<div class="product-card">
-<img src="../Men_Images/fk1.jpg">
-<h3>Elite Kit</h3>
-<select><option>S</option><option>M</option><option>L</option></select>
-<button class="add-btn">Add to Cart</button>
-</div>
-
-<div class="product-card">
-<img src="../Men_Images/fk2.jpg">
-<h3>Strike Kit</h3>
-<select><option>S</option><option>M</option><option>L</option></select>
-<button class="add-btn">Add to Cart</button>
-</div>
-
-<div class="product-card">
-<img src="../Men_Images/fk3.jpg">
-<h3>Pro Kit</h3>
-<select><option>S</option><option>M</option><option>L</option></select>
-<button class="add-btn">Add to Cart</button>
-</div>
-
+<div class="product-card"><img src="../Men_Images/fk1.jpg"><h3>Elite Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
 </div>
 </section>
 
-<!-- (Repeat same structure for ALL other categories: kept minimal here for readability but FULL in final file below) -->
-
-<!-- FOOTBALL TRACKSUITS -->
 <section class="products" id="football-tracksuits">
 <div class="section-title">Football Tracksuits</div>
 <div class="product-grid">
-<div class="product-card"><img src="../Men_Images/ft1.jpg"><h3>Black Set</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add to Cart</button></div>
-<div class="product-card"><img src="../Men_Images/ft2.jpg"><h3>Grey Set</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add to Cart</button></div>
-<div class="product-card"><img src="../Men_Images/ft3.jpg"><h3>Blue Set</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add to Cart</button></div>
+<div class="product-card"><img src="../Men_Images/ft1.jpg"><h3>Pro Tracksuit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
 </div>
 </section>
 
-<!-- (Same pattern continues for ALL sections: basketball, handball, training, lifestyle) -->
+<section class="products" id="football-hoodies">
+<div class="section-title">Football Hoodies</div>
+<div class="product-grid">
+<div class="product-card"><img src="../Men_Images/fh1.jpg"><h3>Storm Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
+</section>
+
+<section class="products" id="football-jackets">
+<div class="section-title">Football Jackets</div>
+<div class="product-grid">
+<div class="product-card"><img src="../Men_Images/fj1.jpg"><h3>Wind Jacket</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
+</section>
+
+<!-- ================= TRAINING ================= -->
+<section class="products" id="training-tops"><div class="section-title">Training Tops</div></section>
+<section class="products" id="training-shorts"><div class="section-title">Training Shorts</div></section>
+<section class="products" id="training-tracksuits"><div class="section-title">Training Tracksuits</div></section>
+<section class="products" id="training-compression"><div class="section-title">Compression Wear</div></section>
+
+<!-- ================= LIFESTYLE ================= -->
+<section class="products" id="life-hoodies"><div class="section-title">Lifestyle Hoodies</div></section>
+<section class="products" id="life-jackets"><div class="section-title">Lifestyle Jackets</div></section>
+<section class="products" id="life-joggers"><div class="section-title">Joggers</div></section>
+<section class="products" id="life-tshirts"><div class="section-title">T-Shirts</div></section>
 
 <script>
 
-function goHome(){
-  window.location.href="../index.html";
-}
-
-function goToCart(){
-  window.location.href="../cart.html";
-}
+function goHome(){ window.location.href="../index.html"; }
+function goToCart(){ window.location.href="../cart.html"; }
 
 function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-/* ACCORDION (auto close others) */
-function toggleAcc(el){
-  let panels = document.querySelectorAll(".panel");
-  let headers = document.querySelectorAll(".accordion-header");
+function toggleDrop(btn){
+  let parent = btn.parentElement;
 
-  panels.forEach(p => {
-    if(p !== el.nextElementSibling){
-      p.style.maxHeight = null;
-    }
+  document.querySelectorAll(".dropdown").forEach(d=>{
+    if(d !== parent) d.classList.remove("active");
   });
 
-  headers.forEach(h => {
-    if(h !== el) h.querySelector("span").innerText = "+";
-  });
+  parent.classList.toggle("active");
+}
 
-  let panel = el.nextElementSibling;
-  let span = el.querySelector("span");
-
-  if(panel.style.maxHeight){
-    panel.style.maxHeight = null;
-    span.innerText = "+";
-  } else {
-    panel.style.maxHeight = panel.scrollHeight + "px";
-    span.innerText = "-";
+document.addEventListener("click", function(e){
+  if(!e.target.closest(".dropdown")){
+    document.querySelectorAll(".dropdown").forEach(d=>d.classList.remove("active"));
   }
-}
-
-/* CART */
-function updateCartCount(){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("cart-count").innerText = cart.length;
-}
-updateCartCount();
+});
 
 </script>
 
