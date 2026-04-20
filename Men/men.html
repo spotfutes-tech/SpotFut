@@ -16,7 +16,7 @@ body {
   color: white;
 }
 
-/* HEADER (same as soccer style) */
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
@@ -38,7 +38,6 @@ header {
 
 .cart {
   cursor: pointer;
-  font-weight: 500;
 }
 
 #cart-count {
@@ -50,7 +49,7 @@ header {
   margin-left: 6px;
 }
 
-/* HERO (small like soccer) */
+/* HERO */
 .hero {
   height: 15vh;
   background: url('../Images/Men.jpg') center/cover no-repeat;
@@ -58,7 +57,6 @@ header {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 5%;
   position: relative;
 }
 
@@ -68,8 +66,6 @@ header {
   width:100%;
   height:100%;
   background:rgba(0,0,0,0.6);
-  top:0;
-  left:0;
 }
 
 .hero-content {
@@ -79,19 +75,17 @@ header {
 
 .hero-content h1 {
   font-size: 42px;
-  letter-spacing: 2px;
 }
 
 .hero-content p {
-  margin-top: 10px;
   opacity: 0.8;
 }
 
-/* CATEGORY JUMP BAR */
+/* CATEGORY NAV */
 .categories {
   padding: 25px 8%;
   display: flex;
-  gap: 15px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -100,8 +94,8 @@ header {
   border: 1px solid #333;
   background: transparent;
   color: white;
-  cursor: pointer;
   border-radius: 20px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
@@ -110,7 +104,7 @@ header {
   border-color: #c200ff;
 }
 
-/* PRODUCT SECTION */
+/* PRODUCTS */
 .products {
   padding: 30px 8%;
 }
@@ -122,7 +116,6 @@ header {
   padding-left: 10px;
 }
 
-/* GRID */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
@@ -147,6 +140,16 @@ header {
   aspect-ratio: 3/4;
   object-fit: contain;
   background: #0a0a0a;
+}
+
+/* SIZE SELECT */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #000;
+  color: white;
+  border: 1px solid #333;
 }
 
 /* BUTTON */
@@ -184,13 +187,54 @@ header {
   </div>
 </section>
 
-<!-- CATEGORY JUMP -->
+<!-- CATEGORY NAV -->
 <div class="categories">
+  <button class="cat-btn" onclick="scrollToSection('all')">All</button>
   <button class="cat-btn" onclick="scrollToSection('kits')">Kits</button>
   <button class="cat-btn" onclick="scrollToSection('tracksuits')">Tracksuits</button>
   <button class="cat-btn" onclick="scrollToSection('hoodies')">Hoodies</button>
   <button class="cat-btn" onclick="scrollToSection('jackets')">Jackets</button>
 </div>
+
+<!-- ALL (optional showcase section) -->
+<section class="products" id="all">
+
+  <div class="section-title">Featured</div>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="../Men_Images/p1.jpg">
+      <h3>Elite Pro Kit</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/p2.jpg">
+      <h3>Urban Tracksuit</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/p3.jpg">
+      <h3>Street Hoodie</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
 
 <!-- KITS -->
 <section class="products" id="kits">
@@ -198,9 +242,30 @@ header {
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="../Men_Images/SF-KIT-01.jpg">
-      <h3>Elite Kit</h3>
-      <button class="add-btn">View</button>
+      <img src="../Men_Images/kit1.jpg">
+      <h3>Elite Kit Black</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/kit2.jpg">
+      <h3>Elite Kit White</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/kit3.jpg">
+      <h3>Elite Kit Red</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
     </div>
 
   </div>
@@ -212,9 +277,30 @@ header {
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="../Men_Images/SF-TRK-01.jpg">
-      <h3>Urban Tracksuit</h3>
-      <button class="add-btn">View</button>
+      <img src="../Men_Images/tr1.jpg">
+      <h3>Urban Tracksuit Black</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/tr2.jpg">
+      <h3>Urban Tracksuit Grey</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/tr3.jpg">
+      <h3>Urban Tracksuit Blue</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
     </div>
 
   </div>
@@ -226,9 +312,30 @@ header {
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="../Men_Images/SF-HOD-01.jpg">
-      <h3>Street Hoodie</h3>
-      <button class="add-btn">View</button>
+      <img src="../Men_Images/h1.jpg">
+      <h3>Street Hoodie Black</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/h2.jpg">
+      <h3>Street Hoodie Grey</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/h3.jpg">
+      <h3>Street Hoodie Purple</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
     </div>
 
   </div>
@@ -240,9 +347,30 @@ header {
   <div class="product-grid">
 
     <div class="product-card">
-      <img src="../Men_Images/SF-JKT-01.jpg">
-      <h3>Performance Jacket</h3>
-      <button class="add-btn">View</button>
+      <img src="../Men_Images/j1.jpg">
+      <h3>Wind Jacket Black</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/j2.jpg">
+      <h3>Wind Jacket Grey</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/j3.jpg">
+      <h3>Wind Jacket Blue</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn">Add to Cart</button>
     </div>
 
   </div>
