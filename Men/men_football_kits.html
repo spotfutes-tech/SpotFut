@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpotFut | Football Kits</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  border-bottom: 1px solid #1e1e1e;
+  position: sticky;
+  top: 0;
+  background: #0a0a0a;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cart {
+  cursor: pointer;
+}
+
+#cart-count {
+  background: white;
+  color: black;
+  padding: 3px 8px;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+/* HERO */
+.hero {
+  height: 35vh;
+  background: url('../Images/Football.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 38px;
+}
+
+.hero-content p {
+  opacity: 0.8;
+}
+
+/* PRODUCTS */
+.products {
+  padding: 30px 8%;
+}
+
+.section-title {
+  font-size: 18px;
+  margin: 40px 0 20px;
+  border-left: 3px solid white;
+  padding-left: 10px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 30px;
+}
+
+/* CARD */
+.product-card {
+  background: #111;
+  padding: 18px;
+  border: 1px solid #1e1e1e;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+/* IMAGE */
+.product-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  background: #0a0a0a;
+}
+
+/* SIZE */
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #000;
+  color: white;
+  border: 1px solid #333;
+}
+
+/* BUTTON */
+.add-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: linear-gradient(45deg,#6a00ff,#ff00cc);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* BACK BUTTON */
+.back {
+  padding: 12px 8%;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.back:hover {
+  opacity: 1;
+}
+
+@media(max-width:768px){
+.hero-content h1 { font-size: 24px; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo" onclick="goBack()">← FOOTBALL KITS</div>
+  <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>FOOTBALL KITS</h1>
+    <p>Elite performance kits built for speed & precision</p>
+  </div>
+</section>
+
+<div class="back" onclick="goBack()">← Back to Men</div>
+
+<!-- PRODUCTS -->
+<section class="products">
+
+  <div class="section-title">Latest Kits</div>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="../Men_Images/football_kit1.jpg">
+      <h3>Elite Pro Kit Black</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn" onclick="addToCart('FK1', this)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/football_kit2.jpg">
+      <h3>Velocity Kit White</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn" onclick="addToCart('FK2', this)">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../Men_Images/football_kit3.jpg">
+      <h3>Strike Kit Red</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button class="add-btn" onclick="addToCart('FK3', this)">Add to Cart</button>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+
+function goBack(){
+  window.location.href="men.html";
+}
+
+function goToCart(){
+  window.location.href="cart.html";
+}
+
+/* CART SYSTEM */
+function addToCart(id, btn){
+
+  let card = btn.closest(".product-card");
+  let size = card.querySelector("select").value;
+
+  if(!size || size === "Select Size"){
+    alert("Select size first");
+    return;
+  }
+
+  let img = card.querySelector("img").src;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart.push({
+    id,
+    size,
+    image: img,
+    quantity: 1
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cart-count").innerText = cart.length;
+}
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>
