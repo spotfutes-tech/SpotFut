@@ -260,23 +260,23 @@ select {
   <h2>Categories</h2>
 
   <div class="category-grid">
-    <div class="category-card">
-      <span class="cat-label">MEN</span>
-      <img src="SF-SJM-B001_1.jpg">
-      <div class="explore-btn" onclick="document.getElementById('men').scrollIntoView()">Explore Men</div>
+    <div class="category-card" onclick="scrollToSection('men')">
+    <span class="cat-label">MEN</span>
+    <img src="SF-SJM-B001_1.jpg">
+    <div class="explore-btn">Explore Men</div>
     </div>
 
-    <div class="category-card">
-      <span class="cat-label">WOMEN</span>
-      <img src="SF-SJF-S001_1.png">
-      <div class="explore-btn" onclick="document.getElementById('women').scrollIntoView()">Explore Women</div>
-    </div>
+    <div class="category-card" onclick="scrollToSection('women')">
+  <span class="cat-label">WOMEN</span>
+  <img src="SF-SJF-S001_1.png">
+  <div class="explore-btn">Explore Women</div>
+</div>
 
-    <div class="category-card">
-      <span class="cat-label">JUNIORS</span>
-      <img src="Desert Sand Elite.png">
-      <div class="explore-btn" onclick="document.getElementById('junior').scrollIntoView()">Explore Juniors</div>
-    </div>
+<div class="category-card" onclick="scrollToSection('junior')">
+  <span class="cat-label">JUNIORS</span>
+  <img src="Desert Sand Elite.png">
+  <div class="explore-btn">Explore Juniors</div>
+</div>
   </div>
 </section>
 
@@ -943,6 +943,11 @@ function goToCart(){ window.location.href="../cart.html"; }
 
 updateCartCount();
 
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({
+    behavior: "smooth"
+  });
+}
 </script>
 
 </body>
