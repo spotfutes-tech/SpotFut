@@ -81,7 +81,7 @@ header {
   opacity: 0.8;
 }
 
-/* NAV BAR */
+/* NAV */
 .nav {
   display: flex;
   gap: 18px;
@@ -116,8 +116,11 @@ header {
   transform: translateY(-10px);
   pointer-events: none;
   transition: all 0.3s ease;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
+/* desktop hover */
 .nav-item:hover .dropdown {
   opacity: 1;
   transform: translateY(0);
@@ -137,7 +140,7 @@ header {
   color: #c200ff;
 }
 
-/* MOBILE CLICK SUPPORT */
+/* mobile + click active */
 .dropdown.active {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -327,19 +330,20 @@ function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-/* MOBILE DROPDOWN TOGGLE */
+/* CLEAN AUTO-CLOSE DROPDOWN SYSTEM */
 function toggleDropdown(el){
 
   let all = document.querySelectorAll(".dropdown");
 
+  let current = el.querySelector(".dropdown");
+
   all.forEach(d => {
-    if(d !== el.querySelector(".dropdown")){
+    if(d !== current){
       d.classList.remove("active");
     }
   });
 
-  let dd = el.querySelector(".dropdown");
-  dd.classList.toggle("active");
+  current.classList.toggle("active");
 }
 
 /* CART */
