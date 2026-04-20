@@ -81,9 +81,7 @@ header {
   opacity: 0.8;
 }
 
-/* ===================== */
-/* DROPDOWN NAV (NEW UX) */
-/* ===================== */
+/* ================= DROPDOWN NAV ================= */
 
 .nav-wrap {
   display: flex;
@@ -104,7 +102,6 @@ header {
   border-radius: 25px;
   cursor: pointer;
   transition: 0.3s;
-  font-weight: 500;
 }
 
 .dropbtn:hover {
@@ -112,7 +109,6 @@ header {
   border-color: #c200ff;
 }
 
-/* dropdown menu */
 .dropdown-content {
   position: absolute;
   top: 48px;
@@ -128,10 +124,8 @@ header {
   transform: translateY(-10px);
   transition: all 0.3s ease;
   pointer-events: none;
-  z-index: 999;
 }
 
-/* active dropdown */
 .dropdown.active .dropdown-content {
   max-height: 300px;
   opacity: 1;
@@ -143,7 +137,6 @@ header {
   padding: 12px 14px;
   cursor: pointer;
   font-size: 14px;
-  transition: 0.2s;
   border-bottom: 1px solid #1f1f1f;
 }
 
@@ -170,16 +163,10 @@ header {
   gap: 30px;
 }
 
-/* CARD */
 .product-card {
   background: #111;
   padding: 18px;
   border: 1px solid #1e1e1e;
-  transition: 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
 }
 
 .product-card img {
@@ -208,11 +195,6 @@ select {
   cursor: pointer;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-.hero-content h1 { font-size: 26px; }
-}
-
 </style>
 </head>
 
@@ -226,136 +208,124 @@ select {
 <section class="hero">
   <div class="hero-content">
     <h1>MEN COLLECTION</h1>
-    <p>Performance engineered for modern movement</p>
+    <p>Built for every sport. Designed for performance.</p>
   </div>
 </section>
 
-<!-- ===================== -->
-<!-- DROPDOWN NAV -->
-<!-- ===================== -->
-
+<!-- ================= NAV ================= -->
 <div class="nav-wrap">
 
+  <!-- FOOTBALL -->
   <div class="dropdown">
     <button class="dropbtn" onclick="toggleDrop(this)">Football</button>
     <div class="dropdown-content">
-      <div onclick="scrollToSection('football')">All Football</div>
+      <div onclick="scrollToSection('football-kits')">Kits</div>
+      <div onclick="scrollToSection('football-tracksuits')">Tracksuits</div>
+      <div onclick="scrollToSection('football-hoodies')">Hoodies</div>
+      <div onclick="scrollToSection('football-jackets')">Jackets</div>
     </div>
   </div>
 
+  <!-- BASKETBALL -->
   <div class="dropdown">
     <button class="dropbtn" onclick="toggleDrop(this)">Basketball</button>
     <div class="dropdown-content">
-      <div onclick="scrollToSection('basketball')">All Basketball</div>
+      <div onclick="scrollToSection('basketball-kits')">Kits</div>
+      <div onclick="scrollToSection('basketball-hoodies')">Hoodies</div>
+      <div onclick="scrollToSection('basketball-shorts')">Shorts</div>
     </div>
   </div>
 
+  <!-- HANDBALL -->
   <div class="dropdown">
     <button class="dropbtn" onclick="toggleDrop(this)">Handball</button>
     <div class="dropdown-content">
-      <div onclick="scrollToSection('handball')">All Handball</div>
-    </div>
-  </div>
-
-  <div class="dropdown">
-    <button class="dropbtn" onclick="toggleDrop(this)">Training</button>
-    <div class="dropdown-content">
-      <div onclick="scrollToSection('training')">All Training</div>
-    </div>
-  </div>
-
-  <div class="dropdown">
-    <button class="dropbtn" onclick="toggleDrop(this)">Lifestyle</button>
-    <div class="dropdown-content">
-      <div onclick="scrollToSection('lifestyle')">All Lifestyle</div>
+      <div onclick="scrollToSection('handball-kits')">Kits</div>
+      <div onclick="scrollToSection('handball-hoodies')">Hoodies</div>
     </div>
   </div>
 
 </div>
 
-<!-- ===================== -->
-<!-- SAME SECTIONS (UNCHANGED) -->
-<!-- ===================== -->
+<!-- =============== FOOTBALL =============== -->
 
-<section class="products" id="football">
-  <div class="section-title">Football</div>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="../Men_Images/football1.jpg">
-      <h3>Elite Football Kit</h3>
-      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-      <button class="add-btn" onclick="addToCart('FB1', this)">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="../Men_Images/football2.jpg">
-      <h3>Strike Pro Kit</h3>
-      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-      <button class="add-btn" onclick="addToCart('FB2', this)">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="../Men_Images/football3.jpg">
-      <h3>Velocity Kit</h3>
-      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-      <button class="add-btn" onclick="addToCart('FB3', this)">Add to Cart</button>
-    </div>
-
-  </div>
+<section class="products" id="football-kits">
+<div class="section-title">Football Kits</div>
+<div class="product-grid">
+  <div class="product-card"><img src="../Men_Images/football1.jpg"><h3>Elite Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
 </section>
 
-<section class="products" id="basketball">
-  <div class="section-title">Basketball</div>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="../Men_Images/bb1.jpg">
-      <h3>Hoops Kit Black</h3>
-      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-      <button class="add-btn" onclick="addToCart('BB1', this)">Add to Cart</button>
-    </div>
-
-  </div>
+<section class="products" id="football-tracksuits">
+<div class="section-title">Football Tracksuits</div>
+<div class="product-grid">
+  <div class="product-card"><img src="../Men_Images/football2.jpg"><h3>Pro Tracksuit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
 </section>
 
-<section class="products" id="handball">
-  <div class="section-title">Handball</div>
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="../Men_Images/hb1.jpg">
-      <h3>Speed Handball Kit</h3>
-      <select><option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option></select>
-      <button class="add-btn" onclick="addToCart('HB1', this)">Add to Cart</button>
-    </div>
-
-  </div>
+<section class="products" id="football-hoodies">
+<div class="section-title">Football Hoodies</div>
+<div class="product-grid">
+  <div class="product-card"><img src="../Men_Images/football3.jpg"><h3>Storm Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
 </section>
 
-<section class="products" id="training">
-  <div class="section-title">Training</div>
+<section class="products" id="football-jackets">
+<div class="section-title">Football Jackets</div>
+<div class="product-grid">
+  <div class="product-card"><img src="../Men_Images/football4.jpg"><h3>Wind Jacket</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
 </section>
 
-<section class="products" id="lifestyle">
-  <div class="section-title">Lifestyle</div>
+<!-- =============== BASKETBALL =============== -->
+
+<section class="products" id="basketball-kits">
+<div class="section-title">Basketball Kits</div>
+<div class="product-grid">
+  <div class="product-card"><img src="../Men_Images/bb1.jpg"><h3>Hoops Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
+</section>
+
+<section class="products" id="basketball-hoodies">
+<div class="section-title">Basketball Hoodies</div>
+<div class="product-grid">
+  <div class="product-card"><img src="../Men_Images/bb2.jpg"><h3>Dunk Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
+</section>
+
+<section class="products" id="basketball-shorts">
+<div class="section-title">Basketball Shorts</div>
+<div class="product-grid">
+  <div class="product-card"><img src="../Men_Images/bb3.jpg"><h3>Arena Shorts</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
+</section>
+
+<!-- =============== HANDBALL =============== -->
+
+<section class="products" id="handball-kits">
+<div class="section-title">Handball Kits</div>
+<div class="product-grid">
+  <div class="product-card"><img src="../Men_Images/hb1.jpg"><h3>Speed Kit</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
+</section>
+
+<section class="products" id="handball-hoodies">
+<div class="section-title">Handball Hoodies</div>
+<div class="product-grid">
+  <div class="product-card"><img src="../Men_Images/hb2.jpg"><h3>Grip Hoodie</h3><select><option>S</option><option>M</option><option>L</option></select><button class="add-btn">Add</button></div>
+</div>
 </section>
 
 <script>
 
-function goHome(){
-  window.location.href="../index.html";
-}
-
-function goToCart(){
-  window.location.href="../cart.html";
-}
+function goHome(){ window.location.href="../index.html"; }
+function goToCart(){ window.location.href="../cart.html"; }
 
 function scrollToSection(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-/* dropdown logic (AUTO CLOSE OTHERS) */
+/* auto close dropdowns */
 function toggleDrop(btn){
   let parent = btn.parentElement;
 
@@ -366,31 +336,11 @@ function toggleDrop(btn){
   parent.classList.toggle("active");
 }
 
-/* CART */
-function addToCart(id, btn){
-  let card = btn.closest(".product-card");
-  let size = card.querySelector("select").value;
-
-  if(!size || size === "Select Size"){
-    alert("Select size first");
-    return;
+document.addEventListener("click", function(e){
+  if(!e.target.closest(".dropdown")){
+    document.querySelectorAll(".dropdown").forEach(d=>d.classList.remove("active"));
   }
-
-  let img = card.querySelector("img").src;
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  cart.push({id,size,image:img,quantity:1});
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  updateCartCount();
-}
-
-function updateCartCount(){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("cart-count").innerText = cart.length;
-}
-
-updateCartCount();
+});
 
 </script>
 
