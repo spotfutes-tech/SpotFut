@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpotFut | Men</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:#0a0a0a;
+color:white;
+font-family:'Inter', sans-serif;
+}
+
+/* HERO */
+.hero{
+height:60vh;
+background:url('Images/Men.jpg') center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+top:0;
+left:0;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-family:'Playfair Display', serif;
+font-size:3.5rem;
+}
+
+.hero p{
+color:#ccc;
+margin-top:10px;
+}
+
+/* FILTER BAR */
+.filters{
+display:flex;
+justify-content:center;
+gap:12px;
+padding:25px 8%;
+flex-wrap:wrap;
+}
+
+.filters button{
+background:transparent;
+border:1px solid #333;
+color:white;
+padding:8px 16px;
+border-radius:20px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.filters button:hover{
+background:#c200ff;
+border-color:#c200ff;
+}
+
+/* PRODUCT GRID */
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+padding:40px 8%;
+}
+
+.product-card{
+text-decoration:none;
+color:white;
+transition:0.3s;
+}
+
+.product-card img{
+width:100%;
+border-radius:12px;
+transition:0.3s;
+}
+
+.product-card:hover img{
+transform:scale(1.05);
+}
+
+.product-card h3{
+margin-top:10px;
+font-size:1rem;
+}
+
+.product-card p{
+color:#aaa;
+margin-top:5px;
+}
+
+/* SECTION TITLE */
+.section-title{
+padding:0 8%;
+font-size:1.8rem;
+margin-top:30px;
+font-family:'Playfair Display', serif;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>Men Collection</h1>
+<p>Performance engineered for modern movement</p>
+</div>
+</section>
+
+<!-- FILTERS (UI ONLY FOR NOW) -->
+<div class="filters">
+<button>All</button>
+<button>Hoodies</button>
+<button>Jackets</button>
+<button>Kits</button>
+<button>New Arrivals</button>
+</div>
+
+<!-- NEW ARRIVALS -->
+<h2 class="section-title">New Arrivals</h2>
+<section class="product-grid">
+
+<a href="#" class="product-card">
+<img src="Images/product1.jpg">
+<h3>Urban Hoodie</h3>
+<p>€49.99</p>
+</a>
+
+<a href="#" class="product-card">
+<img src="Images/product2.jpg">
+<h3>Performance Jacket</h3>
+<p>€69.99</p>
+</a>
+
+<a href="#" class="product-card">
+<img src="Images/product3.jpg">
+<h3>Training Kit</h3>
+<p>€59.99</p>
+</a>
+
+</section>
+
+<!-- HOODIES -->
+<h2 class="section-title">Hoodies</h2>
+<section class="product-grid">
+
+<a href="#" class="product-card">
+<img src="Images/product1.jpg">
+<h3>Black Urban Hoodie</h3>
+<p>€49.99</p>
+</a>
+
+<a href="#" class="product-card">
+<img src="Images/product2.jpg">
+<h3>Grey Street Hoodie</h3>
+<p>€44.99</p>
+</a>
+
+</section>
+
+<!-- JACKETS -->
+<h2 class="section-title">Jackets</h2>
+<section class="product-grid">
+
+<a href="#" class="product-card">
+<img src="Images/product2.jpg">
+<h3>Windbreaker Jacket</h3>
+<p>€69.99</p>
+</a>
+
+</section>
+
+<!-- FOOTER -->
+<footer style="text-align:center;padding:60px 8%;color:#666;">
+© 2026 SpotFut
+</footer>
+
+</body>
+</html>
