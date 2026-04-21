@@ -20,7 +20,6 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 22px 8%;
   border-bottom: 1px solid #1e1e1e;
   position: sticky;
@@ -29,16 +28,8 @@ header {
   z-index: 1000;
 }
 
-.logo {
-  font-weight: 600;
-  letter-spacing: 2px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.cart {
-  cursor: pointer;
-}
+.logo { cursor: pointer; font-size: 14px; }
+.cart { cursor: pointer; }
 
 /* HERO */
 .hero {
@@ -47,44 +38,36 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
   position: relative;
 }
 
 .hero::after {
   content:'';
   position:absolute;
-  width:100%;
-  height:100%;
+  inset:0;
   background:rgba(0,0,0,0.6);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-}
-
-.hero-content h1 {
-  font-size: 42px;
+  text-align: center;
 }
 
 /* NAV */
 .nav {
   display: flex;
-  gap: 18px;
+  gap: 22px;
   padding: 18px 8%;
   border-bottom: 1px solid #1e1e1e;
-  position: sticky;
-  top: 72px;
-  background: #0a0a0a;
-  z-index: 999;
 }
 
+/* NAV ITEM */
 .nav-item {
   position: relative;
   font-size: 14px;
   cursor: pointer;
-  padding: 8px;
+  padding: 10px 6px;
   transition: 0.2s;
 }
 
@@ -92,14 +75,14 @@ header {
   color: #c200ff;
 }
 
-/* IMPORTANT hover bridge fix */
+/* 🔥 KEY FIX: hover bridge (prevents dropdown disappearing) */
 .nav-item::after {
   content: '';
   position: absolute;
-  top: 100%;
   left: 0;
+  top: 100%;
   width: 100%;
-  height: 20px;
+  height: 18px;
 }
 
 /* DROPDOWN */
@@ -108,6 +91,7 @@ header {
   top: 100%;
   left: 0;
   margin-top: 10px;
+
   background: #111;
   border: 1px solid #222;
   min-width: 190px;
@@ -115,10 +99,12 @@ header {
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
+
   transition: 0.25s ease;
+  z-index: 999;
 }
 
-/* smooth hover */
+/* ⭐ CRITICAL FIX: keep open on BOTH hover areas */
 .nav-item:hover .dropdown,
 .dropdown:hover {
   opacity: 1;
@@ -126,12 +112,14 @@ header {
   transform: translateY(0);
 }
 
+/* LINKS */
 .dropdown a {
   display: block;
   padding: 10px 12px;
-  color: white;
   text-decoration: none;
+  color: white;
   font-size: 13px;
+  transition: 0.2s;
 }
 
 .dropdown a:hover {
@@ -139,9 +127,48 @@ header {
   color: #c200ff;
 }
 
-/* mobile */
-@media(max-width:768px){
-  .nav{flex-wrap:wrap;}
+/* GRID */
+.products {
+  padding: 30px 8%;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 30px;
+}
+
+.product-card {
+  background: #111;
+  padding: 18px;
+  border: 1px solid #1e1e1e;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  background: #0a0a0a;
+}
+
+select, button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  color: white;
+}
+
+select { background: #000; border: 1px solid #333; }
+
+button {
+  background: linear-gradient(45deg,#6a00ff,#ff00cc);
+  border: none;
+  cursor: pointer;
 }
 
 </style>
@@ -154,75 +181,48 @@ header {
   <div class="cart" onclick="goToCart()">🛒</div>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<div class="hero">
   <div class="hero-content">
     <h1>MEN COLLECTION</h1>
   </div>
-</section>
+</div>
 
+<!-- NAV -->
 <div class="nav">
 
   <div class="nav-item">All</div>
 
   <div class="nav-item">
-    Football ▾
+    Football
     <div class="dropdown">
-      <a href="product.html?sport=football&type=kits">Kits</a>
-      <a href="product.html?sport=football&type=tracksuits">Tracksuits</a>
-      <a href="product.html?sport=football&type=hoodies">Hoodies</a>
-      <a href="product.html?sport=football&type=jackets">Jackets</a>
+      <a href="product.html?cat=football_kits">Kits</a>
+      <a href="product.html?cat=football_tracksuits">Tracksuits</a>
+      <a href="product.html?cat=football_hoodies">Hoodies</a>
+      <a href="product.html?cat=football_jackets">Jackets</a>
     </div>
   </div>
 
   <div class="nav-item">
-    Basketball ▾
+    Basketball
     <div class="dropdown">
-      <a href="product.html?sport=basketball&type=kits">Kits</a>
-      <a href="product.html?sport=basketball&type=hoodies">Hoodies</a>
-      <a href="product.html?sport=basketball&type=shorts">Shorts</a>
+      <a href="product.html?cat=basketball_kits">Kits</a>
+      <a href="product.html?cat=basketball_hoodies">Hoodies</a>
+      <a href="product.html?cat=basketball_shorts">Shorts</a>
     </div>
   </div>
 
   <div class="nav-item">
-    Handball ▾
+    Handball
     <div class="dropdown">
-      <a href="product.html?sport=handball&type=kits">Kits</a>
-      <a href="product.html?sport=handball&type=tracksuits">Tracksuits</a>
-      <a href="product.html?sport=handball&type=hoodies">Hoodies</a>
-      <a href="product.html?sport=handball&type=shorts">Shorts</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    Training ▾
-    <div class="dropdown">
-      <a href="product.html?sport=training&type=tops">Tops</a>
-      <a href="product.html?sport=training&type=shorts">Shorts</a>
-      <a href="product.html?sport=training&type=tracksuits">Tracksuits</a>
-      <a href="product.html?sport=training&type=compression">Compression</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    Lifestyle ▾
-    <div class="dropdown">
-      <a href="product.html?sport=lifestyle&type=hoodies">Hoodies</a>
-      <a href="product.html?sport=lifestyle&type=jackets">Jackets</a>
-      <a href="product.html?sport=lifestyle&type=joggers">Joggers</a>
-      <a href="product.html?sport=lifestyle&type=tshirts">T-Shirts</a>
+      <a href="product.html?cat=handball_kits">Kits</a>
+      <a href="product.html?cat=handball_tracksuits">Tracksuits</a>
+      <a href="product.html?cat=handball_hoodies">Hoodies</a>
+      <a href="product.html?cat=handball_shorts">Shorts</a>
     </div>
   </div>
 
 </div>
-
-<script>
-function goHome(){
-  window.location.href="../index.html";
-}
-function goToCart(){
-  window.location.href="../cart.html";
-}
-</script>
 
 </body>
 </html>
