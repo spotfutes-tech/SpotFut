@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpotFut | Juniors </title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin: 0;
+  font-family: Poppins;
+  background: #0a0a0a;
+  color: white;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 8%;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.logo { cursor: pointer; }
+.cart { cursor: pointer; }
+
+/* HERO */
+.hero {
+  height: 45vh;
+  background: url('../Images/Junior.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 42px;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 22px;
+  padding: 18px 8%;
+  border-bottom: 1px solid #1e1e1e;
+  position: sticky;
+  top: 0;
+  background: #0a0a0a;
+  z-index: 1000;
+}
+
+/* NAV ITEM */
+.nav-item {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+.nav-item:hover {
+  color: #c200ff;
+}
+
+/* dropdown hover stability */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 25px;
+}
+
+/* dropdown */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  border: 1px solid #222;
+  min-width: 180px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.25s;
+}
+
+.nav-item:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background: #1a1a1a;
+  color: #c200ff;
+}
+
+/* SECTION TITLE */
+.section-title {
+  padding: 30px 8% 10px;
+  font-size: 18px;
+  border-left: 3px solid white;
+  margin-left: 8%;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 20px 8%;
+}
+
+/* CARD */
+.card {
+  background: #111;
+  padding: 15px;
+  border: 1px solid #1e1e1e;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  background: #000;
+}
+
+/* SIZE */
+select {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #000;
+  color: white;
+  border: 1px solid #333;
+}
+
+/* BUTTON */
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: linear-gradient(45deg,#6a00ff,#ff00cc);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo" onclick="goHome()">← SPOTFUT</div>
+  <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>JUNIORS COLLECTION</h1>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+
+  <!-- ALL -->
+  <div class="nav-item" onclick="scrollTo('all')">All</div>
+
+  <!-- FOOTBALL -->
+  <div class="nav-item">
+    Football
+    <div class="dropdown">
+      <a href="../product.html?cat=football_kits_juniors">Kits</a>
+      <a href="../product.html?cat=football_tracksuits_juniors">Tracksuits</a>
+      <a href="../product.html?cat=football_hoodies_juniors">Hoodies</a>
+      <a href="../product.html?cat=football_jackets_juniors">Jackets</a>
+    </div>
+  </div>
+
+  <!-- BASKETBALL -->
+  <div class="nav-item">
+    Basketball
+    <div class="dropdown">
+      <a href="../product.html?cat=basketball_kits_juniors">Kits</a>
+      <a href="../product.html?cat=basketball_hoodies_juniors">Hoodies</a>
+      <a href="../product.html?cat=basketball_shorts_juniors">Shorts</a>
+    </div>
+  </div>
+
+  <!-- HANDBALL -->
+  <div class="nav-item">
+    Handball
+    <div class="dropdown">
+      <a href="../product.html?cat=handball_kits_juniors">Kits</a>
+      <a href="../product.html?cat=handball_tracksuits_juniors">Tracksuits</a>
+      <a href="../product.html?cat=handball_hoodies_juniors">Hoodies</a>
+      <a href="../product.html?cat=handball_shorts_juniors">Shorts</a>
+    </div>
+  </div>
+
+  <!-- TRAINING -->
+  <div class="nav-item">
+    Training
+    <div class="dropdown">
+      <a href="../product.html?cat=training_tops_juniors">Tops</a>
+      <a href="../product.html?cat=training_tracksuits_juniors">Tracksuits</a>
+      <a href="../product.html?cat=training_compression_juniors">Compression</a>
+    </div>
+  </div>
+
+  <!-- LIFESTYLE -->
+  <div class="nav-item">
+    Lifestyle
+    <div class="dropdown">
+      <a href="../product.html?cat=lifestyle_hoodies_juniors">Hoodies</a>
+      <a href="../product.html?cat=lifestyle_jackets_juniors">Jackets</a>
+      <a href="../product.html?cat=lifestyle_joggers_juniors">Joggers</a>
+      <a href="../product.html?cat=lifestyle_tshirts_juniors">T-Shirts</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FEATURED PRODUCTS (MEN PAGE) -->
+<div id="all">
+
+<div class="section-title">Featured Products</div>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="../Men_Images/p1.jpg">
+    <h3>Elite Pro Kit</h3>
+    <select>
+      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+    </select>
+    <button onclick="add('P1', this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="../Juniors/p2.jpg">
+    <h3>Urban Tracksuit</h3>
+    <select>
+      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+    </select>
+    <button onclick="add('P2', this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="../Juniors_Images/p3.jpg">
+    <h3>Street Hoodie</h3>
+    <select>
+      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+    </select>
+    <button onclick="add('P3', this)">Add to Cart</button>
+  </div>
+
+</div>
+
+</div>
+
+<script>
+
+function goHome(){
+  window.location.href="../index.html";
+}
+
+function goCart(){
+  window.location.href="../cart.html";
+}
+
+function scrollTo(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* CART */
+function add(id, btn){
+
+  let card = btn.closest(".card");
+  let size = card.querySelector("select").value;
+
+  if(size === "Select Size"){
+    alert("Select size first");
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({id, size});
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  updateCart();
+}
+
+function updateCart(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("count").innerText = cart.length;
+}
+
+updateCart();
+
+</script>
+
+</body>
+</html>
