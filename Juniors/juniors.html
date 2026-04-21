@@ -8,10 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 body {
   margin: 0;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   background: #0a0a0a;
   color: white;
 }
@@ -78,7 +77,6 @@ header {
   background: #111;
   border: 1px solid #222;
   min-width: 180px;
-
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
@@ -154,58 +152,80 @@ button {
 
 /* ================= MOBILE FIX ONLY ================= */
 @media (max-width: 768px) {
-
   header {
     padding: 15px 5%;
   }
 
   .hero {
-    height: 35vh;
+    height: 30vh;
   }
 
   .hero h1 {
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     padding: 0 10px;
   }
 
+  /* Make Nav stacked */
   .nav {
     flex-direction: column;
-    gap: 10px;
+    gap: 0;
+    padding: 5px 5%;
   }
 
-  /* disable hover dropdown */
+  .nav-item {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #1e1e1e;
+    font-size: 16px;
+  }
+
+  /* Reset desktop hover for mobile */
   .nav-item:hover .dropdown {
-    display: none;
+    transform: none;
   }
 
-  /* FIX MOBILE CLICK DROPDOWN */
+  /* Mobile Dropdown Styling */
   .dropdown {
-    position: relative;
+    position: relative; /* Push content down */
+    top: 0;
+    background: #050505;
+    border: none;
+    width: 100%;
+    min-width: unset;
+    
+    /* Animation settings */
     max-height: 0;
     overflow: hidden;
     opacity: 1;
     visibility: visible;
     transform: none;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease-out;
   }
 
+  /* Expanded state */
   .nav-item.active .dropdown {
-    max-height: 500px;
+    max-height: 400px;
+    margin-top: 10px;
+  }
+
+  .dropdown a {
+    padding: 12px 15px;
+    border-left: 2px solid #c200ff;
+    font-size: 14px;
   }
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 12px;
     padding: 15px 5%;
   }
 
   .section-title {
-    margin-left: 0;
-    padding: 20px 5%;
+    margin-left: 5%;
+    padding: 20px 0;
   }
 }
-
 </style>
 </head>
 
@@ -221,7 +241,6 @@ button {
 </div>
 
 <div class="nav">
-
   <div class="nav-item" onclick="scrollTo('all')">All</div>
 
   <div class="nav-item">
@@ -271,39 +290,34 @@ button {
       <a href="../product.html?cat=lifestyle_tshirts_juniors">T-Shirts</a>
     </div>
   </div>
-
 </div>
 
 <div id="all">
+  <div class="section-title">Featured Products</div>
+  <div class="grid">
+    <div class="card">
+      <img src="../Juniors_Images/p1.jpg" alt="Elite Pro Kit">
+      <h3>Elite Pro Kit</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button onclick="add('P1', this)">Add to Cart</button>
+    </div>
 
-<div class="section-title">Featured Products</div>
-
-<div class="grid">
-
-  <div class="card">
-    <img src="../Juniors_Images/p1.jpg">
-    <h3>Elite Pro Kit</h3>
-    <select>
-      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-    </select>
-    <button onclick="add('P1', this)">Add to Cart</button>
+    <div class="card">
+      <img src="../Juniors_Images/p2.jpg" alt="Urban Tracksuit">
+      <h3>Urban Tracksuit</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button onclick="add('P2', this)">Add to Cart</button>
+    </div>
   </div>
-
-  <div class="card">
-    <img src="../Juniors_Images/p2.jpg">
-    <h3>Urban Tracksuit</h3>
-    <select>
-      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-    </select>
-    <button onclick="add('P2', this)">Add to Cart</button>
-  </div>
-
-</div>
-
 </div>
 
 <script>
-
 function goHome(){
   window.location.href="../index.html";
 }
@@ -316,9 +330,8 @@ function scrollTo(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-/* CART */
+/* CART LOGIC */
 function add(id, btn){
-
   let card = btn.closest(".card");
   let size = card.querySelector("select").value;
 
@@ -329,9 +342,7 @@ function add(id, btn){
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push({id, size});
-
   localStorage.setItem("cart", JSON.stringify(cart));
-
   updateCart();
 }
 
@@ -342,31 +353,35 @@ function updateCart(){
 
 updateCart();
 
-/* MOBILE FIX */
+/* MOBILE NAVIGATION ACCORDION */
 document.querySelectorAll(".nav-item").forEach(item => {
-
   item.addEventListener("click", function(e){
-
+    // Don't run logic on desktop
     if(window.innerWidth > 768) return;
+
+    // If clicking a direct link inside the dropdown, allow it to navigate
+    if(e.target.tagName === 'A') return;
 
     e.stopPropagation();
 
-    const isOpen = item.classList.contains("active");
+    const isOpen = this.classList.contains("active");
 
+    // Close all other items first
     document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("active"));
 
+    // If the clicked one wasn't open, open it
     if(!isOpen){
-      item.classList.add("active");
+      this.classList.add("active");
     }
-
   });
-
 });
 
+// Close dropdowns when clicking anywhere else on the screen
 document.addEventListener("click", () => {
-  document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("active"));
+  if(window.innerWidth <= 768) {
+    document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("active"));
+  }
 });
-
 </script>
 
 </body>
