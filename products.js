@@ -59,24 +59,46 @@ const PRODUCTS = {
 const CATEGORIES = {
 
   /* FOOTBALL */
-  football_kits: [
+  football_kits_men: [
     "SF-SJM-S001",
     "SF-SJM-S004",
     "SF-SJM-S003"
   ],
 
-  football_tracksuits: [
+  football_tracksuits_men: [
     "SF-SJM-S005",
     "SF-SJM-S007"
   ],
 
-  football_hoodies: [
+  football_hoodies_men: [
     "SF-UHM-S001",
     "SF-UHM-S002",
     "SF-UHM-S003"
   ],
 
-  football_jackets: [
+  football_jackets_men: [
+    "varsity-black",
+    "varsity-green",
+    "varsity-blue"
+  ],
+   football_kits_women: [
+    "SF-SJM-S001",
+    "SF-SJM-S004",
+    "SF-SJM-S003"
+  ],
+
+  football_tracksuits_women: [
+    "SF-SJM-S005",
+    "SF-SJM-S007"
+  ],
+
+  football_hoodies_women: [
+    "SF-UHM-S001",
+    "SF-UHM-S002",
+    "SF-UHM-S003"
+  ],
+
+  football_jackets_women: [
     "varsity-black",
     "varsity-green",
     "varsity-blue"
@@ -84,41 +106,70 @@ const CATEGORIES = {
 
 
   /* BASKETBALL (future ready placeholders) */
-  basketball_kits: [
+  basketball_kits_men: [
     "SF-SJM-S001",
     "SF-SJM-S004"
   ],
 
-  basketball_hoodies: [
+  basketball_hoodies_men: [
+    "SF-UHM-S001",
+    "SF-UHM-S002"
+  ],
+   basketball_kits_women: [
+    "SF-SJM-S001",
+    "SF-SJM-S004"
+  ],
+
+  basketball_hoodies_women: [
     "SF-UHM-S001",
     "SF-UHM-S002"
   ],
 
 
   /* HANDBALL */
-  handball_kits: [
+  handball_kits_men: [
+    "SF-SJM-S003",
+    "SF-SJM-S005"
+  ],
+   handball_kits_women: [
     "SF-SJM-S003",
     "SF-SJM-S005"
   ],
 
 
   /* TRAINING */
-  training_tops: [
+  training_tops_men: [
     "SF-UHM-S001"
   ],
 
-  training_tracksuits: [
+  training_tracksuits_men: [
+    "SF-SJM-S007"
+  ],
+   training_tops_women: [
+    "SF-UHM-S001"
+  ],
+
+  training_tracksuits_women: [
     "SF-SJM-S007"
   ],
 
 
   /* LIFESTYLE */
-  lifestyle_hoodies: [
+  lifestyle_hoodies_men: [
     "SF-UHM-S002",
     "SF-UHM-S003"
   ],
 
-  lifestyle_jackets: [
+  lifestyle_jackets_men: [
+    "varsity-solar",
+    "varsity-sky"
+  ],
+   lifestyle_hoodies_women: [
+    "SF-UHM-S002",
+    "SF-UHM-S003"
+  ],
+
+  lifestyle_jackets_women: [
     "varsity-solar",
     "varsity-sky"
   ]
