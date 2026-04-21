@@ -16,7 +16,6 @@ body{
   color:white;
 }
 
-/* HEADER */
 header{
   display:flex;
   justify-content:space-between;
@@ -24,10 +23,9 @@ header{
   border-bottom:1px solid #1e1e1e;
 }
 
-.logo{cursor:pointer}
-.cart{cursor:pointer}
+.logo,.cart{cursor:pointer}
 
-/* NAVBAR */
+/* NAV */
 .nav{
   display:flex;
   gap:22px;
@@ -36,36 +34,29 @@ header{
   position:relative;
 }
 
-/* NAV ITEM */
 .nav-item{
   position:relative;
   cursor:pointer;
-  font-size:14px;
   padding:10px 8px;
-  transition:0.25s;
 }
 
-.nav-item:hover{
-  color:#c200ff;
-}
+.nav-item:hover{color:#c200ff}
 
-/* 🔥 CRITICAL FIX: hover bridge zone */
 .nav-item::after{
   content:'';
   position:absolute;
   top:100%;
   left:0;
   width:100%;
-  height:20px; /* IMPORTANT: prevents hover loss */
+  height:20px;
 }
 
-/* DROPDOWN */
+/* DROPDOWN FIX */
 .dropdown{
   position:absolute;
   top:100%;
   left:0;
   margin-top:10px;
-
   background:#111;
   border:1px solid #222;
   min-width:200px;
@@ -73,11 +64,9 @@ header{
   opacity:0;
   visibility:hidden;
   transform:translateY(10px);
-  transition:all 0.25s ease;
-  z-index:999;
+  transition:0.25s ease;
 }
 
-/* 🔥 KEEP OPEN ON HOVER (FIXED STABILITY) */
 .nav-item:hover .dropdown,
 .dropdown:hover{
   opacity:1;
@@ -85,25 +74,16 @@ header{
   transform:translateY(0);
 }
 
-/* LINKS */
 .dropdown a{
   display:block;
-  padding:10px 12px;
+  padding:10px;
   color:white;
   text-decoration:none;
-  font-size:13px;
-  transition:0.2s;
 }
 
 .dropdown a:hover{
   background:#1a1a1a;
   color:#c200ff;
-}
-
-/* HERO */
-.hero{
-  padding:60px 8%;
-  text-align:center;
 }
 
 /* GRID */
@@ -114,7 +94,6 @@ header{
   padding:20px 8%;
 }
 
-/* CARD */
 .card{
   background:#111;
   padding:15px;
@@ -125,10 +104,8 @@ header{
   width:100%;
   aspect-ratio:3/4;
   object-fit:contain;
-  background:#000;
 }
 
-/* BUTTON */
 button{
   width:100%;
   padding:10px;
@@ -145,26 +122,6 @@ select{
   padding:10px;
   background:#000;
   color:white;
-  border:1px solid #333;
-}
-
-/* MOBILE SAFE */
-@media(max-width:768px){
-  .nav{
-    flex-wrap:wrap;
-  }
-
-  .dropdown{
-    position:relative;
-    opacity:1;
-    visibility:visible;
-    transform:none;
-    margin-top:5px;
-  }
-
-  .nav-item:hover .dropdown{
-    position:relative;
-  }
 }
 
 </style>
@@ -174,7 +131,7 @@ select{
 
 <header>
   <div class="logo" onclick="goBack()">← BACK</div>
-  <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
+  <div class="cart" onclick="goCart()">🛒</div>
 </header>
 
 <!-- NAV -->
@@ -185,57 +142,13 @@ select{
   <div class="nav-item">
     Football ▾
     <div class="dropdown">
-      <a href="product.html?cat=football_kits">Kits</a>
-      <a href="product.html?cat=football_tracksuits">Tracksuits</a>
-      <a href="product.html?cat=football_hoodies">Hoodies</a>
-      <a href="product.html?cat=football_jackets">Jackets</a>
+      <a href="product.html?sport=football&type=kits">Kits</a>
+      <a href="product.html?sport=football&type=tracksuits">Tracksuits</a>
+      <a href="product.html?sport=football&type=hoodies">Hoodies</a>
+      <a href="product.html?sport=football&type=jackets">Jackets</a>
     </div>
   </div>
 
-  <div class="nav-item">
-    Basketball ▾
-    <div class="dropdown">
-      <a href="product.html?cat=basketball_kits">Kits</a>
-      <a href="product.html?cat=basketball_hoodies">Hoodies</a>
-      <a href="product.html?cat=basketball_shorts">Shorts</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    Handball ▾
-    <div class="dropdown">
-      <a href="product.html?cat=handball_kits">Kits</a>
-      <a href="product.html?cat=handball_tracksuits">Tracksuits</a>
-      <a href="product.html?cat=handball_hoodies">Hoodies</a>
-      <a href="product.html?cat=handball_shorts">Shorts</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    Training ▾
-    <div class="dropdown">
-      <a href="product.html?cat=training_tops">Tops</a>
-      <a href="product.html?cat=training_shorts">Shorts</a>
-      <a href="product.html?cat=training_tracksuits">Tracksuits</a>
-      <a href="product.html?cat=training_compression">Compression</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    Lifestyle ▾
-    <div class="dropdown">
-      <a href="product.html?cat=lifestyle_hoodies">Hoodies</a>
-      <a href="product.html?cat=lifestyle_jackets">Jackets</a>
-      <a href="product.html?cat=lifestyle_joggers">Joggers</a>
-      <a href="product.html?cat=lifestyle_tshirts">T-Shirts</a>
-    </div>
-  </div>
-
-</div>
-
-<!-- HERO -->
-<div class="hero">
-  <h1 id="title">Products</h1>
 </div>
 
 <div class="grid" id="grid"></div>
@@ -245,53 +158,34 @@ select{
 <script>
 
 const params = new URLSearchParams(window.location.search);
-const cat = params.get("cat");
+const sport = params.get("sport");
+const type = params.get("type");
+
+const key = sport && type ? `${sport}_${type}` : null;
 
 function render(){
 
-  let items = PRODUCTS[cat] || [];
+  let items = PRODUCTS[key] || [];
 
-  document.getElementById("title").innerText =
-    cat ? cat.replaceAll("_"," ").toUpperCase() : "ALL PRODUCTS";
-
-  document.getElementById("grid").innerHTML = items.map(p => `
+  document.getElementById("grid").innerHTML = items.map(p=>`
     <div class="card">
       <img src="${p.img}">
       <h3>${p.name}</h3>
 
       <select>
         <option>Select Size</option>
-        <option>S</option>
-        <option>M</option>
-        <option>L</option>
-        <option>XL</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
       </select>
 
-      <button onclick="add('${p.id}', this)">Add to Cart</button>
+      <button onclick="add('${p.id}',this)">Add</button>
     </div>
   `).join("");
 }
 
-function add(id, btn){
-
-  let card = btn.closest(".card");
-  let size = card.querySelector("select").value;
-
-  if(size === "Select Size"){
-    alert("Select size first");
-    return;
-  }
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push({id, size});
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCart();
-}
-
-function updateCart(){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("count").innerText = cart.length;
+function add(id,btn){
+  let cart=JSON.parse(localStorage.getItem("cart"))||[];
+  cart.push({id});
+  localStorage.setItem("cart",JSON.stringify(cart));
 }
 
 function goBack(){
@@ -303,7 +197,6 @@ function goCart(){
 }
 
 render();
-updateCart();
 
 </script>
 
