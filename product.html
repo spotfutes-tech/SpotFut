@@ -30,57 +30,72 @@ header{
 /* NAVBAR */
 .nav{
   display:flex;
-  gap:20px;
+  gap:22px;
   padding:15px 8%;
   border-bottom:1px solid #1e1e1e;
+  position:relative;
 }
 
 .nav-item{
   position:relative;
   cursor:pointer;
   font-size:14px;
-  padding:10px 6px; /* 👈 bigger hover zone */
+  padding:12px 8px;
+  transition:0.2s;
 }
 
-/* 🔥 invisible hover bridge */
+.nav-item:hover{
+  color:#c200ff;
+}
+
+/* 🔥 hover bridge (fixes disappearing issue) */
 .nav-item::after{
   content:'';
   position:absolute;
   top:100%;
-  left:0;
-  width:100%;
-  height:12px; /* 👈 KEY FIX */
+  left:-20px;
+  width:140%;
+  height:20px;
 }
 
 /* DROPDOWN */
 .dropdown{
   position:absolute;
-  top:42px; /* slightly lower */
+  top:45px;
   left:0;
   background:#111;
   border:1px solid #222;
-  min-width:180px;
+  min-width:200px;
 
   opacity:0;
-  transform:translateY(15px);
-  pointer-events:none;
+  visibility:hidden;
+  transform:translateY(10px);
 
   transition:all 0.25s ease;
+  z-index:999;
 }
 
-/* 🔥 HOVER STABILITY */
+/* KEEP OPEN ON HOVER */
 .nav-item:hover .dropdown,
+.nav-item:focus-within .dropdown,
 .dropdown:hover{
   opacity:1;
+  visibility:visible;
   transform:translateY(0);
-  pointer-events:auto;
 }
 
-/* MOBILE SUPPORT */
-.dropdown.active{
-  opacity:1 !important;
-  transform:translateY(0) !important;
-  pointer-events:auto !important;
+.dropdown a{
+  display:block;
+  padding:10px 14px;
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+  transition:0.2s;
+}
+
+.dropdown a:hover{
+  background:#1a1a1a;
+  color:#c200ff;
 }
 
 /* HERO */
@@ -140,14 +155,12 @@ select{
   <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
 </header>
 
-<!-- 🔥 NAVBAR -->
+<!-- NAVBAR -->
 <div class="nav">
 
-  <div class="nav-item">
-    All
-  </div>
+  <div class="nav-item">All</div>
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Football ▾
     <div class="dropdown">
       <a href="product.html?cat=football_kits">Kits</a>
@@ -157,7 +170,7 @@ select{
     </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Basketball ▾
     <div class="dropdown">
       <a href="product.html?cat=basketball_kits">Kits</a>
@@ -166,7 +179,7 @@ select{
     </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Handball ▾
     <div class="dropdown">
       <a href="product.html?cat=handball_kits">Kits</a>
@@ -176,7 +189,7 @@ select{
     </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Training ▾
     <div class="dropdown">
       <a href="product.html?cat=training_tops">Tops</a>
@@ -186,7 +199,7 @@ select{
     </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Lifestyle ▾
     <div class="dropdown">
       <a href="product.html?cat=lifestyle_hoodies">Hoodies</a>
@@ -219,7 +232,7 @@ function render(){
 
   let items = PRODUCTS[cat] || [];
 
-  title.innerText = cat ? cat.replace("_"," ").toUpperCase() : "ALL PRODUCTS";
+  title.innerText = cat ? cat.replaceAll("_"," ").toUpperCase() : "ALL PRODUCTS";
 
   container.innerHTML = items.map(p => `
     <div class="card">
@@ -239,28 +252,6 @@ function render(){
   `).join("");
 
 }
-
-function toggleDropdown(el, event){
-  event.stopPropagation();
-
-  if(window.innerWidth > 768) return;
-
-  let all = document.querySelectorAll(".dropdown");
-
-  all.forEach(d => {
-    if(d !== el.querySelector(".dropdown")){
-      d.classList.remove("active");
-    }
-  });
-
-  let dd = el.querySelector(".dropdown");
-  dd.classList.toggle("active");
-}
-
-document.addEventListener("click", function(){
-  if(window.innerWidth > 768) return;
-  document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("active"));
-});
 
 function add(id, btn){
 
