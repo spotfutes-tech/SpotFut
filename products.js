@@ -103,6 +103,28 @@ const CATEGORIES = {
     "varsity-green",
     "varsity-blue"
   ],
+   football_kits_juniors: [
+    "SF-SJM-S001",
+    "SF-SJM-S004",
+    "SF-SJM-S003"
+  ],
+
+  football_tracksuits_juniors: [
+    "SF-SJM-S005",
+    "SF-SJM-S007"
+  ],
+
+  football_hoodies_juniors: [
+    "SF-UHM-S001",
+    "SF-UHM-S002",
+    "SF-UHM-S003"
+  ],
+
+  football_jackets_juniors: [
+    "varsity-black",
+    "varsity-green",
+    "varsity-blue"
+  ],
 
 
   /* BASKETBALL (future ready placeholders) */
@@ -124,6 +146,15 @@ const CATEGORIES = {
     "SF-UHM-S001",
     "SF-UHM-S002"
   ],
+   basketball_kits_juniors: [
+    "SF-SJM-S001",
+    "SF-SJM-S004"
+  ],
+
+  basketball_hoodies_juniors: [
+    "SF-UHM-S001",
+    "SF-UHM-S002"
+  ],
 
 
   /* HANDBALL */
@@ -132,6 +163,10 @@ const CATEGORIES = {
     "SF-SJM-S005"
   ],
    handball_kits_women: [
+    "SF-SJM-S003",
+    "SF-SJM-S005"
+  ],
+   handball_kits_juniors: [
     "SF-SJM-S003",
     "SF-SJM-S005"
   ],
@@ -152,7 +187,13 @@ const CATEGORIES = {
   training_tracksuits_women: [
     "SF-SJM-S007"
   ],
+training_tops_juniors: [
+    "SF-UHM-S001"
+  ],
 
+  training_tracksuits_juniors: [
+    "SF-SJM-S007"
+  ],
 
   /* LIFESTYLE */
   lifestyle_hoodies_men: [
@@ -170,6 +211,15 @@ const CATEGORIES = {
   ],
 
   lifestyle_jackets_women: [
+    "varsity-solar",
+    "varsity-sky"
+  ],
+   lifestyle_hoodies_juniors: [
+    "SF-UHM-S002",
+    "SF-UHM-S003"
+  ],
+
+  lifestyle_jackets_juniors: [
     "varsity-solar",
     "varsity-sky"
   ]
