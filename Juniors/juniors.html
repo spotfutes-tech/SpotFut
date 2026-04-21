@@ -59,7 +59,7 @@ header {
   position: sticky;
   top: 0;
   background: #0a0a0a;
-  z-index: 2000; /* FIX */
+  z-index: 3000;
 }
 
 /* NAV ITEM */
@@ -82,7 +82,7 @@ header {
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: 0.2s;
+  transition: 0.25s;
 
   z-index: 9999;
 }
@@ -105,7 +105,7 @@ header {
   color: #c200ff;
 }
 
-/* TITLE (FIXED) */
+/* TITLE */
 .section-title {
   padding: 30px 8% 10px;
   font-size: 18px;
@@ -177,12 +177,11 @@ button {
     gap: 10px;
   }
 
-  /* disable hover */
   .nav-item:hover .dropdown {
     display: none;
   }
 
-  /* MOBILE DROPDOWN (NO FLASH FIX) */
+  /* MOBILE DROPDOWN FIX (NO FLASH, NO OVERLAP) */
   .dropdown {
     position: relative;
     max-height: 0;
@@ -194,7 +193,7 @@ button {
   }
 
   .nav-item.active .dropdown {
-    max-height: 400px;
+    max-height: 500px;
   }
 
   .grid {
@@ -207,6 +206,11 @@ button {
     margin-left: 0;
     padding: 20px 5%;
   }
+}
+
+/* safety */
+.nav-item {
+  position: relative;
 }
 
 </style>
@@ -227,7 +231,8 @@ button {
 
   <div class="nav-item" onclick="scrollTo('all')">All</div>
 
-  <div class="nav-item">Football
+  <div class="nav-item">
+    Football
     <div class="dropdown">
       <a href="../product.html?cat=football_kits_juniors">Kits</a>
       <a href="../product.html?cat=football_tracksuits_juniors">Tracksuits</a>
@@ -236,11 +241,41 @@ button {
     </div>
   </div>
 
-  <div class="nav-item">Basketball
+  <div class="nav-item">
+    Basketball
     <div class="dropdown">
       <a href="../product.html?cat=basketball_kits_juniors">Kits</a>
       <a href="../product.html?cat=basketball_hoodies_juniors">Hoodies</a>
       <a href="../product.html?cat=basketball_shorts_juniors">Shorts</a>
+    </div>
+  </div>
+
+  <div class="nav-item">
+    Handball
+    <div class="dropdown">
+      <a href="../product.html?cat=handball_kits_juniors">Kits</a>
+      <a href="../product.html?cat=handball_tracksuits_juniors">Tracksuits</a>
+      <a href="../product.html?cat=handball_hoodies_juniors">Hoodies</a>
+      <a href="../product.html?cat=handball_shorts_juniors">Shorts</a>
+    </div>
+  </div>
+
+  <div class="nav-item">
+    Training
+    <div class="dropdown">
+      <a href="../product.html?cat=training_tops_juniors">Tops</a>
+      <a href="../product.html?cat=training_tracksuits_juniors">Tracksuits</a>
+      <a href="../product.html?cat=training_compression_juniors">Compression</a>
+    </div>
+  </div>
+
+  <div class="nav-item">
+    Lifestyle
+    <div class="dropdown">
+      <a href="../product.html?cat=lifestyle_hoodies_juniors">Hoodies</a>
+      <a href="../product.html?cat=lifestyle_jackets_juniors">Jackets</a>
+      <a href="../product.html?cat=lifestyle_joggers_juniors">Joggers</a>
+      <a href="../product.html?cat=lifestyle_tshirts_juniors">T-Shirts</a>
     </div>
   </div>
 
@@ -314,7 +349,7 @@ function updateCart(){
 
 updateCart();
 
-/* MOBILE MENU FIX (NO DOUBLE CLICK BUG) */
+/* MOBILE MENU FIX */
 document.querySelectorAll(".nav-item").forEach(item => {
 
   item.addEventListener("click", function(e){
