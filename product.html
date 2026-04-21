@@ -27,6 +27,67 @@ header{
 .logo{cursor:pointer}
 .cart{cursor:pointer}
 
+/* NAVBAR */
+.nav{
+  display:flex;
+  gap:20px;
+  padding:15px 8%;
+  border-bottom:1px solid #1e1e1e;
+}
+
+.nav-item{
+  position:relative;
+  cursor:pointer;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.nav-item:hover{
+  color:#c200ff;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:absolute;
+  top:30px;
+  left:0;
+  background:#111;
+  border:1px solid #222;
+  min-width:180px;
+
+  opacity:0;
+  transform:translateY(10px);
+  pointer-events:none;
+
+  transition:0.3s;
+}
+
+.nav-item:hover .dropdown{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+.dropdown a{
+  display:block;
+  padding:10px;
+  color:white;
+  text-decoration:none;
+  transition:0.25s;
+}
+
+.dropdown a:hover{
+  background:linear-gradient(45deg,#6a00ff,#ff00cc);
+  padding-left:16px;
+}
+
+/* MOBILE SUPPORT */
+.dropdown.active{
+  opacity:1 !important;
+  transform:translateY(0) !important;
+  pointer-events:auto !important;
+}
+
 /* HERO */
 .hero{
   padding:60px 8%;
@@ -84,6 +145,65 @@ select{
   <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
 </header>
 
+<!-- 🔥 NAVBAR -->
+<div class="nav">
+
+  <div class="nav-item">
+    All
+  </div>
+
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
+    Football ▾
+    <div class="dropdown">
+      <a href="product.html?cat=football_kits">Kits</a>
+      <a href="product.html?cat=football_tracksuits">Tracksuits</a>
+      <a href="product.html?cat=football_hoodies">Hoodies</a>
+      <a href="product.html?cat=football_jackets">Jackets</a>
+    </div>
+  </div>
+
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
+    Basketball ▾
+    <div class="dropdown">
+      <a href="product.html?cat=basketball_kits">Kits</a>
+      <a href="product.html?cat=basketball_hoodies">Hoodies</a>
+      <a href="product.html?cat=basketball_shorts">Shorts</a>
+    </div>
+  </div>
+
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
+    Handball ▾
+    <div class="dropdown">
+      <a href="product.html?cat=handball_kits">Kits</a>
+      <a href="product.html?cat=handball_tracksuits">Tracksuits</a>
+      <a href="product.html?cat=handball_hoodies">Hoodies</a>
+      <a href="product.html?cat=handball_shorts">Shorts</a>
+    </div>
+  </div>
+
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
+    Training ▾
+    <div class="dropdown">
+      <a href="product.html?cat=training_tops">Tops</a>
+      <a href="product.html?cat=training_shorts">Shorts</a>
+      <a href="product.html?cat=training_tracksuits">Tracksuits</a>
+      <a href="product.html?cat=training_compression">Compression</a>
+    </div>
+  </div>
+
+  <div class="nav-item" onclick="toggleDropdown(this, event)">
+    Lifestyle ▾
+    <div class="dropdown">
+      <a href="product.html?cat=lifestyle_hoodies">Hoodies</a>
+      <a href="product.html?cat=lifestyle_jackets">Jackets</a>
+      <a href="product.html?cat=lifestyle_joggers">Joggers</a>
+      <a href="product.html?cat=lifestyle_tshirts">T-Shirts</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- HERO -->
 <div class="hero">
   <h1 id="title">Products</h1>
 </div>
@@ -104,7 +224,7 @@ function render(){
 
   let items = PRODUCTS[cat] || [];
 
-  title.innerText = cat.replace("_"," ").toUpperCase();
+  title.innerText = cat ? cat.replace("_"," ").toUpperCase() : "ALL PRODUCTS";
 
   container.innerHTML = items.map(p => `
     <div class="card">
@@ -125,6 +245,28 @@ function render(){
 
 }
 
+function toggleDropdown(el, event){
+  event.stopPropagation();
+
+  if(window.innerWidth > 768) return;
+
+  let all = document.querySelectorAll(".dropdown");
+
+  all.forEach(d => {
+    if(d !== el.querySelector(".dropdown")){
+      d.classList.remove("active");
+    }
+  });
+
+  let dd = el.querySelector(".dropdown");
+  dd.classList.toggle("active");
+}
+
+document.addEventListener("click", function(){
+  if(window.innerWidth > 768) return;
+  document.querySelectorAll(".dropdown").forEach(d => d.classList.remove("active"));
+});
+
 function add(id, btn){
 
   let card = btn.closest(".card");
@@ -142,7 +284,6 @@ function add(id, btn){
   localStorage.setItem("cart", JSON.stringify(cart));
 
   updateCart();
-
 }
 
 function updateCart(){
