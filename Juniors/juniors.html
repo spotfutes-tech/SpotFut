@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SpotFut | Juniors</title>
+<title>SpotFut | Juniors </title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
@@ -50,7 +50,7 @@ header {
   font-size: 42px;
 }
 
-/* NAV (DESKTOP ONLY) */
+/* NAV */
 .nav {
   display: flex;
   gap: 22px;
@@ -62,6 +62,7 @@ header {
   z-index: 1000;
 }
 
+/* NAV ITEM */
 .nav-item {
   position: relative;
   cursor: pointer;
@@ -69,7 +70,7 @@ header {
   padding: 6px 10px;
 }
 
-/* DROPDOWN (DESKTOP) */
+/* DESKTOP DROPDOWN */
 .dropdown {
   position: absolute;
   top: 100%;
@@ -151,11 +152,11 @@ button {
   cursor: pointer;
 }
 
-/* ================= MOBILE ================= */
+/* ================= MOBILE FIX ONLY ================= */
 @media (max-width: 768px) {
 
-  .nav {
-    display: none;
+  header {
+    padding: 15px 5%;
   }
 
   .hero {
@@ -165,72 +166,44 @@ button {
   .hero h1 {
     font-size: 24px;
     text-align: center;
+    padding: 0 10px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* disable hover dropdown */
+  .nav-item:hover .dropdown {
+    display: none;
+  }
+
+  /* FIX MOBILE CLICK DROPDOWN */
+  .dropdown {
+    position: relative;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-item.active .dropdown {
+    max-height: 500px;
   }
 
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    padding: 15px 5%;
     gap: 15px;
+    padding: 15px 5%;
   }
 
   .section-title {
     margin-left: 0;
     padding: 20px 5%;
   }
-
-  #menuBtn {
-    display: block;
-  }
-}
-
-/* ================= DRAWER ================= */
-
-#menuBtn {
-  display: none;
-  font-size: 26px;
-  cursor: pointer;
-}
-
-#drawerOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  z-index: 9998;
-}
-
-#drawer {
-  position: fixed;
-  top: 0;
-  left: -280px;
-  width: 260px;
-  height: 100%;
-  background: #111;
-  z-index: 9999;
-  padding: 20px;
-  transition: 0.3s;
-  overflow-y: auto;
-}
-
-#drawer a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 10px 0;
-  font-size: 14px;
-}
-
-.drawer-section {
-  margin-top: 15px;
-  font-weight: 700;
-  color: #c200ff;
-}
-
-.drawer-header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  margin-bottom: 20px;
 }
 
 </style>
@@ -238,60 +211,15 @@ button {
 
 <body>
 
-<!-- DRAWER -->
-<div id="drawerOverlay" onclick="closeDrawer()"></div>
-
-<div id="drawer">
-  <div class="drawer-header">
-    <span>MENU</span>
-    <span onclick="closeDrawer()">✕</span>
-  </div>
-
-  <a href="#" onclick="scrollTo('all')">All</a>
-
-  <div class="drawer-section">Football</div>
-  <a href="../product.html?cat=football_kits_juniors">Kits</a>
-  <a href="../product.html?cat=football_tracksuits_juniors">Tracksuits</a>
-  <a href="../product.html?cat=football_hoodies_juniors">Hoodies</a>
-  <a href="../product.html?cat=football_jackets_juniors">Jackets</a>
-
-  <div class="drawer-section">Basketball</div>
-  <a href="../product.html?cat=basketball_kits_juniors">Kits</a>
-  <a href="../product.html?cat=basketball_hoodies_juniors">Hoodies</a>
-  <a href="../product.html?cat=basketball_shorts_juniors">Shorts</a>
-
-  <div class="drawer-section">Handball</div>
-  <a href="../product.html?cat=handball_kits_juniors">Kits</a>
-  <a href="../product.html?cat=handball_tracksuits_juniors">Tracksuits</a>
-  <a href="../product.html?cat=handball_hoodies_juniors">Hoodies</a>
-  <a href="../product.html?cat=handball_shorts_juniors">Shorts</a>
-
-  <div class="drawer-section">Training</div>
-  <a href="../product.html?cat=training_tops_juniors">Tops</a>
-  <a href="../product.html?cat=training_tracksuits_juniors">Tracksuits</a>
-  <a href="../product.html?cat=training_compression_juniors">Compression</a>
-
-  <div class="drawer-section">Lifestyle</div>
-  <a href="../product.html?cat=lifestyle_hoodies_juniors">Hoodies</a>
-  <a href="../product.html?cat=lifestyle_jackets_juniors">Jackets</a>
-  <a href="../product.html?cat=lifestyle_joggers_juniors">Joggers</a>
-  <a href="../product.html?cat=lifestyle_tshirts_juniors">T-Shirts</a>
-</div>
-
-<div id="menuBtn" onclick="openDrawer()">☰</div>
-
-<!-- HEADER -->
 <header>
   <div class="logo" onclick="goHome()">← SPOTFUT</div>
   <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <h1>JUNIORS COLLECTION</h1>
 </div>
 
-<!-- DESKTOP NAV -->
 <div class="nav">
 
   <div class="nav-item" onclick="scrollTo('all')">All</div>
@@ -315,13 +243,37 @@ button {
     </div>
   </div>
 
-  <div class="nav-item">Handball</div>
-  <div class="nav-item">Training</div>
-  <div class="nav-item">Lifestyle</div>
+  <div class="nav-item">
+    Handball
+    <div class="dropdown">
+      <a href="../product.html?cat=handball_kits_juniors">Kits</a>
+      <a href="../product.html?cat=handball_tracksuits_juniors">Tracksuits</a>
+      <a href="../product.html?cat=handball_hoodies_juniors">Hoodies</a>
+      <a href="../product.html?cat=handball_shorts_juniors">Shorts</a>
+    </div>
+  </div>
+
+  <div class="nav-item">
+    Training
+    <div class="dropdown">
+      <a href="../product.html?cat=training_tops_juniors">Tops</a>
+      <a href="../product.html?cat=training_tracksuits_juniors">Tracksuits</a>
+      <a href="../product.html?cat=training_compression_juniors">Compression</a>
+    </div>
+  </div>
+
+  <div class="nav-item">
+    Lifestyle
+    <div class="dropdown">
+      <a href="../product.html?cat=lifestyle_hoodies_juniors">Hoodies</a>
+      <a href="../product.html?cat=lifestyle_jackets_juniors">Jackets</a>
+      <a href="../product.html?cat=lifestyle_joggers_juniors">Joggers</a>
+      <a href="../product.html?cat=lifestyle_tshirts_juniors">T-Shirts</a>
+    </div>
+  </div>
 
 </div>
 
-<!-- PRODUCTS -->
 <div id="all">
 
 <div class="section-title">Featured Products</div>
@@ -390,16 +342,30 @@ function updateCart(){
 
 updateCart();
 
-/* DRAWER */
-function openDrawer(){
-  document.getElementById("drawer").style.left = "0";
-  document.getElementById("drawerOverlay").style.display = "block";
-}
+/* MOBILE FIX */
+document.querySelectorAll(".nav-item").forEach(item => {
 
-function closeDrawer(){
-  document.getElementById("drawer").style.left = "-280px";
-  document.getElementById("drawerOverlay").style.display = "none";
-}
+  item.addEventListener("click", function(e){
+
+    if(window.innerWidth > 768) return;
+
+    e.stopPropagation();
+
+    const isOpen = item.classList.contains("active");
+
+    document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("active"));
+
+    if(!isOpen){
+      item.classList.add("active");
+    }
+
+  });
+
+});
+
+document.addEventListener("click", () => {
+  document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("active"));
+});
 
 </script>
 
