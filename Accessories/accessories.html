@@ -62,16 +62,20 @@ header {
   flex-wrap: wrap;
 }
 
-.nav a {
-  text-decoration: none;
-  color: white;
+.nav-item {
+  cursor: pointer;
   font-size: 14px;
   padding: 6px 10px;
   border: 1px solid #1e1e1e;
   transition: 0.2s;
 }
 
-.nav a:hover {
+.nav-item:hover {
+  color: #c200ff;
+  border-color: #c200ff;
+}
+
+.nav-item.active {
   color: #c200ff;
   border-color: #c200ff;
 }
@@ -136,6 +140,7 @@ button {
 
   .hero h1 {
     font-size: 22px;
+    text-align: center;
   }
 
   .nav {
@@ -143,7 +148,7 @@ button {
     gap: 10px;
   }
 
-  .nav a {
+  .nav-item {
     font-size: 12px;
   }
 
@@ -171,15 +176,15 @@ button {
   <h1>ACCESSORIES</h1>
 </div>
 
-<!-- CATEGORY LINKS (CONNECTED TO product.html) -->
+<!-- CATEGORY NAV -->
 <div class="nav">
-  <a href="../product.html?cat=accessories_all">All</a>
-  <a href="../product.html?cat=accessories_socks">Socks</a>
-  <a href="../product.html?cat=accessories_caps">Caps</a>
-  <a href="../product.html?cat=accessories_gloves">Gloves</a>
-  <a href="../product.html?cat=accessories_shinguards">Shin Guards</a>
-  <a href="../product.html?cat=accessories_wristbands">Wristbands</a>
-  <a href="../product.html?cat=accessories_bags">Bags</a>
+  <div class="nav-item active" onclick="filter('all', event)">All</div>
+  <div class="nav-item" onclick="filter('socks', event)">Socks</div>
+  <div class="nav-item" onclick="filter('caps', event)">Caps</div>
+  <div class="nav-item" onclick="filter('gloves', event)">Gloves</div>
+  <div class="nav-item" onclick="filter('shinguards', event)">Shin Guards</div>
+  <div class="nav-item" onclick="filter('wristbands', event)">Wristbands</div>
+  <div class="nav-item" onclick="filter('bags', event)">Bags</div>
 </div>
 
 <div id="all">
@@ -187,7 +192,7 @@ button {
 
   <div class="grid">
 
-    <div class="card">
+    <div class="card" data-cat="socks">
       <img src="../Accessories/socks1.jpg">
       <h3>Elite Grip Socks</h3>
       <select>
@@ -197,7 +202,7 @@ button {
       <button onclick="add('S1', this)">Add to Cart</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-cat="caps">
       <img src="../Accessories/cap1.jpg">
       <h3>Pro Sport Cap</h3>
       <select>
@@ -206,7 +211,7 @@ button {
       <button onclick="add('C1', this)">Add to Cart</button>
     </div>
 
-    <div class="card">
+    <div class="card" data-cat="gloves">
       <img src="../Accessories/gloves1.jpg">
       <h3>Performance Gloves</h3>
       <select>
@@ -214,6 +219,33 @@ button {
         <option>S</option><option>M</option><option>L</option>
       </select>
       <button onclick="add('G1', this)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-cat="shinguards">
+      <img src="../Accessories/shinguard1.jpg">
+      <h3>Ultra Shin Guards</h3>
+      <select>
+        <option>Junior</option><option>Senior</option>
+      </select>
+      <button onclick="add('SG1', this)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-cat="wristbands">
+      <img src="../Accessories/wristband1.jpg">
+      <h3>DryFit Wristbands</h3>
+      <select>
+        <option>One Size</option>
+      </select>
+      <button onclick="add('W1', this)">Add to Cart</button>
+    </div>
+
+    <div class="card" data-cat="bags">
+      <img src="../Accessories/bag1.jpg">
+      <h3>Sport Backpack Pro</h3>
+      <select>
+        <option>Standard</option>
+      </select>
+      <button onclick="add('B1', this)">Add to Cart</button>
     </div>
 
   </div>
@@ -228,10 +260,32 @@ function goCart(){
   window.location.href="../cart.html";
 }
 
+/* FILTER SYSTEM */
+function filter(cat, e){
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    if(cat === "all" || card.dataset.cat === cat){
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  // active UI
+  document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("active"));
+  e.target.classList.add("active");
+}
+
 /* CART */
 function add(id, btn){
   let card = btn.closest(".card");
   let size = card.querySelector("select").value;
+
+  if(size === "Select Size"){
+    alert("Select size first");
+    return;
+  }
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push({id, size});
