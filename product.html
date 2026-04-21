@@ -27,7 +27,7 @@ header{
 .logo{cursor:pointer}
 .cart{cursor:pointer}
 
-/* NAV */
+/* NAVBAR */
 .nav{
   display:flex;
   gap:22px;
@@ -36,29 +36,36 @@ header{
   position:relative;
 }
 
-/* ITEM */
+/* NAV ITEM */
 .nav-item{
   position:relative;
   cursor:pointer;
   font-size:14px;
-  padding:12px 8px;
+  padding:10px 8px;
+  transition:0.25s;
 }
 
-/* hover bridge (prevents flicker gap) */
+.nav-item:hover{
+  color:#c200ff;
+}
+
+/* 🔥 CRITICAL FIX: hover bridge zone */
 .nav-item::after{
   content:'';
   position:absolute;
   top:100%;
   left:0;
   width:100%;
-  height:18px;
+  height:20px; /* IMPORTANT: prevents hover loss */
 }
 
 /* DROPDOWN */
 .dropdown{
   position:absolute;
-  top:45px;
+  top:100%;
   left:0;
+  margin-top:10px;
+
   background:#111;
   border:1px solid #222;
   min-width:200px;
@@ -66,12 +73,13 @@ header{
   opacity:0;
   visibility:hidden;
   transform:translateY(10px);
-  transition:0.2s ease;
+  transition:all 0.25s ease;
   z-index:999;
 }
 
-/* OPEN STATE (controlled by JS) */
-.nav-item.open .dropdown{
+/* 🔥 KEEP OPEN ON HOVER (FIXED STABILITY) */
+.nav-item:hover .dropdown,
+.dropdown:hover{
   opacity:1;
   visibility:visible;
   transform:translateY(0);
@@ -80,10 +88,11 @@ header{
 /* LINKS */
 .dropdown a{
   display:block;
-  padding:10px 14px;
+  padding:10px 12px;
   color:white;
   text-decoration:none;
   font-size:13px;
+  transition:0.2s;
 }
 
 .dropdown a:hover{
@@ -136,6 +145,26 @@ select{
   padding:10px;
   background:#000;
   color:white;
+  border:1px solid #333;
+}
+
+/* MOBILE SAFE */
+@media(max-width:768px){
+  .nav{
+    flex-wrap:wrap;
+  }
+
+  .dropdown{
+    position:relative;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    margin-top:5px;
+  }
+
+  .nav-item:hover .dropdown{
+    position:relative;
+  }
 }
 
 </style>
@@ -153,9 +182,7 @@ select{
 
   <div class="nav-item">All</div>
 
-  <div class="nav-item"
-       onmouseenter="openMenu(this)"
-       onmouseleave="closeMenu(this)">
+  <div class="nav-item">
     Football ▾
     <div class="dropdown">
       <a href="product.html?cat=football_kits">Kits</a>
@@ -165,9 +192,7 @@ select{
     </div>
   </div>
 
-  <div class="nav-item"
-       onmouseenter="openMenu(this)"
-       onmouseleave="closeMenu(this)">
+  <div class="nav-item">
     Basketball ▾
     <div class="dropdown">
       <a href="product.html?cat=basketball_kits">Kits</a>
@@ -176,9 +201,7 @@ select{
     </div>
   </div>
 
-  <div class="nav-item"
-       onmouseenter="openMenu(this)"
-       onmouseleave="closeMenu(this)">
+  <div class="nav-item">
     Handball ▾
     <div class="dropdown">
       <a href="product.html?cat=handball_kits">Kits</a>
@@ -188,9 +211,7 @@ select{
     </div>
   </div>
 
-  <div class="nav-item"
-       onmouseenter="openMenu(this)"
-       onmouseleave="closeMenu(this)">
+  <div class="nav-item">
     Training ▾
     <div class="dropdown">
       <a href="product.html?cat=training_tops">Tops</a>
@@ -200,9 +221,7 @@ select{
     </div>
   </div>
 
-  <div class="nav-item"
-       onmouseenter="openMenu(this)"
-       onmouseleave="closeMenu(this)">
+  <div class="nav-item">
     Lifestyle ▾
     <div class="dropdown">
       <a href="product.html?cat=lifestyle_hoodies">Hoodies</a>
@@ -253,29 +272,6 @@ function render(){
   `).join("");
 }
 
-/* 🔥 FIXED MENU LOGIC */
-function openMenu(el){
-  document.querySelectorAll(".nav-item").forEach(i => {
-    if(i !== el) i.classList.remove("open");
-  });
-  el.classList.add("open");
-}
-
-function closeMenu(el){
-  setTimeout(() => {
-    el.classList.remove("open");
-  }, 120);
-}
-
-/* close if mouse leaves nav area */
-document.addEventListener("mousemove", function(e){
-  let nav = document.querySelector(".nav");
-  if(!nav.contains(e.target)){
-    document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("open"));
-  }
-});
-
-/* CART */
 function add(id, btn){
 
   let card = btn.closest(".card");
