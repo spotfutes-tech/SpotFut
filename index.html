@@ -565,6 +565,33 @@ transform:translateY(0) !important;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 10px rgba(194,0,255,0.5);
 }
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.footer-social a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+/* 🔥 SAME PREMIUM EFFECT */
+.footer-social a:hover {
+  background: linear-gradient(90deg, #9b59b6, #e91e63);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(194,0,255,0.5);
+  transform: translateY(-2px);
+}
 </style>
 </head>
   
@@ -710,10 +737,10 @@ elevate your presence, and define confidence through simplicity.
 <footer>
 <h3 style="font-family:'Playfair Display', serif; margin-bottom:25px; color:#e5e5e5;">Follow SPOTFUT</h3>
 
-<div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap;">
-<a href="https://www.instagram.com/spotfutwearseu/" target="_blank">Instagram</a>
-<a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank">Facebook</a>
-<a href="https://www.tiktok.com/@spotfutwearseu" target="_blank">TikTok</a>
+<div class="footer-social">
+  <a href="https://www.instagram.com/spotfutwearseu/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+  <a href="https://www.facebook.com/profile.php?id=61587799692085" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+  <a href="https://www.tiktok.com/@spotfutwearseu" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
 </div>
 
 <p style="margin-top:30px; color:#666; font-size:0.8rem;">
