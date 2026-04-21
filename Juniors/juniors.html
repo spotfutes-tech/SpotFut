@@ -59,7 +59,7 @@ header {
   position: sticky;
   top: 0;
   background: #0a0a0a;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 /* NAV ITEM */
@@ -98,7 +98,7 @@ header {
   transform: translateY(10px);
   transition: 0.25s;
 
-  z-index: 2000; /* FIX */
+  z-index: 99999;   /* 🔥 FORCE ABOVE EVERYTHING */
 }
 
 .nav-item:hover .dropdown {
@@ -133,6 +133,8 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
   padding: 20px 8%;
+  position: relative;
+  z-index: 1;
 }
 
 /* CARD */
