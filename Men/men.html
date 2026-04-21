@@ -49,7 +49,7 @@ header {
   color:#c200ff;
 }
 
-/* dropdown stability fix */
+/* dropdown */
 .nav-item::after{
   content:'';
   position:absolute;
@@ -117,7 +117,14 @@ header {
   font-size:42px;
 }
 
-/* GRID */
+/* FEATURED */
+.section-title{
+  padding:30px 8% 10px;
+  font-size:18px;
+  border-left:3px solid white;
+  margin-left:8%;
+}
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -125,10 +132,16 @@ header {
   padding:20px 8%;
 }
 
+/* CARD */
 .card{
   background:#111;
   padding:15px;
   border:1px solid #1e1e1e;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
 }
 
 .card img{
@@ -138,6 +151,17 @@ header {
   background:#000;
 }
 
+/* SIZE */
+select{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  background:#000;
+  color:white;
+  border:1px solid #333;
+}
+
+/* BUTTON */
 button{
   width:100%;
   padding:10px;
@@ -146,14 +170,6 @@ button{
   border:none;
   color:white;
   cursor:pointer;
-}
-
-select{
-  width:100%;
-  margin-top:10px;
-  padding:10px;
-  background:#000;
-  color:white;
 }
 
 </style>
@@ -168,8 +184,6 @@ select{
 
 <!-- NAV -->
 <div class="nav">
-
-  <div class="nav-item">All</div>
 
   <div class="nav-item">Football
     <div class="dropdown">
@@ -218,13 +232,55 @@ select{
 </div>
 
 <!-- HERO -->
-<section class="hero">
+<div class="hero">
   <h1>MEN COLLECTION</h1>
-</section>
+</div>
 
-<div class="grid" id="grid"></div>
+<!-- FEATURED PRODUCTS -->
+<div class="section-title">Featured Products</div>
 
-<script src="products.js"></script>
+<div class="grid">
+
+  <div class="card">
+    <img src="../Men_Images/p1.jpg">
+    <h3>Elite Pro Kit</h3>
+    <select>
+      <option>Select Size</option>
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+      <option>XL</option>
+    </select>
+    <button onclick="addToCart('P1', this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="../Men_Images/p2.jpg">
+    <h3>Urban Tracksuit</h3>
+    <select>
+      <option>Select Size</option>
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+      <option>XL</option>
+    </select>
+    <button onclick="addToCart('P2', this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="../Men_Images/p3.jpg">
+    <h3>Street Hoodie</h3>
+    <select>
+      <option>Select Size</option>
+      <option>S</option>
+      <option>M</option>
+      <option>L</option>
+      <option>XL</option>
+    </select>
+    <button onclick="addToCart('P3', this)">Add to Cart</button>
+  </div>
+
+</div>
 
 <script>
 
@@ -236,10 +292,27 @@ function goCart(){
   window.location.href="../cart.html";
 }
 
-/* CART COUNT */
 function updateCart(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   document.getElementById("count").innerText = cart.length;
+}
+
+function addToCart(id, btn){
+
+  let card = btn.closest(".card");
+  let size = card.querySelector("select").value;
+
+  if(size === "Select Size"){
+    alert("Select size first");
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({id, size});
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  updateCart();
 }
 
 updateCart();
