@@ -59,7 +59,10 @@ header {
   position: sticky;
   top: 0;
   background: #0a0a0a;
+
   z-index: 9999;
+  overflow: visible;
+  isolation: isolate;
 }
 
 /* NAV ITEM */
@@ -98,7 +101,7 @@ header {
   transform: translateY(10px);
   transition: 0.25s;
 
-  z-index: 99999;   /* 🔥 FORCE ABOVE EVERYTHING */
+  z-index: 100000;
 }
 
 .nav-item:hover .dropdown {
@@ -204,12 +207,12 @@ button {
     white-space: nowrap;
   }
 
-  /* DISABLE HOVER ON MOBILE */
+  /* IMPORTANT: disable hover on mobile */
   .nav-item:hover .dropdown {
     display: none;
   }
 
-  /* ENABLE CLICK */
+  /* CLICK MENU */
   .nav-item.active .dropdown {
     opacity: 1;
     visibility: visible;
@@ -241,7 +244,6 @@ button {
     font-size: 13px;
     padding: 8px;
   }
-
 }
 
 </style>
