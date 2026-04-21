@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpotFut | Accessories</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 8%;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.logo { cursor: pointer; }
+.cart { cursor: pointer; }
+
+/* HERO */
+.hero {
+  height: 45vh;
+  background: url('../Images/Accessories.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 42px;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 18px;
+  padding: 18px 8%;
+  border-bottom: 1px solid #1e1e1e;
+  position: sticky;
+  top: 0;
+  background: #0a0a0a;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid #1e1e1e;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: #c200ff;
+  border-color: #c200ff;
+}
+
+/* TITLE */
+.section-title {
+  padding: 30px 8% 10px;
+  font-size: 18px;
+  border-left: 3px solid white;
+  margin-left: 8%;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  padding: 20px 8%;
+}
+
+.card {
+  background: #111;
+  padding: 15px;
+  border: 1px solid #1e1e1e;
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: contain;
+  background: #000;
+}
+
+select {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: #000;
+  color: white;
+  border: 1px solid #333;
+}
+
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  background: linear-gradient(45deg,#6a00ff,#ff00cc);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  .hero {
+    height: 30vh;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+  }
+
+  .nav {
+    padding: 10px 5%;
+    gap: 10px;
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 15px 5%;
+  }
+
+  .section-title {
+    margin-left: 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo" onclick="goHome()">← SPOTFUT</div>
+  <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
+</header>
+
+<div class="hero">
+  <h1>ACCESSORIES</h1>
+</div>
+
+<!-- CATEGORY LINKS (CONNECTED TO product.html) -->
+<div class="nav">
+  <a href="../product.html?cat=accessories_all">All</a>
+  <a href="../product.html?cat=accessories_socks">Socks</a>
+  <a href="../product.html?cat=accessories_caps">Caps</a>
+  <a href="../product.html?cat=accessories_gloves">Gloves</a>
+  <a href="../product.html?cat=accessories_shinguards">Shin Guards</a>
+  <a href="../product.html?cat=accessories_wristbands">Wristbands</a>
+  <a href="../product.html?cat=accessories_bags">Bags</a>
+</div>
+
+<div id="all">
+  <div class="section-title">Featured Accessories</div>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="../Accessories/socks1.jpg">
+      <h3>Elite Grip Socks</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option>
+      </select>
+      <button onclick="add('S1', this)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="../Accessories/cap1.jpg">
+      <h3>Pro Sport Cap</h3>
+      <select>
+        <option>One Size</option>
+      </select>
+      <button onclick="add('C1', this)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="../Accessories/gloves1.jpg">
+      <h3>Performance Gloves</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option>
+      </select>
+      <button onclick="add('G1', this)">Add to Cart</button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function goHome(){
+  window.location.href="../index.html";
+}
+
+function goCart(){
+  window.location.href="../cart.html";
+}
+
+/* CART */
+function add(id, btn){
+  let card = btn.closest(".card");
+  let size = card.querySelector("select").value;
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({id, size});
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCart();
+}
+
+function updateCart(){
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("count").innerText = cart.length;
+}
+
+updateCart();
+</script>
+
+</body>
+</html>
