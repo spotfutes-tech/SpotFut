@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SpotFut | |Women</title>
+<title>SpotFut | Women </title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 body {
   margin: 0;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   background: #0a0a0a;
   color: white;
 }
@@ -30,7 +29,7 @@ header {
 /* HERO */
 .hero {
   height: 45vh;
-  background: url('../Images/Women.jpg') center/cover no-repeat;
+  background: url('../Images/Junior.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,21 +69,7 @@ header {
   padding: 6px 10px;
 }
 
-.nav-item:hover {
-  color: #c200ff;
-}
-
-/* dropdown hover stability */
-.nav-item::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 25px;
-}
-
-/* dropdown */
+/* DESKTOP DROPDOWN */
 .dropdown {
   position: absolute;
   top: 100%;
@@ -92,11 +77,11 @@ header {
   background: #111;
   border: 1px solid #222;
   min-width: 180px;
-
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: 0.25s;
+  z-index: 9999;
 }
 
 .nav-item:hover .dropdown {
@@ -117,7 +102,7 @@ header {
   color: #c200ff;
 }
 
-/* SECTION TITLE */
+/* TITLE */
 .section-title {
   padding: 30px 8% 10px;
   font-size: 18px;
@@ -133,7 +118,6 @@ header {
   padding: 20px 8%;
 }
 
-/* CARD */
 .card {
   background: #111;
   padding: 15px;
@@ -147,7 +131,6 @@ header {
   background: #000;
 }
 
-/* SIZE */
 select {
   width: 100%;
   margin-top: 10px;
@@ -157,7 +140,6 @@ select {
   border: 1px solid #333;
 }
 
-/* BUTTON */
 button {
   width: 100%;
   margin-top: 10px;
@@ -168,6 +150,91 @@ button {
   cursor: pointer;
 }
 
+/* ================= MOBILE FIX ONLY ================= */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 5%;
+  }
+  
+
+  .hero {
+    height: 30vh;
+  }
+
+  .hero h1 {
+    font-size: 22px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  /* Make Nav stacked */
+  .nav {
+    flex-direction: column;
+    gap: 0;
+    padding: 5px 5%;
+  }
+
+  .nav-item {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #1e1e1e;
+    font-size: 16px;
+    /* ADD THESE TWO LINES */
+    -webkit-tap-highlight-color: transparent; /* Removes the blue/grey flash on tap */
+    user-select: none;
+  }
+
+  /* Reset desktop hover for mobile */
+  .nav-item:hover .dropdown {
+    transform: none;
+  }
+
+  /* Mobile Dropdown Styling */
+  .dropdown {
+    position: relative; /* Push content down */
+    top: 0;
+    background: #050505;
+    border: none;
+    width: 100%;
+    min-width: unset;
+    
+    /* Animation settings */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: max-height 0.3s ease-out;
+  }
+
+  /* Expanded state */
+  .nav-item.active .dropdown {
+    max-height: 400px;
+    margin-top: 10px;
+  }
+  /* ADD THE OPTIONAL FIX HERE */
+  .nav-item.active {
+    color: #c200ff; 
+    transition: color 0.3s ease;
+  }
+
+  .dropdown a {
+    padding: 12px 15px;
+    border-left: 2px solid #c200ff;
+    font-size: 14px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 15px 5%;
+  }
+
+  .section-title {
+    margin-left: 5%;
+    padding: 20px 0;
+  }
+}
 </style>
 </head>
 
@@ -178,18 +245,13 @@ button {
   <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
-  <h1>|WomEN COLLECTION</h1>
+  <h1>Women COLLECTION</h1>
 </div>
 
-<!-- NAV -->
 <div class="nav">
-
-  <!-- ALL -->
   <div class="nav-item" onclick="scrollTo('all')">All</div>
 
-  <!-- FOOTBALL -->
   <div class="nav-item">
     Football
     <div class="dropdown">
@@ -200,7 +262,6 @@ button {
     </div>
   </div>
 
-  <!-- BASKETBALL -->
   <div class="nav-item">
     Basketball
     <div class="dropdown">
@@ -210,7 +271,6 @@ button {
     </div>
   </div>
 
-  <!-- HANDBALL -->
   <div class="nav-item">
     Handball
     <div class="dropdown">
@@ -221,7 +281,6 @@ button {
     </div>
   </div>
 
-  <!-- TRAINING -->
   <div class="nav-item">
     Training
     <div class="dropdown">
@@ -231,7 +290,6 @@ button {
     </div>
   </div>
 
-  <!-- LIFESTYLE -->
   <div class="nav-item">
     Lifestyle
     <div class="dropdown">
@@ -241,49 +299,34 @@ button {
       <a href="../product.html?cat=lifestyle_tshirts_women">T-Shirts</a>
     </div>
   </div>
-
 </div>
 
-<!-- FEATURED PRODUCTS (MEN PAGE) -->
 <div id="all">
+  <div class="section-title">Featured Products</div>
+  <div class="grid">
+    <div class="card">
+      <img src="../Women_Images/p1.jpg" alt="Elite Pro Kit">
+      <h3>Elite Pro Kit</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button onclick="add('P1', this)">Add to Cart</button>
+    </div>
 
-<div class="section-title">Featured Products</div>
-
-<div class="grid">
-
-  <div class="card">
-    <img src="../women_Images/p1.jpg">
-    <h3>Elite Pro Kit</h3>
-    <select>
-      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-    </select>
-    <button onclick="add('P1', this)">Add to Cart</button>
+    <div class="card">
+      <img src="../Women_Images/p2.jpg" alt="Urban Tracksuit">
+      <h3>Urban Tracksuit</h3>
+      <select>
+        <option>Select Size</option>
+        <option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button onclick="add('P2', this)">Add to Cart</button>
+    </div>
   </div>
-
-  <div class="card">
-    <img src="../women_Images/p2.jpg">
-    <h3>Urban Tracksuit</h3>
-    <select>
-      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-    </select>
-    <button onclick="add('P2', this)">Add to Cart</button>
-  </div>
-
-  <div class="card">
-    <img src="../women_Images/p3.jpg">
-    <h3>Street Hoodie</h3>
-    <select>
-      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-    </select>
-    <button onclick="add('P3', this)">Add to Cart</button>
-  </div>
-
-</div>
-
 </div>
 
 <script>
-
 function goHome(){
   window.location.href="../index.html";
 }
@@ -296,9 +339,8 @@ function scrollTo(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-/* CART */
+/* CART LOGIC */
 function add(id, btn){
-
   let card = btn.closest(".card");
   let size = card.querySelector("select").value;
 
@@ -309,9 +351,7 @@ function add(id, btn){
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push({id, size});
-
   localStorage.setItem("cart", JSON.stringify(cart));
-
   updateCart();
 }
 
@@ -322,6 +362,35 @@ function updateCart(){
 
 updateCart();
 
+/* MOBILE NAVIGATION ACCORDION */
+document.querySelectorAll(".nav-item").forEach(item => {
+  item.addEventListener("click", function(e){
+    // Don't run logic on desktop
+    if(window.innerWidth > 768) return;
+
+    // If clicking a direct link inside the dropdown, allow it to navigate
+    if(e.target.tagName === 'A') return;
+
+    e.stopPropagation();
+
+    const isOpen = this.classList.contains("active");
+
+    // Close all other items first
+    document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("active"));
+
+    // If the clicked one wasn't open, open it
+    if(!isOpen){
+      this.classList.add("active");
+    }
+  });
+});
+
+// Close dropdowns when clicking anywhere else on the screen
+document.addEventListener("click", () => {
+  if(window.innerWidth <= 768) {
+    document.querySelectorAll(".nav-item").forEach(i => i.classList.remove("active"));
+  }
+});
 </script>
 
 </body>
