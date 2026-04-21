@@ -168,6 +168,66 @@ button {
   cursor: pointer;
 }
 
+/* MOBILE FIX */
+@media (max-width: 768px) {
+
+  header {
+    padding: 15px 5%;
+  }
+
+  .hero {
+    height: 35vh;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .nav {
+    overflow-x: auto;
+    gap: 15px;
+    padding: 12px 5%;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .section-title {
+    margin-left: 5%;
+    padding: 20px 5% 10px;
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px 5%;
+  }
+
+  .card {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  select {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+}
+
 </style>
 </head>
 
