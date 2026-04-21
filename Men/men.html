@@ -40,15 +40,6 @@ header {
   cursor: pointer;
 }
 
-#cart-count {
-  background: white;
-  color: black;
-  padding: 3px 8px;
-  border-radius: 50%;
-  font-size: 12px;
-  margin-left: 6px;
-}
-
 /* HERO */
 .hero {
   height: 45vh;
@@ -77,61 +68,62 @@ header {
   font-size: 42px;
 }
 
-.hero-content p {
-  opacity: 0.8;
-}
-
-/* NAV BAR */
+/* NAV */
 .nav {
   display: flex;
   gap: 18px;
   padding: 18px 8%;
+  border-bottom: 1px solid #1e1e1e;
   position: sticky;
   top: 72px;
   background: #0a0a0a;
   z-index: 999;
-  border-bottom: 1px solid #1e1e1e;
 }
 
 .nav-item {
   position: relative;
-  cursor: pointer;
   font-size: 14px;
-  opacity: 0.9;
+  cursor: pointer;
+  padding: 8px;
+  transition: 0.2s;
 }
 
 .nav-item:hover {
   color: #c200ff;
 }
 
+/* IMPORTANT hover bridge fix */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+
 /* DROPDOWN */
 .dropdown {
   position: absolute;
-  top: 30px;
+  top: 100%;
   left: 0;
+  margin-top: 10px;
   background: #111;
   border: 1px solid #222;
-  min-width: 180px;
+  min-width: 190px;
 
   opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: none;
-
-  transition: all 0.3s ease;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: 0.25s ease;
 }
 
-/* SHOW ON HOVER (DESKTOP) */
-.nav-item:hover .dropdown {
+/* smooth hover */
+.nav-item:hover .dropdown,
+.dropdown:hover {
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
-  pointer-events: auto;
-}
-
-/* MOBILE TOGGLE */
-.dropdown.active {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  pointer-events: auto !important;
 }
 
 .dropdown a {
@@ -147,68 +139,9 @@ header {
   color: #c200ff;
 }
 
-/* PRODUCTS */
-.products {
-  padding: 30px 8%;
-}
-
-.section-title {
-  font-size: 18px;
-  margin: 40px 0 20px;
-  border-left: 3px solid white;
-  padding-left: 10px;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 30px;
-}
-
-/* CARD */
-.product-card {
-  background: #111;
-  padding: 18px;
-  border: 1px solid #1e1e1e;
-  transition: 0.3s;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-}
-
-.product-card img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: contain;
-  background: #0a0a0a;
-}
-
-/* SIZE */
-select {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background: #000;
-  color: white;
-  border: 1px solid #333;
-}
-
-/* BUTTON */
-.add-btn {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background: linear-gradient(45deg,#6a00ff,#ff00cc);
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-/* MOBILE */
+/* mobile */
 @media(max-width:768px){
-  .hero-content h1 { font-size: 26px; }
-  .nav { flex-wrap: wrap; }
+  .nav{flex-wrap:wrap;}
 }
 
 </style>
@@ -218,175 +151,77 @@ select {
 
 <header>
   <div class="logo" onclick="goHome()">← SPOTFUT</div>
-  <div class="cart" onclick="goToCart()">🛒 <span id="cart-count">0</span></div>
+  <div class="cart" onclick="goToCart()">🛒</div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
     <h1>MEN COLLECTION</h1>
-    <p>Performance engineered for modern movement</p>
   </div>
 </section>
 
-<!-- NAV -->
 <div class="nav">
 
-  <div class="nav-item" onclick="scrollToSection('all')">All</div>
+  <div class="nav-item">All</div>
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Football ▾
     <div class="dropdown">
-  <a href="product.html?sport=football&type=kits">Kits</a>
-  <a href="product.html?sport=football&type=tracksuits">Tracksuits</a>
-  <a href="product.html?sport=football&type=hoodies">Hoodies</a>
-  <a href="product.html?sport=football&type=jackets">Jackets</a>
+      <a href="product.html?sport=football&type=kits">Kits</a>
+      <a href="product.html?sport=football&type=tracksuits">Tracksuits</a>
+      <a href="product.html?sport=football&type=hoodies">Hoodies</a>
+      <a href="product.html?sport=football&type=jackets">Jackets</a>
+    </div>
   </div>
-  </div>
-  
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Basketball ▾
-   <div class="dropdown">
-  <a href="product.html?sport=basketball&type=kits">Kits</a>
-  <a href="product.html?sport=basketball&type=hoodies">Hoodies</a>
-  <a href="product.html?sport=basketball&type=shorts">Shorts</a>
-</div>
+    <div class="dropdown">
+      <a href="product.html?sport=basketball&type=kits">Kits</a>
+      <a href="product.html?sport=basketball&type=hoodies">Hoodies</a>
+      <a href="product.html?sport=basketball&type=shorts">Shorts</a>
+    </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Handball ▾
     <div class="dropdown">
-  <a href="product.html?sport=handball&type=kits">Kits</a>
-  <a href="product.html?sport=handball&type=tracksuits">Tracksuits</a>
-  <a href="product.html?sport=handball&type=hoodies">Hoodies</a>
-  <a href="product.html?sport=handball&type=shorts">Shorts</a>
-</div>
+      <a href="product.html?sport=handball&type=kits">Kits</a>
+      <a href="product.html?sport=handball&type=tracksuits">Tracksuits</a>
+      <a href="product.html?sport=handball&type=hoodies">Hoodies</a>
+      <a href="product.html?sport=handball&type=shorts">Shorts</a>
+    </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Training ▾
-   <div class="dropdown">
-  <a href="product.html?sport=training&type=tops">Tops</a>
-  <a href="product.html?sport=training&type=shorts">Shorts</a>
-  <a href="product.html?sport=training&type=tracksuits">Tracksuits</a>
-  <a href="product.html?sport=training&type=compression">Compression</a>
-</div>
+    <div class="dropdown">
+      <a href="product.html?sport=training&type=tops">Tops</a>
+      <a href="product.html?sport=training&type=shorts">Shorts</a>
+      <a href="product.html?sport=training&type=tracksuits">Tracksuits</a>
+      <a href="product.html?sport=training&type=compression">Compression</a>
+    </div>
   </div>
 
-  <div class="nav-item" onclick="toggleDropdown(this, event)">
+  <div class="nav-item">
     Lifestyle ▾
     <div class="dropdown">
-  <a href="product.html?sport=lifestyle&type=hoodies">Hoodies</a>
-  <a href="product.html?sport=lifestyle&type=jackets">Jackets</a>
-  <a href="product.html?sport=lifestyle&type=joggers">Joggers</a>
-  <a href="product.html?sport=lifestyle&type=tshirts">T-Shirts</a>
-</div>
+      <a href="product.html?sport=lifestyle&type=hoodies">Hoodies</a>
+      <a href="product.html?sport=lifestyle&type=jackets">Jackets</a>
+      <a href="product.html?sport=lifestyle&type=joggers">Joggers</a>
+      <a href="product.html?sport=lifestyle&type=tshirts">T-Shirts</a>
+    </div>
   </div>
 
 </div>
-
-<!-- ALL PRODUCTS -->
-<section class="products" id="all">
-
-  <div class="section-title">All Products</div>
-
-  <div class="product-grid">
-
-    <div class="product-card">
-      <img src="../Men_Images/p1.jpg">
-      <h3>Elite Pro Kit</h3>
-      <select>
-        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <button class="add-btn" onclick="addToCart('P1', this)">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="../Men_Images/p2.jpg">
-      <h3>Urban Tracksuit</h3>
-      <select>
-        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <button class="add-btn" onclick="addToCart('P2', this)">Add to Cart</button>
-    </div>
-
-    <div class="product-card">
-      <img src="../Men_Images/p3.jpg">
-      <h3>Street Hoodie</h3>
-      <select>
-        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <button class="add-btn" onclick="addToCart('P3', this)">Add to Cart</button>
-    </div>
-
-  </div>
-</section>
 
 <script>
-
 function goHome(){
   window.location.href="../index.html";
 }
-
 function goToCart(){
   window.location.href="../cart.html";
 }
-
-function scrollToSection(id){
-  document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
-
-/* FIXED DROPDOWN SYSTEM */
-function toggleDropdown(el, event){
-
-  if(event) event.stopPropagation();
-
-  document.querySelectorAll(".dropdown").forEach(d => {
-    if(d !== el.querySelector(".dropdown")){
-      d.classList.remove("active");
-    }
-  });
-
-  el.querySelector(".dropdown").classList.toggle("active");
-}
-
-/* CLOSE ON OUTSIDE CLICK */
-document.addEventListener("click", () => {
-  document.querySelectorAll(".dropdown").forEach(d => {
-    d.classList.remove("active");
-  });
-});
-
-/* CART */
-function addToCart(id, btn){
-
-  let card = btn.closest(".product-card");
-  let size = card.querySelector("select").value;
-
-  if(size === "Select Size"){
-    alert("Select size first");
-    return;
-  }
-
-  let img = card.querySelector("img").src;
-
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  cart.push({id, size, image: img, quantity:1});
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  updateCartCount();
-}
-
-function updateCartCount(){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("cart-count").innerText = cart.length;
-}
-
-updateCartCount();
-
 </script>
 
 </body>
