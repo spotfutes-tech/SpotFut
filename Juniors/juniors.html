@@ -97,6 +97,8 @@ header {
   visibility: hidden;
   transform: translateY(10px);
   transition: 0.25s;
+
+  z-index: 2000; /* FIX */
 }
 
 .nav-item:hover .dropdown {
@@ -200,6 +202,18 @@ button {
     white-space: nowrap;
   }
 
+  /* DISABLE HOVER ON MOBILE */
+  .nav-item:hover .dropdown {
+    display: none;
+  }
+
+  /* ENABLE CLICK */
+  .nav-item.active .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
   .section-title {
     margin-left: 5%;
     padding: 20px 5% 10px;
@@ -238,18 +252,14 @@ button {
   <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <h1>JUNIORS COLLECTION</h1>
 </div>
 
-<!-- NAV -->
 <div class="nav">
 
-  <!-- ALL -->
   <div class="nav-item" onclick="scrollTo('all')">All</div>
 
-  <!-- FOOTBALL -->
   <div class="nav-item">
     Football
     <div class="dropdown">
@@ -260,7 +270,6 @@ button {
     </div>
   </div>
 
-  <!-- BASKETBALL -->
   <div class="nav-item">
     Basketball
     <div class="dropdown">
@@ -270,7 +279,6 @@ button {
     </div>
   </div>
 
-  <!-- HANDBALL -->
   <div class="nav-item">
     Handball
     <div class="dropdown">
@@ -281,7 +289,6 @@ button {
     </div>
   </div>
 
-  <!-- TRAINING -->
   <div class="nav-item">
     Training
     <div class="dropdown">
@@ -291,7 +298,6 @@ button {
     </div>
   </div>
 
-  <!-- LIFESTYLE -->
   <div class="nav-item">
     Lifestyle
     <div class="dropdown">
@@ -304,9 +310,7 @@ button {
 
 </div>
 
-<!-- FEATURED PRODUCTS (MEN PAGE) -->
 <div id="all">
-
 <div class="section-title">Featured Products</div>
 
 <div class="grid">
@@ -339,7 +343,6 @@ button {
   </div>
 
 </div>
-
 </div>
 
 <script>
@@ -381,6 +384,27 @@ function updateCart(){
 }
 
 updateCart();
+
+/* MOBILE NAV CLICK FIX */
+document.querySelectorAll(".nav-item").forEach(item => {
+  item.addEventListener("click", function(e){
+
+    e.stopPropagation();
+
+    document.querySelectorAll(".nav-item").forEach(i => {
+      if(i !== item) i.classList.remove("active");
+    });
+
+    item.classList.toggle("active");
+
+  });
+});
+
+document.addEventListener("click", () => {
+  document.querySelectorAll(".nav-item").forEach(i => {
+    i.classList.remove("active");
+  });
+});
 
 </script>
 
