@@ -4,8 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SpotFut | Juniors </title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+
 <style>
+
 body {
   margin: 0;
   font-family: Poppins;
@@ -20,6 +23,7 @@ header {
   padding: 20px 8%;
   border-bottom: 1px solid #1e1e1e;
 }
+
 .logo { cursor: pointer; }
 .cart { cursor: pointer; }
 
@@ -32,12 +36,14 @@ header {
   justify-content: center;
   position: relative;
 }
+
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.6);
 }
+
 .hero h1 {
   position: relative;
   z-index: 2;
@@ -53,9 +59,7 @@ header {
   position: sticky;
   top: 0;
   background: #0a0a0a;
-  z-index: 9999;
-  overflow: visible;
-  isolation: isolate;
+  z-index: 1000;
 }
 
 /* NAV ITEM */
@@ -65,21 +69,8 @@ header {
   font-size: 14px;
   padding: 6px 10px;
 }
-.nav-item:hover {
-  color: #c200ff;
-}
 
-/* dropdown hover stability */
-.nav-item::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 25px;
-}
-
-/* dropdown */
+/* DESKTOP DROPDOWN */
 .dropdown {
   position: absolute;
   top: 100%;
@@ -87,34 +78,31 @@ header {
   background: #111;
   border: 1px solid #222;
   min-width: 180px;
+
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: 0.25s;
-  z-index: 100000;
+
+  z-index: 9999;
 }
+
 .nav-item:hover .dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
+
 .dropdown a {
   display: block;
   padding: 10px;
   color: white;
   text-decoration: none;
 }
+
 .dropdown a:hover {
   background: #1a1a1a;
   color: #c200ff;
-}
-
-/* SECTION TITLE */
-.section-title {
-  padding: 30px 8% 10px;
-  font-size: 18px;
-  border-left: 3px solid white;
-  margin-left: 8%;
 }
 
 /* GRID */
@@ -123,16 +111,14 @@ header {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 25px;
   padding: 20px 8%;
-  position: relative;
-  z-index: 1;
 }
 
-/* CARD */
 .card {
   background: #111;
   padding: 15px;
   border: 1px solid #1e1e1e;
 }
+
 .card img {
   width: 100%;
   aspect-ratio: 3/4;
@@ -140,7 +126,6 @@ header {
   background: #000;
 }
 
-/* SIZE */
 select {
   width: 100%;
   margin-top: 10px;
@@ -150,7 +135,6 @@ select {
   border: 1px solid #333;
 }
 
-/* BUTTON */
 button {
   width: 100%;
   margin-top: 10px;
@@ -161,14 +145,17 @@ button {
   cursor: pointer;
 }
 
-/* ====================== MOBILE FIX ====================== */
+/* ================= MOBILE FIX ================= */
 @media (max-width: 768px) {
+
   header {
     padding: 15px 5%;
   }
+
   .hero {
     height: 35vh;
   }
+
   .hero h1 {
     font-size: 24px;
     text-align: center;
@@ -176,42 +163,36 @@ button {
   }
 
   .nav {
-    overflow-x: auto;
-    overflow-y: visible;           /* IMPORTANT for dropdown */
-    gap: 15px;
-    padding: 12px 5%;
-    -webkit-overflow-scrolling: touch;
+    flex-direction: column;
+    gap: 10px;
+    overflow: visible;
+    position: sticky;
   }
-  .nav::-webkit-scrollbar {
+
+  /* disable hover on mobile */
+  .nav-item:hover .dropdown {
     display: none;
   }
 
-  .nav-item {
-    font-size: 13px;
-    white-space: nowrap;
-    padding: 10px 14px;           /* bigger tap target */
-  }
+  /* MOBILE DROPDOWN FIX (NO OVERLAP ISSUE) */
+  .dropdown {
+    position: relative;
+    top: 0;
+    left: 0;
 
-  /* DISABLE HOVER ON MOBILE (prevents flash/disappear) */
-  /* We reset to hidden state so :hover doesn't fight with .active */
-  .nav-item:hover .dropdown {
     opacity: 0;
     visibility: hidden;
-    transform: translateY(10px);
+    transform: none;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
   }
 
-  /* CLICK MENU - this rule comes AFTER hover so it wins when active */
   .nav-item.active .dropdown {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
-    display: block;               /* extra safety */
-  }
-
-  .section-title {
-    margin-left: 5%;
-    padding: 20px 5% 10px;
-    font-size: 16px;
+    max-height: 500px;
   }
 
   .grid {
@@ -220,23 +201,18 @@ button {
     padding: 15px 5%;
   }
 
-  .card {
-    padding: 10px;
-  }
-
-  button {
-    font-size: 13px;
-    padding: 8px;
-  }
-
-  select {
-    font-size: 13px;
-    padding: 8px;
-  }
 }
+
+/* FORCE STACKING SAFETY */
+.nav-item {
+  position: relative;
+}
+
 </style>
 </head>
+
 <body>
+
 <header>
   <div class="logo" onclick="goHome()">← SPOTFUT</div>
   <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
@@ -247,8 +223,9 @@ button {
 </div>
 
 <div class="nav">
+
   <div class="nav-item" onclick="scrollTo('all')">All</div>
-  
+
   <div class="nav-item">
     Football
     <div class="dropdown">
@@ -296,91 +273,108 @@ button {
       <a href="../product.html?cat=lifestyle_tshirts_juniors">T-Shirts</a>
     </div>
   </div>
+
 </div>
 
 <div id="all">
-  <div class="section-title">Featured Products</div>
-  <div class="grid">
-    <div class="card">
-      <img src="../Juniors_Images/p1.jpg">
-      <h3>Elite Pro Kit</h3>
-      <select>
-        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <button onclick="add('P1', this)">Add to Cart</button>
-    </div>
-    <div class="card">
-      <img src="../Juniors_Images/p2.jpg">
-      <h3>Urban Tracksuit</h3>
-      <select>
-        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <button onclick="add('P2', this)">Add to Cart</button>
-    </div>
-    <div class="card">
-      <img src="../Juniors_Images/p3.jpg">
-      <h3>Street Hoodie</h3>
-      <select>
-        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-      </select>
-      <button onclick="add('P3', this)">Add to Cart</button>
-    </div>
+
+<div class="grid">
+
+  <div class="card">
+    <img src="../Juniors_Images/p1.jpg">
+    <h3>Elite Pro Kit</h3>
+    <select>
+      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+    </select>
+    <button onclick="add('P1', this)">Add to Cart</button>
   </div>
+
+  <div class="card">
+    <img src="../Juniors_Images/p2.jpg">
+    <h3>Urban Tracksuit</h3>
+    <select>
+      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+    </select>
+    <button onclick="add('P2', this)">Add to Cart</button>
+  </div>
+
+  <div class="card">
+    <img src="../Juniors_Images/p3.jpg">
+    <h3>Street Hoodie</h3>
+    <select>
+      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+    </select>
+    <button onclick="add('P3', this)">Add to Cart</button>
+  </div>
+
+</div>
+
 </div>
 
 <script>
+
 function goHome(){
   window.location.href="../index.html";
 }
+
 function goCart(){
   window.location.href="../cart.html";
 }
+
 function scrollTo(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
 /* CART */
 function add(id, btn){
+
   let card = btn.closest(".card");
   let size = card.querySelector("select").value;
+
   if(size === "Select Size"){
     alert("Select size first");
     return;
   }
+
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push({id, size});
+
   localStorage.setItem("cart", JSON.stringify(cart));
+
   updateCart();
 }
+
 function updateCart(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   document.getElementById("count").innerText = cart.length;
 }
+
 updateCart();
 
-/* MOBILE NAV CLICK FIX */
+/* MOBILE MENU TOGGLE */
 document.querySelectorAll(".nav-item").forEach(item => {
   item.addEventListener("click", function(e){
-    e.stopImmediatePropagation();   /* stronger stop */
-    
-    // close all others
-    document.querySelectorAll(".nav-item").forEach(i => {
-      if(i !== item) i.classList.remove("active");
-    });
-    
-    // toggle this one (only if it has a dropdown)
-    if(item.querySelector(".dropdown")){
+
+    if(window.innerWidth <= 768){
+      e.stopPropagation();
+
+      document.querySelectorAll(".nav-item").forEach(i => {
+        if(i !== item) i.classList.remove("active");
+      });
+
       item.classList.toggle("active");
     }
+
   });
 });
 
-// close dropdown when tapping anywhere else
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-item").forEach(i => {
     i.classList.remove("active");
   });
 });
+
 </script>
+
 </body>
 </html>
