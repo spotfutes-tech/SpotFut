@@ -4,11 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SpotFut | Juniors </title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
-
 <style>
-
 body {
   margin: 0;
   font-family: Poppins;
@@ -23,7 +20,6 @@ header {
   padding: 20px 8%;
   border-bottom: 1px solid #1e1e1e;
 }
-
 .logo { cursor: pointer; }
 .cart { cursor: pointer; }
 
@@ -36,14 +32,12 @@ header {
   justify-content: center;
   position: relative;
 }
-
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.6);
 }
-
 .hero h1 {
   position: relative;
   z-index: 2;
@@ -59,7 +53,6 @@ header {
   position: sticky;
   top: 0;
   background: #0a0a0a;
-
   z-index: 9999;
   overflow: visible;
   isolation: isolate;
@@ -72,7 +65,6 @@ header {
   font-size: 14px;
   padding: 6px 10px;
 }
-
 .nav-item:hover {
   color: #c200ff;
 }
@@ -95,28 +87,23 @@ header {
   background: #111;
   border: 1px solid #222;
   min-width: 180px;
-
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: 0.25s;
-
   z-index: 100000;
 }
-
 .nav-item:hover .dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
-
 .dropdown a {
   display: block;
   padding: 10px;
   color: white;
   text-decoration: none;
 }
-
 .dropdown a:hover {
   background: #1a1a1a;
   color: #c200ff;
@@ -146,7 +133,6 @@ header {
   padding: 15px;
   border: 1px solid #1e1e1e;
 }
-
 .card img {
   width: 100%;
   aspect-ratio: 3/4;
@@ -175,17 +161,14 @@ button {
   cursor: pointer;
 }
 
-/* MOBILE FIX */
+/* ====================== MOBILE FIX ====================== */
 @media (max-width: 768px) {
-
   header {
     padding: 15px 5%;
   }
-
   .hero {
     height: 35vh;
   }
-
   .hero h1 {
     font-size: 24px;
     text-align: center;
@@ -194,10 +177,11 @@ button {
 
   .nav {
     overflow-x: auto;
+    overflow-y: visible;           /* IMPORTANT for dropdown */
     gap: 15px;
     padding: 12px 5%;
+    -webkit-overflow-scrolling: touch;
   }
-
   .nav::-webkit-scrollbar {
     display: none;
   }
@@ -205,18 +189,23 @@ button {
   .nav-item {
     font-size: 13px;
     white-space: nowrap;
+    padding: 10px 14px;           /* bigger tap target */
   }
 
-  /* IMPORTANT: disable hover on mobile */
+  /* DISABLE HOVER ON MOBILE (prevents flash/disappear) */
+  /* We reset to hidden state so :hover doesn't fight with .active */
   .nav-item:hover .dropdown {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
   }
 
-  /* CLICK MENU */
+  /* CLICK MENU - this rule comes AFTER hover so it wins when active */
   .nav-item.active .dropdown {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    display: block;               /* extra safety */
   }
 
   .section-title {
@@ -245,12 +234,9 @@ button {
     padding: 8px;
   }
 }
-
 </style>
 </head>
-
 <body>
-
 <header>
   <div class="logo" onclick="goHome()">← SPOTFUT</div>
   <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
@@ -261,9 +247,8 @@ button {
 </div>
 
 <div class="nav">
-
   <div class="nav-item" onclick="scrollTo('all')">All</div>
-
+  
   <div class="nav-item">
     Football
     <div class="dropdown">
@@ -311,106 +296,91 @@ button {
       <a href="../product.html?cat=lifestyle_tshirts_juniors">T-Shirts</a>
     </div>
   </div>
-
 </div>
 
 <div id="all">
-<div class="section-title">Featured Products</div>
-
-<div class="grid">
-
-  <div class="card">
-    <img src="../Juniors_Images/p1.jpg">
-    <h3>Elite Pro Kit</h3>
-    <select>
-      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-    </select>
-    <button onclick="add('P1', this)">Add to Cart</button>
+  <div class="section-title">Featured Products</div>
+  <div class="grid">
+    <div class="card">
+      <img src="../Juniors_Images/p1.jpg">
+      <h3>Elite Pro Kit</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button onclick="add('P1', this)">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="../Juniors_Images/p2.jpg">
+      <h3>Urban Tracksuit</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button onclick="add('P2', this)">Add to Cart</button>
+    </div>
+    <div class="card">
+      <img src="../Juniors_Images/p3.jpg">
+      <h3>Street Hoodie</h3>
+      <select>
+        <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
+      </select>
+      <button onclick="add('P3', this)">Add to Cart</button>
+    </div>
   </div>
-
-  <div class="card">
-    <img src="../Juniors_Images/p2.jpg">
-    <h3>Urban Tracksuit</h3>
-    <select>
-      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-    </select>
-    <button onclick="add('P2', this)">Add to Cart</button>
-  </div>
-
-  <div class="card">
-    <img src="../Juniors_Images/p3.jpg">
-    <h3>Street Hoodie</h3>
-    <select>
-      <option>Select Size</option><option>S</option><option>M</option><option>L</option><option>XL</option>
-    </select>
-    <button onclick="add('P3', this)">Add to Cart</button>
-  </div>
-
-</div>
 </div>
 
 <script>
-
 function goHome(){
   window.location.href="../index.html";
 }
-
 function goCart(){
   window.location.href="../cart.html";
 }
-
 function scrollTo(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
 /* CART */
 function add(id, btn){
-
   let card = btn.closest(".card");
   let size = card.querySelector("select").value;
-
   if(size === "Select Size"){
     alert("Select size first");
     return;
   }
-
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push({id, size});
-
   localStorage.setItem("cart", JSON.stringify(cart));
-
   updateCart();
 }
-
 function updateCart(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   document.getElementById("count").innerText = cart.length;
 }
-
 updateCart();
 
 /* MOBILE NAV CLICK FIX */
 document.querySelectorAll(".nav-item").forEach(item => {
   item.addEventListener("click", function(e){
-
-    e.stopPropagation();
-
+    e.stopImmediatePropagation();   /* stronger stop */
+    
+    // close all others
     document.querySelectorAll(".nav-item").forEach(i => {
       if(i !== item) i.classList.remove("active");
     });
-
-    item.classList.toggle("active");
-
+    
+    // toggle this one (only if it has a dropdown)
+    if(item.querySelector(".dropdown")){
+      item.classList.toggle("active");
+    }
   });
 });
 
+// close dropdown when tapping anywhere else
 document.addEventListener("click", () => {
   document.querySelectorAll(".nav-item").forEach(i => {
     i.classList.remove("active");
   });
 });
-
 </script>
-
 </body>
 </html>
