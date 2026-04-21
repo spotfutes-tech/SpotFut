@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SpotFut Products</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,98 +16,28 @@ body{
   color:white;
 }
 
-/* HEADER */
-header{
+/* TOP BAR */
+.topbar{
   display:flex;
   justify-content:space-between;
-  padding:20px 8%;
+  padding:18px 8%;
   border-bottom:1px solid #1e1e1e;
 }
 
-/* NAV */
-.nav{
-  display:flex;
-  gap:22px;
-  padding:15px 8%;
-  border-bottom:1px solid #1e1e1e;
-  position:relative;
-}
+.back{cursor:pointer}
+.cart{cursor:pointer}
 
-/* ITEM */
-.nav-item{
-  position:relative;
-  cursor:pointer;
-  font-size:14px;
-  padding:10px 8px;
-  transition:0.2s;
-}
-
-.nav-item:hover{
-  color:#c200ff;
-}
-
-/* 🔥 STRONG HOVER BRIDGE (FIXED ISSUE) */
-.nav-item::after{
-  content:'';
-  position:absolute;
-  left:0;
-  top:100%;
-  width:100%;
-  height:35px; /* BIGGER = NO LOSS OF HOVER */
-}
-
-/* DROPDOWN */
-.dropdown{
-  position:absolute;
-  top:100%;
-  left:0;
-  margin-top:8px;
-
-  background:#111;
-  border:1px solid #222;
-  min-width:200px;
-
-  opacity:0;
-  visibility:hidden;
-  transform:translateY(12px);
-  transition:all 0.3s ease;
-
-  z-index:999;
-}
-
-/* 🔥 MAIN FIX */
-.nav-item:hover .dropdown,
-.dropdown:hover{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
-}
-
-/* LINKS */
-.dropdown a{
-  display:block;
-  padding:10px 12px;
-  color:white;
-  text-decoration:none;
-  font-size:13px;
-  transition:0.2s;
-}
-
-.dropdown a:hover{
-  background:#1a1a1a;
-  color:#c200ff;
-}
-
-/* HERO */
-.hero{
-  padding:60px 8%;
+/* TITLE */
+.title{
   text-align:center;
+  padding:25px;
+  font-size:20px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:25px;
   padding:20px 8%;
 }
@@ -126,17 +56,6 @@ header{
   background:#000;
 }
 
-/* BUTTON */
-button{
-  width:100%;
-  padding:10px;
-  margin-top:10px;
-  background:linear-gradient(45deg,#6a00ff,#ff00cc);
-  border:none;
-  color:white;
-  cursor:pointer;
-}
-
 /* SELECT */
 select{
   width:100%;
@@ -147,15 +66,76 @@ select{
   border:1px solid #333;
 }
 
-/* MOBILE SAFE (no hover issues) */
-@media(max-width:768px){
-  .dropdown{
-    position:relative;
-    opacity:1;
-    visibility:visible;
-    transform:none;
-    margin-top:6px;
-  }
+/* BUTTON */
+button{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  background:linear-gradient(45deg,#6a00ff,#ff00cc);
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+/* NAV FIX (NO BREAK HOVER) */
+.nav{
+  display:flex;
+  gap:22px;
+  padding:15px 8%;
+  border-bottom:1px solid #1e1e1e;
+}
+
+.nav-item{
+  position:relative;
+  cursor:pointer;
+  padding:8px;
+}
+
+.nav-item:hover{
+  color:#c200ff;
+}
+
+.nav-item::after{
+  content:'';
+  position:absolute;
+  top:100%;
+  left:0;
+  width:100%;
+  height:25px;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#111;
+  border:1px solid #222;
+  min-width:200px;
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:0.25s;
+}
+
+.nav-item:hover .dropdown,
+.dropdown:hover{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.dropdown a{
+  display:block;
+  padding:10px;
+  color:white;
+  text-decoration:none;
+}
+
+.dropdown a:hover{
+  background:#1a1a1a;
+  color:#c200ff;
 }
 
 </style>
@@ -163,92 +143,31 @@ select{
 
 <body>
 
-<header>
-  <div class="logo" onclick="goBack()">← BACK</div>
-  <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
-</header>
-
-<!-- NAV -->
-<div class="nav">
-
-  <div class="nav-item">All</div>
-
-  <div class="nav-item">
-    Football
-    <div class="dropdown">
-      <a href="product.html?cat=football_kits">Kits</a>
-      <a href="product.html?cat=football_tracksuits">Tracksuits</a>
-      <a href="product.html?cat=football_hoodies">Hoodies</a>
-      <a href="product.html?cat=football_jackets">Jackets</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    Basketball
-    <div class="dropdown">
-      <a href="product.html?cat=basketball_kits">Kits</a>
-      <a href="product.html?cat=basketball_hoodies">Hoodies</a>
-      <a href="product.html?cat=basketball_shorts">Shorts</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    Handball
-    <div class="dropdown">
-      <a href="product.html?cat=handball_kits">Kits</a>
-      <a href="product.html?cat=handball_tracksuits">Tracksuits</a>
-      <a href="product.html?cat=handball_hoodies">Hoodies</a>
-      <a href="product.html?cat=handball_shorts">Shorts</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    Training
-    <div class="dropdown">
-      <a href="product.html?cat=training_tops">Tops</a>
-      <a href="product.html?cat=training_shorts">Shorts</a>
-      <a href="product.html?cat=training_tracksuits">Tracksuits</a>
-      <a href="product.html?cat=training_compression">Compression</a>
-    </div>
-  </div>
-
-  <div class="nav-item">
-    Lifestyle
-    <div class="dropdown">
-      <a href="product.html?cat=lifestyle_hoodies">Hoodies</a>
-      <a href="product.html?cat=lifestyle_jackets">Jackets</a>
-      <a href="product.html?cat=lifestyle_joggers">Joggers</a>
-      <a href="product.html?cat=lifestyle_tshirts">T-Shirts</a>
-    </div>
-  </div>
-
+<div class="topbar">
+  <div class="back" onclick="goBack()">← Back</div>
+  <div class="cart">🛒 <span id="count">0</span></div>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <h1 id="title">Products</h1>
-</div>
+<div class="title" id="title">Products</div>
 
-<!-- GRID -->
 <div class="grid" id="grid"></div>
 
 <script src="products.js"></script>
 
 <script>
 
-const params = new URLSearchParams(window.location.search);
-const cat = params.get("cat");
+const cat = new URLSearchParams(location.search).get("cat");
 
 function render(){
 
-  let items = PRODUCTS[cat] || [];
+  const items = getProductsByCategory(cat);
 
   document.getElementById("title").innerText =
     cat ? cat.replaceAll("_"," ").toUpperCase() : "ALL PRODUCTS";
 
   document.getElementById("grid").innerHTML = items.map(p => `
     <div class="card">
-      <img src="${p.img}">
+      <img src="${p.img || ''}">
       <h3>${p.name}</h3>
 
       <select>
@@ -259,21 +178,17 @@ function render(){
         <option>XL</option>
       </select>
 
-      <button onclick="add('${p.id}', this)">Add to Cart</button>
+      <button onclick="add('${p.id}', this)">Add</button>
     </div>
   `).join("");
 }
 
-/* CART */
 function add(id, btn){
 
   let card = btn.closest(".card");
   let size = card.querySelector("select").value;
 
-  if(size === "Select Size"){
-    alert("Select size first");
-    return;
-  }
+  if(size === "Select Size") return alert("Select size");
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.push({id, size});
@@ -289,11 +204,7 @@ function updateCart(){
 }
 
 function goBack(){
-  window.location.href="men.html";
-}
-
-function goCart(){
-  window.location.href="cart.html";
+  window.location.href="../Men/men.html";
 }
 
 render();
