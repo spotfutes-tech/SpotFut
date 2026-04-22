@@ -122,7 +122,11 @@ button{
 <script src="product.js"></script>
 
 <script>
-
+window.onerror = function(msg, url, line, col, error){
+  console.log("JS ERROR:", msg);
+  console.log("Line:", line);
+};
+  
 const cat = new URLSearchParams(window.location.search).get("cat");
 
 /* ================= GET PRODUCTS ================= */
