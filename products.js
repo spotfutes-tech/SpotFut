@@ -32,7 +32,7 @@ const PRODUCTS = {
 
   /* Signature Elite Kits - Male */
   "SF-SJM-S001": { name: "Soccer Elite Pro Fusion Edition", price: 11},
-  "SF-SJM-S004": { name: "Soccer Hexa Pulse Edition", price: 11 },
+  "SF-SJM-S004": { name: "Soccer Hexa Pulse Edition", price: 11,img: "SignatureKits/SF-SJM-S004_1.jpg" },
   "SF-SJM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 11 },
   "SF-SJM-S005": { name: "Soccer Aurum Pro Edition", price: 11 },
   "SF-SJM-S007": { name: "Soccer Aqua Storm Edition", price: 11 },
@@ -83,7 +83,7 @@ const CATEGORIES = {
 
   /* FOOTBALL */
   football_kits_men: [
-  "SF-SJM-S001",
+  "SF-SJM-S004",
     "SF-SJM-S007"
   ],
 
