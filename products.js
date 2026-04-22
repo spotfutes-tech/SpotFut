@@ -88,7 +88,7 @@ const CATEGORIES = {
   ],
 
   football_tracksuits_men: [
-    "SF-SJM-S005",
+    "SF-SJM-S009",
     "SF-SJM-S007"
   ],
 
@@ -151,8 +151,8 @@ const CATEGORIES = {
 
   /* BASKETBALL (future ready placeholders) */
   basketball_kits_men: [
-    "SF-SJM-S001",
-    "SF-SJM-S004"
+    "SF-SJM-S011",
+    "SF-SJM-S010"
   ],
 
   basketball_hoodies_men: [
