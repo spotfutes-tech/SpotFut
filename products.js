@@ -38,7 +38,7 @@ const PRODUCTS = {
   "SF-SJM-S007": { name: "Soccer Aqua Storm Edition", price: 11 },
   "SF-SJM-S008": { name: "Soccer Crimson Bolt Edition", price: 11 },
  "SF-SJM-S002": { name: "Soccer TBA Edition", price: 11 },
-  "SF-SJM-S006": { name: "Soccer TBA Edition", price: 11 },
+  "SF-SJM-S006": { name: "Soccer Red Velocity Edition", price: 11 },
   "SF-SJM-S009": { name: "Soccer TBA Edition", price: 11 },
    "SF-SJM-S010": { name: "Soccer TBA Edition", price: 11 },
   "SF-SJM-S011": { name: "Soccer TBA Edition", price: 11 },
@@ -47,18 +47,29 @@ const PRODUCTS = {
   "SF-SJF-S001": { name: "Soccer Blush Strike Edition", price: 11 },
   "SF-SJF-S002": { name: "Soccer Phantom Fade Edition", price: 11 },
   "SF-SJF-S004": { name: "Soccer Storm Fit Edition", price: 11 },
-   "SF-SJF-S003": { name: "Soccer TBA Edition", price: 11 },
-  "SF-SJF-S005": { name: "Soccer TBA Edition", price: 11 },
-  "SF-SJF-S006": { name: "Soccer TBA Edition", price: 11 },
+   "SF-SJF-S003": { name: "Soccer Gold-Leaf Kinetic Edition", price: 11 },
+  "SF-SJF-S005": { name: "Soccer Molten Slate Edition", price: 11 },
+  "SF-SJF-S006": { name: "Soccer Naval Vanguard Edition", price: 11 },
    "SF-SJF-S007": { name: "Soccer Monarc Gold Edition", price: 11 },
   "SF-SJF-S008": { name: "Soccer Static Strike Edition", price: 11 },
-  "SF-SJF-S009": { name: "Soccer Storm Fit Edition", price: 11 },
+  "SF-SJF-S009": { name: "Soccer Glacier Strike Edition", price: 11 },
    "SF-SJF-S010": { name: "Soccer Prism Pulse Edition", price: 11 },
 
   /* Junior Kits */
   "SF-SJK-S001": { name: "Soccer Junior Strike Pro Edition", price: 11 },
   "SF-SJK-S003": { name: "Soccer Junior Fire Start Edition", price: 11 },
   "SF-SJK-S004": { name: "Soccer Junior Velocity Flame Edition", price: 11 },
+   "SF-SJK-S002": { name: "Soccer Junior Stary Glow Edition", price: 11 },
+  "SF-SJK-S005": { name: "Soccer Junior Emerland Flux Edition", price: 11 },
+  "SF-SJK-S006": { name: "Soccer Junior Monarc Blue Edition", price: 11 },
+
+   "SF-SJK-S101": { name: "Soccer Junior Spark Edge Edition", price: 11 },
+  "SF-SJK-S102": { name: "Soccer Junior Nexus Rush Edition", price: 11 },
+  "SF-SJK-S103": { name: "Soccer Junior Velocity Flame Edition", price: 11 },
+   "SF-SJK-S104": { name: "Soccer Junior Strike Pro Edition", price: 11 },
+  "SF-SJK-S105": { name: "Soccer Junior Magma Rift Edition", price: 11 },
+  "SF-SJK-S106": { name: "Soccer Junior Solar Drift Edition", price: 11 },
+   
 
 };
 
