@@ -147,28 +147,35 @@ const imgIndex = {};
 /* ================= RENDER ================= */
 function render(){
 
-  const items = getItems();
+  const items = getItems() || [];
 
   document.getElementById("title").innerText =
     cat ? cat.replaceAll("_"," ").toUpperCase() : "ALL PRODUCTS";
 
-  document.getElementById("grid").innerHTML = items.map(p => {
+  let html = "";
 
-    const images = Array.isArray(p.img) ? p.img : [p.img];
+  for(let p of items){
 
-    return `
+    if(!p || !p.id) continue;
+
+    const images = (p.img)
+      ? (Array.isArray(p.img) ? p.img : [p.img])
+      : [""];
+
+    html += `
       <div class="card">
 
         <div class="slider">
+
           <button class="prev" onclick="changeImg('${p.id}', -1)">‹</button>
 
           <img id="img-${p.id}" src="${images[0] || ''}">
 
           <button class="next" onclick="changeImg('${p.id}', 1)">›</button>
+
         </div>
 
-        <!-- PRICE REMOVED AS REQUESTED -->
-        <h3>${p.name}</h3>
+        <h3>${p.name || ''}</h3>
 
         <select>
           <option>Select Size</option>
@@ -179,9 +186,12 @@ function render(){
         </select>
 
         <button onclick="add('${p.id}', this)">Add to Cart</button>
+
       </div>
     `;
-  }).join("");
+  }
+
+  document.getElementById("grid").innerHTML = html;
 }
 
 /* ================= SLIDER ================= */
