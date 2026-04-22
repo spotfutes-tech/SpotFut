@@ -156,11 +156,20 @@ function render(){
 
   for(let p of items){
 
-    if(!p || !p.id) continue;
+    // 🛡️ HARD SAFETY CHECK (prevents blank page)
+    if(!p || !p.id || !p.name) continue;
 
-    const images = (p.img)
-      ? (Array.isArray(p.img) ? p.img : [p.img])
-      : [""];
+    // 🛡️ SAFE IMAGE HANDLING
+    let images = [];
+
+    if(p.img){
+      images = Array.isArray(p.img) ? p.img : [p.img];
+    }
+
+    // fallback image if missing
+    if(images.length === 0){
+      images = ["https://via.placeholder.com/300x400?text=No+Image"];
+    }
 
     html += `
       <div class="card">
@@ -169,13 +178,13 @@ function render(){
 
           <button class="prev" onclick="changeImg('${p.id}', -1)">‹</button>
 
-          <img id="img-${p.id}" src="${images[0] || ''}">
+          <img id="img-${p.id}" src="${images[0]}">
 
           <button class="next" onclick="changeImg('${p.id}', 1)">›</button>
 
         </div>
 
-        <h3>${p.name || ''}</h3>
+        <h3>${p.name}</h3>
 
         <select>
           <option>Select Size</option>
@@ -193,15 +202,17 @@ function render(){
 
   document.getElementById("grid").innerHTML = html;
 }
-
 /* ================= SLIDER ================= */
 function changeImg(id, dir){
 
   const items = getItems();
   const product = items.find(p => p.id === id);
-  if(!product) return;
 
-  const images = Array.isArray(product.img) ? product.img : [product.img];
+  if(!product || !product.img) return;
+
+  const images = Array.isArray(product.img)
+    ? product.img
+    : [product.img];
 
   if(!imgIndex[id]) imgIndex[id] = 0;
 
@@ -210,7 +221,10 @@ function changeImg(id, dir){
   if(imgIndex[id] < 0) imgIndex[id] = images.length - 1;
   if(imgIndex[id] >= images.length) imgIndex[id] = 0;
 
-  document.getElementById(`img-${id}`).src = images[imgIndex[id]];
+  const el = document.getElementById(`img-${id}`);
+  if(el){
+    el.src = images[imgIndex[id]];
+  }
 }
 
 /* ================= CART ================= */
