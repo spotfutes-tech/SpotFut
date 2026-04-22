@@ -83,7 +83,7 @@ const CATEGORIES = {
 
   /* FOOTBALL */
   football_kits_men: [
-  "SF-SJM-S005",
+  "SF-SJM-S001",
     "SF-SJM-S007"
   ],
 
