@@ -8,121 +8,101 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #0a0a0a;
-    color: white;
-  }
 
-  /* TOP BAR */
-  .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 8%;
-    border-bottom: 1px solid #1e1e1e;
-    background: #0a0a0a;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+body{
+  margin:0;
+  font-family:Poppins;
+  background:#0a0a0a;
+  color:white;
+}
 
-  .back, .cart { cursor: pointer; }
+/* TOP BAR */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  padding:18px 8%;
+  border-bottom:1px solid #1e1e1e;
+}
 
-  /* TITLE */
-  .title {
-    text-align: center;
-    padding: 25px;
-    font-size: 24px;
-    font-weight: 700;
-  }
+.back,.cart{cursor:pointer}
 
-  /* GRID */
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 20px 8%;
-  }
+/* TITLE */
+.title{
+  text-align:center;
+  padding:25px;
+  font-size:20px;
+}
 
-  /* CARD */
-  .card {
-    background: #111;
-    padding: 15px;
-    border: 1px solid #1e1e1e;
-    border-radius: 8px;
-    transition: transform 0.2s;
-  }
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+  padding:20px 8%;
+}
 
-  .card:hover { transform: translateY(-5px); }
+/* CARD */
+.card{
+  background:#111;
+  padding:15px;
+  border:1px solid #1e1e1e;
+}
 
-  /* SLIDER */
-  .slider {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1/1; /* Square looks better for jerseys/shoes */
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 4px;
-  }
+/* ================= SLIDER ================= */
+.slider{
+  position:relative;
+  width:100%;
+  aspect-ratio:3/4;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
 
-  .slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.slider img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
 
-  .slider button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.6);
-    border: none;
-    color: white;
-    font-size: 24px;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.3s;
-  }
+.slider button{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:rgba(0,0,0,0.5);
+  border:none;
+  color:white;
+  font-size:22px;
+  width:30px;
+  height:40px;
+  cursor:pointer;
+}
 
-  .slider button:hover { background: #6a00ff; }
-  .slider .prev { left: 10px; }
-  .slider .next { right: 10px; }
+.slider .prev{ left:0; }
+.slider .next{ right:0; }
 
-  /* UI ELEMENTS */
-  select {
-    width: 100%;
-    margin-top: 15px;
-    padding: 12px;
-    background: #1a1a1a;
-    color: white;
-    border: 1px solid #333;
-    border-radius: 4px;
-  }
+/* SELECT */
+select{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  background:#000;
+  color:white;
+  border:1px solid #333;
+}
 
-  .add-btn {
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px;
-    background: linear-gradient(45deg, #6a00ff, #ff00cc);
-    border: none;
-    color: white;
-    font-weight: 700;
-    cursor: pointer;
-    border-radius: 4px;
-    text-transform: uppercase;
-  }
+/* BUTTON */
+button{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  background:linear-gradient(45deg,#6a00ff,#ff00cc);
+  border:none;
+  color:white;
+  cursor:pointer;
+}
 
-  .add-btn:active { opacity: 0.8; }
 </style>
 </head>
 
@@ -133,119 +113,127 @@
   <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
 </div>
 
-<div class="title" id="title">Loading...</div>
+<div class="title" id="title">Products</div>
 
 <div class="grid" id="grid"></div>
 
 <script src="products.js"></script>
 
 <script>
-// 1. Get Category from URL
-const urlParams = new URLSearchParams(window.location.search);
-const cat = urlParams.get("cat");
 
-// 2. State Management
-const imgIndex = {}; 
-let currentItems = [];
+const cat = new URLSearchParams(window.location.search).get("cat");
 
-function getItems() {
-  // Guard clause for products.js not loading
-  if (typeof PRODUCTS === 'undefined') return [];
+/* ================= SAFE GET ITEMS ================= */
+function getItems(){
 
-  if (!cat) {
-    return Object.keys(PRODUCTS).map(id => ({ id, ...PRODUCTS[id] }));
-  }
+  if(!cat) return Object.keys(PRODUCTS).map(id => ({
+    id,
+    ...PRODUCTS[id]
+  }));
 
-  if (!CATEGORIES || !CATEGORIES[cat]) return [];
+  if(!CATEGORIES[cat]) return [];
 
-  return CATEGORIES[cat].map(id => ({ id, ...PRODUCTS[id] }));
+  return CATEGORIES[cat].map(id => ({
+    id,
+    ...PRODUCTS[id]
+  }));
 }
 
-function render() {
-  currentItems = getItems();
-  
-  document.getElementById("title").innerText = 
-    cat ? cat.replace(/_/g, " ").toUpperCase() : "ALL PRODUCTS";
+/* ================= SLIDER STATE ================= */
+const imgIndex = {};
 
-  const grid = document.getElementById("grid");
-  
-  if (currentItems.length === 0) {
-    grid.innerHTML = "<p>No products found in this category.</p>";
-    return;
-  }
+/* ================= RENDER ================= */
+function render(){
 
-  grid.innerHTML = currentItems.map(p => {
+  const items = getItems();
+
+  document.getElementById("title").innerText =
+    cat ? cat.replaceAll("_"," ").toUpperCase() : "ALL PRODUCTS";
+
+  document.getElementById("grid").innerHTML = items.map(p => {
+
     const images = Array.isArray(p.img) ? p.img : [p.img];
-    // Initialize index for this product if not set
-    if (imgIndex[p.id] === undefined) imgIndex[p.id] = 0;
 
     return `
       <div class="card">
+
         <div class="slider">
-          ${images.length > 1 ? `<button class="prev" onclick="changeImg('${p.id}', -1)">‹</button>` : ''}
-          <img id="img-${p.id}" src="${images[0] || 'placeholder.jpg'}" alt="${p.name}">
-          ${images.length > 1 ? `<button class="next" onclick="changeImg('${p.id}', 1)">›</button>` : ''}
+          <button class="prev" onclick="changeImg('${p.id}', -1)">‹</button>
+
+          <img id="img-${p.id}" src="${images[0] || ''}">
+
+          <button class="next" onclick="changeImg('${p.id}', 1)">›</button>
         </div>
+
         <h3>${p.name}</h3>
-        <p>${p.price || ''}</p>
-        <select id="size-${p.id}">
-          <option value="">Select Size</option>
+
+        <select>
+          <option>Select Size</option>
           <option>S</option>
           <option>M</option>
           <option>L</option>
           <option>XL</option>
         </select>
-        <button class="add-btn" onclick="add('${p.id}')">Add to Cart</button>
+
+        <button onclick="add('${p.id}', this)">Add to Cart</button>
       </div>
     `;
   }).join("");
 }
 
-function changeImg(id, dir) {
-  const product = currentItems.find(p => p.id === id);
+/* ================= SLIDER FUNCTION ================= */
+function changeImg(id, dir){
+
+  const product = getItems().find(p => p.id === id);
   const images = Array.isArray(product.img) ? product.img : [product.img];
+
+  if(!imgIndex[id]) imgIndex[id] = 0;
 
   imgIndex[id] += dir;
 
-  if (imgIndex[id] < 0) imgIndex[id] = images.length - 1;
-  if (imgIndex[id] >= images.length) imgIndex[id] = 0;
+  if(imgIndex[id] < 0) imgIndex[id] = images.length - 1;
+  if(imgIndex[id] >= images.length) imgIndex[id] = 0;
 
   document.getElementById(`img-${id}`).src = images[imgIndex[id]];
 }
 
-function add(id) {
-  const sizeSelect = document.getElementById(`size-${id}`);
-  const size = sizeSelect.value;
+/* ================= CART ================= */
+function add(id, btn){
 
-  if (!size) {
-    alert("Please select a size first!");
+  let card = btn.closest(".card");
+  let size = card.querySelector("select").value;
+
+  if(size === "Select Size"){
+    alert("Select size");
     return;
   }
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push({ id, size, timestamp: Date.now() });
+  cart.push({id, size});
+
   localStorage.setItem("cart", JSON.stringify(cart));
 
   updateCart();
-  
-  // Quick visual feedback
-  const btn = event.target;
-  const originalText = btn.innerText;
-  btn.innerText = "ADDED!";
-  setTimeout(() => btn.innerText = originalText, 1000);
 }
 
-function updateCart() {
+function updateCart(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   document.getElementById("count").innerText = cart.length;
 }
 
-function goBack() { window.history.back(); }
-function goCart() { window.location.href = "cart.html"; }
+/* ================= NAV ================= */
+function goBack(){
+  window.history.back();
+}
 
-// Initialize
+function goCart(){
+  window.location.href="../cart.html";
+}
+
+/* INIT */
 render();
 updateCart();
+
 </script>
 
 </body>
