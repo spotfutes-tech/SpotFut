@@ -48,26 +48,26 @@ body{
   border:1px solid #1e1e1e;
 }
 
-/* SLIDER */
+/* ================= SLIDER FIX ================= */
 .slider{
   position:relative;
   width:100%;
   aspect-ratio:3/4;
   background:#000;
-  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
 }
 
 .slider img{
   width:100%;
   height:100%;
-  object-fit:contain;
+  object-fit:contain;   /* FIX: prevents cropping */
   background:#000;
 }
 
-/* ARROWS */
+/* arrows */
 .slider button{
   position:absolute;
   top:50%;
@@ -75,7 +75,7 @@ body{
   background:rgba(0,0,0,0.5);
   border:none;
   color:white;
-  font-size:20px;
+  font-size:22px;
   width:30px;
   height:40px;
   cursor:pointer;
@@ -125,18 +125,13 @@ button{
 
 const cat = new URLSearchParams(window.location.search).get("cat");
 
-/* SAFE STORAGE */
-const imgIndex = {};
-
-/* GET ITEMS */
+/* ================= GET PRODUCTS ================= */
 function getItems(){
 
-  if(!cat){
-    return Object.keys(PRODUCTS).map(id => ({
-      id,
-      ...PRODUCTS[id]
-    }));
-  }
+  if(!cat) return Object.keys(PRODUCTS).map(id => ({
+    id,
+    ...PRODUCTS[id]
+  }));
 
   if(!CATEGORIES[cat]) return [];
 
@@ -146,7 +141,10 @@ function getItems(){
   }));
 }
 
-/* RENDER */
+/* ================= SLIDER STATE ================= */
+const imgIndex = {};
+
+/* ================= RENDER ================= */
 function render(){
 
   const items = getItems();
@@ -156,23 +154,20 @@ function render(){
 
   document.getElementById("grid").innerHTML = items.map(p => {
 
-    const images =
-      p.img ? (Array.isArray(p.img) ? p.img : [p.img]) : [""];
+    const images = Array.isArray(p.img) ? p.img : [p.img];
 
     return `
       <div class="card">
 
         <div class="slider">
-
           <button class="prev" onclick="changeImg('${p.id}', -1)">‹</button>
 
-          <img id="img-${p.id}" src="${images[0]}">
+          <img id="img-${p.id}" src="${images[0] || ''}">
 
           <button class="next" onclick="changeImg('${p.id}', 1)">›</button>
-
         </div>
 
-        <!-- NO PRICE -->
+        <!-- PRICE REMOVED AS REQUESTED -->
         <h3>${p.name}</h3>
 
         <select>
@@ -184,22 +179,19 @@ function render(){
         </select>
 
         <button onclick="add('${p.id}', this)">Add to Cart</button>
-
       </div>
     `;
   }).join("");
 }
 
-/* SLIDER */
+/* ================= SLIDER ================= */
 function changeImg(id, dir){
 
   const items = getItems();
   const product = items.find(p => p.id === id);
-  if(!product || !product.img) return;
+  if(!product) return;
 
-  const images = Array.isArray(product.img)
-    ? product.img
-    : [product.img];
+  const images = Array.isArray(product.img) ? product.img : [product.img];
 
   if(!imgIndex[id]) imgIndex[id] = 0;
 
@@ -211,7 +203,7 @@ function changeImg(id, dir){
   document.getElementById(`img-${id}`).src = images[imgIndex[id]];
 }
 
-/* CART */
+/* ================= CART ================= */
 function add(id, btn){
 
   let card = btn.closest(".card");
@@ -226,6 +218,7 @@ function add(id, btn){
   cart.push({id, size});
 
   localStorage.setItem("cart", JSON.stringify(cart));
+
   updateCart();
 }
 
