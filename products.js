@@ -83,7 +83,11 @@ const CATEGORIES = {
 
   /* FOOTBALL */
   football_kits_men: [
-  "SF-SJM-S001",
+  "SF-SJM-S001": { 
+  name: "Soccer Elite Pro Fusion Edition", 
+  price: 11,
+  image: "SignatureKits/SF-SJM-S001_1.png"
+},
   "SF-SJM-S004",
   "SF-SJM-S003",
   "SF-SJM-S005",
