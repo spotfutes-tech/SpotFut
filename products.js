@@ -83,22 +83,9 @@ const CATEGORIES = {
 
   /* FOOTBALL */
   football_kits_men: [
-  "SF-SJM-S001": { 
-  name: "Soccer Elite Pro Fusion Edition", 
-  price: 11,
-  image: "SignatureKits/SF-SJM-S001_1.png"
-},
-  "SF-SJM-S004",
-  "SF-SJM-S003",
   "SF-SJM-S005",
-  "SF-SJM-S007",
-  "SF-SJM-S008",
-  "SF-SJM-S002",
-  "SF-SJM-S006",
-  "SF-SJM-S009",
-  "SF-SJM-S010",
-  "SF-SJM-S011"
-],
+    "SF-SJM-S007"
+  ],
 
   football_tracksuits_men: [
     "SF-SJM-S005",
