@@ -83,18 +83,18 @@ const CATEGORIES = {
 
   /* FOOTBALL */
   football_kits_men: [
-    "SF-SJM-S001": { name: "Soccer Elite Pro Fusion Edition", price: 11 },
-  "SF-SJM-S004": { name: "Soccer Hexa Pulse Edition", price: 11 },
-  "SF-SJM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 11 },
-  "SF-SJM-S005": { name: "Soccer Aurum Pro Edition", price: 11 },
-  "SF-SJM-S007": { name: "Soccer Aqua Storm Edition", price: 11 },
-  "SF-SJM-S008": { name: "Soccer Crimson Bolt Edition", price: 11 },
- "SF-SJM-S002": { name: "Soccer TBA Edition", price: 11 },
-  "SF-SJM-S006": { name: "Soccer Red Velocity Edition", price: 11 },
-  "SF-SJM-S009": { name: "Soccer TBA Edition", price: 11 },
-   "SF-SJM-S010": { name: "Soccer TBA Edition", price: 11 },
-  "SF-SJM-S011": { name: "Soccer TBA Edition", price: 11 },
-  ],
+  "SF-SJM-S001",
+  "SF-SJM-S004",
+  "SF-SJM-S003",
+  "SF-SJM-S005",
+  "SF-SJM-S007",
+  "SF-SJM-S008",
+  "SF-SJM-S002",
+  "SF-SJM-S006",
+  "SF-SJM-S009",
+  "SF-SJM-S010",
+  "SF-SJM-S011"
+],
 
   football_tracksuits_men: [
     "SF-SJM-S005",
@@ -113,14 +113,14 @@ const CATEGORIES = {
     "varsity-blue"
   ],
    football_kits_women: [
-    "SF-SJM-S001",
-    "SF-SJM-S004",
-    "SF-SJM-S003"
+    "SF-SJF-S001",
+    "SF-SJF-S004",
+    "SF-SJF-S003"
   ],
 
   football_tracksuits_women: [
-    "SF-SJM-S005",
-    "SF-SJM-S007"
+    "SF-SJF-S005",
+    "SF-SJF-S007"
   ],
 
   football_hoodies_women: [
