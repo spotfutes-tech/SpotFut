@@ -31,7 +31,7 @@ const PRODUCTS = {
   "SF-UHK-S104": { name: "Zen Valley Girls Edition", price: 29 },
 
   /* Signature Elite Kits - Male */
-  "SF-SJM-S001": { name: "Soccer Elite Pro Fusion Edition", price: 11,img: "SignatureKits/SF-SJM-S001_1.png" },
+  "SF-SJM-S001": { name: "Soccer Elite Pro Fusion Edition", price: 11},
   "SF-SJM-S004": { name: "Soccer Hexa Pulse Edition", price: 11 },
   "SF-SJM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 11 },
   "SF-SJM-S005": { name: "Soccer Aurum Pro Edition", price: 11 },
