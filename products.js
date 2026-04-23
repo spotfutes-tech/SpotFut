@@ -71,18 +71,7 @@ const PRODUCTS = {
   "SF-SJK-S106": { name: "Soccer Junior Solar Drift Edition", price: 11 },
 
    /*  FOr the cat pages e have this following format*/
-   "SF-SJM-S005a": { 
-    name: "Soccer Aurum Pro Edition", 
-    price: 11,
-    img: [
-      "SignatureKits/SF-SJM-S005_1.png", 
-      "SignatureKits/SF-SJM-S005_2.png",
-      "SignatureKits/SF-SJM-S005_3.png",
-      "SignatureKits/SF-SJM-S005_4.jpg"
-    ] 
-  }
-};
-
+   "SF-SJM-S005a": {name: "Soccer Aurum Pro Edition", price: 11,img: ["SignatureKits/SF-SJM-S005_1.png", "SignatureKits/SF-SJM-S005_2.png","SignatureKits/SF-SJM-S005_3.png","SignatureKits/SF-SJM-S005_4.jpg"] }};
 
 
 /* ======================================
