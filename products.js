@@ -71,10 +71,18 @@ const PRODUCTS = {
   "SF-SJK-S106": { name: "Soccer Junior Solar Drift Edition", price: 11 },
 
    /*  FOr the cat pages e have this following format*/
-   "SF-SJM-S005a": { name: "Soccer Aurum Pro Edition", price: 11,img: ["SignatureKits/SF-SJM-S005_1.png", "SignatureKits/SF-SJM-S005_2.png","SignatureKits/SF-SJM-S005_3.png","SignatureKits/SF-SJM-S005_4.png"] },
-   
-
+   "SF-SJM-S005a": { 
+    name: "Soccer Aurum Pro Edition", 
+    price: 11,
+    img: [
+      "SignatureKits/SF-SJM-S005_1.png", 
+      "SignatureKits/SF-SJM-S005_2.png",
+      "SignatureKits/SF-SJM-S005_3.png",
+      "SignatureKits/SF-SJM-S005_4.png"
+    ] 
+  }
 };
+
 
 
 /* ======================================
@@ -85,17 +93,9 @@ const PRODUCTS = {
 const CATEGORIES = {
 
   /* FOOTBALL */
-  football_kits_men: [
-    "SF-SJM-S005a"
-  ],
-
-  football_tracksuits_men: [
-   "SF-SJM-S005a"
-  ],
-
-  football_hoodies_men: [
-    "SF-SJM-S005a"
-  ],
+  football_kits_men: ["SF-SJM-S005a"],
+  football_tracksuits_men: ["SF-SJM-S005a"],
+  football_hoodies_men: ["SF-SJM-S005a"],
 
   football_jackets_men: [
    "SF-SJM-S005a"
