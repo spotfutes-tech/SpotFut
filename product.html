@@ -226,8 +226,24 @@ function add(id) {
         return;
     }
 
+    // Get the product data from our database
+    const product = PRODUCTS[id];
+
+    // Get the first image or a placeholder if empty
+    const mainImg = (product.img && product.img.length > 0) 
+        ? product.img[0] 
+        : "https://via.placeholder.com/300";
+
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push({ id, size, price: PRODUCTS[id].price, name: PRODUCTS[id].name });
+    
+    // Add the image to the object we save
+    cart.push({ 
+        id: id, 
+        size: size, 
+        name: product.name, 
+        price: product.price,
+        img: mainImg // <--- ADD THIS LINE
+    });
 
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCart();
