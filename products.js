@@ -78,7 +78,7 @@ const PRODUCTS = {
       "SignatureKits/SF-SJM-S005_1.png", 
       "SignatureKits/SF-SJM-S005_2.png",
       "SignatureKits/SF-SJM-S005_3.png",
-      "SignatureKits/SF-SJM-S005_4.png"
+      "SignatureKits/SF-SJM-S005_4.jpg"
     ] 
   }
 };
