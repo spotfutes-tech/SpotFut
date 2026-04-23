@@ -72,62 +72,29 @@ const PRODUCTS = {
 
    /*  FOr the cat pages e have this following format*/
    /* 11111111111111....... Men Football Kits .........................*/
-"SF-SJM-S001a": {"name": "Soccer Elite Pro Fusion Edition","price": 11,
-      "img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S001_2.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S001_3.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S001_4.jpg"]},
-  "SF-SJM-S004a": {"name": "Soccer Hexa Pulse Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S004_1.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S004_2.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S004_3.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S004_4.jpg"]},
-  "SF-SJM-S003a": {"name": "Soccer Urban Strike Gradient Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S003_1.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S003_2.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S003_3.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S003_4.jpg"]},
-  "SF-SJM-S005a": {"name": "Soccer Aurum Pro Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S005_1.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S005_2.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S005_3.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S005_4.jpg"]},
-  "SF-SJM-S007a": {"name": "Soccer Aqua Storm Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S007_1.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S007_2.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S007_3.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S007_4.jpg"]},
-  "SF-SJM-S008a": {"name": "Soccer Crimson Bolt Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S008_1.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S008_2.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S008_3.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S008_4.jpg"]},
-  "SF-SJM-S002a": {"name": "Soccer TBA Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S002_1.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S002_2.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S002_3.png",
-      "Soccer_Hero/Men_Images/SF-SJM-S002_4.jpg"]},
-  "SF-SJM-S006a": {"name": "Soccer Red Velocity Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S006_1.jpeg",
-      "Soccer_Hero/Men_Images/SF-SJM-S006_2.jpeg",
-      "Soccer_Hero/Men_Images/SF-SJM-S006_3.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S006_4.jpg"]},
-  "SF-SJM-S009a": {"name": "Soccer TBA Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S009_1.jpeg",
-      "Soccer_Hero/Men_Images/SF-SJM-S009_2.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S009_3.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S009_4.jpg"]},
-  "SF-SJM-S010a": {"name": "Soccer TBA Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S010_1.jpeg",
-      "Soccer_Hero/Men_Images/SF-SJM-S010_2.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S010_3.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S010_4.jpg"]},
-  "SF-SJM-S011a": {"name": "Soccer TBA Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S011_1.jpeg",
-      "Soccer_Hero/Men_Images/SF-SJM-S011_2.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S011_3.jpg",
-      "Soccer_Hero/Men_Images/SF-SJM-S011_4.jpg"]}}
+  "SF-SJM-S001a": {"name": "Soccer Elite Pro Fusion Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png","Soccer_Hero/Men_Images/SF-SJM-S001_2.png","Soccer_Hero/Men_Images/SF-SJM-S001_3.png","Soccer_Hero/Men_Images/SF-SJM-S001_4.jpg"]},
+  "SF-SJM-S004a": {"name": "Soccer Hexa Pulse Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S004_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_4.jpg"]},
+  "SF-SJM-S003a": {"name": "Soccer Urban Strike Gradient Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S003_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_4.jpg"]},
+  "SF-SJM-S005a": {"name": "Soccer Aurum Pro Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S005_1.png","Soccer_Hero/Men_Images/SF-SJM-S005_2.png","Soccer_Hero/Men_Images/SF-SJM-S005_3.png","Soccer_Hero/Men_Images/SF-SJM-S005_4.jpg"]},
+  "SF-SJM-S007a": {"name": "Soccer Aqua Storm Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S007_1.png","Soccer_Hero/Men_Images/SF-SJM-S007_2.png","Soccer_Hero/Men_Images/SF-SJM-S007_3.png","Soccer_Hero/Men_Images/SF-SJM-S007_4.jpg"]},
+  "SF-SJM-S008a": {"name": "Soccer Crimson Bolt Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S008_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S008_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S008_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S008_4.jpg"]},
+  "SF-SJM-S002a": {"name": "Soccer TBA Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S002_1.png","Soccer_Hero/Men_Images/SF-SJM-S002_2.png","Soccer_Hero/Men_Images/SF-SJM-S002_3.png","Soccer_Hero/Men_Images/SF-SJM-S002_4.jpg"]},
+  "SF-SJM-S006a": {"name": "Soccer Red Velocity Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S006_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S006_2.jpeg","Soccer_Hero/Men_Images/SF-SJM-S006_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S006_4.jpg"]},
+  "SF-SJM-S009a": {"name": "Soccer TBA Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S009_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S009_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S009_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S009_4.jpg"]},
+  "SF-SJM-S010a": {"name": "Soccer TBA Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S010_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S010_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_4.jpg"]},
+  "SF-SJM-S011a": {"name": "Soccer TBA Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S011_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S011_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_4.jpg"]}
 
+/* 11111111111111....... Women Football Kits .........................*/
+  "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
+  "SF-SJF-S002a": {"name": "Soccer Phantom Fade Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S002_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_4.jpg"]},
+  "SF-SJF-S003a": {"name": "Soccer Gold-Leaf Kinetic Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S003_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_4.jpg"]},
+  "SF-SJF-S004a": {"name": "Soccer Storm Fit Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S004_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S004_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S004_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S004_4.jpg"]},
+  "SF-SJF-S005a": {"name": "Soccer Molten Slate Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S005_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S005_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S005_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S005_4.jpg"]},
+  "SF-SJF-S006a": {"name": "Soccer Naval Vanguard Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S006_1.png", "Soccer_Hero/Women_Images/SF-SJF-S006_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S006_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S006_4.jpg"]},
+  "SF-SJF-S007a": {"name": "Soccer Monarc Gold Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S007_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S007_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S007_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S007_4.jpg"]},
+  "SF-SJF-S008a": {"name": "Soccer Static Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S008_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_4.jpg"]},
+  "SF-SJF-S009a": {"name": "Soccer Glacier Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S009_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_4.jpg"]},
+  "SF-SJF-S010a": {"name": "Soccer Prism Pulse Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S010_1.png", "Soccer_Hero/Women_Images/SF-SJF-S010_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_4.jpg"]}
 /* ======================================
    CATEGORY MAPPING (NEW UNIVERSAL SYSTEM)
    THIS IS WHAT POWERS MEN.HTML → product.html
@@ -144,9 +111,8 @@ const CATEGORIES = {
   football_jackets_men: [
    "SF-SJM-S005a"
   ],
-   football_kits_women: [
-    "SF-SJM-S005a"
-  ],
+   football_kits_women: ["SF-SJF-S001a","SF-SJF-S002a","SF-SJF-S003a","SF-SJF-S004a","SF-SJF-S005a",
+                     "SF-SJF-S006a","SF-SJF-S007a","SF-SJF-S008a","SF-SJF-S009a","SF-SJF-S010a",],
 
   football_tracksuits_women: [
     "SF-SJM-S005a"
