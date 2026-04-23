@@ -96,7 +96,21 @@ const PRODUCTS = {
   "SF-SJF-S009a": {"name": "Soccer Glacier Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S009_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_4.jpg"]},
   "SF-SJF-S010a": {"name": "Soccer Prism Pulse Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S010_1.png", "Soccer_Hero/Women_Images/SF-SJF-S010_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_4.jpg"]},
 
-   
+   /* 11111111111111....... Junior Football Kits .........................*/
+"SF-SJK-S001a":{"name":"Soccer Junior Strike Pro Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S001_1.png","Soccer_Hero/Junior_Images/SF-SJK-S001_2.png","Soccer_Hero/Junior_Images/SF-SJK-S001_3.png","Soccer_Hero/Junior_Images/SF-SJK-S001_4.jpg"]},
+"SF-SJK-S003a":{"name":"Soccer Junior Fire Start Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S003_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S003_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S003_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S003_4.jpg"]},
+"SF-SJK-S004a":{"name":"Soccer Junior Velocity Flame Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S004_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S004_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S004_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S004_4.jpg"]},
+"SF-SJK-S002a":{"name":"Soccer Junior Stary Glow Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S002_1.png","Soccer_Hero/Junior_Images/SF-SJK-S002_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S002_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S002_4.jpg"]},
+"SF-SJK-S005a":{"name":"Soccer Junior Emerland Flux Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S005_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S005_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S005_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S005_4.jpg"]},
+"SF-SJK-S006a":{"name":"Soccer Junior Monarc Blue Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S006_1.png","Soccer_Hero/Junior_Images/SF-SJK-S006_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S006_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S006_4.jpg"]},
+"SF-SJK-S101a":{"name":"Soccer Junior Spark Edge Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S101_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S101_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S101_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S101_4.jpg"]},
+"SF-SJK-S102a":{"name":"Soccer Junior Nexus Rush Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S102_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S102_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S102_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S102_4.jpg"]},
+"SF-SJK-S103a":{"name":"Soccer Junior Velocity Flame Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S103_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S103_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S103_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S103_4.jpg"]},
+"SF-SJK-S104a":{"name":"Soccer Junior Strike Pro Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S104_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S104_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S104_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S104_4.jpg"]},
+"SF-SJK-S105a":{"name":"Soccer Junior Magma Rift Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S105_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S105_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S105_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S105_4.jpg"]},
+"SF-SJK-S106a":{"name":"Soccer Junior Solar Drift Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S106_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S106_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S106_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S106_4.jpg"]}
+
+
 };
    /* ======================================
    CATEGORY MAPPING (NEW UNIVERSAL SYSTEM)
