@@ -136,7 +136,8 @@ const PRODUCTS = {
 const CATEGORIES = {
 
   /* FOOTBALL */
-  football_kits_men: ["SF-SJM-S001a","SF-SJM-S002a","SF-SJM-S003a","SF-SJM-S004a","SF-SJM-S005a"],
+  football_kits_men: ["SF-SJM-S001a","SF-SJM-S002a","SF-SJM-S003a","SF-SJM-S004a","SF-SJM-S005a",
+                     "SF-SJM-S006a","SF-SJM-S007a","SF-SJM-S008a","SF-SJM-S009a","SF-SJM-S010a","SF-SJM-S011a",],
   football_tracksuits_men: ["SF-SJM-S005a"],
   football_hoodies_men: ["SF-SJM-S005a"],
 
