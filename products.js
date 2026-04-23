@@ -108,7 +108,7 @@ const PRODUCTS = {
       "Soccer_Hero/Men_Images/SF-SJM-S002_3.png",
       "Soccer_Hero/Men_Images/SF-SJM-S002_4.jpg"]},
   "SF-SJM-S006a": {"name": "Soccer Red Velocity Edition","price": 11,
-    "img": ["Soccer_Hero/Men_Images/SF-SJM-S006_1.jpg",
+    "img": ["Soccer_Hero/Men_Images/SF-SJM-S006_1.jpeg",
       "Soccer_Hero/Men_Images/SF-SJM-S006_2.jpeg",
       "Soccer_Hero/Men_Images/SF-SJM-S006_3.jpg",
       "Soccer_Hero/Men_Images/SF-SJM-S006_4.jpg"]},
