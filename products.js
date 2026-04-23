@@ -34,7 +34,7 @@ const PRODUCTS = {
   "SF-SJM-S001": { name: "Soccer Elite Pro Fusion Edition", price: 11},
   "SF-SJM-S004": { name: "Soccer Hexa Pulse Edition", price: 11},
   "SF-SJM-S003": { name: "Soccer Urban Strike Gradient Edition", price: 11 },
-  "SF-SJM-S005": { name: "Soccer Aurum Pro Edition", price: 11,img: ["SignatureKits/SF-SJM-S005_1.png", "SignatureKits/SF-SJM-S005_2.png","SignatureKits/SF-SJM-S005_3.png","SignatureKits/SF-SJM-S005_4.png"] },
+  "SF-SJM-S005": { name: "Soccer Aurum Pro Edition", price: 11},
   "SF-SJM-S007": { name: "Soccer Aqua Storm Edition", price: 11 },
   "SF-SJM-S008": { name: "Soccer Crimson Bolt Edition", price: 11 },
  "SF-SJM-S002": { name: "Soccer TBA Edition", price: 11 },
@@ -69,6 +69,9 @@ const PRODUCTS = {
    "SF-SJK-S104": { name: "Soccer Junior Strike Pro Edition", price: 11 },
   "SF-SJK-S105": { name: "Soccer Junior Magma Rift Edition", price: 11 },
   "SF-SJK-S106": { name: "Soccer Junior Solar Drift Edition", price: 11 },
+
+   /*  FOr the cat pages e have this following format*/
+   "SF-SJM-S005a": { name: "Soccer Aurum Pro Edition", price: 11,img: ["SignatureKits/SF-SJM-S005_1.png", "SignatureKits/SF-SJM-S005_2.png","SignatureKits/SF-SJM-S005_3.png","SignatureKits/SF-SJM-S005_4.png"] },
    
 
 };
@@ -83,167 +86,132 @@ const CATEGORIES = {
 
   /* FOOTBALL */
   football_kits_men: [
-  "SF-SJM-S001","SF-SJM-S003",
-    "SF-SJM-S005"
+    "SF-SJM-S005a"
   ],
 
   football_tracksuits_men: [
-    "SF-SJM-S009",
-    "SF-SJM-S007"
+   "SF-SJM-S005a"
   ],
 
   football_hoodies_men: [
-    "SF-UHM-S001",
-    "SF-UHM-S002",
-    "SF-UHM-S003"
+    "SF-SJM-S005a"
   ],
 
   football_jackets_men: [
-    "varsity-black",
-    "varsity-green",
-    "varsity-blue"
+   "SF-SJM-S005a"
   ],
    football_kits_women: [
-    "SF-SJF-S001",
-    "SF-SJF-S004",
-    "SF-SJF-S003"
+    "SF-SJM-S005a"
   ],
 
   football_tracksuits_women: [
-    "SF-SJF-S005",
-    "SF-SJF-S007"
+    "SF-SJM-S005a"
   ],
 
   football_hoodies_women: [
-    "SF-UHM-S001",
-    "SF-UHM-S002",
-    "SF-UHM-S003"
+    "SF-SJM-S005a"
   ],
 
   football_jackets_women: [
-    "varsity-black",
-    "varsity-green",
-    "varsity-blue"
+    "SF-SJM-S005a"
   ],
    football_kits_juniors: [
-    "SF-SJM-S001",
-    "SF-SJM-S004",
-    "SF-SJM-S003"
+    "SF-SJM-S005a"
   ],
 
   football_tracksuits_juniors: [
-    "SF-SJM-S005",
-    "SF-SJM-S007"
+    "SF-SJM-S005a"
   ],
 
   football_hoodies_juniors: [
-    "SF-UHM-S001",
-    "SF-UHM-S002",
-    "SF-UHM-S003"
+    "SF-SJM-S005a"
   ],
 
   football_jackets_juniors: [
-    "varsity-black",
-    "varsity-green",
-    "varsity-blue"
+    "SF-SJM-S005a"
   ],
 
 
   /* BASKETBALL (future ready placeholders) */
   basketball_kits_men: [
-    "SF-SJM-S011",
-    "SF-SJM-S010"
+    "SF-SJM-S005a"
   ],
 
   basketball_hoodies_men: [
-    "SF-UHM-S001",
-    "SF-UHM-S002"
+    "SF-SJM-S005a"
   ],
    basketball_kits_women: [
-    "SF-SJM-S001",
-    "SF-SJM-S004"
+    "SF-SJM-S005a"
   ],
 
   basketball_hoodies_women: [
-    "SF-UHM-S001",
-    "SF-UHM-S002"
+    "SF-SJM-S005a"
   ],
    basketball_kits_juniors: [
-    "SF-SJM-S001",
-    "SF-SJM-S004"
+   "SF-SJM-S005a"
   ],
 
   basketball_hoodies_juniors: [
-    "SF-UHM-S001",
-    "SF-UHM-S002"
+    "SF-SJM-S005a"
   ],
 
 
   /* HANDBALL */
   handball_kits_men: [
-    "SF-SJM-S003",
-    "SF-SJM-S005"
+    "SF-SJM-S005a"
   ],
    handball_kits_women: [
-    "SF-SJM-S003",
-    "SF-SJM-S005"
+   "SF-SJM-S005a"
   ],
    handball_kits_juniors: [
-    "SF-SJM-S003",
-    "SF-SJM-S005"
+    "SF-SJM-S005a"
   ],
 
 
   /* TRAINING */
   training_tops_men: [
-    "SF-UHM-S001"
+    "SF-SJM-S005a"
   ],
 
   training_tracksuits_men: [
-    "SF-SJM-S007"
+    "SF-SJM-S005a"
   ],
    training_tops_women: [
-    "SF-UHM-S001"
+    "SF-SJM-S005a"
   ],
 
   training_tracksuits_women: [
-    "SF-SJM-S007"
+    "SF-SJM-S005a"
   ],
 training_tops_juniors: [
-    "SF-UHM-S001"
+    "SF-SJM-S005a"
   ],
 
   training_tracksuits_juniors: [
-    "SF-SJM-S007"
+    "SF-SJM-S005a"
   ],
 
   /* LIFESTYLE */
   lifestyle_hoodies_men: [
-    "SF-UHM-S002",
-    "SF-UHM-S003"
+    "SF-SJM-S005a"
   ],
 
   lifestyle_jackets_men: [
-    "varsity-solar",
-    "varsity-sky"
+    "SF-SJM-S005a"
   ],
    lifestyle_hoodies_women: [
-    "SF-UHM-S002",
-    "SF-UHM-S003"
+    "SF-SJM-S005a"
   ],
 
   lifestyle_jackets_women: [
-    "varsity-solar",
-    "varsity-sky"
+    "SF-SJM-S005a"
   ],
    lifestyle_hoodies_juniors: [
-    "SF-UHM-S002",
-    "SF-UHM-S003"
+    "SF-SJM-S005a"
   ],
 
   lifestyle_jackets_juniors: [
-    "varsity-solar",
-    "varsity-sky"
+    "SF-SJM-S005a"
   ]
 
 };
