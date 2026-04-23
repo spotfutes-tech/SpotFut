@@ -130,81 +130,67 @@ window.onerror = function(msg, url, line, col, error){
 const cat = new URLSearchParams(window.location.search).get("cat");
 
 /* ================= GET PRODUCTS ================= */
-function getItems(){
+function getItems() {
+    // If no category in URL, show everything in PRODUCTS
+    if (!cat) {
+        return Object.keys(PRODUCTS).map(id => ({
+            id,
+            ...PRODUCTS[id]
+        }));
+    }
 
-  if(!cat) return Object.keys(PRODUCTS).map(id => ({
-    id,
-    ...PRODUCTS[id]
-  }));
+    // If category doesn't exist in mapping
+    if (!CATEGORIES[cat]) return [];
 
-  if(!CATEGORIES[cat]) return [];
-
-  return CATEGORIES[cat].map(id => ({
-    id,
-    ...PRODUCTS[id]
-  }));
+    // Map the IDs in the category to the actual product data
+    return CATEGORIES[cat].map(id => {
+        if (PRODUCTS[id]) {
+            return { id, ...PRODUCTS[id] };
+        }
+        return null; 
+    }).filter(item => item !== null); // Remove any nulls to prevent crashes
 }
 
 /* ================= SLIDER STATE ================= */
 const imgIndex = {};
 
 /* ================= RENDER ================= */
-function render(){
+function render() {
+    const items = getItems();
+    const grid = document.getElementById("grid");
+    const titleEl = document.getElementById("title");
 
-  const items = getItems() || [];
+    titleEl.innerText = cat ? cat.replace(/_/g, " ").toUpperCase() : "ALL PRODUCTS";
 
-  document.getElementById("title").innerText =
-    cat ? cat.replaceAll("_"," ").toUpperCase() : "ALL PRODUCTS";
-
-  let html = "";
-
-  for(let p of items){
-
-    // 🛡️ HARD SAFETY CHECK (prevents blank page)
-    if(!p || !p.id || !p.name) continue;
-
-    // 🛡️ SAFE IMAGE HANDLING
-    let images = [];
-
-    if(p.img){
-      images = Array.isArray(p.img) ? p.img : [p.img];
+    if (items.length === 0) {
+        grid.innerHTML = "<p style='text-align:center; width:100%;'>No products found in this category.</p>";
+        return;
     }
 
-    // fallback image if missing
-    if(images.length === 0){
-      images = ["https://via.placeholder.com/300x400?text=No+Image"];
+    let html = "";
+    for (let p of items) {
+        let images = p.img ? (Array.isArray(p.img) ? p.img : [p.img]) : ["https://via.placeholder.com/300x400?text=No+Image"];
+
+        html += `
+        <div class="card">
+            <div class="slider">
+                <button class="prev" onclick="changeImg('${p.id}', -1)">‹</button>
+                <img id="img-${p.id}" src="${images[0]}" alt="${p.name}">
+                <button class="next" onclick="changeImg('${p.id}', 1)">›</button>
+            </div>
+            <h3>${p.name}</h3>
+            <p style="color: #6a00ff; font-weight: bold; margin: 5px 0;">$${p.price}</p>
+            <select id="size-${p.id}">
+                <option value="">Select Size</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+            </select>
+            <button onclick="add('${p.id}')">Add to Cart</button>
+        </div>`;
     }
-
-    html += `
-      <div class="card">
-
-        <div class="slider">
-
-          <button class="prev" onclick="changeImg('${p.id}', -1)">‹</button>
-
-          <img id="img-${p.id}" src="${images[0]}">
-
-          <button class="next" onclick="changeImg('${p.id}', 1)">›</button>
-
-        </div>
-
-        <h3>${p.name}</h3>
-
-        <select>
-          <option>Select Size</option>
-          <option>S</option>
-          <option>M</option>
-          <option>L</option>
-          <option>XL</option>
-        </select>
-
-        <button onclick="add('${p.id}', this)">Add to Cart</button>
-
-      </div>
-    `;
-  }
-
-  document.getElementById("grid").innerHTML = html;
+    grid.innerHTML = html;
 }
 /* ================= SLIDER ================= */
 function changeImg(id, dir){
@@ -232,24 +218,22 @@ function changeImg(id, dir){
 }
 
 /* ================= CART ================= */
-function add(id, btn){
+function add(id) {
+    const sizeSelect = document.getElementById(`size-${id}`);
+    const size = sizeSelect.value;
 
-  let card = btn.closest(".card");
-  let size = card.querySelector("select").value;
+    if (!size) {
+        alert("Please select a size");
+        return;
+    }
 
-  if(size === "Select Size"){
-    alert("Select size");
-    return;
-  }
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ id, size, price: PRODUCTS[id].price, name: PRODUCTS[id].name });
 
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.push({id, size});
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  updateCart();
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+    alert("Added to cart!");
 }
-
 function updateCart(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   document.getElementById("count").innerText = cart.length;
