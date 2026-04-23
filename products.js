@@ -37,11 +37,11 @@ const PRODUCTS = {
   "SF-SJM-S005": { name: "Soccer Aurum Pro Edition", price: 11},
   "SF-SJM-S007": { name: "Soccer Aqua Storm Edition", price: 11 },
   "SF-SJM-S008": { name: "Soccer Crimson Bolt Edition", price: 11 },
- "SF-SJM-S002": { name: "Soccer TBA Edition", price: 11 },
+ "SF-SJM-S002": { name: "Soccer Eclipse Edition", price: 11 },
   "SF-SJM-S006": { name: "Soccer Red Velocity Edition", price: 11 },
-  "SF-SJM-S009": { name: "Soccer TBA Edition", price: 11 },
-   "SF-SJM-S010": { name: "Soccer TBA Edition", price: 11 },
-  "SF-SJM-S011": { name: "Soccer TBA Edition", price: 11 },
+  "SF-SJM-S009": { name: "Soccer Regal Stripe Edition", price: 11 },
+   "SF-SJM-S010": { name: "Soccer Neon Strike Edition", price: 11 },
+  "SF-SJM-S011": { name: "Soccer Midnight Edition", price: 11 },
 
   /* Female Kits */
   "SF-SJF-S001": { name: "Soccer Blush Strike Edition", price: 11 },
