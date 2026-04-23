@@ -73,7 +73,7 @@ const PRODUCTS = {
    /*  FOr the cat pages e have this following format*/
    /* 11111111111111....... Men Football Kits .........................*/
 {"SF-SJM-S001a": {"name": "Soccer Elite Pro Fusion Edition","price": 11,
-      img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png",
+      "img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png",
       "Soccer_Hero/Men_Images/SF-SJM-S001_2.png",
       "Soccer_Hero/Men_Images/SF-SJM-S001_3.png",
       "Soccer_Hero/Men_Images/SF-SJM-S001_4.jpg"]},
