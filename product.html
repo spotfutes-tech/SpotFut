@@ -226,23 +226,24 @@ function add(id) {
         return;
     }
 
-    // Get the product data from our database
+    // 1. Get the product data from PRODUCTS (in products.js)
     const product = PRODUCTS[id];
 
-    // Get the first image or a placeholder if empty
+    // 2. Get the first image from the array to save as the 'image' key
     const mainImg = (product.img && product.img.length > 0) 
         ? product.img[0] 
         : "https://via.placeholder.com/300";
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     
-    // Add the image to the object we save
+    // 3. Save to cart using 'image' to match cart.html's ${item.image}
     cart.push({ 
         id: id, 
         size: size, 
         name: product.name, 
         price: product.price,
-        img: mainImg // <--- ADD THIS LINE
+        image: mainImg, // This matches your cart.html requirement
+        quantity: 1     // Standardizing quantity
     });
 
     localStorage.setItem("cart", JSON.stringify(cart));
