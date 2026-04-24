@@ -142,8 +142,8 @@ const CATEGORIES = {
   football_jackets_women: [
     "SF-SJM-S005a"
   ],
-   football_kits_juniors: ["SF-SJK-S001a","SF-SJK-S002a","SF-SJK-S003a","SF-SJK-S004a","SF-SJK-S005a","SF-SJK-S006a",
-                          "SF-SJK-S101a","SF-SJK-S102a","SF-SJK-S103a","SF-SJK-S104a","SF-SJK-S105a","SF-SJK-S106a"],
+   football_kits_juniors: ["SF-SJK-S101a","SF-SJK-S002a","SF-SJK-S003a","SF-SJK-S104a","SF-SJK-S005a","SF-SJK-S105a",
+                          "SF-SJK-S001a","SF-SJK-S102a","SF-SJK-S103a","SF-SJK-S004a","SF-SJK-S006a","SF-SJK-S106a"],
 
   football_tracksuits_juniors: [
     "SF-SJM-S005a"
