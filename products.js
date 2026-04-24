@@ -114,6 +114,7 @@ const PRODUCTS = {
 "SF-BP-0001a":{"name":"SF Classic Backpack","price":19,"img":["Accessories/Images_Bags/SF-BP-001-1.png","Accessories/Images_Bags/SF-BP-001-2.png","Accessories/Images_Bags/SF-BP-001-3.png"]},
 "SF-BP-1001a":{"name":"SF Urban Edge Backpack","price":19,"img":["Accessories/Images_Bags/SF-BP-1001-1.png","Accessories/Images_Bags/SF-BP-1001-2.png","Accessories/Images_Bags/SF-BP-1001-3.png"]},
 "SF-BP-2001a":{"name":"SF Camo Backpack","price":19,"img":["Accessories/Images_Bags/SF-BP-2001-1.png","Accessories/Images_Bags/SF-BP-2001-2.png"]},
+"SF-BP-3001a":{"name":"SF Camo Backpack","price":19,"img":["Accessories/Images_Bags/SF-BP-3001-1.png","Accessories/Images_Bags/SF-BP-3001-2.png"]},
 "SF-BP-4001a":{"name":"SF TBA Backpack","price":19,"img":["Accessories/Images_Bags/SF-BP-4001-1.png","Accessories/Images_Bags/SF-BP-4001-2.png"]},
 "SF-BP-5001a":{"name":"SF TBA Backpack","price":19,"img":["Accessories/Images_Bags/SF-BP-5001-1.png","Accessories/Images_Bags/SF-BP-5001-2.png"]},
 "SF-BP-6001a":{"name":"SF TBA Backpack","price":19,"img":["Accessories/Images_Bags/SF-BP-6001-1.png","Accessories/Images_Bags/SF-BP-6001-2.png"]},
@@ -259,7 +260,7 @@ training_tops_juniors: [
 
    /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$  Accessories $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
    /* 111111111111111  Bags $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-      bags: ["SF-BP-0001a","SF-BP-1001a","SF-BP-2001a","SF-BP-3001a","SF-BP-4001a","SF-BP-5001a""SF-BP-6001a","SF-BP-7001a","SF-BP-8001a",
+      bags: ["SF-BP-0001a","SF-BP-1001a","SF-BP-2001a","SF-BP-3001a","SF-BP-4001a","SF-BP-5001a","SF-BP-6001a","SF-BP-7001a","SF-BP-8001a",
             "SF-BP-9001a","SF-BP-1010a"],
     /* 22222222222222222222  Caps $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
       caps: ["SF-CP-5101a","SF-CP-5201a"],      
