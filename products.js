@@ -84,7 +84,25 @@ const PRODUCTS = {
   "SF-SJM-S010a": {"name": "Soccer Neon Strike Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S010_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S010_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_4.jpg"]},
   "SF-SJM-S011a": {"name": "Soccer Midnight Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S011_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S011_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_4.jpg"]},
 
-/* 11111111111111....... Women Football Kits .........................*/
+/* 11111111111111....... Men BasketBall Kits .........................*/
+  "SF-BJM-S001a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S001_1.jpg","BasketBall/Men_Kits/SF-BJM-S001_2.jpg","BasketBall/Men_Kits/SF-BJM-S001_3.jpg"]},
+"SF-BJM-S002a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S002_1.jpg","BasketBall/Men_Kits/SF-BJM-S002_2.jpg","BasketBall/Men_Kits/SF-BJM-S002_3.jpg"]},
+"SF-BJM-S003a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S003_1.jpg","BasketBall/Men_Kits/SF-BJM-S003_2.jpg","BasketBall/Men_Kits/SF-BJM-S003_3.jpg"]},
+"SF-BJM-S004a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S004_1.jpg","BasketBall/Men_Kits/SF-BJM-S004_2.jpg","BasketBall/Men_Kits/SF-BJM-S004_3.jpg"]},
+"SF-BJM-S005a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S005_1.jpg","BasketBall/Men_Kits/SF-BJM-S005_2.jpg","BasketBall/Men_Kits/SF-BJM-S005_3.jpg"]},
+"SF-BJM-S006a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S006_1.jpg","BasketBall/Men_Kits/SF-BJM-S006_2.jpg","BasketBall/Men_Kits/SF-BJM-S006_3.jpg"]},
+"SF-BJM-S007a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S007_1.jpg","BasketBall/Men_Kits/SF-BJM-S007_2.jpg","BasketBall/Men_Kits/SF-BJM-S007_3.jpg"]},
+"SF-BJM-S008a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S008_1.jpg","BasketBall/Men_Kits/SF-BJM-S008_2.jpg","BasketBall/Men_Kits/SF-BJM-S008_3.jpg"]},
+"SF-BJM-S009a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S009_1.jpg","BasketBall/Men_Kits/SF-BJM-S009_2.jpg","BasketBall/Men_Kits/SF-BJM-S009_3.jpg"]},
+"SF-BJM-S010a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S010_1.jpg","BasketBall/Men_Kits/SF-BJM-S010_2.jpg","BasketBall/Men_Kits/SF-BJM-S010_3.jpg"]},
+"SF-BJM-S011a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S011_1.jpg","BasketBall/Men_Kits/SF-BJM-S011_2.jpg","BasketBall/Men_Kits/SF-BJM-S011_3.jpg"]},
+"SF-BJM-S012a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S012_1.jpg","BasketBall/Men_Kits/SF-BJM-S012_2.jpg","BasketBall/Men_Kits/SF-BJM-S012_3.jpg"]},
+"SF-BJM-S013a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S013_1.jpg","BasketBall/Men_Kits/SF-BJM-S013_2.jpg","BasketBall/Men_Kits/SF-BJM-S013_3.jpg"]},
+"SF-BJM-S014a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S014_1.jpg","BasketBall/Men_Kits/SF-BJM-S014_2.jpg","BasketBall/Men_Kits/SF-BJM-S014_3.jpg"]},
+"SF-BJM-S015a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S015_1.jpg","BasketBall/Men_Kits/SF-BJM-S015_2.jpg","BasketBall/Men_Kits/SF-BJM-S015_3.jpg"]},
+"SF-BJM-S016a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S016_1.jpg","BasketBall/Men_Kits/SF-BJM-S016_2.jpg","BasketBall/Men_Kits/SF-BJM-S016_3.jpg"]},
+
+   /* 11111111111111....... Women Football Kits .........................*/
   "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
   "SF-SJF-S002a": {"name": "Soccer Phantom Fade Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S002_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_4.jpg"]},
   "SF-SJF-S003a": {"name": "Soccer Gold-Leaf Kinetic Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S003_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_4.jpg"]},
@@ -96,6 +114,22 @@ const PRODUCTS = {
   "SF-SJF-S009a": {"name": "Soccer Glacier Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S009_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_4.jpg"]},
   "SF-SJF-S010a": {"name": "Soccer Prism Pulse Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S010_1.png", "Soccer_Hero/Women_Images/SF-SJF-S010_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_4.jpg"]},
 
+   /* 11111111111111....... Women BasketBall Kits .........................*/
+   "SF-BJF-S001a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S001_1.jpg","BasketBall/Women_Kits/SF-BJF-S001_2.jpg","BasketBall/Women_Kits/SF-BJF-S001_3.jpg"]},
+"SF-BJF-S002a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S002_1.jpg","BasketBall/Women_Kits/SF-BJF-S002_2.jpg","BasketBall/Women_Kits/SF-BJF-S002_3.jpg"]},
+"SF-BJF-S003a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S003_1.jpg","BasketBall/Women_Kits/SF-BJF-S003_2.jpg","BasketBall/Women_Kits/SF-BJF-S003_3.jpg"]},
+"SF-BJF-S004a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S004_1.jpg","BasketBall/Women_Kits/SF-BJF-S004_2.jpg","BasketBall/Women_Kits/SF-BJF-S004_3.jpg"]},
+"SF-BJF-S005a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S005_1.jpg","BasketBall/Women_Kits/SF-BJF-S005_2.jpg","BasketBall/Women_Kits/SF-BJF-S005_3.jpg"]},
+"SF-BJF-S006a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S006_1.jpg","BasketBall/Women_Kits/SF-BJF-S006_2.jpg","BasketBall/Women_Kits/SF-BJF-S006_3.jpg"]},
+"SF-BJF-S007a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S007_1.jpg","BasketBall/Women_Kits/SF-BJF-S007_2.jpg","BasketBall/Women_Kits/SF-BJF-S007_3.jpg"]},
+"SF-BJF-S008a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S008_1.jpg","BasketBall/Women_Kits/SF-BJF-S008_2.jpg","BasketBall/Women_Kits/SF-BJF-S008_3.jpg"]},
+"SF-BJF-S009a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S009_1.jpg","BasketBall/Women_Kits/SF-BJF-S009_2.jpg","BasketBall/Women_Kits/SF-BJF-S009_3.jpg"]},
+"SF-BJF-S010a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S010_1.jpg","BasketBall/Women_Kits/SF-BJF-S010_2.jpg","BasketBall/Women_Kits/SF-BJF-S010_3.jpg"]},
+"SF-BJF-S011a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S011_1.jpg","BasketBall/Women_Kits/SF-BJF-S011_2.jpg","BasketBall/Women_Kits/SF-BJF-S011_3.jpg"]},
+"SF-BJF-S012a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S012_1.jpg","BasketBall/Women_Kits/SF-BJF-S012_2.jpg","BasketBall/Women_Kits/SF-BJF-S012_3.jpg"]},
+
+
+   
    /* 11111111111111....... Junior Football Kits .........................*/
 "SF-SJK-S001a":{"name":"Soccer Junior Strike Pro Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S001_1.png","Soccer_Hero/Junior_Images/SF-SJK-S001_2.png","Soccer_Hero/Junior_Images/SF-SJK-S001_3.png","Soccer_Hero/Junior_Images/SF-SJK-S001_4.jpg"]},
 "SF-SJK-S003a":{"name":"Soccer Junior Fire Start Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S003_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S003_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S003_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S003_4.jpg"]},
@@ -176,16 +210,15 @@ const CATEGORIES = {
 
 
   /* BASKETBALL (future ready placeholders) */
-  basketball_kits_men: [
-    "SF-SJM-S005a"
+  basketball_kits_men: ["SF-BJM-S001a","SF-BJM-S002a","SF-BJM-S003a","SF-BJM-S004a","SF-BJM-S005a","SF-BJM-S006a","SF-BJM-S007a","SF-BJM-S008a",
+   "SF-BJM-S009a","SF-BJM-S010a","SF-BJM-S011a","SF-BJM-S012a","SF-BJM-S013a","SF-BJM-S014a","SF-BJM-S015a","SF-BJM-S016a"
   ],
 
   basketball_hoodies_men: [
     "SF-SJM-S005a"
   ],
-   basketball_kits_women: [
-    "SF-SJM-S005a"
-  ],
+   basketball_kits_women: ["SF-BJF-S001a","SF-BJF-S002a","SF-BJF-S003a","SF-BJF-S004a","SF-BJF-S005a","SF-BJF-S006a","SF-BJF-S007a","SF-BJF-S008a",
+   "SF-BJF-S009a","SF-BJF-S010a","SF-BJF-S011a","SF-BJF-S012a"],
 
   basketball_hoodies_women: [
     "SF-SJM-S005a"
