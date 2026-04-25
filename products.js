@@ -103,8 +103,25 @@ const PRODUCTS = {
 "SF-BJM-S016a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S016_1.jpg","BasketBall/Men_Kits/SF-BJM-S016_2.jpg","BasketBall/Men_Kits/SF-BJM-S016_3.jpg"]},
 
    /* 11111111111111....... Men Tracksets .........................*/
-"SF-CTS-M039a": {"name": "Spot Classic Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M039.jpg","Men/Images_Tracksets/SF_CTS_M039.jpg"]},
-
+"SF-CTS-M036a": {"name": "Spot C36 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M036_1.jpg","Men/Images_Tracksets/SF_CTS_M036_2.jpg","Men/Images_Tracksets/SF_CTS_M036_3.jpg"]},
+"SF-CTS-M037a": {"name": "Spot C37 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M037_1.jpg","Men/Images_Tracksets/SF_CTS_M037_2.jpg","Men/Images_Tracksets/SF_CTS_M037_3.jpg"]},
+"SF-CTS-M038a": {"name": "Spot C38 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M038_1.jpg","Men/Images_Tracksets/SF_CTS_M038_2.jpg","Men/Images_Tracksets/SF_CTS_M038_3.jpg"]},
+"SF-CTS-M039a": {"name": "Spot C39 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M039_1.jpg","Men/Images_Tracksets/SF_CTS_M039_2.jpg","Men/Images_Tracksets/SF_CTS_M039_3.jpg"]},
+"SF-CTS-M040a": {"name": "Spot C40 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M040_1.jpg","Men/Images_Tracksets/SF_CTS_M040_2.jpg","Men/Images_Tracksets/SF_CTS_M040_3.jpg"]},
+"SF-CTS-M041a": {"name": "Spot C41 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M041_1.jpg","Men/Images_Tracksets/SF_CTS_M041_2.jpg","Men/Images_Tracksets/SF_CTS_M041_3.jpg"]},
+"SF-CTS-M042a": {"name": "Spot C42 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M042_1.jpg","Men/Images_Tracksets/SF_CTS_M042_2.jpg","Men/Images_Tracksets/SF_CTS_M042_3.jpg"]},
+"SF-CTS-M043a": {"name": "Spot C43 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M043_1.jpg","Men/Images_Tracksets/SF_CTS_M043_2.jpg","Men/Images_Tracksets/SF_CTS_M043_3.jpg"]},
+"SF-CTS-M044a": {"name": "Spot C44 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M044_1.jpg","Men/Images_Tracksets/SF_CTS_M044_2.jpg","Men/Images_Tracksets/SF_CTS_M044_3.jpg"]},
+"SF-CTS-M045a": {"name": "Spot C45 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M045_1.jpg","Men/Images_Tracksets/SF_CTS_M045_2.jpg","Men/Images_Tracksets/SF_CTS_M045_3.jpg"]},
+"SF-CTS-M046a": {"name": "Spot C46 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M046_1.jpg","Men/Images_Tracksets/SF_CTS_M046_2.jpg","Men/Images_Tracksets/SF_CTS_M046_3.jpg"]},
+"SF-CTS-M047a": {"name": "Spot C47 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M047_1.jpg","Men/Images_Tracksets/SF_CTS_M047_2.jpg","Men/Images_Tracksets/SF_CTS_M047_3.jpg"]},
+"SF-CTS-M048a": {"name": "Spot C48 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M048_1.jpg","Men/Images_Tracksets/SF_CTS_M048_2.jpg","Men/Images_Tracksets/SF_CTS_M048_3.jpg"]},
+"SF-CTS-M049a": {"name": "Spot C49 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M049_1.jpg","Men/Images_Tracksets/SF_CTS_M049_2.jpg","Men/Images_Tracksets/SF_CTS_M049_3.jpg"]},
+"SF-CTS-M050a": {"name": "Spot C50 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M050_1.jpg","Men/Images_Tracksets/SF_CTS_M050_2.jpg","Men/Images_Tracksets/SF_CTS_M050_3.jpg"]},
+"SF-CTS-M051a": {"name": "Spot C51 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M051_1.jpg","Men/Images_Tracksets/SF_CTS_M051_2.jpg","Men/Images_Tracksets/SF_CTS_M051_3.jpg"]},
+"SF-CTS-M052a": {"name": "Spot C52 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M052_1.jpg","Men/Images_Tracksets/SF_CTS_M052_2.jpg","Men/Images_Tracksets/SF_CTS_M052_3.jpg"]},
+"SF-CTS-M053a": {"name": "Spot C53 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M053_1.jpg","Men/Images_Tracksets/SF_CTS_M053_2.jpg","Men/Images_Tracksets/SF_CTS_M053_3.jpg"]},
+"SF-CTS-M054a": {"name": "Spot C54 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M054_1.jpg","Men/Images_Tracksets/SF_CTS_M054_2.jpg","Men/Images_Tracksets/SF_CTS_M054_3.jpg"]},
 
    
    /* 11111111111111....... Women Football Kits .........................*/
@@ -178,7 +195,9 @@ const CATEGORIES = {
   /* FOOTBALL */
   football_kits_men: ["SF-SJM-S001a","SF-SJM-S002a","SF-SJM-S003a","SF-SJM-S004a","SF-SJM-S005a",
                      "SF-SJM-S006a","SF-SJM-S007a","SF-SJM-S008a","SF-SJM-S009a","SF-SJM-S010a","SF-SJM-S011a"],
-  football_tracksuits_men: ["SF-CTS-M039a","SF-CTS-M039a","SF-CTS-M039a"],
+  football_tracksuits_men: ["SF-CTS-M036a","SF-CTS-M037a","SF-CTS-M038a","SF-CTS-M039a","SF-CTS-M040a","SF-CTS-M041a","SF-CTS-M042a",
+                            "SF-CTS-M043a","SF-CTS-M044a","SF-CTS-M045a","SF-CTS-M046a","SF-CTS-M047a","SF-CTS-M048a","SF-CTS-M049a",
+                            "SF-CTS-M050a","SF-CTS-M051a","SF-CTS-M052a","SF-CTS-M053a","SF-CTS-M054a"],
   football_hoodies_men: ["SF-SJM-S005a"],
 
   football_jackets_men: [
