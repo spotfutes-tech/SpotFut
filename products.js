@@ -102,6 +102,11 @@ const PRODUCTS = {
 "SF-BJM-S015a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S015_1.jpg","BasketBall/Men_Kits/SF-BJM-S015_2.jpg","BasketBall/Men_Kits/SF-BJM-S015_3.jpg"]},
 "SF-BJM-S016a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S016_1.jpg","BasketBall/Men_Kits/SF-BJM-S016_2.jpg","BasketBall/Men_Kits/SF-BJM-S016_3.jpg"]},
 
+   /* 11111111111111....... Men Tracksets .........................*/
+"SF_CTS_M039a": {"name": "Spot Classic Trackset","price": 31,"img": ["Men/Images_Tracksets/SF-CTS-M039.jpg"]},
+
+
+   
    /* 11111111111111....... Women Football Kits .........................*/
   "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
   "SF-SJF-S002a": {"name": "Soccer Phantom Fade Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S002_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_4.jpg"]},
@@ -173,7 +178,7 @@ const CATEGORIES = {
   /* FOOTBALL */
   football_kits_men: ["SF-SJM-S001a","SF-SJM-S002a","SF-SJM-S003a","SF-SJM-S004a","SF-SJM-S005a",
                      "SF-SJM-S006a","SF-SJM-S007a","SF-SJM-S008a","SF-SJM-S009a","SF-SJM-S010a","SF-SJM-S011a"],
-  football_tracksuits_men: ["SF-SJM-S005a"],
+  football_tracksuits_men: ["SF_CTS_M039a"],
   football_hoodies_men: ["SF-SJM-S005a"],
 
   football_jackets_men: [
