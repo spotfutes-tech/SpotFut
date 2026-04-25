@@ -103,7 +103,7 @@ const PRODUCTS = {
 "SF-BJM-S016a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S016_1.jpg","BasketBall/Men_Kits/SF-BJM-S016_2.jpg","BasketBall/Men_Kits/SF-BJM-S016_3.jpg"]},
 
    /* 11111111111111....... Men Tracksets .........................*/
-"SF_CTS_M039a": {"name": "Spot Classic Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M039.jpg"]},
+"SF-CTS-M039a": {"name": "Spot Classic Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M039.jpg","Men/Images_Tracksets/SF_CTS_M039.jpg"]},
 
 
    
@@ -178,7 +178,7 @@ const CATEGORIES = {
   /* FOOTBALL */
   football_kits_men: ["SF-SJM-S001a","SF-SJM-S002a","SF-SJM-S003a","SF-SJM-S004a","SF-SJM-S005a",
                      "SF-SJM-S006a","SF-SJM-S007a","SF-SJM-S008a","SF-SJM-S009a","SF-SJM-S010a","SF-SJM-S011a"],
-  football_tracksuits_men: ["SF_CTS_M039a"],
+  football_tracksuits_men: ["SF-CTS-M039a"],
   football_hoodies_men: ["SF-SJM-S005a"],
 
   football_jackets_men: [
