@@ -150,7 +150,24 @@ const PRODUCTS = {
 "SF-BJF-S011a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S011_1.jpg","BasketBall/Women_Kits/SF-BJF-S011_2.jpg","BasketBall/Women_Kits/SF-BJF-S011_3.jpg"]},
 "SF-BJF-S012a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S012_1.jpg","BasketBall/Women_Kits/SF-BJF-S012_2.jpg","BasketBall/Women_Kits/SF-BJF-S012_3.jpg"]},
 
-
+ /* 11111111111111....... Women Tracksets .........................*/
+"SF-CTS-F120a": {"name": "Spot C120 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F120_1.jpg","Women/Images_Tracksets/SF_CTS_F120_2.jpg","Women/Images_Tracksets/SF_CTS_F120_3.jpg"]},
+"SF-CTS-F121a": {"name": "Spot C121 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F121_1.jpg","Women/Images_Tracksets/SF_CTS_F121_2.jpg","Women/Images_Tracksets/SF_CTS_F121_3.jpg"]},
+"SF-CTS-F122a": {"name": "Spot C122 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F122_1.jpg","Women/Images_Tracksets/SF_CTS_F122_2.jpg","Women/Images_Tracksets/SF_CTS_F122_3.jpg"]},
+"SF-CTS-F123a": {"name": "Spot C123 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F123_1.jpg","Women/Images_Tracksets/SF_CTS_F123_2.jpg","Women/Images_Tracksets/SF_CTS_F123_3.jpg"]},
+"SF-CTS-F124a": {"name": "Spot C124 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F124_1.jpg","Women/Images_Tracksets/SF_CTS_F124_2.jpg","Women/Images_Tracksets/SF_CTS_F124_3.jpg"]},
+"SF-CTS-F125a": {"name": "Spot C125 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F125_1.jpg","Women/Images_Tracksets/SF_CTS_F125_2.jpg","Women/Images_Tracksets/SF_CTS_F125_3.jpg"]},
+"SF-CTS-F126a": {"name": "Spot C126 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F126_1.jpg","Women/Images_Tracksets/SF_CTS_F126_2.jpg","Women/Images_Tracksets/SF_CTS_F126_3.jpg"]},
+"SF-CTS-F127a": {"name": "Spot C127 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F127_1.jpg","Women/Images_Tracksets/SF_CTS_F127_2.jpg","Women/Images_Tracksets/SF_CTS_F127_3.jpg"]},
+"SF-CTS-F128a": {"name": "Spot C128 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F128_1.jpg","Women/Images_Tracksets/SF_CTS_F128_2.jpg","Women/Images_Tracksets/SF_CTS_F128_3.jpg"]},
+"SF-CTS-F129a": {"name": "Spot C129 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F129_1.jpg","Women/Images_Tracksets/SF_CTS_F129_2.jpg","Women/Images_Tracksets/SF_CTS_F129_3.jpg"]},
+"SF-CTS-F130a": {"name": "Spot C130 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F130_1.jpg","Women/Images_Tracksets/SF_CTS_F130_2.jpg","Women/Images_Tracksets/SF_CTS_F130_3.jpg"]},
+"SF-CTS-F131a": {"name": "Spot C131 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F131_1.jpg","Women/Images_Tracksets/SF_CTS_F131_2.jpg","Women/Images_Tracksets/SF_CTS_F131_3.jpg"]},
+"SF-CTS-F132a": {"name": "Spot C132 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F132_1.jpg","Women/Images_Tracksets/SF_CTS_F132_2.jpg","Women/Images_Tracksets/SF_CTS_F132_3.jpg"]},
+"SF-CTS-F133a": {"name": "Spot C133 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F133_1.jpg","Women/Images_Tracksets/SF_CTS_F133_2.jpg","Women/Images_Tracksets/SF_CTS_F133_3.jpg"]},
+"SF-CTS-F134a": {"name": "Spot C134 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F134_1.jpg","Women/Images_Tracksets/SF_CTS_F134_2.jpg","Women/Images_Tracksets/SF_CTS_F134_3.jpg"]},
+"SF-CTS-F135a": {"name": "Spot C135 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F135_1.jpg","Women/Images_Tracksets/SF_CTS_F135_2.jpg","Women/Images_Tracksets/SF_CTS_F135_3.jpg"]},
+"SF-CTS-F136a": {"name": "Spot C136 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F136_1.jpg","Women/Images_Tracksets/SF_CTS_F136_2.jpg","Women/Images_Tracksets/SF_CTS_F136_3.jpg"]},
    
    /* 11111111111111....... Junior Football Kits .........................*/
 "SF-SJK-S001a":{"name":"Soccer Junior Strike Pro Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S001_1.png","Soccer_Hero/Junior_Images/SF-SJK-S001_2.png","Soccer_Hero/Junior_Images/SF-SJK-S001_3.png","Soccer_Hero/Junior_Images/SF-SJK-S001_4.jpg"]},
@@ -206,9 +223,9 @@ const CATEGORIES = {
    football_kits_women: ["SF-SJF-S001a","SF-SJF-S002a","SF-SJF-S003a","SF-SJF-S004a","SF-SJF-S005a",
                      "SF-SJF-S006a","SF-SJF-S007a","SF-SJF-S008a","SF-SJF-S009a","SF-SJF-S010a"],
 
-  football_tracksuits_women: [
-    "SF-SJM-S005a"
-  ],
+  football_tracksuits_women: ["SF-CTS-F120a","SF-CTS-F121a","SF-CTS-F122a","SF-CTS-F123a","SF-CTS-F124a","SF-CTS-F125a","SF-CTS-F126a",
+                           "SF-CTS-F127a","SF-CTS-F128a","SF-CTS-F129a","SF-CTS-F130a","SF-CTS-F131a","SF-CTS-F132a","SF-CTS-F133a",
+                           "SF-CTS-F134a","SF-CTS-F135a","SF-CTS-F136a"],
 
   football_hoodies_women: [
     "SF-SJM-S005a"
