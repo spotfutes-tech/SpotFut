@@ -167,7 +167,7 @@ const PRODUCTS = {
 "SF-CTS-F133a": {"name": "Spot C133 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F133_1.jpg","Women/Images_Tracksets/SF_CTS_F133_2.jpg","Women/Images_Tracksets/SF_CTS_F133_3.jpg"]},
 "SF-CTS-F134a": {"name": "Spot C134 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F134_1.jpg","Women/Images_Tracksets/SF_CTS_F134_2.jpg","Women/Images_Tracksets/SF_CTS_F134_3.jpg"]},
 "SF-CTS-F135a": {"name": "Spot C135 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F135_1.jpg","Women/Images_Tracksets/SF_CTS_F135_2.jpg","Women/Images_Tracksets/SF_CTS_F135_3.jpg"]},
-"SF-CTS-F136a": {"name": "Spot C136 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F136_1.jpg","Women/Images_Tracksets/SF_CTS_F136_2.jpg","Women/Images_Tracksets/SF_CTS_F136_3.jpg"]},
+"SF-CTS-F136a": {"name": "Spot C136 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F136_1.jpeg","Women/Images_Tracksets/SF_CTS_F136_2.jpeg","Women/Images_Tracksets/SF_CTS_F136_3.jpeg"]},
    
    /* 11111111111111....... Junior Football Kits .........................*/
 "SF-SJK-S001a":{"name":"Soccer Junior Strike Pro Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S001_1.png","Soccer_Hero/Junior_Images/SF-SJK-S001_2.png","Soccer_Hero/Junior_Images/SF-SJK-S001_3.png","Soccer_Hero/Junior_Images/SF-SJK-S001_4.jpg"]},
