@@ -72,7 +72,9 @@ const PRODUCTS = {
 
    /*  FOr the cat pages e have this following format*/
    /* 11111111111111....... Men Football Kits .........................*/
-  "SF-SJM-S001a": {"name": "Soccer Elite Pro Fusion Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png","Soccer_Hero/Men_Images/SF-SJM-S001_2.png","Soccer_Hero/Men_Images/SF-SJM-S001_3.png","Soccer_Hero/Men_Images/SF-SJM-S001_4.jpg"]},
+  "SF-SJM-S001a": {"name": "Soccer Elite Pro Fusion Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png","Soccer_Hero/Men_Images/SF-SJM-S001_2.png","Soccer_Hero/Men_Images/SF-SJM-S001_3.png","Soccer_Hero/Men_Images/SF-SJM-S001_4.jpg"],
+  "description": "Elite performance soccer kit designed for speed, comfort, and durability. Lightweight breathable fabric with pro-level fit.",
+  "sizes": ["3XS","2XS","XS","S", "M", "L", "XL", "2XL", "3XL"]},
   "SF-SJM-S004a": {"name": "Soccer Hexa Pulse Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S004_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_4.jpg"]},
   "SF-SJM-S003a": {"name": "Soccer Urban Strike Gradient Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S003_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_4.jpg"]},
   "SF-SJM-S005a": {"name": "Soccer Aurum Pro Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S005_1.png","Soccer_Hero/Men_Images/SF-SJM-S005_2.png","Soccer_Hero/Men_Images/SF-SJM-S005_3.png","Soccer_Hero/Men_Images/SF-SJM-S005_4.jpg"]},
