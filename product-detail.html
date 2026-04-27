@@ -78,6 +78,12 @@ body {
     color: #444;
 }
 
+button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
 /* MODAL */
 .modal {
     display: none;
@@ -104,17 +110,21 @@ body {
 <div class="container">
     <div class="product-detail">
 
-        <!-- IMAGES -->
         <div class="images">
             <img id="mainImg">
             <div class="thumbs" id="thumbs"></div>
         </div>
 
-        <!-- INFO -->
         <div class="info">
             <h1 id="name"></h1>
             <div class="price" id="price"></div>
+
             <p class="description" id="description"></p>
+
+            <!-- SIZE (NEW BUT SAFE) -->
+            <div id="sizes"></div>
+
+            <button onclick="addToCart()">Add to Cart</button>
         </div>
 
     </div>
@@ -125,15 +135,12 @@ body {
     <img id="modalImg">
 </div>
 
-<!-- IMPORTANT: correct path if needed -->
-<script src="products.js"></script>
+<script src="product.js"></script>
 
 <script>
-/* ================= GET ID ================= */
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
-/* ================= SAFETY CHECK ================= */
 if (!productId || !PRODUCTS[productId]) {
     document.body.innerHTML = "<h2 style='text-align:center;margin-top:50px;'>Product not found</h2>";
     throw new Error("Invalid product ID");
@@ -141,29 +148,29 @@ if (!productId || !PRODUCTS[productId]) {
 
 const product = PRODUCTS[productId];
 
-/* ================= BASIC INFO ================= */
-document.getElementById("name").innerText = product.name || "No name";
-document.getElementById("price").innerText = "$" + (product.price || 0);
+/* NAME */
+document.getElementById("name").innerText = product.name || "";
 
-/* ================= DESCRIPTION ================= */
+/* EURO PRICE FIX */
+document.getElementById("price").innerText = "€" + (product.price || 0);
+
+/* DESCRIPTION */
 document.getElementById("description").innerHTML =
     (product.description || "No description available").replace(/\n/g, "<br>");
 
-/* ================= IMAGES SAFE ================= */
+/* IMAGES */
 const images = Array.isArray(product.img) ? product.img : [];
 
 if (images.length === 0) {
-    images.push("https://via.placeholder.com/600x800?text=No+Image");
+    images.push("https://via.placeholder.com/600x800");
 }
 
-/* MAIN IMAGE */
 const mainImg = document.getElementById("mainImg");
 mainImg.src = images[0];
+
 mainImg.onclick = () => openModal(mainImg.src);
 
-/* THUMBNAILS */
 const thumbs = document.getElementById("thumbs");
-thumbs.innerHTML = "";
 
 images.forEach(img => {
     const el = document.createElement("img");
@@ -172,7 +179,52 @@ images.forEach(img => {
     thumbs.appendChild(el);
 });
 
-/* ================= MODAL ================= */
+/* SIZE (optional support) */
+let selectedSize = null;
+
+const sizesDiv = document.getElementById("sizes");
+
+if (product.sizes && Array.isArray(product.sizes)) {
+    product.sizes.forEach(size => {
+        const btn = document.createElement("button");
+        btn.innerText = size;
+
+        btn.onclick = () => {
+            selectedSize = size;
+
+            document.querySelectorAll("#sizes button").forEach(b => {
+                b.style.background = "";
+                b.style.color = "";
+            });
+
+            btn.style.background = "black";
+            btn.style.color = "white";
+        };
+
+        sizesDiv.appendChild(btn);
+    });
+}
+
+/* CART */
+function addToCart() {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+        id: productId,
+        name: product.name,
+        price: product.price,
+        image: images[0],
+        size: selectedSize || "Free Size",
+        qty: 1
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Added to cart 🛒");
+}
+
+/* MODAL */
 function openModal(src) {
     document.getElementById("imgModal").style.display = "flex";
     document.getElementById("modalImg").src = src;
