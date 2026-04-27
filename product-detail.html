@@ -128,7 +128,6 @@ body {
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <div class="back" onclick="history.back()">← Back</div>
   <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
@@ -137,13 +136,11 @@ body {
 <div class="container">
     <div class="product-detail">
 
-        <!-- IMAGES -->
         <div class="images">
             <img id="mainImg">
             <div class="thumbs" id="thumbs"></div>
         </div>
 
-        <!-- INFO -->
         <div class="info">
             <h1 id="name"></h1>
             <div class="price" id="price"></div>
@@ -158,7 +155,6 @@ body {
     </div>
 </div>
 
-<!-- MODAL -->
 <div class="modal" id="imgModal" onclick="closeModal()">
     <img id="modalImg">
 </div>
@@ -176,15 +172,30 @@ if (!product) {
     document.body.innerHTML = "<h2 style='text-align:center;margin-top:50px;'>Product not found</h2>";
 }
 
-/* BASIC INFO */
+/* ================= BASIC ================= */
 document.getElementById("name").innerText = product.name;
 document.getElementById("price").innerText = "€" + product.price;
 
-/* DESCRIPTION */
-document.getElementById("description").innerHTML =
-    (product.description || "").replace(/\n/g, "<br>");
+/* ================= DESCRIPTION ================= */
+const GENERIC_DESCRIPTION =
+`Premium quality sportswear engineered for performance and comfort.
+Breathable fabric, athletic fit, and durable stitching designed for everyday play.`;
 
-/* IMAGES */
+// Category-based descriptions
+const CATEGORY_DESCRIPTIONS = {
+    soccer: `Elite performance football kit designed for speed, comfort, and durability.
+Lightweight breathable fabric with pro-level fit.`
+};
+
+let finalDescription =
+    product.description ||
+    (productId.startsWith("SF-SJM") ? CATEGORY_DESCRIPTIONS.soccer : null) ||
+    GENERIC_DESCRIPTION;
+
+document.getElementById("description").innerHTML =
+    finalDescription.replace(/\n/g, "<br>");
+
+/* ================= IMAGES ================= */
 const mainImg = document.getElementById("mainImg");
 mainImg.src = product.img?.[0] || "";
 
@@ -200,15 +211,26 @@ function changeImg(src){
     mainImg.src = src;
 }
 
-/* SIZES */
+/* ================= SIZES ================= */
 let selectedSize = null;
 
 const sizesDiv = document.getElementById("sizes");
 
-let sizesToUse = (product.sizes && Array.isArray(product.sizes))
-    ? product.sizes
-    : ["S","M","L","XL"];
+// Category sizes
+const CATEGORY_SIZES = {
+    soccer: ["3XS","2XS","XS","S","M","L","XL","2XL","3XL"]
+};
 
+// Default sizes
+const DEFAULT_SIZES = ["S","M","L","XL"];
+
+// Final logic
+let sizesToUse =
+    (product.sizes && Array.isArray(product.sizes))
+    ? product.sizes
+    : (productId.startsWith("SF-SJM") ? CATEGORY_SIZES.soccer : DEFAULT_SIZES);
+
+// Render
 sizesToUse.forEach(size => {
     const btn = document.createElement("button");
     btn.innerText = size;
@@ -228,7 +250,7 @@ sizesToUse.forEach(size => {
     sizesDiv.appendChild(btn);
 });
 
-/* CART */
+/* ================= CART ================= */
 function addToCart(){
 
     if (!selectedSize) {
@@ -253,7 +275,7 @@ function addToCart(){
     alert("Added to cart!");
 }
 
-/* CART COUNT */
+/* ================= CART COUNT ================= */
 function updateCart(){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     document.getElementById("count").innerText = cart.length;
@@ -263,7 +285,7 @@ function goCart(){
     window.location.href = "../cart.html";
 }
 
-/* MODAL */
+/* ================= MODAL ================= */
 function openModal(src){
     document.getElementById("imgModal").style.display = "flex";
     document.getElementById("modalImg").src = src;
