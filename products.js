@@ -124,15 +124,15 @@ const PRODUCTS = {
 "SF-CTS-M054a": {"name": "Spot C54 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M054_1.jpg","Men/Images_Tracksets/SF_CTS_M054_2.jpg","Men/Images_Tracksets/SF_CTS_M054_3.jpg"]},
 
     /* 11111111111111....... Men Polos .........................*/
-"SF-BPM-M180a": {"name": "Spot B180 Polo","price": 21,"img": ["Men/Images_Polos/SF_BPM_180_1.jpg","Men/Images_Polos/SF_BPM_180_2.jpg","Men/Images_Polos/SF_BPM_180_3.jpg"]},
-"SF-BPM-M181a": {"name": "Spot B181 Polo","price": 21,"img": ["Men/Images_Polos/SF_BPM_181_1.jpg","Men/Images_Polos/SF_BPM_181_2.jpg","Men/Images_Polos/SF_BPM_181_3.jpg"]},
-"SF-BPM-M182a": {"name": "Spot B182 Polo","price": 21,"img": ["Men/Images_Polos/SF_BPM_182_1.jpg","Men/Images_Polos/SF_BPM_182_2.jpg","Men/Images_Polos/SF_BPM_182_3.jpg"]},
-"SF-BPM-M183a": {"name": "Spot B183 Polo","price": 21,"img": ["Men/Images_Polos/SF_BPM_183_1.jpg","Men/Images_Polos/SF_BPM_183_2.jpg","Men/Images_Polos/SF_BPM_183_3.jpg"]},
-"SF-BPM-M184a": {"name": "Spot B184 Polo","price": 21,"img": ["Men/Images_Polos/SF_BPM_184_1.jpg","Men/Images_Polos/SF_BPM_184_2.jpg","Men/Images_Polos/SF_BPM_184_3.jpg"]},
-"SF-BPM-M185a": {"name": "Spot B185 Polo","price": 21,"img": ["Men/Images_Polos/SF_BPM_185_1.jpg","Men/Images_Polos/SF_BPM_185_2.jpg","Men/Images_Polos/SF_BPM_185_3.jpg"]},
-"SF-BPM-M186a": {"name": "Spot B186 Polo","price": 21,"img": ["Men/Images_Polos/SF_BPM_186_1.jpg","Men/Images_Polos/SF_BPM_186_2.jpg","Men/Images_Polos/SF_BPM_186_3.jpg"]},
-"SF-BPM-M187a": {"name": "Spot B187 Polo","price": 21,"img": ["Men/Images_Polos/SF_BPM_187_1.jpg","Men/Images_Polos/SF_BPM_187_2.jpg","Men/Images_Polos/SF_BPM_187_3.jpg"]},
-"SF-BPM-M188a": {"name": "Spot B188 Polo","price": 21,"img": ["Men/Images_Polos/SF_BPM_188_1.jpg","Men/Images_Polos/SF_BPM_188_2.jpg","Men/Images_Polos/SF_BPM_188_3.jpg"]},
+"SF-BPM-M180a": {"name": "Spot B180 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-180_1.jpg","Men/Images_Polos/SF-BPM-180_2.jpg","Men/Images_Polos/SF-BPM-180_3.jpg"]},
+"SF-BPM-M181a": {"name": "Spot B181 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-181_1.jpg","Men/Images_Polos/SF-BPM-181_2.jpg","Men/Images_Polos/SF-BPM-181_3.jpg"]},
+"SF-BPM-M182a": {"name": "Spot B182 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-182_1.jpg","Men/Images_Polos/SF-BPM-182_2.jpg","Men/Images_Polos/SF-BPM-182_3.jpg"]},
+"SF-BPM-M183a": {"name": "Spot B183 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-183_1.jpg","Men/Images_Polos/SF-BPM-183_2.jpg","Men/Images_Polos/SF-BPM-183_3.jpg"]},
+"SF-BPM-M184a": {"name": "Spot B184 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-184_1.jpg","Men/Images_Polos/SF-BPM-184_2.jpg","Men/Images_Polos/SF-BPM-184_3.jpg"]},
+"SF-BPM-M185a": {"name": "Spot B185 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-185_1.jpg","Men/Images_Polos/SF-BPM-185_2.jpg","Men/Images_Polos/SF-BPM-185_3.jpg"]},
+"SF-BPM-M186a": {"name": "Spot B186 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-186_1.jpg","Men/Images_Polos/SF-BPM-186_2.jpg","Men/Images_Polos/SF-BPM-186_3.jpg"]},
+"SF-BPM-M187a": {"name": "Spot B187 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-187_1.jpg","Men/Images_Polos/SF-BPM-187_2.jpg","Men/Images_Polos/SF-BPM-187_3.jpg"]},
+"SF-BPM-M188a": {"name": "Spot B188 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-188_1.jpg","Men/Images_Polos/SF-BPM-188_2.jpg","Men/Images_Polos/SF-BPM-188_3.jpg"]},
    
    /* 11111111111111....... Women Football Kits .........................*/
   "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
