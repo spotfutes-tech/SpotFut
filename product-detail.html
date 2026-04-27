@@ -165,11 +165,11 @@ body {
 
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
+
 const product = PRODUCTS[productId];
 
 if (!product) {
     document.body.innerHTML = "<h2 style='text-align:center;margin-top:50px;'>Product not found</h2>";
-    throw new Error("Invalid product");
 }
 
 /* ================= BASIC ================= */
@@ -178,18 +178,11 @@ document.getElementById("price").innerText = "€" + product.price;
 
 /* ================= DESCRIPTION ================= */
 const GENERIC_DESCRIPTION =
-`Premium quality sportswear engineered for performance and comfort.
-Breathable fabric, athletic fit, and durable stitching designed for everyday play.`;
-
-const CATEGORY_DESCRIPTIONS = {
-    soccer: `Elite performance football kit designed for speed, comfort, and durability.
-Lightweight breathable fabric with pro-level fit.`
-};
+"Premium quality sportswear engineered for comfort, durability, and performance. Designed for everyday athletes and professionals.";
 
 let finalDescription =
     product.description ||
-    (product.category && CATEGORY_DESCRIPTIONS[product.category]) ||
-    (productId.startsWith("SF-SJM") ? CATEGORY_DESCRIPTIONS.soccer : null) ||
+    (product.category && CATEGORY_DESCRIPTIONS?.[product.category]) ||
     GENERIC_DESCRIPTION;
 
 document.getElementById("description").innerHTML =
@@ -202,38 +195,32 @@ mainImg.src = product.img?.[0] || "";
 mainImg.onclick = () => openModal(mainImg.src);
 
 const thumbs = document.getElementById("thumbs");
-thumbs.innerHTML = "";
 
 (product.img || []).forEach(img => {
-    const t = document.createElement("img");
-    t.src = img;
-    t.onclick = () => mainImg.src = img;
-    thumbs.appendChild(t);
+    thumbs.innerHTML += `<img src="${img}" onclick="changeImg('${img}')">`;
 });
+
+function changeImg(src){
+    mainImg.src = src;
+}
 
 /* ================= SIZES ================= */
 let selectedSize = null;
-
 const sizesDiv = document.getElementById("sizes");
 
-const DEFAULT_SIZES = ["S","M","L","XL"];
+// USE ONLY product.js logic (NO DUPLICATES HERE)
 
-const CATEGORY_SIZES = {
-    soccer: ["3XS","2XS","XS","S","M","L","XL","2XL","3XL"]
-};
+let sizesToUse = DEFAULT_SIZES;
 
-let sizesToUse =
-    product.sizes && Array.isArray(product.sizes)
-        ? product.sizes
-        : (product.category && CATEGORY_SIZES[product.category])
-            ? CATEGORY_SIZES[product.category]
-            : (productId.startsWith("SF-SJM")
-                ? CATEGORY_SIZES.soccer
-                : DEFAULT_SIZES);
+if (product.sizes && Array.isArray(product.sizes)) {
+    sizesToUse = product.sizes;
+} 
+else if (product.category && CATEGORY_SIZES?.[product.category]) {
+    sizesToUse = CATEGORY_SIZES[product.category];
+}
 
-sizesDiv.innerHTML = "";
-
-sizesToUse.forEach((size, i) => {
+// Render sizes
+sizesToUse.forEach(size => {
     const btn = document.createElement("button");
     btn.innerText = size;
 
@@ -250,15 +237,12 @@ sizesToUse.forEach((size, i) => {
     };
 
     sizesDiv.appendChild(btn);
-
-    // auto select first size (premium UX)
-    if (i === 0) btn.click();
 });
 
 /* ================= CART ================= */
 function addToCart(){
 
-    if (!selectedSize) {
+    if (!selectedSize && sizesToUse.length > 0) {
         alert("Please select size");
         return;
     }
@@ -269,18 +253,15 @@ function addToCart(){
         id: productId,
         name: product.name,
         price: product.price,
-        size: selectedSize,
-        img: product.img?.[0] || "",
-        qty: 1
+        size: selectedSize || "ONE SIZE",
+        image: product.img?.[0] || "",
+        quantity: 1
     });
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
     updateCart();
-
-    const btn = document.querySelector(".cartBtn");
-    btn.innerText = "Added ✓";
-    setTimeout(() => btn.innerText = "Add to Cart", 1200);
+    alert("Added to cart!");
 }
 
 /* ================= CART COUNT ================= */
