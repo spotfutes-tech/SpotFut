@@ -189,6 +189,7 @@ Lightweight breathable fabric with pro-level fit.`
 
 let finalDescription =
     product.description ||
+    (product.category && CATEGORY_DESCRIPTIONS[product.category]) ||
     (productId.startsWith("SF-SJM") ? CATEGORY_DESCRIPTIONS.soccer : null) ||
     GENERIC_DESCRIPTION;
 
@@ -224,11 +225,16 @@ const CATEGORY_SIZES = {
 // Default sizes
 const DEFAULT_SIZES = ["S","M","L","XL"];
 
-// Final logic
-let sizesToUse =
-    (product.sizes && Array.isArray(product.sizes))
-    ? product.sizes
-    : (productId.startsWith("SF-SJM") ? CATEGORY_SIZES.soccer : DEFAULT_SIZES);
+// ✅ SMART SIZE SYSTEM (UPDATED)
+let sizesToUse = DEFAULT_SIZES;
+
+if (product.sizes && Array.isArray(product.sizes)) {
+    sizesToUse = product.sizes;
+} else if (product.category && CATEGORY_SIZES[product.category]) {
+    sizesToUse = CATEGORY_SIZES[product.category];
+} else if (productId.startsWith("SF-SJM")) {
+    sizesToUse = CATEGORY_SIZES.soccer; // fallback
+}
 
 // Render
 sizesToUse.forEach(size => {
