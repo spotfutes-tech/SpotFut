@@ -1,124 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SpotFut Product</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>SpotFut Product</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #ffffff;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 40px 20px;
-        }
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
 
-        .product-detail {
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
+.product-detail {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
 
-        /* IMAGES */
-        .images {
-            flex: 1;
-            min-width: 300px;
-        }
+/* IMAGES */
+.images {
+    flex: 1;
+    min-width: 300px;
+}
 
-        .images img {
-            width: 100%;
-            border-radius: 10px;
-        }
+.images img {
+    width: 100%;
+    border-radius: 10px;
+    cursor: zoom-in;
+}
 
-        #mainImg {
-            cursor: zoom-in;
-        }
+.thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
 
-        .thumbs {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
+.thumbs img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
 
-        .thumbs img {
-            width: 70px;
-            height: 70px;
-            object-fit: cover;
-            cursor: pointer;
-            border-radius: 8px;
-            border: 2px solid transparent;
-        }
+.thumbs img:hover {
+    border: 2px solid #000;
+}
 
-        .thumbs img:hover {
-            border: 2px solid #000;
-        }
+/* INFO */
+.info {
+    flex: 1;
+    min-width: 300px;
+}
 
-        /* INFO */
-        .info {
-            flex: 1;
-            min-width: 300px;
-        }
+.info h1 {
+    margin-bottom: 10px;
+}
 
-        .info h1 {
-            margin-bottom: 10px;
-        }
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
 
-        .price {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
+.description {
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #444;
+}
 
-        .description {
-            margin-top: 10px;
-            line-height: 1.6;
-            color: #444;
-        }
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
 
-        .sizes {
-            margin-top: 20px;
-        }
-
-        .sizes button {
-            padding: 10px 15px;
-            margin: 5px 5px 0 0;
-            border: 1px solid #000;
-            background: white;
-            cursor: pointer;
-            border-radius: 6px;
-        }
-
-        .sizes button.active {
-            background: black;
-            color: white;
-        }
-
-        /* MODAL */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal img {
-            max-width: 90%;
-            max-height: 90%;
-            border-radius: 10px;
-        }
-
-    </style>
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+}
+</style>
 </head>
 
 <body>
@@ -136,75 +114,65 @@
         <div class="info">
             <h1 id="name"></h1>
             <div class="price" id="price"></div>
-
-            <!-- NEW: DESCRIPTION -->
-            <p id="description" class="description"></p>
-
-            <div class="sizes" id="sizes"></div>
+            <p class="description" id="description"></p>
         </div>
 
     </div>
 </div>
 
-<!-- IMAGE MODAL -->
+<!-- MODAL -->
 <div class="modal" id="imgModal" onclick="closeModal()">
     <img id="modalImg">
 </div>
 
+<!-- IMPORTANT: correct path if needed -->
 <script src="product.js"></script>
 
 <script>
-/* GET PRODUCT ID */
+/* ================= GET ID ================= */
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
-const product = PRODUCTS[productId];
-
-if (!product) {
+/* ================= SAFETY CHECK ================= */
+if (!productId || !PRODUCTS[productId]) {
     document.body.innerHTML = "<h2 style='text-align:center;margin-top:50px;'>Product not found</h2>";
+    throw new Error("Invalid product ID");
 }
 
-/* RENDER BASIC INFO */
-document.getElementById("name").innerText = product.name;
-document.getElementById("price").innerText = "$" + product.price;
+const product = PRODUCTS[productId];
 
-/* DESCRIPTION (supports line breaks) */
+/* ================= BASIC INFO ================= */
+document.getElementById("name").innerText = product.name || "No name";
+document.getElementById("price").innerText = "$" + (product.price || 0);
+
+/* ================= DESCRIPTION ================= */
 document.getElementById("description").innerHTML =
-    (product.description || "").replace(/\n/g, "<br>");
+    (product.description || "No description available").replace(/\n/g, "<br>");
+
+/* ================= IMAGES SAFE ================= */
+const images = Array.isArray(product.img) ? product.img : [];
+
+if (images.length === 0) {
+    images.push("https://via.placeholder.com/600x800?text=No+Image");
+}
 
 /* MAIN IMAGE */
 const mainImg = document.getElementById("mainImg");
-mainImg.src = product.img[0];
+mainImg.src = images[0];
 mainImg.onclick = () => openModal(mainImg.src);
 
 /* THUMBNAILS */
 const thumbs = document.getElementById("thumbs");
+thumbs.innerHTML = "";
 
-product.img.forEach(img => {
-    thumbs.innerHTML += `
-        <img src="${img}" onclick="changeImg('${img}')">
-    `;
+images.forEach(img => {
+    const el = document.createElement("img");
+    el.src = img;
+    el.onclick = () => mainImg.src = img;
+    thumbs.appendChild(el);
 });
 
-function changeImg(src) {
-    mainImg.src = src;
-}
-
-/* SIZES */
-const sizesDiv = document.getElementById("sizes");
-
-if (product.sizes) {
-    product.sizes.forEach(size => {
-        sizesDiv.innerHTML += `<button onclick="selectSize(this)">${size}</button>`;
-    });
-}
-
-function selectSize(btn) {
-    document.querySelectorAll(".sizes button").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-}
-
-/* MODAL */
+/* ================= MODAL ================= */
 function openModal(src) {
     document.getElementById("imgModal").style.display = "flex";
     document.getElementById("modalImg").src = src;
