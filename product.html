@@ -128,11 +128,11 @@ button{
 <script src="products.js"></script>
 
 <script>
-window.onerror = function(msg, url, line, col, error){
-  console.log("JS ERROR:", msg);
-  console.log("Line:", line);
+
+window.onerror = function(msg, url, line){
+  console.log("JS ERROR:", msg, "Line:", line);
 };
-  
+
 const cat = new URLSearchParams(window.location.search).get("cat");
 
 /* ================= GET PRODUCTS ================= */
@@ -150,11 +150,11 @@ function getItems() {
         if (PRODUCTS[id]) {
             return { id, ...PRODUCTS[id] };
         }
-        return null; 
-    }).filter(item => item !== null);
+        return null;
+    }).filter(Boolean);
 }
 
-/* ================= NAVIGATION ================= */
+/* ================= GO DETAIL ================= */
 function goToProduct(id){
     window.location.href = `product-detail.html?id=${id}`;
 }
@@ -170,43 +170,43 @@ function render() {
 
     titleEl.innerText = cat ? cat.replace(/_/g, " ").toUpperCase() : "ALL PRODUCTS";
 
-    if (items.length === 0) {
-        grid.innerHTML = "<p style='text-align:center; width:100%;'>No products found in this category.</p>";
+    if (!items.length) {
+        grid.innerHTML = "<p style='text-align:center;width:100%;'>No products found</p>";
         return;
     }
 
     let html = "";
+
     for (let p of items) {
-        let images = p.img ? (Array.isArray(p.img) ? p.img : [p.img]) : ["https://via.placeholder.com/300x400?text=No+Image"];
+
+        let images = p.img ? (Array.isArray(p.img) ? p.img : [p.img]) : [];
 
         html += `
         <div class="card">
 
             <div class="slider clickable" onclick="goToProduct('${p.id}')">
                 <button class="prev" onclick="event.stopPropagation(); changeImg('${p.id}', -1)">‹</button>
-                <img id="img-${p.id}" src="${images[0]}" alt="${p.name}">
+                <img id="img-${p.id}" src="${images[0] || ''}">
                 <button class="next" onclick="event.stopPropagation(); changeImg('${p.id}', 1)">›</button>
             </div>
 
             <h3 class="clickable" onclick="goToProduct('${p.id}')">${p.name}</h3>
 
+            <div style="margin-bottom:5px;">€${p.price}</div>
+
             <select id="size-${p.id}">
                 <option value="">Select Size</option>
-                <option>3XS</option>
-                <option>2XS</option>
-                <option>XS</option>
                 <option>S</option>
                 <option>M</option>
                 <option>L</option>
                 <option>XL</option>
-                <option>2XL</option>
-                <option>3XL</option> 
             </select>
 
             <button onclick="add('${p.id}')">Add to Cart</button>
 
         </div>`;
     }
+
     grid.innerHTML = html;
 }
 
@@ -218,9 +218,7 @@ function changeImg(id, dir){
 
   if(!product || !product.img) return;
 
-  const images = Array.isArray(product.img)
-    ? product.img
-    : [product.img];
+  const images = Array.isArray(product.img) ? product.img : [product.img];
 
   if(!imgIndex[id]) imgIndex[id] = 0;
 
@@ -229,58 +227,50 @@ function changeImg(id, dir){
   if(imgIndex[id] < 0) imgIndex[id] = images.length - 1;
   if(imgIndex[id] >= images.length) imgIndex[id] = 0;
 
-  const el = document.getElementById(`img-${id}`);
-  if(el){
-    el.src = images[imgIndex[id]];
-  }
+  document.getElementById(`img-${id}`).src = images[imgIndex[id]];
 }
 
 /* ================= CART ================= */
-function add(id) {
-    const sizeSelect = document.getElementById(`size-${id}`);
-    const size = sizeSelect.value;
+function add(id){
 
-    if (!size) {
-        alert("Please select a size");
+    const size = document.getElementById(`size-${id}`).value;
+
+    if(!size){
+        alert("Select size");
         return;
     }
 
-    const product = PRODUCTS[id];
-
-    const mainImg = (product.img && product.img.length > 0) 
-        ? product.img[0] 
-        : "https://via.placeholder.com/300";
-
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
-    cart.push({ 
-        id: id, 
-        size: size, 
-        name: product.name, 
-        price: product.price,
-        image: mainImg,
+
+    cart.push({
+        id,
+        size,
+        name: PRODUCTS[id].name,
+        price: PRODUCTS[id].price,
+        image: PRODUCTS[id].img?.[0] || "",
         quantity: 1
     });
 
     localStorage.setItem("cart", JSON.stringify(cart));
+
     updateCart();
-    alert("Added to cart!");
+    alert("Added to cart");
 }
 
+/* ================= CART COUNT SAFE ================= */
 function updateCart(){
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  document.getElementById("count").innerText = cart.length;
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("count").innerText = cart.length;
 }
 
 function goBack(){
-  window.history.back();
+    window.history.back();
 }
 
 function goCart(){
-  window.location.href="../cart.html";
+    window.location.href="../cart.html";
 }
 
-/* INIT */
 render();
 updateCart();
 
