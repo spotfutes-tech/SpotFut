@@ -209,9 +209,12 @@ const PRODUCTS = {
 "SF-BP-1010a":{"name":"SF TBA Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-1010-1.png","Accessories/Images_Bags/SF-BP-1010-2.png","Accessories/Images_Bags/SF-BP-1010-3.png","Accessories/Images_Bags/SF-BP-1010-4.png"]},
 
 /* 11111111111111....... Caps - Accessoris .........................*/
-"SF-CP-5101a":{"name":"SF Spectrum-Line Caps","price":11,"img":["Accessories/Images_Caps/SF-CP-5101-1.jpg","Accessories/Images_Caps/SF-CP-5101-2.jpg","Accessories/Images_Caps/SF-CP-5101-3.jpg","Accessories/Images_Caps/SF-CP-5101-4.jpg","Accessories/Images_Caps/SF-CP-5101-5.jpg"]},
-"SF-CP-5201a":{"name":"SF Pulse-Mesh Caps","price":11,"img":["Accessories/Images_Caps/SF-CP-5201-1.jpg","Accessories/Images_Caps/SF-CP-5201-2.jpg","Accessories/Images_Caps/SF-CP-5201-3.jpg","Accessories/Images_Caps/SF-CP-5201-4.jpg","Accessories/Images_Caps/SF-CP-5201-5.jpg"]}
-
+"SF-CP-5101a":{"name":"SF Spectrum-Line Caps","price":11,"img":["Accessories/Images_Caps/SF-CP-5101-1.jpg","Accessories/Images_Caps/SF-CP-5101-2.jpg","Accessories/Images_Caps/SF-CP-5101-3.jpg","Accessories/Images_Caps/SF-CP-5101-4.jpg","Accessories/Images_Caps/SF-CP-5101-5.jpg"],
+   "description": "Premium fit, moisture-wicking sweatband, structured crown, and the signature SpotFut wave logo that stands out on every field and every street. Make it yours – custom embroidery, under-visor prints, and patch add-ons available",
+  "sizes": ["S", "M", "L"]},
+"SF-CP-5201a":{"name":"SF Pulse-Mesh Caps","price":11,"img":["Accessories/Images_Caps/SF-CP-5201-1.jpg","Accessories/Images_Caps/SF-CP-5201-2.jpg","Accessories/Images_Caps/SF-CP-5201-3.jpg","Accessories/Images_Caps/SF-CP-5201-4.jpg","Accessories/Images_Caps/SF-CP-5201-5.jpg"]
+ "description": "Breathable. Bold. Built for the move. The SpotFut Mesh Series is the ultimate trucker cap — classic white front panel with our signature 'SF' logo in crisp black embroidery, paired with ultra-breathable black mesh back and structured black visor. Snapback closure, lightweight feel, perfect ventilation for training, travel, summer sessions, or everyday street style. From neon to neutral — 32 options + full personalization for your style.",
+  "sizes": ["S", "M", "L"]}        
 
 };
    /* ======================================
