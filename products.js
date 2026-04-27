@@ -1,4 +1,26 @@
 /* ================================
+   DEFAULT DESCRIPTIONS SYSTEM
+================================ */
+
+// Global fallback (used if nothing else exists)
+const DEFAULT_DESCRIPTION = 
+"Premium quality sportswear engineered for comfort, durability, and performance. Designed for everyday athletes and professionals.";
+
+// Category-based (for kits, etc.)
+const CATEGORY_DESCRIPTIONS = {
+  soccer_kits_men: "Elite performance soccer kit designed for speed, breathability, and durability. Lightweight fabric with a professional athletic fit."
+};
+
+// Global fallback
+const DEFAULT_SIZES = ["3XS","2XS","XS","S","M","L","XL","2XL","3XL"];
+
+// Category-based sizes
+const CATEGORY_SIZES = {
+  soccer_kits_men: ["3XS","2XS","XS","S","M","L","XL","2XL","3XL"],
+  casual_tracksets_men: ["S","M","L","XL","2XL"]
+};
+
+/* ================================
    SPOTFUT PRODUCT DATABASE (CORE)
    DO NOT CHANGE EXISTING IDS
 ================================ */
@@ -72,7 +94,7 @@ const PRODUCTS = {
 
    /*  FOr the cat pages e have this following format*/
    /* 11111111111111....... Men Football Kits .........................*/
-  "SF-SJM-S001a": {"name": "Soccer Elite Pro Fusion Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png","Soccer_Hero/Men_Images/SF-SJM-S001_2.png","Soccer_Hero/Men_Images/SF-SJM-S001_3.png","Soccer_Hero/Men_Images/SF-SJM-S001_4.jpg"],
+  "SF-SJM-S001a": {"name": "Soccer Elite Pro Fusion Edition","price": 11,  category: "soccer_kits_men", "img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png","Soccer_Hero/Men_Images/SF-SJM-S001_2.png","Soccer_Hero/Men_Images/SF-SJM-S001_3.png","Soccer_Hero/Men_Images/SF-SJM-S001_4.jpg"],
   "description": "Elite performance soccer kit designed for speed, comfort, and durability. Lightweight breathable fabric with pro-level fit.",
   "sizes": ["3XS","2XS","XS","S", "M", "L", "XL", "2XL", "3XL"]},
   "SF-SJM-S004a": {"name": "Soccer Hexa Pulse Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S004_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_4.jpg"]},
