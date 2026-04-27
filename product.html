@@ -181,6 +181,21 @@ function render() {
 
         let images = p.img ? (Array.isArray(p.img) ? p.img : [p.img]) : [];
 
+        /* ================= SIZE SYSTEM (FIXED) ================= */
+        let sizes = DEFAULT_SIZES;
+
+        if (p.sizes && Array.isArray(p.sizes)) {
+            sizes = p.sizes;
+        }
+        else if (p.category && CATEGORY_SIZES?.[p.category]) {
+            sizes = CATEGORY_SIZES[p.category];
+        }
+
+        let sizeOptions = `<option value="">Select Size</option>`;
+        sizes.forEach(s => {
+            sizeOptions += `<option value="${s}">${s}</option>`;
+        });
+
         html += `
         <div class="card">
 
@@ -195,11 +210,7 @@ function render() {
             <div style="margin-bottom:5px;">€${p.price}</div>
 
             <select id="size-${p.id}">
-                <option value="">Select Size</option>
-                <option>S</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
+                ${sizeOptions}
             </select>
 
             <button onclick="add('${p.id}')">Add to Cart</button>
@@ -257,7 +268,7 @@ function add(id){
     alert("Added to cart");
 }
 
-/* ================= CART COUNT SAFE ================= */
+/* ================= CART COUNT ================= */
 function updateCart(){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     document.getElementById("count").innerText = cart.length;
