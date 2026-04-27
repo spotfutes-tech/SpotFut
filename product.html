@@ -48,7 +48,12 @@ body{
   border:1px solid #1e1e1e;
 }
 
-/* ================= SLIDER FIX ================= */
+/* CLICKABLE */
+.clickable{
+  cursor:pointer;
+}
+
+/* SLIDER */
 .slider{
   position:relative;
   width:100%;
@@ -63,7 +68,7 @@ body{
 .slider img{
   width:100%;
   height:100%;
-  object-fit:contain;   /* FIX: prevents cropping */
+  object-fit:contain;
   background:#000;
 }
 
@@ -79,6 +84,7 @@ body{
   width:30px;
   height:40px;
   cursor:pointer;
+  z-index:2;
 }
 
 .slider .prev{ left:0; }
@@ -131,7 +137,6 @@ const cat = new URLSearchParams(window.location.search).get("cat");
 
 /* ================= GET PRODUCTS ================= */
 function getItems() {
-    // If no category in URL, show everything in PRODUCTS
     if (!cat) {
         return Object.keys(PRODUCTS).map(id => ({
             id,
@@ -139,16 +144,19 @@ function getItems() {
         }));
     }
 
-    // If category doesn't exist in mapping
     if (!CATEGORIES[cat]) return [];
 
-    // Map the IDs in the category to the actual product data
     return CATEGORIES[cat].map(id => {
         if (PRODUCTS[id]) {
             return { id, ...PRODUCTS[id] };
         }
         return null; 
-    }).filter(item => item !== null); // Remove any nulls to prevent crashes
+    }).filter(item => item !== null);
+}
+
+/* ================= NAVIGATION ================= */
+function goToProduct(id){
+    window.location.href = `product-detail.html?id=${id}`;
 }
 
 /* ================= SLIDER STATE ================= */
@@ -173,12 +181,15 @@ function render() {
 
         html += `
         <div class="card">
-            <div class="slider">
-                <button class="prev" onclick="changeImg('${p.id}', -1)">‹</button>
+
+            <div class="slider clickable" onclick="goToProduct('${p.id}')">
+                <button class="prev" onclick="event.stopPropagation(); changeImg('${p.id}', -1)">‹</button>
                 <img id="img-${p.id}" src="${images[0]}" alt="${p.name}">
-                <button class="next" onclick="changeImg('${p.id}', 1)">›</button>
+                <button class="next" onclick="event.stopPropagation(); changeImg('${p.id}', 1)">›</button>
             </div>
-            <h3>${p.name}</h3>
+
+            <h3 class="clickable" onclick="goToProduct('${p.id}')">${p.name}</h3>
+
             <select id="size-${p.id}">
                 <option value="">Select Size</option>
                 <option>3XS</option>
@@ -191,11 +202,14 @@ function render() {
                 <option>2XL</option>
                 <option>3XL</option> 
             </select>
+
             <button onclick="add('${p.id}')">Add to Cart</button>
+
         </div>`;
     }
     grid.innerHTML = html;
 }
+
 /* ================= SLIDER ================= */
 function changeImg(id, dir){
 
@@ -231,30 +245,28 @@ function add(id) {
         return;
     }
 
-    // 1. Get the product data from PRODUCTS (in products.js)
     const product = PRODUCTS[id];
 
-    // 2. Get the first image from the array to save as the 'image' key
     const mainImg = (product.img && product.img.length > 0) 
         ? product.img[0] 
         : "https://via.placeholder.com/300";
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     
-    // 3. Save to cart using 'image' to match cart.html's ${item.image}
     cart.push({ 
         id: id, 
         size: size, 
         name: product.name, 
         price: product.price,
-        image: mainImg, // This matches your cart.html requirement
-        quantity: 1     // Standardizing quantity
+        image: mainImg,
+        quantity: 1
     });
 
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCart();
     alert("Added to cart!");
 }
+
 function updateCart(){
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   document.getElementById("count").innerText = cart.length;
