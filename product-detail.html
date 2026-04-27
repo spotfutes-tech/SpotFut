@@ -9,9 +9,20 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #ffffff;
+    background: #fff;
 }
 
+/* TOP BAR */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    padding:18px 8%;
+    border-bottom:1px solid #eee;
+}
+
+.back,.cart{cursor:pointer}
+
+/* LAYOUT */
 .container {
     max-width: 1200px;
     margin: auto;
@@ -40,7 +51,6 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 15px;
-    flex-wrap: wrap;
 }
 
 .thumbs img {
@@ -62,10 +72,6 @@ body {
     min-width: 300px;
 }
 
-.info h1 {
-    margin-bottom: 10px;
-}
-
 .price {
     font-size: 22px;
     font-weight: bold;
@@ -78,9 +84,24 @@ body {
     color: #444;
 }
 
-button {
-    margin-top: 15px;
+/* SIZES */
+#sizes button {
     padding: 10px 15px;
+    margin: 5px 5px 0 0;
+    border: 1px solid #000;
+    background: white;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* ADD BUTTON */
+.cartBtn {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
     cursor: pointer;
 }
 
@@ -107,24 +128,31 @@ button {
 
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="back" onclick="history.back()">← Back</div>
+  <div class="cart" onclick="goCart()">🛒 <span id="count">0</span></div>
+</div>
+
 <div class="container">
     <div class="product-detail">
 
+        <!-- IMAGES -->
         <div class="images">
             <img id="mainImg">
             <div class="thumbs" id="thumbs"></div>
         </div>
 
+        <!-- INFO -->
         <div class="info">
             <h1 id="name"></h1>
             <div class="price" id="price"></div>
 
-            <p class="description" id="description"></p>
+            <p id="description" class="description"></p>
 
-            <!-- SIZE (NEW BUT SAFE) -->
             <div id="sizes"></div>
 
-            <button onclick="addToCart()">Add to Cart</button>
+            <button class="cartBtn" onclick="addToCart()">Add to Cart</button>
         </div>
 
     </div>
@@ -138,75 +166,75 @@ button {
 <script src="products.js"></script>
 
 <script>
+
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
-if (!productId || !PRODUCTS[productId]) {
-    document.body.innerHTML = "<h2 style='text-align:center;margin-top:50px;'>Product not found</h2>";
-    throw new Error("Invalid product ID");
-}
-
 const product = PRODUCTS[productId];
 
-/* NAME */
-document.getElementById("name").innerText = product.name || "";
+if (!product) {
+    document.body.innerHTML = "<h2 style='text-align:center;margin-top:50px;'>Product not found</h2>";
+}
 
-/* EURO PRICE FIX */
-document.getElementById("price").innerText = "€" + (product.price || 0);
+/* BASIC INFO */
+document.getElementById("name").innerText = product.name;
+document.getElementById("price").innerText = "€" + product.price;
 
 /* DESCRIPTION */
 document.getElementById("description").innerHTML =
-    (product.description || "No description available").replace(/\n/g, "<br>");
+    (product.description || "").replace(/\n/g, "<br>");
 
 /* IMAGES */
-const images = Array.isArray(product.img) ? product.img : [];
-
-if (images.length === 0) {
-    images.push("https://via.placeholder.com/600x800");
-}
-
 const mainImg = document.getElementById("mainImg");
-mainImg.src = images[0];
+mainImg.src = product.img?.[0] || "";
 
 mainImg.onclick = () => openModal(mainImg.src);
 
 const thumbs = document.getElementById("thumbs");
 
-images.forEach(img => {
-    const el = document.createElement("img");
-    el.src = img;
-    el.onclick = () => mainImg.src = img;
-    thumbs.appendChild(el);
+(product.img || []).forEach(img => {
+    thumbs.innerHTML += `<img src="${img}" onclick="changeImg('${img}')">`;
 });
 
-/* SIZE (optional support) */
+function changeImg(src){
+    mainImg.src = src;
+}
+
+/* SIZES */
 let selectedSize = null;
 
 const sizesDiv = document.getElementById("sizes");
 
-if (product.sizes && Array.isArray(product.sizes)) {
-    product.sizes.forEach(size => {
-        const btn = document.createElement("button");
-        btn.innerText = size;
+let sizesToUse = (product.sizes && Array.isArray(product.sizes))
+    ? product.sizes
+    : ["S","M","L","XL"];
 
-        btn.onclick = () => {
-            selectedSize = size;
+sizesToUse.forEach(size => {
+    const btn = document.createElement("button");
+    btn.innerText = size;
 
-            document.querySelectorAll("#sizes button").forEach(b => {
-                b.style.background = "";
-                b.style.color = "";
-            });
+    btn.onclick = () => {
+        selectedSize = size;
 
-            btn.style.background = "black";
-            btn.style.color = "white";
-        };
+        document.querySelectorAll("#sizes button").forEach(b => {
+            b.style.background = "";
+            b.style.color = "";
+        });
 
-        sizesDiv.appendChild(btn);
-    });
-}
+        btn.style.background = "black";
+        btn.style.color = "white";
+    };
+
+    sizesDiv.appendChild(btn);
+});
 
 /* CART */
-function addToCart() {
+function addToCart(){
+
+    if (!selectedSize) {
+        alert("Please select size");
+        return;
+    }
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -214,25 +242,39 @@ function addToCart() {
         id: productId,
         name: product.name,
         price: product.price,
-        image: images[0],
-        size: selectedSize || "Free Size",
-        qty: 1
+        size: selectedSize,
+        image: product.img?.[0] || "",
+        quantity: 1
     });
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    alert("Added to cart 🛒");
+    updateCart();
+    alert("Added to cart!");
+}
+
+/* CART COUNT */
+function updateCart(){
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("count").innerText = cart.length;
+}
+
+function goCart(){
+    window.location.href = "../cart.html";
 }
 
 /* MODAL */
-function openModal(src) {
+function openModal(src){
     document.getElementById("imgModal").style.display = "flex";
     document.getElementById("modalImg").src = src;
 }
 
-function closeModal() {
+function closeModal(){
     document.getElementById("imgModal").style.display = "none";
 }
+
+updateCart();
+
 </script>
 
 </body>
