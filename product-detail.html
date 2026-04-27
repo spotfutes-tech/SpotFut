@@ -5,6 +5,7 @@
     <title>SpotFut Product</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Basic Styling -->
     <style>
         body {
             margin: 0;
@@ -24,7 +25,7 @@
             flex-wrap: wrap;
         }
 
-        /* IMAGES */
+        /* LEFT SIDE (IMAGES) */
         .images {
             flex: 1;
             min-width: 300px;
@@ -58,35 +59,29 @@
             border: 2px solid #000;
         }
 
-        /* INFO */
+        /* RIGHT SIDE (INFO) */
         .info {
             flex: 1;
             min-width: 300px;
         }
 
         .info h1 {
-            margin-bottom: 10px;
+            margin: 0 0 10px;
         }
 
         .price {
             font-size: 22px;
             font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .description {
-            margin-top: 10px;
-            line-height: 1.6;
-            color: #444;
+            margin-bottom: 20px;
         }
 
         .sizes {
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .sizes button {
             padding: 10px 15px;
-            margin: 5px 5px 0 0;
+            margin: 5px;
             border: 1px solid #000;
             background: white;
             cursor: pointer;
@@ -98,7 +93,7 @@
             color: white;
         }
 
-        /* MODAL */
+        /* MODAL ZOOM */
         .modal {
             display: none;
             position: fixed;
@@ -137,9 +132,6 @@
             <h1 id="name"></h1>
             <div class="price" id="price"></div>
 
-            <!-- NEW: DESCRIPTION -->
-            <p id="description" class="description"></p>
-
             <div class="sizes" id="sizes"></div>
         </div>
 
@@ -151,10 +143,13 @@
     <img id="modalImg">
 </div>
 
+<!-- LOAD PRODUCT DATA -->
 <script src="product.js"></script>
 
 <script>
-/* GET PRODUCT ID */
+/* ===============================
+   GET PRODUCT ID FROM URL
+=============================== */
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
@@ -164,17 +159,17 @@ if (!product) {
     document.body.innerHTML = "<h2 style='text-align:center;margin-top:50px;'>Product not found</h2>";
 }
 
-/* RENDER BASIC INFO */
+/* ===============================
+   RENDER PRODUCT
+=============================== */
 document.getElementById("name").innerText = product.name;
 document.getElementById("price").innerText = "$" + product.price;
-
-/* DESCRIPTION (supports line breaks) */
-document.getElementById("description").innerHTML =
-    (product.description || "").replace(/\n/g, "<br>");
 
 /* MAIN IMAGE */
 const mainImg = document.getElementById("mainImg");
 mainImg.src = product.img[0];
+
+/* CLICK TO ZOOM */
 mainImg.onclick = () => openModal(mainImg.src);
 
 /* THUMBNAILS */
