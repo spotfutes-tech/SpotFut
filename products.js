@@ -136,7 +136,7 @@ const PRODUCTS = {
 "SF-BJM-S015a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S015_1.jpg","BasketBall/Men_Kits/SF-BJM-S015_2.jpg","BasketBall/Men_Kits/SF-BJM-S015_3.jpg"]},
 "SF-BJM-S016a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S016_1.jpg","BasketBall/Men_Kits/SF-BJM-S016_2.jpg","BasketBall/Men_Kits/SF-BJM-S016_3.jpg"]},
 
-   /* 11111111111111....... Men Tracksets Casual .........................*/
+   /* 11111111111111....... Men Tracksets Fitness .........................*/
 "SF-CTS-M036a": {"name": "Spot C36 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M036_1.jpg","Men/Images_Tracksets/SF_CTS_M036_2.jpg","Men/Images_Tracksets/SF_CTS_M036_3.jpg"]},
 "SF-CTS-M037a": {"name": "Spot C37 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M037_1.jpg","Men/Images_Tracksets/SF_CTS_M037_2.jpg","Men/Images_Tracksets/SF_CTS_M037_3.jpg"]},
 "SF-CTS-M038a": {"name": "Spot C38 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M038_1.jpg","Men/Images_Tracksets/SF_CTS_M038_2.jpg","Men/Images_Tracksets/SF_CTS_M038_3.jpg"]},
@@ -194,7 +194,7 @@ const PRODUCTS = {
 "SF-BJF-S011a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S011_1.jpg","BasketBall/Women_Kits/SF-BJF-S011_2.jpg","BasketBall/Women_Kits/SF-BJF-S011_3.jpg"]},
 "SF-BJF-S012a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S012_1.jpg","BasketBall/Women_Kits/SF-BJF-S012_2.jpg","BasketBall/Women_Kits/SF-BJF-S012_3.jpg"]},
 
- /* 11111111111111....... Women Tracksets Casual.........................*/
+ /* 11111111111111....... Women Tracksets Fitness.........................*/
 "SF-CTS-F120a": {"name": "Spot C120 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F120_1.jpg","Women/Images_Tracksets/SF_CTS_F120_2.jpg","Women/Images_Tracksets/SF_CTS_F120_3.jpg"]},
 "SF-CTS-F121a": {"name": "Spot C121 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F121_1.jpg","Women/Images_Tracksets/SF_CTS_F121_2.jpg","Women/Images_Tracksets/SF_CTS_F121_3.jpg"]},
 "SF-CTS-F122a": {"name": "Spot C122 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F122_1.jpg","Women/Images_Tracksets/SF_CTS_F122_2.jpg","Women/Images_Tracksets/SF_CTS_F122_3.jpg"]},
@@ -362,11 +362,11 @@ training_tops_juniors: [
   ],
 
    /*  Tracksuits */
-   tracksuits_classic_men: ["SF-CTS-M036a","SF-CTS-M037a","SF-CTS-M038a","SF-CTS-M039a","SF-CTS-M053a","SF-CTS-M040a","SF-CTS-M041a",
+   tracksuits_training_men: ["SF-CTS-M036a","SF-CTS-M037a","SF-CTS-M038a","SF-CTS-M039a","SF-CTS-M053a","SF-CTS-M040a","SF-CTS-M041a",
                             "SF-CTS-M042a","SF-CTS-M043a","SF-CTS-M044a","SF-CTS-M046a","SF-CTS-M047a","SF-CTS-M048a","SF-CTS-M049a",
                             "SF-CTS-M050a","SF-CTS-M052a","SF-CTS-M054a","SF-CTS-M045a","SF-CTS-M051a"],
    
-   tracksuits_classic_women: ["SF-CTS-F120a","SF-CTS-F121a","SF-CTS-F122a","SF-CTS-F123a","SF-CTS-F124a","SF-CTS-F125a","SF-CTS-F126a",
+   tracksuits_training_women: ["SF-CTS-F120a","SF-CTS-F121a","SF-CTS-F122a","SF-CTS-F123a","SF-CTS-F124a","SF-CTS-F125a","SF-CTS-F126a",
                            "SF-CTS-F127a","SF-CTS-F128a","SF-CTS-F129a","SF-CTS-F130a","SF-CTS-F131a","SF-CTS-F132a","SF-CTS-F133a",
                            "SF-CTS-F134a","SF-CTS-F135a","SF-CTS-F136a"],
 
