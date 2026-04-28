@@ -14,8 +14,8 @@ soccer_kits_juniors: "Elite performance soccer kit designed for speed, breathabi
 polos_men: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
 polos_women: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
 polos_juniors: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
-caps: "Breathable. Bold. Built for the move. The SpotFut Mesh Series is the ultimate trucker cap — classic white front panel with our signature 'SF' logo in crisp black embroidery, paired with ultra-breathable black mesh back and structured black visor. Snapback closure, lightweight feel, perfect ventilation for training, travel, summer sessions, or everyday street style. "
-
+caps: "Breathable. Bold. Built for the move. The SpotFut Mesh Series is the ultimate trucker cap — classic white front panel with our signature 'SF' logo in crisp black embroidery, paired with ultra-breathable black mesh back and structured black visor. Snapback closure, lightweight feel, perfect ventilation for training, travel, summer sessions, or everyday street style. ",
+tracks_casual_women: "Breathable. Bold. Built for the move. \n\n Material : Cotton Fleece"
 };
 
 // Global fallback
@@ -213,6 +213,14 @@ const PRODUCTS = {
 "SF-CTS-F135a": {"name": "Spot C135 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F135_1.jpg","Women/Images_Tracksets/SF_CTS_F135_2.jpg","Women/Images_Tracksets/SF_CTS_F135_3.jpg"]},
 "SF-CTS-F136a": {"name": "Spot C136 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F136_1.jpeg","Women/Images_Tracksets/SF_CTS_F136_2.jpeg","Women/Images_Tracksets/SF_CTS_F136_3.jpeg"]},
 
+/* 11111111111111....... Women Tracksets Classic/Casual.........................*/
+"SF-HTS-F110a": {"name": "Spot H110 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F110_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F110_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F110_3.jpg"]},
+"SF-HTS-F111a": {"name": "Spot H111 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F111_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F111_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F111_3.jpg"]},
+"SF-HTS-F112a": {"name": "Spot H112 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F112_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F112_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F112_3.jpg"]},
+"SF-HTS-F113a": {"name": "Spot H113 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F113_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F113_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F113_3.jpg"]},
+"SF-HTS-F114a": {"name": "Spot H114 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F114_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F114_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F114_3.jpg"]},
+"SF-HTS-F115a": {"name": "Spot H115 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F115_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F115_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F115_3.jpg"]},
+   
     /* 11111111111111....... Women Polos .........................*/
 "SF-BPF-111a": {"name": "Spot B111 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-111_1.jpeg","Women/Images_Polos/SF-BPF-111_2.jpeg","Women/Images_Polos/SF-BPF-111_3.jpeg"]},
 "SF-BPF-112a": {"name": "Spot B112 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-112_1.jpeg","Women/Images_Polos/SF-BPF-112_2.jpeg","Women/Images_Polos/SF-BPF-112_3.jpeg"]},
@@ -359,6 +367,7 @@ training_tops_juniors: [
    tracksuits_training_women: ["SF-CTS-F120a","SF-CTS-F121a","SF-CTS-F122a","SF-CTS-F123a","SF-CTS-F124a","SF-CTS-F125a","SF-CTS-F126a",
                            "SF-CTS-F127a","SF-CTS-F128a","SF-CTS-F129a","SF-CTS-F130a","SF-CTS-F131a","SF-CTS-F132a","SF-CTS-F133a",
                            "SF-CTS-F134a","SF-CTS-F135a","SF-CTS-F136a"],
+   tracksuits_classic_women: ["SF-HTS-F110a","SF-HTS-F111a","SF-HTS-F112a","SF-HTS-F113a","SF-HTS-F114a","SF-HTS-F115a"],
 
   /* LIFESTYLE */
     lifestyle_polos_men: ["SF-BPM-M180a","SF-BPM-M181a","SF-BPM-M182a","SF-BPM-M183a","SF-BPM-M184a",
