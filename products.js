@@ -8,7 +8,13 @@ const DEFAULT_DESCRIPTION =
 
 // Category-based (for kits, etc.)
 const CATEGORY_DESCRIPTIONS = {
-  soccer_kits_men: "Elite performance soccer kit designed for speed, breathability, and durability. Lightweight fabric with a professional athletic fit."
+soccer_kits_men: "Elite performance soccer kit designed for speed, breathability, and durability. \n\n Material : Interlock 100% Polyester (GSM 140-170).",
+soccer_kits_women: "Elite performance soccer kit designed for speed, breathability, and durability. \n\n Material : Interlock 100% Polyester (GSM 140-170).",
+soccer_kits_juniors: "Elite performance soccer kit designed for speed, breathability, and durability. \n\n Material : Interlock 100% Polyester (GSM 140-170).",
+polos_men: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
+polos_women: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
+polos_juniors: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton."
+
 };
 
 // Global fallback
@@ -18,7 +24,8 @@ const DEFAULT_SIZES = ["3XS","2XS","XS","S","M","L","XL","2XL","3XL"];
 const CATEGORY_SIZES = {
   soccer_kits_men: ["3XS","2XS","XS","S","M","L","XL","2XL","3XL"],
   casual_tracksets_men: ["S","M","L","XL","2XL"],
-   bags: ["Standard"]
+   bags: ["Standard"],
+   caps: ["S","M","L"]
 };
 
 /* ================================
@@ -98,16 +105,16 @@ const PRODUCTS = {
   "SF-SJM-S001a": {"name": "Soccer Elite Pro Fusion Edition","price": 11,  category: "soccer_kits_men", "img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png","Soccer_Hero/Men_Images/SF-SJM-S001_2.png","Soccer_Hero/Men_Images/SF-SJM-S001_3.png","Soccer_Hero/Men_Images/SF-SJM-S001_4.jpg"],
   "description": "Elite performance soccer kit designed for speed, comfort, and durability. Lightweight breathable fabric with pro-level fit.",
   "sizes": ["3XS","2XS","XS","S", "M", "L", "XL", "2XL", "3XL"]},
-  "SF-SJM-S004a": {"name": "Soccer Hexa Pulse Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S004_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_4.jpg"]},
-  "SF-SJM-S003a": {"name": "Soccer Urban Strike Gradient Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S003_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_4.jpg"]},
-  "SF-SJM-S005a": {"name": "Soccer Aurum Pro Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S005_1.png","Soccer_Hero/Men_Images/SF-SJM-S005_2.png","Soccer_Hero/Men_Images/SF-SJM-S005_3.png","Soccer_Hero/Men_Images/SF-SJM-S005_4.jpg"]},
-  "SF-SJM-S007a": {"name": "Soccer Aqua Storm Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S007_1.png","Soccer_Hero/Men_Images/SF-SJM-S007_2.png","Soccer_Hero/Men_Images/SF-SJM-S007_3.png","Soccer_Hero/Men_Images/SF-SJM-S007_4.jpg"]},
-  "SF-SJM-S008a": {"name": "Soccer Crimson Bolt Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S008_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S008_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S008_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S008_4.jpg"]},
-  "SF-SJM-S002a": {"name": "Soccer Eclipse Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S002_1.png","Soccer_Hero/Men_Images/SF-SJM-S002_2.png","Soccer_Hero/Men_Images/SF-SJM-S002_3.png","Soccer_Hero/Men_Images/SF-SJM-S002_4.jpg"]},
-  "SF-SJM-S006a": {"name": "Soccer Red Velocity Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S006_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S006_2.jpeg","Soccer_Hero/Men_Images/SF-SJM-S006_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S006_4.jpg"]},
-  "SF-SJM-S009a": {"name": "Soccer Regal Stripe Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S009_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S009_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S009_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S009_4.jpg"]},
-  "SF-SJM-S010a": {"name": "Soccer Neon Strike Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S010_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S010_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_4.jpg"]},
-  "SF-SJM-S011a": {"name": "Soccer Midnight Edition","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S011_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S011_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_4.jpg"]},
+  "SF-SJM-S004a": {"name": "Soccer Hexa Pulse Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S004_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S004_4.jpg"]},
+  "SF-SJM-S003a": {"name": "Soccer Urban Strike Gradient Edition",  category: "soccer_kits_men","price": 11,"img": ["Soccer_Hero/Men_Images/SF-SJM-S003_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S003_4.jpg"]},
+  "SF-SJM-S005a": {"name": "Soccer Aurum Pro Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S005_1.png","Soccer_Hero/Men_Images/SF-SJM-S005_2.png","Soccer_Hero/Men_Images/SF-SJM-S005_3.png","Soccer_Hero/Men_Images/SF-SJM-S005_4.jpg"]},
+  "SF-SJM-S007a": {"name": "Soccer Aqua Storm Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S007_1.png","Soccer_Hero/Men_Images/SF-SJM-S007_2.png","Soccer_Hero/Men_Images/SF-SJM-S007_3.png","Soccer_Hero/Men_Images/SF-SJM-S007_4.jpg"]},
+  "SF-SJM-S008a": {"name": "Soccer Crimson Bolt Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S008_1.jpg","Soccer_Hero/Men_Images/SF-SJM-S008_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S008_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S008_4.jpg"]},
+  "SF-SJM-S002a": {"name": "Soccer Eclipse Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S002_1.png","Soccer_Hero/Men_Images/SF-SJM-S002_2.png","Soccer_Hero/Men_Images/SF-SJM-S002_3.png","Soccer_Hero/Men_Images/SF-SJM-S002_4.jpg"]},
+  "SF-SJM-S006a": {"name": "Soccer Red Velocity Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S006_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S006_2.jpeg","Soccer_Hero/Men_Images/SF-SJM-S006_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S006_4.jpg"]},
+  "SF-SJM-S009a": {"name": "Soccer Regal Stripe Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S009_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S009_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S009_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S009_4.jpg"]},
+  "SF-SJM-S010a": {"name": "Soccer Neon Strike Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S010_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S010_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_4.jpg"]},
+  "SF-SJM-S011a": {"name": "Soccer Midnight Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S011_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S011_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_4.jpg"]},
 
 /* 11111111111111....... Men BasketBall Kits .........................*/
   "SF-BJM-S001a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S001_1.jpg","BasketBall/Men_Kits/SF-BJM-S001_2.jpg","BasketBall/Men_Kits/SF-BJM-S001_3.jpg"]},
@@ -149,15 +156,15 @@ const PRODUCTS = {
 "SF-CTS-M054a": {"name": "Spot C54 Trackset","price": 31,"img": ["Men/Images_Tracksets/SF_CTS_M054_1.jpg","Men/Images_Tracksets/SF_CTS_M054_2.jpg","Men/Images_Tracksets/SF_CTS_M054_3.jpg"]},
 
     /* 11111111111111....... Men Polos .........................*/
-"SF-BPM-M180a": {"name": "Spot B180 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-180_1.jpg","Men/Images_Polos/SF-BPM-180_2.jpg","Men/Images_Polos/SF-BPM-180_3.jpg"]},
-"SF-BPM-M181a": {"name": "Spot B181 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-181_1.jpg","Men/Images_Polos/SF-BPM-181_2.jpg","Men/Images_Polos/SF-BPM-181_3.jpg"]},
-"SF-BPM-M182a": {"name": "Spot B182 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-182_1.jpg","Men/Images_Polos/SF-BPM-182_2.jpg","Men/Images_Polos/SF-BPM-182_3.jpg"]},
-"SF-BPM-M183a": {"name": "Spot B183 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-183_1.jpg","Men/Images_Polos/SF-BPM-183_2.jpg","Men/Images_Polos/SF-BPM-183_3.jpg"]},
-"SF-BPM-M184a": {"name": "Spot B184 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-184_1.jpg","Men/Images_Polos/SF-BPM-184_2.jpg","Men/Images_Polos/SF-BPM-184_3.jpg"]},
-"SF-BPM-M185a": {"name": "Spot B185 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-185_1.jpg","Men/Images_Polos/SF-BPM-185_2.jpg","Men/Images_Polos/SF-BPM-185_3.jpg"]},
-"SF-BPM-M186a": {"name": "Spot B186 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-186_1.jpg","Men/Images_Polos/SF-BPM-186_2.jpg","Men/Images_Polos/SF-BPM-186_3.jpg"]},
-"SF-BPM-M187a": {"name": "Spot B187 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-187_1.jpg","Men/Images_Polos/SF-BPM-187_2.jpg","Men/Images_Polos/SF-BPM-187_3.jpg"]},
-"SF-BPM-M188a": {"name": "Spot B188 Polo","price": 21,"img": ["Men/Images_Polos/SF-BPM-188_1.jpg","Men/Images_Polos/SF-BPM-188_2.jpg","Men/Images_Polos/SF-BPM-188_3.jpg"]},
+"SF-BPM-M180a": {"name": "Spot B180 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-180_1.jpg","Men/Images_Polos/SF-BPM-180_2.jpg","Men/Images_Polos/SF-BPM-180_3.jpg"]},
+"SF-BPM-M181a": {"name": "Spot B181 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-181_1.jpg","Men/Images_Polos/SF-BPM-181_2.jpg","Men/Images_Polos/SF-BPM-181_3.jpg"]},
+"SF-BPM-M182a": {"name": "Spot B182 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-182_1.jpg","Men/Images_Polos/SF-BPM-182_2.jpg","Men/Images_Polos/SF-BPM-182_3.jpg"]},
+"SF-BPM-M183a": {"name": "Spot B183 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-183_1.jpg","Men/Images_Polos/SF-BPM-183_2.jpg","Men/Images_Polos/SF-BPM-183_3.jpg"]},
+"SF-BPM-M184a": {"name": "Spot B184 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-184_1.jpg","Men/Images_Polos/SF-BPM-184_2.jpg","Men/Images_Polos/SF-BPM-184_3.jpg"]},
+"SF-BPM-M185a": {"name": "Spot B185 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-185_1.jpg","Men/Images_Polos/SF-BPM-185_2.jpg","Men/Images_Polos/SF-BPM-185_3.jpg"]},
+"SF-BPM-M186a": {"name": "Spot B186 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-186_1.jpg","Men/Images_Polos/SF-BPM-186_2.jpg","Men/Images_Polos/SF-BPM-186_3.jpg"]},
+"SF-BPM-M187a": {"name": "Spot B187 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-187_1.jpg","Men/Images_Polos/SF-BPM-187_2.jpg","Men/Images_Polos/SF-BPM-187_3.jpg"]},
+"SF-BPM-M188a": {"name": "Spot B188 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-188_1.jpg","Men/Images_Polos/SF-BPM-188_2.jpg","Men/Images_Polos/SF-BPM-188_3.jpg"]},
    
    /* 11111111111111....... Women Football Kits .........................*/
   "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
@@ -203,6 +210,18 @@ const PRODUCTS = {
 "SF-CTS-F134a": {"name": "Spot C134 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F134_1.jpg","Women/Images_Tracksets/SF_CTS_F134_2.jpg","Women/Images_Tracksets/SF_CTS_F134_3.jpg"]},
 "SF-CTS-F135a": {"name": "Spot C135 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F135_1.jpg","Women/Images_Tracksets/SF_CTS_F135_2.jpg","Women/Images_Tracksets/SF_CTS_F135_3.jpg"]},
 "SF-CTS-F136a": {"name": "Spot C136 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F136_1.jpeg","Women/Images_Tracksets/SF_CTS_F136_2.jpeg","Women/Images_Tracksets/SF_CTS_F136_3.jpeg"]},
+
+    /* 11111111111111....... Women Polos .........................*/
+"SF-BPF-111a": {"name": "Spot B111 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-111_1.jpeg","Women/Images_Polos/SF-BPF-111_2.jpeg","Women/Images_Polos/SF-BPF-111_3.jpeg"]},
+"SF-BPF-112a": {"name": "Spot B112 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-112_1.jpeg","Women/Images_Polos/SF-BPF-112_2.jpeg","Women/Images_Polos/SF-BPF-112_3.jpeg"]},
+"SF-BPF-113a": {"name": "Spot B113 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-113_1.jpeg","Women/Images_Polos/SF-BPF-113_2.jpeg","Women/Images_Polos/SF-BPF-113_3.jpeg"]},
+"SF-BPF-114a": {"name": "Spot B114 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-114_1.jpeg","Women/Images_Polos/SF-BPF-114_2.jpeg","Women/Images_Polos/SF-BPF-114_3.jpeg"]},
+"SF-BPF-115a": {"name": "Spot B115 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-115_1.jpeg","Women/Images_Polos/SF-BPF-115_2.jpeg","Women/Images_Polos/SF-BPF-115_3.jpeg"]},
+"SF-BPF-116a": {"name": "Spot B116 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-116_1.jpeg","Women/Images_Polos/SF-BPF-116_2.jpeg","Women/Images_Polos/SF-BPF-116_3.jpeg"]},
+"SF-BPF-117a": {"name": "Spot B117 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-117_1.jpeg","Women/Images_Polos/SF-BPF-117_2.jpeg","Women/Images_Polos/SF-BPF-117_3.jpeg"]},
+"SF-BPF-118a": {"name": "Spot B118 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-118_1.jpeg","Women/Images_Polos/SF-BPF-118_2.jpeg","Women/Images_Polos/SF-BPF-118_3.jpeg"]},
+"SF-BPF-119a": {"name": "Spot B119 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-119_1.jpeg","Women/Images_Polos/SF-BPF-119_2.jpeg","Women/Images_Polos/SF-BPF-119_3.jpeg"]},
+"SF-BPF-120a": {"name": "Spot B120 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-120_1.jpeg","Women/Images_Polos/SF-BPF-120_2.jpeg","Women/Images_Polos/SF-BPF-120_3.jpeg"]},
    
    /* 11111111111111....... Junior Football Kits .........................*/
 "SF-SJK-S001a":{"name":"Soccer Junior Strike Pro Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S001_1.png","Soccer_Hero/Junior_Images/SF-SJK-S001_2.png","Soccer_Hero/Junior_Images/SF-SJK-S001_3.png","Soccer_Hero/Junior_Images/SF-SJK-S001_4.jpg"]},
@@ -358,6 +377,9 @@ training_tops_juniors: [
   lifestyle_jackets_men: [
     "SF-SJM-S005a"
   ],
+   lifestyle_polos_women: ["SF-BPF-111a","SF-BPF-112a","SF-BPF-113a","SF-BPF-114a","SF-BPF-115a",
+  "SF-BPF-116a","SF-BPF-117a","SF-BPF-118a","SF-BPF-119a","SF-BPF-120a"],
+   
    lifestyle_hoodies_women: [
     "SF-SJM-S005a"
   ],
