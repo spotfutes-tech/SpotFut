@@ -13,7 +13,8 @@ soccer_kits_women: "Elite performance soccer kit designed for speed, breathabili
 soccer_kits_juniors: "Elite performance soccer kit designed for speed, breathability, and durability. \n\n Material : Interlock 100% Polyester (GSM 140-170).",
 polos_men: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
 polos_women: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
-polos_juniors: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton."
+polos_juniors: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
+caps: "Breathable. Bold. Built for the move. The SpotFut Mesh Series is the ultimate trucker cap — classic white front panel with our signature 'SF' logo in crisp black embroidery, paired with ultra-breathable black mesh back and structured black visor. Snapback closure, lightweight feel, perfect ventilation for training, travel, summer sessions, or everyday street style. "
 
 };
 
@@ -252,13 +253,11 @@ const PRODUCTS = {
 "SF-BP-1010a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-1010-1.png","Accessories/Images_Bags/SF-BP-1010-2.png","Accessories/Images_Bags/SF-BP-1010-3.png","Accessories/Images_Bags/SF-BP-1010-4.png"]},
 
 /* 11111111111111....... Caps - Accessoris .........................*/
-"SF-CP-5101a":{"name":"SF Spectrum-Line Caps","price":11,"img":["Accessories/Images_Caps/SF-CP-5101-1.jpg","Accessories/Images_Caps/SF-CP-5101-2.jpg","Accessories/Images_Caps/SF-CP-5101-3.jpg","Accessories/Images_Caps/SF-CP-5101-4.jpg","Accessories/Images_Caps/SF-CP-5101-5.jpg"],
-   "description": "Premium fit, moisture-wicking sweatband, structured crown, and the signature SpotFut wave logo that stands out on every field and every street. Make it yours – custom embroidery, under-visor prints, and patch add-ons available",
-  "sizes": ["S", "M", "L"]},
-"SF-CP-5201a":{"name":"SF Pulse-Mesh Caps","price":11,"img":["Accessories/Images_Caps/SF-CP-5201-1.jpg","Accessories/Images_Caps/SF-CP-5201-2.jpg","Accessories/Images_Caps/SF-CP-5201-3.jpg","Accessories/Images_Caps/SF-CP-5201-4.jpg","Accessories/Images_Caps/SF-CP-5201-5.jpg"],
- "description": "Breathable. Bold. Built for the move. The SpotFut Mesh Series is the ultimate trucker cap — classic white front panel with our signature 'SF' logo in crisp black embroidery, paired with ultra-breathable black mesh back and structured black visor. Snapback closure, lightweight feel, perfect ventilation for training, travel, summer sessions, or everyday street style. From neon to neutral — 32 options + full personalization for your style.",
-  "sizes": ["S", "M", "L"]}        
-
+"SF-CP-5101a":{"name":"SF Spectrum-Line Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5101-1.jpg","Accessories/Images_Caps/SF-CP-5101-2.jpg","Accessories/Images_Caps/SF-CP-5101-3.jpg","Accessories/Images_Caps/SF-CP-5101-4.jpg","Accessories/Images_Caps/SF-CP-5101-5.jpg"]},
+"SF-CP-5201a":{"name":"SF Pulse-Mesh Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5201-1.jpg","Accessories/Images_Caps/SF-CP-5201-2.jpg","Accessories/Images_Caps/SF-CP-5201-3.jpg","Accessories/Images_Caps/SF-CP-5201-4.jpg","Accessories/Images_Caps/SF-CP-5201-5.jpg"]}, 
+"SF-CP-5301a":{"name":"SF Style-Line Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5301-1.png","Accessories/Images_Caps/SF-CP-5301-2.png","Accessories/Images_Caps/SF-CP-5301-3.png","Accessories/Images_Caps/SF-CP-5301-4.png"]},        
+"SF-CP-5401a":{"name":"SF Cool-Vibe Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5401-1.png","Accessories/Images_Caps/SF-CP-5401-2.png","Accessories/Images_Caps/SF-CP-5401-3.png"]},        
+"SF-CP-5501a":{"name":"SF Summer-Sweat Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5501-1.png","Accessories/Images_Caps/SF-CP-5501-2.png","Accessories/Images_Caps/SF-CP-5501-3.png"]}        
 };
    /* ======================================
    CATEGORY MAPPING (NEW UNIVERSAL SYSTEM)
@@ -407,7 +406,7 @@ training_tops_juniors: [
       bags: ["SF-BP-0001a","SF-BP-1001a","SF-BP-2001a","SF-BP-3001a","SF-BP-4001a","SF-BP-5001a","SF-BP-6001a","SF-BP-7001a","SF-BP-8001a",
             "SF-BP-9001a","SF-BP-1010a"],
     /* 22222222222222222222  Caps $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-      caps: ["SF-CP-5101a","SF-CP-5201a"],      
+      caps: ["SF-CP-5301a","SF-CP-5101a","SF-CP-5201a","SF-CP-5401a","SF-CP-5501a"],      
 
     /* 33333333333333  Socks  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
       socks: ["SF-CP-5101a"], 
