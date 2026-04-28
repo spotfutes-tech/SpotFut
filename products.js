@@ -290,9 +290,6 @@ const CATEGORIES = {
    football_kits_juniors: ["SF-SJK-S101a","SF-SJK-S002a","SF-SJK-S003a","SF-SJK-S104a","SF-SJK-S005a","SF-SJK-S105a",
                           "SF-SJK-S001a","SF-SJK-S102a","SF-SJK-S103a","SF-SJK-S004a","SF-SJK-S006a","SF-SJK-S106a"],
 
-  football_tracksuits_juniors: [
-    "SF-SJM-S005a"
-  ],
 
   football_hoodies_juniors: [
     "SF-SJM-S005a"
@@ -343,23 +340,16 @@ const CATEGORIES = {
     "SF-SJM-S005a"
   ],
 
-  training_tracksuits_men: ["SF-CTS-M036a","SF-CTS-M037a","SF-CTS-M038a","SF-CTS-M039a","SF-CTS-M053a","SF-CTS-M040a","SF-CTS-M041a",
-                            "SF-CTS-M042a","SF-CTS-M043a","SF-CTS-M044a","SF-CTS-M046a","SF-CTS-M047a","SF-CTS-M048a","SF-CTS-M049a",
-                            "SF-CTS-M050a","SF-CTS-M052a","SF-CTS-M054a","SF-CTS-M045a","SF-CTS-M051a"],
+
    training_tops_women: [
     "SF-SJM-S005a"
   ],
 
-  training_tracksuits_women: [
-    "SF-SJM-S005a"
-  ],
+
 training_tops_juniors: [
     "SF-SJM-S005a"
   ],
 
-  training_tracksuits_juniors: [
-    "SF-SJM-S005a"
-  ],
 
    /*  Tracksuits */
    tracksuits_training_men: ["SF-CTS-M036a","SF-CTS-M037a","SF-CTS-M038a","SF-CTS-M039a","SF-CTS-M053a","SF-CTS-M040a","SF-CTS-M041a",
