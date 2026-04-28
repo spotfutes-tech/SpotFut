@@ -167,16 +167,16 @@ const PRODUCTS = {
 "SF-BPM-M188a": {"name": "Spot B188 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-188_1.jpg","Men/Images_Polos/SF-BPM-188_2.jpg","Men/Images_Polos/SF-BPM-188_3.jpg"]},
    
    /* 11111111111111....... Women Football Kits .........................*/
-  "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
-  "SF-SJF-S002a": {"name": "Soccer Phantom Fade Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S002_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_4.jpg"]},
-  "SF-SJF-S003a": {"name": "Soccer Gold-Leaf Kinetic Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S003_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_4.jpg"]},
+  "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
+  "SF-SJF-S002a": {"name": "Soccer Phantom Fade Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S002_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_4.jpg"]},
+  "SF-SJF-S003a": {"name": "Soccer Gold-Leaf Kinetic Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S003_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_4.jpg"]},
   "SF-SJF-S004a": {"name": "Soccer Storm Fit Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S004_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S004_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S004_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S004_4.jpg"]},
-  "SF-SJF-S005a": {"name": "Soccer Molten Slate Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S005_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S005_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S005_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S005_4.jpg"]},
-  "SF-SJF-S006a": {"name": "Soccer Naval Vanguard Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S006_1.png", "Soccer_Hero/Women_Images/SF-SJF-S006_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S006_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S006_4.jpg"]},
-  "SF-SJF-S007a": {"name": "Soccer Monarc Gold Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S007_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S007_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S007_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S007_4.jpg"]},
-  "SF-SJF-S008a": {"name": "Soccer Static Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S008_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_4.jpg"]},
-  "SF-SJF-S009a": {"name": "Soccer Glacier Strike Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S009_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_4.jpg"]},
-  "SF-SJF-S010a": {"name": "Soccer Prism Pulse Edition", "price": 11, "img": ["Soccer_Hero/Women_Images/SF-SJF-S010_1.png", "Soccer_Hero/Women_Images/SF-SJF-S010_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_4.jpg"]},
+  "SF-SJF-S005a": {"name": "Soccer Molten Slate Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S005_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S005_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S005_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S005_4.jpg"]},
+  "SF-SJF-S006a": {"name": "Soccer Naval Vanguard Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S006_1.png", "Soccer_Hero/Women_Images/SF-SJF-S006_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S006_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S006_4.jpg"]},
+  "SF-SJF-S007a": {"name": "Soccer Monarc Gold Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S007_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S007_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S007_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S007_4.jpg"]},
+  "SF-SJF-S008a": {"name": "Soccer Static Strike Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S008_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_4.jpg"]},
+  "SF-SJF-S009a": {"name": "Soccer Glacier Strike Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S009_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_4.jpg"]},
+  "SF-SJF-S010a": {"name": "Soccer Prism Pulse Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S010_1.png", "Soccer_Hero/Women_Images/SF-SJF-S010_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_4.jpg"]},
 
    /* 11111111111111....... Women BasketBall Kits .........................*/
    "SF-BJF-S001a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S001_1.jpg","BasketBall/Women_Kits/SF-BJF-S001_2.jpg","BasketBall/Women_Kits/SF-BJF-S001_3.jpg"]},
@@ -239,16 +239,16 @@ const PRODUCTS = {
 
       /* 11111111111111....... Bags - Accessoris .........................*/
 "SF-BP-0001a":{"name":"SF Classic Backpack","price":19,category: "bags","img":["Accessories/Images_Bags/SF-BP-0001-1.png","Accessories/Images_Bags/SF-BP-0001-2.png","Accessories/Images_Bags/SF-BP-0001-3.png"]},
-"SF-BP-1001a":{"name":"SF Urban Edge Backpack","price":19,"img":["Accessories/Images_Bags/SF-BP-1001-1.png","Accessories/Images_Bags/SF-BP-1001-2.png","Accessories/Images_Bags/SF-BP-1001-3.png"]},
-"SF-BP-2001a":{"name":"SF Camo Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-2001-1.png","Accessories/Images_Bags/SF-BP-2001-2.png"]},
-"SF-BP-3001a":{"name":"SF Camo Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-3001-1.png","Accessories/Images_Bags/SF-BP-3001-2.png"]},
-"SF-BP-4001a":{"name":"SF TBA Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-4001-1.png","Accessories/Images_Bags/SF-BP-4001-2.png"]},
-"SF-BP-5001a":{"name":"SF TBA Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-5001-1.png","Accessories/Images_Bags/SF-BP-5001-2.png"]},
-"SF-BP-6001a":{"name":"SF TBA Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-6001-1.png","Accessories/Images_Bags/SF-BP-6001-2.png"]},
-"SF-BP-7001a":{"name":"SF TBA Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-7001-1.png","Accessories/Images_Bags/SF-BP-7001-2.png"]},
-"SF-BP-8001a":{"name":"SF TBA Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-8001-1.png","Accessories/Images_Bags/SF-BP-8001-2.png"]},
-"SF-BP-9001a":{"name":"SF TBA Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-9001-1.png","Accessories/Images_Bags/SF-BP-9001-2.png"]},
-"SF-BP-1010a":{"name":"SF TBA Backpack","price":29,"img":["Accessories/Images_Bags/SF-BP-1010-1.png","Accessories/Images_Bags/SF-BP-1010-2.png","Accessories/Images_Bags/SF-BP-1010-3.png","Accessories/Images_Bags/SF-BP-1010-4.png"]},
+"SF-BP-1001a":{"name":"SF Urban Edge Backpack","price":19,category: "bags","img":["Accessories/Images_Bags/SF-BP-1001-1.png","Accessories/Images_Bags/SF-BP-1001-2.png","Accessories/Images_Bags/SF-BP-1001-3.png"]},
+"SF-BP-2001a":{"name":"SF Camo Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-2001-1.png","Accessories/Images_Bags/SF-BP-2001-2.png"]},
+"SF-BP-3001a":{"name":"SF Camo Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-3001-1.png","Accessories/Images_Bags/SF-BP-3001-2.png"]},
+"SF-BP-4001a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-4001-1.png","Accessories/Images_Bags/SF-BP-4001-2.png"]},
+"SF-BP-5001a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-5001-1.png","Accessories/Images_Bags/SF-BP-5001-2.png"]},
+"SF-BP-6001a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-6001-1.png","Accessories/Images_Bags/SF-BP-6001-2.png"]},
+"SF-BP-7001a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-7001-1.png","Accessories/Images_Bags/SF-BP-7001-2.png"]},
+"SF-BP-8001a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-8001-1.png","Accessories/Images_Bags/SF-BP-8001-2.png"]},
+"SF-BP-9001a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-9001-1.png","Accessories/Images_Bags/SF-BP-9001-2.png"]},
+"SF-BP-1010a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-1010-1.png","Accessories/Images_Bags/SF-BP-1010-2.png","Accessories/Images_Bags/SF-BP-1010-3.png","Accessories/Images_Bags/SF-BP-1010-4.png"]},
 
 /* 11111111111111....... Caps - Accessoris .........................*/
 "SF-CP-5101a":{"name":"SF Spectrum-Line Caps","price":11,"img":["Accessories/Images_Caps/SF-CP-5101-1.jpg","Accessories/Images_Caps/SF-CP-5101-2.jpg","Accessories/Images_Caps/SF-CP-5101-3.jpg","Accessories/Images_Caps/SF-CP-5101-4.jpg","Accessories/Images_Caps/SF-CP-5101-5.jpg"],
