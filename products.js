@@ -375,7 +375,7 @@ training_tops_juniors: [
                             "SF-CTS-M042a","SF-CTS-M043a","SF-CTS-M044a","SF-CTS-M046a","SF-CTS-M047a","SF-CTS-M048a","SF-CTS-M049a",
                             "SF-CTS-M050a","SF-CTS-M052a","SF-CTS-M054a","SF-CTS-M045a","SF-CTS-M051a"],
 
-   tracksuits_training_men: ["SF-HTS-M241a","SF-HTS-M242a","SF-HTS-M243a","SF-HTS-M244a",
+   tracksuits_classic_men: ["SF-HTS-M241a","SF-HTS-M242a","SF-HTS-M243a","SF-HTS-M244a",
                              "SF-HTS-M245a","SF-HTS-M246a","SF-HTS-M247a","SF-HTS-M248a"],
    
    tracksuits_training_women: ["SF-CTS-F120a","SF-CTS-F121a","SF-CTS-F122a","SF-CTS-F123a","SF-CTS-F124a","SF-CTS-F125a","SF-CTS-F126a",
