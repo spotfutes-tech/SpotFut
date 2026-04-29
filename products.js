@@ -15,7 +15,10 @@ polos_men: "Comfortable, versatile, and professionally branded — ideal for cas
 polos_women: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
 polos_juniors: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
 caps: "Breathable. Bold. Built for the move. The SpotFut Mesh Series is the ultimate trucker cap — classic white front panel with our signature 'SF' logo in crisp black embroidery, paired with ultra-breathable black mesh back and structured black visor. Snapback closure, lightweight feel, perfect ventilation for training, travel, summer sessions, or everyday street style. ",
-tracks_casual_women: "Breathable. Bold. Built for the move. \n\n Material : Cotton Fleece"
+puffers_men: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Nyleon (Cotton Filling 150-200 GSM)",
+   puffers_women: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Nyleon (Cotton Filling 150-200 GSM)",
+
+   tracks_casual_women: "Breathable. Bold. Built for the move. \n\n Material : Cotton Fleece"
 };
 
 // Global fallback
@@ -25,6 +28,8 @@ const DEFAULT_SIZES = ["3XS","2XS","XS","S","M","L","XL","2XL","3XL"];
 const CATEGORY_SIZES = {
   soccer_kits_men: ["3XS","2XS","XS","S","M","L","XL","2XL","3XL"],
   classic_tracksets_men: ["XS","S","M","L","XL","2XL"],
+   puffers_men: ["XS","S","M","L","XL","2XL"],
+   puffers_women: ["XS","S","M","L","XL","2XL"],
    classic_tracksets_women: ["XS","S","M","L","XL","2XL"],
    bags: ["Standard"],
    caps: ["S","M","L"]
@@ -178,6 +183,13 @@ const PRODUCTS = {
 "SF-BPM-M186a": {"name": "Spot B186 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-186_1.jpg","Men/Images_Polos/SF-BPM-186_2.jpg","Men/Images_Polos/SF-BPM-186_3.jpg"]},
 "SF-BPM-M187a": {"name": "Spot B187 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-187_1.jpg","Men/Images_Polos/SF-BPM-187_2.jpg","Men/Images_Polos/SF-BPM-187_3.jpg"]},
 "SF-BPM-M188a": {"name": "Spot B188 Polo","price": 21,  category: "polos_men","img": ["Men/Images_Polos/SF-BPM-188_1.jpg","Men/Images_Polos/SF-BPM-188_2.jpg","Men/Images_Polos/SF-BPM-188_3.jpg"]},
+
+ /* 11111111111111....... Men Puffers .........................*/
+"SF-PJ-M851a": {"name": "Spot MJ851 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M851_1.jpg","Men/Imagers_Puffers/SF-PJ-M851_2.jpg","Men/Imagers_Puffers/SF-PJ-M851_3.jpg","Men/Imagers_Puffers/SF-PJ-M851_4.jpg"]},
+"SF-PJ-M852a": {"name": "Spot MJ852 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M852_1.jpg","Men/Imagers_Puffers/SF-PJ-M852_2.jpg","Men/Imagers_Puffers/SF-PJ-M852_3.jpg","Men/Imagers_Puffers/SF-PJ-M852_4.jpg"]},
+"SF-PJ-M853a": {"name": "Spot MJ853 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M853_1.jpg","Men/Imagers_Puffers/SF-PJ-M853_2.jpg","Men/Imagers_Puffers/SF-PJ-M853_3.jpg","Men/Imagers_Puffers/SF-PJ-M853_4.jpg"]},
+"SF-PJ-M854a": {"name": "Spot MJ854 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M854_1.jpg","Men/Imagers_Puffers/SF-PJ-M854_2.jpg","Men/Imagers_Puffers/SF-PJ-M854_3.jpg","Men/Imagers_Puffers/SF-PJ-M854_4.jpg"]},
+"SF-PJ-M855a": {"name": "Spot MJ855 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M855_1.jpg","Men/Imagers_Puffers/SF-PJ-M855_2.jpg","Men/Imagers_Puffers/SF-PJ-M855_3.jpg","Men/Imagers_Puffers/SF-PJ-M855_4.jpg"]},
    
    /* 11111111111111....... Women Football Kits .........................*/
   "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
@@ -262,6 +274,18 @@ const PRODUCTS = {
 "SF-BPF-118a": {"name": "Spot B118 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-118_1.jpeg","Women/Images_Polos/SF-BPF-118_2.jpeg","Women/Images_Polos/SF-BPF-118_3.jpeg"]},
 "SF-BPF-119a": {"name": "Spot B119 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-119_1.jpeg","Women/Images_Polos/SF-BPF-119_2.jpeg","Women/Images_Polos/SF-BPF-119_3.jpeg"]},
 "SF-BPF-120a": {"name": "Spot B120 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-120_1.jpeg","Women/Images_Polos/SF-BPF-120_2.jpeg","Women/Images_Polos/SF-BPF-120_3.jpeg"]},
+
+/* 11111111111111....... Women Puffers .........................*/
+"SF-PJ-F201a": {"name": "Spot FJ201 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F201_1.png","Women/Images_Puffers/SF-PJ-F201_2.png","Women/Images_Puffers/SF-PJ-F201_3.png","Women/Images_Puffers/SF-PJ-F201_4.png"]},
+"SF-PJ-F202a": {"name": "Spot FJ202 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F202_1.png","Women/Images_Puffers/SF-PJ-F202_2.png","Women/Images_Puffers/SF-PJ-F202_3.png","Women/Images_Puffers/SF-PJ-F202_4.png"]},
+"SF-PJ-F203a": {"name": "Spot FJ203 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F203_1.png","Women/Images_Puffers/SF-PJ-F203_2.png","Women/Images_Puffers/SF-PJ-F203_3.png","Women/Images_Puffers/SF-PJ-F203_4.png"]},
+"SF-PJ-F204a": {"name": "Spot FJ204 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F204_1.png","Women/Images_Puffers/SF-PJ-F204_2.png","Women/Images_Puffers/SF-PJ-F204_3.png","Women/Images_Puffers/SF-PJ-F204_4.png"]},
+"SF-PJ-F205a": {"name": "Spot FJ205 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F205_1.png","Women/Images_Puffers/SF-PJ-F205_2.png","Women/Images_Puffers/SF-PJ-F205_3.png","Women/Images_Puffers/SF-PJ-F205_4.png"]},
+
+   "SF-PJ-F301a": {"name": "Spot FJ301 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F301_1.png","Women/Images_Puffers/SF-PJ-F301_2.png","Women/Images_Puffers/SF-PJ-F301_3.png","Women/Images_Puffers/SF-PJ-F301_4.png"]},
+"SF-PJ-F302a": {"name": "Spot FJ302 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F302_1.png","Women/Images_Puffers/SF-PJ-F302_2.png","Women/Images_Puffers/SF-PJ-F302_3.png","Women/Images_Puffers/SF-PJ-F302_4.png"]},
+"SF-PJ-F303a": {"name": "Spot FJ303 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F303_1.png","Women/Images_Puffers/SF-PJ-F303_2.png","Women/Images_Puffers/SF-PJ-F303_3.png","Women/Images_Puffers/SF-PJ-F303_4.png"]},
+"SF-PJ-F304a": {"name": "Spot FJ304 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F304_1.png","Women/Images_Puffers/SF-PJ-F304_2.png","Women/Images_Puffers/SF-PJ-F304_3.png","Women/Images_Puffers/SF-PJ-F304_4.png"]},
    
    /* 11111111111111....... Junior Football Kits .........................*/
 "SF-SJK-S001a":{"name":"Soccer Junior Strike Pro Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S001_1.png","Soccer_Hero/Junior_Images/SF-SJK-S001_2.png","Soccer_Hero/Junior_Images/SF-SJK-S001_3.png","Soccer_Hero/Junior_Images/SF-SJK-S001_4.jpg"]},
@@ -415,8 +439,7 @@ training_tops_juniors: [
     "SF-SJM-S005a"
   ],
 
-  lifestyle_jackets_men: [
-    "SF-SJM-S005a"
+  lifestyle_jackets_men: ["SF-PJ-M851a","SF-PJ-M852a","SF-PJ-M853a","SF-PJ-M854a","SF-PJ-M855a"
   ],
    lifestyle_polos_women: ["SF-BPF-111a","SF-BPF-112a","SF-BPF-113a","SF-BPF-114a","SF-BPF-115a",
   "SF-BPF-116a","SF-BPF-117a","SF-BPF-118a","SF-BPF-119a","SF-BPF-120a"],
@@ -425,9 +448,9 @@ training_tops_juniors: [
     "SF-SJM-S005a"
   ],
 
-  lifestyle_jackets_women: [
-    "SF-SJM-S005a"
-  ],
+  lifestyle_jackets_women: ["SF-PJ-F201a","SF-PJ-F202a","SF-PJ-F203a","SF-PJ-F204a","SF-PJ-F205a",
+                            "SF-PJ-F301a","SF-PJ-F302a","SF-PJ-F303a","SF-PJ-F304a"],
+   
    lifestyle_hoodies_juniors: [
     "SF-SJM-S005a"
   ],
