@@ -231,6 +231,13 @@ const PRODUCTS = {
 "SF-HTS-F113a": {"name": "Spot H113 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F113_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F113_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F113_3.jpg"]},
 "SF-HTS-F114a": {"name": "Spot H114 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F114_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F114_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F114_3.jpg"]},
 "SF-HTS-F115a": {"name": "Spot H115 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F115_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F115_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F115_3.jpg"]},
+
+"SF-HTS-F261a": {"name": "Spot H115 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F261_1.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F261_2.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F261_3.jpeg"]},
+"SF-HTS-F262a": {"name": "Spot H115 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F262_1.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F262_2.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F262_3.jpeg"]},
+"SF-HTS-F263a": {"name": "Spot H115 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F263_1.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F263_2.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F263_3.jpeg"]},
+"SF-HTS-F264a": {"name": "Spot H115 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F264_1.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F264_2.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F264_3.jpeg"]},
+
+
    
     /* 11111111111111....... Women Polos .........................*/
 "SF-BPF-111a": {"name": "Spot B111 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-111_1.jpeg","Women/Images_Polos/SF-BPF-111_2.jpeg","Women/Images_Polos/SF-BPF-111_3.jpeg"]},
@@ -381,7 +388,8 @@ training_tops_juniors: [
    tracksuits_training_women: ["SF-CTS-F120a","SF-CTS-F121a","SF-CTS-F122a","SF-CTS-F123a","SF-CTS-F124a","SF-CTS-F125a","SF-CTS-F126a",
                            "SF-CTS-F127a","SF-CTS-F128a","SF-CTS-F129a","SF-CTS-F130a","SF-CTS-F131a","SF-CTS-F132a","SF-CTS-F133a",
                            "SF-CTS-F134a","SF-CTS-F135a","SF-CTS-F136a"],
-   tracksuits_classic_women: ["SF-HTS-F110a","SF-HTS-F111a","SF-HTS-F112a","SF-HTS-F113a","SF-HTS-F114a","SF-HTS-F115a"],
+   tracksuits_classic_women: ["SF-HTS-F110a","SF-HTS-F111a","SF-HTS-F112a","SF-HTS-F113a","SF-HTS-F114a","SF-HTS-F115a",
+                              "SF-HTS-F261a","SF-HTS-F262a","SF-HTS-F263a","SF-HTS-F264a"],
 
   /* LIFESTYLE */
     lifestyle_polos_men: ["SF-BPM-M180a","SF-BPM-M181a","SF-BPM-M182a","SF-BPM-M183a","SF-BPM-M184a",
