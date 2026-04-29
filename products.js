@@ -206,6 +206,7 @@ const PRODUCTS = {
 "SF-BJF-S012a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S012_1.jpg","BasketBall/Women_Kits/SF-BJF-S012_2.jpg","BasketBall/Women_Kits/SF-BJF-S012_3.jpg"]},
 
  /* 11111111111111....... Women Tracksets Fitness.........................*/
+   /* 1111111 Simple fitness polyester ..*/
 "SF-CTS-F120a": {"name": "Spot C120 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F120_1.jpg","Women/Images_Tracksets/SF_CTS_F120_2.jpg","Women/Images_Tracksets/SF_CTS_F120_3.jpg"]},
 "SF-CTS-F121a": {"name": "Spot C121 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F121_1.jpg","Women/Images_Tracksets/SF_CTS_F121_2.jpg","Women/Images_Tracksets/SF_CTS_F121_3.jpg"]},
 "SF-CTS-F122a": {"name": "Spot C122 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F122_1.jpg","Women/Images_Tracksets/SF_CTS_F122_2.jpg","Women/Images_Tracksets/SF_CTS_F122_3.jpg"]},
@@ -224,7 +225,18 @@ const PRODUCTS = {
 "SF-CTS-F135a": {"name": "Spot C135 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F135_1.jpg","Women/Images_Tracksets/SF_CTS_F135_2.jpg","Women/Images_Tracksets/SF_CTS_F135_3.jpg"]},
 "SF-CTS-F136a": {"name": "Spot C136 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F136_1.jpeg","Women/Images_Tracksets/SF_CTS_F136_2.jpeg","Women/Images_Tracksets/SF_CTS_F136_3.jpeg"]},
 
-/* 11111111111111....... Women Tracksets Classic/Casual.........................*/
+    /* 1111111 ZipUp fitness fleece ..*/
+"SF-ZTS-F210a": {"name": "Spot C210 Trackset","price": 31,"img": ["Women/Images_Tracksets_ZipUp/SF_CTS_F210_1.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F210_2.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F210_3.jpg"]},
+"SF-ZTS-F211a": {"name": "Spot C211 Trackset","price": 31,"img": ["Women/Images_Tracksets_ZipUp/SF_CTS_F211_1.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F211_2.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F211_3.jpg"]},
+"SF-ZTS-F212a": {"name": "Spot C212 Trackset","price": 31,"img": ["Women/Images_Tracksets_ZipUp/SF_CTS_F212_1.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F212_2.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F212_3.jpg"]},
+"SF-ZTS-F213a": {"name": "Spot C213 Trackset","price": 31,"img": ["Women/Images_Tracksets_ZipUp/SF_CTS_F213_1.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F213_2.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F213_3.jpg"]},
+"SF-ZTS-F214a": {"name": "Spot C214 Trackset","price": 31,"img": ["Women/Images_Tracksets_ZipUp/SF_CTS_F214_1.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F214_2.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F214_3.jpg"]},
+"SF-ZTS-F215a": {"name": "Spot C215 Trackset","price": 31,"img": ["Women/Images_Tracksets_ZipUp/SF_CTS_F215_1.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F215_2.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F215_3.jpg"]},
+"SF-ZTS-F216a": {"name": "Spot C216 Trackset","price": 31,"img": ["Women/Images_Tracksets_ZipUp/SF_CTS_F216_1.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F216_2.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F216_3.jpg"]},
+"SF-ZTS-F217a": {"name": "Spot C217 Trackset","price": 31,"img": ["Women/Images_Tracksets_ZipUp/SF_CTS_F217_1.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F217_2.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F217_3.jpg"]},
+"SF-ZTS-F218a": {"name": "Spot C218 Trackset","price": 31,"img": ["Women/Images_Tracksets_ZipUp/SF_CTS_F218_1.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F218_2.jpg","Women/Images_Tracksets_ZipUp/SF_CTS_F218_3.jpg"]},
+
+   /* 11111111111111....... Women Tracksets Classic/Casual.........................*/
 "SF-HTS-F110a": {"name": "Spot H110 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F110_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F110_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F110_3.jpg"]},
 "SF-HTS-F111a": {"name": "Spot H111 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F111_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F111_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F111_3.jpg"]},
 "SF-HTS-F112a": {"name": "Spot H112 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F112_1.jpg","Women/Images_Tracksets_Casual/SF_HTS_F112_2.jpg","Women/Images_Tracksets_Casual/SF_HTS_F112_3.jpg"]},
@@ -386,8 +398,11 @@ training_tops_juniors: [
                              "SF-HTS-M245a","SF-HTS-M246a","SF-HTS-M247a","SF-HTS-M248a"],
    
    tracksuits_training_women: ["SF-CTS-F120a","SF-CTS-F121a","SF-CTS-F122a","SF-CTS-F123a","SF-CTS-F124a","SF-CTS-F125a","SF-CTS-F126a",
-                           "SF-CTS-F127a","SF-CTS-F128a","SF-CTS-F129a","SF-CTS-F130a","SF-CTS-F131a","SF-CTS-F132a","SF-CTS-F133a",
-                           "SF-CTS-F134a","SF-CTS-F135a","SF-CTS-F136a"],
+                           "SF-CTS-F127a","SF-CTS-F128a","SF-CTS-F129a","SF-CTS-F130a","SF-CTS-F131a","SF-CTS-F132a",
+                               "SF-CTS-F133a", "SF-CTS-F134a","SF-CTS-F135a","SF-CTS-F136a",
+                           "SF-ZTS-F210a","SF-ZTS-F211a","SF-ZTS-F212a","SF-ZTS-F213a","SF-ZTS-F214a","SF-ZTS-F215a",
+                               "SF-ZTS-F216a","SF-ZTS-F217a","SF-ZTS-F218a"],
+   
    tracksuits_classic_women: ["SF-HTS-F110a","SF-HTS-F111a","SF-HTS-F112a","SF-HTS-F113a","SF-HTS-F114a","SF-HTS-F115a",
                               "SF-HTS-F261a","SF-HTS-F262a","SF-HTS-F263a","SF-HTS-F264a"],
 
