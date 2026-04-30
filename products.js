@@ -21,7 +21,7 @@ puffers_women: "Elite Fashion. Built for the street fashion. \n\n Material : 100
 mesh_women_men: "Lightweight, breathable mesh training vest for maximum comfort and performance on the field. \n\n Material : moisture-wicking polyester",
 
 
-   tracks_casual_women: "Breathable. Bold. Built for the move. \n\n Material : Cotton Fleece"
+tracks_casual_women: "Breathable. Bold. Built for the move. \n\n Material : Cotton Fleece"
 };
 
 // Global fallback
@@ -34,8 +34,9 @@ const CATEGORY_SIZES = {
    puffers_men: ["XS","S","M","L","XL","2XL"],
    puffers_women: ["XS","S","M","L","XL","2XL"],
    classic_tracksets_women: ["XS","S","M","L","XL","2XL"],
+   mesh_women_men: ["XS","S","M","L","XL","2XL"],
    bags: ["Standard"],
-   caps: ["S","M","L"]
+   caps: ["S","M","L"],
 };
 
 /* ================================
@@ -341,12 +342,28 @@ const PRODUCTS = {
 "SF-BP-9001a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-9001-1.png","Accessories/Images_Bags/SF-BP-9001-2.png"]},
 "SF-BP-1010a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-1010-1.png","Accessories/Images_Bags/SF-BP-1010-2.png","Accessories/Images_Bags/SF-BP-1010-3.png","Accessories/Images_Bags/SF-BP-1010-4.png"]},
 
+   /* 11111111111111....... Caps - Accessoris .........................*/
+"SF-SSU-S001a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S001_1.jpeg"]},
+"SF-SSU-S002a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S002_1.jpeg"]},
+"SF-SSU-S003a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S003_1.jpeg"]},
+"SF-SSU-S004a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S004_1.jpeg"]},
+"SF-SSU-S005a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S005_1.jpeg"]},
+"SF-SSU-S006a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S006_1.jpeg"]},
+"SF-SSU-S007a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S007_1.jpeg"]},
+"SF-SSU-S008a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S008_1.jpeg"]},
+"SF-SSU-S009a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S009_1.jpeg"]},
+"SF-SSU-S010a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S010_1.jpeg"]},
+"SF-SSU-S011a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S011_1.jpeg"]},
+"SF-SSU-S012a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S012_1.jpeg"]}
+   
 /* 11111111111111....... Caps - Accessoris .........................*/
 "SF-CP-5101a":{"name":"SF Spectrum-Line Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5101-1.jpg","Accessories/Images_Caps/SF-CP-5101-2.jpg","Accessories/Images_Caps/SF-CP-5101-3.jpg","Accessories/Images_Caps/SF-CP-5101-4.jpg","Accessories/Images_Caps/SF-CP-5101-5.jpg"]},
 "SF-CP-5201a":{"name":"SF Pulse-Mesh Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5201-1.jpg","Accessories/Images_Caps/SF-CP-5201-2.jpg","Accessories/Images_Caps/SF-CP-5201-3.jpg","Accessories/Images_Caps/SF-CP-5201-4.jpg","Accessories/Images_Caps/SF-CP-5201-5.jpg"]}, 
 "SF-CP-5301a":{"name":"SF Style-Line Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5301-1.png","Accessories/Images_Caps/SF-CP-5301-2.png","Accessories/Images_Caps/SF-CP-5301-3.png","Accessories/Images_Caps/SF-CP-5301-4.png"]},        
 "SF-CP-5401a":{"name":"SF Cool-Vibe Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5401-1.png","Accessories/Images_Caps/SF-CP-5401-2.png","Accessories/Images_Caps/SF-CP-5401-3.png"]},        
 "SF-CP-5501a":{"name":"SF Summer-Sweat Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5501-1.png","Accessories/Images_Caps/SF-CP-5501-2.png","Accessories/Images_Caps/SF-CP-5501-3.png"]}        
+
+
 };
    /* ======================================
    CATEGORY MAPPING (NEW UNIVERSAL SYSTEM)
@@ -500,7 +517,8 @@ training_tops_juniors: [
       caps: ["SF-CP-5301a","SF-CP-5101a","SF-CP-5201a","SF-CP-5401a","SF-CP-5501a"],      
 
     /* 33333333333333  Socks  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-      socks: ["SF-CP-5101a"], 
+     "socks": ["SF-SSU-S001a","SF-SSU-S002a","SF-SSU-S003a","SF-SSU-S004a","SF-SSU-S005a","SF-SSU-S006a",
+               "SF-SSU-S007a","SF-SSU-S008a","SF-SSU-S009a","SF-SSU-S010a","SF-SSU-S011a","SF-SSU-S012a"], 
 };
 
 
