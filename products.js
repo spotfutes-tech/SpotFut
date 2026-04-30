@@ -16,7 +16,10 @@ polos_women: "Comfortable, versatile, and professionally branded — ideal for c
 polos_juniors: "Comfortable, versatile, and professionally branded — ideal for casual and smart-casual wear. \n\n Material : 1) 100% Polyester 2) 100% Cottom 3) 65% Polyester 35% Cotton 4) 80% Polyester 20% Cotton.",
 caps: "Breathable. Bold. Built for the move. The SpotFut Mesh Series is the ultimate trucker cap — classic white front panel with our signature 'SF' logo in crisp black embroidery, paired with ultra-breathable black mesh back and structured black visor. Snapback closure, lightweight feel, perfect ventilation for training, travel, summer sessions, or everyday street style. ",
 puffers_men: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Nyleon (Cotton Filling 150-200 GSM)",
-   puffers_women: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Nyleon (Cotton Filling 150-200 GSM)",
+puffers_women: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Nyleon (Cotton Filling 150-200 GSM)",
+
+mesh_women_men: "Lightweight, breathable mesh training vest for maximum comfort and performance on the field. \n\n Material : moisture-wicking polyester",
+
 
    tracks_casual_women: "Breathable. Bold. Built for the move. \n\n Material : Cotton Fleece"
 };
@@ -123,6 +126,13 @@ const PRODUCTS = {
   "SF-SJM-S010a": {"name": "Soccer Neon Strike Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S010_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S010_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S010_4.jpg"]},
   "SF-SJM-S011a": {"name": "Soccer Midnight Edition","price": 11,  category: "soccer_kits_men","img": ["Soccer_Hero/Men_Images/SF-SJM-S011_1.jpeg","Soccer_Hero/Men_Images/SF-SJM-S011_2.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_3.jpg","Soccer_Hero/Men_Images/SF-SJM-S011_4.jpg"]},
 
+   /* 11111111111111....... Men Mehs Vests .........................*/
+  "SF-MWU-685a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Men/Images_Mesh/SF-MWU-685_1.png","Men/Images_Mesh/SF-MWU-685_2.png"]},
+"SF-MWU-686a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Men/Images_Mesh/SF-MWU-686_1.png","Men/Images_Mesh/SF-MWU-686_2.png"]},
+"SF-MWU-687a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Men/Images_Mesh/SF-MWU-687_1.png","Men/Images_Mesh/SF-MWU-687_2.png"]},
+
+
+   
 /* 11111111111111....... Men BasketBall Kits .........................*/
   "SF-BJM-S001a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S001_1.jpg","BasketBall/Men_Kits/SF-BJM-S001_2.jpg","BasketBall/Men_Kits/SF-BJM-S001_3.jpg"]},
 "SF-BJM-S002a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Men_Kits/SF-BJM-S002_1.jpg","BasketBall/Men_Kits/SF-BJM-S002_2.jpg","BasketBall/Men_Kits/SF-BJM-S002_3.jpg"]},
@@ -206,6 +216,13 @@ const PRODUCTS = {
   "SF-SJF-S009a": {"name": "Soccer Glacier Strike Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S009_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_4.jpg"]},
   "SF-SJF-S010a": {"name": "Soccer Prism Pulse Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S010_1.png", "Soccer_Hero/Women_Images/SF-SJF-S010_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_4.jpg"]},
 
+
+    /* 11111111111111....... Women Mehs Vests .........................*/
+  "SF-MWU-682a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Women/Images_Mesh/SF-MWU-682_1.png","Women/Images_Mesh/SF-MWU-682_2.png"]},
+"SF-MWU-683a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Women/Images_Mesh/SF-MWU-683_1.png","Women/Images_Mesh/SF-MWU-683_2.png"]},
+"SF-MWU-684a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Women/Images_Mesh/SF-MWU-684_1.png","Women/Images_Mesh/SF-MWU-684_2.png"]},
+
+   
    /* 11111111111111....... Women BasketBall Kits .........................*/
    "SF-BJF-S001a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S001_1.jpg","BasketBall/Women_Kits/SF-BJF-S001_2.jpg","BasketBall/Women_Kits/SF-BJF-S001_3.jpg"]},
 "SF-BJF-S002a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S002_1.jpg","BasketBall/Women_Kits/SF-BJF-S002_2.jpg","BasketBall/Women_Kits/SF-BJF-S002_3.jpg"]},
@@ -344,9 +361,8 @@ const CATEGORIES = {
   
   football_hoodies_men: ["SF-SJM-S005a"],
 
-  football_jackets_men: [
-   "SF-SJM-S005a"
-  ],
+  football_mesh_men: ["SF-MWU-685a","SF-MWU-686a","SF-MWU-687a"],
+   
    football_kits_women: ["SF-SJF-S001a","SF-SJF-S002a","SF-SJF-S003a","SF-SJF-S004a","SF-SJF-S005a",
                      "SF-SJF-S006a","SF-SJF-S007a","SF-SJF-S008a","SF-SJF-S009a","SF-SJF-S010a"],
 
@@ -356,9 +372,8 @@ const CATEGORIES = {
     "SF-SJM-S005a"
   ],
 
-  football_jackets_women: [
-    "SF-SJM-S005a"
-  ],
+     football_mesh_women: ["SF-MWU-682a","SF-MWU-683a","SF-MWU-684a"]
+   ,
    football_kits_juniors: ["SF-SJK-S101a","SF-SJK-S002a","SF-SJK-S003a","SF-SJK-S104a","SF-SJK-S005a","SF-SJK-S105a",
                           "SF-SJK-S001a","SF-SJK-S102a","SF-SJK-S103a","SF-SJK-S004a","SF-SJK-S006a","SF-SJK-S106a"],
 
@@ -367,25 +382,27 @@ const CATEGORIES = {
     "SF-SJM-S005a"
   ],
 
-  football_jackets_juniors: [
-    "SF-SJM-S005a"
-  ],
+
 
 
   /* BASKETBALL (future ready placeholders) */
   basketball_kits_men: ["SF-BJM-S001a","SF-BJM-S002a","SF-BJM-S003a","SF-BJM-S004a","SF-BJM-S005a","SF-BJM-S006a","SF-BJM-S007a","SF-BJM-S008a",
    "SF-BJM-S009a","SF-BJM-S010a","SF-BJM-S011a","SF-BJM-S012a","SF-BJM-S013a","SF-BJM-S014a","SF-BJM-S015a","SF-BJM-S016a"
   ],
+   basketball_mesh_men: ["SF-MWU-685a","SF-MWU-686a","SF-MWU-687a"],
 
   basketball_hoodies_men: [
     "SF-SJM-S005a"
   ],
+   
    basketball_kits_women: ["SF-BJF-S001a","SF-BJF-S002a","SF-BJF-S003a","SF-BJF-S004a","SF-BJF-S005a","SF-BJF-S006a","SF-BJF-S007a","SF-BJF-S008a",
    "SF-BJF-S009a","SF-BJF-S010a","SF-BJF-S011a","SF-BJF-S012a"],
 
   basketball_hoodies_women: [
     "SF-SJM-S005a"
   ],
+   basketball_mesh_women: ["SF-MWU-682a","SF-MWU-683a","SF-MWU-684a"],
+
    basketball_kits_juniors: [
    "SF-SJM-S005a"
   ],
@@ -399,9 +416,11 @@ const CATEGORIES = {
   handball_kits_men: [
     "SF-SJM-S005a"
   ],
+   handball_mesh_men: ["SF-MWU-685a","SF-MWU-686a","SF-MWU-687a"],
    handball_kits_women: [
    "SF-SJM-S005a"
   ],
+   handball_mesh_women: ["SF-MWU-682a","SF-MWU-683a","SF-MWU-684a"],
    handball_kits_juniors: [
     "SF-SJM-S005a"
   ],
