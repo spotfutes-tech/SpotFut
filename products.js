@@ -19,6 +19,7 @@ puffers_men: "Elite Fashion. Built for the street fashion. \n\n Material : 100% 
 puffers_women: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Nyleon (Cotton Filling 150-200 GSM)",
 
 mesh_women_men: "Lightweight, breathable mesh training vest for maximum comfort and performance on the field. \n\n Material : moisture-wicking polyester",
+mesh_juniors: "Lightweight, breathable mesh training vest for maximum comfort and performance on the field. \n\n Material : moisture-wicking polyester",
 
 
 tracks_casual_women: "Breathable. Bold. Built for the move. \n\n Material : Cotton Fleece"
@@ -33,8 +34,9 @@ const CATEGORY_SIZES = {
   classic_tracksets_men: ["XS","S","M","L","XL","2XL"],
    puffers_men: ["XS","S","M","L","XL","2XL"],
    puffers_women: ["XS","S","M","L","XL","2XL"],
-   classic_tracksets_women: ["XS","S","M","L","XL","2XL"],
-   mesh_women_men: ["XS","S","M","L","XL","2XL"],
+   classic_tracksets_women: ["XS","S","M","L","XL","2XL","3XL"],
+   mesh_women_men: ["S","M","L","XL","2XL"],
+   mesh_juniors: ["3XS","2XS","XS"],
    bags: ["Standard"],
    caps: ["S","M","L"],
 };
@@ -329,6 +331,12 @@ const PRODUCTS = {
 "SF-SJK-S105a":{"name":"Soccer Junior Magma Rift Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S105_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S105_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S105_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S105_4.jpg"]},
 "SF-SJK-S106a":{"name":"Soccer Junior Solar Drift Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S106_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S106_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S106_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S106_4.jpg"]},
 
+    /* 11111111111111....... Junior Mesh Vests .........................*/
+ "SF-MWU-679a": {"name": "SF Vest","price": 6,"category": "mesh_juniors","img": ["Juniors/Images_Mesh/SF-MWU-679_1.png","Juniors/Images_Mesh/SF-MWU-679_2.png"]},
+"SF-MWU-680a": {"name": "SF Vest","price": 6,"category": "mesh_juniors","img": ["Juniors/Images_Mesh/SF-MWU-680_1.png","Juniors/Images_Mesh/SF-MWU-680_2.png"]},
+"SF-MWU-681a": {"name": "SF Vest","price": 6,"category": "mesh_juniors","img": ["Juniors/Images_Mesh/SF-MWU-681_1.png","Juniors/Images_Mesh/SF-MWU-681_2.png"]},
+
+   
       /* 11111111111111....... Bags - Accessoris .........................*/
 "SF-BP-0001a":{"name":"SF Classic Backpack","price":19,category: "bags","img":["Accessories/Images_Bags/SF-BP-0001-4.png","Accessories/Images_Bags/SF-BP-0001-5.png","Accessories/Images_Bags/SF-BP-0001-6.png"]},
 "SF-BP-1001a":{"name":"SF Urban Edge Backpack","price":19,category: "bags","img":["Accessories/Images_Bags/SF-BP-1001-1.png","Accessories/Images_Bags/SF-BP-1001-2.png","Accessories/Images_Bags/SF-BP-1001-3.png"]},
@@ -393,6 +401,7 @@ const CATEGORIES = {
    ,
    football_kits_juniors: ["SF-SJK-S101a","SF-SJK-S002a","SF-SJK-S003a","SF-SJK-S104a","SF-SJK-S005a","SF-SJK-S105a",
                           "SF-SJK-S001a","SF-SJK-S102a","SF-SJK-S103a","SF-SJK-S004a","SF-SJK-S006a","SF-SJK-S106a"],
+   football_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
 
 
   football_hoodies_juniors: [
@@ -423,6 +432,7 @@ const CATEGORIES = {
    basketball_kits_juniors: [
    "SF-SJM-S005a"
   ],
+   basketball_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
 
   basketball_hoodies_juniors: [
     "SF-SJM-S005a"
@@ -441,6 +451,8 @@ const CATEGORIES = {
    handball_kits_juniors: [
     "SF-SJM-S005a"
   ],
+     handball_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
+
 
 
   /* TRAINING */
