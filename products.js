@@ -437,7 +437,7 @@ training_tops_juniors: [
    tracksuits_classic_women: ["SF-HTS-F110a","SF-HTS-F111a","SF-HTS-F112a","SF-HTS-F113a","SF-HTS-F114a","SF-HTS-F115a",
                               "SF-HTS-F261a","SF-HTS-F262a","SF-HTS-F263a","SF-HTS-F264a"],
 
-   tracksuits_travel_women: ["SF-TTS-F471a","SF-TTS-F472a","SF-TTS-F473a","SF-TTS-F474a","SF-TTS-F475a"],
+   tracksuits_travelling_women: ["SF-TTS-F471a","SF-TTS-F472a","SF-TTS-F473a","SF-TTS-F474a","SF-TTS-F475a"],
 
   /* LIFESTYLE */
     lifestyle_polos_men: ["SF-BPM-M180a","SF-BPM-M181a","SF-BPM-M182a","SF-BPM-M183a","SF-BPM-M184a",
