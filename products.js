@@ -354,7 +354,7 @@ const PRODUCTS = {
 "SF-SSU-S009a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S009_1.jpeg"]},
 "SF-SSU-S010a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S010_1.jpeg"]},
 "SF-SSU-S011a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S011_1.jpeg"]},
-"SF-SSU-S012a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S012_1.jpeg"]}
+"SF-SSU-S012a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S012_1.jpeg"]},
    
 /* 11111111111111....... Caps - Accessoris .........................*/
 "SF-CP-5101a":{"name":"SF Spectrum-Line Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5101-1.jpg","Accessories/Images_Caps/SF-CP-5101-2.jpg","Accessories/Images_Caps/SF-CP-5101-3.jpg","Accessories/Images_Caps/SF-CP-5101-4.jpg","Accessories/Images_Caps/SF-CP-5101-5.jpg"]},
