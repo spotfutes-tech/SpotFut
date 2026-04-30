@@ -262,6 +262,13 @@ const PRODUCTS = {
 "SF-HTS-F264a": {"name": "Spot H115 Trackset","price": 31,category: "tracks_casual_women","img": ["Women/Images_Tracksets_Casual/SF_HTS_F264_1.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F264_2.jpeg","Women/Images_Tracksets_Casual/SF_HTS_F264_3.jpeg"]},
 
 
+ /* 11111111111111....... Women Tracksets Travel.........................*/
+"SF-TTS-F471a": {"name": "Spot T471 Trackset","price": 31,"category": "tracks_travel_women","img": ["Women/Images_Tracksets_Travel/SF-TTS-F471_1.png","Women/Images_Tracksets_Travel/SF-TTS-F471_2.png","Women/Images_Tracksets_Travel/SF-TTS-F471_3.png"]},
+"SF-TTS-F472a": {"name": "Spot T472 Trackset","price": 31,"category": "tracks_travel_women","img": ["Women/Images_Tracksets_Travel/SF-TTS-F472_1.png","Women/Images_Tracksets_Travel/SF-TTS-F472_2.png","Women/Images_Tracksets_Travel/SF-TTS-F472_3.png"]},
+"SF-TTS-F473a": {"name": "Spot T473 Trackset","price": 31,"category": "tracks_travel_women","img": ["Women/Images_Tracksets_Travel/SF-TTS-F473_1.png","Women/Images_Tracksets_Travel/SF-TTS-F473_2.png","Women/Images_Tracksets_Travel/SF-TTS-F473_3.png"]},
+"SF-TTS-F474a": {"name": "Spot T474 Trackset","price": 31,"category": "tracks_travel_women","img": ["Women/Images_Tracksets_Travel/SF-TTS-F474_1.png","Women/Images_Tracksets_Travel/SF-TTS-F474_2.png","Women/Images_Tracksets_Travel/SF-TTS-F474_3.png"]},
+"SF-TTS-F475a": {"name": "Spot T475 Trackset","price": 31,"category": "tracks_travel_women","img": ["Women/Images_Tracksets_Travel/SF-TTS-F475_1.png","Women/Images_Tracksets_Travel/SF-TTS-F475_2.png","Women/Images_Tracksets_Travel/SF-TTS-F475_3.png"]},
+   
    
     /* 11111111111111....... Women Polos .........................*/
 "SF-BPF-111a": {"name": "Spot B111 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-111_1.jpeg","Women/Images_Polos/SF-BPF-111_2.jpeg","Women/Images_Polos/SF-BPF-111_3.jpeg"]},
@@ -429,6 +436,8 @@ training_tops_juniors: [
    
    tracksuits_classic_women: ["SF-HTS-F110a","SF-HTS-F111a","SF-HTS-F112a","SF-HTS-F113a","SF-HTS-F114a","SF-HTS-F115a",
                               "SF-HTS-F261a","SF-HTS-F262a","SF-HTS-F263a","SF-HTS-F264a"],
+
+   tracksuits_travel_women: ["SF-TTS-F471a","SF-TTS-F472a","SF-TTS-F473a","SF-TTS-F474a","SF-TTS-F475a"],
 
   /* LIFESTYLE */
     lifestyle_polos_men: ["SF-BPM-M180a","SF-BPM-M181a","SF-BPM-M182a","SF-BPM-M183a","SF-BPM-M184a",
