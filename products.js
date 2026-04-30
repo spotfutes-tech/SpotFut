@@ -186,10 +186,13 @@ const PRODUCTS = {
 
  /* 11111111111111....... Men Puffers .........................*/
 "SF-PJ-M851a": {"name": "Spot MJ851 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M851_1.jpg","Men/Imagers_Puffers/SF-PJ-M851_2.jpg","Men/Imagers_Puffers/SF-PJ-M851_3.jpg","Men/Imagers_Puffers/SF-PJ-M851_4.jpg"]},
-"SF-PJ-M852a": {"name": "Spot MJ852 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M852_1.jpg","Men/Imagers_Puffers/SF-PJ-M852_2.jpg","Men/Imagers_Puffers/SF-PJ-M852_3.jpg","Men/Imagers_Puffers/SF-PJ-M852_4.jpg"]},
-"SF-PJ-M853a": {"name": "Spot MJ853 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M853_1.jpg","Men/Imagers_Puffers/SF-PJ-M853_2.jpg","Men/Imagers_Puffers/SF-PJ-M853_3.jpg","Men/Imagers_Puffers/SF-PJ-M853_4.jpg"]},
-"SF-PJ-M854a": {"name": "Spot MJ854 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M854_1.jpg","Men/Imagers_Puffers/SF-PJ-M854_2.jpg","Men/Imagers_Puffers/SF-PJ-M854_3.jpg","Men/Imagers_Puffers/SF-PJ-M854_4.jpg"]},
-"SF-PJ-M855a": {"name": "Spot MJ855 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M855_1.jpg","Men/Imagers_Puffers/SF-PJ-M855_2.jpg","Men/Imagers_Puffers/SF-PJ-M855_3.jpg","Men/Imagers_Puffers/SF-PJ-M855_4.jpg"]},
+"SF-PJ-M852a": {"name": "Spot MJ852 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M852_1.jpg","Men/Imagers_Puffers/SF-PJ-M852_2.jpg","Men/Imagers_Puffers/SF-PJ-M852_3.jpg"]},
+"SF-PJ-M853a": {"name": "Spot MJ853 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M853_1.jpg","Men/Imagers_Puffers/SF-PJ-M853_2.jpg","Men/Imagers_Puffers/SF-PJ-M853_3.jpg"]},
+"SF-PJ-M854a": {"name": "Spot MJ854 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M854_1.jpg","Men/Imagers_Puffers/SF-PJ-M854_2.jpg","Men/Imagers_Puffers/SF-PJ-M854_3.jpg"]},
+"SF-PJ-M855a": {"name": "Spot MJ855 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M855_1.jpg","Men/Imagers_Puffers/SF-PJ-M855_2.jpg","Men/Imagers_Puffers/SF-PJ-M855_3.jpg"]},
+
+"SF-PJ-M911a": {"name": "Spot MJ855 Puffer","price": 31, "category": "puffers_men","img": ["Men/Imagers_Puffers/SF-PJ-M911_1.jpg","Men/Imagers_Puffers/SF-PJ-M911_2.jpg","Men/Imagers_Puffers/SF-PJ-M911_3.jpg"]},
+
    
    /* 11111111111111....... Women Football Kits .........................*/
   "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
@@ -448,7 +451,8 @@ training_tops_juniors: [
     "SF-SJM-S005a"
   ],
 
-  lifestyle_jackets_men: ["SF-PJ-M851a","SF-PJ-M852a","SF-PJ-M853a","SF-PJ-M854a","SF-PJ-M855a"
+  lifestyle_jackets_men: ["SF-PJ-M851a","SF-PJ-M852a","SF-PJ-M853a","SF-PJ-M854a","SF-PJ-M855a",
+                          "SF-PJ-M911a"
   ],
    lifestyle_polos_women: ["SF-BPF-111a","SF-BPF-112a","SF-BPF-113a","SF-BPF-114a","SF-BPF-115a",
   "SF-BPF-116a","SF-BPF-117a","SF-BPF-118a","SF-BPF-119a","SF-BPF-120a"],
