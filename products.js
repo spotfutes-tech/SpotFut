@@ -286,16 +286,16 @@ const PRODUCTS = {
 "SF-BPF-120a": {"name": "Spot B120 Polo","price": 21,  category: "polos_women","img": ["Women/Images_Polos/SF-BPF-120_1.jpeg","Women/Images_Polos/SF-BPF-120_2.jpeg","Women/Images_Polos/SF-BPF-120_3.jpeg"]},
 
 /* 11111111111111....... Women Puffers .........................*/
-"SF-PJ-F201a": {"name": "Spot FJ201 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F201_1.png","Women/Images_Puffers/SF-PJ-F201_2.png","Women/Images_Puffers/SF-PJ-F201_3.jpg"]},
-"SF-PJ-F202a": {"name": "Spot FJ202 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F202_1.png","Women/Images_Puffers/SF-PJ-F202_2.png","Women/Images_Puffers/SF-PJ-F202_3.jpg"]},
-"SF-PJ-F203a": {"name": "Spot FJ203 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F203_1.png","Women/Images_Puffers/SF-PJ-F203_2.png","Women/Images_Puffers/SF-PJ-F203_3.jpg"]},
-"SF-PJ-F204a": {"name": "Spot FJ204 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F204_1.png","Women/Images_Puffers/SF-PJ-F204_2.png","Women/Images_Puffers/SF-PJ-F204_3.jpg"]},
-"SF-PJ-F205a": {"name": "Spot FJ205 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F205_1.png","Women/Images_Puffers/SF-PJ-F205_2.png","Women/Images_Puffers/SF-PJ-F205_3.jpg"]},
+"SF-PJ-F201a": {"name": "Spot FJ201 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F201_1.png","Women/Images_Puffers/SF-PJ-F201_2.jpg","Women/Images_Puffers/SF-PJ-F201_3.jpg"]},
+"SF-PJ-F202a": {"name": "Spot FJ202 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F202_1.png","Women/Images_Puffers/SF-PJ-F202_2.jpg","Women/Images_Puffers/SF-PJ-F202_3.jpg"]},
+"SF-PJ-F203a": {"name": "Spot FJ203 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F203_1.png","Women/Images_Puffers/SF-PJ-F203_2.jpg","Women/Images_Puffers/SF-PJ-F203_3.jpg"]},
+"SF-PJ-F204a": {"name": "Spot FJ204 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F204_1.png","Women/Images_Puffers/SF-PJ-F204_2.jpg","Women/Images_Puffers/SF-PJ-F204_3.jpg"]},
+"SF-PJ-F205a": {"name": "Spot FJ205 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F205_1.png","Women/Images_Puffers/SF-PJ-F205_2.jpg","Women/Images_Puffers/SF-PJ-F205_3.jpg"]},
 
    "SF-PJ-F301a": {"name": "Spot FJ301 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F301_1.png","Women/Images_Puffers/SF-PJ-F301_2.png","Women/Images_Puffers/SF-PJ-F301_3.jpg"]},
-"SF-PJ-F302a": {"name": "Spot FJ302 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F302_1.png","Women/Images_Puffers/SF-PJ-F302_2.png","Women/Images_Puffers/SF-PJ-F302_3.jpg"]},
-"SF-PJ-F303a": {"name": "Spot FJ303 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F303_1.png","Women/Images_Puffers/SF-PJ-F303_2.png","Women/Images_Puffers/SF-PJ-F303_3.jpg"]},
-"SF-PJ-F304a": {"name": "Spot FJ304 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F304_1.png","Women/Images_Puffers/SF-PJ-F304_2.png","Women/Images_Puffers/SF-PJ-F304_3.jpg"]},
+"SF-PJ-F302a": {"name": "Spot FJ302 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F302_1.png","Women/Images_Puffers/SF-PJ-F302_2.jpg","Women/Images_Puffers/SF-PJ-F302_3.jpg"]},
+"SF-PJ-F303a": {"name": "Spot FJ303 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F303_1.png","Women/Images_Puffers/SF-PJ-F303_2.jpg","Women/Images_Puffers/SF-PJ-F303_3.jpg"]},
+"SF-PJ-F304a": {"name": "Spot FJ304 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F304_1.png","Women/Images_Puffers/SF-PJ-F304_2.jpg","Women/Images_Puffers/SF-PJ-F304_3.jpg"]},
    
    /* 11111111111111....... Junior Football Kits .........................*/
 "SF-SJK-S001a":{"name":"Soccer Junior Strike Pro Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S001_1.png","Soccer_Hero/Junior_Images/SF-SJK-S001_2.png","Soccer_Hero/Junior_Images/SF-SJK-S001_3.png","Soccer_Hero/Junior_Images/SF-SJK-S001_4.jpg"]},
