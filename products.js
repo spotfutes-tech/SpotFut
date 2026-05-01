@@ -236,6 +236,32 @@ const PRODUCTS = {
 
    
    /* 11111111111111....... Women Football Kits .........................*/
+
+ /* 11111111111111....... Women Football Basic Kits .........................*/
+"SF-SJF-B101a":{"name":"Soccer Basic Edition","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B101_1.png","Soccer_Hero/Women_Images/SF-SJF-B101_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B101_3.jpg"]},
+"SF-SJF-B102a":{"name":"Soccer Swift Motion Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B102_1.png","Soccer_Hero/Women_Images/SF-SJF-B102_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B102_3.jpg"]},
+"SF-SJF-B103a":{"name":"Soccer Elite Grace Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B103_1.png","Soccer_Hero/Women_Images/SF-SJF-B103_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B103_3.jpg"]},
+"SF-SJF-B104a":{"name":"Soccer Power Curve Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B104_1.png","Soccer_Hero/Women_Images/SF-SJF-B104_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B104_3.jpg"]},
+"SF-SJF-B105a":{"name":"Soccer Dynamic Flow Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B105_1.png","Soccer_Hero/Women_Images/SF-SJF-B105_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B105_3.jpg"]},
+"SF-SJF-B106a":{"name":"Soccer Precision Touch Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B106_1.png","Soccer_Hero/Women_Images/SF-SJF-B106_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B106_3.jpg"]},
+"SF-SJF-B107a":{"name":"Soccer Velocity Queen Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B107_1.png","Soccer_Hero/Women_Images/SF-SJF-B107_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B107_3.jpg"]},
+"SF-SJF-B108a":{"name":"Soccer Strike Diva Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B108_1.png","Soccer_Hero/Women_Images/SF-SJF-B108_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B108_3.jpg"]},
+"SF-SJF-B109a":{"name":"Soccer Champion Edge Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B109_1.png","Soccer_Hero/Women_Images/SF-SJF-B109_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B109_3.jpg"]},
+"SF-SJF-B110a":{"name":"Soccer Ultimate Style Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B110_1.png","Soccer_Hero/Women_Images/SF-SJF-B110_2.jpg","Soccer_Hero/Women_Images/SF-SJF-B110_3.jpg"]},
+
+"SF-SJF-B201a":{"name":"Soccer Prime Motion Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B201_1.png","Soccer_Hero/Women_Images/SF-SJF-B201_2.png","Soccer_Hero/Women_Images/SF-SJF-B201_3.png"]},
+"SF-SJF-B202a":{"name":"Soccer Nova Strike Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B202_1.png","Soccer_Hero/Women_Images/SF-SJF-B202_2.png","Soccer_Hero/Women_Images/SF-SJF-B202_3.png"]},
+"SF-SJF-B203a":{"name":"Soccer Stellar Grace Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B203_1.png","Soccer_Hero/Women_Images/SF-SJF-B203_2.png","Soccer_Hero/Women_Images/SF-SJF-B203_3.png"]},
+"SF-SJF-B204a":{"name":"Soccer Fusion Flow Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B204_1.png","Soccer_Hero/Women_Images/SF-SJF-B204_2.png","Soccer_Hero/Women_Images/SF-SJF-B204_3.png"]},
+"SF-SJF-B205a":{"name":"Soccer Power Bloom Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B205_1.png","Soccer_Hero/Women_Images/SF-SJF-B205_2.png","Soccer_Hero/Women_Images/SF-SJF-B205_3.png"]},
+"SF-SJF-B206a":{"name":"Soccer Swift Edge Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B206_1.png","Soccer_Hero/Women_Images/SF-SJF-B206_2.png","Soccer_Hero/Women_Images/SF-SJF-B206_3.png"]},
+"SF-SJF-B207a":{"name":"Soccer Elite Rhythm Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B207_1.png","Soccer_Hero/Women_Images/SF-SJF-B207_2.png","Soccer_Hero/Women_Images/SF-SJF-B207_3.png"]},
+"SF-SJF-B208a":{"name":"Soccer Turbo Grace Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B208_1.png","Soccer_Hero/Women_Images/SF-SJF-B208_2.png","Soccer_Hero/Women_Images/SF-SJF-B208_3.png"]},
+"SF-SJF-B209a":{"name":"Soccer Victory Pulse Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B209_1.png","Soccer_Hero/Women_Images/SF-SJF-B209_2.png","Soccer_Hero/Women_Images/SF-SJF-B209_3.png"]},
+"SF-SJF-B210a":{"name":"Soccer Supreme Style Kit","price":11,"category":"soccer_kits_women","img":["Soccer_Hero/Women_Images/SF-SJF-B210_1.png","Soccer_Hero/Women_Images/SF-SJF-B210_2.png","Soccer_Hero/Women_Images/SF-SJF-B210_3.png"]},
+
+   
+    /* 11111111111111....... Women Football Sublimated Kits .........................*/
   "SF-SJF-S001a": {"name": "Soccer Blush Strike Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S001_1.png", "Soccer_Hero/Women_Images/SF-SJF-S001_2.png", "Soccer_Hero/Women_Images/SF-SJF-S001_3.png", "Soccer_Hero/Women_Images/SF-SJF-S001_4.jpg"]},
   "SF-SJF-S002a": {"name": "Soccer Phantom Fade Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S002_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S002_4.jpg"]},
   "SF-SJF-S003a": {"name": "Soccer Gold-Leaf Kinetic Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S003_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S003_4.jpg"]},
@@ -475,7 +501,10 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
    football_kits_women: ["SF-SJF-S001a","SF-SJF-S011a","SF-SJF-S003a","SF-SJF-S004a","SF-SJF-S005a",
                      "SF-SJF-S006a","SF-SJF-S007a","SF-SJF-S008a","SF-SJF-S009a","SF-SJF-S010a","SF-SJF-S002a"],
 
-  
+  football_kits_basic_women: [
+  "SF-SJF-B101a","SF-SJF-B102a","SF-SJF-B103a","SF-SJF-B104a","SF-SJF-B105a","SF-SJF-B106a","SF-SJF-B107a","SF-SJF-B108a","SF-SJF-B109a","SF-SJF-B110a",
+  "SF-SJF-B201a","SF-SJF-B202a","SF-SJF-B203a","SF-SJF-B204a","SF-SJF-B205a","SF-SJF-B206a","SF-SJF-B207a","SF-SJF-B208a","SF-SJF-B209a","SF-SJF-B210a"
+],
 
   football_hoodies_women: [
     "SF-SJM-S005a"
