@@ -472,8 +472,8 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
 
   football_mesh_men: ["SF-MWU-685a","SF-MWU-686a","SF-MWU-687a"],
    
-   football_kits_women: ["SF-SJF-S001a","SF-SJF-S002a","SF-SJF-S003a","SF-SJF-S004a","SF-SJF-S005a",
-                     "SF-SJF-S006a","SF-SJF-S007a","SF-SJF-S008a","SF-SJF-S009a","SF-SJF-S010a","SF-SJF-S011a"],
+   football_kits_women: ["SF-SJF-S001a","SF-SJF-S011a","SF-SJF-S003a","SF-SJF-S004a","SF-SJF-S005a",
+                     "SF-SJF-S006a","SF-SJF-S007a","SF-SJF-S008a","SF-SJF-S009a","SF-SJF-S010a","SF-SJF-S002a"],
 
   
 
