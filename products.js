@@ -339,20 +339,20 @@ const PRODUCTS = {
 
 
       /* 11111111111111....... Junior Basketball Kits .........................*/
-"SF-BJK-S001a":{"name":"Basketball Junior Strike Pro Edition","price":11,"img":["Basketball/Juniors_Kits/SF-BJK-S001_1.jpg","Basketball/Juniors_Kits/SF-BJK-S001_2.jpg","Basketball/Juniors_Kits/SF-BJK-S001_3.jpg"]},
-"SF-BJK-S002a":{"name":"Basketball Junior Thunder Elite Kit","price":12,"img":["Basketball/Juniors_Kits/SF-BJK-S002_1.jpg","Basketball/Juniors_Kits/SF-BJK-S002_2.jpg","Basketball/Juniors_Kits/SF-BJK-S002_3.jpg"]},
-"SF-BJK-S003a":{"name":"Basketball Junior Blaze Performance Kit","price":13,"img":["Basketball/Juniors_Kits/SF-BJK-S003_1.jpg","Basketball/Juniors_Kits/SF-BJK-S003_2.jpg","Basketball/Juniors_Kits/SF-BJK-S003_3.jpg"]},
-"SF-BJK-S004a":{"name":"Basketball Junior Court Kings Kit","price":14,"img":["Basketball/Juniors_Kits/SF-BJK-S004_1.jpg","Basketball/Juniors_Kits/SF-BJK-S004_2.jpg","Basketball/Juniors_Kits/SF-BJK-S004_3.jpg"]},
-"SF-BJK-S005a":{"name":"Basketball Junior Slam Dunk Pro Kit","price":15,"img":["Basketball/Juniors_Kits/SF-BJK-S005_1.jpg","Basketball/Juniors_Kits/SF-BJK-S005_2.jpg","Basketball/Juniors_Kits/SF-BJK-S005_3.jpg"]},
-"SF-BJK-S006a":{"name":"Basketball Junior Fast Break Champions Kit","price":16,"img":["Basketball/Juniors_Kits/SF-BJK-S006_1.jpg","Basketball/Juniors_Kits/SF-BJK-S006_2.jpg","Basketball/Juniors_Kits/SF-BJK-S006_3.jpg"]},
+"SF-BJK-S001a":{"name":"Basketball Junior Strike Pro Edition","price":11,"img":["BasketBall/Juniors_Kits/SF-BJK-S001_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S001_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S001_3.jpg"]},
+"SF-BJK-S002a":{"name":"Basketball Junior Thunder Elite Kit","price":12,"img":["BasketBall/Juniors_Kits/SF-BJK-S002_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S002_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S002_3.jpg"]},
+"SF-BJK-S003a":{"name":"Basketball Junior Blaze Performance Kit","price":13,"img":["BasketBall/Juniors_Kits/SF-BJK-S003_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S003_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S003_3.jpg"]},
+"SF-BJK-S004a":{"name":"Basketball Junior Court Kings Kit","price":14,"img":["BasketBall/Juniors_Kits/SF-BJK-S004_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S004_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S004_3.jpg"]},
+"SF-BJK-S005a":{"name":"Basketball Junior Slam Dunk Pro Kit","price":15,"img":["BasketBall/Juniors_Kits/SF-BJK-S005_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S005_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S005_3.jpg"]},
+"SF-BJK-S006a":{"name":"Basketball Junior Fast Break Champions Kit","price":16,"img":["BasketBall/Juniors_Kits/SF-BJK-S006_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S006_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S006_3.jpg"]},
 
-"SF-BJK-S101a":{"name":"Basketball Junior Apex Warriors Kit","price":17,"img":["Basketball/Juniors_Kits/SF-BJK-S101_1.jpg","Basketball/Juniors_Kits/SF-BJK-S101_2.jpg","Basketball/Juniors_Kits/SF-BJK-S101_3.jpg"]},
-"SF-BJK-S102a":{"name":"Basketball Junior Velocity Hoops Kit","price":18,"img":["Basketball/Juniors_Kits/SF-BJK-S102_1.jpg","Basketball/Juniors_Kits/SF-BJK-S102_2.jpg","Basketball/Juniors_Kits/SF-BJK-S102_3.jpg"]},
-"SF-BJK-S103a":{"name":"Basketball Junior Power Drive Kit","price":19,"img":["Basketball/Juniors_Kits/SF-BJK-S103_1.jpg","Basketball/Juniors_Kits/SF-BJK-S103_2.jpg","Basketball/Juniors_Kits/SF-BJK-S103_3.jpg"]},
-"SF-BJK-S105a":{"name":"Basketball Junior Rising Stars Kit","price":21,"img":["Basketball/Juniors_Kits/SF-BJK-S105_1.jpg","Basketball/Juniors_Kits/SF-BJK-S105_2.jpg","Basketball/Juniors_Kits/SF-BJK-S105_3.jpg"]},
-"SF-BJK-S106a":{"name":"Basketball Junior Elite Dribblers Kit","price":22,"img":["Basketball/Juniors_Kits/SF-BJK-S106_1.jpg","Basketball/Juniors_Kits/SF-BJK-S106_2.jpg","Basketball/Juniors_Kits/SF-BJK-S106_3.jpg"]},
-"SF-BJK-S107a":{"name":"Basketball Junior Dynamic Dunkers Kit","price":23,"img":["Basketball/Juniors_Kits/SF-BJK-S107_1.jpg","Basketball/Juniors_Kits/SF-BJK-S107_2.jpg","Basketball/Juniors_Kits/SF-BJK-S107_3.jpg"]},
-"SF-BJK-S108a":{"name":"Basketball Junior All-Star Hustle Kit","price":24,"img":["Basketball/Juniors_Kits/SF-BJK-S108_1.jpg","Basketball/Juniors_Kits/SF-BJK-S108_2.jpg","Basketball/Juniors_Kits/SF-BJK-S108_3.jpg"]},
+"SF-BJK-S101a":{"name":"Basketball Junior Apex Warriors Kit","price":17,"img":["BasketBall/Juniors_Kits/SF-BJK-S101_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S101_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S101_3.jpg"]},
+"SF-BJK-S102a":{"name":"Basketball Junior Velocity Hoops Kit","price":18,"img":["BasketBall/Juniors_Kits/SF-BJK-S102_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S102_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S102_3.jpg"]},
+"SF-BJK-S103a":{"name":"Basketball Junior Power Drive Kit","price":19,"img":["BasketBall/Juniors_Kits/SF-BJK-S103_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S103_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S103_3.jpg"]},
+"SF-BJK-S105a":{"name":"Basketball Junior Rising Stars Kit","price":21,"img":["BasketBall/Juniors_Kits/SF-BJK-S105_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S105_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S105_3.jpg"]},
+"SF-BJK-S106a":{"name":"Basketball Junior Elite Dribblers Kit","price":22,"img":["BasketBall/Juniors_Kits/SF-BJK-S106_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S106_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S106_3.jpg"]},
+"SF-BJK-S107a":{"name":"Basketball Junior Dynamic Dunkers Kit","price":23,"img":["BasketBall/Juniors_Kits/SF-BJK-S107_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S107_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S107_3.jpg"]},
+"SF-BJK-S108a":{"name":"Basketball Junior All-Star Hustle Kit","price":24,"img":["BasketBall/Juniors_Kits/SF-BJK-S108_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S108_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S108_3.jpg"]},
 
 
 
