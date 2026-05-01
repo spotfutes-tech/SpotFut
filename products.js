@@ -337,6 +337,26 @@ const PRODUCTS = {
 "SF-SJK-S105a":{"name":"Soccer Junior Magma Rift Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S105_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S105_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S105_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S105_4.jpg"]},
 "SF-SJK-S106a":{"name":"Soccer Junior Solar Drift Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S106_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S106_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S106_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S106_4.jpg"]},
 
+
+      /* 11111111111111....... Junior Basketball Kits .........................*/
+"SF-BJK-S001a":{"name":"Basketball Junior Strike Pro Edition","price":11,"img":["Basketball/Juniors_Kits/SF-BJK-S001_1.jpg","Basketball/Juniors_Kits/SF-BJK-S001_2.jpg","Basketball/Juniors_Kits/SF-BJK-S001_3.jpg"]},
+"SF-BJK-S002a":{"name":"Basketball Junior Thunder Elite Kit","price":12,"img":["Basketball/Juniors_Kits/SF-BJK-S002_1.jpg","Basketball/Juniors_Kits/SF-BJK-S002_2.jpg","Basketball/Juniors_Kits/SF-BJK-S002_3.jpg"]},
+"SF-BJK-S003a":{"name":"Basketball Junior Blaze Performance Kit","price":13,"img":["Basketball/Juniors_Kits/SF-BJK-S003_1.jpg","Basketball/Juniors_Kits/SF-BJK-S003_2.jpg","Basketball/Juniors_Kits/SF-BJK-S003_3.jpg"]},
+"SF-BJK-S004a":{"name":"Basketball Junior Court Kings Kit","price":14,"img":["Basketball/Juniors_Kits/SF-BJK-S004_1.jpg","Basketball/Juniors_Kits/SF-BJK-S004_2.jpg","Basketball/Juniors_Kits/SF-BJK-S004_3.jpg"]},
+"SF-BJK-S005a":{"name":"Basketball Junior Slam Dunk Pro Kit","price":15,"img":["Basketball/Juniors_Kits/SF-BJK-S005_1.jpg","Basketball/Juniors_Kits/SF-BJK-S005_2.jpg","Basketball/Juniors_Kits/SF-BJK-S005_3.jpg"]},
+"SF-BJK-S006a":{"name":"Basketball Junior Fast Break Champions Kit","price":16,"img":["Basketball/Juniors_Kits/SF-BJK-S006_1.jpg","Basketball/Juniors_Kits/SF-BJK-S006_2.jpg","Basketball/Juniors_Kits/SF-BJK-S006_3.jpg"]},
+
+"SF-BJK-S101a":{"name":"Basketball Junior Apex Warriors Kit","price":17,"img":["Basketball/Juniors_Kits/SF-BJK-S101_1.jpg","Basketball/Juniors_Kits/SF-BJK-S101_2.jpg","Basketball/Juniors_Kits/SF-BJK-S101_3.jpg"]},
+"SF-BJK-S102a":{"name":"Basketball Junior Velocity Hoops Kit","price":18,"img":["Basketball/Juniors_Kits/SF-BJK-S102_1.jpg","Basketball/Juniors_Kits/SF-BJK-S102_2.jpg","Basketball/Juniors_Kits/SF-BJK-S102_3.jpg"]},
+"SF-BJK-S103a":{"name":"Basketball Junior Power Drive Kit","price":19,"img":["Basketball/Juniors_Kits/SF-BJK-S103_1.jpg","Basketball/Juniors_Kits/SF-BJK-S103_2.jpg","Basketball/Juniors_Kits/SF-BJK-S103_3.jpg"]},
+"SF-BJK-S105a":{"name":"Basketball Junior Rising Stars Kit","price":21,"img":["Basketball/Juniors_Kits/SF-BJK-S105_1.jpg","Basketball/Juniors_Kits/SF-BJK-S105_2.jpg","Basketball/Juniors_Kits/SF-BJK-S105_3.jpg"]},
+"SF-BJK-S106a":{"name":"Basketball Junior Elite Dribblers Kit","price":22,"img":["Basketball/Juniors_Kits/SF-BJK-S106_1.jpg","Basketball/Juniors_Kits/SF-BJK-S106_2.jpg","Basketball/Juniors_Kits/SF-BJK-S106_3.jpg"]},
+"SF-BJK-S107a":{"name":"Basketball Junior Dynamic Dunkers Kit","price":23,"img":["Basketball/Juniors_Kits/SF-BJK-S107_1.jpg","Basketball/Juniors_Kits/SF-BJK-S107_2.jpg","Basketball/Juniors_Kits/SF-BJK-S107_3.jpg"]},
+"SF-BJK-S108a":{"name":"Basketball Junior All-Star Hustle Kit","price":24,"img":["Basketball/Juniors_Kits/SF-BJK-S108_1.jpg","Basketball/Juniors_Kits/SF-BJK-S108_2.jpg","Basketball/Juniors_Kits/SF-BJK-S108_3.jpg"]},
+
+
+
+   
     /* 11111111111111....... Junior Mesh Vests .........................*/
  "SF-MWU-679a": {"name": "SF Vest","price": 6,"category": "mesh_juniors","img": ["Juniors/Images_Mesh/SF-MWU-679_1.png","Juniors/Images_Mesh/SF-MWU-679_2.png"]},
 "SF-MWU-680a": {"name": "SF Vest","price": 6,"category": "mesh_juniors","img": ["Juniors/Images_Mesh/SF-MWU-680_1.png","Juniors/Images_Mesh/SF-MWU-680_2.png"]},
@@ -435,9 +455,11 @@ const CATEGORIES = {
   ],
    basketball_mesh_women: ["SF-MWU-682a","SF-MWU-683a","SF-MWU-684a"],
 
-   basketball_kits_juniors: [
-   "SF-SJM-S005a"
-  ],
+   basketball_kits_juniors: ["SF-BJK-S001a","SF-BJK-S002a","SF-BJK-S003a","SF-BJK-S004a","SF-BJK-S005a","SF-BJK-S006a",
+                             "SF-BJK-S101a","SF-BJK-S102a","SF-BJK-S103a","SF-BJK-S105a","SF-BJK-S106a","SF-BJK-S107a","SF-BJK-S108a"],
+
+
+   
    basketball_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
 
   basketball_hoodies_juniors: [
