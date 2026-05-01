@@ -324,6 +324,38 @@ const PRODUCTS = {
 "SF-PJ-F304a": {"name": "Spot FJ304 Puffer","price": 31, "category": "puffers_women","img": ["Women/Images_Puffers/SF-PJ-F304_1.png","Women/Images_Puffers/SF-PJ-F304_2.jpg","Women/Images_Puffers/SF-PJ-F304_3.jpg"]},
    
    /* 11111111111111....... Junior Football Kits .........................*/
+   /* 11111111111111....... Junior Football Kits ----- Essentials .........................*/
+"SF-SJK-B001a":{"name":"Soccer Junior Basic Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B001_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B001_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B001_3.jpg"]},
+"SF-SJK-B002a":{"name":"Soccer Junior Classic Training Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B002_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B002_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B002_3.jpg"]},
+"SF-SJK-B003a":{"name":"Soccer Junior Pro Striker Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B003_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B003_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B003_3.jpg"]},
+"SF-SJK-B004a":{"name":"Soccer Junior Elite Match Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B004_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B004_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B004_3.jpg"]},
+"SF-SJK-B005a":{"name":"Soccer Junior Speed Play Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B005_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B005_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B005_3.jpg"]},
+"SF-SJK-B006a":{"name":"Soccer Junior Power Kick Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B006_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B006_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B006_3.jpg"]},
+"SF-SJK-B007a":{"name":"Soccer Junior Goal Master Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B007_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B007_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B007_3.jpg"]},
+"SF-SJK-B008a":{"name":"Soccer Junior Champions League Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B008_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B008_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B008_3.jpg"]},
+
+"SF-SJK-B050a":{"name":"Soccer Junior Starter Control Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B050_1.png","Soccer_Hero/Junior_Images/SF-SJK-B050_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B050_3.jpg"]},
+"SF-SJK-B051a":{"name":"Soccer Junior Precision Strike Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B051_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B051_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B051_3.jpg"]},
+"SF-SJK-B052a":{"name":"Soccer Junior Speed Dribble Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B052_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B052_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B052_3.jpg"]},
+"SF-SJK-B053a":{"name":"Soccer Junior Power Finish Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B053_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B053_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B053_3.jpg"]},
+"SF-SJK-B054a":{"name":"Soccer Junior Elite Defender Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B054_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B054_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B054_3.jpg"]},
+"SF-SJK-B055a":{"name":"Soccer Junior Pro Vision Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B055_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B055_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B055_3.jpg"]},
+"SF-SJK-B056a":{"name":"Soccer Junior Rapid Attack Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B056_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B056_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B056_3.jpg"]},
+"SF-SJK-B057a":{"name":"Soccer Junior Championship Flow Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B057_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B057_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B057_3.jpg"]},
+"SF-SJK-B058a":{"name":"Soccer Junior Elite Playmaker Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B058_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B058_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B058_3.jpg"]},
+   
+"SF-SJK-B101a":{"name":"Soccer Junior Elite Striker Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B101_1.png","Soccer_Hero/Junior_Images/SF-SJK-B101_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B101_3.jpg"]},
+"SF-SJK-B102a":{"name":"Soccer Junior Turbo Kick Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B102_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B102_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B102_3.jpg"]},
+"SF-SJK-B103a":{"name":"Soccer Junior Pro Control Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B103_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B103_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B103_3.jpg"]},
+"SF-SJK-B104a":{"name":"Soccer Junior Speed Attack Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B104_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B104_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B104_3.jpg"]},
+"SF-SJK-B105a":{"name":"Soccer Junior Precision Play Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B105_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B105_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B105_3.jpg"]},
+"SF-SJK-B106a":{"name":"Soccer Junior Power Shot Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B106_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B106_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B106_3.jpg"]},
+"SF-SJK-B107a":{"name":"Soccer Junior Rapid Dribble Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B107_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B107_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B107_3.jpg"]},
+"SF-SJK-B108a":{"name":"Soccer Junior Champion Strike Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B108_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B108_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B108_3.jpg"]},
+"SF-SJK-B109a":{"name":"Soccer Junior Elite Vision Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B109_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B109_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B109_3.jpg"]},
+"SF-SJK-B110a":{"name":"Soccer Junior Master Play Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B110_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B110_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B110_3.jpg"]},
+"SF-SJK-B111a":{"name":"Soccer Junior Final Goal Kit","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-B111_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-B111_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-B111_3.jpg"]},
+   /* 11111111111111....... Junior Football Kits ----- Sublimated .........................*/
 "SF-SJK-S001a":{"name":"Soccer Junior Strike Pro Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S001_1.png","Soccer_Hero/Junior_Images/SF-SJK-S001_2.png","Soccer_Hero/Junior_Images/SF-SJK-S001_3.png","Soccer_Hero/Junior_Images/SF-SJK-S001_4.jpg"]},
 "SF-SJK-S003a":{"name":"Soccer Junior Fire Start Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S003_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S003_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S003_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S003_4.jpg"]},
 "SF-SJK-S004a":{"name":"Soccer Junior Velocity Flame Edition","price":11,"img":["Soccer_Hero/Junior_Images/SF-SJK-S004_1.jpg","Soccer_Hero/Junior_Images/SF-SJK-S004_2.jpg","Soccer_Hero/Junior_Images/SF-SJK-S004_3.jpg","Soccer_Hero/Junior_Images/SF-SJK-S004_4.jpg"]},
@@ -427,6 +459,12 @@ const CATEGORIES = {
    ,
    football_kits_juniors: ["SF-SJK-S101a","SF-SJK-S002a","SF-SJK-S003a","SF-SJK-S104a","SF-SJK-S005a","SF-SJK-S105a",
                           "SF-SJK-S001a","SF-SJK-S102a","SF-SJK-S103a","SF-SJK-S004a","SF-SJK-S006a","SF-SJK-S106a"],
+
+   football_kits_basic_juniors: [ "SF-SJK-B001a","SF-SJK-B002a","SF-SJK-B003a","SF-SJK-B004a","SF-SJK-B005a","SF-SJK-B006a","SF-SJK-B007a","SF-SJK-B008a",
+   "SF-SJK-B101a","SF-SJK-B102a","SF-SJK-B103a",
+  "SF-SJK-B104a","SF-SJK-B105a","SF-SJK-B106a","SF-SJK-B107a","SF-SJK-B108a","SF-SJK-B109a","SF-SJK-B110a","SF-SJK-B111a",
+   "SF-SJK-B050a","SF-SJK-B051a","SF-SJK-B052a","SF-SJK-B053a","SF-SJK-B054a","SF-SJK-B055a","SF-SJK-B056a","SF-SJK-B057a","SF-SJK-B058a"],
+                           
    football_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
 
 
