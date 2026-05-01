@@ -246,6 +246,7 @@ const PRODUCTS = {
   "SF-SJF-S008a": {"name": "Soccer Static Strike Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S008_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S008_4.jpg"]},
   "SF-SJF-S009a": {"name": "Soccer Glacier Strike Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S009_1.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S009_4.jpg"]},
   "SF-SJF-S010a": {"name": "Soccer Prism Pulse Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S010_1.png", "Soccer_Hero/Women_Images/SF-SJF-S010_2.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_3.jpg", "Soccer_Hero/Women_Images/SF-SJF-S010_4.jpg"]},
+"SF-SJF-S011a": {"name": "Soccer Prism Pulse Edition", "price": 11,  category: "soccer_kits_women", "img": ["Soccer_Hero/Women_Images/SF-SJF-S011_1.png", "Soccer_Hero/Women_Images/SF-SJF-S011_2.png", "Soccer_Hero/Women_Images/SF-SJF-S011_3.png"]},
 
 
     /* 11111111111111....... Women Mehs Vests .........................*/
@@ -472,7 +473,7 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
   football_mesh_men: ["SF-MWU-685a","SF-MWU-686a","SF-MWU-687a"],
    
    football_kits_women: ["SF-SJF-S001a","SF-SJF-S002a","SF-SJF-S003a","SF-SJF-S004a","SF-SJF-S005a",
-                     "SF-SJF-S006a","SF-SJF-S007a","SF-SJF-S008a","SF-SJF-S009a","SF-SJF-S010a"],
+                     "SF-SJF-S006a","SF-SJF-S007a","SF-SJF-S008a","SF-SJF-S009a","SF-SJF-S010a","SF-SJF-S011a"],
 
   
 
