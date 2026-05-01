@@ -115,6 +115,28 @@ const PRODUCTS = {
 
    /*  FOr the cat pages e have this following format*/
    /* 11111111111111....... Men Football Kits .........................*/
+         /* 11111111111111....... Men Football Basic Kits .........................*/
+"SF-SJM-B901a":{"name":"Soccer Hexa Pulse Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B901_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B901_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B901_3.jpg"]},
+"SF-SJM-B902a":{"name":"Soccer Titan Strike Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B902_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B902_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B902_3.jpg"]},
+"SF-SJM-B903a":{"name":"Soccer Vortex Elite Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B903_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B903_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B903_3.jpg"]},
+"SF-SJM-B904a":{"name":"Soccer Phantom Speed Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B904_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B904_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B904_3.jpg"]},
+"SF-SJM-B905a":{"name":"Soccer Inferno Control Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B905_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B905_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B905_3.jpg"]},
+"SF-SJM-B906a":{"name":"Soccer Storm Breaker Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B906_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B906_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B906_3.jpg"]},
+"SF-SJM-B907a":{"name":"Soccer Apex Finisher Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B907_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B907_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B907_3.jpg"]},
+"SF-SJM-B908a":{"name":"Soccer Quantum Play Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B908_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B908_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B908_3.jpg"]},
+"SF-SJM-B909a":{"name":"Soccer Neon Strike Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B909_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B909_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B909_3.jpg"]},
+"SF-SJM-B910a":{"name":"Soccer Gravity Flow Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B910_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B910_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B910_3.jpg"]},
+"SF-SJM-B911a":{"name":"Soccer Ultra Fusion Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B911_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B911_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B911_3.jpg"]},
+
+ "SF-SJM-B801a":{"name":"Soccer Aero Strike Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B801_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B801_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B801_3.jpg"]},
+"SF-SJM-B802a":{"name":"Soccer Iron Pulse Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B802_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B802_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B802_3.jpg"]},
+"SF-SJM-B803a":{"name":"Soccer Blaze Runner Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B803_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B803_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B803_3.jpg"]},
+"SF-SJM-B804a":{"name":"Soccer Night Fury Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B804_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B804_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B804_3.jpg"]},
+"SF-SJM-B805a":{"name":"Soccer Thunder Kick Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B805_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B805_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B805_3.jpg"]},
+"SF-SJM-B806a":{"name":"Soccer Phantom Rush Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B806_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B806_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B806_3.jpg"]},
+"SF-SJM-B807a":{"name":"Soccer Solar Edge Edition","price":11,"category":"soccer_kits_men","img":["Soccer_Hero/Men_Images/SF-SJM-B807_1.jpg","Soccer_Hero/Men_Images/SF-SJM-B807_2.jpg","Soccer_Hero/Men_Images/SF-SJM-B807_3.jpg"]},  
+      /* 11111111111111....... Men Football Sublimated Kits .........................*/
+
   "SF-SJM-S001a": {"name": "Soccer Elite Pro Fusion Edition","price": 11,  category: "soccer_kits_men", "img": ["Soccer_Hero/Men_Images/SF-SJM-S001_1.png","Soccer_Hero/Men_Images/SF-SJM-S001_2.png","Soccer_Hero/Men_Images/SF-SJM-S001_3.png","Soccer_Hero/Men_Images/SF-SJM-S001_4.jpg"],
   "description": "Elite performance soccer kit designed for speed, comfort, and durability. Lightweight breathable fabric with pro-level fit.",
   "sizes": ["3XS","2XS","XS","S", "M", "L", "XL", "2XL", "3XL"]},
@@ -442,7 +464,9 @@ const CATEGORIES = {
   /* FOOTBALL */
   football_kits_men: ["SF-SJM-S001a","SF-SJM-S002a","SF-SJM-S003a","SF-SJM-S004a","SF-SJM-S005a",
                      "SF-SJM-S006a","SF-SJM-S007a","SF-SJM-S008a","SF-SJM-S009a","SF-SJM-S010a","SF-SJM-S011a"],
-  
+football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B904a","SF-SJM-B905a","SF-SJM-B906a","SF-SJM-B907a","SF-SJM-B908a","SF-SJM-B909a","SF-SJM-B910a","SF-SJM-B911a",
+"SF-SJM-B801a","SF-SJM-B802a","SF-SJM-B803a","SF-SJM-B804a","SF-SJM-B805a","SF-SJM-B806a","SF-SJM-B807a"],
+                      
   football_hoodies_men: ["SF-SJM-S005a"],
 
   football_mesh_men: ["SF-MWU-685a","SF-MWU-686a","SF-MWU-687a"],
