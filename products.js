@@ -467,6 +467,18 @@ const PRODUCTS = {
 "SF-MWU-680a": {"name": "SF Vest","price": 6,"category": "mesh_juniors","img": ["Juniors/Images_Mesh/SF-MWU-680_1.png","Juniors/Images_Mesh/SF-MWU-680_2.png"]},
 "SF-MWU-681a": {"name": "SF Vest","price": 6,"category": "mesh_juniors","img": ["Juniors/Images_Mesh/SF-MWU-681_1.png","Juniors/Images_Mesh/SF-MWU-681_2.png"]},
 
+    /* 11111111111111.......Junior Soccer Training Sets .........................*/
+"SF-STD-J371a":{"name":"SF Training Half-Zip J371","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J371_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J371_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J371_3.jpeg"]},
+"SF-STD-J372a":{"name":"SF Training Half-Zip J372","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J372_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J372_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J372_3.jpeg"]},
+"SF-STD-J373a":{"name":"SF Training Half-Zip J373","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J373_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J373_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J373_3.jpeg"]},
+"SF-STD-J374a":{"name":"SF Training Half-Zip J374","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J374_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J374_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J374_3.jpeg"]},
+"SF-STD-J375a":{"name":"SF Training Half-Zip J375","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J375_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J375_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J375_3.jpeg"]},
+"SF-STD-J376a":{"name":"SF Training Half-Zip J376","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J376_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J376_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J376_3.jpeg"]},
+"SF-STD-J377a":{"name":"SF Training Half-Zip J377","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J377_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J377_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J377_3.jpeg"]},
+"SF-STD-J378a":{"name":"SF Training Half-Zip J378","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J378_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J378_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J378_3.jpeg"]},
+"SF-STD-J379a":{"name":"SF Training Half-Zip J379","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J379_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J379_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J379_3.jpeg"]},
+"SF-STD-J380a":{"name":"SF Training Half-Zip J380","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J380_1.jpeg","Juniors/Images_TrainingSets/SF-STD-J380_2.jpeg","Juniors/Images_TrainingSets/SF-STD-J380_3.jpeg"]},
+   
    
       /* 11111111111111....... Bags - Accessoris .........................*/
 "SF-BP-0001a":{"name":"SF Classic Backpack","price":19,category: "bags","img":["Accessories/Images_Bags/SF-BP-0001-4.png","Accessories/Images_Bags/SF-BP-0001-5.png","Accessories/Images_Bags/SF-BP-0001-6.png"]},
@@ -549,9 +561,9 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
    football_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
 
 
-  football_hoodies_juniors: [
-    "SF-SJM-S005a"
-  ],
+ football_trainingwear_juniors: [
+  "SF-STD-J371a","SF-STD-J372a","SF-STD-J373a","SF-STD-J374a","SF-STD-J375a",
+  "SF-STD-J376a","SF-STD-J377a","SF-STD-J378a","SF-STD-J379a","SF-STD-J380a"],
 
 
 
