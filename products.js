@@ -18,6 +18,11 @@ caps: "Breathable. Bold. Built for the move. The SpotFut Mesh Series is the ulti
 puffers_men: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Nyleon (Cotton Filling 150-200 GSM)",
 puffers_women: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Nyleon (Cotton Filling 150-200 GSM)",
 
+soccer_trainingwears_women: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Polyester",
+soccer_trainingwears_men: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Polyester",
+soccer_trainingwears_juniors: "Elite Fashion. Built for the street fashion. \n\n Material : 100% Polyester",
+
+   
 mesh_women_men: "Lightweight, breathable mesh training vest for maximum comfort and performance on the field. \n\n Material : moisture-wicking polyester",
 mesh_juniors: "Lightweight, breathable mesh training vest for maximum comfort and performance on the field. \n\n Material : moisture-wicking polyester",
 
@@ -155,7 +160,16 @@ const PRODUCTS = {
   "SF-MWU-685a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Men/Images_Mesh/SF-MWU-685_1.png","Men/Images_Mesh/SF-MWU-685_2.png"]},
 "SF-MWU-686a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Men/Images_Mesh/SF-MWU-686_1.png","Men/Images_Mesh/SF-MWU-686_2.png"]},
 "SF-MWU-687a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Men/Images_Mesh/SF-MWU-687_1.png","Men/Images_Mesh/SF-MWU-687_2.png"]},
-
+ 
+   /* 11111111111111....... Men Soccer Training Sets .........................*/
+  "SF-STD-601a": {"name": "SF Training Half-Zip M601 ","price": 31,category: "soccer_trainingwears_men","img": ["Men/Images_TrainingSets/SF-STF-601_1.jpeg","Men/Images_TrainingSets/SF-STF-601_2.jpeg","Men/Images_TrainingSets/SF-STF-601_3.jpeg"]},
+"SF-STD-602a":{"name":"SF Training Half-Zip M602","price":31,"category":"soccer_trainingwears_men","img":["Men/Images_TrainingSets/SF-STF-602_1.jpeg","Men/Images_TrainingSets/SF-STF-602_2.jpeg","Men/Images_TrainingSets/SF-STF-602_3.jpeg"]},
+"SF-STD-603a":{"name":"SF Training Half-Zip M603","price":31,"category":"soccer_trainingwears_men","img":["Men/Images_TrainingSets/SF-STF-603_1.jpeg","Men/Images_TrainingSets/SF-STF-603_2.jpeg","Men/Images_TrainingSets/SF-STF-603_3.jpeg"]},
+"SF-STD-604a":{"name":"SF Training Half-Zip M604","price":31,"category":"soccer_trainingwears_men","img":["Men/Images_TrainingSets/SF-STF-604_1.jpeg","Men/Images_TrainingSets/SF-STF-604_2.jpeg","Men/Images_TrainingSets/SF-STF-604_3.jpeg"]},
+"SF-STD-605a":{"name":"SF Training Half-Zip M605","price":31,"category":"soccer_trainingwears_men","img":["Men/Images_TrainingSets/SF-STF-605_1.jpeg","Men/Images_TrainingSets/SF-STF-605_2.jpeg","Men/Images_TrainingSets/SF-STF-605_3.jpeg"]},
+"SF-STD-606a":{"name":"SF Training Half-Zip M606","price":31,"category":"soccer_trainingwears_men","img":["Men/Images_TrainingSets/SF-STF-606_1.jpeg","Men/Images_TrainingSets/SF-STF-606_2.jpeg","Men/Images_TrainingSets/SF-STF-606_3.jpeg"]},
+"SF-STD-607a":{"name":"SF Training Half-Zip M607","price":31,"category":"soccer_trainingwears_men","img":["Men/Images_TrainingSets/SF-STF-607_1.jpeg","Men/Images_TrainingSets/SF-STF-607_2.jpeg","Men/Images_TrainingSets/SF-STF-607_3.jpeg"]},
+"SF-STD-608a":{"name":"SF Training Half-Zip M608","price":31,"category":"soccer_trainingwears_men","img":["Men/Images_TrainingSets/SF-STF-608_1.jpeg","Men/Images_TrainingSets/SF-STF-608_2.jpeg","Men/Images_TrainingSets/SF-STF-608_3.jpeg"]},
 
    
 /* 11111111111111....... Men BasketBall Kits .........................*/
@@ -280,6 +294,15 @@ const PRODUCTS = {
 "SF-MWU-683a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Women/Images_Mesh/SF-MWU-683_1.png","Women/Images_Mesh/SF-MWU-683_2.png"]},
 "SF-MWU-684a": {"name": "SF Vest","price": 06,category: "mesh_women_men","img": ["Women/Images_Mesh/SF-MWU-684_1.png","Women/Images_Mesh/SF-MWU-684_2.png"]},
 
+    /* 11111111111111....... Women Soccer Training Sets .........................*/
+"SF-STD-F121a":{"name":"SF Training Half-Zip F121","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STF-121_1.jpeg","Women/Images_TrainingSets/SF-STF-121_2.jpeg","Women/Images_TrainingSets/SF-STF-121_3.jpeg"]},
+"SF-STD-F122a":{"name":"SF Training Half-Zip F122","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STF-122_1.jpeg","Women/Images_TrainingSets/SF-STF-122_2.jpeg","Women/Images_TrainingSets/SF-STF-122_3.jpeg"]},
+"SF-STD-F123a":{"name":"SF Training Half-Zip F123","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STF-123_1.jpeg","Women/Images_TrainingSets/SF-STF-123_2.jpeg","Women/Images_TrainingSets/SF-STF-123_3.jpeg"]},
+"SF-STD-F124a":{"name":"SF Training Half-Zip F124","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STF-124_1.jpeg","Women/Images_TrainingSets/SF-STF-124_2.jpeg","Women/Images_TrainingSets/SF-STF-124_3.jpeg"]},
+"SF-STD-F125a":{"name":"SF Training Half-Zip F125","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STF-125_1.jpeg","Women/Images_TrainingSets/SF-STF-125_2.jpeg","Women/Images_TrainingSets/SF-STF-125_3.jpeg"]},
+"SF-STD-F126a":{"name":"SF Training Half-Zip F126","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STF-126_1.jpeg","Women/Images_TrainingSets/SF-STF-126_2.jpeg","Women/Images_TrainingSets/SF-STF-126_3.jpeg"]},
+"SF-STD-F127a":{"name":"SF Training Half-Zip F127","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STF-127_1.jpeg","Women/Images_TrainingSets/SF-STF-127_2.jpeg","Women/Images_TrainingSets/SF-STF-127_3.jpeg"]},
+"SF-STD-F128a":{"name":"SF Training Half-Zip F128","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STF-128_1.jpeg","Women/Images_TrainingSets/SF-STF-128_2.jpeg","Women/Images_TrainingSets/SF-STF-128_3.jpeg"]},
    
    /* 11111111111111....... Women BasketBall Kits .........................*/
    "SF-BJF-S001a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S001_1.jpg","BasketBall/Women_Kits/SF-BJF-S001_2.jpg","BasketBall/Women_Kits/SF-BJF-S001_3.jpg"]},
@@ -497,7 +520,9 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
   football_hoodies_men: ["SF-SJM-S005a"],
 
   football_mesh_men: ["SF-MWU-685a","SF-MWU-686a","SF-MWU-687a"],
-   
+   football_trainingwear_men: [
+  "SF-STD-601a","SF-STD-602a","SF-STD-603a","SF-STD-604a",
+  "SF-STD-605a","SF-STD-606a","SF-STD-607a","SF-STD-608a" ,"SF-STD-609a" ,"SF-STD-610a"],
    football_kits_women: ["SF-SJF-S001a","SF-SJF-S011a","SF-SJF-S003a","SF-SJF-S004a","SF-SJF-S005a",
                      "SF-SJF-S006a","SF-SJF-S007a","SF-SJF-S008a","SF-SJF-S009a","SF-SJF-S010a","SF-SJF-S002a"],
 
@@ -506,12 +531,13 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
   "SF-SJF-B201a","SF-SJF-B202a","SF-SJF-B203a","SF-SJF-B204a","SF-SJF-B205a","SF-SJF-B206a","SF-SJF-B207a","SF-SJF-B208a","SF-SJF-B209a","SF-SJF-B210a"
 ],
 
-  football_hoodies_women: [
-    "SF-SJM-S005a"
-  ],
-
      football_mesh_women: ["SF-MWU-682a","SF-MWU-683a","SF-MWU-684a"]
    ,
+
+ football_trainingwear_women: [
+  "SF-STD-F121a","SF-STD-F122a","SF-STD-F123a","SF-STD-F124a",
+  "SF-STD-F125a","SF-STD-F126a","SF-STD-F127a","SF-STD-F128a"],
+   
    football_kits_juniors: ["SF-SJK-S101a","SF-SJK-S002a","SF-SJK-S003a","SF-SJK-S104a","SF-SJK-S005a","SF-SJK-S105a",
                           "SF-SJK-S001a","SF-SJK-S102a","SF-SJK-S103a","SF-SJK-S004a","SF-SJK-S006a","SF-SJK-S106a"],
 
