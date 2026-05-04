@@ -303,6 +303,29 @@ const PRODUCTS = {
 "SF-STD-F126a":{"name":"SF Training Half-Zip F126","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STD-F126_1.jpeg","Women/Images_TrainingSets/SF-STD-F126_2.jpeg","Women/Images_TrainingSets/SF-STD-F126_3.jpeg"]},
 "SF-STD-F127a":{"name":"SF Training Half-Zip F127","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STD-F127_1.jpeg","Women/Images_TrainingSets/SF-STD-F127_2.jpeg","Women/Images_TrainingSets/SF-STD-F127_3.jpeg"]},
 "SF-STD-F128a":{"name":"SF Training Half-Zip F128","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingSets/SF-STD-F128_1.jpeg","Women/Images_TrainingSets/SF-STD-F128_2.jpeg","Women/Images_TrainingSets/SF-STD-F128_3.jpeg"]},
+
+
+
+ /* 11111111111111....... Women Training Tops .........................*/
+"SF_FTT_L112a":{"name":"SF Training Tops L112","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF_FTT_L112_1.jpg","Women/Images_TrainingTopss/SF_FTT_L112_2.jpg","Women/Images_TrainingTopss/SF_FTT_L112_3.jpg"]},
+"SF_FTT_L113a":{"name":"SF Training Tops L113","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF_FTT_L113_1.jpg","Women/Images_TrainingTopss/SF_FTT_L113_2.jpg","Women/Images_TrainingTopss/SF_FTT_L113_3.jpg"]},
+"SF_FTT_L114a":{"name":"SF Training Tops L114","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF_FTT_L114_1.jpg","Women/Images_TrainingTopss/SF_FTT_L114_2.jpg","Women/Images_TrainingTopss/SF_FTT_L114_3.jpg"]},
+"SF_FTT_L115a":{"name":"SF Training Tops L115","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF_FTT_L115_1.jpg","Women/Images_TrainingTopss/SF_FTT_L115_2.jpg","Women/Images_TrainingTopss/SF_FTT_L115_3.jpg"]},
+"SF_FTT_L116a":{"name":"SF Training Tops L116","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF_FTT_L116_1.jpg","Women/Images_TrainingTopss/SF_FTT_L116_2.jpg","Women/Images_TrainingTopss/SF_FTT_L116_3.jpg"]},
+"SF_FTT_L117a":{"name":"SF Training Tops L117","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF_FTT_L117_1.jpg","Women/Images_TrainingTopss/SF_FTT_L117_2.jpg","Women/Images_TrainingTopss/SF_FTT_L117_3.jpg"]},
+"SF_FTT_L118a":{"name":"SF Training Tops L118","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF_FTT_L118_1.jpg","Women/Images_TrainingTopss/SF_FTT_L118_2.jpg","Women/Images_TrainingTopss/SF_FTT_L118_3.jpg"]},
+"SF-GCF-S101a":{"name":"SF Training Tops S101","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF-GCF-S101_1.jpg","Women/Images_TrainingTopss/SF-GCF-S101_2.jpg","Women/Images_TrainingTopss/SF-GCF-S101_3.jpg"]}, 
+"SF-GCF-S102a":{"name":"SF Training Tops S102","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF-GCF-S102_1.jpg","Women/Images_TrainingTopss/SF-GCF-S102_2.jpg","Women/Images_TrainingTopss/SF-GCF-S102_3.jpg"]},
+"SF-GCF-S103a":{"name":"SF Training Tops S103","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF-GCF-S103_1.jpg","Women/Images_TrainingTopss/SF-GCF-S103_2.jpg","Women/Images_TrainingTopss/SF-GCF-S103_3.jpg"]},
+"SF-GCF-S104a":{"name":"SF Training Tops S104","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF-GCF-S104_1.jpg","Women/Images_TrainingTopss/SF-GCF-S104_2.jpg","Women/Images_TrainingTopss/SF-GCF-S104_3.jpg"]},
+"SF-GCF-S105a":{"name":"SF Training Tops S105","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF-GCF-S105_1.jpg","Women/Images_TrainingTopss/SF-GCF-S105_2.jpg","Women/Images_TrainingTopss/SF-GCF-S105_3.jpg"]},
+"SF-GCF-S106a":{"name":"SF Training Tops S106","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF-GCF-S106_1.jpg","Women/Images_TrainingTopss/SF-GCF-S106_2.jpg","Women/Images_TrainingTopss/SF-GCF-S106_3.jpg"]},
+"SF-GCF-S107a":{"name":"SF Training Tops S107","price":31,"category":"soccer_trainingwears_women","img":["Women/Images_TrainingTopss/SF-GCF-S107_1.jpg","Women/Images_TrainingTopss/SF-GCF-S107_2.jpg","Women/Images_TrainingTopss/SF-GCF-S107_3.jpg"]}
+
+
+
+
+
    
    /* 11111111111111....... Women BasketBall Kits .........................*/
    "SF-BJF-S001a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S001_1.jpg","BasketBall/Women_Kits/SF-BJF-S001_2.jpg","BasketBall/Women_Kits/SF-BJF-S001_3.jpg"]},
@@ -617,9 +640,8 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
   ],
 
 
-   training_tops_women: [
-    "SF-SJM-S005a"
-  ],
+   training_tops_women: ["SF_FTT_L112a","SF_FTT_L113a","SF_FTT_L114a","SF_FTT_L115a","SF_FTT_L116a","SF_FTT_L117a","SF_FTT_L118a",
+                         "SF-GCF-S101a","SF-GCF-S102a","SF-GCF-S103a","SF-GCF-S104a","SF-GCF-S105a","SF-GCF-S106a","SF-GCF-S107a"],
 
 
 training_tops_juniors: [
