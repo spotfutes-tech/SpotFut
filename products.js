@@ -27,7 +27,11 @@ mesh_women_men: "Lightweight, breathable mesh training vest for maximum comfort 
 mesh_juniors: "Lightweight, breathable mesh training vest for maximum comfort and performance on the field. \n\n Material : moisture-wicking polyester",
 
 
-tracks_casual_women: "Breathable. Bold. Built for the move. \n\n Material : Cotton Fleece"
+tracks_casual_women: "Breathable. Bold. Built for the move. \n\n Material : Cotton Fleece",
+
+urbanhoodies_juniors: "Streetwear Fashion. \n\n Material : Cotton Fleece"
+
+   
 };
 
 // Global fallback
