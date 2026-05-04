@@ -45,7 +45,8 @@ const CATEGORY_SIZES = {
    puffers_women: ["XS","S","M","L","XL","2XL"],
    classic_tracksets_women: ["XS","S","M","L","XL","2XL","3XL"],
    mesh_women_men: ["S","M","L","XL","2XL"],
-   mesh_juniors: ["3XS","2XS","XS"],
+   mesh_juniors: ["3XS","2XS","XS","S"],
+   urbanhoodies_juniors: ["3XS","2XS","XS","S"],
    bags: ["Standard"],
    caps: ["S","M","L"],
 };
