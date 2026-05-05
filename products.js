@@ -767,11 +767,6 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
   "SF-STD-F121a","SF-STD-F122a","SF-STD-F123a","SF-STD-F124a",
   "SF-STD-F125a","SF-STD-F126a","SF-STD-F127a","SF-STD-F128a"],
 
-
-   football_urbanhoodies_women: ["SF-UHF-S101a","SF-UHF-S204a","SF-UHF-S302a","SF-UHF-S405a","SF-UHF-S507a",
-  "SF-UHF-S600a","SF-UHF-S709a","SF-UHF-S803a","SF-UHF-S104a","SF-UHF-S201a",
-  "SF-UHF-S305a","SF-UHF-S402a","SF-UHF-S505a","SF-UHF-S607a","SF-UHF-S710a",
-  "SF-UHF-S808a","SF-UHF-S100a","SF-UHF-S203a","SF-UHF-S304a","SF-UHF-S706a"]
    
    football_kits_juniors: ["SF-SJK-S101a","SF-SJK-S002a","SF-SJK-S003a","SF-SJK-S104a","SF-SJK-S005a","SF-SJK-S105a",
                           "SF-SJK-S001a","SF-SJK-S102a","SF-SJK-S103a","SF-SJK-S004a","SF-SJK-S006a","SF-SJK-S106a"],
@@ -885,9 +880,10 @@ training_tops_juniors: [
    lifestyle_polos_women: ["SF-BPF-111a","SF-BPF-112a","SF-BPF-113a","SF-BPF-114a","SF-BPF-115a",
   "SF-BPF-116a","SF-BPF-117a","SF-BPF-118a","SF-BPF-119a","SF-BPF-120a"],
    
-   lifestyle_hoodies_women: [
-    "SF-SJM-S005a"
-  ],
+   lifestyle_hoodies_women: ["SF-UHF-S101a","SF-UHF-S204a","SF-UHF-S302a","SF-UHF-S405a","SF-UHF-S507a",
+  "SF-UHF-S600a","SF-UHF-S709a","SF-UHF-S803a","SF-UHF-S104a","SF-UHF-S201a",
+  "SF-UHF-S305a","SF-UHF-S402a","SF-UHF-S505a","SF-UHF-S607a","SF-UHF-S710a",
+  "SF-UHF-S808a","SF-UHF-S100a","SF-UHF-S203a","SF-UHF-S304a","SF-UHF-S706a"],
 
   lifestyle_jackets_women: ["SF-PJ-F201a","SF-PJ-F202a","SF-PJ-F203a","SF-PJ-F204a","SF-PJ-F205a",
                             "SF-PJ-F301a","SF-PJ-F302a","SF-PJ-F303a","SF-PJ-F304a"],
@@ -899,7 +895,7 @@ training_tops_juniors: [
   "SF-UHK-S503a","SF-UHK-S015a","SF-UHK-S106a","SF-UHK-S033a","SF-UHK-S607a",
   "SF-UHK-S036a","SF-UHK-S102a","SF-UHK-S042a","SF-UHK-S205a","SF-UHK-S039a",
   "SF-UHK-S303a","SF-UHK-S045a","SF-UHK-S104a","SF-UHK-S050a","SF-UHK-S205a"],
-
+   
   lifestyle_jackets_juniors: [
     "SF-SJM-S005a"
   ],
