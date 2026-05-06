@@ -992,7 +992,7 @@ training_tops_juniors: [
      "socks": ["SF-SSU-S001a","SF-SSU-S002a","SF-SSU-S003a","SF-SSU-S004a","SF-SSU-S005a","SF-SSU-S006a",
                "SF-SSU-S007a","SF-SSU-S008a","SF-SSU-S009a","SF-SSU-S010a","SF-SSU-S011a","SF-SSU-S012a"], 
     /* 33333333333333  ShinGuards  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-     "ShinGuards": ["SF_SGU_M100a","SF_SGU_M101a","SF_SGU_M102a","SF_SGU_M103a","SF_SGU_M104a","SF_SGU_M105a"],
+     "shinguards": ["SF_SGU_M100a","SF_SGU_M101a","SF_SGU_M102a","SF_SGU_M103a","SF_SGU_M104a","SF_SGU_M105a"],
 
 
 /* ======================================
