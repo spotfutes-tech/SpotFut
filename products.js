@@ -49,6 +49,7 @@ const CATEGORY_SIZES = {
    urbanhoodies_juniors: ["3XS","2XS","XS","S"],
    bags: ["Standard"],
    caps: ["S","M","L"],
+   gloves: ["4","5","6","7","8","9","10","11"],
 };
 
 /* ================================
@@ -761,6 +762,20 @@ const PRODUCTS = {
 "SF-BP-9001a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-9001-1.png","Accessories/Images_Bags/SF-BP-9001-2.png"]},
 "SF-BP-1010a":{"name":"SF TBA Backpack","price":29,category: "bags","img":["Accessories/Images_Bags/SF-BP-1010-1.png","Accessories/Images_Bags/SF-BP-1010-2.png","Accessories/Images_Bags/SF-BP-1010-3.png","Accessories/Images_Bags/SF-BP-1010-4.png"]},
 
+
+/* 11111111111111....... Gloves - Accessoris .........................*/
+"SF_SGM_M100a":{"name":"SF Spectrum-Line Gloves M100a","price":20,category: "gloves","img":["Accessories/Images_Gloves/SF_SGM_M100_1.jpg","Accessories/Images_Gloves/SF_SGM_M100_2.jpg","Accessories/Images_Gloves/SF_SGM_M100_3.jpg""]},
+"SF_SGM_M101a":{"name":"SF Spectrum-Line Gloves M101a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M101_1.jpg","Accessories/Images_Gloves/SF_SGM_M101_2.jpg","Accessories/Images_Gloves/SF_SGM_M101_3.jpg"]},
+"SF_SGM_M102a":{"name":"SF Spectrum-Line Gloves M102a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M102_1.jpg","Accessories/Images_Gloves/SF_SGM_M102_2.jpg","Accessories/Images_Gloves/SF_SGM_M102_3.jpg"]},
+"SF_SGM_M103a":{"name":"SF Spectrum-Line Gloves M103a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M103_1.jpg","Accessories/Images_Gloves/SF_SGM_M103_2.jpg","Accessories/Images_Gloves/SF_SGM_M103_3.jpg"]},
+"SF_SGM_M104a":{"name":"SF Spectrum-Line Gloves M104a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M104_1.jpg","Accessories/Images_Gloves/SF_SGM_M104_2.jpg","Accessories/Images_Gloves/SF_SGM_M104_3.jpg"]},
+"SF_SGM_M105a":{"name":"SF Spectrum-Line Gloves M105a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M105_1.jpg","Accessories/Images_Gloves/SF_SGM_M105_2.jpg","Accessories/Images_Gloves/SF_SGM_M105_3.jpg"]},
+"SF_SGM_M106a":{"name":"SF Spectrum-Line Gloves M106a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M106_1.jpg","Accessories/Images_Gloves/SF_SGM_M106_2.jpg","Accessories/Images_Gloves/SF_SGM_M106_3.jpg"]},
+"SF_SGM_M107a":{"name":"SF Spectrum-Line Gloves M107a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M107_1.jpg","Accessories/Images_Gloves/SF_SGM_M107_2.jpg","Accessories/Images_Gloves/SF_SGM_M107_3.jpg"]},
+"SF_SGM_M108a":{"name":"SF Spectrum-Line Gloves M108a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M108_1.jpg","Accessories/Images_Gloves/SF_SGM_M108_2.jpg","Accessories/Images_Gloves/SF_SGM_M108_3.jpg"]},
+"SF_SGM_M109a":{"name":"SF Spectrum-Line Gloves M109a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M109_1.jpg","Accessories/Images_Gloves/SF_SGM_M109_2.jpg","Accessories/Images_Gloves/SF_SGM_M109_3.jpg"]},
+
+   
    /* 11111111111111....... Caps - Accessoris .........................*/
 "SF-SSU-S001a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S001_1.jpeg"]},
 "SF-SSU-S002a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S002_1.jpeg"]},
@@ -958,7 +973,11 @@ training_tops_juniors: [
       bags: ["SF-BP-0001a","SF-BP-1001a","SF-BP-2001a","SF-BP-3001a","SF-BP-4001a","SF-BP-5001a","SF-BP-6001a","SF-BP-7001a","SF-BP-8001a",
             "SF-BP-9001a","SF-BP-1010a"],
     /* 22222222222222222222  Caps $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-      caps: ["SF-CP-5301a","SF-CP-5101a","SF-CP-5201a","SF-CP-5401a","SF-CP-5501a"],      
+      caps: ["SF-CP-5301a","SF-CP-5101a","SF-CP-5201a","SF-CP-5401a","SF-CP-5501a"],  
+
+   /* 22222222222222222222  Gloves $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+      gloves: ["SF_SGM_M100a","SF_SGM_M101a","SF_SGM_M102a","SF_SGM_M103a","SF_SGM_M104a","SF_SGM_M105a","SF_SGM_M106a","SF_SGM_M107a","SF_SGM_M108a","SF_SGM_M109a"],    
+
 
     /* 33333333333333  Socks  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
      "socks": ["SF-SSU-S001a","SF-SSU-S002a","SF-SSU-S003a","SF-SSU-S004a","SF-SSU-S005a","SF-SSU-S006a",
