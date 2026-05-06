@@ -764,7 +764,7 @@ const PRODUCTS = {
 
 
 /* 11111111111111....... Gloves - Accessoris .........................*/
-"SF_SGM_M100a":{"name":"SF Spectrum-Line Gloves M100a","price":20,category: "gloves","img":["Accessories/Images_Gloves/SF_SGM_M100_1.jpg","Accessories/Images_Gloves/SF_SGM_M100_2.jpg","Accessories/Images_Gloves/SF_SGM_M100_3.jpg""]},
+"SF_SGM_M100a":{"name":"SF Spectrum-Line Gloves M100a","price":20,category: "gloves","img":["Accessories/Images_Gloves/SF_SGM_M100_1.jpg","Accessories/Images_Gloves/SF_SGM_M100_2.jpg","Accessories/Images_Gloves/SF_SGM_M100_3.jpg"]},
 "SF_SGM_M101a":{"name":"SF Spectrum-Line Gloves M101a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M101_1.jpg","Accessories/Images_Gloves/SF_SGM_M101_2.jpg","Accessories/Images_Gloves/SF_SGM_M101_3.jpg"]},
 "SF_SGM_M102a":{"name":"SF Spectrum-Line Gloves M102a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M102_1.jpg","Accessories/Images_Gloves/SF_SGM_M102_2.jpg","Accessories/Images_Gloves/SF_SGM_M102_3.jpg"]},
 "SF_SGM_M103a":{"name":"SF Spectrum-Line Gloves M103a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M103_1.jpg","Accessories/Images_Gloves/SF_SGM_M103_2.jpg","Accessories/Images_Gloves/SF_SGM_M103_3.jpg"]},
