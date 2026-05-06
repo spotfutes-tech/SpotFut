@@ -50,6 +50,7 @@ const CATEGORY_SIZES = {
    bags: ["Standard"],
    caps: ["S","M","L"],
    gloves: ["4","5","6","7","8","9","10","11"],
+   ShinGuards: ["Standard"],
 };
 
 /* ================================
@@ -775,6 +776,14 @@ const PRODUCTS = {
 "SF_SGM_M108a":{"name":"SF Spectrum-Line Gloves M108a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M108_1.jpg","Accessories/Images_Gloves/SF_SGM_M108_2.jpg","Accessories/Images_Gloves/SF_SGM_M108_3.jpg"]},
 "SF_SGM_M109a":{"name":"SF Spectrum-Line Gloves M109a","price":20,"category":"gloves","img":["Accessories/Images_Gloves/SF_SGM_M109_1.jpg","Accessories/Images_Gloves/SF_SGM_M109_2.jpg","Accessories/Images_Gloves/SF_SGM_M109_3.jpg"]},
 
+
+   /* 11111111111111....... ShinGuards - Accessoris .........................*/
+"SF_SGU_M100a":{"name":"SF Spectrum-Line ShinGuards M100a","price":25,category: "ShinGuards","img":["Accessories/Images_ShinGuards/SF_SGU_M100_1.jpg","Accessories/Images_ShinGuards/SF_SGU_M100_2.jpg","Accessories/Images_ShinGuards/SF_SGU_M100_3.jpg"]},
+"SF_SGU_M101a":{"name":"SF Spectrum-Line ShinGuards M101a","price":25,"category":"ShinGuards","img":["Accessories/Images_ShinGuards/SF_SGU_M101_1.jpg","Accessories/Images_ShinGuards/SF_SGU_M101_2.jpg","Accessories/Images_ShinGuards/SF_SGU_M101_3.jpg"]},
+"SF_SGU_M102a":{"name":"SF Spectrum-Line ShinGuards M102a","price":25,"category":"ShinGuards","img":["Accessories/Images_ShinGuards/SF_SGU_M102_1.jpg","Accessories/Images_ShinGuards/SF_SGU_M102_2.jpg","Accessories/Images_ShinGuards/SF_SGU_M102_3.jpg"]},
+"SF_SGU_M103a":{"name":"SF Spectrum-Line ShinGuards M103a","price":25,"category":"ShinGuards","img":["Accessories/Images_ShinGuards/SF_SGU_M103_1.jpg","Accessories/Images_ShinGuards/SF_SGU_M103_2.jpg","Accessories/Images_ShinGuards/SF_SGU_M103_3.jpg"]},
+"SF_SGU_M104a":{"name":"SF Spectrum-Line ShinGuards M104a","price":25,"category":"ShinGuards","img":["Accessories/Images_ShinGuards/SF_SGU_M104_1.jpg","Accessories/Images_ShinGuards/SF_SGU_M104_2.jpg","Accessories/Images_ShinGuards/SF_SGU_M104_3.jpg"]},  
+"SF_SGU_M105a":{"name":"SF Spectrum-Line ShinGuards M105a","price":25,"category":"ShinGuards","img":["Accessories/Images_ShinGuards/SF_SGU_M105_1.jpeg","Accessories/Images_ShinGuards/SF_SGU_M105_2.jpeg","Accessories/Images_ShinGuards/SF_SGU_M105_3.jpeg"]},
    
    /* 11111111111111....... Caps - Accessoris .........................*/
 "SF-SSU-S001a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S001_1.jpeg"]},
@@ -982,7 +991,8 @@ training_tops_juniors: [
     /* 33333333333333  Socks  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
      "socks": ["SF-SSU-S001a","SF-SSU-S002a","SF-SSU-S003a","SF-SSU-S004a","SF-SSU-S005a","SF-SSU-S006a",
                "SF-SSU-S007a","SF-SSU-S008a","SF-SSU-S009a","SF-SSU-S010a","SF-SSU-S011a","SF-SSU-S012a"], 
-};
+    /* 33333333333333  ShinGuards  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+     "ShinGuards": ["SF_SGU_M100a","SF_SGU_M101a","SF_SGU_M102a","SF_SGU_M103a","SF_SGU_M104a","SF_SGU_M105a"],
 
 
 /* ======================================
