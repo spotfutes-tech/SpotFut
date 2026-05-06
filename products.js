@@ -1007,7 +1007,7 @@ training_tops_juniors: [
      "socks": ["SF-SSU-S001a","SF-SSU-S002a","SF-SSU-S003a","SF-SSU-S004a","SF-SSU-S005a","SF-SSU-S006a",
                "SF-SSU-S007a","SF-SSU-S008a","SF-SSU-S009a","SF-SSU-S010a","SF-SSU-S011a","SF-SSU-S012a"], 
  /* 33333333333333  wristbands  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-     "wristbands": ["SF-WBU-S001_1","SF-WBU-S002_1","SF-WBU-S003_1","SF-WBU-S004_1","SF-WBU-S005_1","SF-WBU-S006_1","SF-WBU-S007_1","SF-WBU-S008_1"],
+     "wristbands": ["SF-WBU-S001a","SF-WBU-S002a","SF-WBU-S003a","SF-WBU-S004a","SF-WBU-S005a","SF-WBU-S006a","SF-WBU-S007a","SF-WBU-S008a"],
    
     /* 33333333333333  ShinGuards  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
      "shinguards": ["SF_SGU_M100a","SF_SGU_M101a","SF_SGU_M102a","SF_SGU_M103a","SF_SGU_M104a","SF_SGU_M105a"]
