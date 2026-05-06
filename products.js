@@ -51,6 +51,7 @@ const CATEGORY_SIZES = {
    caps: ["S","M","L"],
    gloves: ["4","5","6","7","8","9","10","11"],
    ShinGuards: ["Standard"],
+   wristbands: ["Standard"],
 };
 
 /* ================================
@@ -798,6 +799,20 @@ const PRODUCTS = {
 "SF-SSU-S010a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S010_1.jpeg"]},
 "SF-SSU-S011a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S011_1.jpeg"]},
 "SF-SSU-S012a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S012_1.jpeg"]},
+
+
+
+ /* 11111111111111....... Wristbands - Accessoris .........................*/
+"SF-WBU-S001a":{"name":"SF Essential  Wristbands S001","price":11,"category":"Wristbands","img":["Accessories/Images_Wristbands/SF-WBU-S001_1.jpg"]},
+"SF-WBU-S002a":{"name":"SF Essential Wristbands S002","price":11,"category":"Wristbands","img":["Accessories/Images_Wristbands/SF-WBU-S002_1.jpg"]},
+"SF-WBU-S003a":{"name":"SF Essential Wristbands S003","price":11,"category":"Wristbands","img":["Accessories/Images_Wristbands/SF-WBU-S003_1.jpg"]},
+"SF-WBU-S004a":{"name":"SF Essential Wristbands S004","price":11,"category":"Wristbands","img":["Accessories/Images_Wristbands/SF-WBU-S004_1.jpg"]},
+"SF-WBU-S005a":{"name":"SF Essential Wristbands S005","price":11,"category":"Wristbands","img":["Accessories/Images_Wristbands/SF-WBU-S005_1.jpg"]},
+"SF-WBU-S006a":{"name":"SF Essential Wristbands S006","price":11,"category":"Wristbands","img":["Accessories/Images_Wristbands/SF-WBU-S006_1.jpg"]},
+"SF-WBU-S007a":{"name":"SF Essential Wristbands S007","price":11,"category":"Wristbands","img":["Accessories/Images_Wristbands/SF-WBU-S007_1.jpg"]},
+"SF-WBU-S008a":{"name":"SF Essential Wristbands S008","price":11,"category":"Wristbands","img":["Accessories/Images_Wristbands/SF-WBU-S008_1.jpg"]},  
+
+
    
 /* 11111111111111....... Caps - Accessoris .........................*/
 "SF-CP-5101a":{"name":"SF Spectrum-Line Caps","price":11,category: "caps","img":["Accessories/Images_Caps/SF-CP-5101-1.jpg","Accessories/Images_Caps/SF-CP-5101-2.jpg","Accessories/Images_Caps/SF-CP-5101-3.jpg","Accessories/Images_Caps/SF-CP-5101-4.jpg","Accessories/Images_Caps/SF-CP-5101-5.jpg"]},
@@ -991,6 +1006,9 @@ training_tops_juniors: [
     /* 33333333333333  Socks  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
      "socks": ["SF-SSU-S001a","SF-SSU-S002a","SF-SSU-S003a","SF-SSU-S004a","SF-SSU-S005a","SF-SSU-S006a",
                "SF-SSU-S007a","SF-SSU-S008a","SF-SSU-S009a","SF-SSU-S010a","SF-SSU-S011a","SF-SSU-S012a"], 
+ /* 33333333333333  wristbands  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+     "wristbands": ["SF-WBU-S001_1","SF-WBU-S002_1","SF-WBU-S003_1","SF-WBU-S004_1","SF-WBU-S005_1","SF-WBU-S006_1","SF-WBU-S007_1","SF-WBU-S008_1"],
+   
     /* 33333333333333  ShinGuards  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
      "shinguards": ["SF_SGU_M100a","SF_SGU_M101a","SF_SGU_M102a","SF_SGU_M103a","SF_SGU_M104a","SF_SGU_M105a"]
 }
