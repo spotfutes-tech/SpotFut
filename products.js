@@ -51,7 +51,7 @@ const CATEGORY_SIZES = {
    caps: ["S","M","L"],
    gloves: ["4","5","6","7","8","9","10","11"],
    ShinGuards: ["Standard"],
-   lifestyle_polos_juniors: ["3XS","2XS","XS","S"],
+   polos_juniors: ["3XS","2XS","XS","S"],
    wristbands: ["Standard"],
 };
 
