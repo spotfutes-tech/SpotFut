@@ -1043,7 +1043,7 @@ training_tops_juniors: [
 
                                     
    tracksuits_training__juniors: ["SF-TTS-J101a","SF-TTS-J102a","SF-TTS-J103a","SF-TTS-J104a","SF-TTS-J105a","SF-TTS-J106a","SF-TTS-J107a","SF-TTS-J108a"],
-   tracksuits_fashion__juniors: ["SF-FAS-J101a","SF-FAS-J102","SF-FAS-J103","SF-FAS-J104","SF-FAS-J105","SF-FAS-J106","SF-FAS-J107","SF-FAS-J108","SF-FAS-J109a","SF-FAS-J110a","SF-FAS-J111a","SF-FAS-J112a"],
+   tracksuits_fashion__juniors: ["SF-FAS-J101a","SF-FAS-J102a","SF-FAS-J103a","SF-FAS-J104a","SF-FAS-J105a","SF-FAS-J106a","SF-FAS-J107a","SF-FAS-J108a","SF-FAS-J109a","SF-FAS-J110a","SF-FAS-J111a","SF-FAS-J112a"],
 
   /* LIFESTYLE */
     lifestyle_polos_men: ["SF-BPM-M180a","SF-BPM-M181a","SF-BPM-M182a","SF-BPM-M183a","SF-BPM-M184a",
