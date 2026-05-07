@@ -54,6 +54,7 @@ const CATEGORY_SIZES = {
    polos_juniors: ["3XS","2XS","XS","S"],
    tracksuits_classic_juniors: ["3XS","2XS","XS","S"],
    tracksuits_training__juniors: ["3XS","2XS","XS","S"],
+   tracksuits_travelling__juniors: ["3XS","2XS","XS","S"],
    wristbands: ["Standard"],
 };
 
@@ -800,6 +801,16 @@ const PRODUCTS = {
 "SF-TTS-J107a":{"name":"Junior Fitness Tracksuits J107","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J107-1.jpg"]},
 "SF-TTS-J108a":{"name":"Junior Fitness Tracksuits J108","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J108-1.jpg"]},
    
+ /* 11111111111111.......Tracksuit Travel Juniors .........................*/
+
+"SF-VTS-J101a":{"name":"Junior Travel Tracksuits J101","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J101-1.jpg"]},
+"SF-VTS-J102a":{"name":"Junior Travel Tracksuits J102","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J102-1.jpg"]},
+"SF-VTS-J103a":{"name":"Junior Travel Tracksuits J103","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J103-1.jpg"]},
+"SF-VTS-J104a":{"name":"Junior Travel Tracksuits J104","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J104-1.jpg"]},
+"SF-VTS-J105a":{"name":"Junior Travel Tracksuits J105","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J105-1.jpg"]},
+"SF-VTS-J106a":{"name":"Junior Travel Tracksuits J106","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J106-1.jpg"]},
+"SF-VTS-J107a":{"name":"Junior Travel Tracksuits J107","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J107-1.jpg"]},
+"SF-VTS-J108a":{"name":"Junior Travel Tracksuits J108","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J108-1.jpg"]},   
    
       /* 11111111111111....... Bags - Accessoris .........................*/
 "SF-BP-0001a":{"name":"SF Classic Backpack","price":19,category: "bags","img":["Accessories/Images_Bags/SF-BP-0001-4.png","Accessories/Images_Bags/SF-BP-0001-5.png","Accessories/Images_Bags/SF-BP-0001-6.png"]},
@@ -1012,6 +1023,9 @@ training_tops_juniors: [
    tracksuits_travelling_women: ["SF-TTS-F471a","SF-TTS-F472a","SF-TTS-F473a","SF-TTS-F474a","SF-TTS-F475a"],
    tracksuits_classic_juniors: ["SF-CTS-J101a","SF-CTS-J102a","SF-CTS-J103a","SF-CTS-J104a","SF-CTS-J105a","SF-CTS-J106a",
                                 "SF-CTS-J107a","SF-CTS-J109a","SF-CTS-J110a","SF-CTS-J111a","SF-CTS-J112a"],
+   tracksuits_travelling__juniors: ["SF-VTS-J101a","SF-VTS-J102a","SF-VTS-J103a","SF-VTS-J104a","SF-VTS-J105a","SF-VTS-J106a","SF-VTS-J107a","SF-VTS-J108a"],
+
+                                    
    tracksuits_training__juniors: ["SF-TTS-J101a","SF-TTS-J102a","SF-TTS-J103a","SF-TTS-J104a","SF-TTS-J105a","SF-TTS-J106a","SF-TTS-J107a","SF-TTS-J108a"],
 
   /* LIFESTYLE */
