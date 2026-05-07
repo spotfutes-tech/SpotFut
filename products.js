@@ -51,6 +51,7 @@ const CATEGORY_SIZES = {
    caps: ["S","M","L"],
    gloves: ["4","5","6","7","8","9","10","11"],
    ShinGuards: ["Standard"],
+   lifestyle_polos_juniors: ["3XS","2XS","XS","S"],
    wristbands: ["Standard"],
 };
 
@@ -749,6 +750,28 @@ const PRODUCTS = {
 "SF-UHK-S605a":{"name":"Urban Hoodie UHK605","price":31,"category":"urbanhoodies_juniors","img":["Juniors/Images_UrbanHoodies/SF-UHK-S605_1.jpg"]},
 "SF-UHK-S606a":{"name":"Urban Hoodie UHK606","price":31,"category":"urbanhoodies_juniors","img":["Juniors/Images_UrbanHoodies/SF-UHK-S606_1.jpg"]},
 "SF-UHK-S607a":{"name":"Urban Hoodie UHK607","price":31,"category":"urbanhoodies_juniors","img":["Juniors/Images_UrbanHoodies/SF-UHK-S607_1.jpg"]},
+
+
+   /* 11111111111111.......Lifestyle Junior Polos .........................*/
+
+  "SF-SPS-J100a": {"name":"Lifestyle Junior Polos J100","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J100_1.png"]},
+  "SF-SPS-J101a": {"name":"Lifestyle Junior Polos J101","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J101_1.jpg"]},
+  "SF-SPS-J102a": {"name":"Lifestyle Junior Polos J102","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J102_1.jpeg"]},
+  "SF-SPS-J103a": {"name":"Lifestyle Junior Polos J103","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J103_1.jpg"]},
+  "SF-SPS-J104a": {"name":"Lifestyle Junior Polos J104","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J104_1.jpeg"]},
+  "SF-SPS-J105a": {"name":"Lifestyle Junior Polos J105","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J105_1.jpeg"]},
+  "SF-SPS-J106a": {"name":"Lifestyle Junior Polos J106","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J106_1.jpg"]},
+  "SF-SPS-J107a": {"name":"Lifestyle Junior Polos J107","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J107_1.jpg"]},
+
+  "SF-SPS-J200a": {"name":"Lifestyle Junior Polos J200","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J200_1.png"]},
+  "SF-SPS-J201a": {"name":"Lifestyle Junior Polos J201","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J201_1.jpeg"]},
+  "SF-SPS-J202a": {"name":"Lifestyle Junior Polos J202","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J202_1.jpeg"]},
+  "SF-SPS-J203a": {"name":"Lifestyle Junior Polos J203","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J203_1.jpeg"]},
+  "SF-SPS-J204a": {"name":"Lifestyle Junior Polos J204","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J204_1.jpeg"]},
+  "SF-SPS-J205a": {"name":"Lifestyle Junior Polos J205","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J205_1.jpeg"]},
+  "SF-SPS-J206a": {"name":"Lifestyle Junior Polos J206","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J206_1.jpeg"]},
+  "SF-SPS-J207a": {"name":"Lifestyle Junior Polos J207","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J207_1.jpeg"]},
+
    
    
       /* 11111111111111....... Bags - Accessoris .........................*/
@@ -984,8 +1007,11 @@ training_tops_juniors: [
 
   lifestyle_jackets_women: ["SF-PJ-F201a","SF-PJ-F202a","SF-PJ-F203a","SF-PJ-F204a","SF-PJ-F205a",
                             "SF-PJ-F301a","SF-PJ-F302a","SF-PJ-F303a","SF-PJ-F304a"],
-   
-   lifestyle_hoodies_juniors: [
+   lifestyle_polos_juniors: ["SF-SPS-J100a","SF-SPS-J101a","SF-SPS-J102a","SF-SPS-J103a",
+                              "SF-SPS-J104a","SF-SPS-J105a","SF-SPS-J106a","SF-SPS-J107a","SF-SPS-J200a",
+                              "SF-SPS-J201a","SF-SPS-J202a","SF-SPS-J203a","SF-SPS-J204a","SF-SPS-J205a","SF-SPS-J206a","SF-SPS-J207a"],
+                             
+lifestyle_hoodies_juniors: [
  "SF-UHK-S001a","SF-UHK-S101a","SF-UHK-S010a","SF-UHK-S201a","SF-UHK-S004a",
   "SF-UHK-S103a","SF-UHK-S018a","SF-UHK-S301a","SF-UHK-S007a","SF-UHK-S105a",
   "SF-UHK-S022a","SF-UHK-S401a","SF-UHK-S012a","SF-UHK-S203a","SF-UHK-S027a",
