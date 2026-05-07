@@ -754,23 +754,23 @@ const PRODUCTS = {
 
    /* 11111111111111.......Lifestyle Junior Polos .........................*/
 
-  "SF-SPS-J100a": {"name":"Lifestyle Junior Polos J100","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J100_1.png"]},
-  "SF-SPS-J101a": {"name":"Lifestyle Junior Polos J101","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J101_1.jpg"]},
-  "SF-SPS-J102a": {"name":"Lifestyle Junior Polos J102","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J102_1.jpeg"]},
-  "SF-SPS-J103a": {"name":"Lifestyle Junior Polos J103","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J103_1.jpg"]},
-  "SF-SPS-J104a": {"name":"Lifestyle Junior Polos J104","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J104_1.jpeg"]},
-  "SF-SPS-J105a": {"name":"Lifestyle Junior Polos J105","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J105_1.jpeg"]},
-  "SF-SPS-J106a": {"name":"Lifestyle Junior Polos J106","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J106_1.jpg"]},
-  "SF-SPS-J107a": {"name":"Lifestyle Junior Polos J107","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J107_1.jpg"]},
+  "SF-SPS-J100a": {"name":"Lifestyle Junior Polos J100","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J100-1.png"]},
+  "SF-SPS-J101a": {"name":"Lifestyle Junior Polos J101","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J101-1.jpg"]},
+  "SF-SPS-J102a": {"name":"Lifestyle Junior Polos J102","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J102-1.jpeg"]},
+  "SF-SPS-J103a": {"name":"Lifestyle Junior Polos J103","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J103-1.jpg"]},
+  "SF-SPS-J104a": {"name":"Lifestyle Junior Polos J104","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J104-1.jpeg"]},
+  "SF-SPS-J105a": {"name":"Lifestyle Junior Polos J105","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J105-1.jpeg"]},
+  "SF-SPS-J106a": {"name":"Lifestyle Junior Polos J106","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J106-1.jpg"]},
+  "SF-SPS-J107a": {"name":"Lifestyle Junior Polos J107","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J107-1.jpg"]},
 
-  "SF-SPS-J200a": {"name":"Lifestyle Junior Polos J200","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J200_1.png"]},
-  "SF-SPS-J201a": {"name":"Lifestyle Junior Polos J201","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J201_1.jpeg"]},
-  "SF-SPS-J202a": {"name":"Lifestyle Junior Polos J202","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J202_1.jpeg"]},
-  "SF-SPS-J203a": {"name":"Lifestyle Junior Polos J203","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J203_1.jpeg"]},
-  "SF-SPS-J204a": {"name":"Lifestyle Junior Polos J204","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J204_1.jpeg"]},
-  "SF-SPS-J205a": {"name":"Lifestyle Junior Polos J205","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J205_1.jpeg"]},
-  "SF-SPS-J206a": {"name":"Lifestyle Junior Polos J206","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J206_1.jpeg"]},
-  "SF-SPS-J207a": {"name":"Lifestyle Junior Polos J207","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J207_1.jpeg"]},
+  "SF-FPS-J200a": {"name":"Lifestyle Junior Polos J200","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J200-1.png"]},
+  "SF-FPS-J201a": {"name":"Lifestyle Junior Polos J201","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J201-1.jpeg"]},
+  "SF-FPS-J202a": {"name":"Lifestyle Junior Polos J202","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J202-1.jpeg"]},
+  "SF-FPS-J203a": {"name":"Lifestyle Junior Polos J203","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J203-1.jpeg"]},
+  "SF-FPS-J204a": {"name":"Lifestyle Junior Polos J204","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J204-1.jpeg"]},
+  "SF-FPS-J205a": {"name":"Lifestyle Junior Polos J205","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J205-1.jpeg"]},
+  "SF-FPS-J206a": {"name":"Lifestyle Junior Polos J206","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J206-1.jpeg"]},
+  "SF-FPS-J207a": {"name":"Lifestyle Junior Polos J207","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J207-1.jpeg"]},
 
    
    
@@ -1008,8 +1008,8 @@ training_tops_juniors: [
   lifestyle_jackets_women: ["SF-PJ-F201a","SF-PJ-F202a","SF-PJ-F203a","SF-PJ-F204a","SF-PJ-F205a",
                             "SF-PJ-F301a","SF-PJ-F302a","SF-PJ-F303a","SF-PJ-F304a"],
    lifestyle_polos_juniors: ["SF-SPS-J100a","SF-SPS-J101a","SF-SPS-J102a","SF-SPS-J103a",
-                              "SF-SPS-J104a","SF-SPS-J105a","SF-SPS-J106a","SF-SPS-J107a","SF-SPS-J200a",
-                              "SF-SPS-J201a","SF-SPS-J202a","SF-SPS-J203a","SF-SPS-J204a","SF-SPS-J205a","SF-SPS-J206a","SF-SPS-J207a"],
+                              "SF-SPS-J104a","SF-SPS-J105a","SF-SPS-J106a","SF-SPS-J107a","SF-FPS-J200a",
+                              "SF-FPS-J201a","SF-FPS-J202a","SF-FPS-J203a","SF-FPS-J204a","SF-FPS-J205a","SF-FPS-J206a","SF-FPS-J207a"],
                              
 lifestyle_hoodies_juniors: [
  "SF-UHK-S001a","SF-UHK-S101a","SF-UHK-S010a","SF-UHK-S201a","SF-UHK-S004a",
