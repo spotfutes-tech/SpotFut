@@ -784,7 +784,6 @@ const PRODUCTS = {
 "SF-CTS-J105a":{"name":"Junior Classic Tracksuits J105","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J105-1.jpeg"]},
 "SF-CTS-J106a":{"name":"Junior Classic Tracksuits J106","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J106-1.jpeg"]},
 "SF-CTS-J107a":{"name":"Junior Classic Tracksuits J107","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J107-1.jpeg"]},
-"SF-CTS-J108a":{"name":"Junior Classic Tracksuits J108","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J108-1.jpeg"]},
 "SF-CTS-J109a":{"name":"Junior Classic Tracksuits J109","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J109-1.jpeg"]},
 "SF-CTS-J110a":{"name":"Junior Classic Tracksuits J110","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J110-1.jpeg"]},
 "SF-CTS-J111a":{"name":"Junior Classic Tracksuits J111","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J111-1.jpeg"]},
@@ -1012,7 +1011,7 @@ training_tops_juniors: [
 
    tracksuits_travelling_women: ["SF-TTS-F471a","SF-TTS-F472a","SF-TTS-F473a","SF-TTS-F474a","SF-TTS-F475a"],
    tracksuits_classic_juniors: ["SF-CTS-J101a","SF-CTS-J102a","SF-CTS-J103a","SF-CTS-J104a","SF-CTS-J105a","SF-CTS-J106a",
-                                "SF-CTS-J107a","SF-CTS-J108a","SF-CTS-J109a","SF-CTS-J110a","SF-CTS-J111a","SF-CTS-J112a"],
+                                "SF-CTS-J107a","SF-CTS-J109a","SF-CTS-J110a","SF-CTS-J111a","SF-CTS-J112a"],
    tracksuits_training__juniors: ["SF-TTS-J101a","SF-TTS-J102a","SF-TTS-J103a","SF-TTS-J104a","SF-TTS-J105a","SF-TTS-J106a","SF-TTS-J107a","SF-TTS-J108a"],
 
   /* LIFESTYLE */
