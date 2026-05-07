@@ -897,6 +897,10 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
    basketball_kits_juniors: ["SF-BJK-S001a","SF-BJK-S002a","SF-BJK-S003a","SF-BJK-S004a","SF-BJK-S005a","SF-BJK-S006a",
                              "SF-BJK-S101a","SF-BJK-S102a","SF-BJK-S103a","SF-BJK-S105a","SF-BJK-S106a","SF-BJK-S107a","SF-BJK-S108a"],
 
+   basketball_trainingwear_juniors: [ "SF-STD-J371a","SF-STD-J372a","SF-STD-J373a","SF-STD-J374a","SF-STD-J375a",
+  "SF-STD-J376a","SF-STD-J377a","SF-STD-J378a","SF-STD-J379a","SF-STD-J380a"],
+
+
 
    
    basketball_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
@@ -916,6 +920,8 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
    handball_kits_juniors: ["SF-BJK-S006a","SF-BJK-S004a","SF-BJK-S102a","SF-BJK-S104a",
                              "SF-BJK-S101a","SF-BJK-S002a","SF-BJK-S003a"],
      handball_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
+   handball_trainingwear_juniors: [ "SF-STD-J371a","SF-STD-J372a","SF-STD-J373a","SF-STD-J374a","SF-STD-J375a",
+  "SF-STD-J376a","SF-STD-J377a","SF-STD-J378a","SF-STD-J379a","SF-STD-J380a"],
 
 
 
