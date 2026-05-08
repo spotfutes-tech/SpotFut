@@ -893,7 +893,7 @@ const PRODUCTS = {
 "SF_SGU_M104a":{"name":"SF Spectrum-Line ShinGuards M104a","price":25,"category":"ShinGuards","img":["Accessories/Images_ShinGuards/SF_SGU_M104_1.jpg","Accessories/Images_ShinGuards/SF_SGU_M104_2.jpg","Accessories/Images_ShinGuards/SF_SGU_M104_3.jpg"]},  
 "SF_SGU_M105a":{"name":"SF Spectrum-Line ShinGuards M105a","price":25,"category":"ShinGuards","img":["Accessories/Images_ShinGuards/SF_SGU_M105_1.jpeg","Accessories/Images_ShinGuards/SF_SGU_M105_2.jpeg","Accessories/Images_ShinGuards/SF_SGU_M105_3.jpeg"]},
    
-   /* 11111111111111....... Caps - Accessoris .........................*/
+   /* 11111111111111....... Socks - Accessoris .........................*/
 "SF-SSU-S001a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S001_1.jpeg"]},
 "SF-SSU-S002a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S002_1.jpeg"]},
 "SF-SSU-S003a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S003_1.jpeg"]},
@@ -907,7 +907,22 @@ const PRODUCTS = {
 "SF-SSU-S011a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S011_1.jpeg"]},
 "SF-SSU-S012a":{"name":"SF Essential Socks","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S012_1.jpeg"]},
 
-
+"SF-SSU-S101a":{"name":"Essential Socks 101","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S101_1.jpeg"]},
+"SF-SSU-S102a":{"name":"Essential Socks 102","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S102_1.jpeg"]},
+"SF-SSU-S103a":{"name":"Essential Socks 103","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S103_1.jpeg"]},
+"SF-SSU-S104a":{"name":"Essential Socks 104","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S104_1.jpeg"]},
+"SF-SSU-S105a":{"name":"Essential Socks 105","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S105_1.jpeg"]},
+"SF-SSU-S106a":{"name":"Essential Socks 106","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S106_1.jpeg"]},
+"SF-SSU-S107a":{"name":"Essential Socks 107","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S107_1.jpeg"]},
+"SF-SSU-S108a":{"name":"Essential Socks 108","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S108_1.jpeg"]},
+"SF-SSU-S109a":{"name":"Essential Socks 109","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S109_1.jpeg"]},
+"SF-SSU-S110a":{"name":"Essential Socks 110","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S110_1.jpeg"]},
+"SF-SSU-S111a":{"name":"Essential Socks 111","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S111_1.jpeg"]},
+"SF-SSU-S112a":{"name":"Essential Socks 112","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S112_1.jpeg"]},
+"SF-SSU-S113a":{"name":"Essential Socks 113","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S113_1.jpeg"]},
+"SF-SSU-S114a":{"name":"Essential Socks 114","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S114_1.jpeg"]},
+"SF-SSU-S115a":{"name":"Essential Socks 115","price":11,"category":"socks","img":["Accessories/Images_Socks/SF-SSU-S115_1.jpeg"]},
+   
 
  /* 11111111111111....... Wristbands - Accessoris .........................*/
 "SF-WBU-S001a":{"name":"SF Essential  Wristbands S001","price":11,"category":"Wristbands","img":["Accessories/Images_Wristbands/SF-WBU-S001_1.jpg"]},
@@ -1129,8 +1144,12 @@ lifestyle_hoodies_juniors: [
 
 
     /* 33333333333333  Socks  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-     "socks": ["SF-SSU-S001a","SF-SSU-S002a","SF-SSU-S003a","SF-SSU-S004a","SF-SSU-S005a","SF-SSU-S006a",
-               "SF-SSU-S007a","SF-SSU-S008a","SF-SSU-S009a","SF-SSU-S010a","SF-SSU-S011a","SF-SSU-S012a"], 
+     "socks": ["SF-SSU-S003a","SF-SSU-S108a","SF-SSU-S001a","SF-SSU-S112a","SF-SSU-S007a",
+        "SF-SSU-S104a","SF-SSU-S010a","SF-SSU-S115a","SF-SSU-S005a","SF-SSU-S109a",
+        "SF-SSU-S012a","SF-SSU-S102a","SF-SSU-S004a","SF-SSU-S111a","SF-SSU-S008a",
+        "SF-SSU-S113a","SF-SSU-S002a","SF-SSU-S106a","SF-SSU-S009a","SF-SSU-S114a",
+        "SF-SSU-S006a","SF-SSU-S103a","SF-SSU-S011a","SF-SSU-S110a","SF-SSU-S105a",
+        "SF-SSU-S107a"], 
  /* 33333333333333  wristbands  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
      "wristbands": ["SF-WBU-S001a","SF-WBU-S002a","SF-WBU-S003a","SF-WBU-S004a","SF-WBU-S005a","SF-WBU-S006a","SF-WBU-S007a","SF-WBU-S008a"],
    
