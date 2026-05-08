@@ -795,19 +795,18 @@ const PRODUCTS = {
 
 
      /* 11111111111111.......lifestyle Jackets Juniors .........................*/
-"SF-JAK-J101-1a":{"name":"Junior Jackets J101","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J101-1.jpg"]},
-"SF-JAK-J102-1a":{"name":"Junior Jackets J102","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J102-1.jpg"]},
-"SF-JAK-J103-1a":{"name":"Junior Jackets J103","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J103-1.jpg"]},
-"SF-JAK-J104-1a":{"name":"Junior Jackets J104","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J104-1.jpg"]},
-"SF-JAK-J105-1a":{"name":"Junior Jackets J105","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J105-1.jpg"]},
-"SF-JAK-J106-1a":{"name":"Junior Jackets J106","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J106-1.jpg"]},
-"SF-JAK-J107-1a":{"name":"Junior Jackets J107","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J107-1.jpg"]},
-"SF-JAK-J108-1a":{"name":"Junior Jackets J108","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J108-1.jpg"]},
-"SF-JAK-J109-1a":{"name":"Junior Jackets J109","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J109-1.jpg"]},
-"SF-JAK-J110-1a":{"name":"Junior Jackets J110","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J110-1.jpg"]},
-"SF-JAK-J111-1a":{"name":"Junior Jackets J111","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J111-1.jpg"]},
-"SF-JAK-J112-1a":{"name":"Junior Jackets J112","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Tshirts/SF-JAK-J112-1.jpg"]},
-
+"SF-JAK-J101-1a":{"name":"Junior Jackets J101","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J101-1.jpg"]},
+"SF-JAK-J102-1a":{"name":"Junior Jackets J102","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J102-1.jpg"]},
+"SF-JAK-J103-1a":{"name":"Junior Jackets J103","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J103-1.jpg"]},
+"SF-JAK-J104-1a":{"name":"Junior Jackets J104","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J104-1.jpg"]},
+"SF-JAK-J105-1a":{"name":"Junior Jackets J105","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J105-1.jpg"]},
+"SF-JAK-J106-1a":{"name":"Junior Jackets J106","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J106-1.jpg"]},
+"SF-JAK-J107-1a":{"name":"Junior Jackets J107","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J107-1.jpg"]},
+"SF-JAK-J108-1a":{"name":"Junior Jackets J108","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J108-1.jpg"]},
+"SF-JAK-J109-1a":{"name":"Junior Jackets J109","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J109-1.jpg"]},
+"SF-JAK-J110-1a":{"name":"Junior Jackets J110","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J110-1.jpg"]},
+"SF-JAK-J111-1a":{"name":"Junior Jackets J111","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J111-1.jpg"]},
+"SF-JAK-J112-1a":{"name":"Junior Jackets J112","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J112-1.jpg"]},
   /* 11111111111111.......Tracksuit Classic Juniors .........................*/
 
 "SF-CTS-J101a":{"name":"Junior Classic Tracksuits J101","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J101-1.jpeg"]},
