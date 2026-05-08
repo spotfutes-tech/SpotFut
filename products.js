@@ -1097,7 +1097,7 @@ lifestyle_hoodies_juniors: [
   "SF-UHK-S303a","SF-UHK-S045a","SF-UHK-S104a","SF-UHK-S050a","SF-UHK-S205a"],
 
 
-   lifestyle_tshirts_juniors: ["SF-TEA-J101a","SF-TEA-J102a","SF-TEA-J103a","SF-TEA-J104a","SF-TEA-J105a","SF-TEA-J106a","SF-TEA-J107a","SF-TEA-J108a","SF-TEA-J109a","SF-TEA-J110a","SF-TEA-J111a","SF-TEA-J112a"] ],
+   lifestyle_tshirts_juniors: ["SF-TEA-J101a","SF-TEA-J102a","SF-TEA-J103a","SF-TEA-J104a","SF-TEA-J105a","SF-TEA-J106a","SF-TEA-J107a","SF-TEA-J108a","SF-TEA-J109a","SF-TEA-J110a","SF-TEA-J111a","SF-TEA-J112a"],
 
   lifestyle_jackets_juniors: ["SF-SJM-S005a"],
 
