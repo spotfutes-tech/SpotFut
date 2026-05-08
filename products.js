@@ -56,6 +56,7 @@ const CATEGORY_SIZES = {
    tracksuits_training__juniors: ["3XS","2XS","XS","S"],
    tracksuits_travelling__juniors: ["3XS","2XS","XS","S"],
    tracksuits_fashion__juniors: ["3XS","2XS","XS","S"],
+   lifestyle_tshirts_juniors: ["3XS","2XS","XS","S"],
    wristbands: ["Standard"],
 };
 
@@ -777,6 +778,21 @@ const PRODUCTS = {
   "SF-FPS-J207a": {"name":"Lifestyle Junior Polos J207","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J207-1.jpeg"]},
 
 
+     /* 11111111111111.......lifestyle T shirts Juniors .........................*/
+"SF-TEA-J101a":{"name":"Junior T-Shirts J101","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J101-1.jpg"]},
+"SF-TEA-J102a":{"name":"Junior T-Shirts J102","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J102-1.jpg"]},
+"SF-TEA-J103a":{"name":"Junior T-Shirts J103","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J103-1.jpg"]},
+"SF-TEA-J104a":{"name":"Junior T-Shirts J104","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J104-1.jpg"]},
+"SF-TEA-J105a":{"name":"Junior T-Shirts J105","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J105-1.jpg"]},
+"SF-TEA-J106a":{"name":"Junior T-Shirts J106","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J106-1.jpg"]},
+"SF-TEA-J107a":{"name":"Junior T-Shirts J107","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J107-1.jpg"]},
+"SF-TEA-J108a":{"name":"Junior T-Shirts J108","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J108-1.jpg"]},
+"SF-TEA-J109a":{"name":"Junior T-Shirts J109","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J109-1.jpg"]},
+"SF-TEA-J110a":{"name":"Junior T-Shirts J110","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J110-1.jpg"]},
+"SF-TEA-J111a":{"name":"Junior T-Shirts J111","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J111-1.jpg"]},
+"SF-TEA-J112a":{"name":"Junior T-Shirts J112","price":31,"category":"lifestyle_tshirts_juniors","img":["Juniors/Images_Tshirts/SF-TEA-J112-1.jpg"]},
+
+
   /* 11111111111111.......Tracksuit Classic Juniors .........................*/
 
 "SF-CTS-J101a":{"name":"Junior Classic Tracksuits J101","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J101-1.jpeg"]},
@@ -1079,10 +1095,11 @@ lifestyle_hoodies_juniors: [
   "SF-UHK-S503a","SF-UHK-S015a","SF-UHK-S106a","SF-UHK-S033a","SF-UHK-S607a",
   "SF-UHK-S036a","SF-UHK-S102a","SF-UHK-S042a","SF-UHK-S205a","SF-UHK-S039a",
   "SF-UHK-S303a","SF-UHK-S045a","SF-UHK-S104a","SF-UHK-S050a","SF-UHK-S205a"],
-   
-  lifestyle_jackets_juniors: [
-    "SF-SJM-S005a"
-  ],
+
+
+   lifestyle_tshirts_juniors: ["SF-TEA-J101a","SF-TEA-J102a","SF-TEA-J103a","SF-TEA-J104a","SF-TEA-J105a","SF-TEA-J106a","SF-TEA-J107a","SF-TEA-J108a","SF-TEA-J109a","SF-TEA-J110a","SF-TEA-J111a","SF-TEA-J112a"] ],
+
+  lifestyle_jackets_juniors: ["SF-SJM-S005a"],
 
 
    /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$  Accessories $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
