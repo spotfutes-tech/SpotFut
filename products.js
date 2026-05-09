@@ -59,6 +59,7 @@ const CATEGORY_SIZES = {
    lifestyle_tshirts_juniors: ["3XS","2XS","XS","S"],
    lifestyle_jackets_juniors: ["3XS","2XS","XS","S"],
    training_tops_juniors: ["3XS","2XS","XS","S"],
+   lifestyle_joggers_juniors: ["3XS","2XS","XS","S"],
    wristbands: ["Standard"],
 };
 
@@ -808,6 +809,30 @@ const PRODUCTS = {
 "SF-JAK-J110a":{"name":"Junior Jackets J110","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J110-1.jpg"]},
 "SF-JAK-J111a":{"name":"Junior Jackets J111","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J111-1.jpg"]},
 "SF-JAK-J112a":{"name":"Junior Jackets J112","price":31,"category":"lifestyle_jackets_juniors","img":["Juniors/Images_Jackets/SF-JAK-J112-1.jpg"]},
+
+
+
+ /* 11111111111111.......lifestyle Joggers .........................*/
+"SF-JOG-J101a":{"name":"Junior Joggers J101","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J101-1.jpg"]},
+"SF-JOG-J102a":{"name":"Junior Joggers J102","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J102-1.jpg"]},
+"SF-JOG-J103a":{"name":"Junior Joggers J103","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J103-1.jpg"]},
+"SF-JOG-J104a":{"name":"Junior Joggers J104","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J104-1.jpg"]},
+"SF-JOG-J105a":{"name":"Junior Joggers J105","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J105-1.jpg"]},
+"SF-JOG-J106a":{"name":"Junior Joggers J106","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J106-1.jpg"]},
+"SF-JOG-J107a":{"name":"Junior Joggers J107","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J107-1.jpg"]},
+"SF-JOG-J108a":{"name":"Junior Joggers J108","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J108-1.jpg"]},
+"SF-JOG-J109a":{"name":"Junior Joggers J109","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J109-1.jpg"]},
+"SF-JOG-J110a":{"name":"Junior Joggers J110","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J110-1.jpg"]},
+"SF-JOG-J111a":{"name":"Junior Joggers J111","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J111-1.jpg"]},
+"SF-JOG-J112a":{"name":"Junior Joggers J112","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J112-1.jpg"]},
+"SF-JOG-J113a":{"name":"Junior Joggers J113","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J113-1.jpg"]},
+"SF-JOG-J114a":{"name":"Junior Joggers J114","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J114-1.jpg"]},
+
+
+
+
+
+   
   /* 11111111111111.......Tracksuit Classic Juniors .........................*/
 
 "SF-CTS-J101a":{"name":"Junior Classic Tracksuits J101","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J101-1.jpeg"]},
@@ -1137,6 +1162,9 @@ training_tops_juniors: ["SF-KTT-J101a","SF-KTT-J102a","SF-KTT-J103a","SF-KTT-J10
    lifestyle_polos_juniors: ["SF-SPS-J100a","SF-SPS-J101a","SF-SPS-J102a","SF-SPS-J103a",
                               "SF-SPS-J104a","SF-SPS-J105a","SF-SPS-J106a","SF-SPS-J107a","SF-FPS-J200a",
                               "SF-FPS-J201a","SF-FPS-J202a","SF-FPS-J203a","SF-FPS-J204a","SF-FPS-J205a","SF-FPS-J206a","SF-FPS-J207a"],
+   lifestyle_joggers_juniors: ["SF-JOG-J101a","SF-JOG-J102a","SF-JOG-J103a","SF-JOG-J104a","SF-JOG-J105a",
+  "SF-JOG-J106a","SF-JOG-J107a","SF-JOG-J108a","SF-JOG-J109a","SF-JOG-J110a",
+  "SF-JOG-J111a","SF-JOG-J112a","SF-JOG-J113a","SF-JOG-J114a"],
                              
 lifestyle_hoodies_juniors: [
  "SF-UHK-S001a","SF-UHK-S101a","SF-UHK-S010a","SF-UHK-S201a","SF-UHK-S004a",
