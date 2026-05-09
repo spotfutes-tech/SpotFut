@@ -849,25 +849,25 @@ const PRODUCTS = {
    
   /* 11111111111111.......Tracksuit Fitness Juniors .........................*/
 
-"SF-TTS-J101a":{"name":"Junior Fitness Tracksuits J101","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J101-1.jpg"]},
-"SF-TTS-J102a":{"name":"Junior Fitness Tracksuits J102","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J102-1.jpg"]},
-"SF-TTS-J103a":{"name":"Junior Fitness Tracksuits J103","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J103-1.jpg"]},
-"SF-TTS-J104a":{"name":"Junior Fitness Tracksuits J104","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J104-1.jpg"]},
-"SF-TTS-J105a":{"name":"Junior Fitness Tracksuits J105","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J105-1.jpg"]},
-"SF-TTS-J106a":{"name":"Junior Fitness Tracksuits J106","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J106-1.jpg"]},
-"SF-TTS-J107a":{"name":"Junior Fitness Tracksuits J107","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J107-1.jpg"]},
-"SF-TTS-J108a":{"name":"Junior Fitness Tracksuits J108","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J108-1.jpg"]},
+"SF-TTS-J101a":{"name":"Crimson Terra","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J101-1.jpg"]},
+"SF-TTS-J102a":{"name":"Azure Horizon","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J102-1.jpg"]},
+"SF-TTS-J103a":{"name":"Midnight Grove","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J103-1.jpg"]},
+"SF-TTS-J104a":{"name":"Lotus Bloom","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J104-1.jpg"]},
+"SF-TTS-J105a":{"name":"Verdant Forge","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J105-1.jpg"]},
+"SF-TTS-J106a":{"name":"Aqua Whisper","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J106-1.jpg"]},
+"SF-TTS-J107a":{"name":"Obsidian Root","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J107-1.jpg"]},
+"SF-TTS-J108a":{"name":"Amethyst Canopy","price":31,"category":"tracksuits_training__juniors","img":["Juniors/Images_FitnessTracks/SF-TTS-J108-1.jpg"]},
    
  /* 11111111111111.......Tracksuit Travel Juniors .........................*/
 
-"SF-VTS-J101a":{"name":"Junior Travel Tracksuits J101","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J101-1.jpg"]},
-"SF-VTS-J102a":{"name":"Junior Travel Tracksuits J102","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J102-1.jpg"]},
-"SF-VTS-J103a":{"name":"Junior Travel Tracksuits J103","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J103-1.jpg"]},
-"SF-VTS-J104a":{"name":"Junior Travel Tracksuits J104","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J104-1.jpg"]},
-"SF-VTS-J105a":{"name":"Junior Travel Tracksuits J105","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J105-1.jpg"]},
-"SF-VTS-J106a":{"name":"Junior Travel Tracksuits J106","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J106-1.jpg"]},
-"SF-VTS-J107a":{"name":"Junior Travel Tracksuits J107","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J107-1.jpg"]},
-"SF-VTS-J108a":{"name":"Junior Travel Tracksuits J108","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J108-1.jpg"]}, 
+"SF-VTS-J101a":{"name":"Pathfinder","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J101-1.jpg"]},
+"SF-VTS-J102a":{"name":"Vagabond","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J102-1.jpg"]},
+"SF-VTS-J103a":{"name":"Summit Drift","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J103-1.jpg"]},
+"SF-VTS-J104a":{"name":"Odyssey","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J104-1.jpg"]},
+"SF-VTS-J105a":{"name":"Frontier","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J105-1.jpg"]},
+"SF-VTS-J106a":{"name":"Lumina Trail","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J106-1.jpg"]},
+"SF-VTS-J107a":{"name":"Rogue Horizon","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J107-1.jpg"]},
+"SF-VTS-J108a":{"name":"Compass Edge","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J108-1.jpg"]}, 
 
 
 
@@ -892,18 +892,18 @@ const PRODUCTS = {
    
 
  /* 11111111111111.......Tracksuit Fashion Juniors .........................*/
-"SF-FAS-J101a":{"name":"Junior Travel Tracksuits J101","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J101-1.png"]},
-"SF-FAS-J102a":{"name":"Junior Travel Tracksuits J102","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J102-1.jpg"]},
-"SF-FAS-J103a":{"name":"Junior Travel Tracksuits J103","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J103-1.png"]},
-"SF-FAS-J104a":{"name":"Junior Travel Tracksuits J104","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J104-1.jpg"]},
-"SF-FAS-J105a":{"name":"Junior Travel Tracksuits J105","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J105-1.png"]},
-"SF-FAS-J106a":{"name":"Junior Travel Tracksuits J106","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J106-1.jpg"]},
-"SF-FAS-J107a":{"name":"Junior Travel Tracksuits J107","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J107-1.jpg"]},
-"SF-FAS-J108a":{"name":"Junior Travel Tracksuits J108","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J108-1.jpg"]},
-"SF-FAS-J109a":{"name":"Junior Travel Tracksuits J109","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J109-1.png"]},
-"SF-FAS-J110a":{"name":"Junior Travel Tracksuits J110","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J110-1.jpg"]},
-"SF-FAS-J111a":{"name":"Junior Travel Tracksuits J111","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J111-1.jpg"]},
-"SF-FAS-J112a":{"name":"Junior Travel Tracksuits J112","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J112-1.jpg"]},  
+"SF-FAS-J101a":{"name":"Summit Trail","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J101-1.png"]},
+"SF-FAS-J102a":{"name":"Velocity Rush","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J102-1.jpg"]},
+"SF-FAS-J103a":{"name":"Desert Nomad","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J103-1.png"]},
+"SF-FAS-J104a":{"name":"Crimson Odyssey","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J104-1.jpg"]},
+"SF-FAS-J105a":{"name":"Metro Pulse","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J105-1.png"]},
+"SF-FAS-J106a":{"name":"Aurora Drift","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J106-1.jpg"]},
+"SF-FAS-J107a":{"name":"Forge Line","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J107-1.jpg"]},
+"SF-FAS-J108a":{"name":"Nova Blaze","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J108-1.jpg"]},
+"SF-FAS-J109a":{"name":"Terrain Drift","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J109-1.png"]},
+"SF-FAS-J110a":{"name":"Lumina Trail","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J110-1.jpg"]},
+"SF-FAS-J111a":{"name":"Aurora Path","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J111-1.jpg"]},
+"SF-FAS-J112a":{"name":"Blossom Route","price":31,"category":"tracksuits_fashion__juniors","img":["Juniors/Images_FashionTracks/SF-FAS-J112-1.jpg"]},  
    
       /* 11111111111111....... Bags - Accessoris .........................*/
 "SF-BP-0001a":{"name":"SF Classic Backpack","price":19,category: "bags","img":["Accessories/Images_Bags/SF-BP-0001-4.png","Accessories/Images_Bags/SF-BP-0001-5.png","Accessories/Images_Bags/SF-BP-0001-6.png"]},
