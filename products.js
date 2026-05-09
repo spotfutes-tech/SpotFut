@@ -835,17 +835,17 @@ const PRODUCTS = {
    
   /* 11111111111111.......Tracksuit Classic Juniors .........................*/
 
-"SF-CTS-J101a":{"name":"Junior Classic Tracksuits J101","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J101-1.jpeg"]},
-"SF-CTS-J102a":{"name":"Junior Classic Tracksuits J102","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J102-1.jpeg"]},
-"SF-CTS-J103a":{"name":"Junior Classic Tracksuits J103","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J103-1.jpeg"]},
-"SF-CTS-J104a":{"name":"Junior Classic Tracksuits J104","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J104-1.jpeg"]},
-"SF-CTS-J105a":{"name":"Junior Classic Tracksuits J105","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J105-1.jpeg"]},
-"SF-CTS-J106a":{"name":"Junior Classic Tracksuits J106","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J106-1.jpeg"]},
-"SF-CTS-J107a":{"name":"Junior Classic Tracksuits J107","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J107-1.jpeg"]},
-"SF-CTS-J109a":{"name":"Junior Classic Tracksuits J109","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J109-1.jpeg"]},
-"SF-CTS-J110a":{"name":"Junior Classic Tracksuits J110","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J110-1.jpeg"]},
-"SF-CTS-J111a":{"name":"Junior Classic Tracksuits J111","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J111-1.jpeg"]},
-"SF-CTS-J112a":{"name":"Junior Classic Tracksuits J112","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J112-1.jpeg"]}, 
+"SF-CTS-J101a":{"name":"Glacier Sprint","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J101-1.jpeg"]},
+"SF-CTS-J102a":{"name":"Earth Sprint","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J102-1.jpeg"]},
+"SF-CTS-J103a":{"name":"Inferno Move","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J103-1.jpeg"]},
+"SF-CTS-J104a":{"name":"Wave Motion","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J104-1.jpeg"]},
+"SF-CTS-J105a":{"name":"Golden Motion","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J105-1.jpeg"]},
+"SF-CTS-J106a":{"name":"Shadow Drift","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J106-1.jpeg"]},
+"SF-CTS-J107a":{"name":"HeatWave Motion","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J107-1.jpeg"]},
+"SF-CTS-J109a":{"name":"VibeCore Kids","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J109-1.jpeg"]},
+"SF-CTS-J110a":{"name":"Cocoa Rush","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J110-1.jpeg"]},
+"SF-CTS-J111a":{"name":"SunBolt","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J111-1.jpeg"]},
+"SF-CTS-J112a":{"name":"StormFit","price":31,"category":"tracksuits_classic_juniors","img":["Juniors/Images_ClassicTracksuit/SF-CTS-J112-1.jpeg"]}, 
    
   /* 11111111111111.......Tracksuit Fitness Juniors .........................*/
 
