@@ -58,6 +58,7 @@ const CATEGORY_SIZES = {
    tracksuits_fashion__juniors: ["3XS","2XS","XS","S"],
    lifestyle_tshirts_juniors: ["3XS","2XS","XS","S"],
    lifestyle_jackets_juniors: ["3XS","2XS","XS","S"],
+   training_tops_juniors: ["3XS","2XS","XS","S"],
    wristbands: ["Standard"],
 };
 
@@ -841,7 +842,28 @@ const PRODUCTS = {
 "SF-VTS-J105a":{"name":"Junior Travel Tracksuits J105","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J105-1.jpg"]},
 "SF-VTS-J106a":{"name":"Junior Travel Tracksuits J106","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J106-1.jpg"]},
 "SF-VTS-J107a":{"name":"Junior Travel Tracksuits J107","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J107-1.jpg"]},
-"SF-VTS-J108a":{"name":"Junior Travel Tracksuits J108","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J108-1.jpg"]},   
+"SF-VTS-J108a":{"name":"Junior Travel Tracksuits J108","price":31,"category":"tracksuits_travelling__juniors","img":["Juniors/Images_TravelTracks/SF-VTS-J108-1.jpg"]}, 
+
+
+
+
+/* 11111111111111....... Junior Tops .........................*/
+"SF-KTT-J101a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J101_1.jpeg"]},
+"SF-KTT-J102a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J102_1.jpeg"]},
+"SF-KTT-J103a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J103_1.jpeg"]},
+"SF-KTT-J104a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J104_1.jpeg"]},
+"SF-KTT-J105a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J105_1.jpeg"]},
+"SF-KTT-J106a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J106_1.jpeg"]},
+"SF-KTT-J107a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J107_1.jpeg"]},
+"SF-KTT-J108a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J108_1.jpeg"]},
+"SF-KTT-J109a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J109_1.jpeg"]},
+"SF-KTT-J110a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J110_1.jpeg"]},
+"SF-KTT-J111a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J111_1.jpeg"]},
+"SF-KTT-J112a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J112_1.jpeg"]},
+"SF-KTT-J113a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J113_1.jpeg"]},
+"SF-KTT-J114a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Accessories/Images_Tops/SF-KTT-J114_1.jpeg"]},
+
+   
    
 
  /* 11111111111111.......Tracksuit Fashion Juniors .........................*/
@@ -1057,9 +1079,8 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
                          "SF-GCF-S101a","SF-GCF-S102a","SF-GCF-S103a","SF-GCF-S104a","SF-GCF-S105a","SF-GCF-S106a","SF-GCF-S107a"],
 
 
-training_tops_juniors: [
-    "SF-SJM-S005a"
-  ],
+training_tops_juniors: ["SF-KTT-J101a","SF-KTT-J102a","SF-KTT-J103a","SF-KTT-J104a","SF-KTT-J105a","SF-KTT-J106a","SF-KTT-J107a",
+                         "SF-KTT-J108a","SF-KTT-J109a","SF-KTT-J110a","SF-KTT-J111a","SF-KTT-J112a","SF-KTT-J113a","SF-KTT-J114a"],
 
 
    /*  Tracksuits */
