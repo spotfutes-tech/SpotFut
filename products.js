@@ -812,7 +812,7 @@ const PRODUCTS = {
 
 
 
- /* 11111111111111.......lifestyle Joggers .........................*/
+ /* 11111111111111.......lifestyle JUNIOR Joggers .........................*/
 "SF-JOG-J101a":{"name":"Junior Joggers J101","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J101-1.jpg"]},
 "SF-JOG-J102a":{"name":"Junior Joggers J102","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J102-1.jpg"]},
 "SF-JOG-J103a":{"name":"Junior Joggers J103","price":31,"category":"lifestyle_joggers_juniors","img":["Juniors/Images_Joggers/SF-JOG-J103-1.jpg"]},
@@ -873,20 +873,20 @@ const PRODUCTS = {
 
 
 /* 11111111111111....... Junior Tops .........................*/
-"SF-KTT-J101a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J101-1.jpeg"]},
-"SF-KTT-J102a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J102-1.jpeg"]},
-"SF-KTT-J103a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J103-1.jpeg"]},
-"SF-KTT-J104a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J104-1.jpeg"]},
-"SF-KTT-J105a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J105-1.jpeg"]},
-"SF-KTT-J106a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J106-1.jpeg"]},
-"SF-KTT-J107a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J107-1.jpeg"]},
-"SF-KTT-J108a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J108-1.jpeg"]},
-"SF-KTT-J109a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J109-1.jpeg"]},
-"SF-KTT-J110a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J110-1.jpeg"]},
-"SF-KTT-J111a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J111-1.jpeg"]},
-"SF-KTT-J112a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J112-1.jpeg"]},
-"SF-KTT-J113a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J113-1.jpeg"]},
-"SF-KTT-J114a":{"name":"SF Junior Tops","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J114-1.jpeg"]},
+"SF-KTT-J101a":{"name":"Vortex Coral","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J101-1.jpeg"]},
+"SF-KTT-J102a":{"name":"Phantom Purple","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J102-1.jpeg"]},
+"SF-KTT-J103a":{"name":"Velocity","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J103-1.jpeg"]},
+"SF-KTT-J104a":{"name":"Elite","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J104-1.jpeg"]},
+"SF-KTT-J105a":{"name":"Aetherix","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J105-1.jpeg"]},
+"SF-KTT-J106a":{"name":"Pyrothar","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J106-1.jpeg"]},
+"SF-KTT-J107a":{"name":"Astravelle","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J107-1.jpeg"]},
+"SF-KTT-J108a":{"name":"Verdorak","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J108-1.jpeg"]},
+"SF-KTT-J109a":{"name":"Solaraeth","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J109-1.jpeg"]},
+"SF-KTT-J110a":{"name":"Obsidian","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J110-1.jpeg"]},
+"SF-KTT-J111a":{"name":"Thalor","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J111-1.jpeg"]},
+"SF-KTT-J112a":{"name":"Ignisvar","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J112-1.jpeg"]},
+"SF-KTT-J113a":{"name":"Elyndor","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J113-1.jpeg"]},
+"SF-KTT-J114a":{"name":"Solvexis","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J114-1.jpeg"]},
 
    
    
