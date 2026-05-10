@@ -762,23 +762,23 @@ const PRODUCTS = {
 
    /* 11111111111111.......Lifestyle Junior Polos .........................*/
 
-  "SF-SPS-J100a": {"name":"Lifestyle Junior Polos J100","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J100-1.png"]},
-  "SF-SPS-J101a": {"name":"Lifestyle Junior Polos J101","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J101-1.jpg"]},
-  "SF-SPS-J102a": {"name":"Lifestyle Junior Polos J102","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J102-1.jpeg"]},
-  "SF-SPS-J103a": {"name":"Lifestyle Junior Polos J103","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J103-1.jpg"]},
-  "SF-SPS-J104a": {"name":"Lifestyle Junior Polos J104","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J104-1.jpeg"]},
-  "SF-SPS-J105a": {"name":"Lifestyle Junior Polos J105","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J105-1.jpeg"]},
-  "SF-SPS-J106a": {"name":"Lifestyle Junior Polos J106","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J106-1.jpg"]},
-  "SF-SPS-J107a": {"name":"Lifestyle Junior Polos J107","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J107-1.jpg"]},
+  "SF-SPS-J100a": {"name":"Golden Edge","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J100-1.png"]},
+  "SF-SPS-J101a": {"name":"Heritage Line","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J101-1.jpg"]},
+  "SF-SPS-J102a": {"name":"Atlantic Core","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J102-1.jpeg"]},
+  "SF-SPS-J103a": {"name":"Nova Stripe","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J103-1.jpg"]},
+  "SF-SPS-J104a": {"name":"Shadow Weave","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J104-1.jpeg"]},
+  "SF-SPS-J105a": {"name":"Coastal Mist","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J105-1.jpeg"]},
+  "SF-SPS-J106a": {"name":"Liberty Thread","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J106-1.jpg"]},
+  "SF-SPS-J107a": {"name":"Solar Rhythm","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-SPS-J107-1.jpg"]},
 
-  "SF-FPS-J200a": {"name":"Lifestyle Junior Polos J200","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J200-1.png"]},
-  "SF-FPS-J201a": {"name":"Lifestyle Junior Polos J201","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J201-1.jpeg"]},
-  "SF-FPS-J202a": {"name":"Lifestyle Junior Polos J202","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J202-1.jpeg"]},
-  "SF-FPS-J203a": {"name":"Lifestyle Junior Polos J203","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J203-1.jpeg"]},
-  "SF-FPS-J204a": {"name":"Lifestyle Junior Polos J204","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J204-1.jpeg"]},
-  "SF-FPS-J205a": {"name":"Lifestyle Junior Polos J205","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J205-1.jpeg"]},
-  "SF-FPS-J206a": {"name":"Lifestyle Junior Polos J206","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J206-1.jpeg"]},
-  "SF-FPS-J207a": {"name":"Lifestyle Junior Polos J207","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J207-1.jpeg"]},
+  "SF-FPS-J200a": {"name":"Lumina Swipe","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J200-1.png"]},
+  "SF-FPS-J201a": {"name":"Stealth Arc","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J201-1.jpeg"]},
+  "SF-FPS-J202a": {"name":"Ash Horizon","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J202-1.jpeg"]},
+  "SF-FPS-J203a": {"name":"Pacific Strike","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J203-1.jpeg"]},
+  "SF-FPS-J204a": {"name":"Obsidian Edge","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J204-1.jpeg"]},
+  "SF-FPS-J205a": {"name":"Verdant Rush","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J205-1.jpeg"]},
+  "SF-FPS-J206a": {"name":"Graphite Core","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J206-1.jpeg"]},
+  "SF-FPS-J207a": {"name":"Crimson Blaze","price":31,"category":"polos_juniors","img":["Juniors/Images_Polos/SF-FPS-J207-1.jpeg"]},
 
 
      /* 11111111111111.......lifestyle T shirts Juniors .........................*/
