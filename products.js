@@ -903,19 +903,19 @@ const PRODUCTS = {
  /* 11111111111111....... Junior Compression .........................*/
 "SF-COM-J101a":{"name":"Black Compression Suit","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J101-1.png"]},
 "SF-COM-J102a":{"name":"Black Compression Top","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J102-1.png"]},
-"SF-COM-J103a":{"name":"Black Pro Training Shorts","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J103-1.png"]},
+"SF-COM-J103a":{"name":"Black Pro Training Under Shorts","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J103-1.png"]},
 "SF-COM-J104a":{"name":"Black Compression Socks","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J104-1.png"]},
 "SF-COM-J105a":{"name":"Black Arm & Calf Sleeves","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J105-1.png"]},
 
 "SF-COM-J201a":{"name":"Beige Compression Suit","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J201-1.png"]},
 "SF-COM-J202a":{"name":"Beige Compression Top","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J202-1.png"]},
-"SF-COM-J203a":{"name":"Beige Pro Training Shorts","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J203-1.png"]},
+"SF-COM-J203a":{"name":"Beige Pro Training Under Shorts","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J203-1.png"]},
 "SF-COM-J204a":{"name":"Beige Compression Socks","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J204-1.png"]},
 "SF-COM-J205a":{"name":"Beige Arm & Calf Sleeves","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J205-1.png"]},
 
 "SF-COM-J301a":{"name":"White Compression Suit","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J301-1.png"]},
 "SF-COM-J302a":{"name":"White Compression Top","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J302-1.png"]},
-"SF-COM-J303a":{"name":"White Compression Shorts","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J303-1.png"]},
+"SF-COM-J303a":{"name":"White Pro Training Under Shorts","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J303-1.png"]},
 "SF-COM-J304a":{"name":"White Compression Socks","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J304-1.png"]},
 "SF-COM-J305a":{"name":"White Arm & Calf Sleeves","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J305-1.png"]}, 
    
