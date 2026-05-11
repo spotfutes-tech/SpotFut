@@ -637,6 +637,16 @@ const PRODUCTS = {
 "SF-STD-J379a":{"name":"SF FURIA Junior","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J379_1.jpg","Juniors/Images_TrainingSets/SF-STD-J379_2.jpg","Juniors/Images_TrainingSets/SF-STD-J379_3.jpg"]},
 "SF-STD-J380a":{"name":"SF ARENA Junior","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-STD-J380_1.jpg","Juniors/Images_TrainingSets/SF-STD-J380_2.jpg","Juniors/Images_TrainingSets/SF-STD-J380_3.jpg"]},
 
+"SF-KTS-J101a":{"name":"SF Crimson Vanguard","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J101-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J101_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J101_3.jpeg"]},
+"SF-KTS-J102a":{"name":"SF Midnight Rebel","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J102-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J102_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J102_3.jpeg"]},
+"SF-KTS-J103a":{"name":"SF Thunder Strike","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J103-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J103_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J103_3.jpeg"]},
+"SF-KTS-J104a":{"name":"SF Arctic Drift","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J104-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J104_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J104_3.jpeg"]},
+"SF-KTS-J105a":{"name":"SF Imperial Pulse","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J105-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J105_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J105_3.jpeg"]},
+"SF-KTS-J106a":{"name":"SF Stealth Horizon","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J106-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J106_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J106_3.jpeg"]},
+"SF-KTS-J107a":{"name":"SF Ember Legacy","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J107-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J107_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J107_3.jpeg"]},
+"SF-KTS-J108a":{"name":"SF Shadow Forge","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J108-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J108_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J108_3.jpeg"]},
+"SF-KTS-J109a":{"name":"SF Obsidian Core","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J109-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J109_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J109_3.jpeg"]},
+"SF-KTS-J110a":{"name":"SF Aqua Phantom","price":31,"category":"soccer_trainingwears_juniors","img":["Juniors/Images_TrainingSets/SF-KTS-J110-1.jpeg","Juniors/Images_TrainingSets/SF-KTS-J110_2.jpeg","Juniors/Images_TrainingSets/SF-KTS-J110_3.jpeg"]},
 
    /* 11111111111111.......Junior urban hoodies lifestyle .........................*/
 "SF-UHK-S001a":{"name":"Rogue Ember","price":31,"category":"urbanhoodies_juniors","img":["Juniors/Images_UrbanHoodies/SF-UHK-S001_1.png","Juniors/Images_UrbanHoodies/SF-UHK-S001_2.png"]},
@@ -1040,7 +1050,9 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
 
  football_trainingwear_juniors: [
   "SF-STD-J371a","SF-STD-J372a","SF-STD-J373a","SF-STD-J374a","SF-STD-J375a",
-  "SF-STD-J376a","SF-STD-J377a","SF-STD-J378a","SF-STD-J379a","SF-STD-J380a"],
+  "SF-STD-J376a","SF-STD-J377a","SF-STD-J378a","SF-STD-J379a","SF-STD-J380a",
+"SF-KTS-J101a","SF-KTS-J102a","SF-KTS-J103a","SF-KTS-J104a","SF-KTS-J105a","SF-KTS-J106a",
+"SF-KTS-J107a","SF-KTS-J108a","SF-KTS-J109a","SF-KTS-J110a"],
 
 
 
