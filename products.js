@@ -61,6 +61,7 @@ const CATEGORY_SIZES = {
    training_tops_juniors: ["3XS","2XS","XS","S"],
    lifestyle_joggers_juniors: ["3XS","2XS","XS","S"],
    wristbands: ["Standard"],
+   training_compression_juniors: ["Standard"],
 };
 
 /* ================================
@@ -898,6 +899,25 @@ const PRODUCTS = {
 "SF-KTT-J113a":{"name":"Elyndor","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J113-1.jpeg"]},
 "SF-KTT-J114a":{"name":"Solvexis","price":11,"category":"training_tops_juniors","img":["Juniors/Images_Tops/SF-KTT-J114-1.jpeg"]},
 
+
+ /* 11111111111111....... Junior Compression .........................*/
+"SF-COM-J101a":{"name":"Black Compression Suit","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J101-1.png"]},
+"SF-COM-J102a":{"name":"Black Compression Top","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J102-1.png"]},
+"SF-COM-J103a":{"name":"Black Pro Training Shorts","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J103-1.png"]},
+"SF-COM-J104a":{"name":"Black Compression Socks","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J104-1.png"]},
+"SF-COM-J105a":{"name":"Black Arm & Calf Sleeves","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J105-1.png"]},
+
+"SF-COM-J201a":{"name":"Beige Compression Suit","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J201-1.png"]},
+"SF-COM-J202a":{"name":"Beige Compression Top","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J202-1.png"]},
+"SF-COM-J203a":{"name":"Beige Pro Training Shorts","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J203-1.png"]},
+"SF-COM-J204a":{"name":"Beige Compression Socks","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J204-1.png"]},
+"SF-COM-J205a":{"name":"Beige Arm & Calf Sleeves","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J205-1.png"]},
+
+"SF-COM-J301a":{"name":"White Compression Suit","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J301-1.png"]},
+"SF-COM-J302a":{"name":"White Compression Top","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J302-1.png"]},
+"SF-COM-J303a":{"name":"White Compression Shorts","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J303-1.png"]},
+"SF-COM-J304a":{"name":"White Compression Socks","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J304-1.png"]},
+"SF-COM-J305a":{"name":"White Arm & Calf Sleeves","price":11,"category":"training_compression_juniors","img":["Juniors/Images_Compression/SF-COM-J305-1.png"]}, 
    
    
 
@@ -1118,6 +1138,9 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
 
 training_tops_juniors: ["SF-KTT-J101a","SF-KTT-J102a","SF-KTT-J103a","SF-KTT-J104a","SF-KTT-J105a","SF-KTT-J106a","SF-KTT-J107a",
                          "SF-KTT-J108a","SF-KTT-J109a","SF-KTT-J110a","SF-KTT-J111a","SF-KTT-J112a","SF-KTT-J113a","SF-KTT-J114a"],
+training_compression_juniors: ["SF-COM-J101a","SF-COM-J102a","SF-COM-J103a","SF-COM-J104a","SF-COM-J105a",
+                               "SF-COM-J201a","SF-COM-J202a","SF-COM-J203a","SF-COM-J204a","SF-COM-J205a",
+                               "SF-COM-J301a","SF-COM-J302a","SF-COM-J303a","SF-COM-J304a","SF-COM-J305a"],
 
 
    /*  Tracksuits */
