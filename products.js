@@ -617,7 +617,18 @@ const PRODUCTS = {
 "SF-BJK-S106a":{"name":"Basketball Junior Elite Dribblers Kit","price":22,"img":["BasketBall/Juniors_Kits/SF-BJK-S106_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S106_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S106_3.jpg"]},
 "SF-BJK-S107a":{"name":"Basketball Junior Dynamic Dunkers Kit","price":23,"img":["BasketBall/Juniors_Kits/SF-BJK-S107_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S107_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S107_3.jpg"]},
 "SF-BJK-S108a":{"name":"Basketball Junior All-Star Hustle Kit","price":24,"img":["BasketBall/Juniors_Kits/SF-BJK-S108_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S108_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S108_3.jpg"]},
-
+   
+      /* 11111111111111....... Junior Handball Kits .........................*/
+"SF-BJK-S109a":{"name":"Basketball Junior Crimson Strike Kit","price":24,"img":["BasketBall/Juniors_Kits/SF-BJK-S109_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S109_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S109_3.jpg"]},
+"SF-BJK-S110a":{"name":"Basketball Junior Ocean Fury Kit","price":25,"img":["BasketBall/Juniors_Kits/SF-BJK-S110_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S110_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S110_3.jpg"]},
+"SF-BJK-S111a":{"name":"Basketball Junior Royal Vortex Kit","price":26,"img":["BasketBall/Juniors_Kits/SF-BJK-S111_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S111_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S111_3.jpg"]},
+"SF-BJK-S112a":{"name":"Basketball Junior Midnight Gold Kit","price":27,"img":["BasketBall/Juniors_Kits/SF-BJK-S112_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S112_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S112_3.jpg"]},
+"SF-BJK-S113a":{"name":"Basketball Junior Tropical Thunder Kit","price":28,"img":["BasketBall/Juniors_Kits/SF-BJK-S113_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S113_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S113_3.jpg"]},
+"SF-BJK-S114a":{"name":"Basketball Junior Purple Comet","price":29,"img":["BasketBall/Juniors_Kits/SF-BJK-S114_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S114_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S114_3.jpg"]},
+"SF-BJK-S115a":{"name":"Basketball Junior Maroon Core Shorts","price":30,"img":["BasketBall/Juniors_Kits/SF-BJK-S115_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S115_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S115_3.jpg"]},
+"SF-BJK-S116a":{"name":"Basketball Junior Stealth Black Shorts","price":31,"img":["BasketBall/Juniors_Kits/SF-BJK-S116_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S116_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S116_3.jpg"]},
+"SF-BJK-S117a":{"name":"Basketball Junior Electric Blue Shorts","price":32,"img":["BasketBall/Juniors_Kits/SF-BJK-S117_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S117_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S117_3.jpg"]},
+"SF-BJK-S118a":{"name":"Basketball Junior Deep Violet Shorts","price":33,"img":["BasketBall/Juniors_Kits/SF-BJK-S118_1.jpg","BasketBall/Juniors_Kits/SF-BJK-S118_2.jpg","BasketBall/Juniors_Kits/SF-BJK-S118_3.jpg"]},
 
 
    
@@ -1119,7 +1130,9 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
    "SF-BJF-S009a","SF-BJF-S002a","SF-BJF-S001a","SF-BJF-S003a"],
    handball_mesh_women: ["SF-MWU-682a","SF-MWU-683a","SF-MWU-684a"],
    handball_kits_juniors: ["SF-BJK-S006a","SF-BJK-S004a","SF-BJK-S102a","SF-BJK-S104a",
-                             "SF-BJK-S101a","SF-BJK-S002a","SF-BJK-S003a"],
+                             "SF-BJK-S101a","SF-BJK-S002a","SF-BJK-S003a","SF-BJK-S105a","SF-BJK-S106a","SF-BJK-S107a","SF-BJK-S108a",
+                           "SF-BJK-S109a","SF-BJK-S110a","SF-BJK-S111a","SF-BJK-S112a","SF-BJK-S113a","SF-BJK-S114a","SF-BJK-S115a",
+                           "SF-BJK-S116a","SF-BJK-S117a","SF-BJK-S118a"],
      handball_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
    handball_trainingwear_juniors: [ "SF-STD-J371a","SF-STD-J372a","SF-STD-J373a","SF-STD-J374a","SF-STD-J375a",
   "SF-STD-J376a","SF-STD-J377a","SF-STD-J378a","SF-STD-J379a","SF-STD-J380a"],
