@@ -44,6 +44,7 @@ const CATEGORY_SIZES = {
    puffers_men: ["XS","S","M","L","XL","2XL"],
    puffers_women: ["XS","S","M","L","XL","2XL"],
    classic_tracksets_women: ["XS","S","M","L","XL","2XL","3XL"],
+   basketball_trainingwear_women: ["XS","S","M","L","XL","2XL","3XL"],
    mesh_women_men: ["S","M","L","XL","2XL"],
    mesh_juniors: ["3XS","2XS","XS","S"],
    urbanhoodies_juniors: ["3XS","2XS","XS","S"],
@@ -476,6 +477,21 @@ const PRODUCTS = {
 "SF-BJF-S010a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S010_1.jpg","BasketBall/Women_Kits/SF-BJF-S010_2.jpg","BasketBall/Women_Kits/SF-BJF-S010_3.jpg"]},
 "SF-BJF-S011a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S011_1.jpg","BasketBall/Women_Kits/SF-BJF-S011_2.jpg","BasketBall/Women_Kits/SF-BJF-S011_3.jpg"]},
 "SF-BJF-S012a": {"name": "BB TBA Edition","price": 11,"img": ["BasketBall/Women_Kits/SF-BJF-S012_1.jpg","BasketBall/Women_Kits/SF-BJF-S012_2.jpg","BasketBall/Women_Kits/SF-BJF-S012_3.jpg"]},
+
+ 
+   /* 11111111111111....... Women BasketBall Training Kits .........................*/
+"SF-BTW-F101a": {"name": "Blush Blitz","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F101-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F101-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F101-3.jpg"]},
+"SF-BTW-F102a": {"name": "Eclipse Fade"","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F102-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F102-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F102-3.jpg"]},
+"SF-BTW-F103a": {"name": "Solar Flare","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F103-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F103-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F103-3.jpg"]},
+"SF-BTW-F104a": {"name": "Ocean Pulse","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F104-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F104-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F104-3.jpg"]},
+"SF-BTW-F105a": {"name": "Mint Frost","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F105-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F105-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F105-3.jpg"]},
+"SF-BTW-F106a": {"name": "Emerald Storm","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F106-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F106-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F106-3.jpg"]},
+"SF-BTW-F107a": {"name": "Lavender Lightning","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F107-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F107-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F107-3.jpg"]},
+"SF-BTW-F108a": {"name": "Purple Reign","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F108-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F108-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F108-3.jpg"]},
+"SF-BTW-F109a": {"name": "Forest Fire","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F109-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F109-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F109-3.jpg"]},
+"SF-BTW-F110a": {"name": "Scarlet Heat","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F110-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F110-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F110-3.jpg"]},
+"SF-BTW-F111a": {"name": "Royal Surge","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F111-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F111-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F111-3.jpg"]},
+"SF-BTW-F112a": {"name": "Midnight Shadow","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Images_BBTraining/SF-BTW-F112-1.jpg","BasketBall/Images_BBTraining/SF-BTW-F112-2.jpg","BasketBall/Images_BBTraining/SF-BTW-F112-3.jpg"]},
 
  /* 11111111111111....... Women Tracksets Fitness.........................*/
    /* 1111111 Simple fitness polyester ..*/
@@ -1100,6 +1116,8 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
    
    basketball_kits_women: ["SF-BJF-S001a","SF-BJF-S002a","SF-BJF-S003a","SF-BJF-S004a","SF-BJF-S005a","SF-BJF-S006a","SF-BJF-S007a","SF-BJF-S008a",
    "SF-BJF-S009a","SF-BJF-S010a","SF-BJF-S011a","SF-BJF-S012a"],
+   
+   basketball_trainingwear_women:["SF-BTW-F101a","SF-BTW-F102a","SF-BTW-F103a","SF-BTW-F104a","SF-BTW-F105a","SF-BTW-F106a","SF-BTW-F107a","SF-BTW-F108a","SF-BTW-F109a","SF-BTW-F110a","SF-BTW-F111a","SF-BTW-F112a"],
 
   basketball_hoodies_women: [
     "SF-SJM-S005a"
