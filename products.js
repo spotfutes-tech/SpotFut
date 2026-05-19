@@ -47,6 +47,7 @@ const CATEGORY_SIZES = {
    basketball_trainingwear_women: ["XS","S","M","L","XL","2XL","3XL"],
    handball_kits_women: ["XS","S","M","L","XL","2XL","3XL"],
    handball_trainingwear_women: ["XS","S","M","L","XL","2XL","3XL"],
+   training_compression_women: ["Standard"],
    mesh_women_men: ["S","M","L","XL","2XL"],
    mesh_juniors: ["3XS","2XS","XS","S"],
    urbanhoodies_juniors: ["3XS","2XS","XS","S"],
@@ -515,7 +516,24 @@ const PRODUCTS = {
 "SF-HBT-W207a": {"name":"Sunrise Ghost","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W207-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W207-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W207-3.jpg"]},
 "SF-HBT-W208a": {"name":"Inferno Blaze","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W208-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W208-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W208-3.jpg"]},
 
+/* 11111111111111....... Junior Compression .........................*/
+"SF-COM-W101a":{"name":"Black Compression Suit","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W101-1.png"]},
+"SF-COM-W102a":{"name":"Black Compression Top","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W102-1.png"]},
+"SF-COM-W103a":{"name":"Pro Training Under Shorts","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W103-1.png"]},
+"SF-COM-W104a":{"name":"Compression Socks","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W104-1.png"]},
+"SF-COM-W105a":{"name":"Black Arm & Calf Sleeves","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W105-1.png"]},
 
+"SF-COM-W201a":{"name":"Beige Compression Suit","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W201-1.jpeg"]},
+"SF-COM-W202a":{"name":"Beige Compression Top","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W202-1.jpeg"]},
+"SF-COM-W203a":{"name":"Pro Training Under Shorts","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W203-1.jpeg"]},
+"SF-COM-W204a":{"name":"Compression Socks","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W204-1.jpeg"]},
+"SF-COM-W205a":{"name":"Beige Arm & Calf Sleeves","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W205-1.jpeg"]},
+
+"SF-COM-W301a":{"name":"White Compression Suit","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W301-1.jpeg"]},
+"SF-COM-W302a":{"name":"White Compression Top","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W302-1.jpeg"]},
+"SF-COM-W303a":{"name":"Pro Training Under Shorts","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W303-1.jpeg"]},
+"SF-COM-W304a":{"name":"Compression Socks","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W304-1.jpeg"]},
+"SF-COM-W305a":{"name":"White Arm & Calf Sleeves","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W305-1.jpeg"]},
 
 
 
@@ -1200,9 +1218,10 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
 
 training_tops_juniors: ["SF-KTT-J101a","SF-KTT-J102a","SF-KTT-J103a","SF-KTT-J104a","SF-KTT-J105a","SF-KTT-J106a","SF-KTT-J107a",
                          "SF-KTT-J108a","SF-KTT-J109a","SF-KTT-J110a","SF-KTT-J111a","SF-KTT-J112a","SF-KTT-J113a","SF-KTT-J114a"],
-training_compression_juniors: ["SF-COM-J101a","SF-COM-J102a","SF-COM-J103a","SF-COM-J104a","SF-COM-J105a",
-                               "SF-COM-J201a","SF-COM-J202a","SF-COM-J203a","SF-COM-J204a","SF-COM-J205a",
-                               "SF-COM-J301a","SF-COM-J302a","SF-COM-J303a","SF-COM-J304a","SF-COM-J305a"],
+training_compression_juniors: ["SF-COM-W101a","SF-COM-W102a","SF-COM-W103a","SF-COM-W104a","SF-COM-W105a"
+                                ,"SF-COM-W201a","SF-COM-W202a","SF-COM-W203a","SF-COM-W204a","SF-COM-W205a"
+                                ,"SF-COM-W301a","SF-COM-W302a","SF-COM-W303a","SF-COM-W304a","SF-COM-W305a"],
+training_compression_women: ["Standard"],
 
 
    /*  Tracksuits */
