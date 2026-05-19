@@ -516,7 +516,7 @@ const PRODUCTS = {
 "SF-HBT-W207a": {"name":"Sunrise Ghost","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W207-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W207-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W207-3.jpg"]},
 "SF-HBT-W208a": {"name":"Inferno Blaze","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W208-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W208-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W208-3.jpg"]},
 
-/* 11111111111111....... Junior Compression .........................*/
+/* 11111111111111....... women Compression .........................*/
 "SF-COM-W101a":{"name":"Black Compression Suit","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W101-1.png"]},
 "SF-COM-W102a":{"name":"Black Compression Top","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W102-1.png"]},
 "SF-COM-W103a":{"name":"Pro Training Under Shorts","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W103-1.png"]},
@@ -1218,10 +1218,12 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
 
 training_tops_juniors: ["SF-KTT-J101a","SF-KTT-J102a","SF-KTT-J103a","SF-KTT-J104a","SF-KTT-J105a","SF-KTT-J106a","SF-KTT-J107a",
                          "SF-KTT-J108a","SF-KTT-J109a","SF-KTT-J110a","SF-KTT-J111a","SF-KTT-J112a","SF-KTT-J113a","SF-KTT-J114a"],
-training_compression_juniors: ["SF-COM-W101a","SF-COM-W102a","SF-COM-W103a","SF-COM-W104a","SF-COM-W105a"
+training_compression_juniors: ["SF-COM-J101a","SF-COM-J102a","SF-COM-J103a","SF-COM-J104a","SF-COM-J105a"
+                                ,"SF-COM-J201a","SF-COM-J202a","SF-COM-J203a","SF-COM-J204a","SF-COM-J205a"
+                                ,"SF-COM-J301a","SF-COM-J302a","SF-COM-J303a","SF-COM-J304a","SF-COM-J305a"],
+training_compression_women: ["SF-COM-W101a","SF-COM-W102a","SF-COM-W103a","SF-COM-W104a","SF-COM-W105a"
                                 ,"SF-COM-W201a","SF-COM-W202a","SF-COM-W203a","SF-COM-W204a","SF-COM-W205a"
                                 ,"SF-COM-W301a","SF-COM-W302a","SF-COM-W303a","SF-COM-W304a","SF-COM-W305a"],
-training_compression_women: ["Standard"],
 
 
    /*  Tracksuits */
