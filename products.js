@@ -46,6 +46,7 @@ const CATEGORY_SIZES = {
    classic_tracksets_women: ["XS","S","M","L","XL","2XL","3XL"],
    basketball_trainingwear_women: ["XS","S","M","L","XL","2XL","3XL"],
    handball_kits_women: ["XS","S","M","L","XL","2XL","3XL"],
+   handball_trainingwear_women: ["XS","S","M","L","XL","2XL","3XL"],
    mesh_women_men: ["S","M","L","XL","2XL"],
    mesh_juniors: ["3XS","2XS","XS","S"],
    urbanhoodies_juniors: ["3XS","2XS","XS","S"],
@@ -503,6 +504,21 @@ const PRODUCTS = {
 "SF-HBK-W105a": {"name":"Wave Runner","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W105-1.jpg","Women/Images_Handball/SF-HBK-W105-2.jpg","Women/Images_Handball/SF-HBK-W105-3.jpg"]},
 "SF-HBK-W106a": {"name":"Magma Glow","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W106-1.jpg","Women/Images_Handball/SF-HBK-W106-2.jpg","Women/Images_Handball/SF-HBK-W106-3.jpg"]},
 "SF-HBK-W107a": {"name":"Lime Phantom","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W107-1.jpg","Women/Images_Handball/SF-HBK-W107-2.jpg","Women/Images_Handball/SF-HBK-W107-3.jpg"]},
+
+  /* 11111111111111....... Women HandBall Training Kits .........................*/
+"SF-HBT-W201a": {"name":"Imperial Rush","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W201-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W201-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W201-3.jpg"]},
+"SF-HBT-W202a": {"name":"Patriot Strike","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W202-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W202-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W202-3.jpg"]},
+"SF-HBT-W203a": {"name":"Emerald Shadow","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W203-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W203-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W203-3.jpg"]},
+"SF-HBT-W204a": {"name":"Frost Glow","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W204-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W204-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W204-3.jpg"]},
+"SF-HBT-W205a": {"name":"Olive Phantom","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W205-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W205-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W205-3.jpg"]},
+"SF-HBT-W206a": {"name":"Caribbean Storm","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W206-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W206-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W206-3.jpg"]},
+"SF-HBT-W207a": {"name":"Sunrise Ghost","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W207-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W207-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W207-3.jpg"]},
+"SF-HBT-W208a": {"name":"Inferno Blaze","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W208-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W208-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W208-3.jpg"]},
+
+
+
+
+
 
 
    
@@ -1167,6 +1183,8 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
      handball_mesh_juniors: ["SF-MWU-679a","SF-MWU-680a","SF-MWU-681a"],
    handball_trainingwear_juniors: [ "SF-STD-J371a","SF-STD-J372a","SF-STD-J373a","SF-STD-J374a","SF-STD-J375a",
   "SF-STD-J376a","SF-STD-J377a","SF-STD-J378a","SF-STD-J379a","SF-STD-J380a"],
+   
+ handball_trainingwear_women: ["SF-HBT-W201a","SF-HBT-W202a","SF-HBT-W203a","SF-HBT-W204a","SF-HBT-W205a","SF-HBT-W206a","SF-HBT-W207a","SF-HBT-W208a"],
 
 
 
