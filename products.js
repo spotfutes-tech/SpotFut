@@ -45,6 +45,7 @@ const CATEGORY_SIZES = {
    puffers_women: ["XS","S","M","L","XL","2XL"],
    classic_tracksets_women: ["XS","S","M","L","XL","2XL","3XL"],
    basketball_trainingwear_women: ["XS","S","M","L","XL","2XL","3XL"],
+   handball_kits_women: ["XS","S","M","L","XL","2XL","3XL"],
    mesh_women_men: ["S","M","L","XL","2XL"],
    mesh_juniors: ["3XS","2XS","XS","S"],
    urbanhoodies_juniors: ["3XS","2XS","XS","S"],
@@ -493,6 +494,18 @@ const PRODUCTS = {
 "SF-BTW-F111a": {"name": "Royal Surge","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Women_Kits/Images_BBTraining/SF-BTW-F111-1.jpeg","BasketBall/Women_Kits/Images_BBTraining/SF-BTW-F111-2.jpg","BasketBall/Women_Kits/Images_BBTraining/SF-BTW-F111-3.jpg"]},
 "SF-BTW-F112a": {"name": "Midnight Shadow","price":31,"category":"basketball_trainingwear_women","img":["BasketBall/Women_Kits/Images_BBTraining/SF-BTW-F112-1.jpeg","BasketBall/Women_Kits/Images_BBTraining/SF-BTW-F112-2.jpg","BasketBall/Women_Kits/Images_BBTraining/SF-BTW-F112-3.jpg"]},
 
+
+ /* 11111111111111....... Women Handall Kits .........................*/
+"SF-HBK-W101a": {"name":"Azure Blitz","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W101-1.jpg","Women/Images_Handball/SF-HBK-W101-2.jpg","Women/Images_Handball/SF-HBK-W101-3.jpg"]},
+"SF-HBK-W102a": {"name":"Citrus Surge","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W102-1.jpg","Women/Images_Handball/SF-HBK-W102-2.jpg","Women/Images_Handball/SF-HBK-W102-3.jpg"]},
+"SF-HBK-W103a": {"name":"Raven Edge","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W103-1.jpg","Women/Images_Handball/SF-HBK-W103-2.jpg","Women/Images_Handball/SF-HBK-W103-3.jpg"]},
+"SF-HBK-W104a": {"name":"Volcano Rush","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W104-1.jpg","Women/Images_Handball/SF-HBK-W104-2.jpg","Women/Images_Handball/SF-HBK-W104-3.jpg"]},
+"SF-HBK-W105a": {"name":"Wave Runner","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W105-1.jpg","Women/Images_Handball/SF-HBK-W105-2.jpg","Women/Images_Handball/SF-HBK-W105-3.jpg"]},
+"SF-HBK-W106a": {"name":"Magma Glow","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W106-1.jpg","Women/Images_Handball/SF-HBK-W106-2.jpg","Women/Images_Handball/SF-HBK-W106-3.jpg"]},
+"SF-HBK-W107a": {"name":"Lime Phantom","price":31,"category":"handball_kits_women","img":["Women/Images_Handball/SF-HBK-W107-1.jpg","Women/Images_Handball/SF-HBK-W107-2.jpg","Women/Images_Handball/SF-HBK-W107-3.jpg"]},
+
+
+   
  /* 11111111111111....... Women Tracksets Fitness.........................*/
    /* 1111111 Simple fitness polyester ..*/
 "SF-CTS-F120a": {"name": "Spot C120 Trackset","price": 31,"img": ["Women/Images_Tracksets/SF_CTS_F120_1.jpg","Women/Images_Tracksets/SF_CTS_F120_2.jpg","Women/Images_Tracksets/SF_CTS_F120_3.jpg"]},
@@ -1145,7 +1158,7 @@ football_kits_basic_men: ["SF-SJM-B901a","SF-SJM-B902a","SF-SJM-B903a","SF-SJM-B
   handball_kits_men: ["SF-BJM-S012a","SF-BJM-S010a","SF-BJM-S006a","SF-BJM-S009a","SF-BJM-S001a","SF-BJM-S003a","SF-BJM-S007a","SF-BJM-S008a",
    "SF-BJM-S002a","SF-BJM-S016a","SF-BJM-S013a","SF-BJM-S015a"],
    handball_mesh_men: ["SF-MWU-685a","SF-MWU-686a","SF-MWU-687a"],
-   handball_kits_women: ["SF-BJF-S012a","SF-BJF-S011a","SF-BJF-S009a","SF-BJF-S007a","SF-BJF-S005a","SF-BJF-S010a","SF-BJF-S008a","SF-BJF-S006a",
+   handball_kits_women: ["SF-HBK-W101a","SF-HBK-W102a","SF-HBK-W103a","SF-HBK-W104a","SF-HBK-W105a","SF-HBK-W106a","SF-HBK-W107a","SF-BJF-S012a","SF-BJF-S011a","SF-BJF-S009a","SF-BJF-S007a","SF-BJF-S005a","SF-BJF-S010a","SF-BJF-S008a","SF-BJF-S006a",
    "SF-BJF-S009a","SF-BJF-S002a","SF-BJF-S001a","SF-BJF-S003a"],
    handball_mesh_women: ["SF-MWU-682a","SF-MWU-683a","SF-MWU-684a"],
    handball_kits_juniors: ["SF-BJK-S109a","SF-BJK-S110a","SF-BJK-S111a","SF-BJK-S112a","SF-BJK-S113a","SF-BJK-S114a","SF-BJK-S006a","SF-BJK-S004a","SF-BJK-S102a","SF-BJK-S104a",
