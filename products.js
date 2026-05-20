@@ -48,6 +48,7 @@ const CATEGORY_SIZES = {
    handball_kits_women: ["XS","S","M","L","XL","2XL","3XL"],
    handball_trainingwear_women: ["XS","S","M","L","XL","2XL","3XL"],
    training_compression_women: ["Standard"],
+   lifestyle_tshirts_women: ["XS","S","M","L","XL","2XL","3XL"],
    mesh_women_men: ["S","M","L","XL","2XL"],
    mesh_juniors: ["3XS","2XS","XS","S"],
    urbanhoodies_juniors: ["3XS","2XS","XS","S"],
@@ -516,6 +517,27 @@ const PRODUCTS = {
 "SF-HBT-W207a": {"name":"Sunrise Ghost","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W207-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W207-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W207-3.jpg"]},
 "SF-HBT-W208a": {"name":"Inferno Blaze","price":31,"category":"handball_trainingwear_women","img":["Women/Images_Handball/Images_Training/SF-HBT-W208-1.jpg","Women/Images_Handball/Images_Training/SF-HBT-W208-2.jpg","Women/Images_Handball/Images_Training/SF-HBT-W208-3.jpg"]},
 
+
+  /* 11111111111111....... LifeStyle Women Tshirts .........................*/
+"SF-LTS-W101a": {"name":"Flamingo Punch","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W101-1.jpeg","Women/Images_Tshirts/SF-LTS-W101-2.jpeg","Women/Images_Tshirts/SF-LTS-W101-3.jpeg"]},
+"SF-LTS-W102a": {"name":"Electric Citrus","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W102-1.jpeg","Women/Images_Tshirts/SF-LTS-W102-2.jpeg","Women/Images_Tshirts/SF-LTS-W102-3.jpeg"]},
+"SF-LTS-W103a": {"name":"Tropical Blaze","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W103-1.jpeg","Women/Images_Tshirts/SF-LTS-W103-2.jpeg","Women/Images_Tshirts/SF-LTS-W103-3.jpeg"]},
+"SF-LTS-W104a": {"name":"Desert Ember","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W104-1.jpeg","Women/Images_Tshirts/SF-LTS-W104-2.jpeg","Women/Images_Tshirts/SF-LTS-W104-3.jpeg"]},
+"SF-LTS-W105a": {"name":"Arctic Glow","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W105-1.jpeg","Women/Images_Tshirts/SF-LTS-W105-2.jpeg","Women/Images_Tshirts/SF-LTS-W105-3.jpeg"]},
+"SF-LTS-W106a": {"name":"Midnight Orchid","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W106-1.jpeg","Women/Images_Tshirts/SF-LTS-W106-2.jpeg","Women/Images_Tshirts/SF-LTS-W106-3.jpeg"]},
+"SF-LTS-W107a": {"name":"Coastal Breeze","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W107-1.jpeg","Women/Images_Tshirts/SF-LTS-W107-2.jpeg","Women/Images_Tshirts/SF-LTS-W107-3.jpeg"]},
+"SF-LTS-W108a": {"name":"Golden Hour","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W108-1.jpeg","Women/Images_Tshirts/SF-LTS-W108-2.jpeg","Women/Images_Tshirts/SF-LTS-W108-3.jpeg"]},
+"SF-LTS-W109a": {"name":"Speedwave","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W109-1.jpeg","Women/Images_Tshirts/SF-LTS-W109-2.jpeg","Women/Images_Tshirts/SF-LTS-W109-3.jpeg"]},
+"SF-LTS-W110a": {"name":"Classic Surge","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W110-1.jpeg","Women/Images_Tshirts/SF-LTS-W110-2.jpeg","Women/Images_Tshirts/SF-LTS-W110-3.jpeg"]},
+"SF-LTS-W111a": {"name":"Forest Flash","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W111-1.jpeg","Women/Images_Tshirts/SF-LTS-W111-2.jpeg","Women/Images_Tshirts/SF-LTS-W111-3.jpeg"]},
+"SF-LTS-W112a": {"name":"Crimson Drive","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W112-1.jpeg","Women/Images_Tshirts/SF-LTS-W112-2.jpeg","Women/Images_Tshirts/SF-LTS-W112-3.jpeg"]},
+"SF-LTS-W113a": {"name":"Sandstone Trail","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W113-1.jpeg","Women/Images_Tshirts/SF-LTS-W113-2.jpeg","Women/Images_Tshirts/SF-LTS-W113-3.jpeg"]},
+"SF-LTS-W114a": {"name":"Blush Rush","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W114-1.jpeg","Women/Images_Tshirts/SF-LTS-W114-2.jpeg","Women/Images_Tshirts/SF-LTS-W114-3.jpeg"]},
+"SF-LTS-W115a": {"name":"Sky Aurora","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W115-1.jpeg","Women/Images_Tshirts/SF-LTS-W115-2.jpeg","Women/Images_Tshirts/SF-LTS-W115-3.jpeg"]},
+"SF-LTS-W116a": {"name":"Earth Runner","price":31,"category":"lifestyle_tshirts_women","img":["Women/Images_Tshirts/SF-LTS-W116-1.jpeg","Women/Images_Tshirts/SF-LTS-W116-2.jpeg","Women/Images_Tshirts/SF-LTS-W116-3.jpeg"]},
+
+
+   
 /* 11111111111111....... women Compression .........................*/
 "SF-COM-W101a":{"name":"Black Compression Suit","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W101-1.png"]},
 "SF-COM-W102a":{"name":"Black Compression Top","price":11,"category":"training_compression_women","img":["Women/Images_Compression/SF-COM-W102-1.png"]},
@@ -1255,7 +1277,8 @@ training_compression_women: ["SF-COM-W101a","SF-COM-W102a","SF-COM-W103a","SF-CO
    tracksuits_fashion__juniors: ["SF-FAS-J101a","SF-FAS-J102a","SF-FAS-J103a","SF-FAS-J104a","SF-FAS-J105a","SF-FAS-J106a","SF-FAS-J107a","SF-FAS-J108a","SF-FAS-J109a","SF-FAS-J110a","SF-FAS-J111a","SF-FAS-J112a"],
 
   /* LIFESTYLE */
-    lifestyle_polos_men: ["SF-BPM-M180a","SF-BPM-M181a","SF-BPM-M182a","SF-BPM-M183a","SF-BPM-M184a",
+   
+ lifestyle_polos_men: ["SF-BPM-M180a","SF-BPM-M181a","SF-BPM-M182a","SF-BPM-M183a","SF-BPM-M184a",
   "SF-BPM-M185a","SF-BPM-M186a","SF-BPM-M187a","SF-BPM-M188a"],
 
    
@@ -1277,6 +1300,12 @@ training_compression_women: ["SF-COM-W101a","SF-COM-W102a","SF-COM-W103a","SF-CO
 
   lifestyle_jackets_women: ["SF-PJ-F201a","SF-PJ-F202a","SF-PJ-F203a","SF-PJ-F204a","SF-PJ-F205a",
                             "SF-PJ-F301a","SF-PJ-F302a","SF-PJ-F303a","SF-PJ-F304a"],
+
+   
+   lifestyle_tshirts_women: ["SF-LTS-W101a","SF-LTS-W102a","SF-LTS-W103a","SF-LTS-W104a","SF-LTS-W105a","SF-LTS-W106a","SF-LTS-W107a","SF-LTS-W108a",
+                             "SF-LTS-W109a","SF-LTS-W110a","SF-LTS-W111a","SF-LTS-W112a","SF-LTS-W113a","SF-LTS-W114a","SF-LTS-W115a","SF-LTS-W116a"],
+
+   
    lifestyle_polos_juniors: ["SF-SPS-J100a","SF-SPS-J101a","SF-SPS-J102a","SF-SPS-J103a",
                               "SF-SPS-J104a","SF-SPS-J105a","SF-SPS-J106a","SF-SPS-J107a","SF-FPS-J200a",
                               "SF-FPS-J201a","SF-FPS-J202a","SF-FPS-J203a","SF-FPS-J204a","SF-FPS-J205a","SF-FPS-J206a","SF-FPS-J207a"],
