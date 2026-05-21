@@ -601,14 +601,35 @@ function downloadPDF(){
     const finalTotal =
         grandTotal - totalDiscount;
 
-    tableRows.push([
-        "",
-        "",
-        "",
-        "",
-        "Subtotal",
-        grandTotal.toFixed(2) + " " + currency
-    ]);
+    let discountLabel = "Descuento";
+
+if(discountPercent > 0 && discountAmount > 0){
+
+    discountLabel =
+        `Descuento (${discountPercent}% + ${discountAmount} ${currency})`;
+
+}
+else if(discountPercent > 0){
+
+    discountLabel =
+        `Descuento (${discountPercent}%)`;
+
+}
+else if(discountAmount > 0){
+
+    discountLabel =
+        `Descuento (${discountAmount} ${currency} fijo)`;
+
+}
+
+tableRows.push([
+    "",
+    "",
+    "",
+    "",
+    discountLabel,
+    "-" + totalDiscount.toFixed(2) + " " + currency
+]);
 
     tableRows.push([
         "",
