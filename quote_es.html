@@ -99,8 +99,32 @@ button:hover{
 .quote-header{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
+    align-items:flex-start;
+    margin-bottom:25px;
+    border-bottom:1px solid #333;
+    padding-bottom:20px;
+    gap:20px;
+}
+
+.company-info{
+    line-height:1.8;
+}
+
+.company-info h2{
+    margin:0;
+    font-size:1.6rem;
+    color:#c200ff;
+}
+
+.company-info p{
+    margin:2px 0;
+    font-size:0.9rem;
+    color:#ccc;
+}
+
+.quote-logo img{
+    height:90px;
+    object-fit:contain;
 }
 
 #previewCustomer div{
@@ -124,14 +148,15 @@ button:hover{
 <body>
 
 <h1>
-SpotFutWears - Generador de Cotizaciones
+SpotFut - Generador de Cotizaciones
 <span>
-Pedido #: <input type="text" id="orderNumber" placeholder="Ingresar manualmente" style="width:120px;">
+Pedido #:
+<input type="text" id="orderNumber" placeholder="Ingresar manualmente" style="width:120px;">
 </span>
 </h1>
 
 <div class="currency-switch">
-Moneda: 
+Moneda:
 <select id="currency">
     <option value="€">€</option>
     <option value="PKR">PKR</option>
@@ -141,6 +166,7 @@ Moneda:
 <h2>Información del Cliente</h2>
 
 <div class="grid-2">
+
     <div>
         <label>Nombre</label>
         <input type="text" id="custName">
@@ -160,15 +186,21 @@ Moneda:
         <label>Dirección</label>
         <input type="text" id="custAddress">
     </div>
+
 </div>
 
 <h2>Agregar Productos</h2>
 
 <div class="grid-2">
+
     <input type="text" id="itemName" placeholder="Nombre del Producto">
+
     <input type="text" id="itemSize" placeholder="Talla">
+
     <input type="number" id="itemQty" placeholder="Cantidad">
+
     <input type="number" id="itemPrice" placeholder="Precio/unidad">
+
 </div>
 
 <button onclick="addItem()">Agregar Producto</button>
@@ -176,6 +208,7 @@ Moneda:
 <h2>Descuento</h2>
 
 <div class="grid-2">
+
     <div>
         <label>Descuento (%)</label>
         <input type="number" id="discountPercent" placeholder="Ingrese porcentaje" value="0">
@@ -185,10 +218,13 @@ Moneda:
         <label>Descuento Fijo</label>
         <input type="number" id="discountAmount" placeholder="Ingrese descuento fijo" value="0">
     </div>
+
 </div>
 
 <table id="items-table">
+
     <thead>
+
         <tr>
             <th>N.º</th>
             <th>Nombre del Producto</th>
@@ -197,8 +233,11 @@ Moneda:
             <th>Precio/unidad</th>
             <th>Precio Total</th>
         </tr>
+
     </thead>
+
     <tbody></tbody>
+
 </table>
 
 <h2>Vista Previa de la Cotización</h2>
@@ -206,12 +245,31 @@ Moneda:
 <div id="quote-preview">
 
     <div class="quote-header">
-        <div><strong>SpotFutWears</strong></div>
 
-        <div>
-            Fecha: <span id="quoteDate"></span> |
-            Validez: <span id="quoteValidity"></span>
+        <div class="company-info">
+
+            <h2>SpotFut</h2>
+
+            <p><strong>Web:</strong> www.spotfut.com</p>
+
+            <p><strong>WhatsApp:</strong> +34 673 779 896</p>
+
+            <p>
+                <strong>Fecha:</strong>
+                <span id="quoteDate"></span>
+            </p>
+
+            <p>
+                <strong>Validez:</strong>
+                <span id="quoteValidity"></span>
+            </p>
+
         </div>
+
+        <div class="quote-logo">
+            <img src="logo_1.jpeg" alt="SpotFut Logo">
+        </div>
+
     </div>
 
     <div>
@@ -220,12 +278,17 @@ Moneda:
     </div>
 
     <div style="margin-top:10px;">
+
         <strong>Información del Cliente:</strong>
+
         <div id="previewCustomer"></div>
+
     </div>
 
     <table id="previewItems" style="width:100%; border-collapse: collapse; margin-top:15px;">
+
         <thead>
+
             <tr style="background:#1a1a1a;">
                 <th style="border:1px solid #555; padding:5px;">N.º</th>
                 <th style="border:1px solid #555; padding:5px;">Nombre del Producto</th>
@@ -234,9 +297,11 @@ Moneda:
                 <th style="border:1px solid #555; padding:5px;">Precio/unidad</th>
                 <th style="border:1px solid #555; padding:5px;">Precio Total</th>
             </tr>
+
         </thead>
 
         <tbody></tbody>
+
     </table>
 
 </div>
@@ -245,8 +310,15 @@ Moneda:
 
     <button onclick="downloadPDF()">Descargar PDF</button>
 
-    <div style="margin-top:20px;">
-        <img src="logo_1.jpeg" alt="Logo SpotFut" style="height:50px;">
+    <div style="
+        margin-top:30px;
+        color:#888;
+        font-size:0.9rem;
+        line-height:1.8;
+    ">
+        <div><strong>SpotFut</strong></div>
+        <div>www.spotfut.com</div>
+        <div>WhatsApp: +34 673 779 896</div>
     </div>
 
 </div>
@@ -368,8 +440,6 @@ function updatePreview(){
     const finalTotal =
         grandTotal - totalDiscount;
 
-    // SUBTOTAL
-
     const subtotalRow = document.createElement("tr");
 
     subtotalRow.innerHTML = `
@@ -386,8 +456,6 @@ function updatePreview(){
 
     tbody.appendChild(subtotalRow);
 
-    // DISCOUNT
-
     const discountRow = document.createElement("tr");
 
     discountRow.innerHTML = `
@@ -403,8 +471,6 @@ function updatePreview(){
     `;
 
     tbody.appendChild(discountRow);
-
-    // FINAL TOTAL
 
     const totalRow = document.createElement("tr");
 
@@ -468,27 +534,35 @@ function downloadPDF(){
 
     let grandTotal = 0;
 
-    doc.setFontSize(16);
+    doc.setFontSize(20);
+    doc.setTextColor(194,0,255);
+    doc.text("SpotFut",14,20);
 
-    doc.text("SpotFutWears - Cotización",14,20);
+    doc.setFontSize(10);
+    doc.setTextColor(120);
+
+    doc.text("Web: www.spotfut.com",14,28);
+    doc.text("WhatsApp: +34 673 779 896",14,34);
+
+    doc.setTextColor(255);
 
     doc.setFontSize(12);
 
-    doc.text(`Pedido #: ${orderNo}`,14,28);
+    doc.text(`Pedido #: ${orderNo}`,14,46);
 
-    doc.text(`Fecha: ${document.getElementById("quoteDate").innerText}`,14,36);
+    doc.text(`Fecha: ${document.getElementById("quoteDate").innerText}`,14,54);
 
-    doc.text(`Validez: ${document.getElementById("quoteValidity").innerText}`,14,44);
+    doc.text(`Validez: ${document.getElementById("quoteValidity").innerText}`,14,62);
 
-    doc.text("Información del Cliente:",14,52);
+    doc.text("Información del Cliente:",14,74);
 
-    doc.text(`Nombre: ${name}`,14,60);
+    doc.text(`Nombre: ${name}`,14,82);
 
-    doc.text(`Contacto: ${contact}`,14,68);
+    doc.text(`Contacto: ${contact}`,14,90);
 
-    doc.text(`Correo Electrónico: ${email}`,14,76);
+    doc.text(`Correo Electrónico: ${email}`,14,98);
 
-    doc.text(`Dirección: ${address}`,14,84);
+    doc.text(`Dirección: ${address}`,14,106);
 
     const tableColumn = [
         "N.º",
@@ -555,7 +629,8 @@ function downloadPDF(){
     ]);
 
     doc.autoTable({
-        startY:95,
+
+        startY:118,
 
         head:[tableColumn],
 
@@ -579,12 +654,12 @@ function downloadPDF(){
 
         didParseCell:function(data){
 
-            if(
-                data.row.index >= tableRows.length - 3
-            ){
+            if(data.row.index >= tableRows.length - 3){
+
                 data.cell.styles.fillColor = [194,0,255];
                 data.cell.styles.textColor = 255;
                 data.cell.styles.fontStyle = 'bold';
+
             }
 
         }
@@ -593,6 +668,8 @@ function downloadPDF(){
 
     const img = new Image();
 
+    const pdfWidth = doc.internal.pageSize.getWidth();
+
     img.src = "logo_1.jpeg";
 
     img.onload = function(){
@@ -600,10 +677,7 @@ function downloadPDF(){
         const imgProps =
             doc.getImageProperties(img);
 
-        const pdfWidth =
-            doc.internal.pageSize.getWidth();
-
-        const imgWidth = 50;
+        const imgWidth = 45;
 
         const imgHeight =
             (imgProps.height * imgWidth) / imgProps.width;
@@ -611,10 +685,20 @@ function downloadPDF(){
         doc.addImage(
             img,
             'JPEG',
-            pdfWidth/2 - imgWidth/2,
-            doc.lastAutoTable.finalY + 10,
+            pdfWidth - 60,
+            12,
             imgWidth,
             imgHeight
+        );
+
+        doc.setFontSize(10);
+
+        doc.setTextColor(120);
+
+        doc.text(
+            "www.spotfut.com | WhatsApp: +34 673 779 896",
+            14,
+            doc.lastAutoTable.finalY + 20
         );
 
         doc.save("SpotFut_Cotizacion.pdf");
@@ -630,16 +714,18 @@ function downloadPDF(){
 }
 
 document.getElementById("currency")
-    .addEventListener("change", ()=>{
-        updateTable();
-        updatePreview();
-    });
+.addEventListener("change", ()=>{
+
+    updateTable();
+    updatePreview();
+
+});
 
 document.getElementById("discountPercent")
-    .addEventListener("input", updatePreview);
+.addEventListener("input", updatePreview);
 
 document.getElementById("discountAmount")
-    .addEventListener("input", updatePreview);
+.addEventListener("input", updatePreview);
 
 </script>
 
