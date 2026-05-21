@@ -534,7 +534,11 @@ function downloadPDF(){
 
     let grandTotal = 0;
 
-    doc.setFontSize(20);
+    // =========================
+    // HEADER
+    // =========================
+
+    doc.setFontSize(22);
     doc.setTextColor(194,0,255);
     doc.text("SpotFut",14,20);
 
@@ -544,29 +548,64 @@ function downloadPDF(){
     doc.text("Web: www.spotfut.com",14,28);
     doc.text("WhatsApp: +34 673 779 896",14,34);
 
-    doc.setTextColor(255);
+    // =========================
+    // LOGO
+    // =========================
+
+    const img = new Image();
+
+    img.src = "logo_1.jpeg";
+
+    const pdfWidth =
+        doc.internal.pageSize.getWidth();
+
+    // =========================
+    // INFO
+    // =========================
+
+    doc.setTextColor(0);
 
     doc.setFontSize(12);
 
-    doc.text(`Pedido #: ${orderNo}`,14,46);
+    doc.text(`Pedido #: ${orderNo}`,14,50);
 
-    doc.text(`Fecha: ${document.getElementById("quoteDate").innerText}`,14,54);
+    doc.text(
+        `Fecha: ${document.getElementById("quoteDate").innerText}`,
+        14,
+        58
+    );
 
-    doc.text(`Validez: ${document.getElementById("quoteValidity").innerText}`,14,62);
+    doc.text(
+        `Validez: ${document.getElementById("quoteValidity").innerText}`,
+        14,
+        66
+    );
 
-    doc.text("Información del Cliente:",14,74);
+    // =========================
+    // CLIENT
+    // =========================
 
-    doc.text(`Nombre: ${name}`,14,82);
+    doc.setFontSize(13);
 
-    doc.text(`Contacto: ${contact}`,14,90);
+    doc.text("Información del Cliente:",14,80);
 
-    doc.text(`Correo Electrónico: ${email}`,14,98);
+    doc.setFontSize(11);
 
-    doc.text(`Dirección: ${address}`,14,106);
+    doc.text(`Nombre: ${name}`,14,90);
+
+    doc.text(`Contacto: ${contact}`,14,98);
+
+    doc.text(`Correo: ${email}`,14,106);
+
+    doc.text(`Dirección: ${address}`,14,114);
+
+    // =========================
+    // TABLE
+    // =========================
 
     const tableColumn = [
         "N.º",
-        "Nombre del Producto",
+        "Producto",
         "Talla",
         "Cant.",
         "Precio/unidad",
@@ -601,36 +640,52 @@ function downloadPDF(){
     const finalTotal =
         grandTotal - totalDiscount;
 
-    let discountLabel = "Descuento";
-
-if(discountPercent > 0 && discountAmount > 0){
-
-    discountLabel =
-        `Descuento (${discountPercent}% + ${discountAmount} ${currency})`;
-
-}
-else if(discountPercent > 0){
-
-    discountLabel =
-        `Descuento (${discountPercent}%)`;
-
-}
-else if(discountAmount > 0){
-
-    discountLabel =
-        `Descuento (${discountAmount} ${currency} fijo)`;
-
-}
-
+    // SUBTOTAL
 
     tableRows.push([
         "",
         "",
         "",
         "",
-        "Descuento",
+        "Subtotal",
+        grandTotal.toFixed(2) + " " + currency
+    ]);
+
+    // DISCOUNT LABEL
+
+    let discountLabel = "Descuento";
+
+    if(discountPercent > 0 && discountAmount > 0){
+
+        discountLabel =
+            `Descuento (${discountPercent}% + ${discountAmount} ${currency})`;
+
+    }
+    else if(discountPercent > 0){
+
+        discountLabel =
+            `Descuento (${discountPercent}%)`;
+
+    }
+    else if(discountAmount > 0){
+
+        discountLabel =
+            `Descuento (${discountAmount} ${currency} fijo)`;
+
+    }
+
+    // DISCOUNT ROW
+
+    tableRows.push([
+        "",
+        "",
+        "",
+        "",
+        discountLabel,
         "-" + totalDiscount.toFixed(2) + " " + currency
     ]);
+
+    // FINAL TOTAL
 
     tableRows.push([
         "",
@@ -641,9 +696,13 @@ else if(discountAmount > 0){
         finalTotal.toFixed(2) + " " + currency
     ]);
 
+    // =========================
+    // AUTOTABLE
+    // =========================
+
     doc.autoTable({
 
-        startY:80,
+        startY:125,
 
         head:[tableColumn],
 
@@ -679,30 +738,32 @@ else if(discountAmount > 0){
 
     });
 
-    const img = new Image();
-
-    const pdfWidth = doc.internal.pageSize.getWidth();
-
-    img.src = "logo_1.jpeg";
+    // =========================
+    // IMAGE LOAD
+    // =========================
 
     img.onload = function(){
 
         const imgProps =
             doc.getImageProperties(img);
 
-        const imgWidth = 45;
+        const imgWidth = 32;
 
         const imgHeight =
             (imgProps.height * imgWidth) / imgProps.width;
 
+        // TOP RIGHT LOGO
+
         doc.addImage(
             img,
             'JPEG',
-            pdfWidth - 60,
-            12,
+            pdfWidth - 50,
+            10,
             imgWidth,
             imgHeight
         );
+
+        // FOOTER
 
         doc.setFontSize(10);
 
@@ -711,7 +772,7 @@ else if(discountAmount > 0){
         doc.text(
             "www.spotfut.com | WhatsApp: +34 673 779 896",
             14,
-            doc.lastAutoTable.finalY + 20
+            doc.lastAutoTable.finalY + 18
         );
 
         doc.save("SpotFut_Cotizacion.pdf");
@@ -725,15 +786,6 @@ else if(discountAmount > 0){
     }
 
 }
-
-document.getElementById("currency")
-.addEventListener("change", ()=>{
-
-    updateTable();
-    updatePreview();
-
-});
-
 document.getElementById("discountPercent")
 .addEventListener("input", updatePreview);
 
