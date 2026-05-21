@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpotFutWears - Generador de Cotizaciones</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    background:#0b0b0b;
+    color:white;
+    font-family:'Poppins', sans-serif;
+    padding:40px 8%;
+}
+
+h1{
+    font-family:'Playfair Display', serif;
+    margin-bottom:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+h1 span{
+    font-size:0.9rem;
+    font-weight:400;
+}
+
+label{
+    font-size:0.9rem;
+    opacity:0.8;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    background:#111;
+    border:1px solid #333;
+    color:white;
+    box-sizing:border-box;
+}
+
+button{
+    padding:12px 20px;
+    background:#c200ff;
+    color:black;
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:20px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#9a00cc;
+    color:white;
+}
+
+.grid-2{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:10px;
+}
+
+@media(max-width:600px){
+    .grid-2{
+        grid-template-columns:1fr;
+    }
+}
+
+#items-table{
+    width:100%;
+    border-collapse: collapse;
+    margin-top:20px;
+}
+
+#items-table th, #items-table td{
+    border:1px solid #555;
+    padding:8px;
+    text-align:center;
+}
+
+#items-table th{
+    background:#1a1a1a;
+}
+
+#quote-preview{
+    margin-top:30px;
+    padding:20px;
+    background:#111;
+    border:1px solid #333;
+}
+
+.quote-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+#previewCustomer div{
+    margin-bottom:4px;
+}
+
+.quote-footer{
+    margin-top:30px;
+    text-align:center;
+}
+
+.currency-switch{
+    margin-top:10px;
+}
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+<body>
+
+<h1>
+SpotFutWears - Generador de Cotizaciones
+<span>
+Pedido #: <input type="text" id="orderNumber" placeholder="Ingresar manualmente" style="width:120px;">
+</span>
+</h1>
+
+<div class="currency-switch">
+Moneda: 
+<select id="currency">
+    <option value="€">€</option>
+    <option value="PKR">PKR</option>
+</select>
+</div>
+
+<h2>Información del Cliente</h2>
+
+<div class="grid-2">
+    <div>
+        <label>Nombre</label>
+        <input type="text" id="custName">
+    </div>
+
+    <div>
+        <label>Contacto</label>
+        <input type="text" id="custContact">
+    </div>
+
+    <div>
+        <label>Correo Electrónico</label>
+        <input type="text" id="custEmail">
+    </div>
+
+    <div>
+        <label>Dirección</label>
+        <input type="text" id="custAddress">
+    </div>
+</div>
+
+<h2>Agregar Productos</h2>
+
+<div class="grid-2">
+    <input type="text" id="itemName" placeholder="Nombre del Producto">
+    <input type="text" id="itemSize" placeholder="Talla">
+    <input type="number" id="itemQty" placeholder="Cantidad">
+    <input type="number" id="itemPrice" placeholder="Precio/unidad">
+</div>
+
+<button onclick="addItem()">Agregar Producto</button>
+
+<h2>Descuento</h2>
+
+<div class="grid-2">
+    <div>
+        <label>Descuento (%)</label>
+        <input type="number" id="discountPercent" placeholder="Ingrese porcentaje" value="0">
+    </div>
+
+    <div>
+        <label>Descuento Fijo</label>
+        <input type="number" id="discountAmount" placeholder="Ingrese descuento fijo" value="0">
+    </div>
+</div>
+
+<table id="items-table">
+    <thead>
+        <tr>
+            <th>N.º</th>
+            <th>Nombre del Producto</th>
+            <th>Talla</th>
+            <th>Cant.</th>
+            <th>Precio/unidad</th>
+            <th>Precio Total</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<h2>Vista Previa de la Cotización</h2>
+
+<div id="quote-preview">
+
+    <div class="quote-header">
+        <div><strong>SpotFutWears</strong></div>
+
+        <div>
+            Fecha: <span id="quoteDate"></span> |
+            Validez: <span id="quoteValidity"></span>
+        </div>
+    </div>
+
+    <div>
+        <strong>Pedido #: </strong>
+        <span id="previewOrderNumber"></span>
+    </div>
+
+    <div style="margin-top:10px;">
+        <strong>Información del Cliente:</strong>
+        <div id="previewCustomer"></div>
+    </div>
+
+    <table id="previewItems" style="width:100%; border-collapse: collapse; margin-top:15px;">
+        <thead>
+            <tr style="background:#1a1a1a;">
+                <th style="border:1px solid #555; padding:5px;">N.º</th>
+                <th style="border:1px solid #555; padding:5px;">Nombre del Producto</th>
+                <th style="border:1px solid #555; padding:5px;">Talla</th>
+                <th style="border:1px solid #555; padding:5px;">Cant.</th>
+                <th style="border:1px solid #555; padding:5px;">Precio/unidad</th>
+                <th style="border:1px solid #555; padding:5px;">Precio Total</th>
+            </tr>
+        </thead>
+
+        <tbody></tbody>
+    </table>
+
+</div>
+
+<div class="quote-footer">
+
+    <button onclick="downloadPDF()">Descargar PDF</button>
+
+    <div style="margin-top:20px;">
+        <img src="logo.jpg" alt="Logo SpotFut" style="height:50px;">
+    </div>
+
+</div>
+
+<script>
+
+let items = [];
+
+const currencyEl = document.getElementById("currency");
+
+function addItem(){
+
+    const name = document.getElementById("itemName").value;
+    const size = document.getElementById("itemSize").value;
+    const qty = parseFloat(document.getElementById("itemQty").value);
+    const price = parseFloat(document.getElementById("itemPrice").value);
+
+    if(!name || !size || !qty || !price){
+        return alert("¡Complete todos los campos!");
+    }
+
+    items.push({
+        name,
+        size,
+        qty,
+        price
+    });
+
+    updateTable();
+    updatePreview();
+
+    document.getElementById("itemName").value = "";
+    document.getElementById("itemSize").value = "";
+    document.getElementById("itemQty").value = "";
+    document.getElementById("itemPrice").value = "";
+}
+
+function updateTable(){
+
+    const tbody = document.querySelector("#items-table tbody");
+
+    tbody.innerHTML = "";
+
+    items.forEach((item,i)=>{
+
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+            <td>${i+1}</td>
+            <td>${item.name}</td>
+            <td>${item.size}</td>
+            <td>${item.qty}</td>
+            <td>${item.price} ${currencyEl.value}</td>
+            <td>${(item.qty*item.price).toFixed(2)} ${currencyEl.value}</td>
+        `;
+
+        tbody.appendChild(tr);
+
+    });
+
+}
+
+function updatePreview(){
+
+    document.getElementById("previewOrderNumber").innerText =
+        document.getElementById("orderNumber").value;
+
+    const name = document.getElementById("custName").value;
+    const contact = document.getElementById("custContact").value;
+    const email = document.getElementById("custEmail").value;
+    const address = document.getElementById("custAddress").value;
+
+    document.getElementById("previewCustomer").innerHTML = `
+        <div>Nombre: ${name}</div>
+        <div>Contacto: ${contact}</div>
+        <div>Correo Electrónico: ${email}</div>
+        <div>Dirección: ${address}</div>
+    `;
+
+    const tbody = document.querySelector("#previewItems tbody");
+
+    tbody.innerHTML = "";
+
+    let grandTotal = 0;
+
+    items.forEach((item,i)=>{
+
+        const total = item.qty * item.price;
+
+        grandTotal += total;
+
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+            <td style="border:1px solid #555; padding:5px;">${i+1}</td>
+            <td style="border:1px solid #555; padding:5px;">${item.name}</td>
+            <td style="border:1px solid #555; padding:5px;">${item.size}</td>
+            <td style="border:1px solid #555; padding:5px;">${item.qty}</td>
+            <td style="border:1px solid #555; padding:5px;">${item.price} ${currencyEl.value}</td>
+            <td style="border:1px solid #555; padding:5px;">${total.toFixed(2)} ${currencyEl.value}</td>
+        `;
+
+        tbody.appendChild(tr);
+
+    });
+
+    const discountPercent =
+        parseFloat(document.getElementById("discountPercent").value) || 0;
+
+    const discountAmount =
+        parseFloat(document.getElementById("discountAmount").value) || 0;
+
+    const percentDiscountValue =
+        (grandTotal * discountPercent) / 100;
+
+    const totalDiscount =
+        percentDiscountValue + discountAmount;
+
+    const finalTotal =
+        grandTotal - totalDiscount;
+
+    // SUBTOTAL
+
+    const subtotalRow = document.createElement("tr");
+
+    subtotalRow.innerHTML = `
+        <td colspan="4" style="border:1px solid #555; padding:5px;"></td>
+
+        <td style="border:1px solid #555; padding:5px; font-weight:bold;">
+            Subtotal
+        </td>
+
+        <td style="border:1px solid #555; padding:5px; font-weight:bold;">
+            ${grandTotal.toFixed(2)} ${currencyEl.value}
+        </td>
+    `;
+
+    tbody.appendChild(subtotalRow);
+
+    // DISCOUNT
+
+    const discountRow = document.createElement("tr");
+
+    discountRow.innerHTML = `
+        <td colspan="4" style="border:1px solid #555; padding:5px;"></td>
+
+        <td style="border:1px solid #555; padding:5px; font-weight:bold;">
+            Descuento
+        </td>
+
+        <td style="border:1px solid #555; padding:5px; font-weight:bold;">
+            -${totalDiscount.toFixed(2)} ${currencyEl.value}
+        </td>
+    `;
+
+    tbody.appendChild(discountRow);
+
+    // FINAL TOTAL
+
+    const totalRow = document.createElement("tr");
+
+    totalRow.innerHTML = `
+        <td colspan="4" style="border:1px solid #555; padding:5px;"></td>
+
+        <td style="border:1px solid #555; padding:5px; font-weight:bold; background:#c200ff;">
+            Total Final
+        </td>
+
+        <td style="border:1px solid #555; padding:5px; font-weight:bold; background:#c200ff;">
+            ${finalTotal.toFixed(2)} ${currencyEl.value}
+        </td>
+    `;
+
+    tbody.appendChild(totalRow);
+
+}
+
+const today = new Date();
+
+document.getElementById("quoteDate").innerText =
+    today.toLocaleDateString();
+
+const validity = new Date();
+
+validity.setDate(today.getDate()+7);
+
+document.getElementById("quoteValidity").innerText =
+    validity.toLocaleDateString();
+
+function downloadPDF(){
+
+    const { jsPDF } = window.jspdf;
+
+    const doc = new jsPDF();
+
+    const orderNo =
+        document.getElementById("orderNumber").value;
+
+    const currency =
+        currencyEl.value;
+
+    const name =
+        document.getElementById("custName").value;
+
+    const contact =
+        document.getElementById("custContact").value;
+
+    const email =
+        document.getElementById("custEmail").value;
+
+    const address =
+        document.getElementById("custAddress").value;
+
+    const discountPercent =
+        parseFloat(document.getElementById("discountPercent").value) || 0;
+
+    const discountAmount =
+        parseFloat(document.getElementById("discountAmount").value) || 0;
+
+    let grandTotal = 0;
+
+    doc.setFontSize(16);
+
+    doc.text("SpotFutWears - Cotización",14,20);
+
+    doc.setFontSize(12);
+
+    doc.text(`Pedido #: ${orderNo}`,14,28);
+
+    doc.text(`Fecha: ${document.getElementById("quoteDate").innerText}`,14,36);
+
+    doc.text(`Validez: ${document.getElementById("quoteValidity").innerText}`,14,44);
+
+    doc.text("Información del Cliente:",14,52);
+
+    doc.text(`Nombre: ${name}`,14,60);
+
+    doc.text(`Contacto: ${contact}`,14,68);
+
+    doc.text(`Correo Electrónico: ${email}`,14,76);
+
+    doc.text(`Dirección: ${address}`,14,84);
+
+    const tableColumn = [
+        "N.º",
+        "Nombre del Producto",
+        "Talla",
+        "Cant.",
+        "Precio/unidad",
+        "Precio Total"
+    ];
+
+    const tableRows = [];
+
+    items.forEach((item,i)=>{
+
+        const total = item.qty * item.price;
+
+        grandTotal += total;
+
+        tableRows.push([
+            i+1,
+            item.name,
+            item.size,
+            item.qty,
+            item.price + " " + currency,
+            total.toFixed(2) + " " + currency
+        ]);
+
+    });
+
+    const percentDiscountValue =
+        (grandTotal * discountPercent) / 100;
+
+    const totalDiscount =
+        percentDiscountValue + discountAmount;
+
+    const finalTotal =
+        grandTotal - totalDiscount;
+
+    tableRows.push([
+        "",
+        "",
+        "",
+        "",
+        "Subtotal",
+        grandTotal.toFixed(2) + " " + currency
+    ]);
+
+    tableRows.push([
+        "",
+        "",
+        "",
+        "",
+        "Descuento",
+        "-" + totalDiscount.toFixed(2) + " " + currency
+    ]);
+
+    tableRows.push([
+        "",
+        "",
+        "",
+        "",
+        "Total Final",
+        finalTotal.toFixed(2) + " " + currency
+    ]);
+
+    doc.autoTable({
+        startY:95,
+
+        head:[tableColumn],
+
+        body:tableRows,
+
+        theme:'grid',
+
+        headStyles:{
+            fillColor:[194,0,255],
+            textColor:255
+        },
+
+        styles:{
+            textColor:255,
+            fillColor:[0,0,0]
+        },
+
+        alternateRowStyles:{
+            fillColor:[40,40,40]
+        },
+
+        didParseCell:function(data){
+
+            if(
+                data.row.index >= tableRows.length - 3
+            ){
+                data.cell.styles.fillColor = [194,0,255];
+                data.cell.styles.textColor = 255;
+                data.cell.styles.fontStyle = 'bold';
+            }
+
+        }
+
+    });
+
+    const img = new Image();
+
+    img.src = "logo.jpg";
+
+    img.onload = function(){
+
+        const imgProps =
+            doc.getImageProperties(img);
+
+        const pdfWidth =
+            doc.internal.pageSize.getWidth();
+
+        const imgWidth = 50;
+
+        const imgHeight =
+            (imgProps.height * imgWidth) / imgProps.width;
+
+        doc.addImage(
+            img,
+            'JPEG',
+            pdfWidth/2 - imgWidth/2,
+            doc.lastAutoTable.finalY + 10,
+            imgWidth,
+            imgHeight
+        );
+
+        doc.save("SpotFut_Cotizacion.pdf");
+
+    }
+
+    img.onerror = function(){
+
+        doc.save("SpotFut_Cotizacion.pdf");
+
+    }
+
+}
+
+document.getElementById("currency")
+    .addEventListener("change", ()=>{
+        updateTable();
+        updatePreview();
+    });
+
+document.getElementById("discountPercent")
+    .addEventListener("input", updatePreview);
+
+document.getElementById("discountAmount")
+    .addEventListener("input", updatePreview);
+
+</script>
+
+</body>
+</html>
